@@ -1,0 +1,8 @@
+.DS_Store
+dataset/cubert/*/original/*train*
+dataset/cubert/*/original/*dev*
+dataset/cubert/*/original/*eval*
+
+dataset/cubert/*/generated/*train*
+dataset/cubert/*/generated/*dev*
+dataset/cubert/*/generated/*eval*
