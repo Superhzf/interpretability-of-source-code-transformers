@@ -12,3 +12,5 @@
 * For task1, task2, task3, task4, and task5, you are expected to see both *.csv files and *.txt files. For task 6, only *.txt files are generated because in task 6 the type all observations is list, and the length varies.
 
 * Since the maximum number of characters that a CSV cell can contain is ~32700, any observations that include more than that will be ignored.
+
+* In cuBERT, the training set may include multiple files, whereas here I combine them into one train file. Similar things work for dev and eval.
