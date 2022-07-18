@@ -14,7 +14,11 @@ git clone https://github.com/fdalvi/NeuroX.git
 ml-gpu <path to environment>/NeuroX_env/bin/pip3 install -e .  
 ```
 ## Run run_neurox1.py
-Update script with correct paths to your environment
+Update script with correct paths to your environment.  
+Set --extract = False if activation files have already been generated.  
+Location of activation.json files:
+/work/LAS/jannesar-lab/arushi/Interpretability/interpretability-of-source-code-transformers/POS Code/Experiments  
 ```
+cd interpretability-of-source-code-transformers/POS\ Code/Experiments
 sbatch script
 ```
