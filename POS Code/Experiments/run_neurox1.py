@@ -11,7 +11,7 @@ import neurox.data.loader as data_loader
 import neurox.interpretation.utils as utils
 import neurox.interpretation.linear_probe as linear_probe
 import neurox.interpretation.ablation as ablation
-import NeuroX.neurox.data.control_task as ct
+import neurox.data.control_task as ct
 import neurox.interpretation.clustering
 import neurox.interpretation.probeless
 
