@@ -1,0 +1,12 @@
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --ntasks=8
+#SBATCH --mem=128G
+#SBATCH --time=12:00:00
+#SBATCH --partition=gpu 
+#SBATCH --gres=gpu:1
+
+module load ml-gpu
+cd /work/LAS/jannesar-lab/arushi/Interpretability/interpretability-of-source-code-transformers/POS\ Code/Experiments
+ml-gpu /work/LAS/jannesar-lab/arushi/Environments/NeuroX_env/bin/python run_neurox1.py --extract=True> logs
+
