@@ -11,6 +11,7 @@ cd NeuroX_env
 ## Install Neurox from source (pip install version is not updated with Control task code)
 ```
 git clone https://github.com/fdalvi/NeuroX.git  
+cd NeuroX
 ml-gpu <path to environment>/NeuroX_env/bin/pip3 install -e .  
 ```
 ## Run experiments
