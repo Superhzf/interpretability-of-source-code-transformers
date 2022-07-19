@@ -1,0 +1,16 @@
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --ntasks=8
+#SBATCH --mem=128G
+#SBATCH --time=10:00:00
+
+module load ml-gpu
+
+#This will generate codetest.in and codetest.label but neurox skips some lines, not sure why.
+ml-gpu /work/LAS/jannesar-lab/arushi/Environments/NeuroX_env/bin/python POS_dataset_creation.py
+
+#Extract activations, identify and remove skipped lines form dataset for now -- codetest2.in and codetest2.label
+ml-gpu /work/LAS/jannesar-lab/arushi/Environments/NeuroX_env/bin/python get_skip_lines.py > skip_logs
+
+#From skip_logs, gwt the lines to skip from datset and create codetest2.in and codetest2.label
+ml-gpu /work/LAS/jannesar-lab/arushi/Environments/NeuroX_env/bin/python skip_lines.py
