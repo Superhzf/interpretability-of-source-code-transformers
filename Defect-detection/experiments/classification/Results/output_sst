@@ -1,0 +1,1674 @@
+RY] Begin: 186.64
+*********************** LOADING ACTIVATIONS ***********************
+[MEMORY] Before activation loading: 186.80
+Loading json activations from /work/LAS/jannesar-lab/arushi/Redundancy/GLUE-baselines/glue_data/SST-2/activations/bert/train-activations.json...
+67349 13.0
+Loading json activations from /work/LAS/jannesar-lab/arushi/Redundancy/GLUE-baselines/glue_data/SST-2/activations/bert/dev-activations.json...
+872 13.0
+Number of train sentences: 67349
+Number of test sentences: 872
+[MEMORY] After activation loading: 5617.38
+************************* LOADING TOKENS **************************
+[MEMORY] After token loading: 5637.57
+************************ CREATING TENSORS *************************
+Train:
+Number of tokens:  67349
+length of source dictionary:  67349
+length of target dictionary:  2
+67349
+Total instances: 67349
+['sentence_20182', 'sentence_35614', 'sentence_45644', 'sentence_52011', 'sentence_54845', 'sentence_58989', 'sentence_31074', 'sentence_46116', 'sentence_14036', 'sentence_7552', 'sentence_65863', 'sentence_26521', 'sentence_55941', 'sentence_49654', 'sentence_58819', 'sentence_30191', 'sentence_56960', 'sentence_59751', 'sentence_62317', 'sentence_22249']
+(60614, 9984) (60614,)
+Dev:
+(6735, 9984) (6735,)
+Test:
+Number of tokens:  872
+length of source dictionary:  67349
+length of target dictionary:  2
+872
+Total instances: 872
+['sentence_258', 'sentence_790', 'sentence_224', 'sentence_733', 'sentence_71', 'sentence_690', 'sentence_162', 'sentence_94', 'sentence_232', 'sentence_650', 'sentence_527', 'sentence_30', 'sentence_458', 'sentence_260', 'sentence_602', 'sentence_787', 'sentence_430', 'sentence_36', 'sentence_333', 'sentence_211']
+(872, 9984) (872,)
+[MEMORY] After tensor creation: 10816.97
+************************* FREEING MEMORY **************************
+[MEMORY] After cleanup: 10806.54
+***************** RUNNING BASELINE [ ALL LAYERS ] *****************
+Building model...
+Train: (60614, 9984) (60614,)
+Dev: (6735, 9984) (6735,)
+Test: (872, 9984) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:01, 402.54it/s]
+Epoch: [1/10], Loss: 0.0060
+epoch [2/10]: 474it [00:01, 387.79it/s]
+Epoch: [2/10], Loss: 0.0054
+epoch [3/10]: 474it [00:01, 413.24it/s]
+Epoch: [3/10], Loss: 0.0054
+epoch [4/10]: 474it [00:01, 413.23it/s]
+Epoch: [4/10], Loss: 0.0054
+epoch [5/10]: 474it [00:01, 405.07it/s]
+Epoch: [5/10], Loss: 0.0054
+epoch [6/10]: 474it [00:01, 415.13it/s]
+Epoch: [6/10], Loss: 0.0053
+epoch [7/10]: 474it [00:01, 404.92it/s]
+Epoch: [7/10], Loss: 0.0053
+epoch [8/10]: 474it [00:01, 405.88it/s]
+Epoch: [8/10], Loss: 0.0053
+epoch [9/10]: 474it [00:01, 421.74it/s]
+Epoch: [9/10], Loss: 0.0052
+epoch [10/10]: 474it [00:01, 423.35it/s]
+Epoch: [10/10], Loss: 0.0052
+Evaluating: 1895it [00:02, 712.96it/s]
+Score (accuracy) of the model: 0.55
+Evaluating: 211it [00:00, 714.03it/s]
+Score (accuracy) of the model: 0.55
+Evaluating: 28it [00:00, 731.52it/s]
+Score (accuracy) of the model: 0.51
+Results:
+Train Score (accuracy): 0.553173
+Dev Score (accuracy): 0.554269
+Test Score (accuracy): 0.508028
+[MEMORY] After baseline run: 11130.98
+****************** RUNNING INDEPENDENT LAYERWISE ******************
+----------------------- Running Layer 00 ------------------------
+Building model...
+Train: (60614, 768) (60614,)
+Dev: (6735, 768) (6735,)
+Test: (872, 768) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:00, 671.88it/s]
+Epoch: [1/10], Loss: 0.0054
+epoch [2/10]: 474it [00:00, 692.09it/s]
+Epoch: [2/10], Loss: 0.0054
+epoch [3/10]: 474it [00:00, 676.25it/s]
+Epoch: [3/10], Loss: 0.0054
+epoch [4/10]: 474it [00:00, 719.53it/s]
+Epoch: [4/10], Loss: 0.0054
+epoch [5/10]: 474it [00:00, 701.11it/s]
+Epoch: [5/10], Loss: 0.0054
+epoch [6/10]: 474it [00:00, 679.74it/s]
+Epoch: [6/10], Loss: 0.0054
+epoch [7/10]: 474it [00:00, 706.71it/s]
+Epoch: [7/10], Loss: 0.0054
+epoch [8/10]: 474it [00:00, 718.56it/s]
+Epoch: [8/10], Loss: 0.0054
+epoch [9/10]: 474it [00:00, 704.20it/s]
+Epoch: [9/10], Loss: 0.0054
+epoch [10/10]: 474it [00:00, 703.51it/s]
+Epoch: [10/10], Loss: 0.0054
+Evaluating: 1895it [00:02, 830.55it/s]
+Score (accuracy) of the model: 0.56
+Evaluating: 211it [00:00, 900.58it/s]
+Score (accuracy) of the model: 0.55
+Evaluating: 28it [00:00, 933.73it/s]
+Score (accuracy) of the model: 0.51
+Results:
+Train Score (accuracy): 0.558303
+Dev Score (accuracy): 0.553526
+Test Score (accuracy): 0.509174
+[MEMORY]     Independent layerwise (00): 11131.13
+----------------------- Running Layer 01 ------------------------
+Building model...
+Train: (60614, 768) (60614,)
+Dev: (6735, 768) (6735,)
+Test: (872, 768) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:00, 692.99it/s]
+Epoch: [1/10], Loss: 0.0054
+epoch [2/10]: 474it [00:00, 673.76it/s]
+Epoch: [2/10], Loss: 0.0053
+epoch [3/10]: 474it [00:00, 679.96it/s]
+Epoch: [3/10], Loss: 0.0052
+epoch [4/10]: 474it [00:00, 692.76it/s]
+Epoch: [4/10], Loss: 0.0052
+epoch [5/10]: 474it [00:00, 698.63it/s]
+Epoch: [5/10], Loss: 0.0052
+epoch [6/10]: 474it [00:00, 691.07it/s]
+Epoch: [6/10], Loss: 0.0051
+epoch [7/10]: 474it [00:00, 687.51it/s]
+Epoch: [7/10], Loss: 0.0051
+epoch [8/10]: 474it [00:00, 694.28it/s]
+Epoch: [8/10], Loss: 0.0051
+epoch [9/10]: 474it [00:00, 711.48it/s]
+Epoch: [9/10], Loss: 0.0051
+epoch [10/10]: 474it [00:00, 667.08it/s]
+Epoch: [10/10], Loss: 0.0051
+Evaluating: 1895it [00:02, 869.33it/s]
+Score (accuracy) of the model: 0.62
+Evaluating: 211it [00:00, 812.90it/s]
+Score (accuracy) of the model: 0.61
+Evaluating: 28it [00:00, 849.86it/s]
+Score (accuracy) of the model: 0.59
+Results:
+Train Score (accuracy): 0.623849
+Dev Score (accuracy): 0.609503
+Test Score (accuracy): 0.592890
+[MEMORY]     Independent layerwise (01): 11131.14
+----------------------- Running Layer 02 ------------------------
+Building model...
+Train: (60614, 768) (60614,)
+Dev: (6735, 768) (6735,)
+Test: (872, 768) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:00, 664.71it/s]
+Epoch: [1/10], Loss: 0.0053
+epoch [2/10]: 474it [00:00, 667.19it/s]
+Epoch: [2/10], Loss: 0.0052
+epoch [3/10]: 474it [00:00, 700.88it/s]
+Epoch: [3/10], Loss: 0.0051
+epoch [4/10]: 474it [00:00, 682.49it/s]
+Epoch: [4/10], Loss: 0.0051
+epoch [5/10]: 474it [00:00, 667.47it/s]
+Epoch: [5/10], Loss: 0.0051
+epoch [6/10]: 474it [00:00, 655.01it/s]
+Epoch: [6/10], Loss: 0.0050
+epoch [7/10]: 474it [00:00, 664.42it/s]
+Epoch: [7/10], Loss: 0.0050
+epoch [8/10]: 474it [00:00, 674.31it/s]
+Epoch: [8/10], Loss: 0.0050
+epoch [9/10]: 474it [00:00, 684.04it/s]
+Epoch: [9/10], Loss: 0.0050
+epoch [10/10]: 474it [00:00, 721.56it/s]
+Epoch: [10/10], Loss: 0.0050
+Evaluating: 1895it [00:02, 905.84it/s]
+Score (accuracy) of the model: 0.63
+Evaluating: 211it [00:00, 890.67it/s]
+Score (accuracy) of the model: 0.63
+Evaluating: 28it [00:00, 899.49it/s]
+Score (accuracy) of the model: 0.61
+Results:
+Train Score (accuracy): 0.633632
+Dev Score (accuracy): 0.629696
+Test Score (accuracy): 0.608945
+[MEMORY]     Independent layerwise (02): 11131.14
+----------------------- Running Layer 03 ------------------------
+Building model...
+Train: (60614, 768) (60614,)
+Dev: (6735, 768) (6735,)
+Test: (872, 768) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:00, 684.00it/s]
+Epoch: [1/10], Loss: 0.0053
+epoch [2/10]: 474it [00:00, 685.72it/s]
+Epoch: [2/10], Loss: 0.0052
+epoch [3/10]: 474it [00:00, 685.17it/s]
+Epoch: [3/10], Loss: 0.0051
+epoch [4/10]: 474it [00:00, 680.41it/s]
+Epoch: [4/10], Loss: 0.0051
+epoch [5/10]: 474it [00:00, 681.96it/s]
+Epoch: [5/10], Loss: 0.0051
+epoch [6/10]: 474it [00:00, 705.62it/s]
+Epoch: [6/10], Loss: 0.0050
+epoch [7/10]: 474it [00:00, 719.67it/s]
+Epoch: [7/10], Loss: 0.0050
+epoch [8/10]: 474it [00:00, 695.83it/s]
+Epoch: [8/10], Loss: 0.0050
+epoch [9/10]: 474it [00:00, 722.38it/s]
+Epoch: [9/10], Loss: 0.0050
+epoch [10/10]: 474it [00:00, 708.04it/s]
+Epoch: [10/10], Loss: 0.0049
+Evaluating: 1895it [00:02, 890.84it/s]
+Score (accuracy) of the model: 0.64
+Evaluating: 211it [00:00, 908.72it/s]
+Score (accuracy) of the model: 0.62
+Evaluating: 28it [00:00, 937.35it/s]
+Score (accuracy) of the model: 0.61
+Results:
+Train Score (accuracy): 0.637757
+Dev Score (accuracy): 0.622420
+Test Score (accuracy): 0.611239
+[MEMORY]     Independent layerwise (03): 11131.14
+----------------------- Running Layer 04 ------------------------
+Building model...
+Train: (60614, 768) (60614,)
+Dev: (6735, 768) (6735,)
+Test: (872, 768) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:00, 715.31it/s]
+Epoch: [1/10], Loss: 0.0053
+epoch [2/10]: 474it [00:00, 722.06it/s]
+Epoch: [2/10], Loss: 0.0052
+epoch [3/10]: 474it [00:00, 692.96it/s]
+Epoch: [3/10], Loss: 0.0051
+epoch [4/10]: 474it [00:00, 679.49it/s]
+Epoch: [4/10], Loss: 0.0050
+epoch [5/10]: 474it [00:00, 685.23it/s]
+Epoch: [5/10], Loss: 0.0050
+epoch [6/10]: 474it [00:00, 682.90it/s]
+Epoch: [6/10], Loss: 0.0050
+epoch [7/10]: 474it [00:00, 669.18it/s]
+Epoch: [7/10], Loss: 0.0049
+epoch [8/10]: 474it [00:00, 675.83it/s]
+Epoch: [8/10], Loss: 0.0049
+epoch [9/10]: 474it [00:00, 666.97it/s]
+Epoch: [9/10], Loss: 0.0049
+epoch [10/10]: 474it [00:00, 686.03it/s]
+Epoch: [10/10], Loss: 0.0049
+Evaluating: 1895it [00:02, 877.69it/s]
+Score (accuracy) of the model: 0.65
+Evaluating: 211it [00:00, 897.05it/s]
+Score (accuracy) of the model: 0.63
+Evaluating: 28it [00:00, 946.24it/s]
+Score (accuracy) of the model: 0.62
+Results:
+Train Score (accuracy): 0.648811
+Dev Score (accuracy): 0.633408
+Test Score (accuracy): 0.621560
+[MEMORY]     Independent layerwise (04): 11131.14
+----------------------- Running Layer 05 ------------------------
+Building model...
+Train: (60614, 768) (60614,)
+Dev: (6735, 768) (6735,)
+Test: (872, 768) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:00, 718.93it/s]
+Epoch: [1/10], Loss: 0.0053
+epoch [2/10]: 474it [00:00, 721.26it/s]
+Epoch: [2/10], Loss: 0.0051
+epoch [3/10]: 474it [00:00, 724.00it/s]
+Epoch: [3/10], Loss: 0.0051
+epoch [4/10]: 474it [00:00, 703.06it/s]
+Epoch: [4/10], Loss: 0.0050
+epoch [5/10]: 474it [00:00, 716.55it/s]
+Epoch: [5/10], Loss: 0.0050
+epoch [6/10]: 474it [00:00, 721.36it/s]
+Epoch: [6/10], Loss: 0.0049
+epoch [7/10]: 474it [00:00, 706.59it/s]
+Epoch: [7/10], Loss: 0.0049
+epoch [8/10]: 474it [00:00, 679.47it/s]
+Epoch: [8/10], Loss: 0.0049
+epoch [9/10]: 474it [00:00, 701.02it/s]
+Epoch: [9/10], Loss: 0.0049
+epoch [10/10]: 474it [00:00, 701.92it/s]
+Epoch: [10/10], Loss: 0.0049
+Evaluating: 1895it [00:02, 905.63it/s]
+Score (accuracy) of the model: 0.65
+Evaluating: 211it [00:00, 768.00it/s]
+Score (accuracy) of the model: 0.64
+Evaluating: 28it [00:00, 924.63it/s]
+Score (accuracy) of the model: 0.62
+Results:
+Train Score (accuracy): 0.654717
+Dev Score (accuracy): 0.640831
+Test Score (accuracy): 0.622706
+[MEMORY]     Independent layerwise (05): 11131.14
+----------------------- Running Layer 06 ------------------------
+Building model...
+Train: (60614, 768) (60614,)
+Dev: (6735, 768) (6735,)
+Test: (872, 768) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:00, 711.32it/s]
+Epoch: [1/10], Loss: 0.0053
+epoch [2/10]: 474it [00:00, 686.90it/s]
+Epoch: [2/10], Loss: 0.0051
+epoch [3/10]: 474it [00:00, 692.77it/s]
+Epoch: [3/10], Loss: 0.0050
+epoch [4/10]: 474it [00:00, 683.16it/s]
+Epoch: [4/10], Loss: 0.0050
+epoch [5/10]: 474it [00:00, 682.07it/s]
+Epoch: [5/10], Loss: 0.0049
+epoch [6/10]: 474it [00:00, 703.80it/s]
+Epoch: [6/10], Loss: 0.0049
+epoch [7/10]: 474it [00:00, 717.09it/s]
+Epoch: [7/10], Loss: 0.0049
+epoch [8/10]: 474it [00:00, 708.99it/s]
+Epoch: [8/10], Loss: 0.0049
+epoch [9/10]: 474it [00:00, 687.68it/s]
+Epoch: [9/10], Loss: 0.0049
+epoch [10/10]: 474it [00:00, 688.61it/s]
+Epoch: [10/10], Loss: 0.0048
+Evaluating: 1895it [00:02, 902.96it/s]
+Score (accuracy) of the model: 0.66
+Evaluating: 211it [00:00, 887.60it/s]
+Score (accuracy) of the model: 0.64
+Evaluating: 28it [00:00, 924.98it/s]
+Score (accuracy) of the model: 0.63
+Results:
+Train Score (accuracy): 0.655624
+Dev Score (accuracy): 0.641871
+Test Score (accuracy): 0.629587
+[MEMORY]     Independent layerwise (06): 11131.14
+----------------------- Running Layer 07 ------------------------
+Building model...
+Train: (60614, 768) (60614,)
+Dev: (6735, 768) (6735,)
+Test: (872, 768) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:00, 717.55it/s]
+Epoch: [1/10], Loss: 0.0053
+epoch [2/10]: 474it [00:00, 718.99it/s]
+Epoch: [2/10], Loss: 0.0051
+epoch [3/10]: 474it [00:00, 722.25it/s]
+Epoch: [3/10], Loss: 0.0050
+epoch [4/10]: 474it [00:00, 718.21it/s]
+Epoch: [4/10], Loss: 0.0050
+epoch [5/10]: 474it [00:00, 712.58it/s]
+Epoch: [5/10], Loss: 0.0049
+epoch [6/10]: 474it [00:00, 725.57it/s]
+Epoch: [6/10], Loss: 0.0049
+epoch [7/10]: 474it [00:00, 710.25it/s]
+Epoch: [7/10], Loss: 0.0049
+epoch [8/10]: 474it [00:00, 715.69it/s]
+Epoch: [8/10], Loss: 0.0049
+epoch [9/10]: 474it [00:00, 673.61it/s]
+Epoch: [9/10], Loss: 0.0049
+epoch [10/10]: 474it [00:00, 686.94it/s]
+Epoch: [10/10], Loss: 0.0048
+Evaluating: 1895it [00:02, 882.69it/s]
+Score (accuracy) of the model: 0.66
+Evaluating: 211it [00:00, 900.16it/s]
+Score (accuracy) of the model: 0.65
+Evaluating: 28it [00:00, 943.96it/s]
+Score (accuracy) of the model: 0.64
+Results:
+Train Score (accuracy): 0.658379
+Dev Score (accuracy): 0.646325
+Test Score (accuracy): 0.637615
+[MEMORY]     Independent layerwise (07): 11131.15
+----------------------- Running Layer 08 ------------------------
+Building model...
+Train: (60614, 768) (60614,)
+Dev: (6735, 768) (6735,)
+Test: (872, 768) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:00, 685.29it/s]
+Epoch: [1/10], Loss: 0.0053
+epoch [2/10]: 474it [00:00, 714.87it/s]
+Epoch: [2/10], Loss: 0.0051
+epoch [3/10]: 474it [00:00, 725.24it/s]
+Epoch: [3/10], Loss: 0.0050
+epoch [4/10]: 474it [00:00, 698.14it/s]
+Epoch: [4/10], Loss: 0.0050
+epoch [5/10]: 474it [00:00, 688.89it/s]
+Epoch: [5/10], Loss: 0.0050
+epoch [6/10]: 474it [00:00, 674.99it/s]
+Epoch: [6/10], Loss: 0.0049
+epoch [7/10]: 474it [00:00, 684.49it/s]
+Epoch: [7/10], Loss: 0.0049
+epoch [8/10]: 474it [00:00, 718.43it/s]
+Epoch: [8/10], Loss: 0.0049
+epoch [9/10]: 474it [00:00, 726.92it/s]
+Epoch: [9/10], Loss: 0.0049
+epoch [10/10]: 474it [00:00, 711.05it/s]
+Epoch: [10/10], Loss: 0.0048
+Evaluating: 1895it [00:02, 891.19it/s]
+Score (accuracy) of the model: 0.66
+Evaluating: 211it [00:00, 897.24it/s]
+Score (accuracy) of the model: 0.65
+Evaluating: 28it [00:00, 949.28it/s]
+Score (accuracy) of the model: 0.64
+Results:
+Train Score (accuracy): 0.659221
+Dev Score (accuracy): 0.648849
+Test Score (accuracy): 0.641055
+[MEMORY]     Independent layerwise (08): 11131.15
+----------------------- Running Layer 09 ------------------------
+Building model...
+Train: (60614, 768) (60614,)
+Dev: (6735, 768) (6735,)
+Test: (872, 768) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:00, 719.74it/s]
+Epoch: [1/10], Loss: 0.0053
+epoch [2/10]: 474it [00:00, 727.89it/s]
+Epoch: [2/10], Loss: 0.0051
+epoch [3/10]: 474it [00:00, 718.28it/s]
+Epoch: [3/10], Loss: 0.0050
+epoch [4/10]: 474it [00:00, 721.82it/s]
+Epoch: [4/10], Loss: 0.0050
+epoch [5/10]: 474it [00:00, 713.67it/s]
+Epoch: [5/10], Loss: 0.0049
+epoch [6/10]: 474it [00:00, 688.81it/s]
+Epoch: [6/10], Loss: 0.0049
+epoch [7/10]: 474it [00:00, 716.48it/s]
+Epoch: [7/10], Loss: 0.0049
+epoch [8/10]: 474it [00:00, 673.76it/s]
+Epoch: [8/10], Loss: 0.0049
+epoch [9/10]: 474it [00:00, 672.47it/s]
+Epoch: [9/10], Loss: 0.0049
+epoch [10/10]: 474it [00:00, 678.76it/s]
+Epoch: [10/10], Loss: 0.0048
+Evaluating: 1895it [00:02, 909.05it/s]
+Score (accuracy) of the model: 0.66
+Evaluating: 211it [00:00, 906.41it/s]
+Score (accuracy) of the model: 0.66
+Evaluating: 28it [00:00, 940.31it/s]
+Score (accuracy) of the model: 0.64
+Results:
+Train Score (accuracy): 0.664698
+Dev Score (accuracy): 0.655234
+Test Score (accuracy): 0.635321
+[MEMORY]     Independent layerwise (09): 11131.19
+----------------------- Running Layer 10 ------------------------
+Building model...
+Train: (60614, 768) (60614,)
+Dev: (6735, 768) (6735,)
+Test: (872, 768) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:00, 715.12it/s]
+Epoch: [1/10], Loss: 0.0052
+epoch [2/10]: 474it [00:00, 717.98it/s]
+Epoch: [2/10], Loss: 0.0051
+epoch [3/10]: 474it [00:00, 706.63it/s]
+Epoch: [3/10], Loss: 0.0050
+epoch [4/10]: 474it [00:00, 718.67it/s]
+Epoch: [4/10], Loss: 0.0050
+epoch [5/10]: 474it [00:00, 711.27it/s]
+Epoch: [5/10], Loss: 0.0049
+epoch [6/10]: 474it [00:00, 682.00it/s]
+Epoch: [6/10], Loss: 0.0049
+epoch [7/10]: 474it [00:00, 688.63it/s]
+Epoch: [7/10], Loss: 0.0049
+epoch [8/10]: 474it [00:00, 685.22it/s]
+Epoch: [8/10], Loss: 0.0049
+epoch [9/10]: 474it [00:00, 695.08it/s]
+Epoch: [9/10], Loss: 0.0049
+epoch [10/10]: 474it [00:00, 725.30it/s]
+Epoch: [10/10], Loss: 0.0048
+Evaluating: 1895it [00:02, 890.61it/s]
+Score (accuracy) of the model: 0.66
+Evaluating: 211it [00:00, 880.98it/s]
+Score (accuracy) of the model: 0.66
+Evaluating: 28it [00:00, 934.47it/s]
+Score (accuracy) of the model: 0.62
+Results:
+Train Score (accuracy): 0.662933
+Dev Score (accuracy): 0.655382
+Test Score (accuracy): 0.622706
+[MEMORY]     Independent layerwise (10): 11131.19
+----------------------- Running Layer 11 ------------------------
+Building model...
+Train: (60614, 768) (60614,)
+Dev: (6735, 768) (6735,)
+Test: (872, 768) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:00, 727.10it/s]
+Epoch: [1/10], Loss: 0.0052
+epoch [2/10]: 474it [00:00, 722.76it/s]
+Epoch: [2/10], Loss: 0.0051
+epoch [3/10]: 474it [00:00, 726.76it/s]
+Epoch: [3/10], Loss: 0.0050
+epoch [4/10]: 474it [00:00, 721.75it/s]
+Epoch: [4/10], Loss: 0.0050
+epoch [5/10]: 474it [00:00, 705.59it/s]
+Epoch: [5/10], Loss: 0.0049
+epoch [6/10]: 474it [00:00, 671.02it/s]
+Epoch: [6/10], Loss: 0.0049
+epoch [7/10]: 474it [00:00, 724.09it/s]
+Epoch: [7/10], Loss: 0.0049
+epoch [8/10]: 474it [00:00, 723.72it/s]
+Epoch: [8/10], Loss: 0.0049
+epoch [9/10]: 474it [00:00, 729.54it/s]
+Epoch: [9/10], Loss: 0.0049
+epoch [10/10]: 474it [00:00, 725.02it/s]
+Epoch: [10/10], Loss: 0.0048
+Evaluating: 1895it [00:02, 883.65it/s]
+Score (accuracy) of the model: 0.66
+Evaluating: 211it [00:00, 908.29it/s]
+Score (accuracy) of the model: 0.65
+Evaluating: 28it [00:00, 943.62it/s]
+Score (accuracy) of the model: 0.63
+Results:
+Train Score (accuracy): 0.661266
+Dev Score (accuracy): 0.653898
+Test Score (accuracy): 0.633028
+[MEMORY]     Independent layerwise (11): 11131.19
+----------------------- Running Layer 12 ------------------------
+Building model...
+Train: (60614, 768) (60614,)
+Dev: (6735, 768) (6735,)
+Test: (872, 768) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:00, 716.94it/s]
+Epoch: [1/10], Loss: 0.0052
+epoch [2/10]: 474it [00:00, 698.56it/s]
+Epoch: [2/10], Loss: 0.0051
+epoch [3/10]: 474it [00:00, 724.41it/s]
+Epoch: [3/10], Loss: 0.0050
+epoch [4/10]: 474it [00:00, 697.36it/s]
+Epoch: [4/10], Loss: 0.0050
+epoch [5/10]: 474it [00:00, 686.13it/s]
+Epoch: [5/10], Loss: 0.0049
+epoch [6/10]: 474it [00:00, 684.36it/s]
+Epoch: [6/10], Loss: 0.0049
+epoch [7/10]: 474it [00:00, 723.85it/s]
+Epoch: [7/10], Loss: 0.0049
+epoch [8/10]: 474it [00:00, 728.62it/s]
+Epoch: [8/10], Loss: 0.0049
+epoch [9/10]: 474it [00:00, 683.57it/s]
+Epoch: [9/10], Loss: 0.0048
+epoch [10/10]: 474it [00:00, 695.60it/s]
+Epoch: [10/10], Loss: 0.0048
+Evaluating: 1895it [00:02, 886.74it/s]
+Score (accuracy) of the model: 0.66
+Evaluating: 211it [00:00, 904.34it/s]
+Score (accuracy) of the model: 0.66
+Evaluating: 28it [00:00, 953.57it/s]
+Score (accuracy) of the model: 0.64
+Results:
+Train Score (accuracy): 0.664186
+Dev Score (accuracy): 0.656422
+Test Score (accuracy): 0.636468
+[MEMORY]     Independent layerwise (12): 11131.19
+[MEMORY] After indendent layerwise run: 11131.19
+****************** RUNNING INCREMENTAL LAYERWISE ******************
+-------------------- Running Layer 00 to 00 ---------------------
+Building model...
+Train: (60614, 768) (60614,)
+Dev: (6735, 768) (6735,)
+Test: (872, 768) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:00, 726.44it/s]
+Epoch: [1/10], Loss: 0.0054
+epoch [2/10]: 474it [00:00, 698.89it/s]
+Epoch: [2/10], Loss: 0.0054
+epoch [3/10]: 474it [00:00, 711.02it/s]
+Epoch: [3/10], Loss: 0.0054
+epoch [4/10]: 474it [00:00, 697.02it/s]
+Epoch: [4/10], Loss: 0.0054
+epoch [5/10]: 474it [00:00, 704.26it/s]
+Epoch: [5/10], Loss: 0.0054
+epoch [6/10]: 474it [00:00, 714.81it/s]
+Epoch: [6/10], Loss: 0.0054
+epoch [7/10]: 474it [00:00, 720.66it/s]
+Epoch: [7/10], Loss: 0.0054
+epoch [8/10]: 474it [00:00, 708.74it/s]
+Epoch: [8/10], Loss: 0.0054
+epoch [9/10]: 474it [00:00, 710.66it/s]
+Epoch: [9/10], Loss: 0.0054
+epoch [10/10]: 474it [00:00, 721.06it/s]
+Epoch: [10/10], Loss: 0.0054
+Evaluating: 1895it [00:02, 864.22it/s]
+Score (accuracy) of the model: 0.56
+Evaluating: 211it [00:00, 898.76it/s]
+Score (accuracy) of the model: 0.55
+Evaluating: 28it [00:00, 929.59it/s]
+Score (accuracy) of the model: 0.51
+Results:
+Train Score (accuracy): 0.558303
+Dev Score (accuracy): 0.553526
+Test Score (accuracy): 0.509174
+[MEMORY]     Incremental layerwise (00 -> 00): 11131.19
+-------------------- Running Layer 00 to 01 ---------------------
+Building model...
+Train: (60614, 1536) (60614,)
+Dev: (6735, 1536) (6735,)
+Test: (872, 1536) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:01, 433.23it/s]
+Epoch: [1/10], Loss: 0.0054
+epoch [2/10]: 474it [00:01, 433.88it/s]
+Epoch: [2/10], Loss: 0.0053
+epoch [3/10]: 474it [00:01, 445.61it/s]
+Epoch: [3/10], Loss: 0.0053
+epoch [4/10]: 474it [00:01, 462.42it/s]
+Epoch: [4/10], Loss: 0.0053
+epoch [5/10]: 474it [00:00, 474.65it/s]
+Epoch: [5/10], Loss: 0.0052
+epoch [6/10]: 474it [00:01, 473.62it/s]
+Epoch: [6/10], Loss: 0.0052
+epoch [7/10]: 474it [00:01, 451.00it/s]
+Epoch: [7/10], Loss: 0.0052
+epoch [8/10]: 474it [00:01, 458.05it/s]
+Epoch: [8/10], Loss: 0.0052
+epoch [9/10]: 474it [00:01, 471.64it/s]
+Epoch: [9/10], Loss: 0.0052
+epoch [10/10]: 474it [00:01, 473.29it/s]
+Epoch: [10/10], Loss: 0.0051
+Evaluating: 1895it [00:02, 690.43it/s]
+Score (accuracy) of the model: 0.60
+Evaluating: 211it [00:00, 683.17it/s]
+Score (accuracy) of the model: 0.59
+Evaluating: 28it [00:00, 736.93it/s]
+Score (accuracy) of the model: 0.56
+Results:
+Train Score (accuracy): 0.599020
+Dev Score (accuracy): 0.585746
+Test Score (accuracy): 0.558486
+[MEMORY]     Incremental layerwise (00 -> 01): 11131.19
+-------------------- Running Layer 00 to 02 ---------------------
+Building model...
+Train: (60614, 2304) (60614,)
+Dev: (6735, 2304) (6735,)
+Test: (872, 2304) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:01, 344.16it/s]
+Epoch: [1/10], Loss: 0.0055
+epoch [2/10]: 474it [00:01, 365.25it/s]
+Epoch: [2/10], Loss: 0.0053
+epoch [3/10]: 474it [00:01, 365.33it/s]
+Epoch: [3/10], Loss: 0.0052
+epoch [4/10]: 474it [00:01, 344.90it/s]
+Epoch: [4/10], Loss: 0.0052
+epoch [5/10]: 474it [00:01, 361.21it/s]
+Epoch: [5/10], Loss: 0.0051
+epoch [6/10]: 474it [00:01, 362.70it/s]
+Epoch: [6/10], Loss: 0.0051
+epoch [7/10]: 474it [00:01, 353.64it/s]
+Epoch: [7/10], Loss: 0.0051
+epoch [8/10]: 474it [00:01, 364.39it/s]
+Epoch: [8/10], Loss: 0.0050
+epoch [9/10]: 474it [00:01, 365.36it/s]
+Epoch: [9/10], Loss: 0.0050
+epoch [10/10]: 474it [00:01, 366.03it/s]
+Epoch: [10/10], Loss: 0.0050
+Evaluating: 1895it [00:03, 576.50it/s]
+Score (accuracy) of the model: 0.64
+Evaluating: 211it [00:00, 603.44it/s]
+Score (accuracy) of the model: 0.63
+Evaluating: 28it [00:00, 606.76it/s]
+Score (accuracy) of the model: 0.61
+Results:
+Train Score (accuracy): 0.644719
+Dev Score (accuracy): 0.633408
+Test Score (accuracy): 0.608945
+[MEMORY]     Incremental layerwise (00 -> 02): 11131.19
+-------------------- Running Layer 00 to 03 ---------------------
+Building model...
+Train: (60614, 3072) (60614,)
+Dev: (6735, 3072) (6735,)
+Test: (872, 3072) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:01, 298.46it/s]
+Epoch: [1/10], Loss: 0.0055
+epoch [2/10]: 474it [00:01, 300.10it/s]
+Epoch: [2/10], Loss: 0.0053
+epoch [3/10]: 474it [00:01, 290.07it/s]
+Epoch: [3/10], Loss: 0.0052
+epoch [4/10]: 474it [00:01, 299.33it/s]
+Epoch: [4/10], Loss: 0.0051
+epoch [5/10]: 474it [00:01, 287.42it/s]
+Epoch: [5/10], Loss: 0.0051
+epoch [6/10]: 474it [00:01, 299.78it/s]
+Epoch: [6/10], Loss: 0.0051
+epoch [7/10]: 474it [00:01, 284.60it/s]
+Epoch: [7/10], Loss: 0.0050
+epoch [8/10]: 474it [00:01, 284.45it/s]
+Epoch: [8/10], Loss: 0.0050
+epoch [9/10]: 474it [00:01, 285.65it/s]
+Epoch: [9/10], Loss: 0.0050
+epoch [10/10]: 474it [00:01, 279.41it/s]
+Epoch: [10/10], Loss: 0.0050
+Evaluating: 1895it [00:03, 515.09it/s]
+Score (accuracy) of the model: 0.65
+Evaluating: 211it [00:00, 547.09it/s]
+Score (accuracy) of the model: 0.64
+Evaluating: 28it [00:00, 298.97it/s]
+Score (accuracy) of the model: 0.60
+Results:
+Train Score (accuracy): 0.645742
+Dev Score (accuracy): 0.638456
+Test Score (accuracy): 0.602064
+[MEMORY]     Incremental layerwise (00 -> 03): 11131.19
+-------------------- Running Layer 00 to 04 ---------------------
+Building model...
+Train: (60614, 3840) (60614,)
+Dev: (6735, 3840) (6735,)
+Test: (872, 3840) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:01, 241.76it/s]
+Epoch: [1/10], Loss: 0.0055
+epoch [2/10]: 474it [00:01, 250.83it/s]
+Epoch: [2/10], Loss: 0.0052
+epoch [3/10]: 474it [00:01, 251.35it/s]
+Epoch: [3/10], Loss: 0.0052
+epoch [4/10]: 474it [00:01, 251.54it/s]
+Epoch: [4/10], Loss: 0.0051
+epoch [5/10]: 474it [00:01, 250.59it/s]
+Epoch: [5/10], Loss: 0.0050
+epoch [6/10]: 474it [00:01, 251.00it/s]
+Epoch: [6/10], Loss: 0.0050
+epoch [7/10]: 474it [00:01, 251.55it/s]
+Epoch: [7/10], Loss: 0.0050
+epoch [8/10]: 474it [00:01, 249.66it/s]
+Epoch: [8/10], Loss: 0.0050
+epoch [9/10]: 474it [00:01, 251.12it/s]
+Epoch: [9/10], Loss: 0.0049
+epoch [10/10]: 474it [00:01, 250.24it/s]
+Epoch: [10/10], Loss: 0.0049
+Evaluating: 1895it [00:03, 499.57it/s]
+Score (accuracy) of the model: 0.62
+Evaluating: 211it [00:00, 527.67it/s]
+Score (accuracy) of the model: 0.62
+Evaluating: 28it [00:00, 571.73it/s]
+Score (accuracy) of the model: 0.56
+Results:
+Train Score (accuracy): 0.624905
+Dev Score (accuracy): 0.617966
+Test Score (accuracy): 0.557339
+[MEMORY]     Incremental layerwise (00 -> 04): 11131.19
+-------------------- Running Layer 00 to 05 ---------------------
+Building model...
+Train: (60614, 4608) (60614,)
+Dev: (6735, 4608) (6735,)
+Test: (872, 4608) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:01, 389.27it/s]
+Epoch: [1/10], Loss: 0.0056
+epoch [2/10]: 474it [00:01, 377.17it/s]
+Epoch: [2/10], Loss: 0.0053
+epoch [3/10]: 474it [00:01, 385.32it/s]
+Epoch: [3/10], Loss: 0.0052
+epoch [4/10]: 474it [00:01, 385.30it/s]
+Epoch: [4/10], Loss: 0.0051
+epoch [5/10]: 474it [00:01, 385.99it/s]
+Epoch: [5/10], Loss: 0.0051
+epoch [6/10]: 474it [00:01, 393.20it/s]
+Epoch: [6/10], Loss: 0.0050
+epoch [7/10]: 474it [00:01, 390.59it/s]
+Epoch: [7/10], Loss: 0.0050
+epoch [8/10]: 474it [00:01, 384.63it/s]
+Epoch: [8/10], Loss: 0.0050
+epoch [9/10]: 474it [00:01, 380.84it/s]
+Epoch: [9/10], Loss: 0.0049
+epoch [10/10]: 474it [00:01, 384.51it/s]
+Epoch: [10/10], Loss: 0.0049
+Evaluating: 1895it [00:03, 597.59it/s]
+Score (accuracy) of the model: 0.59
+Evaluating: 211it [00:00, 492.04it/s]
+Score (accuracy) of the model: 0.59
+Evaluating: 28it [00:00, 522.93it/s]
+Score (accuracy) of the model: 0.53
+Results:
+Train Score (accuracy): 0.587818
+Dev Score (accuracy): 0.586340
+Test Score (accuracy): 0.534404
+[MEMORY]     Incremental layerwise (00 -> 05): 12196.67
+-------------------- Running Layer 00 to 06 ---------------------
+Building model...
+Train: (60614, 5376) (60614,)
+Dev: (6735, 5376) (6735,)
+Test: (872, 5376) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:02, 174.90it/s]
+Epoch: [1/10], Loss: 0.0056
+epoch [2/10]: 474it [00:02, 170.57it/s]
+Epoch: [2/10], Loss: 0.0053
+epoch [3/10]: 474it [00:02, 174.08it/s]
+Epoch: [3/10], Loss: 0.0052
+epoch [4/10]: 474it [00:02, 167.09it/s]
+Epoch: [4/10], Loss: 0.0051
+epoch [5/10]: 474it [00:02, 170.53it/s]
+Epoch: [5/10], Loss: 0.0051
+epoch [6/10]: 474it [00:02, 171.79it/s]
+Epoch: [6/10], Loss: 0.0051
+epoch [7/10]: 474it [00:02, 170.74it/s]
+Epoch: [7/10], Loss: 0.0050
+epoch [8/10]: 474it [00:02, 169.24it/s]
+Epoch: [8/10], Loss: 0.0050
+epoch [9/10]: 474it [00:02, 164.22it/s]
+Epoch: [9/10], Loss: 0.0050
+epoch [10/10]: 474it [00:02, 168.92it/s]
+Epoch: [10/10], Loss: 0.0050
+Evaluating: 1895it [00:04, 409.33it/s]
+Score (accuracy) of the model: 0.57
+Evaluating: 211it [00:00, 461.54it/s]
+Score (accuracy) of the model: 0.56
+Evaluating: 28it [00:00, 486.52it/s]
+Score (accuracy) of the model: 0.53
+Results:
+Train Score (accuracy): 0.565612
+Dev Score (accuracy): 0.563474
+Test Score (accuracy): 0.525229
+[MEMORY]     Incremental layerwise (00 -> 06): 11131.19
+-------------------- Running Layer 00 to 07 ---------------------
+Building model...
+Train: (60614, 6144) (60614,)
+Dev: (6735, 6144) (6735,)
+Test: (872, 6144) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:01, 316.22it/s]
+Epoch: [1/10], Loss: 0.0057
+epoch [2/10]: 474it [00:01, 305.43it/s]
+Epoch: [2/10], Loss: 0.0053
+epoch [3/10]: 474it [00:01, 308.82it/s]
+Epoch: [3/10], Loss: 0.0052
+epoch [4/10]: 474it [00:01, 314.44it/s]
+Epoch: [4/10], Loss: 0.0052
+epoch [5/10]: 474it [00:01, 316.28it/s]
+Epoch: [5/10], Loss: 0.0051
+epoch [6/10]: 474it [00:01, 308.85it/s]
+Epoch: [6/10], Loss: 0.0051
+epoch [7/10]: 474it [00:01, 311.83it/s]
+Epoch: [7/10], Loss: 0.0051
+epoch [8/10]: 474it [00:01, 305.51it/s]
+Epoch: [8/10], Loss: 0.0051
+epoch [9/10]: 474it [00:01, 309.25it/s]
+Epoch: [9/10], Loss: 0.0050
+epoch [10/10]: 474it [00:01, 308.10it/s]
+Epoch: [10/10], Loss: 0.0050
+Evaluating: 1895it [00:03, 543.27it/s]
+Score (accuracy) of the model: 0.56
+Evaluating: 211it [00:00, 412.96it/s]
+Score (accuracy) of the model: 0.55
+Evaluating: 28it [00:00, 472.21it/s]
+Score (accuracy) of the model: 0.52
+Results:
+Train Score (accuracy): 0.555400
+Dev Score (accuracy): 0.554566
+Test Score (accuracy): 0.522936
+[MEMORY]     Incremental layerwise (00 -> 07): 12551.83
+-------------------- Running Layer 00 to 08 ---------------------
+Building model...
+Train: (60614, 6912) (60614,)
+Dev: (6735, 6912) (6735,)
+Test: (872, 6912) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:03, 122.41it/s]
+Epoch: [1/10], Loss: 0.0057
+epoch [2/10]: 474it [00:03, 122.34it/s]
+Epoch: [2/10], Loss: 0.0053
+epoch [3/10]: 474it [00:03, 121.40it/s]
+Epoch: [3/10], Loss: 0.0052
+epoch [4/10]: 474it [00:04, 118.28it/s]
+Epoch: [4/10], Loss: 0.0052
+epoch [5/10]: 474it [00:03, 124.64it/s]
+Epoch: [5/10], Loss: 0.0051
+epoch [6/10]: 474it [00:03, 123.04it/s]
+Epoch: [6/10], Loss: 0.0051
+epoch [7/10]: 474it [00:03, 120.90it/s]
+Epoch: [7/10], Loss: 0.0051
+epoch [8/10]: 474it [00:03, 124.74it/s]
+Epoch: [8/10], Loss: 0.0051
+epoch [9/10]: 474it [00:03, 124.49it/s]
+Epoch: [9/10], Loss: 0.0051
+epoch [10/10]: 474it [00:03, 123.11it/s]
+Epoch: [10/10], Loss: 0.0050
+Evaluating: 1895it [00:05, 324.64it/s]
+Score (accuracy) of the model: 0.56
+Evaluating: 211it [00:00, 399.14it/s]
+Score (accuracy) of the model: 0.56
+Evaluating: 28it [00:00, 440.54it/s]
+Score (accuracy) of the model: 0.52
+Results:
+Train Score (accuracy): 0.557874
+Dev Score (accuracy): 0.557238
+Test Score (accuracy): 0.524083
+[MEMORY]     Incremental layerwise (00 -> 08): 11131.19
+-------------------- Running Layer 00 to 09 ---------------------
+Building model...
+Train: (60614, 7680) (60614,)
+Dev: (6735, 7680) (6735,)
+Test: (872, 7680) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:01, 253.98it/s]
+Epoch: [1/10], Loss: 0.0058
+epoch [2/10]: 474it [00:01, 250.49it/s]
+Epoch: [2/10], Loss: 0.0053
+epoch [3/10]: 474it [00:01, 253.26it/s]
+Epoch: [3/10], Loss: 0.0052
+epoch [4/10]: 474it [00:01, 254.52it/s]
+Epoch: [4/10], Loss: 0.0052
+epoch [5/10]: 474it [00:01, 252.31it/s]
+Epoch: [5/10], Loss: 0.0051
+epoch [6/10]: 474it [00:01, 249.22it/s]
+Epoch: [6/10], Loss: 0.0051
+epoch [7/10]: 474it [00:01, 252.37it/s]
+Epoch: [7/10], Loss: 0.0051
+epoch [8/10]: 474it [00:01, 253.46it/s]
+Epoch: [8/10], Loss: 0.0050
+epoch [9/10]: 474it [00:01, 254.39it/s]
+Epoch: [9/10], Loss: 0.0050
+epoch [10/10]: 474it [00:01, 251.86it/s]
+Epoch: [10/10], Loss: 0.0050
+Evaluating: 1895it [00:03, 495.91it/s]
+Score (accuracy) of the model: 0.54
+Evaluating: 211it [00:00, 351.57it/s]
+Score (accuracy) of the model: 0.54
+Evaluating: 28it [00:00, 459.27it/s]
+Score (accuracy) of the model: 0.51
+Results:
+Train Score (accuracy): 0.543686
+Dev Score (accuracy): 0.544024
+Test Score (accuracy): 0.509174
+[MEMORY]     Incremental layerwise (00 -> 09): 12906.99
+-------------------- Running Layer 00 to 10 ---------------------
+Building model...
+Train: (60614, 8448) (60614,)
+Dev: (6735, 8448) (6735,)
+Test: (872, 8448) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:04, 95.46it/s]
+Epoch: [1/10], Loss: 0.0059
+epoch [2/10]: 474it [00:05, 94.77it/s]
+Epoch: [2/10], Loss: 0.0054
+epoch [3/10]: 474it [00:04, 95.30it/s]
+Epoch: [3/10], Loss: 0.0053
+epoch [4/10]: 474it [00:04, 95.74it/s]
+Epoch: [4/10], Loss: 0.0052
+epoch [5/10]: 474it [00:04, 95.18it/s]
+Epoch: [5/10], Loss: 0.0052
+epoch [6/10]: 474it [00:04, 95.22it/s]
+Epoch: [6/10], Loss: 0.0051
+epoch [7/10]: 474it [00:05, 93.43it/s]
+Epoch: [7/10], Loss: 0.0051
+epoch [8/10]: 474it [00:05, 94.49it/s]
+Epoch: [8/10], Loss: 0.0051
+epoch [9/10]: 474it [00:04, 95.51it/s]
+Epoch: [9/10], Loss: 0.0051
+epoch [10/10]: 474it [00:05, 94.72it/s]
+Epoch: [10/10], Loss: 0.0051
+Evaluating: 1895it [00:07, 268.63it/s]
+Score (accuracy) of the model: 0.55
+Evaluating: 211it [00:00, 300.08it/s]
+Score (accuracy) of the model: 0.55
+Evaluating: 28it [00:00, 384.43it/s]
+Score (accuracy) of the model: 0.51
+Results:
+Train Score (accuracy): 0.545270
+Dev Score (accuracy): 0.546251
+Test Score (accuracy): 0.508028
+[MEMORY]     Incremental layerwise (00 -> 10): 11131.19
+-------------------- Running Layer 00 to 11 ---------------------
+Building model...
+Train: (60614, 9216) (60614,)
+Dev: (6735, 9216) (6735,)
+Test: (872, 9216) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:02, 208.58it/s]
+Epoch: [1/10], Loss: 0.0059
+epoch [2/10]: 474it [00:02, 203.53it/s]
+Epoch: [2/10], Loss: 0.0054
+epoch [3/10]: 474it [00:02, 207.05it/s]
+Epoch: [3/10], Loss: 0.0054
+epoch [4/10]: 474it [00:02, 204.90it/s]
+Epoch: [4/10], Loss: 0.0053
+epoch [5/10]: 474it [00:02, 208.53it/s]
+Epoch: [5/10], Loss: 0.0053
+epoch [6/10]: 474it [00:02, 209.06it/s]
+Epoch: [6/10], Loss: 0.0052
+epoch [7/10]: 474it [00:02, 207.56it/s]
+Epoch: [7/10], Loss: 0.0052
+epoch [8/10]: 474it [00:02, 209.01it/s]
+Epoch: [8/10], Loss: 0.0052
+epoch [9/10]: 474it [00:02, 208.31it/s]
+Epoch: [9/10], Loss: 0.0052
+epoch [10/10]: 474it [00:02, 208.44it/s]
+Epoch: [10/10], Loss: 0.0051
+Evaluating: 1895it [00:03, 485.86it/s]
+Score (accuracy) of the model: 0.55
+Evaluating: 211it [00:00, 333.96it/s]
+Score (accuracy) of the model: 0.55
+Evaluating: 28it [00:00, 354.02it/s]
+Score (accuracy) of the model: 0.51
+Results:
+Train Score (accuracy): 0.546705
+Dev Score (accuracy): 0.547439
+Test Score (accuracy): 0.506881
+[MEMORY]     Incremental layerwise (00 -> 11): 13262.15
+---------------- Copying Layer 00 to 12 from baseline -----------------
+[MEMORY] After incremental layerwise run: 11131.19
+********************* SELECTING NEURONS *********************
+********************* SELECTING MINIMUM LAYERS (3% drop) *********************
+Gold score (accuracy) (Baseline): 0.554269
+Target score (accuracy) (3% drop): 0.537641
+Selected top layer: Layer 00
+Dev score: 0.553526
+[MEMORY] After top layer selection: 11131.19
+********************* RUNNING NEURON SELECTION *********************
+------------- Clustering (threshold -1.00) ----------
+Building model...
+Train: (60614, 768) (60614,)
+Dev: (6735, 768) (6735,)
+Test: (872, 768) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:00, 723.28it/s]
+Epoch: [1/10], Loss: 0.0054
+epoch [2/10]: 474it [00:00, 732.33it/s]
+Epoch: [2/10], Loss: 0.0054
+epoch [3/10]: 474it [00:00, 730.50it/s]
+Epoch: [3/10], Loss: 0.0054
+epoch [4/10]: 474it [00:00, 723.48it/s]
+Epoch: [4/10], Loss: 0.0054
+epoch [5/10]: 474it [00:00, 670.27it/s]
+Epoch: [5/10], Loss: 0.0054
+epoch [6/10]: 474it [00:00, 712.21it/s]
+Epoch: [6/10], Loss: 0.0054
+epoch [7/10]: 474it [00:00, 726.88it/s]
+Epoch: [7/10], Loss: 0.0054
+epoch [8/10]: 474it [00:00, 709.75it/s]
+Epoch: [8/10], Loss: 0.0054
+epoch [9/10]: 474it [00:00, 710.38it/s]
+Epoch: [9/10], Loss: 0.0054
+epoch [10/10]: 474it [00:00, 726.56it/s]
+Epoch: [10/10], Loss: 0.0054
+Evaluating: 1895it [00:02, 884.42it/s]
+Score (accuracy) of the model: 0.56
+Evaluating: 211it [00:00, 897.88it/s]
+Score (accuracy) of the model: 0.55
+Evaluating: 28it [00:00, 944.86it/s]
+Score (accuracy) of the model: 0.51
+Results:
+Train Score (accuracy): 0.558303
+Dev Score (accuracy): 0.553526
+Test Score (accuracy): 0.509174
+Gold score (Baseline with selected top layer [and potential clustering]): 0.553526
+Target score (1% drop): 0.547991
+Getting neuron ranking...
+100%|█████████████████████████████████████████████████████████████████████████████████| 1001/1001 [00:00<00:00, 3100.33it/s]
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (60614, 9) (60614,)
+Dev: (6735, 9) (6735,)
+Test: (872, 9) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:00, 1081.16it/s]
+Epoch: [1/10], Loss: 0.0054
+epoch [2/10]: 474it [00:00, 1079.93it/s]
+Epoch: [2/10], Loss: 0.0054
+epoch [3/10]: 474it [00:00, 1082.25it/s]
+Epoch: [3/10], Loss: 0.0054
+epoch [4/10]: 474it [00:00, 1081.73it/s]
+Epoch: [4/10], Loss: 0.0054
+epoch [5/10]: 474it [00:00, 1076.15it/s]
+Epoch: [5/10], Loss: 0.0054
+epoch [6/10]: 474it [00:00, 1084.00it/s]
+Epoch: [6/10], Loss: 0.0054
+epoch [7/10]: 474it [00:00, 1077.80it/s]
+Epoch: [7/10], Loss: 0.0054
+epoch [8/10]: 474it [00:00, 1083.67it/s]
+Epoch: [8/10], Loss: 0.0054
+epoch [9/10]: 474it [00:00, 1083.52it/s]
+Epoch: [9/10], Loss: 0.0054
+epoch [10/10]: 474it [00:00, 1083.09it/s]
+Epoch: [10/10], Loss: 0.0054
+Evaluating: 1895it [00:01, 986.43it/s]
+Score (accuracy) of the model: 0.56
+Evaluating: 211it [00:00, 1016.54it/s]
+Score (accuracy) of the model: 0.55
+Evaluating: 28it [00:00, 1027.98it/s]
+Score (accuracy) of the model: 0.51
+Results:
+Train Score (accuracy): 0.558303
+Dev Score (accuracy): 0.553526
+Test Score (accuracy): 0.509174
+------------- Clustering (threshold 0.30) ----------
+/work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/lib/python3.8/site-packages/numpy/lib/function_base.py:2691: RuntimeWarning: invalid value encountered in true_divide
+  c /= stddev[:, None]
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (60614, 768) (60614,)
+Dev: (6735, 768) (6735,)
+Test: (872, 768) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:00, 693.02it/s]
+Epoch: [1/10], Loss: 0.0054
+epoch [2/10]: 474it [00:00, 702.63it/s]
+Epoch: [2/10], Loss: 0.0054
+epoch [3/10]: 474it [00:00, 704.65it/s]
+Epoch: [3/10], Loss: 0.0054
+epoch [4/10]: 474it [00:00, 678.41it/s]
+Epoch: [4/10], Loss: 0.0054
+epoch [5/10]: 474it [00:00, 711.73it/s]
+Epoch: [5/10], Loss: 0.0054
+epoch [6/10]: 474it [00:00, 730.84it/s]
+Epoch: [6/10], Loss: 0.0054
+epoch [7/10]: 474it [00:00, 723.71it/s]
+Epoch: [7/10], Loss: 0.0054
+epoch [8/10]: 474it [00:00, 730.15it/s]
+Epoch: [8/10], Loss: 0.0054
+epoch [9/10]: 474it [00:00, 727.76it/s]
+Epoch: [9/10], Loss: 0.0054
+epoch [10/10]: 474it [00:00, 710.75it/s]
+Epoch: [10/10], Loss: 0.0054
+Evaluating: 1895it [00:02, 899.45it/s]
+Score (accuracy) of the model: 0.56
+Evaluating: 211it [00:00, 853.59it/s]
+Score (accuracy) of the model: 0.55
+Evaluating: 28it [00:00, 925.45it/s]
+Score (accuracy) of the model: 0.51
+Results:
+Train Score (accuracy): 0.558303
+Dev Score (accuracy): 0.553526
+Test Score (accuracy): 0.509174
+Gold score (Baseline with selected top layer [and potential clustering]): 0.553526
+Target score (1% drop): 0.547991
+Getting neuron ranking...
+100%|█████████████████████████████████████████████████████████████████████████████████| 1001/1001 [00:00<00:00, 3106.66it/s]
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (60614, 9) (60614,)
+Dev: (6735, 9) (6735,)
+Test: (872, 9) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:00, 1047.26it/s]
+Epoch: [1/10], Loss: 0.0057
+epoch [2/10]: 474it [00:00, 1033.10it/s]
+Epoch: [2/10], Loss: 0.0054
+epoch [3/10]: 474it [00:00, 993.88it/s]
+Epoch: [3/10], Loss: 0.0054
+epoch [4/10]: 474it [00:00, 1023.12it/s]
+Epoch: [4/10], Loss: 0.0054
+epoch [5/10]: 474it [00:00, 1019.07it/s]
+Epoch: [5/10], Loss: 0.0054
+epoch [6/10]: 474it [00:00, 1046.72it/s]
+Epoch: [6/10], Loss: 0.0054
+epoch [7/10]: 474it [00:00, 1046.53it/s]
+Epoch: [7/10], Loss: 0.0054
+epoch [8/10]: 474it [00:00, 1049.36it/s]
+Epoch: [8/10], Loss: 0.0054
+epoch [9/10]: 474it [00:00, 1049.33it/s]
+Epoch: [9/10], Loss: 0.0054
+epoch [10/10]: 474it [00:00, 1055.61it/s]
+Epoch: [10/10], Loss: 0.0054
+Evaluating: 1895it [00:01, 976.85it/s]
+Score (accuracy) of the model: 0.56
+Evaluating: 211it [00:00, 1006.24it/s]
+Score (accuracy) of the model: 0.55
+Evaluating: 28it [00:00, 1007.57it/s]
+Score (accuracy) of the model: 0.51
+Results:
+Train Score (accuracy): 0.558303
+Dev Score (accuracy): 0.553526
+Test Score (accuracy): 0.509174
+[MEMORY] After neuron selection: 11145.06
+********************* SELECTING MINIMUM LAYERS (2% drop) *********************
+Gold score (accuracy) (Baseline): 0.554269
+Target score (accuracy) (2% drop): 0.543183
+Selected top layer: Layer 00
+Dev score: 0.553526
+[MEMORY] After top layer selection: 11145.06
+********************* RUNNING NEURON SELECTION *********************
+------------- Clustering (threshold -1.00) ----------
+Building model...
+Train: (60614, 768) (60614,)
+Dev: (6735, 768) (6735,)
+Test: (872, 768) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:00, 726.66it/s]
+Epoch: [1/10], Loss: 0.0054
+epoch [2/10]: 474it [00:00, 731.03it/s]
+Epoch: [2/10], Loss: 0.0054
+epoch [3/10]: 474it [00:00, 699.73it/s]
+Epoch: [3/10], Loss: 0.0054
+epoch [4/10]: 474it [00:00, 728.57it/s]
+Epoch: [4/10], Loss: 0.0054
+epoch [5/10]: 474it [00:00, 728.68it/s]
+Epoch: [5/10], Loss: 0.0054
+epoch [6/10]: 474it [00:00, 727.34it/s]
+Epoch: [6/10], Loss: 0.0054
+epoch [7/10]: 474it [00:00, 721.83it/s]
+Epoch: [7/10], Loss: 0.0054
+epoch [8/10]: 474it [00:00, 673.26it/s]
+Epoch: [8/10], Loss: 0.0054
+epoch [9/10]: 474it [00:00, 680.12it/s]
+Epoch: [9/10], Loss: 0.0054
+epoch [10/10]: 474it [00:00, 682.41it/s]
+Epoch: [10/10], Loss: 0.0054
+Evaluating: 1895it [00:02, 885.76it/s]
+Score (accuracy) of the model: 0.56
+Evaluating: 211it [00:00, 897.63it/s]
+Score (accuracy) of the model: 0.55
+Evaluating: 28it [00:00, 938.41it/s]
+Score (accuracy) of the model: 0.51
+Results:
+Train Score (accuracy): 0.558303
+Dev Score (accuracy): 0.553526
+Test Score (accuracy): 0.509174
+Gold score (Baseline with selected top layer [and potential clustering]): 0.553526
+Target score (1% drop): 0.547991
+Getting neuron ranking...
+100%|█████████████████████████████████████████████████████████████████████████████████| 1001/1001 [00:00<00:00, 3175.05it/s]
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (60614, 9) (60614,)
+Dev: (6735, 9) (6735,)
+Test: (872, 9) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:00, 1051.17it/s]
+Epoch: [1/10], Loss: 0.0054
+epoch [2/10]: 474it [00:00, 1044.27it/s]
+Epoch: [2/10], Loss: 0.0054
+epoch [3/10]: 474it [00:00, 1053.68it/s]
+Epoch: [3/10], Loss: 0.0054
+epoch [4/10]: 474it [00:00, 1022.23it/s]
+Epoch: [4/10], Loss: 0.0054
+epoch [5/10]: 474it [00:00, 1046.92it/s]
+Epoch: [5/10], Loss: 0.0054
+epoch [6/10]: 474it [00:00, 1072.81it/s]
+Epoch: [6/10], Loss: 0.0054
+epoch [7/10]: 474it [00:00, 1052.11it/s]
+Epoch: [7/10], Loss: 0.0054
+epoch [8/10]: 474it [00:00, 1031.15it/s]
+Epoch: [8/10], Loss: 0.0054
+epoch [9/10]: 474it [00:00, 1057.46it/s]
+Epoch: [9/10], Loss: 0.0054
+epoch [10/10]: 474it [00:00, 1055.86it/s]
+Epoch: [10/10], Loss: 0.0054
+Evaluating: 1895it [00:01, 985.07it/s]
+Score (accuracy) of the model: 0.56
+Evaluating: 211it [00:00, 1013.50it/s]
+Score (accuracy) of the model: 0.55
+Evaluating: 28it [00:00, 1026.73it/s]
+Score (accuracy) of the model: 0.51
+Results:
+Train Score (accuracy): 0.558303
+Dev Score (accuracy): 0.553526
+Test Score (accuracy): 0.509174
+------------- Clustering (threshold 0.30) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (60614, 768) (60614,)
+Dev: (6735, 768) (6735,)
+Test: (872, 768) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:00, 707.28it/s]
+Epoch: [1/10], Loss: 0.0054
+epoch [2/10]: 474it [00:00, 727.18it/s]
+Epoch: [2/10], Loss: 0.0054
+epoch [3/10]: 474it [00:00, 719.70it/s]
+Epoch: [3/10], Loss: 0.0054
+epoch [4/10]: 474it [00:00, 727.46it/s]
+Epoch: [4/10], Loss: 0.0054
+epoch [5/10]: 474it [00:00, 726.49it/s]
+Epoch: [5/10], Loss: 0.0054
+epoch [6/10]: 474it [00:00, 702.52it/s]
+Epoch: [6/10], Loss: 0.0054
+epoch [7/10]: 474it [00:00, 723.71it/s]
+Epoch: [7/10], Loss: 0.0054
+epoch [8/10]: 474it [00:00, 729.44it/s]
+Epoch: [8/10], Loss: 0.0054
+epoch [9/10]: 474it [00:00, 720.15it/s]
+Epoch: [9/10], Loss: 0.0054
+epoch [10/10]: 474it [00:00, 720.85it/s]
+Epoch: [10/10], Loss: 0.0054
+Evaluating: 1895it [00:02, 910.96it/s]
+Score (accuracy) of the model: 0.56
+Evaluating: 211it [00:00, 904.07it/s]
+Score (accuracy) of the model: 0.55
+Evaluating: 28it [00:00, 933.02it/s]
+Score (accuracy) of the model: 0.51
+Results:
+Train Score (accuracy): 0.558303
+Dev Score (accuracy): 0.553526
+Test Score (accuracy): 0.509174
+Gold score (Baseline with selected top layer [and potential clustering]): 0.553526
+Target score (1% drop): 0.547991
+Getting neuron ranking...
+100%|█████████████████████████████████████████████████████████████████████████████████| 1001/1001 [00:00<00:00, 3183.90it/s]
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (60614, 9) (60614,)
+Dev: (6735, 9) (6735,)
+Test: (872, 9) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:00, 1044.62it/s]
+Epoch: [1/10], Loss: 0.0054
+epoch [2/10]: 474it [00:00, 1054.03it/s]
+Epoch: [2/10], Loss: 0.0054
+epoch [3/10]: 474it [00:00, 1048.97it/s]
+Epoch: [3/10], Loss: 0.0054
+epoch [4/10]: 474it [00:00, 1049.80it/s]
+Epoch: [4/10], Loss: 0.0054
+epoch [5/10]: 474it [00:00, 1052.25it/s]
+Epoch: [5/10], Loss: 0.0054
+epoch [6/10]: 474it [00:00, 1051.04it/s]
+Epoch: [6/10], Loss: 0.0054
+epoch [7/10]: 474it [00:00, 1045.23it/s]
+Epoch: [7/10], Loss: 0.0054
+epoch [8/10]: 474it [00:00, 1057.22it/s]
+Epoch: [8/10], Loss: 0.0054
+epoch [9/10]: 474it [00:00, 1054.84it/s]
+Epoch: [9/10], Loss: 0.0054
+epoch [10/10]: 474it [00:00, 1042.26it/s]
+Epoch: [10/10], Loss: 0.0054
+Evaluating: 1895it [00:01, 985.91it/s]
+Score (accuracy) of the model: 0.56
+Evaluating: 211it [00:00, 1012.59it/s]
+Score (accuracy) of the model: 0.55
+Evaluating: 28it [00:00, 1016.77it/s]
+Score (accuracy) of the model: 0.51
+Results:
+Train Score (accuracy): 0.558303
+Dev Score (accuracy): 0.553526
+Test Score (accuracy): 0.509174
+[MEMORY] After neuron selection: 11145.07
+********************* SELECTING MINIMUM LAYERS (1% drop) *********************
+Gold score (accuracy) (Baseline): 0.554269
+Target score (accuracy) (1% drop): 0.548726
+Selected top layer: Layer 00
+Dev score: 0.553526
+[MEMORY] After top layer selection: 11145.07
+********************* RUNNING NEURON SELECTION *********************
+------------- Clustering (threshold -1.00) ----------
+Building model...
+Train: (60614, 768) (60614,)
+Dev: (6735, 768) (6735,)
+Test: (872, 768) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:00, 726.92it/s]
+Epoch: [1/10], Loss: 0.0054
+epoch [2/10]: 474it [00:00, 735.49it/s]
+Epoch: [2/10], Loss: 0.0054
+epoch [3/10]: 474it [00:00, 728.88it/s]
+Epoch: [3/10], Loss: 0.0054
+epoch [4/10]: 474it [00:00, 730.77it/s]
+Epoch: [4/10], Loss: 0.0054
+epoch [5/10]: 474it [00:00, 719.81it/s]
+Epoch: [5/10], Loss: 0.0054
+epoch [6/10]: 474it [00:00, 731.42it/s]
+Epoch: [6/10], Loss: 0.0054
+epoch [7/10]: 474it [00:00, 728.17it/s]
+Epoch: [7/10], Loss: 0.0054
+epoch [8/10]: 474it [00:00, 703.53it/s]
+Epoch: [8/10], Loss: 0.0054
+epoch [9/10]: 474it [00:00, 682.69it/s]
+Epoch: [9/10], Loss: 0.0054
+epoch [10/10]: 474it [00:00, 680.42it/s]
+Epoch: [10/10], Loss: 0.0054
+Evaluating: 1895it [00:02, 875.52it/s]
+Score (accuracy) of the model: 0.56
+Evaluating: 211it [00:00, 880.76it/s]
+Score (accuracy) of the model: 0.55
+Evaluating: 28it [00:00, 932.98it/s]
+Score (accuracy) of the model: 0.51
+Results:
+Train Score (accuracy): 0.558303
+Dev Score (accuracy): 0.553526
+Test Score (accuracy): 0.509174
+Gold score (Baseline with selected top layer [and potential clustering]): 0.553526
+Target score (1% drop): 0.547991
+Getting neuron ranking...
+100%|█████████████████████████████████████████████████████████████████████████████████| 1001/1001 [00:00<00:00, 3134.93it/s]
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (60614, 9) (60614,)
+Dev: (6735, 9) (6735,)
+Test: (872, 9) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:00, 1073.63it/s]
+Epoch: [1/10], Loss: 0.0056
+epoch [2/10]: 474it [00:00, 1050.81it/s]
+Epoch: [2/10], Loss: 0.0054
+epoch [3/10]: 474it [00:00, 1051.67it/s]
+Epoch: [3/10], Loss: 0.0054
+epoch [4/10]: 474it [00:00, 1052.34it/s]
+Epoch: [4/10], Loss: 0.0054
+epoch [5/10]: 474it [00:00, 1050.31it/s]
+Epoch: [5/10], Loss: 0.0054
+epoch [6/10]: 474it [00:00, 1050.08it/s]
+Epoch: [6/10], Loss: 0.0054
+epoch [7/10]: 474it [00:00, 1052.87it/s]
+Epoch: [7/10], Loss: 0.0054
+epoch [8/10]: 474it [00:00, 1051.43it/s]
+Epoch: [8/10], Loss: 0.0054
+epoch [9/10]: 474it [00:00, 1051.47it/s]
+Epoch: [9/10], Loss: 0.0054
+epoch [10/10]: 474it [00:00, 1052.09it/s]
+Epoch: [10/10], Loss: 0.0054
+Evaluating: 1895it [00:01, 1019.61it/s]
+Score (accuracy) of the model: 0.56
+Evaluating: 211it [00:00, 1016.92it/s]
+Score (accuracy) of the model: 0.55
+Evaluating: 28it [00:00, 428.93it/s]
+Score (accuracy) of the model: 0.51
+Results:
+Train Score (accuracy): 0.558303
+Dev Score (accuracy): 0.553526
+Test Score (accuracy): 0.509174
+------------- Clustering (threshold 0.30) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (60614, 768) (60614,)
+Dev: (6735, 768) (6735,)
+Test: (872, 768) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:00, 680.11it/s]
+Epoch: [1/10], Loss: 0.0054
+epoch [2/10]: 474it [00:00, 690.55it/s]
+Epoch: [2/10], Loss: 0.0054
+epoch [3/10]: 474it [00:00, 688.01it/s]
+Epoch: [3/10], Loss: 0.0054
+epoch [4/10]: 474it [00:00, 661.45it/s]
+Epoch: [4/10], Loss: 0.0054
+epoch [5/10]: 474it [00:00, 680.18it/s]
+Epoch: [5/10], Loss: 0.0054
+epoch [6/10]: 474it [00:00, 683.55it/s]
+Epoch: [6/10], Loss: 0.0054
+epoch [7/10]: 474it [00:00, 672.77it/s]
+Epoch: [7/10], Loss: 0.0054
+epoch [8/10]: 474it [00:00, 695.57it/s]
+Epoch: [8/10], Loss: 0.0054
+epoch [9/10]: 474it [00:00, 715.63it/s]
+Epoch: [9/10], Loss: 0.0054
+epoch [10/10]: 474it [00:00, 714.45it/s]
+Epoch: [10/10], Loss: 0.0054
+Evaluating: 1895it [00:02, 910.30it/s]
+Score (accuracy) of the model: 0.56
+Evaluating: 211it [00:00, 907.14it/s]
+Score (accuracy) of the model: 0.55
+Evaluating: 28it [00:00, 935.05it/s]
+Score (accuracy) of the model: 0.51
+Results:
+Train Score (accuracy): 0.558303
+Dev Score (accuracy): 0.553526
+Test Score (accuracy): 0.509174
+Gold score (Baseline with selected top layer [and potential clustering]): 0.553526
+Target score (1% drop): 0.547991
+Getting neuron ranking...
+100%|█████████████████████████████████████████████████████████████████████████████████| 1001/1001 [00:00<00:00, 3192.98it/s]
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (60614, 9) (60614,)
+Dev: (6735, 9) (6735,)
+Test: (872, 9) (872,)
+Training classification model
+Creating model...
+Number of training instances: 60614
+Number of classes: 2
+epoch [1/10]: 474it [00:00, 1065.53it/s]
+Epoch: [1/10], Loss: 0.0054
+epoch [2/10]: 474it [00:00, 1063.59it/s]
+Epoch: [2/10], Loss: 0.0054
+epoch [3/10]: 474it [00:00, 976.43it/s]
+Epoch: [3/10], Loss: 0.0054
+epoch [4/10]: 474it [00:00, 1031.27it/s]
+Epoch: [4/10], Loss: 0.0054
+epoch [5/10]: 474it [00:00, 1063.84it/s]
+Epoch: [5/10], Loss: 0.0054
+epoch [6/10]: 474it [00:00, 1067.46it/s]
+Epoch: [6/10], Loss: 0.0054
+epoch [7/10]: 474it [00:00, 1051.32it/s]
+Epoch: [7/10], Loss: 0.0054
+epoch [8/10]: 474it [00:00, 1050.35it/s]
+Epoch: [8/10], Loss: 0.0054
+epoch [9/10]: 474it [00:00, 1048.96it/s]
+Epoch: [9/10], Loss: 0.0054
+epoch [10/10]: 474it [00:00, 1026.83it/s]
+Epoch: [10/10], Loss: 0.0054
+Evaluating: 1895it [00:01, 976.42it/s]
+Score (accuracy) of the model: 0.56
+Evaluating: 211it [00:00, 1013.76it/s]
+Score (accuracy) of the model: 0.55
+Evaluating: 28it [00:00, 986.38it/s]
+Score (accuracy) of the model: 0.51
+Results:
+Train Score (accuracy): 0.558303
+Dev Score (accuracy): 0.553526
+Test Score (accuracy): 0.509174
+[MEMORY] After neuron selection: 11145.07
+***************************** SUMMARY *****************************
+Baseline Score (accuracy): 0.508028
+Independent Layerwise:
+  Layer 00: 0.509174
+  Layer 01: 0.592890
+  Layer 02: 0.608945
+  Layer 03: 0.611239
+  Layer 04: 0.621560
+  Layer 05: 0.622706
+  Layer 06: 0.629587
+  Layer 07: 0.637615
+  Layer 08: 0.641055
+  Layer 09: 0.635321
+  Layer 10: 0.622706
+  Layer 11: 0.633028
+  Layer 12: 0.636468
+Incremental Layerwise:
+  Layer 0 -> 00: 0.509174
+  Layer 0 -> 01: 0.558486
+  Layer 0 -> 02: 0.608945
+  Layer 0 -> 03: 0.602064
+  Layer 0 -> 04: 0.557339
+  Layer 0 -> 05: 0.534404
+  Layer 0 -> 06: 0.525229
+  Layer 0 -> 07: 0.522936
+  Layer 0 -> 08: 0.524083
+  Layer 0 -> 09: 0.509174
+  Layer 0 -> 10: 0.508028
+  Layer 0 -> 11: 0.506881
+  Layer 0 -> 12: 0.508028
+Selection parameters: selection-3-1
+Selected top layer: Layer 00
+Clustering paramter: no-clustering
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.509174
+Clustering paramter: clustering-0.30
+Independent Neurons: 768 neurons
+CC score (accuracy): 0.509174
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.509174
+Selection parameters: selection-2-1
+Selected top layer: Layer 00
+Clustering paramter: no-clustering
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.509174
+Clustering paramter: clustering-0.30
+Independent Neurons: 768 neurons
+CC score (accuracy): 0.509174
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.509174
+Selection parameters: selection-1-1
+Selected top layer: Layer 00
+Clustering paramter: no-clustering
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.509174
+Clustering paramter: clustering-0.30
+Independent Neurons: 768 neurons
+CC score (accuracy): 0.509174
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.50917
+
