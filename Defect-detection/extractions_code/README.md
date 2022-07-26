@@ -19,6 +19,7 @@ ml-gpu <path to environment>/finetuning_env/bin/pip3 install --force --extra-ind
 ### 3. Run run_extraction.py
 
 Update paths (model and data) in jobscript as needed.
+Model is obtained from huggingface model hub directly and dataset is obtained from CodeXGLUE. Details about dataset at https://github.com/microsoft/CodeXGLUE/tree/main/Code-Code/Defect-detection 
 ```
 sbatch jobscript
 ```
