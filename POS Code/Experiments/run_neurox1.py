@@ -289,7 +289,7 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
         train_test_split(codebert_X, codebert_y, test_size=0.2,random_state=50, shuffle=False)
     graphcodebert_X_train, graphcodebert_X_test, graphcodebert_y_train, graphcodebert_y_test = \
         train_test_split(graphcodebert_X, graphcodebert_y, test_size=0.2,random_state=50, shuffle=False)
-    def bert_X, bert_y, codebert_X, codebert_y, graphcodebert_X, graphcodebert_y
+    del bert_X, bert_y, codebert_X, codebert_y, graphcodebert_X, graphcodebert_y
     #All activations probes
     bert_probe, codebert_probe, graphcodebert_probe, bert_scores, codebert_scores, graphcodebert_scores = all_activations_probe()
 
