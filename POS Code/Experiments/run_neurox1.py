@@ -218,33 +218,39 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
         print("Creating control dataset for BERT POS tagging task")
         [bert_ct_tokens] = ct.create_sequence_labeling_dataset(bert_tokens, sample_from='uniform')
         print([s+'/'+str(t) for s,t in zip(bert_ct_tokens['source'][0], bert_ct_tokens['target'][0])])
-        bert_X, bert_y_ct, bert_mapping_ct = utils.create_tensors(bert_ct_tokens, bert_activations, 'NAME')
+        bert_X_ct, bert_y_ct, bert_mapping_ct = utils.create_tensors(bert_ct_tokens, bert_activations, 'NAME')
         bert_label2idx_ct, bert_idx2label_ct, bert_src2idx_ct, bert_idx2src_ct = bert_mapping_ct
 
-        bert_ct_probe = linear_probe.train_logistic_regression_probe(bert_X, bert_y_ct, lambda_l1=0.001, lambda_l2=0.001)
-        bert_ct_scores = linear_probe.evaluate_probe(bert_ct_probe, bert_X, bert_y_ct, idx_to_class=bert_idx2label_ct)
+        bert_X_ct_train, bert_X_ct_test, bert_y_ct_train, bert_y_ct_test = \
+            train_test_split(bert_X_ct, bert_y_ct, test_size=0.2,random_state=50, shuffle=False)
+        bert_ct_probe = linear_probe.train_logistic_regression_probe(bert_X_ct_train, bert_y_ct_train, lambda_l1=0.001, lambda_l2=0.001)
+        bert_ct_scores = linear_probe.evaluate_probe(bert_ct_probe, bert_X_ct_test, bert_y_ct_test, idx_to_class=bert_idx2label_ct)
         bert_selectivity = bert_scores['__OVERALL__'] - bert_ct_scores['__OVERALL__']
         print('BERT Selectivity (Diff. between true task and probing task performance): ', bert_selectivity)
 
         print("Creating control dataset for CodeBERT POS tagging task")
         [codebert_ct_tokens] = ct.create_sequence_labeling_dataset(codebert_tokens, sample_from='uniform')
         print([s+'/'+str(t) for s,t in zip(codebert_ct_tokens['source'][0], codebert_ct_tokens['target'][0])])
-        codebert_X, codebert_y_ct, codebert_mapping_ct = utils.create_tensors(codebert_ct_tokens, codebert_activations, 'NAME')
+        codebert_X_ct, codebert_y_ct, codebert_mapping_ct = utils.create_tensors(codebert_ct_tokens, codebert_activations, 'NAME')
         codebert_label2idx_ct, codebert_idx2label_ct, codebert_src2idx_ct, codebert_idx2src_ct = codebert_mapping_ct
 
-        codebert_ct_probe = linear_probe.train_logistic_regression_probe(codebert_X, codebert_y_ct, lambda_l1=0.001, lambda_l2=0.001)
-        codebert_ct_scores = linear_probe.evaluate_probe(codebert_ct_probe, codebert_X, codebert_y_ct, idx_to_class=codebert_idx2label_ct)
+        codebert_X_ct_train, codebert_X_ct_test, codebert_y_ct_train, codebert_y_ct_test = \
+            train_test_split(codebert_X_ct, codebert_y_ct, test_size=0.2,random_state=50, shuffle=False)
+        codebert_ct_probe = linear_probe.train_logistic_regression_probe(codebert_X_ct_train, codebert_y_ct_train, lambda_l1=0.001, lambda_l2=0.001)
+        codebert_ct_scores = linear_probe.evaluate_probe(codebert_ct_probe, codebert_X_ct_test, codebert_y_ct_test, idx_to_class=codebert_idx2label_ct)
         codebert_selectivity = codebert_scores['__OVERALL__'] - codebert_ct_scores['__OVERALL__']
         print('CodeBERT Selectivity (Diff. between true task and probing task performance): ', codebert_selectivity)
 
         print("Creating control dataset for GraphCodeBERT POS tagging task")
         [graphcodebert_ct_tokens] = ct.create_sequence_labeling_dataset(graphcodebert_tokens, sample_from='uniform')
         print([s+'/'+str(t) for s,t in zip(graphcodebert_ct_tokens['source'][0], graphcodebert_ct_tokens['target'][0])])
-        graphcodebert_X, graphcodebert_y_ct, graphcodebert_mapping_ct = utils.create_tensors(graphcodebert_ct_tokens, graphcodebert_activations, 'NAME')
+        graphcodebert_X_ct, graphcodebert_y_ct, graphcodebert_mapping_ct = utils.create_tensors(graphcodebert_ct_tokens, graphcodebert_activations, 'NAME')
         graphcodebert_label2idx_ct, graphcodebert_idx2label_ct, graphcodebert_src2idx_ct, graphcodebert_idx2src_ct = graphcodebert_mapping_ct
 
-        graphcodebert_ct_probe = linear_probe.train_logistic_regression_probe(graphcodebert_X, graphcodebert_y_ct, lambda_l1=0.001, lambda_l2=0.001)
-        graphcodebert_ct_scores = linear_probe.evaluate_probe(graphcodebert_ct_probe, graphcodebert_X, graphcodebert_y_ct, idx_to_class=graphcodebert_idx2label_ct)
+        graphcodebert_X_ct_train, graphcodebert_X_ct_test, graphcodebert_y_ct_train, graphcodebert_y_ct_test = \
+            train_test_split(codebert_X_ct, codebert_y_ct, test_size=0.2,random_state=50, shuffle=False)
+        graphcodebert_ct_probe = linear_probe.train_logistic_regression_probe(graphcodebert_X_ct_train, graphcodebert_y_ct_train, lambda_l1=0.001, lambda_l2=0.001)
+        graphcodebert_ct_scores = linear_probe.evaluate_probe(graphcodebert_ct_probe, graphcodebert_X_ct_test, graphcodebert_y_ct_test, idx_to_class=graphcodebert_idx2label_ct)
         graphcodebert_selectivity = graphcodebert_scores['__OVERALL__'] - graphcodebert_ct_scores['__OVERALL__']
         print('GraphCodeBERT Selectivity (Diff. between true task and probing task performance): ', graphcodebert_selectivity)
 
