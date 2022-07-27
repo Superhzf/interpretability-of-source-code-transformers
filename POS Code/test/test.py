@@ -2,6 +2,10 @@ import torch
 import time
 from sklearn.utils import shuffle
 import numpy as np
+import sklearn
+###sklearn version
+print('The scikit-learn version is {}.'.format(sklearn.__version__))
+
 ###CPU
 start_time = time.time()
 a = torch.ones(400,400)
