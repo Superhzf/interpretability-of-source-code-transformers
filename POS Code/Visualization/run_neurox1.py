@@ -96,7 +96,7 @@ def visualization(bert_tokens, bert_activations,
             layer=0
             neuron=5
             print("len bert_activations",len(bert_activations))
-            print("bert_activations shape",bert_activations[s_idx])
+            print("bert_activations shape",bert_activations[s_idx].shape)
             this_svg=viz.visualize_activations(bert_tokens['source'][s_idx],
                                                bert_activations[s_idx][layer,neuron],
                                                filter_fn="top_tokens")
