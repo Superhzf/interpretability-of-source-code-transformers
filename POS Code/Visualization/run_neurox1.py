@@ -19,22 +19,25 @@ def extract_activations():
     #Extract representations from BERT
     transformers_extractor.extract_representations('bert-base-uncased',
         'codetest2.in',
-        'bert_activations.json',
-        aggregation="average" #last, first
+        'bert_activations_decomp_layer.json',
+        aggregation="average",#last, first
+        decompose_layers=True # we need this to be true to work with different layers
     )
 
     #Extract representations from CodeBERT
     transformers_extractor.extract_representations('microsoft/codebert-base',
         'codetest2.in',
-        'codebert_activations.json',
-        aggregation="average" #last, first
+        'codebert_activations_decomp_layer.json',
+        aggregation="average", # #last, first
+        decompose_layers=True
     )
 
     #Extract representations from GraphCodeBERT
     transformers_extractor.extract_representations('microsoft/graphcodebert-base',
         'codetest2.in',
-        'graphcodebert_activations.json',
-        aggregation="average" #last, first
+        'graphcodebert_activations_decomp_layer.json',
+        aggregation="average",#last, first
+        decompose_layers=True
     )
 
     return(load_extracted_activations())
@@ -42,13 +45,13 @@ def extract_activations():
 
 def load_extracted_activations(dev):
     if dev:
-        bert_activations, bert_num_layers = data_loader.load_activations('bert_activations.json',13) #num_layers is 13 not 768
+        bert_activations, bert_num_layers = data_loader.load_activations('bert_activations_decomp_layer.json',13) #num_layers is 13 not 768
         return bert_activations
     else:
         #Load activations from json files
-        bert_activations, bert_num_layers = data_loader.load_activations('bert_activations.json',13) #num_layers is 13 not 768
-        codebert_activations, codebert_num_layers = data_loader.load_activations('codebert_activations.json',13) #num_layers is 13 not 768
-        graphcodebert_activations, graphcodebert_num_layers = data_loader.load_activations('graphcodebert_activations.json',13)
+        bert_activations, bert_num_layers = data_loader.load_activations('bert_activations_decomp_layer.json',13) #num_layers is 13 not 768
+        codebert_activations, codebert_num_layers = data_loader.load_activations('codebert_activations_decomp_layer.json',13) #num_layers is 13 not 768
+        graphcodebert_activations, graphcodebert_num_layers = data_loader.load_activations('graphcodebert_activations_decomp_layer.json',13)
 
         return bert_activations, codebert_activations, graphcodebert_activations
 
@@ -97,12 +100,12 @@ def visualization(bert_tokens, bert_activations,
             neuron=5
             print("len bert_activations",len(bert_activations))
             print("bert_activations shape",bert_activations[s_idx].shape)
-            this_svg=viz.visualize_activations(bert_tokens['source'][s_idx],
-                                               bert_activations[s_idx][layer,neuron],
-                                               filter_fn="top_tokens")
-            # this_svg=viz(bert_tokens["source"][s_idx], layer, neuron, filter_fn="top_tokens")
-            image_name = f"bert_{s_idx}.svg"
-            this_svg.save(pretty=True, indent=2)
+            # this_svg=viz.visualize_activations(bert_tokens['source'][s_idx],
+            #                                    bert_activations[s_idx][layer,neuron],
+            #                                    filter_fn="top_tokens")
+            # # this_svg=viz(bert_tokens["source"][s_idx], layer, neuron, filter_fn="top_tokens")
+            # image_name = f"bert_{s_idx}.svg"
+            # this_svg.save(pretty=True, indent=2)
             break
 
 
