@@ -6,3 +6,4 @@ dataset/cubert/*/original/*eval*
 dataset/cubert/*/generated/*train*
 dataset/cubert/*/generated/*dev*
 dataset/cubert/*/generated/*eval*
+*.ipynb*
