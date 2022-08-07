@@ -97,7 +97,7 @@ def visualization(bert_tokens, codebert_tokens=None, graphcodebert_tokens=None,d
         for s_idx in range(len(bert_tokens["source"])):
             this_svg=viz(bert_tokens["source"][s_idx], 0, 5, filter_fn="top_tokens")
             image_name = f"bert_{s_idx}.svg"
-            this_svg.savefig(image_name,format='svg')
+            this_svg.save(pretty=True, indent=2)
             break
 
 
