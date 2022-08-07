@@ -115,11 +115,11 @@ def main():
     if dev:
         bert_activations = load_extracted_activations(True)
         bert_tokens =  load_tokens(bert_activations,None,None,True)
-        bert_probe, codebert_probe, graphcodebert_probe = visualizetion(bert_tokens, None, None,True)
+        visualizetion(bert_tokens, None, None,True)
     else:
         bert_activations, codebert_activations, graphcodebert_activations = load_extracted_activations(False)
         bert_tokens, codebert_tokens, graphcodebert_tokens =  load_tokens(bert_activations, codebert_activations, graphcodebert_activations,False)
-        bert_probe, codebert_probe, graphcodebert_probe = visualizetion(bert_tokens, codebert_tokens, graphcodebert_tokens)
+        visualizetion(bert_tokens, codebert_tokens, graphcodebert_tokens)
 
 
 if __name__ == "__main__":
