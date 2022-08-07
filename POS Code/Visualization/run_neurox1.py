@@ -86,20 +86,29 @@ def load_tokens(bert_activations,codebert_activations=None, graphcodebert_activa
 
 
 
-def visualization(bert_tokens, bert_activations,
-                  codebert_tokens=None, codebert_activations=None,
-                  graphcodebert_tokens=None,graphcodebert_activations=None,
+def visualization(bert_tokens,
+                  codebert_tokens=None,
+                  graphcodebert_tokens=None,
                   dev=True):
+    viz_bert = TransformersVisualizer('bert-base-uncased')
+    viz_codebert = TransformersVisualizer('microsoft/codebert-base')
+    viz_graphcoderbert = TransformersVisualizer('microsoft/graphcodebert-base')
+    layer=0
+    neuron=5
     if dev:
-        viz = TransformersVisualizer('bert-base-uncased')
         for s_idx in range(len(bert_tokens["source"])):
-            layer=0
-            neuron=5
-            this_svg=viz(bert_tokens["source"][s_idx], layer, neuron, filter_fn="top_tokens")
-            image_name = f"bert_{s_idx}.svg"
-            this_svg.save(pretty=True, indent=2)
+            this_svg=viz_bert(bert_tokens["source"][s_idx], layer, neuron, filter_fn="top_tokens")
+            this_svg.saveas(f"bert_{s_idx}_{layer}_{neuron}",pretty=True, indent=2)
             break
-
+    else:
+        for s_idx in range(len(bert_tokens["source"])):
+            this_svg_bert=viz_bert(bert_tokens["source"][s_idx], layer, neuron, filter_fn="top_tokens")
+            this_svg_codebert=viz_codebert(codebert_tokens["source"][s_idx], layer, neuron, filter_fn="top_tokens")
+            this_svg_graphcodebert=viz_graphcoderbert(codebert_tokens["source"][s_idx], layer, neuron, filter_fn="top_tokens")
+            this_svg_bert.saveas(f"bert_{s_idx}_{layer}_{neuron}",pretty=True, indent=2)
+            this_svg_codebert.saveas(f"codebert_{s_idx}_{layer}_{neuron}",pretty=True, indent=2)
+            this_svg_graphcodebert.saveas(f"graphcodebert_{s_idx}_{layer}_{neuron}",pretty=True, indent=2)
+            break
 
 def main():
     parser = argparse.ArgumentParser()
