@@ -8,7 +8,6 @@ import pickle
 import neurox
 import neurox.data.extraction.transformers_extractor as transformers_extractor
 import neurox.data.loader as data_loader
-from IPython.display import display
 from neurox.analysis.visualization import TransformersVisualizer
 
 
