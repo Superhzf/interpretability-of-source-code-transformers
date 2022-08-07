@@ -8,10 +8,7 @@ import pickle
 import neurox
 import neurox.data.extraction.transformers_extractor as transformers_extractor
 import neurox.data.loader as data_loader
-# from neurox.analysis.visualization import TransformersVisualizer
-import neurox.analysis.visualization as viz
-
-
+from neurox.analysis.visualization import TransformersVisualizer
 
 
 #Extract activations.json files
@@ -19,25 +16,25 @@ def extract_activations():
     #Extract representations from BERT
     transformers_extractor.extract_representations('bert-base-uncased',
         'codetest2.in',
-        'bert_activations_decomp_layer.json',
+        'bert_activations.json',
         aggregation="average",#last, first
-        decompose_layers=True # we need this to be true to work with different layers
+        decompose_layers=False # we need this to be true to work with different layers
     )
 
     #Extract representations from CodeBERT
     transformers_extractor.extract_representations('microsoft/codebert-base',
         'codetest2.in',
-        'codebert_activations_decomp_layer.json',
+        'codebert_activations.json',
         aggregation="average", # #last, first
-        decompose_layers=True
+        decompose_layers=False
     )
 
     #Extract representations from GraphCodeBERT
     transformers_extractor.extract_representations('microsoft/graphcodebert-base',
         'codetest2.in',
-        'graphcodebert_activations_decomp_layer.json',
+        'graphcodebert_activations.json',
         aggregation="average",#last, first
-        decompose_layers=True
+        decompose_layers=False
     )
 
     return(load_extracted_activations())
@@ -45,13 +42,13 @@ def extract_activations():
 
 def load_extracted_activations(dev):
     if dev:
-        bert_activations, bert_num_layers = data_loader.load_activations('bert_activations_decomp_layer.json',13) #num_layers is 13 not 768
+        bert_activations, bert_num_layers = data_loader.load_activations('bert_activations.json',13) #num_layers is 13 not 768
         return bert_activations
     else:
         #Load activations from json files
-        bert_activations, bert_num_layers = data_loader.load_activations('bert_activations_decomp_layer.json',13) #num_layers is 13 not 768
-        codebert_activations, codebert_num_layers = data_loader.load_activations('codebert_activations_decomp_layer.json',13) #num_layers is 13 not 768
-        graphcodebert_activations, graphcodebert_num_layers = data_loader.load_activations('graphcodebert_activations_decomp_layer.json',13)
+        bert_activations, bert_num_layers = data_loader.load_activations('bert_activations.json',13) #num_layers is 13 not 768
+        codebert_activations, codebert_num_layers = data_loader.load_activations('codebert_activations.json',13) #num_layers is 13 not 768
+        graphcodebert_activations, graphcodebert_num_layers = data_loader.load_activations('graphcodebert_activations.json',13)
 
         return bert_activations, codebert_activations, graphcodebert_activations
 
@@ -94,18 +91,13 @@ def visualization(bert_tokens, bert_activations,
                   graphcodebert_tokens=None,graphcodebert_activations=None,
                   dev=True):
     if dev:
-        # viz = TransformersVisualizer('bert-base-uncased')
+        viz = TransformersVisualizer('bert-base-uncased')
         for s_idx in range(len(bert_tokens["source"])):
             layer=0
             neuron=5
-            print("len bert_activations",len(bert_activations))
-            print("bert_activations shape",bert_activations[s_idx].shape)
-            # this_svg=viz.visualize_activations(bert_tokens['source'][s_idx],
-            #                                    bert_activations[s_idx][layer,neuron],
-            #                                    filter_fn="top_tokens")
-            # # this_svg=viz(bert_tokens["source"][s_idx], layer, neuron, filter_fn="top_tokens")
-            # image_name = f"bert_{s_idx}.svg"
-            # this_svg.save(pretty=True, indent=2)
+            this_svg=viz(bert_tokens["source"][s_idx], layer, neuron, filter_fn="top_tokens")
+            image_name = f"bert_{s_idx}.svg"
+            this_svg.save(pretty=True, indent=2)
             break
 
 
