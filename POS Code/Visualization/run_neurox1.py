@@ -8,16 +8,10 @@ import pickle
 import neurox
 import neurox.data.extraction.transformers_extractor as transformers_extractor
 import neurox.data.loader as data_loader
-from neurox.analysis.visualization import TransformersVisualizer
+# from neurox.analysis.visualization import TransformersVisualizer
+import neurox.analysis.visualization as viz
 
 
-
-def preprocessing():
-    ''' Create codetest.in and codetest.label from python code files'''
-
-    def skiplines():
-        #Modify the cloned NeuroX library to remove the restriction on number of skip lines. Consolidate everything.Include preprocessing here.
-        None
 
 
 #Extract activations.json files
@@ -58,6 +52,7 @@ def load_extracted_activations(dev):
 
         return bert_activations, codebert_activations, graphcodebert_activations
 
+
 def load_tokens(bert_activations,codebert_activations=None, graphcodebert_activations=None,dev=True):
     if dev:
         bert_tokens = data_loader.load_data('codetest2.in',
@@ -91,11 +86,19 @@ def load_tokens(bert_activations,codebert_activations=None, graphcodebert_activa
 
 
 
-def visualization(bert_tokens, codebert_tokens=None, graphcodebert_tokens=None,dev=True):
+def visualization(bert_tokens, bert_activations,
+                  codebert_tokens=None, codebert_activations=None,
+                  graphcodebert_tokens=None,graphcodebert_activations=None,
+                  dev=True):
     if dev:
-        viz = TransformersVisualizer('bert-base-uncased')
+        # viz = TransformersVisualizer('bert-base-uncased')
         for s_idx in range(len(bert_tokens["source"])):
-            this_svg=viz(bert_tokens["source"][s_idx], 0, 5, filter_fn="top_tokens")
+            layer=0
+            neuron=5
+            this_svg=viz.visualize_activations(bert_tokens['source'][s_idx],
+                                               bert_activations[layer,:,neuron],
+                                               filter_fn="top_tokens")
+            # this_svg=viz(bert_tokens["source"][s_idx], layer, neuron, filter_fn="top_tokens")
             image_name = f"bert_{s_idx}.svg"
             this_svg.save(pretty=True, indent=2)
             break
@@ -114,11 +117,14 @@ def main():
     if args.dev:
         bert_activations = load_extracted_activations(True)
         bert_tokens =  load_tokens(bert_activations,None,None,True)
-        visualization(bert_tokens, None, None,True)
+        visualization(bert_tokens, bert_activations, None, None, None, None, True)
     else:
         bert_activations, codebert_activations, graphcodebert_activations = load_extracted_activations(False)
         bert_tokens, codebert_tokens, graphcodebert_tokens =  load_tokens(bert_activations, codebert_activations, graphcodebert_activations,False)
-        visualization(bert_tokens, codebert_tokens, graphcodebert_tokens,False)
+        visualization(bert_tokens, bert_activations,
+                      codebert_tokens, codebert_activations,
+                      graphcodebert_tokens,graphcodebert_activations,
+                      False)
 
 
 if __name__ == "__main__":
