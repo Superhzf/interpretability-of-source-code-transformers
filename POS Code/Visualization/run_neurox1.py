@@ -8,7 +8,6 @@ import pickle
 import neurox
 import neurox.data.extraction.transformers_extractor as transformers_extractor
 import neurox.data.loader as data_loader
-# from neurox.analysis.visualization import TransformersVisualizer
 import neurox.analysis.visualization as vis
 
 
@@ -94,31 +93,42 @@ def visualization(bert_tokens, bert_activations,
     # viz_bert = TransformersVisualizer('bert-base-uncased')
     # viz_codebert = TransformersVisualizer('microsoft/codebert-base')
     # viz_graphcoderbert = TransformersVisualizer('microsoft/graphcodebert-base')
-    layer=0
-    neuron=5
+
     if dev:
+        layer=0
+        neuron=5
         for s_idx in range(len(bert_tokens["source"])):
             this_svg = vis.visualize_activations(bert_tokens["source"][s_idx],
                                                  bert_activations[s_idx][:, neuron],
                                                  filter_fn="top_tokens")
-            # this_svg=viz_bert(bert_tokens["source"][s_idx], layer, neuron, filter_fn="top_tokens")
             this_svg.saveas(f"bert_{s_idx}_{layer}_{neuron}.svg",pretty=True, indent=2)
             break
     else:
-        for s_idx in range(len(bert_tokens["source"])):
-            this_svg_bert = vis.visualize_activations(bert_tokens["source"][s_idx],
-                                                 bert_activations[s_idx][:, neuron],
-                                                 filter_fn="top_tokens")
-            this_svg_codebert = vis.visualize_activations(codebert_tokens["source"][s_idx],
-                                                 codebert_activations[s_idx][:, neuron],
-                                                 filter_fn="top_tokens")
-            this_svg_graphcodebert = vis.visualize_activations(codebert_tokens["source"][s_idx],
-                                                 graphcodebert_activations[s_idx][:, neuron],
-                                                 filter_fn="top_tokens")
-            this_svg_bert.saveas(f"bert_{s_idx}_{layer}_{neuron}.svg",pretty=True, indent=2)
-            this_svg_codebert.saveas(f"codebert_{s_idx}_{layer}_{neuron}.svg",pretty=True, indent=2)
-            this_svg_graphcodebert.saveas(f"graphcodebert_{s_idx}_{layer}_{neuron}.svg",pretty=True, indent=2)
-            break
+        layer = 0
+        # starting from 1.
+        at_idx = [16789, 17502, 17814]
+        at_top_neurons = [436]
+        for this_neuron in at_top_neurons:
+            for this_idx in at_idx:
+                this_svg_bert = vis.visualize_activations(bert_tokens["source"][this_idx-1],
+                                                     bert_activations[this_idx-1][:, this_neuron-1],
+                                                     filter_fn="top_tokens")
+                this_svg_bert.saveas(f"result/bert_{this_idx-1}_{layer}_{this_neuron-1}.svg",pretty=True, indent=2)
+
+        less_idx = [46,297,396]
+        less_top_neurons = [535]
+        for this_neuron in less_top_neurons:
+            for this_idx in less_idx:
+                this_svg_codebert = vis.visualize_activations(codebert_tokens["source"][this_idx-1],
+                                                     codebert_activations[this_idx-1][:, this_neuron-1],
+                                                     filter_fn="top_tokens")
+                this_svg_codebert.saveas(f"result/codebert_{this_idx-1}_{layer}_{this_neuron-1}.svg",pretty=True, indent=2)
+
+            # this_svg_graphcodebert = vis.visualize_activations(codebert_tokens["source"][s_idx],
+            #                                      graphcodebert_activations[s_idx][:, neuron],
+            #                                      filter_fn="top_tokens")
+            #
+            # this_svg_graphcodebert.saveas(f"graphcodebert_{s_idx}_{layer}_{neuron}.svg",pretty=True, indent=2)
 
 def main():
     parser = argparse.ArgumentParser()
