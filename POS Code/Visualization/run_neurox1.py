@@ -87,7 +87,7 @@ def load_tokens(bert_activations,codebert_activations=None, graphcodebert_activa
 
 
 
-def visualization(bert_tokens, bert_activations
+def visualization(bert_tokens, bert_activations,
                   codebert_tokens = None, codebert_activations = None,
                   graphcodebert_tokens = None, graphcodebert_activations = None,
                   dev=True):
