@@ -120,7 +120,7 @@ def main():
     else:
         print("Getting activations from json files. If you need to extract them, run with --extract=True \n" )
 
-    if args.dev:
+    if args.dev == 'True':
         bert_activations = load_extracted_activations(True)
         bert_tokens =  load_tokens(bert_activations,None,None,True)
         visualization(bert_tokens, None, None, True)
