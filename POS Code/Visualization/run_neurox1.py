@@ -123,13 +123,13 @@ def main():
     if args.dev:
         bert_activations = load_extracted_activations(True)
         bert_tokens =  load_tokens(bert_activations,None,None,True)
-        visualization(bert_tokens, bert_activations, None, None, None, None, True)
+        visualization(bert_tokens, None, None, True)
     else:
         bert_activations, codebert_activations, graphcodebert_activations = load_extracted_activations(False)
         bert_tokens, codebert_tokens, graphcodebert_tokens =  load_tokens(bert_activations, codebert_activations, graphcodebert_activations,False)
-        visualization(bert_tokens, bert_activations,
-                      codebert_tokens, codebert_activations,
-                      graphcodebert_tokens,graphcodebert_activations,
+        visualization(bert_tokens,
+                      codebert_tokens,
+                      graphcodebert_tokens,
                       False)
 
 
