@@ -106,9 +106,15 @@ def visualization(bert_tokens, bert_activations,
             break
     else:
         for s_idx in range(len(bert_tokens["source"])):
-            this_svg_bert=viz_bert(bert_tokens["source"][s_idx], layer, neuron, filter_fn="top_tokens")
-            this_svg_codebert=viz_codebert(codebert_tokens["source"][s_idx], layer, neuron, filter_fn="top_tokens")
-            this_svg_graphcodebert=viz_graphcoderbert(codebert_tokens["source"][s_idx], layer, neuron, filter_fn="top_tokens")
+            this_svg_bert = vis.visualize_activations(bert_tokens["source"][s_idx],
+                                                 bert_activations[s_idx][:, neuron],
+                                                 filter_fn="top_tokens")
+            this_svg_codebert = vis.visualize_activations(codebert_tokens["source"][s_idx],
+                                                 codebert_activations[s_idx][:, neuron],
+                                                 filter_fn="top_tokens")
+            this_svg_graphcodebert = vis.visualize_activations(codebert_tokens["source"][s_idx],
+                                                 graphcodebert_activations[s_idx][:, neuron],
+                                                 filter_fn="top_tokens")
             this_svg_bert.saveas(f"bert_{s_idx}_{layer}_{neuron}",pretty=True, indent=2)
             this_svg_codebert.saveas(f"codebert_{s_idx}_{layer}_{neuron}",pretty=True, indent=2)
             this_svg_graphcodebert.saveas(f"graphcodebert_{s_idx}_{layer}_{neuron}",pretty=True, indent=2)
