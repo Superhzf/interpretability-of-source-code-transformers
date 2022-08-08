@@ -8,7 +8,8 @@ import pickle
 import neurox
 import neurox.data.extraction.transformers_extractor as transformers_extractor
 import neurox.data.loader as data_loader
-from neurox.analysis.visualization import TransformersVisualizer
+# from neurox.analysis.visualization import TransformersVisualizer
+import neurox.analysis.visualization as vis
 
 
 #Extract activations.json files
@@ -86,18 +87,20 @@ def load_tokens(bert_activations,codebert_activations=None, graphcodebert_activa
 
 
 
-def visualization(bert_tokens,
-                  codebert_tokens=None,
-                  graphcodebert_tokens=None,
+def visualization(bert_tokens, bert_activations
+                  codebert_tokens = None, codebert_activations = None,
+                  graphcodebert_tokens = None, graphcodebert_activations = None,
                   dev=True):
-    viz_bert = TransformersVisualizer('bert-base-uncased')
-    viz_codebert = TransformersVisualizer('microsoft/codebert-base')
-    viz_graphcoderbert = TransformersVisualizer('microsoft/graphcodebert-base')
+    # viz_bert = TransformersVisualizer('bert-base-uncased')
+    # viz_codebert = TransformersVisualizer('microsoft/codebert-base')
+    # viz_graphcoderbert = TransformersVisualizer('microsoft/graphcodebert-base')
     layer=0
     neuron=5
     if dev:
         for s_idx in range(len(bert_tokens["source"])):
-            this_svg=viz_bert(bert_tokens["source"][s_idx], layer, neuron, filter_fn="top_tokens")
+            this_svg = vis_bert.visualize_activations(bert_tokens["source"][s_idx],
+                                                      bert_activations[s_idx][:, neuron])
+            # this_svg=viz_bert(bert_tokens["source"][s_idx], layer, neuron, filter_fn="top_tokens")
             this_svg.saveas(f"bert_{s_idx}_{layer}_{neuron}",pretty=True, indent=2)
             break
     else:
@@ -122,14 +125,14 @@ def main():
 
     if args.dev == 'True':
         bert_activations = load_extracted_activations(True)
-        bert_tokens =  load_tokens(bert_activations,None,None,True)
-        visualization(bert_tokens, None, None, True)
+        bert_tokens =  load_tokens(bert_activations, None, None,True)
+        visualization(bert_tokens, bert_activations, None, None, None, None, True)
     else:
         bert_activations, codebert_activations, graphcodebert_activations = load_extracted_activations(False)
         bert_tokens, codebert_tokens, graphcodebert_tokens =  load_tokens(bert_activations, codebert_activations, graphcodebert_activations,False)
-        visualization(bert_tokens,
-                      codebert_tokens,
-                      graphcodebert_tokens,
+        visualization(bert_tokens, bert_activations,
+                      codebert_tokens,codebert_activations,
+                      graphcodebert_tokens,graphcodebert_activations,
                       False)
 
 
