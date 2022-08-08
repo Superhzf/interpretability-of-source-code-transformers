@@ -102,7 +102,7 @@ def visualization(bert_tokens, bert_activations,
                                                  bert_activations[s_idx][:, neuron],
                                                  filter_fn="top_tokens")
             # this_svg=viz_bert(bert_tokens["source"][s_idx], layer, neuron, filter_fn="top_tokens")
-            this_svg.saveas(f"bert_{s_idx}_{layer}_{neuron}",pretty=True, indent=2)
+            this_svg.saveas(f"bert_{s_idx}_{layer}_{neuron}.svg",pretty=True, indent=2)
             break
     else:
         for s_idx in range(len(bert_tokens["source"])):
