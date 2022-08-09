@@ -106,8 +106,8 @@ def visualization(bert_tokens, bert_activations,
     else:
         layer = 0
         # starting from 1.
-        at_idx = [16789, 17502, 17814]
-        at_top_neurons = [2514]
+        at_idx = [1, 5,7,8,9,10,11,12,13]
+        at_top_neurons = [2411]
         for this_neuron in at_top_neurons:
             for this_idx in at_idx:
                 this_svg_bert = vis.visualize_activations(bert_tokens["source"][this_idx-1],
