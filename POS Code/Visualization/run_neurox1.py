@@ -108,7 +108,7 @@ def visualization(bert_tokens, bert_activations,
         # starting from 1.
         greater_idx = [46,49,75,827]
         greater_top_neurons = [2946]
-        print(type(bert_activations[0:10][:, this_neuron]))
+        print(type(bert_activations[0:10][:, 2946]))
         print(type(bert_tokens["source"][0:10]))
         for this_neuron in greater_top_neurons:
             for this_idx in greater_idx:
