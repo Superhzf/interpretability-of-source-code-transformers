@@ -18,6 +18,7 @@ codebert_names = []
 for this_neuron in codebert_top_neurons:
     for this_idx in codebert_idx:
         this_name = f"codebert_{this_idx-1}_{layer}_{this_neuron}.svg"
+        codebert_names.append(this_name)
 
 os.system(f"/work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python \
             svg_stack-main/svg_stack.py result/{codebert_names[0]} result/space.svg \
