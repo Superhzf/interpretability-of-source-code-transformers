@@ -9,6 +9,7 @@ import neurox
 import neurox.data.extraction.transformers_extractor as transformers_extractor
 import neurox.data.loader as data_loader
 import neurox.analysis.visualization as vis
+import os
 
 
 #Extract activations.json files
@@ -108,12 +109,18 @@ def visualization(bert_tokens, bert_activations,
         # starting from 1.
         greater_idx = [46,49,75,827]
         greater_top_neurons = [2946]
+        name_list = []
         for this_neuron in greater_top_neurons:
             for this_idx in greater_idx:
                 this_svg_bert = vis.visualize_activations(bert_tokens["source"][this_idx-1],
                                                      bert_activations[this_idx-1][:, this_neuron],
                                                      filter_fn="top_tokens")
-                this_svg_bert.saveas(f"result/bert_{this_idx-1}_{layer}_{this_neuron-1}.svg",pretty=True, indent=2)
+                name = f"result/bert_{this_idx-1}_{layer}_{this_neuron-1}.svg"
+                this_svg_bert.saveas(name,pretty=True, indent=2)
+                name_list.append(name)
+        command = f"python svg_stack-main/svg_stack.py result/{name[0]} result/space.svg result/{name[1]} result/space.svg result/{name[2]} result/space.svg result/{name[3]} > result/bert.svg"
+        os.system(command)
+
 
         # less_idx = [46,297,396]
         # less_top_neurons = [535]
