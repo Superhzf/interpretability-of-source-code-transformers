@@ -14,7 +14,7 @@ import os
 layer = 0
 bert_idx = [46,49,75,827]
 bert_top_neurons = [2946]
-codebert_idx = [1,3,6,17,18]
+codebert_idx = [1,3,6,17]
 codebert_top_neurons = [5585]
 
 
