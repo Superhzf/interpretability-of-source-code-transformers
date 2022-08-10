@@ -14,8 +14,8 @@ import os
 layer = 0
 bert_idx = [46,49,75,827]
 bert_top_neurons = [2946]
-codebert_idx = []
-codebert_top_neurons = []
+codebert_idx = [1,14,16,31,34,37,39]
+codebert_top_neurons = [5585]
 
 
 #Extract activations.json files
@@ -120,16 +120,13 @@ def visualization(bert_tokens, bert_activations,
                 name = f"result/bert_{this_idx-1}_{layer}_{this_neuron-1}.svg"
                 this_svg_bert.saveas(name,pretty=True, indent=2)
 
-
-
-        # less_idx = [46,297,396]
-        # less_top_neurons = [535]
-        # for this_neuron in less_top_neurons:
-        #     for this_idx in less_idx:
-        #         this_svg_codebert = vis.visualize_activations(codebert_tokens["source"][this_idx-1],
-        #                                              codebert_activations[this_idx-1][:, this_neuron],
-        #                                              filter_fn="top_tokens")
-        #         this_svg_codebert.saveas(f"result/codebert_{this_idx-1}_{layer}_{this_neuron-1}.svg",pretty=True, indent=2)
+        for this_neuron in codebert_top_neurons:
+            for this_idx in codebert_idx:
+                this_svg_codebert = vis.visualize_activations(codebert_tokens["source"][this_idx-1],
+                                                     codebert_activations[this_idx-1][:, this_neuron],
+                                                     filter_fn="top_tokens")
+                name = f"result/codebert_{this_idx-1}_{layer}_{this_neuron-1}.svg"
+                this_svg_codebert.saveas(name,pretty=True, indent=2)
 
             # this_svg_graphcodebert = vis.visualize_activations(codebert_tokens["source"][s_idx],
             #                                      graphcodebert_activations[s_idx][:, neuron],
