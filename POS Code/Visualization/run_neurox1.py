@@ -96,14 +96,21 @@ def visualization(bert_tokens, bert_activations,
     # viz_graphcoderbert = TransformersVisualizer('microsoft/graphcodebert-base')
 
     if dev:
-        layer=0
-        neuron=5
-        for s_idx in range(len(bert_tokens["source"])):
-            this_svg = vis.visualize_activations(bert_tokens["source"][s_idx],
-                                                 bert_activations[s_idx][:, neuron],
-                                                 filter_fn="top_tokens")
-            this_svg.saveas(f"bert_{s_idx}_{layer}_{neuron}.svg",pretty=True, indent=2)
-            break
+        layer = 0
+        # starting from 1.
+        greater_idx = [46,49,75,827]
+        greater_top_neurons = [2946]
+        name_list = []
+        for this_neuron in greater_top_neurons:
+            for this_idx in greater_idx:
+                this_svg_bert = vis.visualize_activations(bert_tokens["source"][this_idx-1],
+                                                     bert_activations[this_idx-1][:, this_neuron],
+                                                     filter_fn="top_tokens")
+                name = f"result/bert_{this_idx-1}_{layer}_{this_neuron-1}.svg"
+                this_svg_bert.saveas(name,pretty=True, indent=2)
+                name_list.append(name)
+        command = f"python svg_stack-main/svg_stack.py result/{name[0]} result/space.svg result/{name[1]} result/space.svg result/{name[2]} result/space.svg result/{name[3]} > result/bert.svg"
+        os.system(command)
     else:
         layer = 0
         # starting from 1.
