@@ -110,8 +110,8 @@ def visualization(bert_tokens, bert_activations,
         greater_top_neurons = [2946]
         for this_neuron in greater_top_neurons:
             for this_idx in greater_idx:
-                this_svg_bert = vis.visualize_activations(bert_tokens["source"][this_idx-1:this_idx+2],
-                                                     bert_activations[this_idx-1:this_idx+2][:, this_neuron],
+                this_svg_bert = vis.visualize_activations(bert_tokens["source"][this_idx-1],
+                                                     bert_activations[this_idx-1][:, this_neuron],
                                                      filter_fn="top_tokens")
                 this_svg_bert.saveas(f"result/bert_{this_idx-1}_{layer}_{this_neuron-1}.svg",pretty=True, indent=2)
 
