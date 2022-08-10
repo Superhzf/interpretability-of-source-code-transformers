@@ -11,6 +11,12 @@ import neurox.data.loader as data_loader
 import neurox.analysis.visualization as vis
 import os
 
+layer = 0
+bert_idx = [46,49,75,827]
+bert_top_neurons = [2946]
+codebert_idx = []
+codebert_top_neurons = []
+
 
 #Extract activations.json files
 def extract_activations():
@@ -96,22 +102,16 @@ def visualization(bert_tokens, bert_activations,
     # viz_graphcoderbert = TransformersVisualizer('microsoft/graphcodebert-base')
 
     if dev:
-        layer = 0
         # starting from 1.
-        greater_idx = [46,49,75,827]
-        greater_top_neurons = [2946]
-        for this_neuron in greater_top_neurons:
-            for this_idx in greater_idx:
+        for this_neuron in bert_top_neurons:
+            for this_idx in bert_idx:
                 this_svg_bert = vis.visualize_activations(bert_tokens["source"][this_idx-1],
                                                      bert_activations[this_idx-1][:, this_neuron],
                                                      filter_fn="top_tokens")
                 name = f"result/bert_{this_idx-1}_{layer}_{this_neuron-1}.svg"
                 this_svg_bert.saveas(name,pretty=True, indent=2)
     else:
-        layer = 0
         # starting from 1.
-        bert_idx = [46,49,75,827]
-        bert_top_neurons = [2946]
         for this_neuron in bert_top_neurons:
             for this_idx in bert_idx:
                 this_svg_bert = vis.visualize_activations(bert_tokens["source"][this_idx-1],
@@ -120,8 +120,6 @@ def visualization(bert_tokens, bert_activations,
                 name = f"result/bert_{this_idx-1}_{layer}_{this_neuron-1}.svg"
                 this_svg_bert.saveas(name,pretty=True, indent=2)
 
-        codebert_idx = []
-        codebert_top_neurons = []
 
 
         # less_idx = [46,297,396]
