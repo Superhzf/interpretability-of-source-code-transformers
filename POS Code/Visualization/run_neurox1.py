@@ -109,7 +109,7 @@ def visualization(bert_tokens, bert_activations,
                 name = f"result/bert_{this_idx-1}_{layer}_{this_neuron-1}.svg"
                 this_svg_bert.saveas(name,pretty=True, indent=2)
                 name_list.append(name)
-        command = f"/work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python svg_stack-main/svg_stack.py result/{name[0]} result/space.svg result/{name[1]} result/space.svg result/{name[2]} result/space.svg result/{name[3]} > result/bert.svg"
+        command = f"ml-gpu /work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python svg_stack-main/svg_stack.py result/{name[0]} result/space.svg result/{name[1]} result/space.svg result/{name[2]} result/space.svg result/{name[3]} > result/bert.svg"
         os.system(command)
     else:
         layer = 0
