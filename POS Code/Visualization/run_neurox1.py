@@ -108,7 +108,7 @@ def visualization(bert_tokens, bert_activations,
                 this_svg_bert = vis.visualize_activations(bert_tokens["source"][this_idx-1],
                                                      bert_activations[this_idx-1][:, this_neuron],
                                                      filter_fn="top_tokens")
-                name = f"result/bert_{this_idx-1}_{layer}_{this_neuron-1}.svg"
+                name = f"result/bert_{this_idx-1}_{layer}_{this_neuron}.svg"
                 this_svg_bert.saveas(name,pretty=True, indent=2)
     else:
         # starting from 1.
@@ -117,7 +117,7 @@ def visualization(bert_tokens, bert_activations,
                 this_svg_bert = vis.visualize_activations(bert_tokens["source"][this_idx-1],
                                                      bert_activations[this_idx-1][:, this_neuron],
                                                      filter_fn="top_tokens")
-                name = f"result/bert_{this_idx-1}_{layer}_{this_neuron-1}.svg"
+                name = f"result/bert_{this_idx-1}_{layer}_{this_neuron}.svg"
                 this_svg_bert.saveas(name,pretty=True, indent=2)
 
         for this_neuron in codebert_top_neurons:
@@ -125,7 +125,7 @@ def visualization(bert_tokens, bert_activations,
                 this_svg_codebert = vis.visualize_activations(codebert_tokens["source"][this_idx-1],
                                                      codebert_activations[this_idx-1][:, this_neuron],
                                                      filter_fn="top_tokens")
-                name = f"result/codebert_{this_idx-1}_{layer}_{this_neuron-1}.svg"
+                name = f"result/codebert_{this_idx-1}_{layer}_{this_neuron}.svg"
                 this_svg_codebert.saveas(name,pretty=True, indent=2)
 
             # this_svg_graphcodebert = vis.visualize_activations(codebert_tokens["source"][s_idx],

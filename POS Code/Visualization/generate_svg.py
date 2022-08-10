@@ -6,7 +6,7 @@ from run_neurox1 import codebert_idx, codebert_top_neurons
 bert_names = []
 for this_neuron in bert_top_neurons:
     for this_idx in bert_idx:
-        this_name = f"bert_{this_idx-1}_{layer}_{this_neuron-1}.svg"
+        this_name = f"bert_{this_idx-1}_{layer}_{this_neuron}.svg"
         bert_names.append(this_name)
 
 os.system(f"/work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python \
@@ -17,7 +17,7 @@ os.system(f"/work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python \
 codebert_names = []
 for this_neuron in codebert_top_neurons:
     for this_idx in codebert_idx:
-        this_name = f"codebert_{this_idx-1}_{layer}_{this_neuron-1}.svg"
+        this_name = f"codebert_{this_idx-1}_{layer}_{this_neuron}.svg"
 
 os.system(f"/work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python \
             svg_stack-main/svg_stack.py result/{codebert_names[0]} result/space.svg \
