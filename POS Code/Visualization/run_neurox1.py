@@ -145,7 +145,7 @@ def get_top_words(bert_tokens,bert_activations,bert_neuron,
                   graphcodebert_tokens=None,graphcodebert_activations=None,graphcodebert_neuron=None,
                   dev=True,num_tokens=5):
     if dev:
-        bert_top_words = cps.get_top_words(bert_tokens, bert_activations,bert_neuron,num_tokens)
+        bert_top_words = corpus.get_top_words(bert_tokens, bert_activations,bert_neuron,num_tokens)
         print("Top words for bert",bert_top_words)
 
 
