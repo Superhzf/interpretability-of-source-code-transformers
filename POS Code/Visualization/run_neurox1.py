@@ -9,6 +9,7 @@ import neurox
 import neurox.data.extraction.transformers_extractor as transformers_extractor
 import neurox.data.loader as data_loader
 import neurox.analysis.visualization as vis
+import neurox.analysis.corpus as corpus
 import os
 
 layer = 0
@@ -138,6 +139,16 @@ def visualization(bert_tokens, bert_activations,
                 name = f"result/graphcodebert_{this_idx-1}_{layer}_{this_neuron}.svg"
                 this_svg_graphcodebert.saveas(name,pretty=True, indent=2)
 
+
+def get_top_words(bert_tokens,bert_activations,bert_neuron,
+                  codebert_tokens=None,codebert_activations=None,codebert_neuron=None,
+                  graphcodebert_tokens=None,graphcodebert_activations=None,graphcodebert_neuron=None,
+                  dev=True,num_tokens=5):
+    if dev:
+        bert_top_words = cps.get_top_words(bert_tokens, bert_activations,bert_neuron,num_tokens)
+        print("Top words for bert",bert_top_words)
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--extract",choices=('True','False'), default='False')
@@ -148,10 +159,16 @@ def main():
     else:
         print("Getting activations from json files. If you need to extract them, run with --extract=True \n" )
 
+    bert_neuron = 2112
     if args.dev == 'True':
         bert_activations = load_extracted_activations(True)
         bert_tokens =  load_tokens(bert_activations, None, None,True)
         visualization(bert_tokens, bert_activations, None, None, None, None, True)
+        get_top_words(bert_tokens, bert_activations, bert_neuron,
+                      None, None, None,
+                      None, None, None,
+                      True, 5)
+
     else:
         bert_activations, codebert_activations, graphcodebert_activations = load_extracted_activations(False)
         bert_tokens, codebert_tokens, graphcodebert_tokens =  load_tokens(bert_activations, codebert_activations, graphcodebert_activations,False)
