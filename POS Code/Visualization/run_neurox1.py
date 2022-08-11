@@ -189,7 +189,7 @@ def main():
         bert_activations = load_extracted_activations(True)
         bert_tokens =  load_tokens(bert_activations, None, None,True)
         visualization(bert_tokens, bert_activations, None, None, None, None, True)
-        get_top_words(bert_tokens, bert_activations, bert_neurons
+        get_top_words(bert_tokens, bert_activations, bert_neurons,
                       None, None, None,
                       None, None, None,
                       True, 5)
