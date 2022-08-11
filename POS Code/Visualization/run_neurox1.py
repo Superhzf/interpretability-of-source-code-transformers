@@ -140,13 +140,14 @@ def visualization(bert_tokens, bert_activations,
                 this_svg_graphcodebert.saveas(name,pretty=True, indent=2)
 
 
-def get_top_words(bert_tokens,bert_activations,bert_neuron,
+def get_top_words(bert_tokens,bert_activations,bert_neurons,
                   codebert_tokens=None,codebert_activations=None,codebert_neuron=None,
                   graphcodebert_tokens=None,graphcodebert_activations=None,graphcodebert_neuron=None,
                   dev=True,num_tokens=5):
     if dev:
-        bert_top_words = corpus.get_top_words(bert_tokens, bert_activations,bert_neuron,num_tokens)
-        print("Top words for bert",bert_top_words)
+        for this_neuron in bert_neurons:
+            bert_top_words = corpus.get_top_words(bert_tokens, bert_activations,this_neuron,num_tokens)
+            print(f"Top words for bert neuron indx {this_neuron}",bert_top_words)
 
 
 def main():
@@ -159,12 +160,36 @@ def main():
     else:
         print("Getting activations from json files. If you need to extract them, run with --extract=True \n" )
 
-    bert_neuron = 9730 # MINEQUAL
+    bert_neurons = [6173,4131,37,6181,41,2091,2095,6205,2112,64,4171,75,8274,8275,
+                   85,6231,4195,8297,8306,6259,6261,129,134,138,4244,152,2205,173,
+                   183,6329,4284,195,2246,6343,4302,4312,6364,8421,8437,6389,6392,249,
+                   6393,2301,260,2317,6416,278,292,4393,305,308,6453,4405,2362,8515,
+                   6468,324,2375,2406,4457,8553,2411,2428,8578,6534,6540,408,8611,2470,
+                   436,6588,6596,4557,2514,4568,2520,2523,495,8690,6644,2551,8696,2558,
+                   6663,6664,540,8732,545,4645,8756,573,8765,2624,6721,2627,580,6735,
+                   601,602,4697,4706,623,2685,2689,8835,643,2693,8851,2718,2719,2723,
+                   4779,684,687,4795,8895,6855,6859,4813,2766,718,8920,4830,6879,6880,
+                   2789,744,745,2800,6897,760,763,4860,4865,2833,6958,6979,9052,7007,
+                   4990,2945,2946,9093,7050,9101,7062,5023,7082,951,955,959,978,7128,
+                   5080,7157,3065,5119,1023,7178,9235,9248,7202,3108,1071,3126,3141,1099,
+                   5203,3161,7260,7269,9329,1141,3194,3209,7310,1170,3238,3239,7347,3255,
+                   9400,7351,3264,7375,3282,9428,7384,5341,7394,7403,9463,1271,7417,1273,
+                   3343,9494,1304,3357,7459,5413,5423,9519,9532,5451,1355,3417,9564,7528,
+                   1391,9585,5503,7554,7558,5511,1417,7568,9622,9625,9627,9633,7588,5546,
+                   5563,5565,7614,5572,5574,3527,7624,3534,1500,7645,5600,7649,7656,3561,
+                   9706,3570,5625,1537,3588,1562,1566,7717,3628,9772,9777,3637,3649,5700,
+                   7750,1608,7754,1618,1619,5715,7772,5730,9828,9829,7785,5746,9863,9866,
+                   1675,1684,7843,5803,3759,9908,1721,9913,3773,5828,9926,1735,3784,5840,
+                   3796,5848,9968,7928,3832,9980,1796,3855,3862,3871,5923,3877,7987,7988,
+                   5942,1876,5980,5984,1890,5991,8043,3949,3955,6012,3996,1950,8101,1962,
+                   6059,1977,1980,4032,4034,6090,4055,8152,6106,6115,4078,2035,4084,6133,
+                   2045]
+ # MINEQUAL
     if args.dev == 'True':
         bert_activations = load_extracted_activations(True)
         bert_tokens =  load_tokens(bert_activations, None, None,True)
         visualization(bert_tokens, bert_activations, None, None, None, None, True)
-        get_top_words(bert_tokens, bert_activations, bert_neuron,
+        get_top_words(bert_tokens, bert_activations, bert_neurons
                       None, None, None,
                       None, None, None,
                       True, 5)
