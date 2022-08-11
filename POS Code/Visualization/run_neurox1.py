@@ -17,7 +17,7 @@ bert_top_neurons = [2946]
 codebert_idx = [1,3,6,17]
 codebert_top_neurons = [5585]
 graphcodebert_idx = [2,4,8,12,15]
-graphcodebert_top_neurons = [9546]
+graphcodebert_top_neurons = [9934]
 
 
 #Extract activations.json files
