@@ -132,8 +132,8 @@ def visualization(bert_tokens, bert_activations,
 
         for this_neuron in graphcodebert_top_neurons:
             for this_idx in graphcodebert_idx:
-                this_svg_graphcodebert = vis.visualize_activations(codebert_tokens["source"][s_idx-1],
-                                                     graphcodebert_activations[s_idx-1][:, neuron],
+                this_svg_graphcodebert = vis.visualize_activations(codebert_tokens["source"][this_idx-1],
+                                                     graphcodebert_activations[this_idx-1][:, neuron],
                                                      filter_fn="top_tokens")
                 name = f"result/graphcodebert_{this_idx-1}_{layer}_{this_neuron}.svg"
                 this_svg_graphcodebert.saveas(name,pretty=True, indent=2)
