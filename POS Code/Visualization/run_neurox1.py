@@ -194,6 +194,15 @@ def main():
     if args.dev == 'True':
         bert_activations = load_extracted_activations(True)
         bert_tokens =  load_tokens(bert_activations, None, None,True)
+        print("Length of bert_activations:",len(bert_activations))
+        print("Length of bert_tokens source:",len(bert_tokens["source"]))
+        _, num_neurons = bert_activations[0].shape
+        for idx in range(len(bert_activations)):
+            assert bert_activations[idx].shape[1] == num_neurons
+        print("The number of neurons for each token:",num_neurons)
+        print("Done!")
+        exit(0)
+
         visualization(bert_tokens, bert_activations, None, None, None, None, True)
         get_top_words(bert_tokens, bert_activations, bert_neurons,
                       None, None, None,
