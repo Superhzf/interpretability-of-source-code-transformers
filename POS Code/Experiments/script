@@ -3,10 +3,9 @@
 #SBATCH --ntasks=8
 #SBATCH --mem=128G
 #SBATCH --time=12:00:00
-#SBATCH --partition=gpu 
-#SBATCH --gres=gpu:1
+#SBATCH --partition=gpu
+#SBATCH --gres=gpu:a100-pcie:1
 
 module load ml-gpu
-cd /work/LAS/jannesar-lab/arushi/Interpretability/interpretability-of-source-code-transformers/POS\ Code/Experiments
-ml-gpu /work/LAS/jannesar-lab/arushi/Environments/NeuroX_env/bin/python run_neurox1.py --extract=True> logs
-
+cd /work/LAS/cjquinn-lab/zefuh/selectivity/interpretability-of-source-code-transformers/POS\ Code/Experiments
+ml-gpu /work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python run_neurox1.py --extract=False> log_train_test_split2

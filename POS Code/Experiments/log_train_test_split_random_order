@@ -1,0 +1,270 @@
+Getting activations from json files. If you need to extract them, run with --extract=True 
+
+Loading json activations from bert_activations.json...
+48537 13.0
+Loading json activations from codebert_activations.json...
+48537 13.0
+Loading json activations from graphcodebert_activations.json...
+48537 13.0
+Number of tokens:  358698
+length of source dictionary:  6172
+length of target dictionary:  44
+358698
+Total instances: 358698
+['requested_encoding', 'getValue', '_out', 'tilematrixset', 'LOOKUP_SEP', 'execute_and_wait_with', 'prepare_submodule_logger', 'format_text', 'app_identity', '0.2', '_generate_county_filename', 'usernames', 'refs', 'guess_graphical_sudo', 'sortBy', 'removeComponent', 'render_template', 'svgElement', '>=', 'addBands']
+Number of samples:  358698
+Stats: Labels with their frequencies in the final set
+LSQB 6042
+ENCODING 3
+DEDENT 15801
+LESS 276
+SEMI 9
+LPAR 23442
+PLUSEQUAL 381
+NUMBER 5562
+RSQB 5925
+RPAR 23313
+EQUAL 14811
+NAME 101463
+COMMA 16581
+KEYWORD 32196
+STAR 522
+NOTEQUAL 315
+INDENT 14061
+DOT 22389
+DOUBLESTAR 384
+SLASHEQUAL 6
+VBAR 66
+PERCENT 735
+LESSEQUAL 72
+COMMENT 39
+NEWLINE 38280
+SLASH 174
+PLUS 1416
+NL 10254
+RIGHTSHIFT 9
+MINEQUAL 42
+LBRACE 717
+DOUBLESLASH 30
+AT 213
+RBRACE 738
+AMPER 15
+STAREQUAL 6
+LEFTSHIFT 9
+EQEQUAL 1350
+AMPEREQUAL 6
+GREATER 417
+COLON 17625
+MINUS 852
+GREATEREQUAL 129
+STRING 2022
+Number of tokens:  358698
+length of source dictionary:  6172
+length of target dictionary:  44
+358698
+Total instances: 358698
+['requested_encoding', 'getValue', '_out', 'tilematrixset', 'LOOKUP_SEP', 'execute_and_wait_with', 'prepare_submodule_logger', 'format_text', 'app_identity', '0.2', '_generate_county_filename', 'usernames', 'refs', 'guess_graphical_sudo', 'sortBy', 'removeComponent', 'render_template', 'svgElement', '>=', 'addBands']
+Number of samples:  358698
+Stats: Labels with their frequencies in the final set
+LSQB 6042
+ENCODING 3
+DEDENT 15801
+LESS 276
+SEMI 9
+LPAR 23442
+PLUSEQUAL 381
+NUMBER 5562
+RSQB 5925
+RPAR 23313
+EQUAL 14811
+NAME 101463
+COMMA 16581
+KEYWORD 32196
+STAR 522
+NOTEQUAL 315
+INDENT 14061
+DOT 22389
+DOUBLESTAR 384
+SLASHEQUAL 6
+VBAR 66
+PERCENT 735
+LESSEQUAL 72
+COMMENT 39
+NEWLINE 38280
+SLASH 174
+PLUS 1416
+NL 10254
+RIGHTSHIFT 9
+MINEQUAL 42
+LBRACE 717
+DOUBLESLASH 30
+AT 213
+RBRACE 738
+AMPER 15
+STAREQUAL 6
+LEFTSHIFT 9
+EQEQUAL 1350
+AMPEREQUAL 6
+GREATER 417
+COLON 17625
+MINUS 852
+GREATEREQUAL 129
+STRING 2022
+Number of tokens:  358698
+length of source dictionary:  6172
+length of target dictionary:  44
+358698
+Total instances: 358698
+['requested_encoding', 'getValue', '_out', 'tilematrixset', 'LOOKUP_SEP', 'execute_and_wait_with', 'prepare_submodule_logger', 'format_text', 'app_identity', '0.2', '_generate_county_filename', 'usernames', 'refs', 'guess_graphical_sudo', 'sortBy', 'removeComponent', 'render_template', 'svgElement', '>=', 'addBands']
+Number of samples:  358698
+Stats: Labels with their frequencies in the final set
+LSQB 6042
+ENCODING 3
+DEDENT 15801
+LESS 276
+SEMI 9
+LPAR 23442
+PLUSEQUAL 381
+NUMBER 5562
+RSQB 5925
+RPAR 23313
+EQUAL 14811
+NAME 101463
+COMMA 16581
+KEYWORD 32196
+STAR 522
+NOTEQUAL 315
+INDENT 14061
+DOT 22389
+DOUBLESTAR 384
+SLASHEQUAL 6
+VBAR 66
+PERCENT 735
+LESSEQUAL 72
+COMMENT 39
+NEWLINE 38280
+SLASH 174
+PLUS 1416
+NL 10254
+RIGHTSHIFT 9
+MINEQUAL 42
+LBRACE 717
+DOUBLESLASH 30
+AT 213
+RBRACE 738
+AMPER 15
+STAREQUAL 6
+LEFTSHIFT 9
+EQEQUAL 1350
+AMPEREQUAL 6
+GREATER 417
+COLON 17625
+MINUS 852
+GREATEREQUAL 129
+STRING 2022
+Successfully split activations into train and test set:
+bert_X_train shape (286958, 9984) bert_y_train shape (286958,) bert_X_test shape: (71740, 9984) bert_y_test shape (71740,)
+codebert_X_train shape (286958, 9984) codebert_y_train shape (286958,) codebert_X_test shape (71740, 9984) codebert_y_test shape (71740,)
+graphcodebert_X_train shape (286958, 9984) graphcodebert_y_train shape (286958,) graphcodebert_X_test (71740, 9984) graphcodebert_y_test shape (71740,)
+Training classification probe
+Creating model...
+Number of training instances: 286958
+Number of classes: 44
+Epoch: [1/10], Loss: 0.0241
+Epoch: [2/10], Loss: 0.0234
+Epoch: [3/10], Loss: 0.0233
+Epoch: [4/10], Loss: 0.0231
+Epoch: [5/10], Loss: 0.0233
+Epoch: [6/10], Loss: 0.0234
+Epoch: [7/10], Loss: 0.0233
+Epoch: [8/10], Loss: 0.0233
+Epoch: [9/10], Loss: 0.0231
+Epoch: [10/10], Loss: 0.0233
+Training classification probe
+Creating model...
+Number of training instances: 286958
+Number of classes: 44
+Epoch: [1/10], Loss: 0.0157
+Epoch: [2/10], Loss: 0.0151
+Epoch: [3/10], Loss: 0.0150
+Epoch: [4/10], Loss: 0.0149
+Epoch: [5/10], Loss: 0.0149
+Epoch: [6/10], Loss: 0.0148
+Epoch: [7/10], Loss: 0.0148
+Epoch: [8/10], Loss: 0.0149
+Epoch: [9/10], Loss: 0.0148
+Epoch: [10/10], Loss: 0.0148
+Training classification probe
+Creating model...
+Number of training instances: 286958
+Number of classes: 44
+Epoch: [1/10], Loss: 0.0155
+Epoch: [2/10], Loss: 0.0149
+Epoch: [3/10], Loss: 0.0148
+Epoch: [4/10], Loss: 0.0147
+Epoch: [5/10], Loss: 0.0147
+Epoch: [6/10], Loss: 0.0147
+Epoch: [7/10], Loss: 0.0147
+Epoch: [8/10], Loss: 0.0147
+Epoch: [9/10], Loss: 0.0147
+Epoch: [10/10], Loss: 0.0147
+Score (accuracy) of the probe: 0.96
+Score (accuracy) of the probe: 0.98
+Score (accuracy) of the probe: 0.98
+Score (accuracy) of the probe: 0.96
+{'__OVERALL__': 0.9615277390577084, 'LSQB': 1.0, 'ENCODING': nan, 'DEDENT': 0.914257555847569, 'LESS': 1.0, 'SEMI': 0.0, 'LPAR': 1.0, 'PLUSEQUAL': 0.0, 'NUMBER': 0.9689737470167065, 'RSQB': 1.0, 'RPAR': 1.0, 'EQUAL': 1.0, 'NAME': 0.989140769654206, 'COMMA': 0.9997156667614444, 'KEYWORD': 0.9973164956590371, 'STAR': 0.06766917293233082, 'NOTEQUAL': 0.0, 'INDENT': 0.9730129390018484, 'DOT': 1.0, 'DOUBLESTAR': 0.0, 'SLASHEQUAL': 0.0, 'VBAR': 0.0, 'PERCENT': 1.0, 'LESSEQUAL': 0.0, 'COMMENT': 0.0, 'NEWLINE': 1.0, 'SLASH': 0.15625, 'PLUS': 0.9558232931726908, 'NL': 0.6831168831168831, 'RIGHTSHIFT': 0.0, 'MINEQUAL': 0.0, 'LBRACE': 0.012903225806451613, 'DOUBLESLASH': 0.0, 'AT': 0.0, 'RBRACE': 0.8518518518518519, 'AMPER': 0.0, 'STAREQUAL': 0.0, 'LEFTSHIFT': 0.0, 'EQEQUAL': 0.0, 'AMPEREQUAL': nan, 'GREATER': 0.0, 'COLON': 1.0, 'MINUS': 0.9210526315789473, 'GREATEREQUAL': 0.0, 'STRING': 0.1016548463356974}
+Score (accuracy) of the probe: 0.98
+{'__OVERALL__': 0.9761360468357959, 'LSQB': 1.0, 'ENCODING': nan, 'DEDENT': 1.0, 'LESS': 1.0, 'SEMI': 0.0, 'LPAR': 0.999787007454739, 'PLUSEQUAL': 0.0, 'NUMBER': 0.9474940334128878, 'RSQB': 1.0, 'RPAR': 1.0, 'EQUAL': 1.0, 'NAME': 0.9960466396436971, 'COMMA': 1.0, 'KEYWORD': 0.9995264404104183, 'STAR': 1.0, 'NOTEQUAL': 0.0, 'INDENT': 0.999630314232902, 'DOT': 1.0, 'DOUBLESTAR': 0.0, 'SLASHEQUAL': 0.0, 'VBAR': 0.0, 'PERCENT': 1.0, 'LESSEQUAL': 0.0, 'COMMENT': 0.0, 'NEWLINE': 0.999199038846616, 'SLASH': 0.0, 'PLUS': 1.0, 'NL': 0.8437229437229438, 'RIGHTSHIFT': 0.0, 'MINEQUAL': 0.0, 'LBRACE': 0.7354838709677419, 'DOUBLESLASH': 0.0, 'AT': 0.0, 'RBRACE': 0.2654320987654321, 'AMPER': 0.0, 'STAREQUAL': 0.0, 'LEFTSHIFT': 0.0, 'EQEQUAL': 0.6071428571428571, 'AMPEREQUAL': nan, 'GREATER': 0.0, 'COLON': 1.0, 'MINUS': 0.7421052631578947, 'GREATEREQUAL': 0.0, 'STRING': 0.004728132387706856}
+Score (accuracy) of the probe: 0.98
+{'__OVERALL__': 0.9765960412601059, 'LSQB': 1.0, 'ENCODING': nan, 'DEDENT': 1.0, 'LESS': 1.0, 'SEMI': 0.0, 'LPAR': 1.0, 'PLUSEQUAL': 0.0, 'NUMBER': 0.939538583929992, 'RSQB': 0.9992652461425422, 'RPAR': 1.0, 'EQUAL': 1.0, 'NAME': 0.9967972776860331, 'COMMA': 1.0, 'KEYWORD': 0.9993685872138911, 'STAR': 1.0, 'NOTEQUAL': 0.0, 'INDENT': 1.0, 'DOT': 1.0, 'DOUBLESTAR': 0.0, 'SLASHEQUAL': 0.0, 'VBAR': 0.0, 'PERCENT': 1.0, 'LESSEQUAL': 0.0, 'COMMENT': 0.0, 'NEWLINE': 0.999866506474436, 'SLASH': 0.0, 'PLUS': 1.0, 'NL': 0.7995670995670996, 'RIGHTSHIFT': 0.0, 'MINEQUAL': 0.0, 'LBRACE': 0.8193548387096774, 'DOUBLESLASH': 0.0, 'AT': 0.0, 'RBRACE': 0.7777777777777778, 'AMPER': 0.0, 'STAREQUAL': 0.0, 'LEFTSHIFT': 0.0, 'EQEQUAL': 0.8492063492063492, 'AMPEREQUAL': nan, 'GREATER': 0.0, 'COLON': 1.0, 'MINUS': 0.5684210526315789, 'GREATEREQUAL': 0.0, 'STRING': 0.0070921985815602835}
+Creating control dataset for BERT POS tagging task
+Training classification probe
+Creating model...
+Number of training instances: 286958
+Number of classes: 44
+Epoch: [1/10], Loss: 0.0241
+Epoch: [2/10], Loss: 0.0235
+Epoch: [3/10], Loss: 0.0232
+Epoch: [4/10], Loss: 0.0233
+Epoch: [5/10], Loss: 0.0232
+Epoch: [6/10], Loss: 0.0234
+Epoch: [7/10], Loss: 0.0233
+Epoch: [8/10], Loss: 0.0233
+Epoch: [9/10], Loss: 0.0233
+Epoch: [10/10], Loss: 0.0233
+Score (accuracy) of the probe: 0.96
+BERT Selectivity (Diff. between true task and probing task performance):  0.003345413994981894
+Creating control dataset for CodeBERT POS tagging task
+Training classification probe
+Creating model...
+Number of training instances: 286958
+Number of classes: 44
+Epoch: [1/10], Loss: 0.0157
+Epoch: [2/10], Loss: 0.0151
+Epoch: [3/10], Loss: 0.0150
+Epoch: [4/10], Loss: 0.0149
+Epoch: [5/10], Loss: 0.0149
+Epoch: [6/10], Loss: 0.0148
+Epoch: [7/10], Loss: 0.0149
+Epoch: [8/10], Loss: 0.0149
+Epoch: [9/10], Loss: 0.0148
+Epoch: [10/10], Loss: 0.0148
+Score (accuracy) of the probe: 0.98
+CodeBERT Selectivity (Diff. between true task and probing task performance):  0.0
+Creating control dataset for GraphCodeBERT POS tagging task
+Training classification probe
+Creating model...
+Number of training instances: 286958
+Number of classes: 44
+Epoch: [1/10], Loss: 0.0155
+Epoch: [2/10], Loss: 0.0149
+Epoch: [3/10], Loss: 0.0148
+Epoch: [4/10], Loss: 0.0147
+Epoch: [5/10], Loss: 0.0147
+Epoch: [6/10], Loss: 0.0147
+Epoch: [7/10], Loss: 0.0147
+Epoch: [8/10], Loss: 0.0147
+Epoch: [9/10], Loss: 0.0147
+Epoch: [10/10], Loss: 0.0147
+Score (accuracy) of the probe: 0.98
+GraphCodeBERT Selectivity (Diff. between true task and probing task performance):  2.787844995810751e-05
