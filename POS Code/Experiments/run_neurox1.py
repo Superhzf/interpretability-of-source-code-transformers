@@ -175,13 +175,13 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
 
         print("BERT top words")
         for neuron in bert_top_neurons:
-            neurox.analysis.corpus.get_top_words(bert_tokens, bert_activations, neuron, num_tokens=10)[source]
+            neurox.analysis.corpus.get_top_words(bert_tokens, bert_activations, neuron, num_tokens=5)[source]
         print("CodeBERT top words")
         for neuron in codebert_top_neurons:
-            neurox.analysis.corpus.get_top_words(codebert_tokens, codebert_activations, neuron, num_tokens=10)[source]
+            neurox.analysis.corpus.get_top_words(codebert_tokens, codebert_activations, neuron, num_tokens=5)[source]
         print("GraphCodeBERT top words")
         for neuron in graphcodebert_top_neurons:
-            neurox.analysis.corpus.get_top_words(graphcodebert_tokens, graphcodebert_activations, neuron, num_tokens=10)[source]
+            neurox.analysis.corpus.get_top_words(graphcodebert_tokens, graphcodebert_activations, neuron, num_tokens=5)[source]
 
 
     def layerwise_probes_inference():
@@ -294,10 +294,10 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
     bert_probe, codebert_probe, graphcodebert_probe, bert_scores, codebert_scores, graphcodebert_scores = all_activations_probe()
 
     #Layerwise Probes
-    #layerwise_probes_inference()
+    layerwise_probes_inference()
 
     #Important neuron probes
-    #get_imp_neurons()
+    get_imp_neurons()
     del bert_X_train, bert_X_test, bert_y_train, bert_y_test
     del codebert_X_train, codebert_X_test, codebert_y_train, codebert_y_test
     del graphcodebert_X_train, graphcodebert_X_test, graphcodebert_y_train, graphcodebert_y_test
@@ -305,7 +305,7 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
     bert_selectivity, codebert_selectivity, graphcodebert_selectivity = control_task_probes(bert_scores,codebert_scores, graphcodebert_scores)
 
     #Probeless clustering experiments
-    #probeless(bert_X,bert_y, codebert_X, codebert_y, graphcodebert_X, graphcodebert_y)
+    probeless(bert_X,bert_y, codebert_X, codebert_y, graphcodebert_X, graphcodebert_y)
 
     return bert_probe, codebert_probe, graphcodebert_probe
 
