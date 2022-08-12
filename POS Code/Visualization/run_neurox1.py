@@ -3,6 +3,7 @@ Created on Tue Apr 12 14:21:21 2022
 
 @author: sharm
 """
+import torch
 import argparse
 import pickle
 import neurox
@@ -23,10 +24,12 @@ graphcodebert_top_neurons = [9934]
 
 #Extract activations.json files
 def extract_activations():
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     #Extract representations from BERT
     transformers_extractor.extract_representations('bert-base-uncased',
         'codetest2.in',
         'bert_activations.json',
+        device=device,
         aggregation="average",#last, first
         decompose_layers=False # we need this to be true to work with different layers
     )
@@ -35,6 +38,7 @@ def extract_activations():
     transformers_extractor.extract_representations('microsoft/codebert-base',
         'codetest2.in',
         'codebert_activations.json',
+        device=device,
         aggregation="average", # #last, first
         decompose_layers=False
     )
@@ -43,6 +47,7 @@ def extract_activations():
     transformers_extractor.extract_representations('microsoft/graphcodebert-base',
         'codetest2.in',
         'graphcodebert_activations.json',
+        device=device,
         aggregation="average",#last, first
         decompose_layers=False
     )
@@ -141,13 +146,25 @@ def visualization(bert_tokens, bert_activations,
 
 
 def get_top_words(bert_tokens,bert_activations,bert_neurons,
-                  codebert_tokens=None,codebert_activations=None,codebert_neuron=None,
-                  graphcodebert_tokens=None,graphcodebert_activations=None,graphcodebert_neuron=None,
+                  codebert_tokens=None,codebert_activations=None,codebert_neurons=None,
+                  graphcodebert_tokens=None,graphcodebert_activations=None,graphcodebert_neurons=None,
                   dev=True,num_tokens=5):
     if dev:
         for this_neuron in bert_neurons:
             bert_top_words = corpus.get_top_words(bert_tokens, bert_activations,this_neuron,num_tokens)
             print(f"Top words for bert neuron indx {this_neuron}",bert_top_words)
+    else:
+        for this_neuron in bert_neurons:
+            bert_top_words = corpus.get_top_words(bert_tokens, bert_activations,this_neuron,num_tokens)
+            print(f"Top words for bert neuron indx {this_neuron}",bert_top_words)
+        print("----------------------------------------------------------------")
+        for this_neuron in codebert_neurons:
+            codebert_top_words = corpus.get_top_words(codebert_tokens, codebert_activations,this_neuron,num_tokens)
+            print(f"Top words for codebert neuron indx {this_neuron}",codebert_top_words)
+        print("----------------------------------------------------------------")
+        for this_neuron in graphcodebert_neurons:
+            graphcodebert_top_words = corpus.get_top_words(graphcodebert_tokens, graphcodebert_activations,this_neuron,num_tokens)
+            print(f"Top words for graphcodebert neuron indx {this_neuron}",graphcodebert_top_words)
 
 
 def main():
@@ -190,6 +207,55 @@ def main():
                    5942,1876,5980,5984,1890,5991,8043,3949,3955,6012,3996,1950,8101,1962,
                    6059,1977,1980,4032,4034,6090,4055,8152,6106,6115,4078,2035,4084,6133,
                    2045]
+    codebert_neurons = [2074,2076,2083,6184,6192,6196,2104,58,69,70,4168,8268,2124,6227,
+                        8275,88,8280,6240,4194,6245,2152,8297,6254,8304,2160,8317,8318,4223,
+                        8345,4250,6301,6330,187,193,207,6361,219,2271,2273,2275,8429,8431,
+                        2300,2312,8467,8468,276,280,8478,4394,2351,4401,8501,6467,2373,2375,
+                        330,4428,4438,2400,8545,2406,2410,362,2421,2428,388,8586,8587,395,
+                        6546,8598,4505,4512,4520,6583,6596,2515,6619,2525,2528,481,4589,494,
+                        2560,2564,6664,6669,535,4635,2590,8735,4641,8738,6691,2599,8748,8766,
+                        6719,8769,6726,8775,2633,8778,586,6732,590,6736,6738,595,2647,6750,
+                        620,8820,8829,8837,659,667,670,8866,4770,2722,2726,681,2730,6829,
+                        2739,696,4811,727,8926,4834,2788,6889,763,6912,4873,8981,6939,8990,
+                        806,820,2883,2886,840,9036,2892,4945,2906,7006,862,4960,4961,4964,
+                        2916,7023,9072,2928,7028,4982,5002,9137,5051,7105,3015,3018,992,3050,
+                        9197,1008,1024,3072,1031,1033,7187,7205,5161,5169,3124,9282,1095,5196,
+                        7246,5206,7263,9328,9344,1166,3214,1176,7320,1182,5292,9390,7352,3258,
+                        1228,7377,5346,3316,1274,1279,3327,5381,7440,9489,3346,5396,9496,1305,
+                        1313,3362,7472,3384,1338,1346,3397,7495,9546,1356,7500,9555,3416,7517,
+                        7530,9598,1407,7556,1413,1416,9628,3487,3515,5564,3531,1486,5585,9687,
+                        5600,3555,1511,5609,7661,5644,1552,1555,3607,5659,5667,9772,3630,1583,
+                        9782,7734,3640,5693,9790,9791,7755,9804,3660,3664,3676,1641,9840,1662,
+                        1708,3759,3761,5821,1728,9929,3803,5852,1759,1760,1762,3811,9965,9967,
+                        5879,3838,7944,1801,3848,1806,7967,7968,3873,1826,3875,1830,1834,1835,
+                        3883,5951,5953,5960,1869,3918,1897,3949,8049,1923,3979,1933,3987,1956,
+                        4005,1964,8108,4018,1979,8130,4043,6099,2016,4066,2021,8167,8173,2030,
+                        8174,2031,6133]
+    graphcodebert_neurons = [6144,8194,6,7,2054,14,15,2068,23,2072,2073,25,8215,30,
+                             6195,2100,6210,2124,77,6224,2135,6235,4197,6254,4207,8304,2160,120,
+                             2198,6297,4288,8386,4298,8411,219,224,232,8427,236,238,8437,2302,
+                             2306,259,2310,2321,4370,4371,280,6433,302,2352,4401,6472,4428,8526,
+                             334,6487,4451,8548,361,4458,6512,4464,8564,8565,8575,4497,401,8593,
+                             405,2472,424,426,430,433,2486,2495,2497,4548,452,8647,4552,4551,
+                             455,459,465,467,4565,6618,479,2529,4583,2540,6645,516,523,2575,
+                             2582,6682,2586,6687,4651,2608,579,582,584,6730,8785,606,6755,614,
+                             4710,4719,2675,2680,2687,654,4752,8849,6803,660,2712,4761,8860,669,
+                             2722,8876,692,2744,2752,707,8914,6885,6890,747,748,6899,8962,4882,
+                             8981,2843,2844,2850,2854,2866,9021,2878,835,6981,6987,2892,2893,851,
+                             2899,9050,7012,2928,886,2940,9090,2946,912,5018,2972,9117,5025,940,
+                             2994,3024,3025,3034,9179,7150,5103,7172,9228,9235,1043,7190,3095,7192,
+                             3098,1066,3117,7215,5171,9275,7229,7237,9287,5201,1111,9308,7266,9316,
+                             9329,7284,9335,1148,9344,9363,5269,1176,3232,7337,7344,5298,7352,1222,
+                             9421,1230,3298,1266,9463,9481,3340,3344,9490,1302,7448,1308,7465,9517,
+                             7473,1330,1338,7482,1340,3390,1344,9546,9553,5457,5467,9564,5476,5478,
+                             3432,7530,7536,5490,3451,3463,1420,5520,1431,5538,7586,5541,7595,3503,
+                             3506,3513,5590,5600,5602,9707,3564,9716,3586,1555,3612,7713,7714,7715,
+                             1574,3630,9789,3660,9805,1619,3682,7780,1641,3696,5748,1655,9847,1662,
+                             1665,5762,9860,5768,7827,1688,5793,1700,5799,9913,3782,9934,9951,3816,
+                             7913,3818,1806,1814,3863,1815,7963,1819,5927,7978,1848,3901,8008,3921,
+                             1880,8024,5993,1901,1908,8062,1919,6022,3984,6039,6045,3999,6048,1962,
+                             4013,4014,8139,6101,4057,6107,8159,8160,6114,4073,4076,2033,4083]
+
  # MINEQUAL
     if args.dev == 'True':
         bert_activations = load_extracted_activations(True)
@@ -200,9 +266,6 @@ def main():
         for idx in range(len(bert_activations)):
             assert bert_activations[idx].shape[1] == num_neurons
         print("The number of neurons for each token:",num_neurons)
-        print("Done!")
-        exit(0)
-
         visualization(bert_tokens, bert_activations, None, None, None, None, True)
         get_top_words(bert_tokens, bert_activations, bert_neurons,
                       None, None, None,
@@ -212,10 +275,35 @@ def main():
     else:
         bert_activations, codebert_activations, graphcodebert_activations = load_extracted_activations(False)
         bert_tokens, codebert_tokens, graphcodebert_tokens =  load_tokens(bert_activations, codebert_activations, graphcodebert_activations,False)
+        print("Length of bert_activations:",len(bert_activations))
+        print("Length of bert_tokens source:",len(bert_tokens["source"]))
+        _, num_neurons = bert_activations[0].shape
+        for idx in range(len(bert_activations)):
+            assert bert_activations[idx].shape[1] == num_neurons
+        print("The number of neurons for each token:",num_neurons)
+
+        print("Length of codebert_activations:",len(codebert_activations))
+        print("Length of codebert_tokens source:",len(codebert_tokens["source"]))
+        _, num_neurons = codebert_activations[0].shape
+        for idx in range(len(codebert_activations)):
+            assert codebert_activations[idx].shape[1] == num_neurons
+        print("The number of neurons for each token:",num_neurons)
+
+        print("Length of graphcodebert_activations:",len(graphcodebert_activations))
+        print("Length of graphcodebert_tokens source:",len(graphcodebert_tokens["source"]))
+        _, num_neurons = graphcodebert_activations[0].shape
+        for idx in range(len(graphcodebert_activations)):
+            assert graphcodebert_activations[idx].shape[1] == num_neurons
+        print("The number of neurons for each token:",num_neurons)
+
         visualization(bert_tokens, bert_activations,
                       codebert_tokens,codebert_activations,
                       graphcodebert_tokens,graphcodebert_activations,
                       False)
+        get_top_words(bert_tokens, bert_activations, bert_neurons,
+                      codebert_tokens, codebert_activations, codebert_neurons,
+                      graphcodebert_tokens, graphcodebert_activations, graphcodebert_neurons,
+                      False, 5)
 
 
 if __name__ == "__main__":
