@@ -1,5 +1,5 @@
 # Interpretability of source code transformers
-This folder means to generate SVG files indicating how neurons activate different
+This folder aims to generate SVG files indicating how neurons activate different
 classes.
 
 The generated SVG files for the paper are in the `result` folder. They are `bert_classname.svg`,
