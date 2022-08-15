@@ -40,8 +40,10 @@ by
 
 
 ## Generate single SVG files
-Update script with correct paths to your environment.  
+Update script with correct paths to your environment:
+
 Set `--extract=False` if activation files have already been generated.
+
 Set `--dev=True` if it is in the development mode. Running in development mode is fast by only running BERT model
 
 In this folder, run:
