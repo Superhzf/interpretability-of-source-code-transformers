@@ -52,3 +52,9 @@ sbatch script_main.sh
 Once done, you will find model_obs_layer_neuron.svg files in the `result` folder.
 For example `bert_1_2_3.svg` means the second observation on BERT model, 3rd
 layer, and 4th neuron.
+
+
+
+## Merge single SVG files into one for one model
+Run `sbatch script_generate_svg.sh`, then you will see `bert.svg`, `codebert.svg`,
+and `graphcodebert.svg` in the `result` folder.
