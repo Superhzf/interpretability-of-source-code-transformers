@@ -2,6 +2,9 @@
 This folder means to generate SVG files indicating how neurons activate different
 classes.
 
+The generated SVG files for the paper are in the `result` folder. They are `bert_classname.svg`,
+`codebert_classname.svg`, `graphcodebert_classname.svg`.
+
 
 ## Create ml-gpu environment using the following steps
 ```
@@ -71,7 +74,12 @@ In this folder, run:
 sbatch script_generate_svg.sh
 ```
 
-Then you will see `bert.svg`, `codebert.svg`, and `graphcodebert.svg` in the `result` folder.
+Then you will see `bert_classname.svg`, `codebert_classname.svg`, and
+`graphcodebert_classname.svg` in the `result` folder.
+
+As you can see, there are both red and blue colors in the graphs. Per the [NeuroX][https://neurox.qcri.org/docs/neurox.analysis.html#module-neurox.analysis.visualization], package, blue means the activation value is large
+and red means the activation is small. I don't know how to explain why the
+activation for a class in the model is larger (small) not small (large).
 
 
 ## Regarding the `get_top_words`
