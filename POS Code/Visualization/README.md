@@ -56,6 +56,9 @@ layer, and 4th neuron.
 
 
 ## Merge single SVG files into one for one model
-Run
-`sbatch script_generate_svg.sh`,
+In this folder, run:
+```
+sbatch script_generate_svg.sh
+```
+
 Then you will see `bert.svg`, `codebert.svg`, and `graphcodebert.svg` in the `result` folder.
