@@ -3,7 +3,8 @@ This folder means to generate SVG files indicating how neurons activate differen
 classes.
 
 The generated SVG files for the paper are in the `result` folder. They are `bert_classname.svg`,
-`codebert_classname.svg`, `graphcodebert_classname.svg`.
+`codebert_classname.svg`, `graphcodebert_classname.svg`. Please keep reading if
+you want to know more details.
 
 
 ## Create ml-gpu environment using the following steps
