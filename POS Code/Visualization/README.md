@@ -36,7 +36,10 @@ download it again or install it. Credits go to https://github.com/astraw/svg_sta
 
 All you have to do is installing the required package [lxml](https://lxml.de/installation.html)
 by
-`ml-gpu <path to environment>/NeuroX_env/bin/pip3 install lxml==4.6.3`
+
+```
+ml-gpu <path to environment>/NeuroX_env/bin/pip3 install lxml==4.6.3
+```
 
 
 ## Generate single SVG files
@@ -59,7 +62,7 @@ layer, and 4th neuron.
 
 ## Merge single SVG files into one for one model
 Update `script_generate_svg.sh` with correct paths to your environment. No parameters
-needed
+needed.
 
 In this folder, run:
 ```
