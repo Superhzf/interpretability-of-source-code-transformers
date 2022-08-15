@@ -13,7 +13,7 @@ import neurox.analysis.visualization as vis
 import neurox.analysis.corpus as corpus
 import os
 
-layer = 0
+
 bert_idx = [46,49,75,827]
 bert_top_neurons = [2946]
 codebert_idx = [1,3,6,17]
@@ -125,7 +125,9 @@ def visualization(bert_tokens, bert_activations,
                 this_svg_bert = vis.visualize_activations(bert_tokens["source"][this_idx-1],
                                                      bert_activations[this_idx-1][:, this_neuron],
                                                      filter_fn="top_tokens")
-                name = f"result/bert_{this_idx-1}_{layer}_{this_neuron}.svg"
+                layer_idx = this_neuron//768
+                neuron_idx = this_neuron%768
+                name = f"result/bert_{this_idx-1}_{layer_idx}_{neuron_idx}.svg"
                 this_svg_bert.saveas(name,pretty=True, indent=2)
 
         for this_neuron in codebert_top_neurons:
@@ -133,7 +135,9 @@ def visualization(bert_tokens, bert_activations,
                 this_svg_codebert = vis.visualize_activations(codebert_tokens["source"][this_idx-1],
                                                      codebert_activations[this_idx-1][:, this_neuron],
                                                      filter_fn="top_tokens")
-                name = f"result/codebert_{this_idx-1}_{layer}_{this_neuron}.svg"
+                layer_idx = this_neuron//768
+                neuron_idx = this_neuron%768
+                name = f"result/codebert_{this_idx-1}_{layer_idx}_{neuron_idx}.svg"
                 this_svg_codebert.saveas(name,pretty=True, indent=2)
 
         for this_neuron in graphcodebert_top_neurons:
@@ -141,7 +145,9 @@ def visualization(bert_tokens, bert_activations,
                 this_svg_graphcodebert = vis.visualize_activations(codebert_tokens["source"][this_idx-1],
                                                      graphcodebert_activations[this_idx-1][:, this_neuron],
                                                      filter_fn="top_tokens")
-                name = f"result/graphcodebert_{this_idx-1}_{layer}_{this_neuron}.svg"
+                layer_idx = this_neuron//768
+                neuron_idx = this_neuron%768
+                name = f"result/graphcodebert_{this_idx-1}_{layer_idx}_{neuron_idx}.svg"
                 this_svg_graphcodebert.saveas(name,pretty=True, indent=2)
 
 
