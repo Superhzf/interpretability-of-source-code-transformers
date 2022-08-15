@@ -40,7 +40,7 @@ by
 
 
 ## Generate single SVG files
-Update script with correct paths to your environment:
+Update `script_main.sh` with correct paths to your environment and parameters:
 
 Set `--extract=False` if activation files have already been generated.
 
@@ -58,6 +58,9 @@ layer, and 4th neuron.
 
 
 ## Merge single SVG files into one for one model
+Update `script_generate_svg.sh` with correct paths to your environment. No parameters
+needed
+
 In this folder, run:
 ```
 sbatch script_generate_svg.sh
