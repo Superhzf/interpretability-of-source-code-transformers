@@ -16,10 +16,13 @@ import os
 
 bert_idx = [46,49,75,827]
 bert_top_neurons = [2946]
+bert_class = "GREATER"
 codebert_idx = [1,3,6,17]
 codebert_top_neurons = [5585]
+codebert_class = "KEYWORD"
 graphcodebert_idx = [2,4,8,12,15]
 graphcodebert_top_neurons = [9934]
+graphcodebert_class = "EQUAL"
 
 
 #Extract activations.json files
