@@ -175,13 +175,13 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
 
         print("BERT top words")
         for neuron in bert_top_neurons:
-            neurox.analysis.corpus.get_top_words(bert_tokens, bert_activations, neuron, num_tokens=5)[source]
+            neurox.analysis.corpus.get_top_words(bert_tokens, bert_activations, neuron, num_tokens=10)[source]
         print("CodeBERT top words")
         for neuron in codebert_top_neurons:
-            neurox.analysis.corpus.get_top_words(codebert_tokens, codebert_activations, neuron, num_tokens=5)[source]
+            neurox.analysis.corpus.get_top_words(codebert_tokens, codebert_activations, neuron, num_tokens=10)[source]
         print("GraphCodeBERT top words")
         for neuron in graphcodebert_top_neurons:
-            neurox.analysis.corpus.get_top_words(graphcodebert_tokens, graphcodebert_activations, neuron, num_tokens=5)[source]
+            neurox.analysis.corpus.get_top_words(graphcodebert_tokens, graphcodebert_activations, neuron, num_tokens=10)[source]
 
 
     def layerwise_probes_inference():
