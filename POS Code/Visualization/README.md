@@ -1,6 +1,7 @@
 # Interpretability of source code transformers
 This folder aims to generate SVG files indicating how neurons activate different
-classes.
+classes. It also includes the code to generate top 5 words for a specific neuron,
+which should be eliminated once it is done in the `../Experiment` folder.
 
 The generated SVG files for the paper are in the `result` folder. They are `bert_classname.svg`,
 `codebert_classname.svg`, `graphcodebert_classname.svg`. Please keep reading if
