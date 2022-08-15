@@ -77,7 +77,7 @@ sbatch script_generate_svg.sh
 Then you will see `bert_classname.svg`, `codebert_classname.svg`, and
 `graphcodebert_classname.svg` in the `result` folder.
 
-As you can see, there are both red and blue colors in the graphs. Per the [NeuroX][https://neurox.qcri.org/docs/neurox.analysis.html#module-neurox.analysis.visualization], package, blue means the activation value is large
+As you can see, there are both red and blue colors in the graphs. Per the [NeuroX](https://neurox.qcri.org/docs/neurox.analysis.html#module-neurox.analysis.visualization), package, blue means the activation value is large
 and red means the activation is small. I don't know how to explain why the
 activation for a class in the model is larger (small) not small (large).
 
