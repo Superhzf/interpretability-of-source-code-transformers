@@ -2,6 +2,7 @@
 This folder means to generate SVG files indicating how neurons activate different
 classes.
 
+
 ## Create ml-gpu environment using the following steps
 ```
 srun --time=00:10:00 --nodes=1 --cpus-per-task=4 --partition=gpu --gres=gpu:1 --pty /usr/bin/bash  
@@ -10,6 +11,8 @@ mkdir NeuroX_env
 ml-gpu python -m venv <path to environment>/NeuroX_env  
 cd NeuroX_env
 ```
+
+
 ## Install PyTorch
 
 The default Neurox installation is not compatible with the most advanced GPU on
@@ -59,7 +62,6 @@ For example `bert_1_2_3.svg` means the second observation on BERT model, 3rd
 layer, and 4th neuron.
 
 
-
 ## Merge single SVG files into one for one model
 Update `script_generate_svg.sh` with correct paths to your environment. No parameters
 needed.
@@ -70,3 +72,10 @@ sbatch script_generate_svg.sh
 ```
 
 Then you will see `bert.svg`, `codebert.svg`, and `graphcodebert.svg` in the `result` folder.
+
+
+## Regarding the `get_top_words`
+I wrote the code to generate top words without being notified that the code is readily
+available in the `../Experiment` folder. I believe the code should be eliminated from here
+once top words are found in that folder to keep the whole project clean and concise.
+I will keep it for now till getting top words is done.
