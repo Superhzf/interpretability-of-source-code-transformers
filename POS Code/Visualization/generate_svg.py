@@ -1,5 +1,4 @@
 import os
-from run_neurox1 import layer
 from run_neurox1 import bert_idx, bert_top_neurons
 from run_neurox1 import codebert_idx, codebert_top_neurons
 from run_neurox1 import graphcodebert_idx, graphcodebert_top_neurons
