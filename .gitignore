@@ -14,3 +14,7 @@ NeuroX_env/
 
 *logs*
 *slurm*
+
+*.ipynb*
+*.json
+
