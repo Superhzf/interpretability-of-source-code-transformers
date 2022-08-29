@@ -131,19 +131,19 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
         graphcodebert_ordering, graphcodebert_cutoffs = linear_probe.get_neuron_ordering(graphcodebert_probe, graphcodebert_label2idx)
 
         #Top neurons
-        bert_top_neurons, bert_top_neurons_per_class = linear_probe.get_top_neurons(bert_probe, 0.01, bert_label2idx)
+        bert_top_neurons, bert_top_neurons_per_class = linear_probe.get_top_neurons(bert_probe, 0.8, bert_label2idx)
         print("Bert top neurons")
         print(bert_top_neurons)
         print("Bert top neurons per class")
         print(bert_top_neurons_per_class)
 
-        codebert_top_neurons, codebert_top_neurons_per_class = linear_probe.get_top_neurons(codebert_probe, 0.01, codebert_label2idx)
+        codebert_top_neurons, codebert_top_neurons_per_class = linear_probe.get_top_neurons(codebert_probe, 0.8, codebert_label2idx)
         print("CodeBert top neurons")
         print(codebert_top_neurons)
         print("CodeBert top neurons per class")
         print(codebert_top_neurons_per_class)
 
-        graphcodebert_top_neurons, graphcodebert_top_neurons_per_class = linear_probe.get_top_neurons(graphcodebert_probe, 0.01, graphcodebert_label2idx)
+        graphcodebert_top_neurons, graphcodebert_top_neurons_per_class = linear_probe.get_top_neurons(graphcodebert_probe, 0.8, graphcodebert_label2idx)
         print("GraphCodeBert top neurons")
         print(graphcodebert_top_neurons)
         print("GraphCodeBert top neurons per class")
@@ -168,20 +168,20 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
         pickle.dump(graphcodebert_probe_selected, open("graphcodebert_probe_selected.sav", 'wb'))
         linear_probe.evaluate_probe(graphcodebert_probe_selected, graphcodebert_X_selected, graphcodebert_y, idx_to_class=graphcodebert_idx2label)
 
-        return bert_top_neurons, codebert_top_neurons, bert_top_neurons_per_class, codebert_top_neurons_per_class,codebert_probe_selected, bert_probe_selected, graphcodebert_top_neurons, graphcodebert_top_neurons_per_class, graphcodebert_probe_selected
+        return bert_top_neurons, codebert_top_neurons, graphcodebert_top_neurons
 
-    def get_top_words():
+    def get_top_words(bert_top_neurons, codebert_top_neurons, graphcodebert_top_neurons):
         #relate neurons to corpus elements like words and sentences
 
         print("BERT top words")
         for neuron in bert_top_neurons:
-            neurox.analysis.corpus.get_top_words(bert_tokens, bert_activations, neuron, num_tokens=10)[source]
+            print(neurox.analysis.corpus.get_top_words(bert_tokens, bert_activations, neuron, num_tokens=5)[source])
         print("CodeBERT top words")
         for neuron in codebert_top_neurons:
-            neurox.analysis.corpus.get_top_words(codebert_tokens, codebert_activations, neuron, num_tokens=10)[source]
+            print(neurox.analysis.corpus.get_top_words(codebert_tokens, codebert_activations, neuron, num_tokens=5)[source])
         print("GraphCodeBERT top words")
         for neuron in graphcodebert_top_neurons:
-            neurox.analysis.corpus.get_top_words(graphcodebert_tokens, graphcodebert_activations, neuron, num_tokens=10)[source]
+            print(neurox.analysis.corpus.get_top_words(graphcodebert_tokens, graphcodebert_activations, neuron, num_tokens=5)[source])
 
 
     def layerwise_probes_inference():
@@ -297,7 +297,8 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
     layerwise_probes_inference()
 
     #Important neuron probes
-    get_imp_neurons()
+    bert_top_neurons, codebert_top_neurons, graphcodebert_top_neurons = get_imp_neurons()
+    get_top_words(bert_top_neurons, codebert_top_neurons, graphcodebert_top_neurons)
     del bert_X_train, bert_X_test, bert_y_train, bert_y_test
     del codebert_X_train, codebert_X_test, codebert_y_train, codebert_y_test
     del graphcodebert_X_train, graphcodebert_X_test, graphcodebert_y_train, graphcodebert_y_test
