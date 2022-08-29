@@ -190,29 +190,35 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
         #BERT
         for i in range(13):
             print("Bert Layer", i)
-            layer = ablation.filter_activations_by_layers(bert_X, [i], 13)
-            print(layer.shape)
-            layer_probe = linear_probe.train_logistic_regression_probe(layer, bert_y, lambda_l1=0.001, lambda_l2=0.001)
+            layer_train = ablation.filter_activations_by_layers(bert_X_train, [i], 13)
+            layer_probe = linear_probe.train_logistic_regression_probe(layer_train, bert_y_train, lambda_l1=0.001, lambda_l2=0.001)
+            del layer_train
             pickle.dump(layer_probe, open(f"bert_layer{i}_probe.sav", 'wb'))
-            linear_probe.evaluate_probe(layer_probe, layer, bert_y, idx_to_class=bert_idx2label)
+            layer_test = ablation.filter_activations_by_layers(bert_X_test, [i], 13)
+            linear_probe.evaluate_probe(layer_probe, layer_test, bert_y_test, idx_to_class=bert_idx2label)
+            del layer_test
 
         #CodeBERT
         for i in range(13):
             print("Codebert Layer", i)
-            layer = ablation.filter_activations_by_layers(codebert_X, [i], 13)
-            print(layer.shape)
-            layer_probe = linear_probe.train_logistic_regression_probe(layer, codebert_y, lambda_l1=0.001, lambda_l2=0.001)
+            layer_train = ablation.filter_activations_by_layers(codebert_X_train, [i], 13)
+            layer_probe = linear_probe.train_logistic_regression_probe(layer_train, codebert_y_train, lambda_l1=0.001, lambda_l2=0.001)
+            del layer_train
             pickle.dump(layer_probe, open(f"codebert_layer{i}_probe.sav", 'wb'))
-            linear_probe.evaluate_probe(layer_probe, layer, codebert_y, idx_to_class=codebert_idx2label)
+            layer_test = ablation.filter_activations_by_layers(codebert_X_test, [i], 13)
+            linear_probe.evaluate_probe(layer_probe, layer_test, codebert_y_test, idx_to_class=codebert_idx2label)
+            del layer_test
 
          #GraphCodeBERT
         for i in range(13):
             print("GraphCodebert Layer", i)
-            layer = ablation.filter_activations_by_layers(graphcodebert_X, [i], 13)
-            print(layer.shape)
-            layer_probe = linear_probe.train_logistic_regression_probe(layer, graphcodebert_y, lambda_l1=0.001, lambda_l2=0.001)
+            layer_train = ablation.filter_activations_by_layers(graphcodebert_X_train, [i], 13)
+            layer_probe = linear_probe.train_logistic_regression_probe(layer_train, graphcodebert_y, lambda_l1=0.001, lambda_l2=0.001)
+            del layer_train
             pickle.dump(layer_probe, open(f"graphcodebert_layer{i}_probe.sav", 'wb'))
-            linear_probe.evaluate_probe(layer_probe, layer, graphcodebert_y, idx_to_class=graphcodebert_idx2label)
+            layer_test = ablation.filter_activations_by_layers(graphcodebert_X_train, [i], 13)
+            linear_probe.evaluate_probe(layer_probe, layer_test, graphcodebert_y_test, idx_to_class=graphcodebert_idx2label)
+            del layer_test
 
     def control_task_probes(bert_scores, codebert_scores, graphcodebert_scores):
         print("Creating control dataset for BERT POS tagging task")
