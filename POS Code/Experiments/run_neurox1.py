@@ -215,10 +215,10 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
         for i in range(13):
             print("GraphCodebert Layer", i)
             layer_train = ablation.filter_activations_by_layers(graphcodebert_X_train, [i], 13)
-            layer_probe = linear_probe.train_logistic_regression_probe(layer_train, graphcodebert_y, lambda_l1=0.001, lambda_l2=0.001)
+            layer_probe = linear_probe.train_logistic_regression_probe(layer_train, graphcodebert_y_train, lambda_l1=0.001, lambda_l2=0.001)
             del layer_train
             pickle.dump(layer_probe, open(f"graphcodebert_layer{i}_probe.sav", 'wb'))
-            layer_test = ablation.filter_activations_by_layers(graphcodebert_X_train, [i], 13)
+            layer_test = ablation.filter_activations_by_layers(graphcodebert_X_test, [i], 13)
             linear_probe.evaluate_probe(layer_probe, layer_test, graphcodebert_y_test, idx_to_class=graphcodebert_idx2label)
             del layer_test
             del layer_probe
