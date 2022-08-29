@@ -197,6 +197,7 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
             layer_test = ablation.filter_activations_by_layers(bert_X_test, [i], 13)
             linear_probe.evaluate_probe(layer_probe, layer_test, bert_y_test, idx_to_class=bert_idx2label)
             del layer_test
+            del layer_probe
 
         #CodeBERT
         for i in range(13):
@@ -208,6 +209,7 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
             layer_test = ablation.filter_activations_by_layers(codebert_X_test, [i], 13)
             linear_probe.evaluate_probe(layer_probe, layer_test, codebert_y_test, idx_to_class=codebert_idx2label)
             del layer_test
+            del layer_probe
 
          #GraphCodeBERT
         for i in range(13):
@@ -219,6 +221,7 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
             layer_test = ablation.filter_activations_by_layers(graphcodebert_X_train, [i], 13)
             linear_probe.evaluate_probe(layer_probe, layer_test, graphcodebert_y_test, idx_to_class=graphcodebert_idx2label)
             del layer_test
+            del layer_probe
 
     def control_task_probes(bert_scores, codebert_scores, graphcodebert_scores):
         print("Creating control dataset for BERT POS tagging task")
