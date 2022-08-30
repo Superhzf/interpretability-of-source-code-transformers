@@ -150,23 +150,32 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
         print(graphcodebert_top_neurons_per_class)
 
         #Train probes on top neurons and save them
-        bert_X_selected = ablation.filter_activations_keep_neurons(bert_X, bert_ordering[:100])
+        bert_X_selected = ablation.filter_activations_keep_neurons(bert_X_train, bert_ordering[:100])
         bert_X_selected.shape
-        bert_probe_selected = linear_probe.train_logistic_regression_probe(bert_X_selected, bert_y, lambda_l1=0.001, lambda_l2=0.001)
+        bert_probe_selected = linear_probe.train_logistic_regression_probe(bert_X_selected, bert_y_train, lambda_l1=0.001, lambda_l2=0.001)
         pickle.dump(bert_probe_selected, open("bert_probe_selected.sav", 'wb'))
-        linear_probe.evaluate_probe(bert_probe_selected, bert_X_selected, bert_y, idx_to_class=bert_idx2label)
+        del bert_X_selected
+        bert_X_selected_test = ablation.filter_activations_keep_neurons(bert_X_test, bert_ordering[:100])
+        linear_probe.evaluate_probe(bert_probe_selected, bert_X_selected_test, bert_y_test, idx_to_class=bert_idx2label)
+        del bert_X_selected_test
 
-        codebert_X_selected = ablation.filter_activations_keep_neurons(codebert_X, codebert_ordering[:100])
+        codebert_X_selected = ablation.filter_activations_keep_neurons(codebert_X_train, codebert_ordering[:100])
         codebert_X_selected.shape
-        codebert_probe_selected = linear_probe.train_logistic_regression_probe(codebert_X_selected, codebert_y, lambda_l1=0.001, lambda_l2=0.001)
+        codebert_probe_selected = linear_probe.train_logistic_regression_probe(codebert_X_selected, codebert_y_train, lambda_l1=0.001, lambda_l2=0.001)
         pickle.dump(codebert_probe_selected, open("codebert_probe_selected.sav", 'wb'))
-        linear_probe.evaluate_probe(codebert_probe_selected, codebert_X_selected, codebert_y, idx_to_class=codebert_idx2label)
+        del bert_X_selected
+        codebert_X_selected_test = ablation.filter_activations_keep_neurons(codebert_X_test, codebert_ordering[:100])
+        linear_probe.evaluate_probe(codebert_probe_selected, codebert_X_selected_test, codebert_y_test, idx_to_class=codebert_idx2label)
+        del codebert_X_selected_test
 
-        graphcodebert_X_selected = ablation.filter_activations_keep_neurons(graphcodebert_X, graphcodebert_ordering[:100])
+        graphcodebert_X_selected = ablation.filter_activations_keep_neurons(graphcodebert_X_train, graphcodebert_ordering[:100])
         graphcodebert_X_selected.shape
-        graphcodebert_probe_selected = linear_probe.train_logistic_regression_probe(graphcodebert_X_selected, graphcodebert_y, lambda_l1=0.001, lambda_l2=0.001)
+        graphcodebert_probe_selected = linear_probe.train_logistic_regression_probe(graphcodebert_X_selected, graphcodebert_y_train, lambda_l1=0.001, lambda_l2=0.001
+        del graphcodebert_X_selected
         pickle.dump(graphcodebert_probe_selected, open("graphcodebert_probe_selected.sav", 'wb'))
-        linear_probe.evaluate_probe(graphcodebert_probe_selected, graphcodebert_X_selected, graphcodebert_y, idx_to_class=graphcodebert_idx2label)
+        graphcodebert_X_selected_test = ablation.filter_activations_keep_neurons(graphcodebert_X_train, graphcodebert_ordering[:100])
+        linear_probe.evaluate_probe(graphcodebert_probe_selected, graphcodebert_X_selected_test, graphcodebert_y_test, idx_to_class=graphcodebert_idx2label)
+        del graphcodebert_X_selected_test
 
         return bert_top_neurons, codebert_top_neurons, graphcodebert_top_neurons
 
@@ -321,7 +330,7 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
     del graphcodebert_X_train, graphcodebert_X_test, graphcodebert_y_train, graphcodebert_y_test
     #Control task probes
     bert_selectivity, codebert_selectivity, graphcodebert_selectivity = control_task_probes(bert_scores,codebert_scores, graphcodebert_scores)
-    
+
     return bert_probe, codebert_probe, graphcodebert_probe
 
 
