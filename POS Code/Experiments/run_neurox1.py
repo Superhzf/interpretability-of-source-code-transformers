@@ -131,19 +131,19 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
         graphcodebert_ordering, graphcodebert_cutoffs = linear_probe.get_neuron_ordering(graphcodebert_probe, graphcodebert_label2idx)
 
         #Top neurons
-        bert_top_neurons, bert_top_neurons_per_class = linear_probe.get_top_neurons(bert_probe, 0.8, bert_label2idx)
+        bert_top_neurons, bert_top_neurons_per_class = linear_probe.get_top_neurons(bert_probe, 0.01, bert_label2idx)
         print("Bert top neurons")
         print(bert_top_neurons)
         print("Bert top neurons per class")
         print(bert_top_neurons_per_class)
 
-        codebert_top_neurons, codebert_top_neurons_per_class = linear_probe.get_top_neurons(codebert_probe, 0.8, codebert_label2idx)
+        codebert_top_neurons, codebert_top_neurons_per_class = linear_probe.get_top_neurons(codebert_probe, 0.01, codebert_label2idx)
         print("CodeBert top neurons")
         print(codebert_top_neurons)
         print("CodeBert top neurons per class")
         print(codebert_top_neurons_per_class)
 
-        graphcodebert_top_neurons, graphcodebert_top_neurons_per_class = linear_probe.get_top_neurons(graphcodebert_probe, 0.8, graphcodebert_label2idx)
+        graphcodebert_top_neurons, graphcodebert_top_neurons_per_class = linear_probe.get_top_neurons(graphcodebert_probe, 0.01, graphcodebert_label2idx)
         print("GraphCodeBert top neurons")
         print(graphcodebert_top_neurons)
         print("GraphCodeBert top neurons per class")
@@ -175,13 +175,18 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
 
         print("BERT top words")
         for neuron in bert_top_neurons:
-            print(neurox.analysis.corpus.get_top_words(bert_tokens, bert_activations, neuron, num_tokens=5)[source])
+            bert_top_words = neurox.analysis.corpus.get_top_words(bert_tokens, bert_activations, neuron, num_tokens=5)
+            print(f"Top words for bert neuron indx {neuron}",bert_top_words)
+        print("----------------------------------------------------------------")
         print("CodeBERT top words")
         for neuron in codebert_top_neurons:
-            print(neurox.analysis.corpus.get_top_words(codebert_tokens, codebert_activations, neuron, num_tokens=5)[source])
+            codebert_top_words = neurox.analysis.corpus.get_top_words(codebert_tokens, codebert_activations, neuron, num_tokens=5)
+            print(f"Top words for codebert neuron indx {neuron}",codebert_top_words)
+        print("----------------------------------------------------------------")
         print("GraphCodeBERT top words")
         for neuron in graphcodebert_top_neurons:
-            print(neurox.analysis.corpus.get_top_words(graphcodebert_tokens, graphcodebert_activations, neuron, num_tokens=5)[source])
+            graphcodebert_top_words = neurox.analysis.corpus.get_top_words(graphcodebert_tokens, graphcodebert_activations, neuron, num_tokens=5)
+            print(f"Top words for graphcodebert neuron indx {neuron}",graphcodebert_top_words)
 
 
     def layerwise_probes_inference():
@@ -292,6 +297,9 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
     graphcodebert_label2idx, graphcodebert_idx2label, graphcodebert_src2idx, \
     graphcodebert_idx2src = get_mappings()
 
+    #Probeless clustering experiments
+    probeless(bert_X,bert_y, codebert_X, codebert_y, graphcodebert_X, graphcodebert_y)
+
     bert_X_train, bert_X_test, bert_y_train, bert_y_test = \
         train_test_split(bert_X, bert_y, test_size=0.2,random_state=50, shuffle=False)
     codebert_X_train, codebert_X_test, codebert_y_train, codebert_y_test = \
@@ -313,10 +321,7 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
     del graphcodebert_X_train, graphcodebert_X_test, graphcodebert_y_train, graphcodebert_y_test
     #Control task probes
     bert_selectivity, codebert_selectivity, graphcodebert_selectivity = control_task_probes(bert_scores,codebert_scores, graphcodebert_scores)
-
-    #Probeless clustering experiments
-    probeless(bert_X,bert_y, codebert_X, codebert_y, graphcodebert_X, graphcodebert_y)
-
+    
     return bert_probe, codebert_probe, graphcodebert_probe
 
 
