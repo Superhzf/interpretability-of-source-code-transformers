@@ -132,19 +132,19 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
         graphcodebert_ordering, graphcodebert_cutoffs = linear_probe.get_neuron_ordering(graphcodebert_probe, graphcodebert_label2idx)
 
         #Top neurons
-        bert_top_neurons, bert_top_neurons_per_class = linear_probe.get_top_neurons(bert_probe, 0.01, bert_label2idx)
+        bert_top_neurons, bert_top_neurons_per_class = linear_probe.get_top_neurons(bert_probe, 0.02, bert_label2idx)
         print("Bert top neurons")
         print(bert_top_neurons)
         print("Bert top neurons per class")
         print(bert_top_neurons_per_class)
 
-        codebert_top_neurons, codebert_top_neurons_per_class = linear_probe.get_top_neurons(codebert_probe, 0.01, codebert_label2idx)
+        codebert_top_neurons, codebert_top_neurons_per_class = linear_probe.get_top_neurons(codebert_probe, 0.02, codebert_label2idx)
         print("CodeBert top neurons")
         print(codebert_top_neurons)
         print("CodeBert top neurons per class")
         print(codebert_top_neurons_per_class)
 
-        graphcodebert_top_neurons, graphcodebert_top_neurons_per_class = linear_probe.get_top_neurons(graphcodebert_probe, 0.01, graphcodebert_label2idx)
+        graphcodebert_top_neurons, graphcodebert_top_neurons_per_class = linear_probe.get_top_neurons(graphcodebert_probe, 0.02, graphcodebert_label2idx)
         print("GraphCodeBert top neurons")
         print(graphcodebert_top_neurons)
         print("GraphCodeBert top neurons per class")
