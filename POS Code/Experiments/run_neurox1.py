@@ -15,6 +15,7 @@ import neurox.data.control_task as ct
 import neurox.interpretation.clustering
 import neurox.interpretation.probeless
 from sklearn.model_selection import train_test_split
+import neurox.analysis.corpus as corpus
 
 
 def preprocessing():
@@ -184,17 +185,17 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
 
         print("BERT top words")
         for neuron in bert_top_neurons:
-            bert_top_words = neurox.analysis.corpus.get_top_words(bert_tokens, bert_activations, neuron, num_tokens=5)
+            bert_top_words = corpus.get_top_words(bert_tokens, bert_activations, neuron, num_tokens=5)
             print(f"Top words for bert neuron indx {neuron}",bert_top_words)
         print("----------------------------------------------------------------")
         print("CodeBERT top words")
         for neuron in codebert_top_neurons:
-            codebert_top_words = neurox.analysis.corpus.get_top_words(codebert_tokens, codebert_activations, neuron, num_tokens=5)
+            codebert_top_words = corpus.get_top_words(codebert_tokens, codebert_activations, neuron, num_tokens=5)
             print(f"Top words for codebert neuron indx {neuron}",codebert_top_words)
         print("----------------------------------------------------------------")
         print("GraphCodeBERT top words")
         for neuron in graphcodebert_top_neurons:
-            graphcodebert_top_words = neurox.analysis.corpus.get_top_words(graphcodebert_tokens, graphcodebert_activations, neuron, num_tokens=5)
+            graphcodebert_top_words = corpus.get_top_words(graphcodebert_tokens, graphcodebert_activations, neuron, num_tokens=5)
             print(f"Top words for graphcodebert neuron indx {neuron}",graphcodebert_top_words)
 
 
