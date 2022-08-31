@@ -163,7 +163,7 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
         codebert_X_selected.shape
         codebert_probe_selected = linear_probe.train_logistic_regression_probe(codebert_X_selected, codebert_y_train, lambda_l1=0.001, lambda_l2=0.001)
         pickle.dump(codebert_probe_selected, open("codebert_probe_selected.sav", 'wb'))
-        del bert_X_selected
+        del codebert_X_selected
         codebert_X_selected_test = ablation.filter_activations_keep_neurons(codebert_X_test, codebert_ordering[:100])
         linear_probe.evaluate_probe(codebert_probe_selected, codebert_X_selected_test, codebert_y_test, idx_to_class=codebert_idx2label)
         del codebert_X_selected_test
