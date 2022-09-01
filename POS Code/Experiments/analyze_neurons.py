@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import os
 from run_neurox1 import load_extracted_activations
 from run_neurox1 import load_tokens
+import neurox.analysis.corpus as corpus
 
 with open('log') as f:
     lines = f.read()
