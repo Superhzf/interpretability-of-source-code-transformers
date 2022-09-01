@@ -78,4 +78,4 @@ bert_tokens, codebert_tokens, graphcodebert_tokens =  load_tokens(bert_activatio
 get_top_words(bert_tokens, bert_activations, top_neurons[0],
               codebert_tokens, codebert_activations, top_neurons[1],
               graphcodebert_tokens, graphcodebert_activations, top_neurons[2],
-              False, 5)
+              5)
