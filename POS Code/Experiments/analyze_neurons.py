@@ -48,35 +48,9 @@ def plot_distribution(top_neurons,model_name):
     plt.savefig(f"./distribution/{model_name}_neuron_dist.png")
 
 
-def get_top_words(bert_tokens,bert_activations,bert_neurons,
-                  codebert_tokens=None,codebert_activations=None,codebert_neurons=None,
-                  graphcodebert_tokens=None,graphcodebert_activations=None,graphcodebert_neurons=None,
-                  num_tokens=5):
-    for this_neuron in bert_neurons:
-        bert_top_words = corpus.get_top_words(bert_tokens, bert_activations,this_neuron,num_tokens)
-        print(f"Top words for bert neuron indx {this_neuron}",bert_top_words)
-    print("----------------------------------------------------------------")
-    for this_neuron in codebert_neurons:
-        codebert_top_words = corpus.get_top_words(codebert_tokens, codebert_activations,this_neuron,num_tokens)
-        print(f"Top words for codebert neuron indx {this_neuron}",codebert_top_words)
-    print("----------------------------------------------------------------")
-    for this_neuron in graphcodebert_neurons:
-        graphcodebert_top_words = corpus.get_top_words(graphcodebert_tokens, graphcodebert_activations,this_neuron,num_tokens)
-        print(f"Top words for graphcodebert neuron indx {this_neuron}",graphcodebert_top_words)
-
-
 mkdir_if_needed("./distribution/")
 model_names = ["BERT","CODEBERT","GRAPHCODEBERT"]
 regex_list = [regex_bert_top_neurons,regex_codebert_top_neurons,regex_graphcodebert_top_neurons]
-top_neurons = []
 for this_regex, this_model_name in zip(regex_list,model_names):
     this_top_neurons = str2int_top_neurons(this_regex)
-    top_neurons.append(this_top_neurons)
     plot_distribution(this_top_neurons,this_model_name)
-
-bert_activations, codebert_activations, graphcodebert_activations = load_extracted_activations()
-bert_tokens, codebert_tokens, graphcodebert_tokens =  load_tokens(bert_activations, codebert_activations, graphcodebert_activations)
-get_top_words(bert_tokens, bert_activations, top_neurons[0],
-              codebert_tokens, codebert_activations, top_neurons[1],
-              graphcodebert_tokens, graphcodebert_activations, top_neurons[2],
-              5)
