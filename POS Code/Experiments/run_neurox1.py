@@ -299,6 +299,7 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
         print('BERT Selectivity (Diff. between true task and probing task performance): ', bert_selectivity)
         del bert_ct_probe
         del bert_ct_scores
+        del bert_X_ct_train, bert_y_ct_train, bert_X_ct_test, bert_y_ct_test
 
         print("Creating control dataset for CodeBERT POS tagging task")
         [codebert_ct_tokens] = ct.create_sequence_labeling_dataset(codebert_tokens, sample_from='uniform')
@@ -320,6 +321,7 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
         print('CodeBERT Selectivity (Diff. between true task and probing task performance): ', codebert_selectivity)
         del codebert_ct_probe
         del codebert_ct_scores
+        del codebert_X_ct_train, codebert_y_ct_train, codebert_X_ct_test, codebert_y_ct_test
 
         print("Creating control dataset for GraphCodeBERT POS tagging task")
         [graphcodebert_ct_tokens] = ct.create_sequence_labeling_dataset(graphcodebert_tokens, sample_from='uniform')
@@ -341,6 +343,7 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
         print('GraphCodeBERT Selectivity (Diff. between true task and probing task performance): ', graphcodebert_selectivity)
         del graphcodebert_ct_probe
         del graphcodebert_ct_scores
+        del graphcodebert_X_ct_train, graphcodebert_y_ct_train, graphcodebert_X_ct_test, graphcodebert_y_ct_test
 
         return bert_selectivity, codebert_selectivity, graphcodebert_selectivity
 
