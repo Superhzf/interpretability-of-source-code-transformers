@@ -18,6 +18,16 @@ from sklearn.model_selection import train_test_split
 import neurox.analysis.corpus as corpus
 
 
+class Normalization:
+    def __init__(self,df):
+        self.var_mean = np.mean(df,axis=0)
+        self.var_std = np.std(df,axis=0)
+
+    def norm(self,df):
+        norm_df = (df-self.var_mean)/self.var_std
+        return norm_df
+
+
 def preprocessing():
     ''' Create codetest.in and codetest.label from python code files'''
 
@@ -276,10 +286,18 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
 
         bert_X_ct_train, bert_X_ct_test, bert_y_ct_train, bert_y_ct_test = \
             train_test_split(bert_X_ct, bert_y_ct, test_size=0.2,random_state=50, shuffle=False)
+        # normalization
+        bert_ct_norm = Normalization(bert_X_ct_train)
+        bert_X_ct_train = bert_ct_norm.norm(bert_X_ct_train)
+        bert_X_ct_test = bert_ct_norm.norm(bert_X_ct_test)
+        del bert_ct_norm
+
         bert_ct_probe = linear_probe.train_logistic_regression_probe(bert_X_ct_train, bert_y_ct_train, lambda_l1=0.001, lambda_l2=0.001)
         bert_ct_scores = linear_probe.evaluate_probe(bert_ct_probe, bert_X_ct_test, bert_y_ct_test, idx_to_class=bert_idx2label_ct)
         bert_selectivity = bert_scores['__OVERALL__'] - bert_ct_scores['__OVERALL__']
         print('BERT Selectivity (Diff. between true task and probing task performance): ', bert_selectivity)
+        del bert_ct_probe
+        del bert_ct_scores
 
         print("Creating control dataset for CodeBERT POS tagging task")
         [codebert_ct_tokens] = ct.create_sequence_labeling_dataset(codebert_tokens, sample_from='uniform')
@@ -289,10 +307,18 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
 
         codebert_X_ct_train, codebert_X_ct_test, codebert_y_ct_train, codebert_y_ct_test = \
             train_test_split(codebert_X_ct, codebert_y_ct, test_size=0.2,random_state=50, shuffle=False)
+        # normalization
+        codebert_ct_norm = Normalization(codebert_X_ct_train)
+        codebert_X_ct_train = codebert_ct_norm.norm(codebert_X_ct_train)
+        codebert_X_ct_test = codebert_ct_norm.norm(codebert_X_ct_test)
+        del codebert_ct_norm
+
         codebert_ct_probe = linear_probe.train_logistic_regression_probe(codebert_X_ct_train, codebert_y_ct_train, lambda_l1=0.001, lambda_l2=0.001)
         codebert_ct_scores = linear_probe.evaluate_probe(codebert_ct_probe, codebert_X_ct_test, codebert_y_ct_test, idx_to_class=codebert_idx2label_ct)
         codebert_selectivity = codebert_scores['__OVERALL__'] - codebert_ct_scores['__OVERALL__']
         print('CodeBERT Selectivity (Diff. between true task and probing task performance): ', codebert_selectivity)
+        del codebert_ct_probe
+        del codebert_ct_scores
 
         print("Creating control dataset for GraphCodeBERT POS tagging task")
         [graphcodebert_ct_tokens] = ct.create_sequence_labeling_dataset(graphcodebert_tokens, sample_from='uniform')
@@ -302,10 +328,18 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
 
         graphcodebert_X_ct_train, graphcodebert_X_ct_test, graphcodebert_y_ct_train, graphcodebert_y_ct_test = \
             train_test_split(codebert_X_ct, codebert_y_ct, test_size=0.2,random_state=50, shuffle=False)
+        # normalization
+        graphcodebert_ct_norm = Normalization(graphcodebert_X_ct_train)
+        graphcodebert_X_ct_train = graphcodebert_ct_norm.norm(graphcodebert_X_ct_train)
+        graphcodebert_X_ct_test = graphcodebert_ct_norm.norm(graphcodebert_X_ct_test)
+        del graphcodebert_ct_norm
+
         graphcodebert_ct_probe = linear_probe.train_logistic_regression_probe(graphcodebert_X_ct_train, graphcodebert_y_ct_train, lambda_l1=0.001, lambda_l2=0.001)
         graphcodebert_ct_scores = linear_probe.evaluate_probe(graphcodebert_ct_probe, graphcodebert_X_ct_test, graphcodebert_y_ct_test, idx_to_class=graphcodebert_idx2label_ct)
         graphcodebert_selectivity = graphcodebert_scores['__OVERALL__'] - graphcodebert_ct_scores['__OVERALL__']
         print('GraphCodeBERT Selectivity (Diff. between true task and probing task performance): ', graphcodebert_selectivity)
+        del graphcodebert_ct_probe
+        del graphcodebert_ct_scores
 
         return bert_selectivity, codebert_selectivity, graphcodebert_selectivity
 
@@ -336,8 +370,6 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
     graphcodebert_label2idx, graphcodebert_idx2label, graphcodebert_src2idx, \
     graphcodebert_idx2src = get_mappings()
 
-    #Probeless clustering experiments
-    probeless(bert_X,bert_y, codebert_X, codebert_y, graphcodebert_X, graphcodebert_y)
 
     bert_X_train, bert_X_test, bert_y_train, bert_y_test = \
         train_test_split(bert_X, bert_y, test_size=0.2,random_state=50, shuffle=False)
@@ -346,6 +378,28 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
     graphcodebert_X_train, graphcodebert_X_test, graphcodebert_y_train, graphcodebert_y_test = \
         train_test_split(graphcodebert_X, graphcodebert_y, test_size=0.2,random_state=50, shuffle=False)
     del bert_X, bert_y, codebert_X, codebert_y, graphcodebert_X, graphcodebert_y
+
+    #normalize the inputs before doing probing
+    bert_norm = Normalization(bert_X_train)
+    bert_X_train = bert_norm.norm(bert_X_train)
+    bert_X_test = bert_norm.norm(bert_X_test)
+    del bert_norm
+
+    codebert_norm = Normalization(codebert_X_train)
+    codebert_X_train = codebert_norm.norm(codebert_X_train)
+    codebert_X_test = codebert_norm.norm(codebert_X_test)
+    del codebert_norm
+
+    graphcodebert_norm = Normalization(graphcodebert_X_train)
+    graphcodebert_X_train = graphcodebert_norm.norm(graphcodebert_X_train)
+    graphcodebert_X_test = graphcodebert_norm.norm(graphcodebert_X_test)
+    del graphcodebert_norm
+
+    #Probeless clustering experiments
+    probeless(bert_X_train,bert_y_train,
+              codebert_X_train, codebert_y_train,
+              graphcodebert_X_train, graphcodebert_y_train)
+
     #All activations probes
     bert_probe, codebert_probe, graphcodebert_probe, bert_scores, codebert_scores, graphcodebert_scores = all_activations_probe()
 
