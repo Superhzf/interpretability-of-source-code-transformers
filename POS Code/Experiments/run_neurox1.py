@@ -16,6 +16,7 @@ import neurox.interpretation.clustering
 import neurox.interpretation.probeless
 from sklearn.model_selection import train_test_split
 import neurox.analysis.corpus as corpus
+import numpy as np
 
 
 class Normalization:
