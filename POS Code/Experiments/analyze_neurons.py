@@ -44,7 +44,7 @@ def plot_distribution(top_neurons,model_name):
 
     plt.xlabel("Layers")
     plt.ylabel("The number of neurons selected")
-    plt.title(f"{model_name}:neuron distribution in each layer")
+    plt.title(f"{model_name}:neuron distribution across layers")
     plt.savefig(f"./distribution/{model_name}_neuron_dist.png")
 
 
