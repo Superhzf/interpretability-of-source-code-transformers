@@ -194,35 +194,6 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
     def get_top_words(bert_top_neurons, codebert_top_neurons, graphcodebert_top_neurons):
         #relate neurons to corpus elements like words and sentences
 
-        """
-        After reading the log file, I make the following findings:
-        BERT:
-        idx 6336, focus on numbers / Per probing weights: -=
-        [('111', 1.0), ('4096', 0.9751088908732699), ('1234', 0.9716403903272574), ('17', 0.9450073636012334), ('409', 0.9294083614023431)]
-        idx 6452, names start with profile / Per probing weights: *
-        [('profile_link_color', 1.0), ('profile_sidebar_fill_color', 0.9938239757019465), ('profile_background_color', 0.9593458704874867), ('profile_text_color', 0.9456118275266776), ('profile_background_image_url', 0.9384301842505416)]
-        idx 8617, names include underscore
-        [('psi', 1.0), ('__owner', 0.8780397109577419), ('__version__', 0.8207285360357547), ('global_', 0.8077008163900545), ('__author__', 0.7988188241189443)]
-        idx 3594, same words but in different forms
-        [('WARNING', 1.0), ('warning', 0.8618488467168518), ('warnings', 0.6995641424842399), ('errors', 0.672982180218535), ('agate', 0.6675645399141883)]
-        idx 8823 colors
-        [('Green', 1.0), ('Red', 0.8916517020046575), ('Blue', 0.8645120579258947), ('periods', 0.8214010231389467), ('IDENTITY', 0.81340068540038)]
-
-        CODEBERT:
-        idx 6990 different errors
-        [('ValueError', 1.0), ('IndexError', 0.9924652714712126), ('reversed', 0.9430262227778733), ('TypeError', 0.9354414103056595), ('StopIteration', 0.9199160600916796)]
-        idx 5121 different notfound
-        [('uniform', 1.0), ('","', 0.8659004496226577), ('NotFound', 0.8488904112726917), ('InstanceNotFound', 0.8325225661740231), ('HostNotFound', 0.8199743634506718)]
-        idx 3149 similar words
-        [('friends_count', 1.0), ('favourites_count', 0.9011928544611552), ('followers_count', 0.841331441851885), ('statuses_count', 0.7675064792333265), ('time_zone', 0.5621887142472982)]
-
-        GRAPHCODEBERT:
-        idx 2048 math symbols
-        [('>=', 1.0), ('<', 0.9917421455145282), ('fl', 0.9096695336421277), ('>', 0.8997571374336221), ('100', 0.872842355744861)]
-        idx 7803 numbers
-        [('500', 1.0), ('sum', 0.8894457537996021), ('26', 0.8322667033023341), ('300', 0.8301912699237559), ('400', 0.7951628472012612)]
-        """
-
         print("BERT top words")
         for neuron in bert_top_neurons:
             bert_top_words = corpus.get_top_words(bert_tokens, bert_activations, neuron, num_tokens=5)
@@ -420,8 +391,6 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
     bert_selectivity, codebert_selectivity, graphcodebert_selectivity = control_task_probes(bert_scores,codebert_scores, graphcodebert_scores)
 
     return bert_probe, codebert_probe, graphcodebert_probe
-
-
 
 
 def main():
