@@ -41,21 +41,21 @@ def preprocessing():
 def extract_activations():
     #Extract representations from BERT
     transformers_extractor.extract_representations('bert-base-uncased',
-        'codetest2.in',
+        'codetest2_unique.in',
         'bert_activations.json',
         aggregation="average" #last, first
     )
 
     #Extract representations from CodeBERT
     transformers_extractor.extract_representations('microsoft/codebert-base',
-        'codetest2.in',
+        'codetest2_unique.in',
         'codebert_activations.json',
         aggregation="average" #last, first
     )
 
     #Extract representations from GraphCodeBERT
     transformers_extractor.extract_representations('microsoft/graphcodebert-base',
-        'codetest2.in',
+        'codetest2_unique.in',
         'graphcodebert_activations.json',
         aggregation="average" #last, first
     )
