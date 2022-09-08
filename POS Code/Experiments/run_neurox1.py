@@ -371,24 +371,24 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
     del graphcodebert_norm
 
     #Probeless clustering experiments
-    probeless(bert_X_train,bert_y_train,
-              codebert_X_train, codebert_y_train,
-              graphcodebert_X_train, graphcodebert_y_train)
+    # probeless(bert_X_train,bert_y_train,
+    #           codebert_X_train, codebert_y_train,
+    #           graphcodebert_X_train, graphcodebert_y_train)
 
     #All activations probes
     bert_probe, codebert_probe, graphcodebert_probe, bert_scores, codebert_scores, graphcodebert_scores = all_activations_probe()
 
     #Layerwise Probes
-    layerwise_probes_inference()
+    # layerwise_probes_inference()
 
     #Important neuron probes
-    bert_top_neurons, codebert_top_neurons, graphcodebert_top_neurons = get_imp_neurons()
-    get_top_words(bert_top_neurons, codebert_top_neurons, graphcodebert_top_neurons)
-    del bert_X_train, bert_X_test, bert_y_train, bert_y_test
-    del codebert_X_train, codebert_X_test, codebert_y_train, codebert_y_test
-    del graphcodebert_X_train, graphcodebert_X_test, graphcodebert_y_train, graphcodebert_y_test
+    # bert_top_neurons, codebert_top_neurons, graphcodebert_top_neurons = get_imp_neurons()
+    # get_top_words(bert_top_neurons, codebert_top_neurons, graphcodebert_top_neurons)
+    # del bert_X_train, bert_X_test, bert_y_train, bert_y_test
+    # del codebert_X_train, codebert_X_test, codebert_y_train, codebert_y_test
+    # del graphcodebert_X_train, graphcodebert_X_test, graphcodebert_y_train, graphcodebert_y_test
     #Control task probes
-    bert_selectivity, codebert_selectivity, graphcodebert_selectivity = control_task_probes(bert_scores,codebert_scores, graphcodebert_scores)
+    # bert_selectivity, codebert_selectivity, graphcodebert_selectivity = control_task_probes(bert_scores,codebert_scores, graphcodebert_scores)
 
     return bert_probe, codebert_probe, graphcodebert_probe
 
