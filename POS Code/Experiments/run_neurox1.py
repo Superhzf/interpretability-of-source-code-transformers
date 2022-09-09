@@ -347,11 +347,11 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
 
 
     bert_X_train, bert_X_test, bert_y_train, bert_y_test = \
-        train_test_split(bert_X, bert_y, test_size=0.2,random_state=50, shuffle=False)
+        train_test_split(bert_X, bert_y, test_size=0.1,random_state=50, shuffle=False)
     codebert_X_train, codebert_X_test, codebert_y_train, codebert_y_test = \
-        train_test_split(codebert_X, codebert_y, test_size=0.2,random_state=50, shuffle=False)
+        train_test_split(codebert_X, codebert_y, test_size=0.1,random_state=50, shuffle=False)
     graphcodebert_X_train, graphcodebert_X_test, graphcodebert_y_train, graphcodebert_y_test = \
-        train_test_split(graphcodebert_X, graphcodebert_y, test_size=0.2,random_state=50, shuffle=False)
+        train_test_split(graphcodebert_X, graphcodebert_y, test_size=0.1,random_state=50, shuffle=False)
     del bert_X, bert_y, codebert_X, codebert_y, graphcodebert_X, graphcodebert_y
 
     print(len(set(bert_y_train)),len(set(bert_y_test)))
