@@ -354,6 +354,9 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
         train_test_split(graphcodebert_X, graphcodebert_y, test_size=0.2,random_state=50, shuffle=False)
     del bert_X, bert_y, codebert_X, codebert_y, graphcodebert_X, graphcodebert_y
 
+    print(len(set(bert_y_train)),len(set(bert_y_test)))
+    exit(0)
+
     #normalize the inputs before doing probing
     bert_norm = Normalization(bert_X_train)
     bert_X_train = bert_norm.norm(bert_X_train)
