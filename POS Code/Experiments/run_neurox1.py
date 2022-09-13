@@ -116,22 +116,23 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
         #Train the linear probes (logistic regression) - POS(code) tagging
 
         bert_probe = linear_probe.train_logistic_regression_probe(bert_X_train, bert_y_train, lambda_l1=0.001, lambda_l2=0.001)
-        codebert_probe = linear_probe.train_logistic_regression_probe(codebert_X_train, codebert_y_train, lambda_l1=0.001, lambda_l2=0.001)
-        graphcodebert_probe = linear_probe.train_logistic_regression_probe(graphcodebert_X_train, graphcodebert_y_train, lambda_l1=0.001, lambda_l2=0.001)
+        # codebert_probe = linear_probe.train_logistic_regression_probe(codebert_X_train, codebert_y_train, lambda_l1=0.001, lambda_l2=0.001)
+        # graphcodebert_probe = linear_probe.train_logistic_regression_probe(graphcodebert_X_train, graphcodebert_y_train, lambda_l1=0.001, lambda_l2=0.001)
 
         #Evaluate linear probes for POS(code) tagging
         linear_probe.evaluate_probe(bert_probe, bert_X_test, bert_y_test, idx_to_class=bert_idx2label)
-        linear_probe.evaluate_probe(codebert_probe, codebert_X_test, codebert_y_test, idx_to_class=codebert_idx2label)
-        linear_probe.evaluate_probe(graphcodebert_probe, graphcodebert_X_test, graphcodebert_y_test, idx_to_class=graphcodebert_idx2label)
+        # linear_probe.evaluate_probe(codebert_probe, codebert_X_test, codebert_y_test, idx_to_class=codebert_idx2label)
+        # linear_probe.evaluate_probe(graphcodebert_probe, graphcodebert_X_test, graphcodebert_y_test, idx_to_class=graphcodebert_idx2label)
 
         #Get scores of probes
         bert_scores = linear_probe.evaluate_probe(bert_probe, bert_X_test, bert_y_test, idx_to_class=bert_idx2label)
         print(bert_scores)
-        codebert_scores = linear_probe.evaluate_probe(codebert_probe, codebert_X_test, codebert_y_test, idx_to_class=codebert_idx2label)
-        print(codebert_scores)
-        graphcodebert_scores = linear_probe.evaluate_probe(graphcodebert_probe, graphcodebert_X_test, graphcodebert_y_test, idx_to_class=graphcodebert_idx2label)
-        print(graphcodebert_scores)
-        return bert_probe, codebert_probe, graphcodebert_probe, bert_scores, codebert_scores, graphcodebert_scores
+        # codebert_scores = linear_probe.evaluate_probe(codebert_probe, codebert_X_test, codebert_y_test, idx_to_class=codebert_idx2label)
+        # print(codebert_scores)
+        # graphcodebert_scores = linear_probe.evaluate_probe(graphcodebert_probe, graphcodebert_X_test, graphcodebert_y_test, idx_to_class=graphcodebert_idx2label)
+        # print(graphcodebert_scores)
+        # return bert_probe, codebert_probe, graphcodebert_probe, bert_scores, codebert_scores, graphcodebert_scores
+        return bert_probe, bert_scores
 
 
     def get_imp_neurons():
@@ -345,19 +346,18 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
     graphcodebert_label2idx, graphcodebert_idx2label, graphcodebert_src2idx, \
     graphcodebert_idx2src = get_mappings()
 
+    bert_idx = np.random.choice(bert_X.shape[0],size = int(bert_X.shape[0]*0.15),replace=False)
+    bert_X = bert_X[bert_idx]
+    bert_y = bert_y[bert_idx]
 
     bert_X_train, bert_X_test, bert_y_train, bert_y_test = \
         train_test_split(bert_X, bert_y, test_size=0.2,random_state=50, shuffle=False)
-    codebert_X_train, codebert_X_test, codebert_y_train, codebert_y_test = \
-        train_test_split(codebert_X, codebert_y, test_size=0.2,random_state=50, shuffle=False)
-    graphcodebert_X_train, graphcodebert_X_test, graphcodebert_y_train, graphcodebert_y_test = \
-        train_test_split(graphcodebert_X, graphcodebert_y, test_size=0.2,random_state=50, shuffle=False)
+    # codebert_X_train, codebert_X_test, codebert_y_train, codebert_y_test = \
+    #     train_test_split(codebert_X, codebert_y, test_size=0.2,random_state=50, shuffle=False)
+    # graphcodebert_X_train, graphcodebert_X_test, graphcodebert_y_train, graphcodebert_y_test = \
+    #     train_test_split(graphcodebert_X, graphcodebert_y, test_size=0.2,random_state=50, shuffle=False)
 
-    bert_X_unique = np.unique(bert_X, axis=0)
-    print("The shape of bert_X:",bert_X.shape)
-    print("The shape of bert_X_unique:",bert_X_unique.shape)
     del bert_X, bert_y, codebert_X, codebert_y, graphcodebert_X, graphcodebert_y
-    exit(0)
 
     #normalize the inputs before doing probing
     bert_norm = Normalization(bert_X_train)
@@ -365,15 +365,15 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
     bert_X_test = bert_norm.norm(bert_X_test)
     del bert_norm
 
-    codebert_norm = Normalization(codebert_X_train)
-    codebert_X_train = codebert_norm.norm(codebert_X_train)
-    codebert_X_test = codebert_norm.norm(codebert_X_test)
-    del codebert_norm
-
-    graphcodebert_norm = Normalization(graphcodebert_X_train)
-    graphcodebert_X_train = graphcodebert_norm.norm(graphcodebert_X_train)
-    graphcodebert_X_test = graphcodebert_norm.norm(graphcodebert_X_test)
-    del graphcodebert_norm
+    # codebert_norm = Normalization(codebert_X_train)
+    # codebert_X_train = codebert_norm.norm(codebert_X_train)
+    # codebert_X_test = codebert_norm.norm(codebert_X_test)
+    # del codebert_norm
+    #
+    # graphcodebert_norm = Normalization(graphcodebert_X_train)
+    # graphcodebert_X_train = graphcodebert_norm.norm(graphcodebert_X_train)
+    # graphcodebert_X_test = graphcodebert_norm.norm(graphcodebert_X_test)
+    # del graphcodebert_norm
 
     #Probeless clustering experiments
     # probeless(bert_X_train,bert_y_train,
@@ -381,7 +381,8 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
     #           graphcodebert_X_train, graphcodebert_y_train)
 
     #All activations probes
-    bert_probe, codebert_probe, graphcodebert_probe, bert_scores, codebert_scores, graphcodebert_scores = all_activations_probe()
+    # bert_probe, codebert_probe, graphcodebert_probe, bert_scores, codebert_scores, graphcodebert_scores = all_activations_probe()
+    bert_probe, bert_scores = all_activations_probe()
 
     #Layerwise Probes
     # layerwise_probes_inference()
