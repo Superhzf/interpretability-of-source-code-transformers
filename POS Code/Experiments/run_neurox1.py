@@ -435,31 +435,37 @@ def main():
     print("53:")
     print(bert_tokens['source'][53-1])
     print(bert_tokens['target'][53-1])
-    print(repr(bert_activations[53-1]))
+    with np.printoptions(threshold=numpy.inf):
+        print(repr(bert_activations[53-1]))
     print("54:")
     print(bert_tokens['source'][54-1])
     print(bert_tokens['target'][54-1])
-    print(repr(bert_activations[54-1]))
+    with np.printoptions(threshold=numpy.inf):
+        print(repr(bert_activations[54-1]))
 
     print("96:")
     print(bert_tokens['source'][96-1])
     print(bert_tokens['target'][96-1])
-    print(repr(bert_activations[96-1]))
+    with np.printoptions(threshold=numpy.inf):
+        print(repr(bert_activations[96-1]))
 
     print("97:")
     print(bert_tokens['source'][97-1])
     print(bert_tokens['target'][97-1])
-    print(repr(bert_activations[97-1]))
+    with np.printoptions(threshold=numpy.inf):
+        print(repr(bert_activations[97-1]))
 
     print("98:")
     print(bert_tokens['source'][98-1])
     print(bert_tokens['target'][98-1])
-    print(repr(bert_activations[98-1]))
+    with np.printoptions(threshold=numpy.inf):
+        print(repr(bert_activations[98-1]))
 
     print("99:")
     print(bert_tokens['source'][99-1])
     print(bert_tokens['target'][99-1])
-    print(repr(bert_activations[99-1]))
+    with np.printoptions(threshold=numpy.inf):
+        print(repr(bert_activations[99-1]))
     exit(0)
 
 
