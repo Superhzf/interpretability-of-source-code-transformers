@@ -441,16 +441,24 @@ def main():
     interested_tokens = ["NAME","NEWLINE","LPAR","KEYWORD","RPAR","DOT","COMMA",
                          "EQUAL","DEDENT","COLON","INDENT","LSQB","RSQB","NUMBER"]
     for this_activation,this_token_source,this_token_target in zip(bert_activations,bert_tokens["source"],bert_tokens["target"]):
+        count = 0
+        idx_select = None
         while True:
-            idx_select = np.random.choice(this_activation.shape[0],size=1,replace=False)
+            idx_select = np.random.choice(this_activation.shape[0],size=1,replace=False)[0]
             if this_token_target[idx_select] in interested_tokens:
                 break
-        this_activation_new = this_activation[idx_select]
-        bert_activations_new.append(this_activation_new)
-        # since size = 1, this_token_source[idx_select] will be a single token
-        # not a list.
-        source_new.append([this_token_source[idx_select]])
-        target_new.append([this_token_target[idx_select]])
+            else:
+                count += 1
+
+            if count >= 5:
+                break
+        if idx_select is not None:
+            this_activation_new = this_activation[idx_select]
+            bert_activations_new.append(this_activation_new)
+            # since size = 1, this_token_source[idx_select] will be a single token
+            # not a list.
+            source_new.append([this_token_source[idx_select]])
+            target_new.append([this_token_target[idx_select]])
 
     bert_tokens_new = {"source":source_new,"target":target_new}
 
