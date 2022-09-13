@@ -453,7 +453,7 @@ def main():
             if count >= 5:
                 break
         if idx_select is not None:
-            this_activation_new = this_activation[idx_select]
+            this_activation_new = this_activation[[idx_select]]
             bert_activations_new.append(this_activation_new)
             # since size = 1, this_token_source[idx_select] will be a single token
             # not a list.
@@ -464,8 +464,6 @@ def main():
     print("The length of this_activation_new:",len(bert_activations_new))
     print("The length of bert_tokens_new[source]:",len(bert_tokens_new['source']))
     print("The length of bert_tokens_new[target]:",len(bert_tokens_new['target']))
-
-    exit(0)
 
 
 
