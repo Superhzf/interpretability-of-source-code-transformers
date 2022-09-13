@@ -354,7 +354,7 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
     distribution = {k: v for k, v in sorted(count.items(), key=lambda item: item[1],reverse=True)}
     print("distribution:")
     print(distribution)
-
+    '''
     idx_selected = bert_y <= 14
     bert_y = bert_y[idx_selected]
     bert_X = bert_X[idx_selected]
@@ -367,7 +367,7 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
     distribution = {k: v for k, v in sorted(count.items(), key=lambda item: item[1],reverse=True)}
     print("distribution after selecting a random subset:")
     print(distribution)
-
+    '''
     bert_X_train, bert_X_test, bert_y_train, bert_y_test = \
         train_test_split(bert_X, bert_y, test_size=0.2,random_state=50, shuffle=False)
     # codebert_X_train, codebert_X_test, codebert_y_train, codebert_y_test = \
@@ -435,8 +435,30 @@ def main():
 
     bert_tokens, codebert_tokens, graphcodebert_tokens =  load_tokens(bert_activations, codebert_activations, graphcodebert_activations)
 
+    bert_activations_new = []
+    source_new = []
+    target_new = []
+    interested_tokens = ["NAME","NEWLINE","LPAR","KEYWORD","RPAR","DOT","COMMA",
+                         "EQUAL","DEDENT","COLON","INDENT","LSQB","RSQB","NUMBER"]
+    for this_activation,this_token_source,this_token_target in zip(bert_activations,bert_tokens["source"],bert_tokens["target"]):
+        while True:
+            idx_select = np.random.choice(this_activation.shape[0],size=1,replace=False)
+            if this_token_target[idx_select] in interested_tokens:
+                break
+        this_activation_new = this_activation[idx_select]
+        bert_activations_new.append(this_activation_new)
+        # since size = 1, this_token_source[idx_select] will be a single token
+        # not a list.
+        source_new.append([this_token_source[idx_select]])
+        target_new.append([this_token_target[idx_select]])
+
+    bert_tokens_new = {"source":source_new,"target":target_new}
+
+
+
+
     # bert_probe, codebert_probe, graphcodebert_probe = linear_probes_inference(bert_tokens, bert_activations, codebert_tokens, codebert_activations, graphcodebert_tokens, graphcodebert_activations)
-    bert_probe = linear_probes_inference(bert_tokens, bert_activations, codebert_tokens, codebert_activations, graphcodebert_tokens, graphcodebert_activations)
+    bert_probe = linear_probes_inference(bert_tokens_new, bert_activations_new, codebert_tokens, codebert_activations, graphcodebert_tokens, graphcodebert_activations)
     #neurox.interpretation.utils.print_overall_stats(all_results)
 
     #Compare linear probe top neurons with probeless neuron ordering
