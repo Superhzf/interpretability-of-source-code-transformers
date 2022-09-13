@@ -351,11 +351,11 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
     distribution = {k: v for k, v in sorted(count.items(), key=lambda item: item[1],reverse=True)}
     print("distribution:")
     print(distribution)
-
+    '''
     idx_selected = bert_y <= 13
     bert_y = bert_y[idx_selected]
     bert_X = bert_X[idx_selected]
-    '''
+
     idx_selected = np.random.choice(bert_X.shape[0],size=int(bert_X.shape[0]*0.05),replace=False)
     bert_X = bert_X[idx_selected]
     bert_y = bert_y[idx_selected]
@@ -469,40 +469,40 @@ def main():
     print("The length of bert_tokens[source]:",len(bert_tokens['source']))
     print("The length of bert_tokens[target]:",len(bert_tokens['target']))
 
-    # bert_activations_new = []
-    # source_new = []
-    # target_new = []
-    # interested_tokens = ["NAME","NEWLINE","LPAR","KEYWORD","RPAR","DOT","COMMA",
-    #                      "EQUAL","DEDENT","COLON","INDENT","LSQB","RSQB","NUMBER"]
-    # for this_activation,this_token_source,this_token_target in zip(bert_activations,bert_tokens["source"],bert_tokens["target"]):
-    #     count = 0
-    #     idx_select = None
-    #     while True:
-    #         idx_select = np.random.choice(this_activation.shape[0],size=1,replace=False)[0]
-    #         if this_token_target[idx_select] in interested_tokens:
-    #             break
-    #         else:
-    #             count += 1
-    #
-    #         if count >= 5:
-    #             break
-    #     if idx_select is not None:
-    #         this_activation_new = this_activation[[idx_select]]
-    #         bert_activations_new.append(this_activation_new)
-    #         # since size = 1, this_token_source[idx_select] will be a single token
-    #         # not a list.
-    #         source_new.append([this_token_source[idx_select]])
-    #         target_new.append([this_token_target[idx_select]])
-    #
-    # bert_tokens_new = {"source":source_new,"target":target_new}
-    # print("The length of this_activation_new:",len(bert_activations_new))
-    # print("The length of bert_tokens_new[source]:",len(bert_tokens_new['source']))
-    # print("The length of bert_tokens_new[target]:",len(bert_tokens_new['target']))
+    bert_activations_new = []
+    source_new = []
+    target_new = []
+    interested_tokens = ["NAME","NEWLINE","LPAR","KEYWORD","RPAR","DOT","COMMA",
+                         "EQUAL","DEDENT","COLON","INDENT","LSQB","RSQB","NUMBER"]
+    for this_activation,this_token_source,this_token_target in zip(bert_activations,bert_tokens["source"],bert_tokens["target"]):
+        count = 0
+        idx_select = None
+        while True:
+            idx_select = np.random.choice(this_activation.shape[0],size=1,replace=False)[0]
+            if this_token_target[idx_select] in interested_tokens:
+                break
+            else:
+                count += 1
+
+            if count >= 5:
+                break
+        if idx_select is not None:
+            this_activation_new = this_activation[[idx_select]]
+            bert_activations_new.append(this_activation_new)
+            # since size = 1, this_token_source[idx_select] will be a single token
+            # not a list.
+            source_new.append([this_token_source[idx_select]])
+            target_new.append([this_token_target[idx_select]])
+
+    bert_tokens_new = {"source":source_new,"target":target_new}
+    print("The length of this_activation_new:",len(bert_activations_new))
+    print("The length of bert_tokens_new[source]:",len(bert_tokens_new['source']))
+    print("The length of bert_tokens_new[target]:",len(bert_tokens_new['target']))
 
 
 
     # bert_probe, codebert_probe, graphcodebert_probe = linear_probes_inference(bert_tokens, bert_activations, codebert_tokens, codebert_activations, graphcodebert_tokens, graphcodebert_activations)
-    bert_probe = linear_probes_inference(bert_tokens, bert_activations, codebert_tokens, codebert_activations, graphcodebert_tokens, graphcodebert_activations)
+    bert_probe = linear_probes_inference(bert_tokens_new, bert_activations_new, codebert_tokens, codebert_activations, graphcodebert_tokens, graphcodebert_activations)
     #neurox.interpretation.utils.print_overall_stats(all_results)
 
     #Compare linear probe top neurons with probeless neuron ordering
