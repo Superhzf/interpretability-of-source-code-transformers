@@ -346,9 +346,15 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
     graphcodebert_label2idx, graphcodebert_idx2label, graphcodebert_src2idx, \
     graphcodebert_idx2src = get_mappings()
 
-    bert_idx = np.random.choice(bert_X.shape[0],size = int(bert_X.shape[0]*0.50),replace=False)
-    bert_X = bert_X[bert_idx]
-    bert_y = bert_y[bert_idx]
+    # bert_idx = np.random.choice(bert_X.shape[0],size = int(bert_X.shape[0]*0.50),replace=False)
+    # bert_X = bert_X[bert_idx]
+    # bert_y = bert_y[bert_idx]
+    import collections
+    count = collections.Counter(bert_y)
+    distribution = {k: v for k, v in sorted(count.items(), key=lambda item: item[1],reverse=True)}
+    print("distribution:")
+    print(distribution)
+    exit(0)
 
     bert_X_train, bert_X_test, bert_y_train, bert_y_test = \
         train_test_split(bert_X, bert_y, test_size=0.2,random_state=50, shuffle=False)
