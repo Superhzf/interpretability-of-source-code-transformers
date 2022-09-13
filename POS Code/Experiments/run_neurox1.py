@@ -461,7 +461,9 @@ def main():
             target_new.append([this_token_target[idx_select]])
 
     bert_tokens_new = {"source":source_new,"target":target_new}
-
+    print("The length of this_activation_new:",len(this_activation_new))
+    print("The length of bert_tokens_new:",len(bert_tokens_new['source']))
+    exit(0)
 
 
 
