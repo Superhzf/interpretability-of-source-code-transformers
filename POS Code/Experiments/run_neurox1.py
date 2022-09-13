@@ -355,11 +355,11 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
     print("distribution:")
     print(distribution)
 
-    idx_selected = bert_y <= 29
+    idx_selected = bert_y <= 25
     bert_y = bert_y[idx_selected]
     bert_X = bert_X[idx_selected]
 
-    idx_selected = np.random.choice(bert_X.shape[0],size=int(bert_X.shape[0]*0.1),replace=False)
+    idx_selected = np.random.choice(bert_X.shape[0],size=int(bert_X.shape[0]*0.05),replace=False)
     bert_X = bert_X[idx_selected]
     bert_y = bert_y[idx_selected]
 
@@ -414,7 +414,8 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
     #Control task probes
     # bert_selectivity, codebert_selectivity, graphcodebert_selectivity = control_task_probes(bert_scores,codebert_scores, graphcodebert_scores)
 
-    return bert_probe, codebert_probe, graphcodebert_probe
+    # return bert_probe, codebert_probe, graphcodebert_probe
+    return bert_probe
 
 
 def main():
@@ -434,8 +435,8 @@ def main():
 
     bert_tokens, codebert_tokens, graphcodebert_tokens =  load_tokens(bert_activations, codebert_activations, graphcodebert_activations)
 
-    bert_probe, codebert_probe, graphcodebert_probe = linear_probes_inference(bert_tokens, bert_activations, codebert_tokens, codebert_activations, graphcodebert_tokens, graphcodebert_activations)
-
+    # bert_probe, codebert_probe, graphcodebert_probe = linear_probes_inference(bert_tokens, bert_activations, codebert_tokens, codebert_activations, graphcodebert_tokens, graphcodebert_activations)
+    bert_probe = linear_probes_inference(bert_tokens, bert_activations, codebert_tokens, codebert_activations, graphcodebert_tokens, graphcodebert_activations)
     #neurox.interpretation.utils.print_overall_stats(all_results)
 
     #Compare linear probe top neurons with probeless neuron ordering
