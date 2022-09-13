@@ -8,3 +8,5 @@ dataset/cubert/*/generated/*dev*
 dataset/cubert/*/generated/*eval*
 *.ipynb*
 *.json
+
+py150_files.tar.gz
