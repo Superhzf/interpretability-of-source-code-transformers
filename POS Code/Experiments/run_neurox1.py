@@ -287,7 +287,7 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
         codebert_X_ct_test = codebert_ct_norm.norm(codebert_X_ct_test)
         del codebert_ct_norm
 
-        codebert_ct_probe = linear_probe.train_logistic_regression_probe(codebert_X_ct_train, codebert_y_ct_train, lambda_l1=0.001, lambda_l2=0.001)
+        codebert_ct_probe = linear_probe.train_logistic_regression_probe(codebert_X_ct_train, codebert_y_ct_train, lambda_l1=0, lambda_l2=0)
         codebert_ct_scores = linear_probe.evaluate_probe(codebert_ct_probe, codebert_X_ct_test, codebert_y_ct_test, idx_to_class=codebert_idx2label_ct)
         codebert_selectivity = codebert_scores['__OVERALL__'] - codebert_ct_scores['__OVERALL__']
         print('CodeBERT Selectivity (Diff. between true task and probing task performance): ', codebert_selectivity)
