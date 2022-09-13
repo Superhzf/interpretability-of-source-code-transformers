@@ -355,13 +355,18 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
     print("distribution:")
     print(distribution)
 
-    idx_selected = bert_y <= 33
+    idx_selected = bert_y <= 39
     bert_y = bert_y[idx_selected]
     bert_X = bert_X[idx_selected]
 
     idx_selected = np.random.choice(bert_X.shape[0],size=int(bert_X.shape[0]*0.1),replace=False)
     bert_X = bert_X[idx_selected]
     bert_y = bert_y[idx_selected]
+
+    count = collections.Counter(bert_y)
+    distribution = {k: v for k, v in sorted(count.items(), key=lambda item: item[1],reverse=True)}
+    print("distribution after selecting a random subset:")
+    print(distribution)
 
     bert_X_train, bert_X_test, bert_y_train, bert_y_test = \
         train_test_split(bert_X, bert_y, test_size=0.2,random_state=50, shuffle=False)
