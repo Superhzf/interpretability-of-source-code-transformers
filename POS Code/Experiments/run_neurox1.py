@@ -355,7 +355,7 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
     print("distribution:")
     print(distribution)
 
-    idx_selected = bert_y <= 39
+    idx_selected = bert_y <= 29
     bert_y = bert_y[idx_selected]
     bert_X = bert_X[idx_selected]
 
