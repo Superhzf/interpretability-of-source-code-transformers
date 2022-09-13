@@ -1,0 +1,166 @@
+Getting activations from json files. If you need to extract them, run with --extract=True 
+
+Loading json activations from bert_activations.json...
+9704 13.0
+Loading json activations from codebert_activations.json...
+9704 13.0
+Loading json activations from graphcodebert_activations.json...
+9704 13.0
+Number of tokens:  94184
+length of source dictionary:  6172
+length of target dictionary:  44
+94184
+Total instances: 94184
+['rec2', '1000', '@', 'fork_with_import_lock', 'procname', 'pkg_resources', 'check_username', '_create_learning_image', '_postproc_kwargs', '"home"', 'tb', 'dispatch_request', 'minaccn', 'paginator', 'ResponseLine', 'first', 'scoop_full_copy', 'patch_file', 'spec', 'paint']
+Number of samples:  94184
+Stats: Labels with their frequencies in the final set
+GREATER 124
+STAREQUAL 2
+AMPEREQUAL 1
+RIGHTSHIFT 3
+ENCODING 1
+VBAR 19
+RPAR 6791
+NL 1149
+STRING 625
+NUMBER 1631
+LEFTSHIFT 3
+COLON 3232
+EQEQUAL 402
+DOUBLESTAR 120
+AT 52
+LSQB 1739
+INDENT 3205
+RSQB 1693
+LESS 88
+COMMA 4946
+LESSEQUAL 24
+RBRACE 159
+LBRACE 196
+LPAR 6950
+EQUAL 4391
+NOTEQUAL 88
+NEWLINE 8554
+SLASH 56
+NAME 29676
+DEDENT 3355
+DOUBLESLASH 9
+AMPER 5
+COMMENT 5
+SLASHEQUAL 2
+MINEQUAL 12
+STAR 170
+KEYWORD 6938
+GREATEREQUAL 42
+PLUS 422
+MINUS 259
+SEMI 2
+PLUSEQUAL 108
+PERCENT 197
+DOT 6738
+Number of tokens:  94184
+length of source dictionary:  6172
+length of target dictionary:  44
+94184
+Total instances: 94184
+['rec2', '1000', '@', 'fork_with_import_lock', 'procname', 'pkg_resources', 'check_username', '_create_learning_image', '_postproc_kwargs', '"home"', 'tb', 'dispatch_request', 'minaccn', 'paginator', 'ResponseLine', 'first', 'scoop_full_copy', 'patch_file', 'spec', 'paint']
+Number of samples:  94184
+Stats: Labels with their frequencies in the final set
+GREATER 124
+STAREQUAL 2
+AMPEREQUAL 1
+RIGHTSHIFT 3
+ENCODING 1
+VBAR 19
+RPAR 6791
+NL 1149
+STRING 625
+NUMBER 1631
+LEFTSHIFT 3
+COLON 3232
+EQEQUAL 402
+DOUBLESTAR 120
+AT 52
+LSQB 1739
+INDENT 3205
+RSQB 1693
+LESS 88
+COMMA 4946
+LESSEQUAL 24
+RBRACE 159
+LBRACE 196
+LPAR 6950
+EQUAL 4391
+NOTEQUAL 88
+NEWLINE 8554
+SLASH 56
+NAME 29676
+DEDENT 3355
+DOUBLESLASH 9
+AMPER 5
+COMMENT 5
+SLASHEQUAL 2
+MINEQUAL 12
+STAR 170
+KEYWORD 6938
+GREATEREQUAL 42
+PLUS 422
+MINUS 259
+SEMI 2
+PLUSEQUAL 108
+PERCENT 197
+DOT 6738
+Number of tokens:  94184
+length of source dictionary:  6172
+length of target dictionary:  44
+94184
+Total instances: 94184
+['rec2', '1000', '@', 'fork_with_import_lock', 'procname', 'pkg_resources', 'check_username', '_create_learning_image', '_postproc_kwargs', '"home"', 'tb', 'dispatch_request', 'minaccn', 'paginator', 'ResponseLine', 'first', 'scoop_full_copy', 'patch_file', 'spec', 'paint']
+Number of samples:  94184
+Stats: Labels with their frequencies in the final set
+GREATER 124
+STAREQUAL 2
+AMPEREQUAL 1
+RIGHTSHIFT 3
+ENCODING 1
+VBAR 19
+RPAR 6791
+NL 1149
+STRING 625
+NUMBER 1631
+LEFTSHIFT 3
+COLON 3232
+EQEQUAL 402
+DOUBLESTAR 120
+AT 52
+LSQB 1739
+INDENT 3205
+RSQB 1693
+LESS 88
+COMMA 4946
+LESSEQUAL 24
+RBRACE 159
+LBRACE 196
+LPAR 6950
+EQUAL 4391
+NOTEQUAL 88
+NEWLINE 8554
+SLASH 56
+NAME 29676
+DEDENT 3355
+DOUBLESLASH 9
+AMPER 5
+COMMENT 5
+SLASHEQUAL 2
+MINEQUAL 12
+STAR 170
+KEYWORD 6938
+GREATEREQUAL 42
+PLUS 422
+MINUS 259
+SEMI 2
+PLUSEQUAL 108
+PERCENT 197
+DOT 6738
+distribution:
+{28: 29676, 26: 8554, 23: 6950, 36: 6938, 6: 6791, 43: 6738, 19: 4946, 24: 4391, 29: 3355, 11: 3232, 16: 3205, 15: 1739, 17: 1693, 9: 1631, 7: 1149, 8: 625, 38: 422, 12: 402, 39: 259, 42: 197, 22: 196, 35: 170, 21: 159, 0: 124, 13: 120, 41: 108, 18: 88, 25: 88, 27: 56, 14: 52, 37: 42, 20: 24, 5: 19, 34: 12, 30: 9, 31: 5, 32: 5, 10: 3, 3: 3, 40: 2, 1: 2, 33: 2, 4: 1, 2: 1}
