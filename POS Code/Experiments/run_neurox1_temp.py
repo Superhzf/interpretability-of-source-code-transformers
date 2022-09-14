@@ -435,15 +435,15 @@ def main():
 
     bert_tokens, codebert_tokens, graphcodebert_tokens =  load_tokens(bert_activations, codebert_activations, graphcodebert_activations)
 
-    print("53:")
-    print(bert_tokens['source'][53-1])
-    print(bert_tokens['target'][53-1])
-    feature_matrix1 = bert_activations[53-1]
+    print("0:")
+    print(bert_tokens['source'][0])
+    print(bert_tokens['target'][0])
+    feature_matrix1 = bert_activations[0]
 
-    print("54:")
-    print(bert_tokens['source'][54-1])
-    print(bert_tokens['target'][54-1])
-    feature_matrix2 = bert_activations[54-1]
+    print("1:")
+    print(bert_tokens['source'][1])
+    print(bert_tokens['target'][1])
+    feature_matrix2 = bert_activations[1]
     # diff = np.sum(feature_matrix1[:11] - feature_matrix2[:11],axis=1)
     diff = feature_matrix1[:11][0] - feature_matrix2[:11][0]
     print("Dimension of diff:",diff.shape)
