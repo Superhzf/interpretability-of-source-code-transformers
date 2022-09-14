@@ -78,19 +78,19 @@ def load_tokens(bert_activations,codebert_activations, graphcodebert_activations
     #Load tokens and sanity checks for parallelism between tokens, labels and activations
     bert_tokens = data_loader.load_data('temp.in',
                                    'temp.label',
-                                   bert_temp_activations,
+                                   bert_activations,
                                    512 # max_sent_length
                                   )
 
     codebert_tokens = data_loader.load_data('temp.in',
                                    'temp.label',
-                                   codebert_temp_activations,
+                                   codebert_activations,
                                    512 # max_sent_length
                                   )
 
     graphcodebert_tokens = data_loader.load_data('temp.in',
                                    'temp.label',
-                                   graphcodebert_temp_activations,
+                                   graphcodebert_activations,
                                    512 # max_sent_length
                                   )
 
