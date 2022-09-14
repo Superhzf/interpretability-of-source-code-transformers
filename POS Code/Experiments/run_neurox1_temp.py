@@ -43,6 +43,7 @@ def extract_activations():
     transformers_extractor.extract_representations('bert-base-uncased',
         'temp.in',
         'bert_temp_activations.json',
+        'cuda',
         aggregation="average" #last, first
     )
 
@@ -50,6 +51,7 @@ def extract_activations():
     transformers_extractor.extract_representations('microsoft/codebert-base',
         'temp.in',
         'codebert_temp_activations.json',
+        'cuda',
         aggregation="average" #last, first
     )
 
@@ -57,6 +59,7 @@ def extract_activations():
     transformers_extractor.extract_representations('microsoft/graphcodebert-base',
         'temp.in',
         'graphcodebert_temp_activations.json',
+        'cuda',
         aggregation="average" #last, first
     )
 
