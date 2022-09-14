@@ -3,14 +3,23 @@
 #SBATCH --ntasks=8
 #SBATCH --mem=128G
 #SBATCH --time=10:00:00
+#SBATCH --partition=gpu
+#SBATCH --gres=gpu:a100-pcie:1
+
 
 module load ml-gpu
 
-#This will generate codetest.in and codetest.label but neurox skips some lines, not sure why.
-ml-gpu /work/LAS/jannesar-lab/arushi/Environments/NeuroX_env/bin/python POS_dataset_creation.py
+#This will create the file myfile.txt
+ml-gpu /work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python merge_python_files.py
 
-#Extract activations, identify and remove skipped lines form dataset for now -- codetest2.in and codetest2.label
-ml-gpu /work/LAS/jannesar-lab/arushi/Environments/NeuroX_env/bin/python get_skip_lines.py > skip_logs
+#This will generate codetest.in and codetest.label
+ml-gpu /work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python POS_dataset_creation.py
 
-#From skip_logs, gwt the lines to skip from datset and create codetest2.in and codetest2.label
-ml-gpu /work/LAS/jannesar-lab/arushi/Environments/NeuroX_env/bin/python skip_lines.py
+#remove observations and labels that have different length
+ml-gpu /work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python skip_lines.py
+
+# remove duplicated lines
+ml-gpu /work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python deduplication.py > log
+
+# validate that activation extraction works without problems
+# ml-gpu /work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python activation_extraction.py > log_validation
