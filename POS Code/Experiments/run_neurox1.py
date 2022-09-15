@@ -348,19 +348,23 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
     graphcodebert_label2idx, graphcodebert_idx2label, graphcodebert_src2idx, \
     graphcodebert_idx2src = get_mappings()
 
+    idx_selected = bert_y <= 40
+    bert_y = bert_y[idx_selected]
+    bert_X = bert_X[idx_selected]
+
+    codebert_y = codebert_y[idx_selected]
+    codebert_X = codebert_X[idx_selected]
+
+    graphcodebert_y = graphcodebert_y[idx_selected]
+    graphcodebert_X = graphcodebert_X[idx_selected]
+
+
     bert_X_train, bert_X_test, bert_y_train, bert_y_test = \
         train_test_split(bert_X, bert_y, test_size=0.2,random_state=50, shuffle=False)
     codebert_X_train, codebert_X_test, codebert_y_train, codebert_y_test = \
         train_test_split(codebert_X, codebert_y, test_size=0.2,random_state=50, shuffle=False)
     graphcodebert_X_train, graphcodebert_X_test, graphcodebert_y_train, graphcodebert_y_test = \
         train_test_split(graphcodebert_X, graphcodebert_y, test_size=0.2,random_state=50, shuffle=False)
-
-    import collections
-    count = collections.Counter(bert_y)
-    distribution = {k: v for k, v in sorted(count.items(), key=lambda item: item[1],reverse=True)}
-    print("distribution:")
-    print(distribution)
-    exit(0)
 
     del bert_X, bert_y, codebert_X, codebert_y, graphcodebert_X, graphcodebert_y
 
