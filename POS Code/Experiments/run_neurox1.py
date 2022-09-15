@@ -355,6 +355,13 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
     graphcodebert_X_train, graphcodebert_X_test, graphcodebert_y_train, graphcodebert_y_test = \
         train_test_split(graphcodebert_X, graphcodebert_y, test_size=0.2,random_state=50, shuffle=False)
 
+    import collections
+    count = collections.Counter(bert_y)
+    distribution = {k: v for k, v in sorted(count.items(), key=lambda item: item[1],reverse=True)}
+    print("distribution:")
+    print(distribution)
+    exit(0)
+
     del bert_X, bert_y, codebert_X, codebert_y, graphcodebert_X, graphcodebert_y
 
     #normalize the inputs before doing probing
@@ -394,8 +401,7 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
     #Control task probes
     bert_selectivity, codebert_selectivity, graphcodebert_selectivity = control_task_probes(bert_scores,codebert_scores, graphcodebert_scores)
 
-    # return bert_probe, codebert_probe, graphcodebert_probe
-    return bert_probe
+    return bert_probe, codebert_probe, graphcodebert_probe
 
 
 def main():
