@@ -6,6 +6,22 @@ dataset/cubert/*/original/*eval*
 dataset/cubert/*/generated/*train*
 dataset/cubert/*/generated/*dev*
 dataset/cubert/*/generated/*eval*
+
+POS\ Code/Experiments/*.sav
+POS\ Code/Experiments/*.json
+NeuroX_Code/
+NeuroX_env/
+
+py150_files.tar.gz
+py150_files
+
+myfile_tokens.txt
+POS.csv
+myfile.txt
+
+*logs*
+*slurm*
+
 *.ipynb*
 *.json
 

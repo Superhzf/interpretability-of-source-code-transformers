@@ -3,6 +3,11 @@ import re
 
 ''' Create codetest.in and codetest.label from python code file myfile.txt for word level analysis'''
 
+try:
+    os.remove("myfile_tokens.txt")
+except OSError:
+    pass
+
 #Run python tokenizer on myfile.txt -- which contains original code file
 os.system("python -m tokenize -e myfile.txt > myfile_tokens.txt")
 
@@ -32,10 +37,28 @@ with open('myfile_tokens.txt') as f_in:
     print(clean)
     print(len(clean))
 
+f_in.close()
+
+try:
+    os.remove("POS.csv")
+except OSError:
+    pass
+
 #Store intermediate result in csv file
 with open('POS.csv', 'a') as f:
     for item in clean:
         f.write("%s,%s\n"%(item[0],item[1]))
+f.close()
+
+try:
+    os.remove('codetest.label')
+except OSError:
+    pass
+
+try:
+    os.remove('codetest.in')
+except OSError:
+    pass
 
 #Convert to required input formats: tokens: codetest.in, tags: codetest.label
 with open('codetest.label', 'a') as f_label, open('codetest.in', 'a') as f_in:
@@ -60,3 +83,6 @@ with open('codetest.label', 'a') as f_label, open('codetest.in', 'a') as f_in:
     else:
       print(lst[i][1], end = ' ')
       f_in.writelines(lst[i][1]+ ' ' )
+
+f_label.close()
+f_in.close()
