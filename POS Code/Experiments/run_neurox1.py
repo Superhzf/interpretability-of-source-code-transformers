@@ -409,7 +409,7 @@ def main():
     else:
         print("Getting activations from json files. If you need to extract them, run with --extract=True \n" )
         #bert_activations, codebert_activations = load_extracted_activations()
-    exit(0)
+
     #bert_activations, codebert_activations,graphcodebert_activations = extract_activations()
     bert_activations, codebert_activations, graphcodebert_activations = load_extracted_activations()
 
