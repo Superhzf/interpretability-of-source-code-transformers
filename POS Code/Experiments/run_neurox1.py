@@ -348,6 +348,12 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
     graphcodebert_label2idx, graphcodebert_idx2label, graphcodebert_src2idx, \
     graphcodebert_idx2src = get_mappings()
 
+    import collections
+    count = collections.Counter(bert_y)
+    distribution = {k: v for k, v in sorted(count.items(), key=lambda item: item[1],reverse=True)}
+    print("distribution:")
+    print(distribution)
+
     idx_selected = bert_y <= 40
     bert_y = bert_y[idx_selected]
     bert_X = bert_X[idx_selected]
