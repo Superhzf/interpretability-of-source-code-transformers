@@ -397,10 +397,9 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
 
     #All activations probes
     bert_probe, codebert_probe, graphcodebert_probe, bert_scores, codebert_scores, graphcodebert_scores = all_activations_probe()
-    bert_probe, bert_scores = all_activations_probe()
 
     #Layerwise Probes
-    # layerwise_probes_inference()
+    layerwise_probes_inference()
 
     #Important neuron probes
     bert_top_neurons, codebert_top_neurons, graphcodebert_top_neurons = get_imp_neurons()
