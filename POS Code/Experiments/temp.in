@@ -1,3 +1,3 @@
-~~~ res [ self . counters [ count ] ] = \n
-~~~ res [ self . counters [ count ] ] = \n
+~~~ res [ self . counters [ count ] ] = val \n
+~~~ res [ self . counters [ count ] ] = int ( val ) \n
 ~~~ a = 3 \n
