@@ -444,7 +444,7 @@ def main():
     print(bert_tokens['source'][2])
     print(bert_tokens['target'][2])
     feature_matrix2 = bert_activations[2]
-    diff = np.sum(feature_matrix1[10] - feature_matrix2[2])
+    diff = np.sum(feature_matrix1[10][:768] - feature_matrix2[2][:768])
     print("Dimension of diff:",diff.shape)
     with np.printoptions(threshold=np.inf):
         print(repr(diff))
