@@ -438,24 +438,27 @@ def main():
     print("0:")
     print(bert_tokens['source'][0])
     print(bert_tokens['target'][0])
-    feature_matrix1 = bert_activations[0]
+    feature_matrix0 = bert_activations[0]
 
     print(":1")
     print(bert_tokens['source'][1])
     print(bert_tokens['target'][1])
-    feature_matrix2 = bert_activations[1]
+    feature_matrix1 = bert_activations[1]
 
     print("2:")
     print(bert_tokens['source'][2])
     print(bert_tokens['target'][2])
-    feature_matrix3 = bert_activations[2]
+    feature_matrix2 = bert_activations[2]
 
-    diff03 = np.sum(feature_matrix1[10][:768] - feature_matrix3[2][:768])
-    diff01 = np.sum(feature_matrix1[10][:768] - feature_matrix2[10][:768])
+    print("3:")
+    print(bert_tokens['source'][3])
+    print(bert_tokens['target'][3])
+    feature_matrix3 = bert_activations[3]
+
+    diff01 = np.sum(feature_matrix0[2][:768] - feature_matrix1[2][:768])
     # print("Dimension of diff:",diff.shape)
     with np.printoptions(threshold=np.inf):
         print("Difference between 0 and 1:",repr(diff01))
-        print("Difference between 0 and 3:",repr(diff03))
     exit(0)
 
 

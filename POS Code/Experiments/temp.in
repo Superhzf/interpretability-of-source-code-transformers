@@ -1,3 +1,4 @@
-~~~ res [ self . counters [ count ] ] = val \n
-~~~ res [ self . counters [ count ] ] = int ( val ) \n
-~~~ a = 3 \n
+if i < 3 : \n
+if i < 4 : \n
+a = c < d \n
+b = e < 4 \n
