@@ -456,7 +456,7 @@ def main():
     feature_matrix3 = bert_activations[3]
 
     diff01 = np.sum(feature_matrix0[2][:768] - feature_matrix1[2][:768])
-    diff13 = np.sum(feature_matrix0[2] - feature_matrix1[3])
+    diff13 = feature_matrix0[2] - feature_matrix1[3]
     # print("Dimension of diff:",diff.shape)
     with np.printoptions(threshold=np.inf):
         print("Difference if the left are equal but the right are not:",repr(diff01))
