@@ -457,11 +457,14 @@ def main():
 
     diff01 = np.sum(feature_matrix0[2][:768] - feature_matrix1[2][:768])
     diff13 = feature_matrix1[2] - feature_matrix3[3]
+    diff02 = feature_matrix0[2] - feature_matrix2[3]
     # print("Dimension of diff:",diff.shape)
     with np.printoptions(threshold=np.inf):
         print("Difference if the left are equal but the right are not:",repr(diff01))
         print("------------------------------------------------------")
         print("Difference if the left are not equal but the right are:",repr(diff13))
+        print("------------------------------------------------------")
+        print("Difference if both the left and right are not equal:",repr(diff13))
     exit(0)
 
 
