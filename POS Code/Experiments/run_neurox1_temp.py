@@ -452,10 +452,10 @@ def main():
 
     diff03 = np.sum(feature_matrix1[10][:768] - feature_matrix3[2][:768])
     diff01 = np.sum(feature_matrix1[10][:768] - feature_matrix2[10][:768])
-    print("Dimension of diff:",diff.shape)
+    # print("Dimension of diff:",diff.shape)
     with np.printoptions(threshold=np.inf):
-        print(repr(diff03))
-        print(repr(diff01))
+        print("Difference between 0 and 1:",repr(diff01))
+        print("Difference between 0 and 3:",repr(diff03))
     exit(0)
 
 
