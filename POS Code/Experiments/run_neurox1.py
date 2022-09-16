@@ -357,7 +357,7 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
     print("bert_label2idx")
     print(bert_label2idx)
 
-    idx_selected = bert_y <= 43
+    idx_selected = bert_y <= 40
     bert_y = bert_y[idx_selected]
     bert_X = bert_X[idx_selected]
 
@@ -367,14 +367,14 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
     graphcodebert_y = graphcodebert_y[idx_selected]
     graphcodebert_X = graphcodebert_X[idx_selected]
 
-    bert_label2idx = {label:idx for (label,idx) in bert_label2idx.items() if idx <= 43}
-    bert_idx2label = {idx:label for (idx,label) in bert_idx2label.items() if idx <= 43}
+    bert_label2idx = {label:idx for (label,idx) in bert_label2idx.items() if idx <= 40}
+    bert_idx2label = {idx:label for (idx,label) in bert_idx2label.items() if idx <= 40}
 
-    codebert_label2idx = {label:idx for (label,idx) in codebert_label2idx.items() if idx <= 43}
-    codebert_idx2label = {idx:label for (idx,label) in codebert_idx2label.items() if idx <= 43}
+    codebert_label2idx = {label:idx for (label,idx) in codebert_label2idx.items() if idx <= 40}
+    codebert_idx2label = {idx:label for (idx,label) in codebert_idx2label.items() if idx <= 40}
 
-    graphcodebert_label2idx = {label:idx for (label,idx) in graphcodebert_label2idx.items() if idx <= 43}
-    graphcodebert_idx2label = {idx:label for (idx,label) in graphcodebert_idx2label.items() if idx <= 43}
+    graphcodebert_label2idx = {label:idx for (label,idx) in graphcodebert_label2idx.items() if idx <= 40}
+    graphcodebert_idx2label = {idx:label for (idx,label) in graphcodebert_idx2label.items() if idx <= 40}
 
 
     bert_X_train, bert_X_test, bert_y_train, bert_y_test = \
