@@ -43,7 +43,7 @@ def extract_activations():
     transformers_extractor.extract_representations('bert-base-uncased',
         'temp.in',
         'bert_temp_activations.json',
-        'cpu',
+        'cuda',
         aggregation="average" #last, first
     )
 
@@ -51,7 +51,7 @@ def extract_activations():
     transformers_extractor.extract_representations('microsoft/codebert-base',
         'temp.in',
         'codebert_temp_activations.json',
-        'cpu',
+        'cuda',
         aggregation="average" #last, first
     )
 
@@ -59,7 +59,7 @@ def extract_activations():
     transformers_extractor.extract_representations('microsoft/graphcodebert-base',
         'temp.in',
         'graphcodebert_temp_activations.json',
-        'cpu',
+        'cuda',
         aggregation="average" #last, first
     )
 
@@ -440,38 +440,14 @@ def main():
     print(bert_tokens['target'][0])
     feature_matrix1 = bert_activations[0]
 
-    print("1:")
-    print(bert_tokens['source'][1])
-    print(bert_tokens['target'][1])
-    feature_matrix2 = bert_activations[1]
-    diff = np.sum(feature_matrix1[:11] - feature_matrix2[:11],axis=1)
+    print("2:")
+    print(bert_tokens['source'][2])
+    print(bert_tokens['target'][2])
+    feature_matrix2 = bert_activations[2]
+    diff = np.sum(feature_matrix1[10] - feature_matrix2[2],axis=1)
     print("Dimension of diff:",diff.shape)
     with np.printoptions(threshold=np.inf):
         print(repr(diff))
-
-    # print("96:")
-    # print(bert_tokens['source'][96-1])
-    # print(bert_tokens['target'][96-1])
-    # with np.printoptions(threshold=np.inf):
-    #     print(repr(bert_activations[96-1]))
-    #
-    # print("97:")
-    # print(bert_tokens['source'][97-1])
-    # print(bert_tokens['target'][97-1])
-    # with np.printoptions(threshold=np.inf):
-    #     print(repr(bert_activations[97-1]))
-    #
-    # print("98:")
-    # print(bert_tokens['source'][98-1])
-    # print(bert_tokens['target'][98-1])
-    # with np.printoptions(threshold=np.inf):
-    #     print(repr(bert_activations[98-1]))
-    #
-    # print("99:")
-    # print(bert_tokens['source'][99-1])
-    # print(bert_tokens['target'][99-1])
-    # with np.printoptions(threshold=np.inf):
-    #     print(repr(bert_activations[99-1]))
     exit(0)
 
 

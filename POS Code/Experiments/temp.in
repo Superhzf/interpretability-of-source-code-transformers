@@ -1,2 +1,3 @@
 ~~~ res [ self . counters [ count ] ] = \n
 ~~~ res [ self . counters [ count ] ] = \n
+~~~ a = 3 \n
