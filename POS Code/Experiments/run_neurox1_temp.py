@@ -354,6 +354,7 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
     distribution = {k: v for k, v in sorted(count.items(), key=lambda item: item[1],reverse=True)}
     print("distribution:")
     print(distribution)
+    exit(0)
     '''
     idx_selected = bert_y <= 13
     bert_y = bert_y[idx_selected]
@@ -435,111 +436,111 @@ def main():
 
     bert_tokens, codebert_tokens, graphcodebert_tokens =  load_tokens(bert_activations, codebert_activations, graphcodebert_activations)
 
-    print("0:")
-    print(bert_tokens['source'][0])
-    print(bert_tokens['target'][0])
-    feature_matrix0 = bert_activations[0]
-
-    print(":1")
-    print(bert_tokens['source'][1])
-    print(bert_tokens['target'][1])
-    feature_matrix1 = bert_activations[1]
-
-    print("2:")
-    print(bert_tokens['source'][2])
-    print(bert_tokens['target'][2])
-    feature_matrix2 = bert_activations[2]
-
-    print("3:")
-    print(bert_tokens['source'][3])
-    print(bert_tokens['target'][3])
-    feature_matrix3 = bert_activations[3]
-
-    diff01 = np.sum(feature_matrix0[2][:768] - feature_matrix1[2][:768])
-    diff13 = feature_matrix1[2] - feature_matrix3[3]
-    diff02 = feature_matrix0[2] - feature_matrix2[3]
+    # print("0:")
+    # print(bert_tokens['source'][0])
+    # print(bert_tokens['target'][0])
+    # feature_matrix0 = bert_activations[0]
+    #
+    # print(":1")
+    # print(bert_tokens['source'][1])
+    # print(bert_tokens['target'][1])
+    # feature_matrix1 = bert_activations[1]
+    #
+    # print("2:")
+    # print(bert_tokens['source'][2])
+    # print(bert_tokens['target'][2])
+    # feature_matrix2 = bert_activations[2]
+    #
+    # print("3:")
+    # print(bert_tokens['source'][3])
+    # print(bert_tokens['target'][3])
+    # feature_matrix3 = bert_activations[3]
+    #
+    # diff01 = np.sum(feature_matrix0[2][:768] - feature_matrix1[2][:768])
+    # diff13 = feature_matrix1[2] - feature_matrix3[3]
+    # diff02 = feature_matrix0[2] - feature_matrix2[3]
     # print("Dimension of diff:",diff.shape)
-    with np.printoptions(threshold=np.inf):
-        print("Difference if the left are equal but the right are not:",repr(diff01))
-        print("------------------------------------------------------")
-        print("Difference if the left are not equal but the right are:",repr(diff13))
-        print("------------------------------------------------------")
-        print("Difference if both the left and right are not equal:",repr(diff13))
-    exit(0)
+    # with np.printoptions(threshold=np.inf):
+    #     print("Difference if the left are equal but the right are not:",repr(diff01))
+    #     print("------------------------------------------------------")
+    #     print("Difference if the left are not equal but the right are:",repr(diff13))
+    #     print("------------------------------------------------------")
+    #     print("Difference if both the left and right are not equal:",repr(diff13))
+    # exit(0)
 
 
 
-    with open("codetest2_unique.in",'r') as f:
-        code = f.readlines()
-    f.close()
+    # with open("codetest2_unique.in",'r') as f:
+    #     code = f.readlines()
+    # f.close()
+    #
+    # with open("codetest2_unique.label",'r') as f:
+    #     label = f.readlines()
+    # f.close()
+    #
+    # assert len(code) == len(label)
+    #
+    # label_unique = []
+    # idx_drop = []
+    # for idx,this_label in enumerate(label):
+    #     if this_label not in label_unique:
+    #         label_unique.append(this_label)
+    #     else:
+    #         idx_drop.append(idx)
+    #
+    # bert_activations_new = []
+    # source_new = []
+    # target_new = []
+    # idx = 0
+    # for this_activation,this_token_source,this_token_target in zip(bert_activations,bert_tokens["source"],bert_tokens["target"]):
+    #     if idx not in idx_drop:
+    #         bert_activations_new.append(this_activation)
+    #         source_new.append(this_token_source)
+    #         target_new.append(this_token_target)
+    #     idx += 1
+    #
+    # bert_tokens_new = {"source":source_new,"target":target_new}
+    # bert_activations = bert_activations_new
+    # bert_tokens = bert_tokens_new
+    #
+    # print("The length of this_activation:",len(bert_activations))
+    # print("The length of bert_tokens[source]:",len(bert_tokens['source']))
+    # print("The length of bert_tokens[target]:",len(bert_tokens['target']))
 
-    with open("codetest2_unique.label",'r') as f:
-        label = f.readlines()
-    f.close()
-
-    assert len(code) == len(label)
-
-    label_unique = []
-    idx_drop = []
-    for idx,this_label in enumerate(label):
-        if this_label not in label_unique:
-            label_unique.append(this_label)
-        else:
-            idx_drop.append(idx)
-
-    bert_activations_new = []
-    source_new = []
-    target_new = []
-    idx = 0
-    for this_activation,this_token_source,this_token_target in zip(bert_activations,bert_tokens["source"],bert_tokens["target"]):
-        if idx not in idx_drop:
-            bert_activations_new.append(this_activation)
-            source_new.append(this_token_source)
-            target_new.append(this_token_target)
-        idx += 1
-
-    bert_tokens_new = {"source":source_new,"target":target_new}
-    bert_activations = bert_activations_new
-    bert_tokens = bert_tokens_new
-
-    print("The length of this_activation:",len(bert_activations))
-    print("The length of bert_tokens[source]:",len(bert_tokens['source']))
-    print("The length of bert_tokens[target]:",len(bert_tokens['target']))
-
-    bert_activations_new = []
-    source_new = []
-    target_new = []
-    interested_tokens = ["NAME","NEWLINE","LPAR","KEYWORD","RPAR","DOT","COMMA",
-                         "EQUAL","DEDENT","COLON","INDENT","LSQB","RSQB","NUMBER"]
-    for this_activation,this_token_source,this_token_target in zip(bert_activations,bert_tokens["source"],bert_tokens["target"]):
-        count = 0
-        idx_select = None
-        while True:
-            idx_select = np.random.choice(this_activation.shape[0],size=1,replace=False)[0]
-            if this_token_target[idx_select] in interested_tokens:
-                break
-            else:
-                count += 1
-
-            if count >= 5:
-                break
-        if idx_select is not None:
-            this_activation_new = this_activation[[idx_select]]
-            bert_activations_new.append(this_activation_new)
-            # since size = 1, this_token_source[idx_select] will be a single token
-            # not a list.
-            source_new.append([this_token_source[idx_select]])
-            target_new.append([this_token_target[idx_select]])
-
-    bert_tokens_new = {"source":source_new,"target":target_new}
-    print("The length of this_activation_new:",len(bert_activations_new))
-    print("The length of bert_tokens_new[source]:",len(bert_tokens_new['source']))
-    print("The length of bert_tokens_new[target]:",len(bert_tokens_new['target']))
+    # bert_activations_new = []
+    # source_new = []
+    # target_new = []
+    # interested_tokens = ["NAME","NEWLINE","LPAR","KEYWORD","RPAR","DOT","COMMA",
+    #                      "EQUAL","DEDENT","COLON","INDENT","LSQB","RSQB","NUMBER"]
+    # for this_activation,this_token_source,this_token_target in zip(bert_activations,bert_tokens["source"],bert_tokens["target"]):
+    #     count = 0
+    #     idx_select = None
+    #     while True:
+    #         idx_select = np.random.choice(this_activation.shape[0],size=1,replace=False)[0]
+    #         if this_token_target[idx_select] in interested_tokens:
+    #             break
+    #         else:
+    #             count += 1
+    #
+    #         if count >= 5:
+    #             break
+    #     if idx_select is not None:
+    #         this_activation_new = this_activation[[idx_select]]
+    #         bert_activations_new.append(this_activation_new)
+    #         # since size = 1, this_token_source[idx_select] will be a single token
+    #         # not a list.
+    #         source_new.append([this_token_source[idx_select]])
+    #         target_new.append([this_token_target[idx_select]])
+    #
+    # bert_tokens_new = {"source":source_new,"target":target_new}
+    # print("The length of this_activation_new:",len(bert_activations_new))
+    # print("The length of bert_tokens_new[source]:",len(bert_tokens_new['source']))
+    # print("The length of bert_tokens_new[target]:",len(bert_tokens_new['target']))
 
 
 
     # bert_probe, codebert_probe, graphcodebert_probe = linear_probes_inference(bert_tokens, bert_activations, codebert_tokens, codebert_activations, graphcodebert_tokens, graphcodebert_activations)
-    bert_probe = linear_probes_inference(bert_tokens_new, bert_activations_new, codebert_tokens, codebert_activations, graphcodebert_tokens, graphcodebert_activations)
+    bert_probe = linear_probes_inference(bert_tokens, bert_activations, codebert_tokens, codebert_activations, graphcodebert_tokens, graphcodebert_activations)
     #neurox.interpretation.utils.print_overall_stats(all_results)
 
     #Compare linear probe top neurons with probeless neuron ordering

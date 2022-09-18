@@ -1,4 +1,4590 @@
-if i < 3 : \n
-if i < 4 : \n
-a = c < d \n
-b = e < 4 \n
+\n 
+# \n 
+template_name = \n 
+slug = "policy_profile" \n 
+preload = False \n 
+tabs = ( NetworkProfileTab , PolicyProfileTab ) \n 
+weak_store = WeakLocal ( ) \n 
+strong_store = corolocal . local \n 
+eventlet . monkey_patch ( ) \n 
+CONF . register_opts ( impl_zmq . zmq_opts ) \n 
+vpnservices_dict = { : self . api_vpnservices . list ( ) } \n 
+vpnservice [ ] [ ] ) \n 
+ikepolicies_dict = { : self . api_ikepolicies . list ( ) } \n 
+ikepolicy [ ] [ ] ) \n 
+ipsecpolicies_dict = { : self . api_ipsecpolicies . list ( ) } \n 
+ipsecpolicy [ ] [ ] ) \n 
+form_data } ) . AndReturn ( ipsecsiteconnection ) \n 
+ipsecsiteconnections_dict ) \n 
+ipsecsiteconnections [ ] ) : \n 
+neutronclient . show_ipsec_site_connection ( \n 
+ret_val = api . vpn . ipsecsiteconnection_get ( self . request , \n 
+ipsecsiteconnection [ ] [ ] ) \n 
+show_terminated = True \n 
+response_kwargs . setdefault ( "filename" , "usage.csv" ) \n 
+BlendProbes = 1 \n 
+BlendProbesAndSkybox = 2 \n 
+Simple = 3 \n 
+On = 1 \n 
+TwoSided = 2 \n 
+ShadowsOnly = 3 \n 
+lightmap_index = field ( "m_LightmapIndex" ) \n 
+materials = field ( "m_Materials" ) \n 
+probe_anchor = field ( "m_ProbeAnchor" ) \n 
+receive_shadows = field ( "m_ReceiveShadows" , bool ) \n 
+reflection_probe_usage = field ( "m_ReflectionProbeUsage" , ReflectionProbeUsage ) \n 
+shadow_casting_mode = field ( "m_CastShadows" , ShadowCastingMode ) \n 
+sorting_layer_id = field ( "m_SortingLayerID" ) \n 
+sorting_order = field ( "m_SortingOrder" ) \n 
+use_light_probes = field ( "m_UseLightProbes" , bool ) \n 
+lightmap_index_dynamic = field ( "m_LightmapIndexDynamic" ) \n 
+lightmap_tiling_offset = field ( "m_LightmapTilingOffset" ) \n 
+lightmap_tiling_offset_dynamic = field ( "m_LightmapTilingOffsetDynamic" ) \n 
+static_batch_root = field ( "m_StaticBatchRoot" ) \n 
+subset_indices = field ( "m_SubsetIndices" ) \n 
+Stretch = 1 \n 
+HorizontalBillboard = 2 \n 
+VerticalBillboard = 3 \n 
+Mesh = 4 \n 
+Distance = 1 \n 
+OldestInFront = 2 \n 
+YoungestInFront = 3 \n 
+length_scale = field ( "m_LengthScale" ) \n 
+max_particle_size = field ( "m_MaxParticleSize" ) \n 
+velocity_scale = field ( "m_VelocityScale" ) \n 
+stretch_particles = field ( "m_StretchParticles" ) \n 
+mesh = field ( "m_Mesh" ) \n 
+mesh1 = field ( "m_Mesh1" ) \n 
+mesh2 = field ( "m_Mesh2" ) \n 
+mesh3 = field ( "m_Mesh3" ) \n 
+normal_direction = field ( "m_NormalDirection" ) \n 
+render_mode = field ( "m_RenderMode" , ParticleSystemRenderMode ) \n 
+sort_mode = field ( "m_SortMode" , ParticleSystemSortMode ) \n 
+sorting_fudge = field ( "m_SortingFudge" ) \n 
+Config . parser . readfp ( sconf ) \n 
+sconff . close ( ) \n 
+sconf . close ( ) \n 
+BBS_XMPP_CERT_FILE = BBS_ROOT + "xmpp.crt" \n 
+BBS_XMPP_KEY_FILE = BBS_ROOT + "xmpp.key" \n 
+BOARDS_FILE = BBS_ROOT + \n 
+STRLEN = 80 \n 
+ARTICLE_TITLE_LEN = 60 \n 
+BM_LEN = 60 \n 
+MAXBOARD = 400 \n 
+CONFIG_FILE = BBS_ROOT + \n 
+FILENAME_LEN = 20 \n 
+OWNER_LEN = 30 \n 
+SESSIONID_LEN = 32 \n 
+REFRESH_TOKEN_LEN = 128 \n 
+NAMELEN = 40 \n 
+IDLEN = 12 \n 
+MD5PASSLEN = 16 \n 
+OLDPASSLEN = 14 \n 
+MOBILE_NUMBER_LEN = 17 \n 
+MAXCLUB = 128 \n 
+MAXUSERS = 20000 \n 
+MAX_MSG_SIZE = 1024 \n 
+MAXFRIENDS = 400 \n 
+MAXMESSAGE = 5 \n 
+MAXSIGLINES = 6 \n 
+IPLEN = 16 \n 
+DEFAULTBOARD = "sysop" \n 
+BLESS_BOARD = "happy_birthday" \n 
+QUOTED_LINES = 10 \n 
+MAXACTIVE = 8000 \n 
+USHM_SIZE = MAXACTIVE + 10 \n 
+UTMP_HASHSIZE = USHM_SIZE * 4 \n 
+UCACHE_SEMLOCK = 0 \n 
+LEN_FRIEND_EXP = 15 \n 
+SESSION_TIMEOUT = datetime . timedelta ( 30 ) \n 
+SESSION_TIMEOUT_SECONDS = 86400 * 30 \n 
+XMPP_IDLE_TIME = 300 \n 
+XMPP_LONG_IDLE_TIME = 1800 \n 
+XMPP_UPDATE_TIME_INTERVAL = 10 \n 
+XMPP_PING_TIME_INTERVAL = 60 \n 
+PUBLIC_SHMKEY = 3700 \n 
+MAX_ATTACHSIZE = 20 * 1024 * 1024 \n 
+BMDEL_DECREASE = True \n 
+SYSMAIL_BOARD = "sysmail" \n 
+ADD_EDITMARK = True \n 
+SEARCH_COUNT_LIMIT = 20 \n 
+MAIL_SIZE_LIMIT = - 1 \n 
+SEC_DELETED_OLDHOME = 3600 * 24 * 3 \n 
+SELF_INTRO_MAX_LEN = 800 \n 
+DEFAULT_DIGEST_LIST_COUNT = 20 \n 
+mtime = st . st_mtime \n 
+bms_only = 0 \n 
+sysop_only = 0 \n 
+zixia_only = 0 \n 
+newparts = [ ] \n 
+firstitem = self . GetItem ( user , route + [ start ] , has_perm , need_perm ) \n 
+_id = start - 1 \n 
+linkfile = "%s/boards/xattach/%s" % ( Config . BBS_ROOT , filename ) \n 
+boardname = svc . get_str ( params , , ) \n 
+has_perm = user . IsDigestMgr ( ) \n 
+Digest . View ( svc , basenode , route , session , has_perm , start , count ) \n 
+result_list = [ ] \n 
+svc . writedata ( json . dumps ( result ) ) \n 
+postinfo = Post . Post ( item . realpath ( ) , None ) \n 
+attachlist = postinfo . GetAttachListByType ( ) \n 
+__disco_info_ns__ = \n 
+__disco_items_ns__ = \n 
+__vcard_ns__ = \n 
+STEAL_AFTER_SEEN = 3 \n 
+to_jid = elem . get ( ) \n 
+from_jid = elem . get ( ) \n 
+msg_count = msgbox . GetMsgCount ( all = False ) \n 
+my_pid = os . getpid ( ) \n 
+xmpp_read = self . rosters . get_xmpp_read ( self . _user . GetUID ( ) ) \n 
+msg_unread = msgbox . GetUnreadCount ( ) \n 
+read_count = msg_count - msg_unread \n 
+term_read = self . rosters . get_term_read ( self . get_uid ( ) ) \n 
+all_xmpp = True \n 
+new_unread [ msghead . topid ] = i \n 
+to_steal = { } \n 
+to_steal_begin = msg_count \n 
+pass \n 
+final_unread [ pid ] = ( new_unread [ pid ] , 1 ) \n 
+msgbox . GetUnreadMsg ( ) \n 
+msgtext = msgbox . LoadMsgText ( msghead ) \n 
+term_stealed [ msghead . topid ] = i \n 
+roster = self . rosters . get ( self ) \n 
+### \n 
+standard_library . install_aliases ( ) \n 
+PYTHON_VERSION = sys . version_info [ : 3 ] \n 
+PY2 = ( PYTHON_VERSION [ 0 ] == 2 ) \n 
+sp_desc , \n 
+server_hwt , \n 
+enc_group , \n 
+hide_flexnics , \n 
+conn_list , \n 
+con = hpov . connection ( args . host ) \n 
+srv = hpov . servers ( con ) \n 
+sts = hpov . settings ( con ) \n 
+acceptEULA ( con ) \n 
+fw_settings = profile . make_firmware_dict ( sts , args . baseline ) \n 
+boot , bootmode = profile . make_boot_settings_dict ( srv , sht , args . disable_manage_boot , \n 
+define_profile_template ( srv , \n 
+sht [ ] , \n 
+eg_uri , \n 
+bootmode ) \n 
+credential = { : args . domain . upper ( ) , : args . user , : args . passwd } \n 
+get_address_pools ( con , srv , args . types ) \n 
+fcs = hpov . fcsans ( con ) \n 
+get_managed_sans ( fcs ) \n 
+getpolicy ( sts ) \n 
+__title__ = \n 
+__copyright__ = \n 
+__license__ = \n 
+__status__ = \n 
+########################################################################### \n 
+enclosure_group = None , server_profile = None ) : \n 
+biosSettings = None , \n 
+macType = , \n 
+serialNumber = None , \n 
+wwnType = , \n 
+localStorageSettingsV3 , macType , name , \n 
+sanStorageV3 , serialNumber , \n 
+serialNumberType , serverHardwareTypeUri , \n 
+serverHardwareUri , \n 
+serverProfileTemplateUri , uuid , wwnType ) \n 
+affinity = None , \n 
+hideUnusedFlexNics = None , \n 
+blocking = True , \n 
+serverProfileDescription , \n 
+serverHardwareTypeUri , \n 
+enclosureGroupUri , \n 
+profileConnectionV4 , \n 
+firmwareSettingsV3 , \n 
+bootSettings , \n 
+bootModeSetting ) \n 
+tout = 600 \n 
+profile_template = self . _con . get ( entity [ ] ) \n 
+enclosure = self . _con . get ( entity [ ] ) \n 
+powerMode = ) : \n 
+egroup = make_EnclosureGroupV200 ( associatedLIGs , name , powerMode ) \n 
+allocatorBody = { : count } \n 
+collectorBody = { : idList } \n 
+prange [ ] = False \n 
+LOGGER = logging . getLogger ( __name__ ) \n 
+defaultilopath = None \n 
+defaultbiospath = "/usr/share/hprest/hp-rest-classes-bios" \n 
+schemamainfolder = "/usr/share/hprest/" \n 
+bios_local_path = "/rest/v1/Registries" \n 
+foundfile = None \n 
+tempstr = "hp-rest-classes-bios-" + romfamily + "-" + biosversion \n 
+mentry = regentry . search ( filename ) \n 
+currentver = mentry . group ( 1 ) \n 
+biossection = False , monolith = None ) : \n 
+monolith = None ) : \n 
+locationslist = list ( ) \n 
+pathjoinstr ) ) : \n 
+classesdataholder = [ ] \n 
+newclass . set_root ( root ) \n 
+registries = False , datareturn = False ) : \n 
+folderentries = data [ "links" ] \n 
+datareturn . append ( self . load_file ( fqpath , root = root , biossection = True , registries = True , datareturn = True ) ) \n 
+currdict = currdict , monolith = monolith , \n 
+newarg = newarg , checkall = checkall ) \n 
+checkall = False , monolith = None ) : \n 
+attrreg = self . find_bios_registry ( regname = regname ) \n 
+schlink = schlink [ len ( schlink ) - 2 ] \n 
+reglink = reglink [ len ( reglink ) - 2 ] \n 
+schname . lower ( ) ) : \n 
+xref = os . path . normpath ( currloc . Uri . extref ) . lstrip ( os . path . sep ) \n 
+fqpath = os . path . join ( root , xref ) \n 
+errlist . extend ( results ) \n 
+defloc = "en" \n 
+langcode = list ( locale . getdefaultlocale ( ) ) \n 
+locationlanguage = locationlanguage . replace ( "-" , "_" ) \n 
+currtype = currtype . split ( ) [ 0 ] + \n 
+insttype = instance . resp . dict [ "title" ] . split ( ) [ : 1 ] \n 
+reg = HpPropertiesRegistry . parse ( regitem ) \n 
+nextarg = newarg [ newarg . index ( arg ) + 1 ] \n 
+regcopy [ nextarg ] = patterninfo \n 
+archive_fh = None \n 
+infolist = archive_fh . infolist ( ) \n 
+jsonsch_fh . close ( ) \n 
+validictory . validate ( tdict , jsonsch ) \n 
+wrapper . subsequent_indent = * 4 \n 
+RegistryValidationError ( \n 
+regentry = self \n 
+"\'%(ValueExpression)s\'" % ( self ) , regentry = self ) ) \n 
+intval = int ( newval ) \n 
+pat = re . compile ( ) \n 
+MICROS_TRANSLATIONS = ( \n 
+MICROS_TRANSLATION_HASH = dict ( ( alt , v ) for k , v in MICROS_TRANSLATIONS for alt in k ) \n 
+uss = set ( ) \n 
+tzs = set ( ) \n 
+avoid_localize = False \n 
+naive_dt = naive_dt . replace ( tzinfo = None ) \n 
+epoch_milliseconds = epoch_millis = milliseconds = millis = ms \n 
+epoch_seconds = epoch_secs = seconds = secs = s \n 
+epoch_minutes = epoch_mins = minutes = mins = m \n 
+epoch_microseconds = epoch_micros = microseconds = micros \n 
+micros = u".%06d" % dt . microsecond if dt . microsecond else \n 
+utc_dt = utc_datetime \n 
+utc_ndt = utc_naive_datetime \n 
+dt = datetime \n 
+ndt = naive_datetime \n 
+ny_dt = ny_datetime \n 
+ny_ndt = ny_naive_datetime \n 
+nsanetime = ntime \n 
+scope = "" \n 
+requester_uuid = "" \n 
+datastore_owner_uuid = request . REQUEST [ "datastore_owner__uuid" ] \n 
+datastore_owner , ds_owner_created = Profile . objects . get_or_create ( uuid = datastore_owner_uuid ) \n 
+authorized = False \n 
+#pdb.set_trace() \n 
+audit_entry . save ( ) \n 
+port = db . Column ( db . Integer , nullable = False ) \n 
+eru_container_id = db . Column ( db . String ( 64 ) , index = True ) \n 
+suppress_alert = db . Column ( db . Integer , nullable = False , default = 1 ) \n 
+__table_args__ = ( db . Index ( , , , unique = True ) , ) \n 
+cluster_id = cluster_id ) \n 
+Proxy . id . desc ( ) ) . offset ( offset ) . limit ( limit ) . all ( ) \n 
+logs = [ ] \n 
+issuer_address = tester . a0 \n 
+issuer_key = tester . k0 \n 
+amount_issued = 200000 \n 
+iou_as_issuer . issue_funds ( amount_issued , ) \n 
+github_info_json = urllib2 . urlopen ( latest ) . read ( ) \n 
+latest_version = info [ "name" ] \n 
+update_notifier = self . check_for_update ( ) \n 
+event_result = None \n 
+read_from_server = opt . read_from_server \n 
+write_to_server = opt . write_to_server \n 
+state_version = - 1 \n 
+twitch_username = None \n 
+screen_error_message = None \n 
+json_dict = json . loads ( json_state ) \n 
+new_state = TrackerState . from_json ( json_dict ) \n 
+drawing_tool . set_window_title ( update_notifier , watching_player = twitch_username , updates_queued = len ( new_states_queue ) , read_delay = opt . read_delay ) \n 
+put_url = opt . trackerserver_url + "/tracker/api/update/" + opt . trackerserver_authkey \n 
+json_string = json . dumps ( state , cls = TrackerStateEncoder , sort_keys = True ) \n 
+updated_user = result_json [ "updated_user" ] \n 
+errmsg = traceback . format_exc ( ) \n 
+current_timestamp = int ( time . time ( ) ) \n 
+new_states_queue . pop ( 0 ) \n 
+framecount += 1 \n 
+StructureTemplate ) \n 
+decay = decay , \n 
+epsilon = epsilon ) \n 
+expected_kwargs = { , } \n 
+outputs [ ] = in_shapes [ ] \n 
+buf = BufferStructure ( self . in_shapes [ ] . feature_shape [ - 1 ] ) \n 
+internals [ ] = self . in_shapes [ ] \n 
+sigma_b , centered , x_hat = buffers . internals \n 
+centered = flatten_all_but_last ( centered ) \n 
+x_hat = flatten_all_but_last ( x_hat ) \n 
+sigma = sigma_b \n 
+dgamma = buffers . gradients . gamma \n 
+dbeta = buffers . gradients . beta \n 
+outdeltas = flatten_all_but_last ( buffers . output_deltas . default ) \n 
+indeltas = flatten_all_but_last ( buffers . input_deltas . default ) \n 
+dgamma_tmp = small_tmp \n 
+term1 = big_tmp \n 
+dbeta_tmp = small_tmp \n 
+term2 = big_tmp \n 
+term3 = big_tmp \n 
+coeff = small_tmp \n 
+term4 = big_tmp \n 
+_h . add_tt ( term4 , indeltas , indeltas ) \n 
+targets_name = , mask_name = ) : \n 
+predicted = _flatten_all_but_last ( predicted ) \n 
+mask_name = , name = None ) : \n 
+true_labels ) . astype ( np . float ) \n 
+epochs = [ 0 ] * 4 + [ 1 ] * 4 + [ 2 ] * 4 \n 
+cwd = os . getcwd ( ) \n 
+templates_path = [ ] \n 
+source_suffix = \n 
+master_doc = \n 
+project = \n 
+copyright = \n 
+exclude_patterns = [ ] \n 
+pygments_style = \n 
+on_rtd = os . environ . get ( , None ) == \n 
+html_theme_path = [ sphinx_rtd_theme . get_html_theme_path ( ) ] \n 
+htmlhelp_basename = \n 
+latex_elements = { \n 
+latex_documents = [ \n 
+man_pages = [ \n 
+texinfo_documents = [ \n 
+ignored_fallbacks = ( ) ) : \n 
+updated = config_mod . modified \n 
+typechanged = config_mod . typechanged \n 
+"b" : 2.0 , \n 
+"c" : True , \n 
+"d" : , \n 
+"e" : [ 1 , 2 , 3 ] , \n 
+"f" : { : , : } , \n 
+"answer" : 42 \n 
+p_error = self . kp * current_error \n 
+d_error = self . kd * ( current_error - self . previous_error ) / timestep \n 
+current_error + self . previous_error ) / 2 + self . integral_error \n 
+i_error = self . ki * self . integral_error \n 
+total_error = p_error + d_error + i_error \n 
+obj_name , method_name , param_dict ) \n 
+cmd_match_names = cmd . Cmd . completenames ( self , text , * ignored ) \n 
+obj_names = self . ctrl_client . objects . keys ( ) \n 
+api_match_names = [ x for x in obj_names if x . startswith ( text ) ] \n 
+match_names = [ x for x in method_names if x . startswith ( text ) ] \n 
+reply_time = self . ctrl_client . ping ( ) \n 
+sub_addr = sys . argv [ 2 ] \n 
+CLI ( ctrl_addr , sub_addr ) . cmdloop ( ) \n 
+cur_pwm = self . get_pwm ( self . pwm_num ) \n 
+duty = int ( cur_pwm [ "duty_ns" ] ) \n 
+read_pos = int ( round ( ( ( duty - 580000 ) / 2320000. ) * 180 ) ) \n 
+#:coding=utf-8: \n 
+create_login_url , create_logout_url \n 
+create_logout_url ( request . url ) \n 
+PARSE_ERROR = - 32700 \n 
+INVALID_REQUEST = - 32600 \n 
+METHOD_NOT_FOUND = - 32601 \n 
+INVALID_PARAMS = - 32602 \n 
+INTERNAL_ERROR = - 32603 \n 
+__test__ = False \n 
+number_re = re . compile ( ) \n 
+regex_type = type ( number_re ) \n 
+_locale_delim_re = re . compile ( ) \n 
+on_update = None \n 
+__delitem__ = calls_update ( ) \n 
+pop = calls_update ( ) \n 
+popitem = calls_update ( ) \n 
+setdefault = calls_update ( ) \n 
+KeyError = None \n 
+iter2 = other . iteritems ( multi = True ) \n 
+ptr = self . _first_bucket \n 
+returned_keys . add ( ptr . key ) \n 
+ikey = key . lower ( ) \n 
+lc_key = _key . lower ( ) \n 
+_value = _options_header_vkw ( _value , kw ) \n 
+strs = [ ] \n 
+__repr__ = _proxy_repr ( dict ) \n 
+best_quality = - 1 \n 
+value_type == value_subtype == ) or \n 
+value_subtype == or \n 
+item_subtype == value_subtype ) ) \n 
+no_cache = cache_property ( , , None ) \n 
+no_store = cache_property ( , None , bool ) \n 
+max_age = cache_property ( , - 1 , int ) \n 
+no_transform = cache_property ( , None , None ) \n 
+max_stale = cache_property ( , , int ) \n 
+min_fresh = cache_property ( , , int ) \n 
+only_if_cached = cache_property ( , None , bool ) \n 
+public = cache_property ( , None , bool ) \n 
+private = cache_property ( , , None ) \n 
+must_revalidate = cache_property ( , None , bool ) \n 
+proxy_revalidate = cache_property ( , None , bool ) \n 
+s_maxage = cache_property ( , None , None ) \n 
+inserted_any = True \n 
+etag , weak = unquote_etag ( etag ) \n 
+uri = property ( lambda x : x . get ( ) , doc = ) \n 
+nc = property ( lambda x : x . get ( ) , doc = ) \n 
+cnonce = property ( lambda x : x . get ( ) , doc = ) \n 
+_require_quoting = frozenset ( [ , , , ] ) \n 
+algorithm = None , stale = False ) : \n 
+auth_type = d . pop ( , None ) or \n 
+allow_token = key not in self . _require_quoting ) ) \n 
+realm = auth_property ( , doc = ) \n 
+opaque = auth_property ( , doc = ) \n 
+qop = _set_property ( , doc = ) \n 
+auth_property = staticmethod ( auth_property ) \n 
+close_dst = True \n 
+rshell , shell , clear_datastore , create_user , \n 
+do_bulkloader_passthru_argv , dump_all , restore_all , \n 
+action_dump_all = dump_all \n 
+action_restore_all = restore_all \n 
+action_shell = shell \n 
+action_rshell = rshell \n 
+action_startapp = startapp \n 
+action_startproject = startproject \n 
+action_test = do_runtest \n 
+action_preparse_bundle = do_preparse_bundle \n 
+action_preparse_apps = do_preparse_apps \n 
+action_extract_messages = do_extract_messages \n 
+action_add_translations = do_add_translations \n 
+action_update_translations = do_update_translations \n 
+action_compile_translations = do_compile_translations \n 
+action_appcfg = do_appcfg_passthru_argv \n 
+action_runserver = runserver_passthru_argv \n 
+action_bulkloader = do_bulkloader_passthru_argv \n 
+action_clear_datastore = clear_datastore \n 
+action_create_user = create_user \n 
+action_wxadmin = do_wxadmin \n 
+action_compile_media = do_compile_media \n 
+additional_actions . append ( name ) \n 
+view_groups = [ \n 
+ViewGroup ( \n 
+Rule ( , endpoint = , \n 
+data_field = db . StringProperty ( required = True , \n 
+is_active = db . BooleanProperty ( required = True ) \n 
+string_list_field = db . StringListProperty ( required = True ) \n 
+zip_code = db . StringProperty ( ) \n 
+negative_pattern = ) : \n 
+dst_name = path . join ( dst_path , filename ) \n 
+base_dir = base_dir ) \n 
+modifiable_problem_fields = [ "description" ] \n 
+metadata_path = get_metadata_path ( pid , n ) \n 
+problem = api . problem . get_problem ( pid = pid ) \n 
+build = get_generator ( pid ) . generate ( random , pid , api . autogen_tools , n ) \n 
+autogen_instance_path = get_instance_path ( pid , n = n ) \n 
+file_type_paths = { \n 
+"resource_files" : { \n 
+"static_files" : { \n 
+generator_path = get_generator_path ( pid ) \n 
+previous_state = seed_generator ( tid , pid ) \n 
+total_instances = get_number_of_instances ( pid ) \n 
+instance_path = path . join ( path . dirname ( generator_path ) , "instances" , name , str ( n ) ) \n 
+grader_problem_instance = GraderProblemInstance ( pid , tid , n ) \n 
+grader = api . problem . get_grader ( pid ) \n 
+"correct" : correct , \n 
+"points" : problem [ "score" ] , \n 
+"message" : message \n 
+k = str ( random . randint ( 0 , 1000 ) ) \n 
+"public" : [ ( "/tmp/key" , "public_static" ) ] , \n 
+"private" : [ ( "/tmp/key" , "private_static" ) ] \n 
+"problem_updates" : { \n 
+scriptNode = script \n 
+layout = eval ( scriptWindow . setLayout ( layout ) \n 
+scriptWindow . _Widget__qtWidget . resize ( 995 , 500 ) \n 
+########################################################################## \n 
+"inputSequence" , \n 
+defaultValue = "" , \n 
+allowEmptyString = False , \n 
+"outputSequence" , \n 
+combinedBound = IECore . Box3f ( ) \n 
+dc . write ( "-" + objectName , "bound" , b ) \n 
+"beauty" , \n 
+"exr" , \n 
+"rgba" , \n 
+"$renderDirectory/test.####.exr" , \n 
+GafferArnold , \n 
+additionalTerminalPlugTypes = ( GafferScene . ScenePlug , ) \n 
+"driver" , \n 
+"driven" , \n 
+parameterHandler , \n 
+parenting = parenting \n 
+replace = context . get ( "textWriter:replace" , IECore . StringVectorData ( ) ) \n 
+inMetadata = r [ "out" ] [ "metadata" ] . getValue ( ) \n 
+negFileName = os . path . expandvars ( "$GAFFER_ROOT/python/GafferImageTest/images/checkerWithNegativeDataWindow.200x150.exr" \n 
+GafferImage . Display , \n 
+"description" , \n 
+plugs = { \n 
+"port" : [ \n 
+__plugsPendingUpdate = [ ] \n 
+__plugsPendingUpdateLock = threading . Lock ( ) \n 
+updateCountPlug . setValue ( updateCountPlug . getValue ( ) + 1 ) \n 
+__import__ ( "IECore" ) . loadConfig ( "GAFFER_STARTUP_PATHS" , { } , subdirectory = "GafferImageUI" ) \n 
+GafferRenderMan . RenderManShader . shaderLoader ( ) . clear ( ) \n 
+coshader = self . compileShader ( os . path . dirname ( __file__ ) + "/shaders/coshader.sl" ) \n 
+shader3 = self . compileShader ( os . path . dirname ( __file__ ) + "/shaders/version3.sl" ) \n 
+nn [ "outString" ] = Gaffer . StringPlug ( direction = Gaffer . Plug . Direction . Out ) \n 
+shader2 = self . compileShader ( os . path . dirname ( __file__ ) + "/shaders/version2.sl" , shaderName = "unversioned" \n 
+plane = GafferScene . Plane ( ) \n 
+assignment [ "shader" ] . setInput ( shaderNode [ "out" ] ) \n 
+dirtiedNames = [ x [ 0 ] . fullName ( ) for x in cs ] \n 
+"dynamicFloatArray" : IECore . FloatVectorData ( [ ] ) , \n 
+"fixedFloatArray" : IECore . FloatVectorData ( [ 1 , 2 , 3 , 4 ] ) , \n 
+"dynamicStringArray" : IECore . StringVectorData ( [ "dynamic" , "arrays" , "can" , "still" , "have" , "defaults" "fixedStringArray" : IECore . StringVectorData ( [ "hello" , "goodbye" ] ) , \n 
+"dynamicColorArray" : IECore . Color3fVectorData ( [ IECore . Color3f ( 1 ) , IECore . Color3f ( 2 ) ] ) , \n 
+"fixedColorArray" : IECore . Color3fVectorData ( [ IECore . Color3f ( 1 ) , IECore . Color3f ( 2 ) ] ) , \n 
+"dynamicVectorArray" : IECore . V3fVectorData ( [ ] , IECore . GeometricData . Interpretation . Vector ) , \n 
+"fixedVectorArray" : IECore . V3fVectorData ( [ IECore . V3f ( x ) for x in range ( 1 , 6 ) ] , IECore . GeometricData "dynamicPointArray" : IECore . V3fVectorData ( [ ] , IECore . GeometricData . Interpretation . Point ) , \n 
+"fixedPointArray" : IECore . V3fVectorData ( [ IECore . V3f ( x ) for x in range ( 1 , 6 ) ] , IECore . GeometricData "dynamicNormalArray" : IECore . V3fVectorData ( [ ] , IECore . GeometricData . Interpretation . Normal ) , \n 
+"fixedNormalArray" : IECore . V3fVectorData ( [ IECore . V3f ( x ) for x in range ( 1 , 6 ) ] , IECore . GeometricData } \n 
+n3 . loadShader ( coshader ) \n 
+arrayShader = self . compileShader ( os . path . dirname ( __file__ ) + "/shaders/coshaderArrayParameters.sl" n4 = GafferRenderMan . RenderManShader ( ) \n 
+n4 . loadShader ( arrayShader ) \n 
+h4 = n . stateHash ( ) \n 
+stateHash = s . stateHash ( ) \n 
+stateHash2 = s . stateHash ( ) \n 
+state2 = s . state ( ) \n 
+coshaderNode [ "enabled" ] . setValue ( False ) \n 
+coshader2 = self . compileShader ( os . path . dirname ( __file__ ) + "/shaders/coshaderWithPassThrough.sl" coshaderNode2 = GafferRenderMan . RenderManShader ( ) \n 
+coshaderNode2 . loadShader ( coshader2 ) \n 
+passThroughCoshaderNode [ "enabled" ] . setValue ( False ) \n 
+IECore . SplinefColor3f ( \n 
+floatValue = IECore . Splineff ( \n 
+colorValue = IECore . SplinefColor3f ( \n 
+coshaderType1 = self . compileShader ( os . path . dirname ( __file__ ) + "/shaders/coshaderType1.sl" ) \n 
+coshaderType1Node . loadShader ( coshaderType1 ) \n 
+coshaderType2 = self . compileShader ( os . path . dirname ( __file__ ) + "/shaders/coshaderType2.sl" ) \n 
+coshaderType2Node . loadShader ( coshaderType2 ) \n 
+coshaderType1And2Node . loadShader ( coshaderType1And2 ) \n 
+passThroughCoshader = self . compileShader ( os . path . dirname ( __file__ ) + "/shaders/coshaderWithPassThrough.sl" D1 = GafferRenderMan . RenderManShader ( ) \n 
+S [ "parameters" ] [ "coshaderParameter" ] . setInput ( D2 [ "out" ] ) \n 
+h1 = S . stateHash ( ) \n 
+D2 [ "enabled" ] . setValue ( False ) \n 
+D1 [ "enabled" ] . setValue ( False ) \n 
+h3 = S . stateHash ( ) \n 
+intermediateCoshader = self . compileShader ( os . path . dirname ( __file__ ) + "/shaders/coshaderWithPassThrough.sl" intermediateCoshaderNode = GafferRenderMan . RenderManShader ( ) \n 
+intermediateCoshaderNode [ "parameters" ] [ "aColorIWillTint" ] . setInput ( b [ "in" ] ) \n 
+shaderNode1 [ "parameters" ] [ "coshaderParameter" ] . setInput ( b [ "in" ] ) \n 
+shaderNode2 [ "parameters" ] [ "coshaderParameter" ] . setInput ( b [ "out" ] ) \n 
+coshaderNode0 [ "parameters" ] [ "floatParameter" ] . setValue ( 0 ) \n 
+coshaderNode1 [ "parameters" ] [ "floatParameter" ] . setValue ( 1 ) \n 
+shader = self . compileShader ( os . path . dirname ( __file__ ) + "/shaders/typedCoshaderParameters.sl" shaderNode = GafferRenderMan . RenderManShader ( ) \n 
+switch [ "in" ] . setInput ( coshaderType1Node [ "out" ] ) \n 
+shaderNode [ "parameters" ] [ "coshaderParameterType1" ] . setInput ( switch [ "out" ] ) \n 
+promotedIndex . setValue ( 1 ) \n 
+sn1 = GafferRenderMan . RenderManShader ( "Shader1" ) \n 
+sn2 = GafferRenderMan . RenderManShader ( "Shader2" ) \n 
+s2 = self . compileShader ( os . path . dirname ( __file__ ) + "/shaders/coshaderArrayParameters.sl" ) \n 
+script [ "assignment" ] [ "shader" ] . setInput ( script [ "shader" ] [ "out" ] ) \n 
+traverseConnection = Gaffer . ScopedConnection ( GafferSceneTest . connectTraverseSceneToPlugDirtiedSignal script [ "shader" ] . loadShader ( "matte" ) \n 
+current = s [ "render" ] . hash ( c ) \n 
+baseTypeIds = IECore . RunTimeTyped . baseTypeIds ( n . typeId ( ) ) \n 
+found = False \n 
+"dimensions" : [ \n 
+GafferScene . ObjectSource , \n 
+"transform" : [ \n 
+"layout:section" , "Transform" , \n 
+"sets" : [ \n 
+"shadingMode" : [ \n 
+"toolbarLayout:index" , 2 , \n 
+"toolbarLayout:divider" , True , \n 
+"minimumExpansionDepth" : [ \n 
+"lookThrough" : [ \n 
+"toolbarLayout:label" , "" , \n 
+"lookThrough.enabled" : [ \n 
+"lookThrough.camera" : [ \n 
+"grid" : [ \n 
+"gnomon" : [ \n 
+"plugValueWidget:type" , "" , \n 
+hasFrame = False , \n 
+currentName = self . getPlug ( ) . getValue ( ) \n 
+menuButton = GafferUI . MenuButton ( menu = menu , image = "grid.png" , hasFrame = False ) \n 
+p3 = Gaffer . IntPlug ( "sum" , Gaffer . Plug . Direction . Out ) \n 
+aInfo = a . info ( ) \n 
+childrenStrings = [ str ( c ) for c in children ] \n 
+path2 = path . copy ( ) \n 
+c2 = [ str ( p ) for p in path2 . children ( ) ] \n 
+sp = Gaffer . SequencePath ( fp ) \n 
+horizontalAlignment = GafferUI . Label . HorizontalAlignment . Right , \n 
+nameWidget . textWidget ( ) . _qtWidget ( ) . setFixedWidth ( GafferUI . PlugWidget . labelWidth ( ) ) \n 
+childPlug [ "enabled" ] , \n 
+verticalAlignment = GafferUI . Label . VerticalAlignment . Top , \n 
+memberPlug = memberPlug if memberPlug is not None else plug . ancestor ( Gaffer . CompoundDataPlug . MemberPlug if memberPlug is None : \n 
+menuDefinition . append ( "/Delete" , { "command" : IECore . curry ( __deletePlug , memberPlug ) , "active" \n 
+plug , \n 
+includeSequences = Gaffer . Metadata . plugValue ( self . getPlug ( ) , "fileSystemPathPlugValueWidget:includeSequences" \n 
+reuse = reuseUntil is not None \n 
+###################################################################### \n 
+_MultiLineStringMetadataWidget ( key = "description" ) \n 
+_ColorSwatchMetadataWidget ( key = "nodeGadget:color" ) \n 
+"active" : isinstance ( node , Gaffer . Box ) or nodeEditor . nodeUI ( ) . plugValueWidget ( node [ "user" ] ) } \n 
+dialogue = GafferUI . ColorChooserDialogue ( color = color , useDisplayTransform = False ) \n 
+editor . plugEditor ( ) . reveal ( ) \n 
+_MetadataWidget . __init__ ( self , self . __menuButton , key , target , parenting = parenting ) \n 
+buttonText = str ( value ) \n 
+"checkBox" : value == self . __currentValue \n 
+child . __parent = None \n 
+columns = ( GafferUI . PathListingWidget . defaultNameColumn , ) , \n 
+displayMode = GafferUI . PathListingWidget . DisplayMode . Tree , \n 
+definition = Gaffer . WeakMethod ( self . __addMenuDefinition ) \n 
+sectionItem . append ( childSectionItem ) \n 
+parentSection = section ( layout , parentPath ) \n 
+emptySectionIndices . append ( layoutItem . index ( childItem ) ) \n 
+################################################# \n 
+newIndex = 0 if event . line . p0 . y < 1 else len ( newParent ) \n 
+newParent . insert ( newIndex , self . __dragItem ) \n 
+############################################################## \n 
+selection [ : ] = self . __dragItem . fullName ( ) . split ( "." ) \n 
+_registerMetadata ( plug , "nodule:type" , "" ) \n 
+parentItem \n 
+existingSectionNames = set ( c . name ( ) for c in rootItem if isinstance ( c , _SectionLayoutItem ) ) \n 
+plugValueWidget = None \n 
+Gaffer . Metadata . plugValue ( self . getPlug ( ) , "preset:" + selectedPaths [ 0 ] [ 0 ] ) \n 
+srcPath = self . __pathListing . getPath ( ) . copy ( ) . setFromString ( event . data [ 0 ] ) \n 
+srcIndex = d . keys ( ) . index ( srcPath [ 0 ] ) \n 
+targetPath = self . __pathListing . pathAt ( event . line . p0 ) \n 
+item = items [ srcIndex ] \n 
+selectedPreset = self . __pathListing . getSelectedPaths ( ) [ 0 ] [ 0 ] \n 
+selectedIndex = [ p [ 0 ] for p in paths ] . index ( selectedPreset ) \n 
+newName = nameWidget . getText ( ) \n 
+preset = selectedPaths [ 0 ] [ 0 ] \n 
+scrolledContainer . setChild ( GafferUI . ListContainer ( spacing = 4 ) ) \n 
+menu = GafferUI . Menu ( Gaffer . WeakMethod ( self . __gadgetMenuDefinition ) ) \n 
+labelsAndValues = [ \n 
+"/" + g . label , \n 
+"command" : functools . partial ( Gaffer . WeakMethod ( self . __registerOrDeregisterMetadata ) , key = "checkBox" : metadata == g . metadata , \n 
+__WidgetDefinition ( "None" , Gaffer . Plug , "" ) , \n 
+__MetadataDefinition = collections . namedtuple ( "MetadataDefinition" , ( "key" , "label" , "metadataWidgetType" __metadataDefinitions = ( \n 
+__GadgetDefinition ( "None" , Gaffer . Plug , "" ) , \n 
+newSectionPath [ - 1 ] = nameWidget . getText ( ) . replace ( "." , "" ) \n 
+_metadata ( self . getPlugParent ( ) , name ) \n 
+_deregisterMetadata ( self . getPlugParent ( ) , name ) \n 
+QtCore = GafferUI . _qtImport ( "QtCore" ) \n 
+wr1 = weakref . ref ( w ) \n 
+wr2 = weakref . ref ( w . _qtWidget ( ) ) \n 
+l . append ( p ) \n 
+WidgetTest . signalsEmitted = 0 \n 
+QtGui . QApplication . instance ( ) . sendEvent ( w . _qtWidget ( ) , event ) \n 
+wb = w . bound ( ) \n 
+bbw = b . bound ( relativeTo = w ) \n 
+cs = GafferTest . CapturingSlot ( w . parentChangedSignal ( ) ) \n 
+mouseGlobal = GafferUI . Widget . mousePosition ( ) \n 
+mouseLocal = GafferUI . Widget . mousePosition ( relativeTo = b ) \n 
+GafferUI . BoxUI . appendNodeEditorToolMenuDefinitions ( nodeEditor , node , menuDefinition ) \n 
+GafferSceneUI . FilteredSceneProcessorUI . appendNodeEditorToolMenuDefinitions ( nodeEditor , node , menuDefinition \n 
+rootdir = "." \n 
+logfile = \n 
+backend . main ( logfile ) \n 
+yappi . print_stats ( sort_type = yappi . SORTTYPE_TTOT , limit = 30 , thread_stats_on = False ) \n 
+SAMPLE_EXTRACT_METRICS_PAGE = os . path . join ( datadir , "monthly_download" ) \n 
+SAMPLE_EXTRACT_METRICS_PAGE_DIFFERENT_MONTH = os . path . join ( datadir , "monthly_download_different_month" \n 
+TEST_PMID = "23066504" \n 
+testitem_aliases = ( "pmid" , TEST_PMID ) \n 
+testitem_metrics = ( "pmid" , TEST_PMID ) \n 
+sample_data_dump = open ( SAMPLE_EXTRACT_METRICS_PAGE , "r" ) . read ( ) \n 
+sample_data_dump_different_month = open ( SAMPLE_EXTRACT_METRICS_PAGE_DIFFERENT_MONTH , "r" ) . read \n 
+test_monthly_data = [ \n 
+"max_event_date" : "2012-01-31T07:34:01.126892" \n 
+"_id" : "abc123" , \n 
+"raw" : "max_event_date" : "2012-10-31T07:34:01.126892" , \n 
+"aliases" : { \n 
+"pmid" : [ \n 
+"23066504" , \n 
+"23066507" , \n 
+"23066508" , \n 
+"23066509" , \n 
+"23066506" , \n 
+"23066503" , \n 
+"23066510" , \n 
+"23071903" , \n 
+"23110253" , \n 
+"23066505" , \n 
+"23110254" , \n 
+"23110255" , \n 
+"23110252" \n 
+"provider_raw_version" : 1 , \n 
+"min_event_date" : "2012-10-02T07:34:01.126892" , \n 
+"created" : "2012-11-29T09:34:01.126892" \n 
+good_page = f . read ( ) \n 
+cache_client = redis . from_url ( os . getenv ( "REDIS_URL" ) , REDIS_CACHE_DATABASE_NUMBER ) \n 
+MAX_CACHE_SIZE_BYTES = 100 * 1000 * 1000 #100mb \n 
+hash_key = self . _build_hash_key ( key ) \n 
+set_response = mc . set ( hash_key , json . dumps ( data ) ) \n 
+mc . expire ( hash_key , self . max_cache_age ) \n 
+metrics_url_template = "http://alm.plos.org/api/v3/articles?ids=%s&source=citations,counter&api_key=" provenance_url_template = "http://dx.doi.org/%s" \n 
+PLOS_ICON = "http://www.plos.org/wp-content/themes/plos_new/favicon.ico" \n 
+static_meta_dict = { \n 
+"html_views" : { \n 
+"provider" : "PLOS" , \n 
+"provider_url" : "http://www.plos.org/" , \n 
+"icon" : PLOS_ICON , \n 
+"pdf_views" : { \n 
+relevant = ( ( "doi" == namespace ) and ( "10.1371/" in nid ) ) \n 
+this_article = json_response [ 0 ] [ "sources" ] [ 0 ] [ "metrics" ] \n 
+dict_of_keylists = { \n 
+metrics_dict = provider . _extract_from_data_dict ( this_article , dict_of_keylists ) \n 
+redis_url = os . environ . get ( , "redis://127.0.0.1:6379/" ) \n 
+REDIS_CONNECT_RETRY = True \n 
+CELERY_DEFAULT_QUEUE = \n 
+CELERY_QUEUES = [ \n 
+Queue ( , routing_key = ) \n 
+BROKER_POOL_LIMIT = None \n 
+CELERY_CREATE_MISSING_QUEUES = True \n 
+CELERY_ACCEPT_CONTENT = [ , ] \n 
+CELERY_ENABLE_UTC = True \n 
+CELERY_ACKS_LATE = True \n 
+CELERYD_FORCE_EXECV = True \n 
+CELERY_TRACK_STARTED = True \n 
+CELERYD_PREFETCH_MULTIPLIER = 1 \n 
+CELERY_IMPORTS = ( "core_tasks" , ) \n 
+CELERY_ANNOTATIONS = { \n 
+sampledir = os . path . join ( os . path . split ( __file__ ) [ 0 ] , "../../../extras/sample_provider_pages/" ) \n 
+TEST_XML = open ( os . path . join ( sampledir , "facebook" , "metrics" ) ) . read ( ) \n 
+provider_names = [ provider . __class__ . __name__ for provider in providers ] \n 
+assert_equals ( md [ "pubmed" ] [ ] , ) \n 
+clean_nid = webpage . clean_url ( nid ) \n 
+cleaned_alias = ( ns , nid ) \n 
+alias_tuples = [ ] \n 
+tiid = db . Column ( db . Text , db . ForeignKey ( ) , primary_key = True ) \n 
+nid = db . Column ( db . Text , primary_key = True ) \n 
+collected_date = db . Column ( db . DateTime ( ) ) \n 
+genre = "dataset" \n 
+commit ( db ) \n 
+tweet_ids_with_response = [ tweet [ "id_str" ] for tweet in data ] \n 
+tweet_ids_without_response = [ tweet for tweet in tweet_ids if tweet not in tweet_ids_with_response flag_deleted_tweets ( tweet_ids_without_response ) \n 
+access_token = os . getenv ( "TWITTER_ACCESS_TOKEN" ) \n 
+num = len ( tweets ) ) ) \n 
+group_size = 100 \n 
+list_of_groups = [ tweets [ i : i + group_size ] for i in range ( 0 , len ( tweets ) , group_size ) ] \n 
+handle_all_tweets ( response . data , tweet_subset ) \n 
+tweets = Tweet . query . filter ( Tweet . profile_id == profile_id ) \n 
+tweet_dict = dict ( [ ( ( tweet . tweet_id , tweet . tiid ) , tweet ) for tweet in tweets ] ) \n 
+tweet . profile_id = profile_id \n 
+tweets_to_hydrate_from_twitter . append ( tweet ) \n 
+tweet_ids = [ tweet . tweet_id for tweet in tweets_to_hydrate_from_twitter ] \n 
+get_and_save_tweet_text_and_tweeter_followers ( tweets_to_hydrate_from_twitter ) \n 
+tweet_timestamp = db . Column ( db . DateTime ( ) ) \n 
+tweeter = db . relationship ( \n 
+uselist = False , \n 
+primaryjoin = handle_workaround_join_string \n 
+display_url = url_info [ "display_url" ] \n 
+tweet_id = self . tweet_id , \n 
+profile_id = self . profile_id , \n 
+screen_name = self . screen_name , \n 
+"payload" \n 
+file_loc = os . path . dirname ( os . path . realpath ( __file__ ) ) \n 
+fullpath = os . path . join ( file_loc , relative_path ) \n 
+fnames = [ \n 
+urllib . urlretrieve ( url + fname , fname ) \n 
+loaded = np . fromstring ( fd . read ( ) , dtype = np . uint8 ) \n 
+fd = gzip . open ( os . path . join ( data_dir , ) ) \n 
+trY = loaded [ 8 : ] . reshape ( ( 60000 ) ) \n 
+teY = loaded [ 8 : ] . reshape ( ( 10000 ) ) \n 
+trX = trX . reshape ( - 1 , 28 , 28 ) \n 
+teX = teX . reshape ( - 1 , 28 , 28 ) \n 
+dirpath = os . path . join ( self . repo . path , "unused_directory" ) \n 
+subpath = os . path . join ( self . repo . path , "a" , "b" , "c" ) \n 
+handle = self . profile . username , \n 
+age = self . profile . age , \n 
+id_key = ) \n 
+message_thread = model . MessageThread ( okc_id = self . thread . id , \n 
+initiator = initiator , \n 
+respondent = respondent ) \n 
+new_messages = [ message for message in self . thread . messages \n 
+new_message_model = model . Message ( okc_id = new_message . id , \n 
+sender = sender , \n 
+recipient = recipient , \n 
+time_sent = new_message . time_sent ) \n 
+new_message_models . append ( new_message_model ) \n 
+thread_model . messages . append ( new_message_model ) \n 
+mailbox . Sync ( user ) . all ( ) \n 
+user_model . upsert_model ( id_key = ) \n 
+okcupyd_user . upsert_model ( id_key = ) \n 
+match_on = util . match_on_no_body ) \n 
+upload_response_dict = uploader . upload_and_confirm ( ) \n 
+response_dict = user . photo . upload_and_confirm ( user . quickmatch ( ) . photo_infos [ 0 ] ) \n 
+before_delete_photos = user . profile . photo_infos \n 
+vcr_live_sleep ( 2 ) \n 
+n_h = self . n_h \n 
+gates = 3 \n 
+b2_h = shared_zeros ( ( self . hp . batch_size , n_h ) ) \n 
+W1 = shared_normal ( ( n_h , n_h * gates ) , scale = scale * 1.5 ) \n 
+V1 = shared_normal ( ( n_h , n_h * gates ) , scale = scale * 1.5 ) \n 
+b1 = shared_zeros ( ( n_h * gates ) ) \n 
+W2 = shared_normal ( ( n_h , n_h * gates ) , scale = scale * 1.5 ) \n 
+V2 = shared_normal ( ( n_h , n_h * gates ) , scale = scale * 1.5 ) \n 
+b2 = shared_zeros ( ( n_h * gates , ) ) \n 
+i_on = T . nnet . sigmoid ( g_on [ : , : n_h ] ) \n 
+f_on = T . nnet . sigmoid ( g_on [ : , n_h : 2 * n_h ] ) \n 
+o_on = T . nnet . sigmoid ( g_on [ : , 2 * n_h : 3 * n_h ] ) \n 
+h_t = T . tanh ( T . dot ( X , W [ : , 1 * n_h : 2 * n_h ] ) + T . dot ( h , U [ : , 1 * n_h : 2 * n_h ] ) + b [ 1 * n_h : 2 * n_h ] ) \n 
+h0 = dropout ( h0 , p_dropout ) \n 
+te_cost , te_h_updates = model ( self . X , self . params , 0. ) \n 
+#!/usr/bin/python \n 
+csvWriter = csv . writer ( sys . stdout , delimiter = separator , quotechar = quote , \n 
+quoting = csv . QUOTE_MINIMAL ) \n 
+IPersist_Methods = [ "GetClassID" ] \n 
+IColumnProvider_Methods = IPersist_Methods + [ "Initialize" , "GetColumnInfo" , "GetItemData" ] \n 
+_reg_clsid_ = IID ( "{0F14101A-E05E-4070-BD54-83DFA58C3D68}" ) \n 
+_com_interfaces_ = [ pythoncom . IID_IPersist , \n 
+_public_methods_ = IColumnProvider_Methods \n 
+col_info = ( \n 
+20 , #cChars \n 
+fmt_id == self . _reg_clsid_ \n 
+"Folder\\\\ShellEx\\\\ColumnHandlers\\\\" + str ( ColumnProvider . _reg_clsid_ ) ) \n 
+_winreg . SetValueEx ( key , None , 0 , _winreg . REG_SZ , ColumnProvider . _reg_desc_ ) \n 
+register . UseCommandLine ( ColumnProvider , \n 
+finalize_register = DllRegisterServer , \n 
+finalize_unregister = DllUnregisterServer ) \n 
+mod = imp . load_dynamic ( __name__ , path ) \n 
+ch . setFormatter ( formatter ) \n 
+LoggerFactory . _isSetup = True \n 
+"MakeMKV" : "makemkvcon" , \n 
+"Filebot" : "filebot" , \n 
+"HandBrake" : "HandBrakeCLI" , \n 
+srs_name = f . CharField ( ) \n 
+srs_format = f . CharField ( required = False ) \n 
+max_features = f . IntegerField ( ) \n 
+aliases = MultipleValueField ( required = False ) \n 
+filter = f . CharField ( required = False ) \n 
+filter_language = f . CharField ( required = False ) \n 
+resource_id = f . CharField ( required = False ) \n 
+resolve_depth = f . IntegerField ( ) \n 
+resolve_timeout = f . FloatField ( ) \n 
+######################################################################################################################## \n 
+#: \n 
+StoredQueryParameter = namedtuple ( "StoredQueryParameter" , ( , , , , \n 
+reduce ( \n 
+fts = list ( self . models . keys ( ) ) \n 
+ns = namespace , \n 
+ns_name = model . _meta . app_label , \n 
+abstract = model . __doc__ , \n 
+#try: \n 
+sort_by = parms . cleaned_data [ ] \n 
+geometry_field = self . geometries [ type_names [ 0 ] ] \n 
+mny = mny , \n 
+mxx = mxx , \n 
+mxy = mxy ) \n 
+query_set = query_set . order_by ( * sort_by ) \n 
+output_format = root . get ( , ) \n 
+namespace = namespaces [ namespace ] \n 
+type_names . append ( ( namespace , name ) ) \n 
+"schema" : feature_type . schema , \n 
+"abstract" : feature_type . abstract , \n 
+"ns_name" : feature_type . ns_name \n 
+CommonParameters , \n 
+InputParameters , \n 
+PresentationParameters , \n 
+AdHocQueryParameters , \n 
+StoredQueryParameters \n 
+db_params = settings . DATABASES [ response . db ] \n 
+parameters = tuple ( [ adapt ( p ) for p in parameters ] ) \n 
+connection_string = "PG:dbname=\'{db}\'" . format ( db = db_params [ ] ) \n 
+layer = conn . ExecuteSQL ( query ) \n 
+ds = drv . CreateDataSource ( tmpname ) \n 
+l2 . SyncToDisk ( ) \n 
+rdata = responsef . read ( ) \n 
+responsef . close ( ) \n 
+queries = self . adapter . list_stored_queries ( request ) \n 
+inspected_queries = parms . cleaned_data [ ] \n 
+etree . SubElement ( p , ) . text = parameter . abstractS \n 
+"isPrivate" : parameter . query_expression . private == True , \n 
+"language" : parameter . query_expression . language , \n 
+"returnFeatureTypes" : . join ( parameter . query_expression . return_feature_types } ) . text = parameter . query_expression . text \n 
+resolve_path = f . CharField ( required = False ) \n 
+GetCapabilitiesMixin , \n 
+DescribeFeatureTypeMixin , \n 
+DescribeStoredQueriesMixin , \n 
+GetFeatureMixin , \n 
+ListStoredQueriesMixin , \n 
+GetPropertyValueMixin \n 
+models = None \n 
+fees = None \n 
+access_constraints = None \n 
+provider_name = None \n 
+addr_street = None \n 
+addr_city = None \n 
+addr_admin_area = None \n 
+addr_postcode = None \n 
+addr_country = None \n 
+addr_email = None \n 
+"title" : self . title , \n 
+"keywords" : self . keywords , \n 
+"fees" : self . fees , \n 
+"access_constraints" : self . access_constraints , \n 
+"endpoint" : request . build_absolute_uri ( ) . split ( ) [ 0 ] , \n 
+"output_formats" : [ ogr . GetDriver ( drv ) . GetName ( ) for drv in range ( ogr . GetDriverCount ( ) ) "addr_street" : self . addr_street , \n 
+"addr_city" : self . addr_city , \n 
+"addr_admin_area" : self . addr_admin_area , \n 
+"addr_postcode" : self . addr_postcode , \n 
+"addr_country" : self . addr_country , \n 
+"feature_versioning" : self . adapter . supports_feature_versioning ( ) , \n 
+"transactional" : True , \n 
+api = SimpleApp ( s ) \n 
+auth = Auth ( s ) \n 
+AuthenticatedApp ( s ) \n 
+AuthorizedApp ( s ) \n 
+"date" : datetime . now ( ) , \n 
+"value" : 0 \n 
+storage_repr = fk_doc . rql_repr ( ) \n 
+ourCounter = 0 \n 
+matchItem . setText ( 3 , unicode ( self . data [ "Matches" ] ) ) \n 
+roundItem . setText ( 3 , unicode ( opponent [ 2 ] ) ) \n 
+opponent [ 3 ] = roundItem \n 
+roundCounter += 1 \n 
+vec = Matrix ( a ) \n 
+vec_name = VectorName ( ) \n 
+subsection . append ( math ) \n 
+M = np . matrix ( [ [ 2 , 3 , 4 ] , \n 
+matrix = Matrix ( M , mtype = ) \n 
+math = Math ( data = [ , vec_name , , Matrix ( M * a ) ] ) \n 
+q2 = Quantity ( v , format_cb = lambda x : str ( int ( x ) ) ) \n 
+q3 = Quantity ( v , options = { : } ) \n 
+q1 = Quantity ( t ) \n 
+test_dimensionality_to_siunitx ( ) \n 
+fs = filesys . os_filesystem ( ) \n 
+dh = default_handler . default_handler ( fs ) \n 
+ph = put_handler . put_handler ( fs , ) \n 
+hs = http_server . http_server ( ip = , port = 8080 ) \n 
+ac_out_buffer_size = 16384 \n 
+total_in = 0 \n 
+concurrent = 0 \n 
+max_concurrent = 0 \n 
+asynchat . async_chat . close ( self ) \n 
+request_size , host \n 
+ip = socket . gethostbyname ( host ) \n 
+chain = build_request_chain ( num_requests , host , request_size ) \n 
+total_time = t . end ( ) \n 
+total_bytes = test_client . total_in \n 
+num_trans = num_requests * num_conns \n 
+trans_per_sec = num_trans / total_time \n 
+string . join ( \n 
+map ( str , ( num_conns , num_requests , request_size , throughput , trans_per_sec ) \n 
+setgroups = fake . setgroups \n 
+getuid = fake . getuid \n 
+setuid = fake . setuid \n 
+setgid = fake . setgid \n 
+clear = fake . clear \n 
+queue . add_task ( task , 3 ) \n 
+futures . append ( queue . yield_task ( task , 3 ) ) \n 
+task_results [ : ] = res \n 
+awaitable = AwaitableInstance ( instance ) \n 
+instance2 = _Instance ( ) \n 
+shuffle ( self . __queued_servers ) \n 
+socket . bind ( self . address ) \n 
+event_name = event [ ] \n 
+event_args = event [ ] \n 
+event_data = zlib . compress ( pickle . dumps ( event ) ) \n 
+WORKER_SOCKET_CONNECT = \n 
+WORKER_SOCKET_DISCONNECT = \n 
+response_headers = None ) : \n 
+path_only , query = self . _split_path ( path ) \n 
+break ; \n 
+u . email = user [ 2 ] \n 
+trac_users . append ( u ) \n 
+trac_components = list ( [ ] ) \n 
+component . owner = self . _get_user_login ( component . owner ) \n 
+trac_versions = list ( [ ] ) \n 
+at . author_name = elem [ 4 ] \n 
+change_cursor = self . db_cnx . cursor ( ) \n 
+custom_fields = list ( [ ] ) \n 
+options_key = k + ".options" \n 
+_debug = 0 \n 
+Tracer . __init__ ( self , self . Filter ) \n 
+networks [ pkt . pduSource ] . append ( pkt . wirtnNetwork ) \n 
+filterSource = Address ( sys . argv [ i + 1 ] ) \n 
+filterDestination = Address ( sys . argv [ i + 1 ] ) \n 
+filterHost = Address ( sys . argv [ i + 1 ] ) \n 
+net_count . sort ( lambda x , y : cmp ( y [ 1 ] , x [ 1 ] ) ) \n 
+REBIND_SLEEP_INTERVAL = 2.0 \n 
+strm = StringIO ( self . pickleBuffer ) \n 
+rpdu . update ( pdu ) \n 
+TCPClient . handle_close ( self ) \n 
+pdu . pduSource = self . peer \n 
+ServiceAccessPoint . __init__ ( self , sapID ) \n 
+connect_task . install_task ( _time ( ) + self . reconnect [ actor . peer ] ) \n 
+asyncore . dispatcher . __init__ ( self , sock ) \n 
+TCPServer . handle_close ( self ) \n 
+TCPServerDirector . _warning ( , err ) \n 
+_sleep ( REBIND_SLEEP_INTERVAL ) \n 
+Client . __init__ ( self , cid ) \n 
+Server . __init__ ( self , sid ) \n 
+user_data = pdu . pduUserData , \n 
+buff = packet [ 1 ] \n 
+ApplicationServiceElement . __init__ ( self , aseID ) \n 
+lan . add_node ( self ) \n 
+BIPSimpleApplication . request ( self , apdu ) \n 
+obj_inst = int ( obj_inst ) \n 
+start_record = int ( start_record ) \n 
+record_count = int ( record_count ) \n 
+fileIdentifier = ( obj_type , obj_inst ) , \n 
+fileStartRecord = start_record , \n 
+requestedRecordCount = record_count , \n 
+start_position = int ( start_position ) \n 
+octet_count = int ( octet_count ) \n 
+fileStartPosition = start_position , \n 
+requestedOctetCount = octet_count , \n 
+record_data = list ( args [ 4 : ] ) \n 
+accessMethod = AtomicWriteFileRequestAccessMethodChoice ( \n 
+recordAccess = AtomicWriteFileRequestAccessMethodChoiceRecordAccess ( \n 
+recordCount = record_count , \n 
+fileRecordData = record_data , \n 
+streamAccess = AtomicWriteFileRequestAccessMethodChoiceStreamAccess ( \n 
+fileData = data , \n 
+objectName = args . ini . objectname , \n 
+objectIdentifier = int ( args . ini . objectidentifier ) , \n 
+maxApduLengthAccepted = int ( args . ini . maxapdulengthaccepted ) , \n 
+segmentationSupported = args . ini . segmentationsupported , \n 
+vendorIdentifier = int ( args . ini . vendoridentifier ) , \n 
+this_application = TestApplication ( this_device , args . ini . address ) \n 
+services_supported = this_application . get_services_supported ( ) \n 
+this_device . protocolServicesSupported = services_supported . value \n 
+this_console = TestConsoleCmd ( ) \n 
+_log . debug ( "running" ) \n 
+RED = \n 
+GREEN = \n 
+YELLOW = \n 
+BLUE = \n 
+PINK = \n 
+CYAN = \n 
+WHITE = \n 
+ENDC = \n 
+COLOR_MISSING_FILES = Color . RED \n 
+COLOR_ALREADY_SEEDING = Color . BLUE \n 
+COLOR_FOLDER_EXIST_NOT_SEEDING = Color . YELLOW \n 
+COLOR_FAILED_TO_ADD_TO_CLIENT = Color . PINK \n 
+MISSING_FILES = 1 \n 
+ALREADY_SEEDING = 2 \n 
+FOLDER_EXIST_NOT_SEEDING = 3 \n 
+FAILED_TO_ADD_TO_CLIENT = 4 \n 
+Status . FAILED_TO_ADD_TO_CLIENT : % ( COLOR_FAILED_TO_ADD_TO_CLIENT , Color . ENDC ) , \n 
+CHUNK_SIZE = 65536 \n 
+pieces = Pieces ( torrent ) \n 
+end_size += f [ ] \n 
+files_to_check += self . db . find_hash_varying_size ( f [ ] ) \n 
+checked_files = set ( ) \n 
+match_start , match_end = pieces . match_file ( db_file , start_size , end_size ) \n 
+modification_point = 0 \n 
+modified_result = True \n 
+torrent_name = self . try_decode ( torrent_name ) \n 
+path_files [ os . path . join ( * path ) ] . append ( { \n 
+files_sorted [ . join ( orig_path ) ] = i \n 
+actual_path = self . db . find_file_path ( torrent_name , length ) \n 
+found_size , missing_size = 0 , 0 \n 
+file_path = os . path . dirname ( destination ) \n 
+current_size = os . path . getsize ( f [ ] ) \n 
+expected_size = f [ ] \n 
+modified = False \n 
+output_fp . write ( * write_bytes ) \n 
+bytes_written += read_bytes \n 
+torrent = self . open_torrentfile ( path ) \n 
+missing_percent = ( missing_size / ( found_size + missing_size ) ) * 100 \n 
+found_percent = 100 - missing_percent \n 
+would_not_add = missing_size and missing_percent > self . add_limit_percent or missing_size > \n 
+destination_path = files [ ] \n 
+info_hash = self . get_info_hash ( torrent ) \n 
+LEGO_PALETTE = ( , , , , , , ) \n 
+active_tab = None \n 
+RefResolutionError , UnknownType , Draft3Validator , \n 
+Draft4Validator , RefResolver , create , extend , validator_for , validate , \n 
+meta_schema = self . meta_schema , \n 
+default_types = self . types , \n 
+new = mock . Mock ( ) \n 
+u"disallow" : u"array" , \n 
+u"enum" : [ [ "a" , "b" , "c" ] , [ "d" , "e" , "f" ] ] , \n 
+u"minItems" : 3 \n 
+got = ( e . message for e in self . validator . iter_errors ( instance , schema ) ) \n 
+u"properties" : { \n 
+check_fn = mock . Mock ( return_value = False ) \n 
+checker . checks ( u"thing" ) ( check_fn ) \n 
+validator = Draft3Validator ( schema ) \n 
+deque ( [ "type" , 1 , "properties" , "foo" , "enum" ] ) , \n 
+"baz" : { "minItems" : 2 } , \n 
+"definitions" : { \n 
+"node" : { \n 
+"$ref" : "#/definitions/node" , \n 
+"required" : [ "root" ] , \n 
+"a" : { \n 
+"ab" : { \n 
+"properties" , \n 
+"root" , \n 
+"children" , \n 
+"patternProperties" , \n 
+"^.*$" , \n 
+e2 . absolute_schema_path , deque ( \n 
+"anyOf" \n 
+"additionalProperties" : { "type" : "integer" , "minimum" : 5 } \n 
+e1 , e2 = sorted_errors ( errors ) \n 
+"bar" : { "type" : "string" } , \n 
+"foo" : { "minimum" : 5 } \n 
+"additionalItems" : { "type" : "integer" , "minimum" : 5 } \n 
+"items" : [ { } ] , \n 
+validate ( instance = instance , schema = { my_property : my_value } ) \n 
+chk_schema . assert_called_once_with ( { } ) \n 
+stored_uri = "foo://stored" \n 
+stored_schema = { "stored" : "schema" } \n 
+ref = "foo://bar" \n 
+foo_handler = mock . Mock ( ) \n 
+resolver . pop_scope ( ) \n 
+"qfx5100-24q-2p" : { \n 
+"ports" : \n 
+"qfx5100-48s-6q" : { \n 
+"uplinkPorts" : , \n 
+"downlinkPorts" : \n 
+InMemoryDao . _destroy ( ) \n 
+l2Report . generateReport ( pod . id , True , False ) \n 
+l3Report . generateReport ( pod . id , True , False ) \n 
+_YAML_ = splitext ( __file__ ) [ 0 ] + \n 
+globals ( ) . update ( loadyaml ( _YAML_ ) ) \n 
+gather_facts = False ) \n 
+#tm.bearing_air.setTotalTP() \n 
+include_package_data = True , \n 
+InvalidClientIdError , \n 
+InvalidValidationResponse , \n 
+SignatureVerificationError ) \n 
+COMMON_CA_LOCATIONS = [ \n 
+DEFAULT_API_URLS = ( , \n 
+DEFAULT_TIMEOUT = 10 \n 
+DEFAULT_MAX_TIME_WINDOW = 5 \n 
+BAD_STATUS_CODES = [ , , , \n 
+translate_otp = True , api_urls = DEFAULT_API_URLS , \n 
+ca_certs_bundle_path = None ) : \n 
+ca_bundle_path = self . _get_ca_bundle_path ( ) \n 
+rand_str = b ( os . urandom ( 30 ) ) \n 
+nonce = base64 . b64encode ( rand_str , b ( ) ) [ : 25 ] . decode ( ) \n 
+threads . append ( thread ) \n 
+otp . otp , nonce , \n 
+sl = None , timeout = None ) : \n 
+otps = [ ] \n 
+return_response = True ) \n 
+hmac_signature = hmac_signature \n 
+pairs_sorted = sorted ( pairs ) \n 
+pairs_string = . join ( [ . join ( pair ) for pair in pairs_sorted ] ) \n 
+digest = hmac . new ( self . key , b ( pairs_string ) , hashlib . sha1 ) . digest ( ) \n 
+signature = ( [ unquote ( v ) for k , v in pairs if k == ] or [ None ] ) [ 0 ] \n 
+query_string = . join ( [ k + + v for k , v in pairs if k != ] ) \n 
+pairs = ( x . split ( , 1 ) for x in query_string . split ( ) ) \n 
+py_modules = [ ] , \n 
+entry_points = , \n 
+submitter , msg = result [ 0 ] \n 
+contact = self . line_interface . _get_contact_by_id ( me . id ) \n 
+me , msg = result [ 0 ] \n 
+me_submitter , msg = result [ 0 ] \n 
+me_display_name = self . line_interface . get_display_name ( me_submitter ) \n 
+ok_ ( me_display_name == me . name ) \n 
+proto = mock . Mock ( ) \n 
+transport . get_extra_info . return_value = None \n 
+ShortenerSettings = namedtuple ( , [ \n 
+Settings = namedtuple ( , [ \n 
+strict = True , \n 
+force = False , \n 
+destination = , \n 
+templates = , \n 
+images = , \n 
+right_to_left = [ , ] , \n 
+shortener = { } , \n 
+exclusive = None , \n 
+default_locale = , \n 
+workers_pool = 10 , \n 
+local_images = , \n 
+save = None , \n 
+cms_service_host = "http://localhost:5001" \n 
+subparsers = args . add_subparsers ( help = , dest = ) \n 
+template_parser . add_argument ( , \n 
+config_parser . add_argument ( , help = ) \n 
+gui_parser . add_argument ( , , type = str , help = ) \n 
+placeholder . generate_config ( settings ) \n 
+serve ( args ) \n 
+user_dn = record . get ( ) \n 
+use_ssl = True , \n 
+get_info = ALL ) \n 
+auto_bind = True ) \n 
+changePwdResult = conn . extend . microsoft . modify_password ( user_dn , newpassword ) \n 
+cap_path = os . path . join ( caps_directory , ) \n 
+cap . eventloop . stop ( ) \n 
+lazy_simple_capture . load_packets ( ) \n 
+flush = Service ( name = , \n 
+############################################################################### \n 
+item1Id = response . json [ ] \n 
+item2Id = response . json [ ] \n 
+sourceIds = [ d [ ] for d in response . json ] \n 
+"folder." ) \n 
+minerva_metadata [ ] = { \n 
+Description ( ) \n 
+curdir = os . path . dirname ( os . path . realpath ( __file__ ) ) \n 
+matches = re . findall ( "(\'|\\")(\\S+)(\'|\\")" , text ) \n 
+test_requires = [ \n 
+classifiers = [ \n 
+package_data = { : [ ] } , \n 
+zip_safe = False , \n 
+change_file_permissions = [ ] \n 
+change_folder_permissions = [ , ] \n 
+list_permissions = [ , , , ] \n 
+readonly_permissions = [ , ] \n 
+owner_exists = False \n 
+"kloudless.nose.tester+1@gmail.com" : "writer" , \n 
+"kloudless.nose.tester+2@gmail.com" : "reader" , \n 
+"kloudless.nose.tester+3@gmail.com" : "writer" , \n 
+"kloudless.nose.tester+4@gmail.com" : "reader" \n 
+ctx . __exit__ ( exc_type , exc_val , exc_tb ) \n 
+option_list = BaseCommand . option_list + ( \n 
+make_option ( , \n 
+is_pkg = True \n 
+active = Column ( Boolean ) \n 
+confirm_token = Column ( Unicode ( 100 ) ) \n 
+creation_date = Column ( DateTime ( ) , nullable = False ) \n 
+last_login_date = Column ( DateTime ( ) ) \n 
+__tablename__ = \n 
+__mapper_args__ = dict ( \n 
+order_by = name , \n 
+_DEFAULT_ROLES = ROLES . copy ( ) \n 
+SHARING_ROLES = [ , , ] \n 
+USER_MANAGEMENT_ROLES = SHARING_ROLES + [ ] \n 
+_DEFAULT_SHARING_ROLES = SHARING_ROLES [ : ] \n 
+_DEFAULT_USER_MANAGEMENT_ROLES = USER_MANAGEMENT_ROLES [ : ] \n 
+SITE_ACL = [ \n 
+ROLES . update ( _DEFAULT_ROLES ) \n 
+reset_sharing_roles ( ) \n 
+reset_user_management_roles ( ) \n 
+recursing = _inherited is not None \n 
+principal = get_principals ( ) . get ( name ) \n 
+_seen . update ( new_groups ) \n 
+_inherited . update ( i ) \n 
+lg for lg in context . local_groups \n 
+LocalGroup ( context , name , unicode ( group_name ) ) \n 
+principals = set ( ) \n 
+factory = Principal \n 
+filters . append ( func . lower ( col ) . like ( value ) ) \n 
+bcrypt . hashpw ( password . encode ( ) , hashed . encode ( ) ) ) \n 
+link = browser . getLink \n 
+browser . open ( . format ( BASE_URL ) ) \n 
+here = os . path . abspath ( os . path . dirname ( __file__ ) ) \n 
+AUTHORS = open ( os . path . join ( here , ) ) . read ( ) \n 
+development_requires = [ ] \n 
+docs_require = [ \n 
+dependency_links = [ ] , \n 
+extras_require = { \n 
+fixed_boxes ) : \n 
+resolve_percentages ( box , ( containing_block . width , containing_block . height ) ) \n 
+resolve_position_percentages ( \n 
+box , _ , _ , _ , _ = block_container_layout ( \n 
+skip_stack = None , device_size = device_size , page_is_empty = False , \n 
+absolute_boxes = absolute_boxes , fixed_boxes = fixed_boxes , \n 
+adjoining_margins = None ) \n 
+list_marker_layout ( context , box ) \n 
+clearance = None \n 
+hypothetical_position = box . position_y + collapsed_margin \n 
+box_width = box . margin_width ( ) if outer else box . border_width ( ) \n 
+box_height = box . margin_height ( ) if outer else box . border_height ( ) \n 
+left_bounds = [ \n 
+right_bounds = [ \n 
+max_left_bound = containing_block . content_box_x ( ) \n 
+max_right_bound -= box . margin_right \n 
+shape . position_y + shape . margin_height ( ) \n 
+continue \n 
+available_width = max_right_bound - max_left_bound \n 
+position_y -= box . margin_top \n 
+provides = [ ] , \n 
+use_2to3 = True , \n 
+health_check . autodiscover ( ) \n 
+urlpatterns = patterns ( , \n 
+obj1 , obj2 = qs \n 
+n1 = Normal . objects . language ( ) . get ( pk = self . normal_id [ 1 ] ) \n 
+n2 = Normal . objects . language ( ) . get ( pk = self . normal_id [ 2 ] ) \n 
+ja1 = Normal . objects . language ( ) . get ( pk = self . normal_id [ 1 ] ) \n 
+ja2 = Normal . objects . language ( ) . get ( pk = self . normal_id [ 2 ] ) \n 
+new2 = Normal . objects . language ( ) . get ( pk = self . normal_id [ 2 ] ) \n 
+newja1 = Normal . objects . language ( ) . get ( pk = self . normal_id [ 1 ] ) \n 
+newja2 = Normal . objects . language ( ) . get ( pk = self . normal_id [ 2 ] ) \n 
+NEW_TRANSLATED = \n 
+shared_field = NEW_SHARED , translated_field = NEW_TRANSLATED \n 
+values_list = list ( values ) \n 
+NORMAL [ 2 ] . shared_field ] ) \n 
+ja_trans = en . translations . get_language ( ) \n 
+ja = Normal . objects . language ( ) . get ( pk = en . pk ) \n 
+AggregateModel . objects . language ( "en" ) . create ( number = 0 , translated_number = 0 ) \n 
+standard_count = 2 \n 
+shared_contains_two = Q ( shared_field__contains = ) \n 
+normal_one = Q ( normal_field = STANDARD [ 1 ] . normal_field ) \n 
+normal_two = Q ( normal_field = STANDARD [ 2 ] . normal_field ) \n 
+shared_one = Q ( normal__shared_field = NORMAL [ STANDARD [ 1 ] . normal ] . shared_field ) \n 
+translated_one_en = Q ( normal__translated_field = NORMAL [ STANDARD [ 1 ] . normal ] . translated_field [ translated_two_en = Q ( normal__translated_field = NORMAL [ STANDARD [ 2 ] . normal ] . translated_field [ \n 
+qs = manager . filter ( shared_one & ~ translated_two_en ) \n 
+Normal . objects . language ( ) . complex_filter , \n 
+ANALYTICS_WRITE_KEY = "phc2hsUe48Dfw1iwsYQs2W7HH9jcwrws" \n 
+"category" : "ST3" , \n 
+analytics . track ( user_id , "Activate" , { \n 
+base_url = self . base_url , \n 
+scroll_size = self . scroll_size , \n 
+command_name = None \n 
+sublime_plugin . WindowCommand . __init__ ( self , * args , ** kwargs ) \n 
+send_get_body_as = , \n 
+connection_class = CustomHeadersConnection , \n 
+track_activate ( user_id ) \n 
+"show_response" , { "title" : title , "text" : text } ) \n 
+list_panel . show ( callback ) \n 
+"show_output_panel" , { "text" : text , "syntax" : syntax } ) \n 
+ensure_ascii = False \n 
+syntax = "Packages/JavaScript/JSON.tmLanguage" ) \n 
+scroll = self . settings . scroll_size \n 
+search_type = search_type \n 
+"show_panel" , { "panel" : "output.elasticsearch" } ) \n 
+panel . set_read_only ( True ) \n 
+EASTER_JULIAN = 1 \n 
+EASTER_ORTHODOX = 2 \n 
+EASTER_WESTERN = 3 \n 
+400 : RequestError , \n 
+401 : AuthenticationException , \n 
+403 : AuthorizationException , \n 
+404 : NotFoundError , \n 
+409 : ConflictError , \n 
+"AliasListPanel" , \n 
+"AnalyzerListPanel" , \n 
+"DocTypeListPanel" , \n 
+"FieldListPanel" , \n 
+"IndexListPanel" , \n 
+"IndexTemplateListPanel" , \n 
+"RepositoryListPanel" , \n 
+"ScriptListPanel" , \n 
+"SearchTemplateListPanel" , \n 
+"SnapshotListPanel" , \n 
+"SwitchServerListPanel" , \n 
+"WarmerListPanel" , \n 
+PATH_VALID_VIM_SCRIPT = get_fixture_path ( ) \n 
+PATH_INVALID_VIM_SCRIPT = get_fixture_path ( \n 
+ProhibitCommandWithUnintendedSideEffect , \n 
+expected_violations ) \n 
+FIXTURE_CONFIG_FILE = get_fixture_path ( ) \n 
+config_source = self . initialize_config_source_with_env ( \n 
+TestConfigFileSource . ConcreteConfigFileSource ) \n 
+detect_scope_visibility , \n 
+normalize_variable_name , \n 
+is_builtin_variable , \n 
+IdentifierClassifier , \n 
+is_function_identifier , \n 
+REACHABILITY_FLAG = \n 
+REFERECED_FLAG = \n 
+cls . _attach_recursively ( child_scope ) \n 
+scope_linker . process ( ast ) \n 
+id_collector = IdentifierClassifier . IdentifierCollector ( ) \n 
+classified_id_group = id_collector . collect_identifiers ( ast ) \n 
+dec_id_nodes = classified_id_group [ ] \n 
+ref_id_nodes = classified_id_group [ ] \n 
+ReferenceReachabilityTester . TwoWayScopeReferenceAttacher . attach ( self . _scope_tree ) \n 
+ref_id_node [ REACHABILITY_FLAG ] = is_reachable \n 
+context_scope = self . _link_registry . get_scope_by_referencing_identifier ( node ) \n 
+var_name = normalize_variable_name ( ref_id_node , scope ) \n 
+is_func_id = is_function_identifier ( ref_id_node ) \n 
+declaring_id_node [ REFERECED_FLAG ] = True \n 
+Abbreviations , \n 
+AbbreviationsIncludingInvertPrefix , \n 
+SetCommandFamily = { \n 
+node_type = NodeType ( node [ ] ) \n 
+is_set_cmd = excmd_node [ ] [ ] . get ( ) in SetCommandFamily \n 
+option_name = re . match ( , option_expr ) . group ( 0 ) \n 
+is_valid = option_name not in AbbreviationsIncludingInvertPrefix \n 
+stderr . setFormatter ( logging . Formatter ( \n 
+level = level if level else os . environ . get ( , ) \n 
+g_R = Gee_R ( S ) \n 
+g_D = Gee_D ( D ) \n 
+g_M = Gee_M ( SM , SM0 ) \n 
+g_s = g0 * g_c * g_R * g_D * g_T * g_M \n 
+g_T = ( ( TK - TL ) * ( TH - TK ) ** alpha_T ) / ( ( T0 - TL ) * ( TH - T0 ) ** alpha_T ) \n 
+rho_a = AirDensity ( RH , Tc , P ) \n 
+r_a = AeroReist ( um , zm , z0 , d ) \n 
+r_s = SurfResist ( g0 , S , D , Tc , SM , SM0 ) \n 
+LE = ( delta * Rn + ( rho_a * cP * D ) / r_a ) / ( delta + gamma * ( 1.0 + r_s / r_a ) ) \n 
+glEnd ( ) \n 
+glPopMatrix ( ) \n 
+glPushMatrix ( ) \n 
+glDisable ( GL_SCISSOR_TEST ) \n 
+glLoadIdentity ( ) \n 
+glEnable ( GL_BLEND ) \n 
+glClearColor ( * background_color ) \n 
+glMatrixMode ( GL_PROJECTION ) \n 
+glScissor ( x , y , width , height ) \n 
+glViewport ( x , y , width , height ) \n 
+glOrtho ( x , x + width , y , y + height , - 1 , 1 ) \n 
+p2 = points [ 2 ] [ 2 ] \n 
+glNormal3f ( 0 , 1. , 0 ) \n 
+glVertex ( n , n , p ) \n 
+glEndList ( ) \n 
+fungen = DummyFunGen ( ) \n 
+osci = DummyOsci ( ) \n 
+shutter = DummyShutter ( ) \n 
+return_float = False ) : \n 
+_LOG . warn ( msg ) \n 
+__reversed_cache = { } \n 
+__doc__ = long_description \n 
+requirements = [ ] \n 
+companies = [ path for path in paths \n 
+and os . path . exists ( os . path . join ( folder , path , ) ) ] \n 
+folder = os . path . join ( root_folder , , , ) \n 
+legacy_companies = [ path for path in paths \n 
+platforms = , \n 
+scripts = [ , \n 
+pro . predict ( ) \n 
+pro2 . predict ( ) from collections import OrderedDict \n 
+"Layer" , \n 
+"MergeLayer" , \n 
+"dimensions." % ( self . __class__ . __name__ , shape ) ) \n 
+only = set ( tag for tag , value in tags . items ( ) if value ) \n 
+crop0 = None \n 
+crop1 = [ None , , , ] \n 
+crop2 = [ , ] \n 
+crop_bad = [ , , , ] \n 
+crop_0 = None \n 
+crop_1 = [ None , , , ] \n 
+crop_l = [ , , , ] \n 
+crop_c = [ , , , ] \n 
+crop_u = [ , , , ] \n 
+crop_x = [ , ] \n 
+outs = [ o . eval ( ) for o in outs ] \n 
+crop_test ( crop_x , [ x0 , x1 , x2 , x0 , x1 , x2 ] , \n 
+cropping = [ ] * 2 ) \n 
+result_eval = result . eval ( ) \n 
+result_0 = crop_layer_0 . get_output_for ( inputs ) . eval ( ) \n 
+result_1 = crop_layer_1 . get_output_for ( inputs ) . eval ( ) \n 
+desired_result_0 = numpy . concatenate ( [ x0 [ : , : 2 ] , x1 [ : , : 2 ] ] , axis = 0 ) \n 
+desired_result_1 = numpy . concatenate ( [ x0 [ : 4 , : ] , x1 [ : 4 , : ] ] , axis = 1 ) \n 
+inputs = [ theano . shared ( a ) , \n 
+theano . shared ( b ) ] \n 
+aeq ( result , desired_result ) \n 
+desired_result = numpy . maximum ( a , b ) \n 
+ws . connect ( ) \n 
+gevent . joinall ( greenlets ) \n 
+mask = os . urandom ( 4 ) if mask else None \n 
+masking_key = mask , fin = 1 ) . build ( ) \n 
+opcode = opcode , masking_key = mask , \n 
+fin = fin ) . build ( ) \n 
+use_basic_auth = True \n 
+old = [ ] \n 
+cacheGroups = CacheGroups ( ) \n 
+NTLMSSP_NEGOTIATE_UNICODE = 0x00000001 \n 
+flags = unpack ( , msg [ idx : idx + 4 ] ) [ 0 ] \n 
+ah = auth . split ( ) \n 
+pdc = req . get_options ( ) [ ] \n 
+bdc = req . get_options ( ) . get ( , False ) \n 
+decoded_path = urllib . unquote ( url . path ) [ 1 : ] \n 
+rules = . join ( req . requires ( ) ) . strip ( ) \n 
+domain = req . get_options ( ) . get ( , req . auth_name ( ) ) \n 
+client = NTLM_Client ( user , domain , password ) \n 
+type1 = client . make_ntlm_negotiate ( ) \n 
+type3 = client . make_ntlm_authenticate ( ) \n 
+auth_headers = req . headers_in . get ( , [ ] ) \n 
+set_remote_user ( req , ah_data [ 1 ] , domain ) \n 
+taskbase = app . celery . Task \n 
+dict = json . loads ( request . data . decode ( ) ) \n 
+rv = self . app . delete ( . format ( id ) ) \n 
+documentPath , \n 
+outputUFOFormatVersion = 2 , \n 
+ufoVersion = outputUFOFormatVersion , \n 
+roundGeometry = roundGeometry , \n 
+logPath = logPath , \n 
+progressFunc = progressFunc \n 
+configure_logging ( "index_pages_logging.config" , "index_pages.log" ) \n 
+ocr_file = join ( dir , ) \n 
+expected_text = { "eng" : file ( join ( dir , ) ) . read ( ) . decode ( ) } \n 
+handler . setFormatter ( formatter ) \n 
+tuples . append ( ( os . path . join ( root , pair [ 0 ] ) , np . int32 ( pair [ 1 ] ) ) ) \n 
+val_list = load_image_list ( args . val , args . root ) \n 
+mean_image = pickle . load ( open ( args . mean , ) ) \n 
+res_q = queue . Queue ( ) \n 
+cropwidth = 256 - model . insize \n 
+left = random . randint ( 0 , cropwidth - 1 ) \n 
+right = model . insize + left \n 
+image /= 255 \n 
+x_batch = np . ndarray ( \n 
+val_x_batch = np . ndarray ( \n 
+val_batch_pool = [ None ] * args . val_batchsize \n 
+data_q . put ( ) \n 
+perm = np . random . permutation ( len ( train_list ) ) \n 
+batch_pool [ i ] = pool . apply_async ( read_image , ( path , False , True ) ) \n 
+y_batch [ i ] = label \n 
+read_image , ( path , True , False ) ) \n 
+val_y_batch [ j ] = label \n 
+pool . join ( ) \n 
+begin_at = time . time ( ) \n 
+val_count = val_loss = val_accuracy = 0 \n 
+val_begin_at = time . time ( ) \n 
+train_cur_loss += loss \n 
+train_cur_accuracy += accuracy \n 
+duration = time . time ( ) - val_begin_at \n 
+throughput = val_count / duration \n 
+val_loss += loss \n 
+val_accuracy += accuracy \n 
+mean_error = 1 - val_accuracy * args . val_batchsize / 50000 \n 
+serializers . save_hdf5 ( args . outstate , optimizer ) \n 
+graph_generated = True \n 
+train_loop ( ) \n 
+feeder . join ( ) \n 
+html_show_copyright = False \n 
+html_static_path = [ ] \n 
+epub_title = \n 
+epub_author = \n 
+epub_publisher = \n 
+epub_copyright = \n 
+medium = ZeroMQMedium ( loop , UdpDiscoveryMedium ) \n 
+loop . run_forever ( ) \n 
+SETTINGS = config ( ) \n 
+boards_name = [ slugify ( b [ ] ) for b in SETTINGS . get ( , { } ) . values ( ) ] \n 
+LOGGING . info ( . format ( board_name , result ) ) \n 
+is_py2 = _ver [ 0 ] == 2 \n 
+is_py2_7_9_or_later = _ver [ 0 ] >= 2 and _ver [ 1 ] >= 7 and _ver [ 2 ] >= 9 \n 
+is_py3 = _ver [ 0 ] == 3 \n 
+is_py3_3 = is_py3 and _ver [ 1 ] == 3 \n 
+strategy = zlib . Z_DEFAULT_STRATEGY ) : \n 
+imap = map \n 
+bytes = bytes \n 
+REQUEST_CODES , REQUEST_CODES_LENGTH \n 
+keyfile = ) \n 
+sock . close ( ) \n 
+socket_handler = socket_handler , \n 
+secure = self . secure \n 
+ready_event . wait ( ) \n 
+proxy_host = self . host , \n 
+proxy_port = self . port ) \n 
+e . huffman_coder = HuffmanEncoder ( REQUEST_CODES , REQUEST_CODES_LENGTH ) \n 
+corpus = pcc . PostagCorpus ( ) \n 
+input_data = path . join ( \n 
+"../../data/train-02-21.conll" ) \n 
+train_seq = corpus . read_sequence_list_conll ( input_data , max_sent_len = 15 , max_nr_sent = 1000 ) \n 
+pickle . dump ( ( corpus . word_dict , corpus . tag_dict ) , open ( , ) ) \n 
+total = np . zeros ( self . features . n_feats ) \n 
+n_mistakes = 0 \n 
+n_tokens = 0 \n 
+scores = self . features . compute_scores ( feats , self . weights ) \n 
+t0 = 1.0 / ( sigma * eta0 ) \n 
+objective = 0.0 \n 
+feats = self . features . create_features ( instance ) \n 
+marginals , logZ = self . decoder . parse_marginals_nonproj ( scores ) \n 
+score_corr += scores [ h , m ] \n 
+n_instances += 1 \n 
+arr_heads_pred . append ( heads_pred ) \n 
+################# \n 
+transition_features = [ ] \n 
+initial_features . append ( features ) \n 
+emission_features . append ( features ) \n 
+features = self . add_final_features ( sequence , sequence . y [ - 1 ] , features ) \n 
+final_features . append ( features ) \n 
+#f(t,y_t,X) \n 
+node_idx = self . add_emission_features ( sequence , pos , y , node_idx ) \n 
+all_feat = idx [ : ] \n 
+#f(t,y_t,y_(t-1),X) \n 
+edge_idx = self . add_final_features ( sequence , y_prev , edge_idx ) \n 
+feat_id = self . add_feature ( feat_name ) \n 
+y_name = self . dataset . y_dict . get_label_name ( y ) \n 
+x_name = self . dataset . x_dict . get_label_name ( x ) \n 
+y_prev_name = self . dataset . y_dict . get_label_name ( y_prev ) \n 
+feat_name = "prev_tag:%s::%s" % ( y_prev_name , y_name ) \n 
+line_datasource = ogr . Open ( line_shp_file ) \n 
+point_shp_file = \n 
+layer_name = \n 
+layer_count = line_datasource . GetLayerCount ( ) \n 
+srs = layer . GetSpatialRef ( ) \n 
+feature_count = layer . GetFeatureCount ( ) \n 
+feature_geom = line_feature . GetGeometryRef ( ) \n 
+point_geom . AddPoint ( point [ 0 ] , point [ 1 ] ) \n 
+point_feature . SetGeometry ( point_geom ) \n 
+point_shp_layer . CreateFeature ( point_feature ) \n 
+longitudes = [ 100 , 110 , 120 , 130 , 140 ] \n 
+elevation = 0 \n 
+point_1 . AddPoint ( longitudes [ 0 ] , latitudes [ 0 ] , elevation ) \n 
+point_2 . AddPoint ( longitudes [ 1 ] , latitudes [ 1 ] , elevation ) \n 
+point_3 . AddPoint ( longitudes [ 2 ] , latitudes [ 2 ] , elevation ) \n 
+point_4 . AddPoint ( longitudes [ 3 ] , latitudes [ 3 ] , elevation ) \n 
+point_5 . AddPoint ( longitudes [ 4 ] , latitudes [ 4 ] , elevation ) \n 
+points . ExportToWkt ( ) \n 
+links = defaultdict ( list ) \n 
+di = np . array ( [ x for x in range ( projected_X . shape [ 1 ] ) ] ) \n 
+ids = np . array ( [ x for x in range ( projected_X . shape [ 0 ] ) ] ) \n 
+projected_X = np . c_ [ ids , projected_X ] \n 
+inverse_X = np . c_ [ ids , inverse_X ] \n 
+clusterer . fit ( inverse_x [ : , 1 : ] ) \n 
+complex [ "meta" ] = self . projection \n 
+k2e = { } \n 
+json_s [ "nodes" ] . append ( { "name" : str ( k ) , "tooltip" : tooltip_s , "group" : 2 * int ( np . log ( len ( complex ~~ k2e [ k ] = e \n 
+width_js = "%s" % width_html \n 
+height_js = "%s" % height_html \n 
+new_settings [ interface ] [ ] [ % protocol ] = server \n 
+handle_imports = settings . get ( "readImported" ) \n 
+read_all_views = settings . get ( "readAllViews" ) \n 
+setups = ( less_setup , sass_setup , stylus_setup , sass_erb_setup ) \n 
+chosen_setup = None \n 
+fn = self . view . file_name ( ) . encode ( "utf_8" ) \n 
+compiled_regex = re . compile ( chosen_setup . regex , re . MULTILINE ) \n 
+file_dir = os . path . dirname ( fn ) . decode ( "utf-8" ) \n 
+partial_filename = fn_split [ 0 ] + "/_" + fn_split [ 1 ] \n 
+contents = f . read ( ) \n 
+imported_vars = imported_vars + m \n 
+compatible_view = False \n 
+vars_from_views += viewvars \n 
+PIXEL_DATA = 2 \n 
+BRIGHTNESS = 3 \n 
+packet . append ( brightness ) \n 
+"class" : DriverNetwork , \n 
+"display" : "Network" , \n 
+"params" : [ { \n 
+"min" : 0 , \n 
+"id" : "port" , \n 
+"label" : "Port" , \n 
+"default" : 3142 , \n 
+API = \n 
+API_CALL_TIMEOUT = \n 
+API_VERSION = \n 
+API_VERSION_MAXIMUM = \n 
+API_VERSION_MINIMUM = \n 
+AREA = \n 
+AREA_MAX = \n 
+BBOX = \n 
+BOUNDS = \n 
+CFGSLAB = \n 
+CFGVERSION = 1 \n 
+CHANGESET = \n 
+CHANGESETS = \n 
+CHANGESETS_INLINE_SIZE = \n 
+CHANGESETS_PER_SLAB = \n 
+CHANGESETS_MAX = \n 
+CONFIGURATION_SCHEMA_VERSION = \n 
+CONTENT_TYPE = \n 
+COUCHDB = \n 
+DATASTORE = \n 
+DATASTORE_BACKEND = \n 
+DATASTORE_CONFIG = \n 
+DATASTORE_ENCODING = \n 
+DBHOST = \n 
+DBJOB_ADDELEM = \n 
+DBJOB_QUIT = \n 
+DBNAME = \n 
+DBPORT = \n 
+DBURL = \n 
+ELEMENT = \n 
+FRONT_END = \n 
+GENERATOR = \n 
+GEODOC = \n 
+GEODOC_LRU_SIZE = \n 
+GEODOC_LRU_THREADS = \n 
+GEOHASH_LENGTH = \n 
+JSON = \n 
+LAT = \n 
+LAT_MAX = + 90.0 \n 
+LAT_MIN = - 90.0 \n 
+LON = \n 
+LON_MAX = + 180.0 \n 
+LON_MIN = - 180.0 \n 
+MAXIMUM = \n 
+MAXIMUM_ELEMENTS = \n 
+MAXGHLAT = 89.999999999999992 \n 
+MAXLAT = \n 
+MAXLON = \n 
+MEMBASE = \n 
+MEMBASE_MAX_VALUE_LENGTH = 20 * 1024 * 1024 \n 
+MEMBER = \n 
+MEMBERS = \n 
+MINIMUM = \n 
+MINLAT = \n 
+MINLON = \n 
+ND = \n 
+NODE = \n 
+NODES = \n 
+NODES_INLINE_SIZE = \n 
+NODES_PER_SLAB = \n 
+OSM = \n 
+PER_PAGE = \n 
+PORT = \n 
+PROJECT_DOC = \n 
+PROTOBUF = \n 
+REF = \n 
+REFERENCES = \n 
+RELATION = \n 
+RELATIONS = \n 
+RELATIONS_INLINE_SIZE = \n 
+RELATIONS_PER_SLAB = \n 
+ROLE = \n 
+SCALE_FACTOR = \n 
+SECONDS = \n 
+SERVER_NAME = \n 
+SERVER_VERSION = \n 
+SLAB_LRU_SIZE = \n 
+SLAB_LRU_THREADS = \n 
+SOURCE_REPOSITORY = \n 
+STATUS = \n 
+TAG = \n 
+TAGS = \n 
+TEXT_XML = \n 
+TIMEOUT = \n 
+TRACEPOINTS = \n 
+TRACEPOINTS_PER_PAGE = \n 
+TYPE = \n 
+UTF8 = \n 
+WAY = \n 
+WAYS = \n 
+WAYS_INLINE_SIZE = \n 
+WAYS_PER_SLAB = \n 
+WAYNODES = \n 
+WAYNODES_MAX = \n 
+"code" : code , \n 
+"client_id" : client_id , \n 
+"client_secret" : client_secret , \n 
+"redirect_uri" : config . auth_redir_uri , \n 
+"refresh_token" : refresh_token , \n 
+operations = [ \n 
+model_name = , \n 
+Debuggable . __init__ ( self , ) \n 
+"purple" , "teal" , "lightgray" ] \n 
+"fuchsia" , "turquoise" , "white" ] \n 
+numrange = None , default = None , max_width = 72 ) : \n 
+letters = { } \n 
+found_letter . lower ( ) == default . lower ( ) ) ) : \n 
+is_default = False \n 
+show_letter ) \n 
+capitalized . append ( \n 
+option [ : index ] + show_letter + option [ index + 1 : ] \n 
+display_letters . append ( found_letter . upper ( ) ) \n 
+default_name = self . colorize ( , default_name ) \n 
+tmpl = \n 
+prompt_parts . append ( tmpl % default_name ) \n 
+prompt = \n 
+prompt_part_lengths ) ) : \n 
+line_length += length \n 
+matcher = SequenceMatcher ( lambda x : False , a , b ) \n 
+b_out . append ( self . colorize ( color , b [ b_start : b_end ] ) ) \n 
+PRIORITY = 1 \n 
+word = match . group ( 0 ) \n 
+startpoint = len ( match . group ( 0 ) ) \n 
+lookup = strings . split ( \'","\' ) \n 
+variable = % varname \n 
+ALPHABET = { \n 
+62 : , \n 
+parentdir = os . path . dirname ( __file__ ) \n 
+ZMQ_RPC_PORT = 15598 \n 
+HTTP_PORT = 15597 \n 
+HTTPS_PORT = 443 \n 
+ZMQ_PUBSUB_PORT = 15596 \n 
+__maintainer__ = \n 
+collection = \n 
+_relations = { \n 
+_pull = { \n 
+_push . update ( { \n 
+_readonly = Entity . _readonly | { , } \n 
+mock_credentials = { \n 
+API_BASE = \n 
+adding_headers = { \n 
+api_base = API_BASE , \n 
+match_querystring = True ) \n 
+remove_id = 6 \n 
+remove_ids = [ 6 , 7 ] \n 
+remove_advertiser_ids = [ 8 , 9 , 10 ] \n 
+remove_agency_ids = [ 4 , 5 ] \n 
+needs_sphinx = \n 
+html_use_smartypants = True \n 
+num_users , num_items = dataset . shape \n 
+async_job = view . map_async ( process , tasks , retries = 2 ) \n 
+remaining = len ( tasks ) - len ( done ) \n 
+rmtree ( simsdir ) \n 
+num_items , type ( model ) . __name__ , simsfile ) \n 
+save_recommender ( model , modelfile ) \n 
+done . append ( ( start , end ) ) \n 
+tasks = [ ] \n 
+dataset = load_fast_sparse_matrix ( input_format , trainfile ) \n 
+subprocess . check_call ( cmd ) \n 
+NO_DEFAULT = object ( ) \n 
+before = text [ : len ( text ) - len ( like ) ] \n 
+completions = interpreter . completions ( ) \n 
+readline . set_completer_delims ( ) \n 
+Version = namedtuple ( , ) \n 
+tupl = re . findall ( , __version__ ) \n 
+_defaults = collections . OrderedDict ( [ \n 
+rootDirectory = os . path . join ( os . path . dirname ( os . path . realpath ( __file__ ) ) , , ) \n 
+thread . join ( ) \n 
+TestCase = None \n 
+httpd . handle_request ( ) from . import TestEnable # \n 
+################################################################################ \n 
+__mul__ = property ( ) \n 
+__rmul__ = property ( ) \n 
+_repr_template = \n 
+_field_template = \n 
+typename = typename , \n 
+field_names = tuple ( field_names ) , \n 
+num_fields = len ( field_names ) , \n 
+arg_list = repr ( tuple ( field_names ) ) . replace ( "\'" , "" ) [ 1 : - 1 ] , \n 
+repr_fmt = . join ( _repr_template . format ( name = name ) \n 
+field_defs = . join ( _field_template . format ( index = index , name = name ) \n 
+OrderedDict = OrderedDict , _property = property , _tuple = tuple ) \n 
+cur_dir = os . path . dirname ( os . path . abspath ( __file__ ) ) \n 
+mandatory_columns = [ , , , ] \n 
+xx = Xdf [ ] . values \n 
+yy = Y [ ] . values \n 
+learn_options [ ] = None \n 
+X_CD13 , Y_CD13 = util . get_data ( cd13 , y_names = [ , ] ) \n 
+cd33 = human_data . xs ( , level = , drop_level = False ) \n 
+X_CD33 , Y_CD33 = util . get_data ( cd33 , y_names = [ , , ] ) \n 
+cd15 = human_data . xs ( , level = , drop_level = False ) \n 
+X_CD15 , Y_CD15 = util . get_data ( cd15 , y_names = [ ] ) \n 
+mouse_X = pandas . DataFrame ( ) \n 
+mouse_Y = pandas . concat ( [ mouse_Y , Y ] , axis = 0 ) \n 
+mouse_data = pandas . read_excel ( data_file , sheetname = 1 , index_col = [ 0 , 1 ] ) \n 
+ipdb . set_trace ( ) \n 
+data_efficient [ ] = 1. \n 
+data_inefficient [ ] = 0. \n 
+exp_data [ ] = exp_data . groupby ( ) [ ] . transform ( exp_data [ ] = exp_data . groupby ( ) [ ] . transform ( \n 
+aggregated [ ] = aggregated [ [ , ] ] . mean ( axis = 1 ) \n 
+known_pairs = { : [ , , , ] , \n 
+drugs_to_genes [ ] . extend ( [ , , , , , \n 
+Xtmp [ ] = drug \n 
+test_gene = pandas . DataFrame ( Xdf . pop ( ) ) \n 
+y_rank = pandas . concat ( ( y_rank , y_ranktmp ) , axis = 0 ) \n 
+y_threshold = pandas . concat ( ( y_threshold , y_thresholdtmp ) , axis = 0 ) \n 
+y_quant = pandas . concat ( ( y_quant , y_quanttmp ) , axis = 0 ) \n 
+PLOT = False \n 
+experiments [ ] = [ , , , ] \n 
+variance = None \n 
+data_tmp [ "variance" ] = np . var ( data_tmp . values , axis = 1 ) \n 
+gene_position_xu , target_genes_xu , Xdf_xu , Y_xu = read_xu_et_al ( data_file3 , learn_options ) \n 
+annotations , gene_position1 , target_genes1 , Xdf1 , Y1 = read_V1_data ( data_file , learn_options ) \n 
+Y_cols_to_keep = np . unique ( [ , , , \n 
+Y1 = Y1 [ Y_cols_to_keep ] \n 
+Y2 = Y2 [ Y_cols_to_keep ] \n 
+X_cols_to_keep = [ , ] \n 
+Xdf1 = Xdf1 [ X_cols_to_keep ] \n 
+Xdf2 = Xdf2 [ X_cols_to_keep ] \n 
+cols_to_keep = [ , ] \n 
+gene_position1 = gene_position1 [ cols_to_keep ] \n 
+gene_position2 = gene_position2 [ cols_to_keep ] \n 
+gene_position = pandas . concat ( ( gene_position1 , gene_position2 ) ) \n 
+target_genes = np . concatenate ( ( target_genes1 , target_genes2 ) ) \n 
+save_to_file = False \n 
+onedupind = np . where ( Y . index . duplicated ( ) ) [ 0 ] [ 0 ] \n 
+alldupind = np . where ( Y . index . get_level_values ( 0 ) . values == Y . index [ onedupind ] [ 0 ] ) [ 0 ] \n 
+newindex [ onedupind ] = ( newindex [ onedupind ] [ 0 ] , newindex [ onedupind ] [ 1 ] , "nodrug2" ) \n 
+Xdf . index = pandas . MultiIndex . from_tuples ( newindex , names = Y . index . names ) \n 
+gene_position_tmp . index = pandas . MultiIndex . from_tuples ( newindex , names = Y . index . names ) \n 
+XandY . to_csv ( ) \n 
+mouse_genes = Xdf [ Xdf [ ] == ] [ ] . unique ( ) \n 
+all_genes = get_V3_genes ( None , None ) return np . setdiff1d ( all_genes , mouse_genes ) \n 
+_factory . load_profile ( PROFILES_DIRECTORY ) \n 
+detector . append ( text ) \n 
+bx , by = pb \n 
+min_dist = None \n 
+nearest_hp_i = i \n 
+DEFAULT = 0 \n 
+PATH_ONE = 1 \n 
+PATH_TWO = 2 \n 
+option_value = self . cfg . migrate [ self . option_name ] \n 
+dst_cloud = self . dst_cloud \n 
+network_src = src_cloud . resources [ utl . NETWORK_RESOURCE ] \n 
+network_dst = dst_cloud . resources [ utl . NETWORK_RESOURCE ] \n 
+search_opts_tenant = kwargs . get ( , { } ) \n 
+tenants_src = self . get_src_tenants ( search_opts_tenant ) \n 
+tenants_without_quotas = self . get_tenants_without_quotas ( tenants_src , \n 
+list_quotas ) \n 
+quot = network_src . show_quota ( tenants_without_quotas [ 0 ] ) \n 
+is_configs_different = False \n 
+identity_dst . delete_tenant ( dst_temp_tenant ) \n 
+quot_default_dst [ item_quot ] ) \n 
+quotas_ids_tenants = [ quota [ "tenant_id" ] for quota in list_quotas ] \n 
+tenants = [ identity_src . keystone_client . tenants . find ( id = tnt_id ) for \n 
+tnt_id in filter_tenants_ids_list ] \n 
+LOG = logging . getLogger ( __name__ ) \n 
+compute_resource = self . cloud . resources [ utils . COMPUTE_RESOURCE ] \n 
+instance [ ] [ ] , instance [ ] [ ] ) \n 
+storage_resource . wait_for_status ( \n 
+vol [ ] , storage_resource . get_status , , \n 
+nova_instances_path = "/var/lib/nova/instances/" \n 
+image_path = instance_image_path ( instance_id ) ) ) \n 
+instance_id ) \n 
+inst_name = libvirt_instance_name ) ) \n 
+dst = instance_image_path ( instance_id ) ) \n 
+migration_xml = migration_xml ) ) \n 
+interface . find ( ) ) \n 
+mac = self . mac , src = self . source_iface , dst = self . target_iface ) \n 
+element . attrib = { attr : value } \n 
+this_iface . target_iface = other_iface . target_iface \n 
+xml_devices = self . _xml . find ( ) \n 
+xml_interfaces = self . _xml . findall ( ) \n 
+copier . transfer ( data ) \n 
+src_file = source_object . path , \n 
+dst_file = destination_object . path , \n 
+src_host = source_object . host \n 
+rr . run ( copy . format ( src_file = source_object . path , \n 
+dst_user = dst_user , \n 
+dst_host = dst_host , \n 
+ssh_opts = ssh_opts , \n 
+dst_device = destination_object . path , \n 
+progress_view = progress_view ) ) \n 
+dst_object = destination_object , \n 
+getLogger = logging . getLogger \n 
+date_format = , \n 
+max_bytes = sizeof_format . parse_size ( kwargs . pop ( , 0 ) ) \n 
+maxBytes = max_bytes , \n 
+scenario = os . path . splitext ( scenario_filename ) [ 0 ] \n 
+file_name = config . rollback_params [ ] [ ] \n 
+pre_file_path = os . path . join ( self . cloudferry_dir , file_name ) \n 
+cloud = ) \n 
+o2 = C ( 2 ) \n 
+o . set_i ( 100 ) \n 
+org_tag = request . user . get_profile ( ) . org_tag \n 
+response_values [ ] = location \n 
+ne_lon = float ( ne_lon ) \n 
+sw_lat = float ( sw_lat ) \n 
+sw_lon = float ( sw_lon ) \n 
+featureset = Recording . objects . filter ( lat__lt = ne_lat , lat__gt = sw_lat , lon__lt = ne_lon , lon__gt = sw_lon \n 
+httpresponse_kwargs = { : kwargs . pop ( , None ) } \n 
+processors = context . context_processors \n 
+dump_me = dict2xml ( new ) \n 
+pretty = dom . toprettyxml ( ) \n 
+## \n 
+ret = d . dump ( queryset ) \n 
+modelNameData = [ ] \n 
+temp_dict [ field ] = attribute \n 
+DATABASE_ENGINE = \n 
+DATABASE_NAME = \n 
+DATABASE_SUPPORTS_TRANSACTIONS = False \n 
+TEMPLATE_CONTEXT_PROCESSORS = ( \n 
+"django.core.context_processors.auth" , \n 
+"django.core.context_processors.debug" , \n 
+"django.core.context_processors.i18n" , \n 
+"django.core.context_processors.media" , \n 
+"django.core.context_processors.request" ) \n 
+is_testing = in sys . argv \n 
+cov . report ( ) \n 
+up_time = end_time - self . start_time \n 
+remaining_time = self . count_down_total - datetime . timedelta ( seconds = ( int ( up_time ) ) ) \n 
+DefaultTimeout = 25 \n 
+DBG_LINE = \n 
+xmlns = \n 
+typ = stanza . getType ( ) \n 
+has_timed_out = 0 \n 
+abort_time = time . time ( ) + timeout \n 
+elif not stanza . getID ( ) : \n 
+ID += 1 \n 
+_ID = ` ID ` \n 
+stanza . setParent ( self . _metastream ) \n 
+Image . _draw ( self ) \n 
+bits = token . contents . split ( ) \n 
+__description__ = , \n 
+__email__ = , \n 
+REQUIRES = [ i . strip ( ) for i in open ( "requirements.txt" ) . readlines ( ) ] \n 
+license = __license__ , \n 
+BaseField . __init__ ( self , ** kwargs ) \n 
+BaseDict , BaseList , EmbeddedDocumentList , \n 
+TopLevelDocumentMetaclass ) ) : \n 
+doc_type = doc_type . document_type \n 
+is_list = not hasattr ( items , ) \n 
+reference_map = { } \n 
+refs = [ dbref for dbref in dbrefs \n 
+references = collection . objects . in_bulk ( refs ) \n 
+object_map [ ( collection , doc . id ) ] = doc \n 
+_cls = doc . _data . pop ( , None ) \n 
+list_type = BaseList \n 
+"coordinates" : [ \n 
+81.4471435546875 , \n 
+23.61432859499169 \n 
+"type" : "MultiPoint" , \n 
+invalid_coords = [ [ [ [ 1 , 2 ] , [ 3 , 4 ] ] ] ] \n 
+Location ( loc = [ [ [ [ 1 , 2 ] , [ 3 , 4 ] , [ 5 , 6 ] , [ 1 , 2 ] ] ] ] ) . validate ( ) \n 
+venue = EmbeddedDocumentField ( Venue ) \n 
+point = PointField ( ) \n 
+polygon = PolygonField ( ) \n 
+Parent ( name = ) . save ( ) \n 
+meta = { \n 
+Log . ensure_indexes ( ) \n 
+complete_apps = [ ] \n 
+echo_payload = Struct ( "echo_payload" , \n 
+dest_unreachable_payload = Struct ( "dest_unreachable_payload" , \n 
+Padding ( 2 ) , \n 
+IpAddress ( "host" ) , \n 
+Bytes ( "echo" , 8 ) , \n 
+dest_unreachable_code = Enum ( Byte ( "code" ) , \n 
+Network_unreachable_error = 0 , \n 
+Host_unreachable_error = 1 , \n 
+Protocol_unreachable_error = 2 , \n 
+Port_unreachable_error = 3 , \n 
+The_datagram_is_too_big = 4 , \n 
+Source_route_failed_error = 5 , \n 
+Destination_network_unknown_error = 6 , \n 
+Destination_host_unknown_error = 7 , \n 
+Source_host_isolated_error = 8 , \n 
+Desination_administratively_prohibited = 9 , \n 
+Host_administratively_prohibited2 = 10 , \n 
+Network_TOS_unreachable = 11 , \n 
+Host_TOS_unreachable = 12 , \n 
+icmp_header = Struct ( "icmp_header" , \n 
+Enum ( Byte ( "type" ) , \n 
+Echo_reply = 0 , \n 
+Destination_unreachable = 3 , \n 
+Source_quench = 4 , \n 
+Redirect = 5 , \n 
+Alternate_host_address = 6 , \n 
+Echo_request = 8 , \n 
+Router_advertisement = 9 , \n 
+Router_solicitation = 10 , \n 
+Time_exceeded = 11 , \n 
+Parameter_problem = 12 , \n 
+Timestamp_request = 13 , \n 
+Timestamp_reply = 14 , \n 
+Information_request = 15 , \n 
+Information_reply = 16 , \n 
+Address_mask_request = 17 , \n 
+Address_mask_reply = 18 , \n 
+_default_ = Pass , \n 
+UBInt16 ( "crc" ) , \n 
+Switch ( "payload" , lambda ctx : ctx . type , \n 
+"Echo_reply" : echo_payload , \n 
+"Echo_request" : echo_payload , \n 
+"Destination_unreachable" : dest_unreachable_payload , \n 
+"63646566676869" ) . decode ( "hex" ) \n 
+cap2 = ( "0000385c02001b006162636465666768696a6b6c6d6e6f70717273747576776162" \n 
+cap3 = ( "0301000000001122aabbccdd0102030405060708" ) . decode ( "hex" ) \n 
+#</service> \n 
+LOG_SYSTEM = \n 
+intps [ ] = dest_target . vlan \n 
+router , interface = ri . split ( ) \n 
+cm = NCSVPNConnectionManager ( ncs_services_url , user , password , port_map , name ) \n 
+soap_resource . registerDecoder ( actions . QUERY_RECURSIVE , self . queryRecursive ) \n 
+se = helper . createServiceException ( err , provider_nsa , connection_id ) \n 
+ex_element = se . xml ( nsiconnection . serviceException ) \n 
+soap_fault = soapresource . SOAPFault ( err . getErrorMessage ( ) , ex_element ) \n 
+header , reservation = helper . parseRequest ( soap_data ) \n 
+src_stp = helper . createSTP ( p2ps . sourceSTP ) \n 
+dst_stp = helper . createSTP ( p2ps . destSTP ) \n 
+symmetric = p2ps . symmetricPath or False sd = nsa . Point2PointService ( src_stp , dst_stp , p2ps . capacity , p2ps . directionality , symmetric , \n 
+crt = nsa . Criteria ( criteria . version , schedule , sd ) \n 
+t_delta = time . time ( ) - t_start \n 
+reserve_response = nsiconnection . ReserveResponseType ( connection_id ) \n 
+reserve_response_element = reserve_response . xml ( nsiconnection . reserveResponse ) \n 
+qs_reservations = queryhelper . buildQuerySummaryResultType ( reservations ) \n 
+qsct = nsiconnection . QuerySummaryConfirmedType ( qs_reservations ) \n 
+tcf = os . path . expanduser ( ) \n 
+tc = json . load ( open ( tcf ) ) \n 
+ncs_config = { \n 
+source_stp = nsa . STP ( , , labels = [ nsa . Label ( nml . ETHERNET_VLAN , dest_stp = nsa . STP ( , , labels = [ nsa . Label ( nml . ETHERNET_VLAN , start_time = datetime . datetime . utcnow ( ) + datetime . timedelta ( seconds = 2 ) \n 
+end_time = datetime . datetime . utcnow ( ) + datetime . timedelta ( seconds = 30 ) \n 
+bandwidth = 200 \n 
+connection_id , active , version_consistent , version , timestamp = yield d_down \n 
+socketio = SocketIO ( app ) \n 
+scheduler = digits . scheduler . Scheduler ( config_value ( ) , True ) \n 
+CURRENT_CYCLE = 2012 \n 
+att_url = \n 
+send_url = \n 
+draft_url = \n 
+update_url = \n 
+read = \'{"IsRead":true}\' \n 
+cont = True \n 
+comparators = [ , , , ] \n 
+delay = random ( ) \n 
+row_index = int ( params [ ] [ 0 ] ) \n 
+char_index = int ( params [ ] [ 0 ] ) - 1 \n 
+test_char = int ( params [ ] [ 0 ] ) \n 
+comparator = comparators . index ( params [ ] [ 0 ] ) - 1 \n 
+truth = ( cmp ( ord ( current_character ) , test_char ) == comparator ) \n 
+start_response ( , [ ( , ) ] ) \n 
+CHARSET = [ chr ( x ) for x in xrange ( 32 , 127 ) ] \n 
+rre = re . compile ( ) \n 
+cre = re . compile ( ) \n 
+cols = cols [ 0 ] \n 
+datas = [ ] \n 
+obj_struct [ ] = [ int ( bbox . find ( ) . text ) , \n 
+int ( bbox . find ( ) . text ) ] \n 
+mpre = np . concatenate ( ( [ 0. ] , prec , [ 0. ] ) ) \n 
+annopath , \n 
+imagesetfile , \n 
+cachedir , \n 
+ovthresh = 0.5 , \n 
+use_07_metric = False ) : \n 
+difficult = np . array ( [ x [ ] for x in R ] ) . astype ( np . bool ) \n 
+det = [ False ] * len ( R ) \n 
+npos = npos + sum ( ~ difficult ) \n 
+class_recs [ imagename ] = { : bbox , \n 
+confidence = np . array ( [ float ( x [ 1 ] ) for x in splitlines ] ) \n 
+sorted_ind = np . argsort ( - confidence ) \n 
+BB = BB [ sorted_ind , : ] \n 
+image_ids = [ image_ids [ x ] for x in sorted_ind ] \n 
+nd = len ( image_ids ) \n 
+bb = BB [ d , : ] . astype ( float ) \n 
+BBGT = R [ ] . astype ( float ) \n 
+iymin = np . maximum ( BBGT [ : , 1 ] , bb [ 1 ] ) \n 
+ixmax = np . minimum ( BBGT [ : , 2 ] , bb [ 2 ] ) \n 
+iymax = np . minimum ( BBGT [ : , 3 ] , bb [ 3 ] ) \n 
+iw = np . maximum ( ixmax - ixmin + 1. , 0. ) \n 
+ih = np . maximum ( iymax - iymin + 1. , 0. ) \n 
+inters = iw * ih \n 
+uni = ( ( bb [ 2 ] - bb [ 0 ] + 1. ) * ( bb [ 3 ] - bb [ 1 ] + 1. ) + \n 
+overlaps = inters / uni \n 
+ovmax = np . max ( overlaps ) \n 
+jmax = np . argmax ( overlaps ) \n 
+tp = np . cumsum ( tp ) \n 
+rec = tp / float ( npos ) \n 
+prec = tp / ( tp + fp + 1e-10 ) \n 
+ap = voc_ap ( rec , prec , use_07_metric ) \n 
+scale = strip_mantissa ( maxval ) / float ( 1 << ( bits - sign - 1 ) ) \n 
+ary = np . around ( ary * ( 1.0 / scale ) ) . astype ( np . int64 ) \n 
+x1 = 0 \n 
+f2 -= dif \n 
+x2 -= dif \n 
+firstF = None \n 
+firstE = q \n 
+lastE = q \n 
+xconv_slice = bconv_slice \n 
+slicedF = F [ : , sliceR , sliceS , : ] . reshape ( ( - 1 , K ) ) \n 
+slicedI = I [ : , sliceY , sliceX , : ] . reshape ( ( - 1 , N ) ) \n 
+K , P , Q , N = E . shape \n 
+qSlice = [ fconv_slice ( q , S , X , padding [ 0 ] , strides [ 0 ] ) for q in range ( Q ) ] \n 
+slicedE = E [ : , p , q , : ] \n 
+F_4x4_3x3 = ( \n 
+O_4x4_3x3 = ( \n 
+rcp3 = 1.0 / 3.0 \n 
+rcp4 = 1.0 / 4.0 \n 
+rcp6 = 1.0 / 6.0 \n 
+rcp12 = 1.0 / 12.0 \n 
+rcp24 = 1.0 / 24.0 \n 
+t3 = I [ 1 , : ] + I [ 3 , : ] * 4.0 \n 
+T1 = np . empty ( ( 3 , 3 ) ) \n 
+pad = [ 0 , 0 ] \n 
+p1 = p0 + B \n 
+Yw = ceil_div ( P , B ) \n 
+Xw = ceil_div ( Q , B ) \n 
+Fw = np . empty ( ( D , D , C , K ) ) \n 
+sliceI = I [ : , start_y : stop_y , start_x : stop_x , : ] \n 
+O [ k , p0 : p1 , q0 : q1 , n ] = Out [ 0 : plen , 0 : qlen ] \n 
+Iw = np . empty ( ( D , D , N , C ) ) \n 
+Ew = np . empty ( ( D , D , N , K ) ) \n 
+U . fill ( 0.0 ) \n 
+start_p , stop_p , pad_p = image_slice ( y , P , B , B ) \n 
+start_q , stop_q , pad_q = image_slice ( x , Q , B , B ) \n 
+sliceE = E [ : , start_p : stop_p , start_q : stop_q , : ] \n 
+minimal = 1 \n 
+trans = ( 2 , 2 ) \n 
+ones = 0 \n 
+N = 32 \n 
+dimI = ( C , Y , X , N ) \n 
+dimF = ( C , R , S , K ) \n 
+dimO = ( K , P , Q , N ) \n 
+E = np . random . uniform ( - 1.0 , 1.0 , dimO ) \n 
+Bd = np . empty ( dimI ) \n 
+Ud = np . empty ( dimF ) \n 
+Uw = np . empty ( dimF ) \n 
+xprop_direct ( E , F , Bd , padding , strides , backward = True ) \n 
+xprop_winograd ( E , F , Bw , padding , minimal = minimal , trans = trans , backward = True ) \n 
+updat_direct ( I , E , Ud , padding , strides ) \n 
+updat_winograd ( I , E , Uw , padding , minimal = minimal , trans = trans ) \n 
+difO = Od - Ow \n 
+difB = Bd - Bw \n 
+difU = Ud - Uw \n 
+Deconv , Deconvolution , GeneralizedCostMask , LookupTable , \n 
+BranchNode , SkipNode , LRN , ColorNoise ) \n 
+RoiPooling , MergeSum , SingleOutputTree ) \n 
+img_set_options = dict ( repo_dir = args . data_dir , \n 
+inner_size = 224 , \n 
+subset_pct = 0.09990891117239205 ) \n 
+do_transforms = False , ** img_set_options ) \n 
+test = ImageLoader ( set_name = , scale_range = ( 256 , 384 ) , shuffle = False , \n 
+Pooling ( 3 , strides = 2 ) , \n 
+activation = Rectlin ( ) , padding = 1 ) , \n 
+Conv ( ( 3 , 3 , 256 ) , init = Gaussian ( scale = 0.03 ) , bias = Constant ( 1 ) , \n 
+Dropout ( keep = 1.0 ) , \n 
+Affine ( nout = 1000 , init = Gaussian ( scale = 0.01 ) , bias = Constant ( - 7 ) , activation = Softmax ( ) ) ] \n 
+weight_sched = Schedule ( [ 22 , 44 , 65 ] , ( 1 / 250. ) ** ( 1 / 3. ) ) \n 
+opt_gdm = GradientDescentMomentum ( 0.01 / 10 , 0.9 , wdecay = 0.0005 , schedule = weight_sched , \n 
+stochastic_round = args . rounding ) \n 
+opt_biases = GradientDescentMomentum ( 0.02 / 10 , 0.9 , schedule = Schedule ( [ 44 ] , 0.1 ) , \n 
+valmetric = TopKMisclassification ( k = 5 ) \n 
+pad_rng = [ 0 , 1 ] \n 
+nifm_rng = [ 8 ] \n 
+in_sz_rng = [ 8 ] \n 
+fargs_ . append ( itt . product ( fs_rng , nifm_rng , pad_rng , stride_rng , in_sz_rng , bsz_rng ) ) \n 
+metafunc . parametrize ( , fargs ) \n 
+bsz = inp . shape [ - 1 ] \n 
+check_inds = check_inds [ 0 : ncheck ] \n 
+inpa = inp . get ( ) . reshape ( inp_lshape ) \n 
+outshape = ( inp_lshape [ 0 ] , \n 
+be . output_dim ( inp_lshape [ 2 ] , fshape [ 1 ] , padding , strides [ 1 ] , pooling = True ) , \n 
+inp_lshape [ - 1 ] ) \n 
+inp_pad [ : , padding : - padding , padding : - padding , : ] = inpa [ : , 0 : , 0 : , : ] \n 
+out_exp [ indC , indh , indw , cnt ] = np . max ( inp_check ) \n 
+NervanaObject . be . bsz = batch_size \n 
+inshape = ( nifm , in_sz , in_sz ) \n 
+insize = np . prod ( inshape ) \n 
+inp . lshape = inshape \n 
+padding , \n 
+neon_layer . be , \n 
+ncheck = ncheck ) \n 
+out_shape . append ( batch_size ) \n 
+outa = out . reshape ( out_shape ) \n 
+#-- \n 
+revision = \n 
+down_revision = \n 
+src = "img/file-icon.jpg" , ** kw ) ] \n 
+input_id = h . generate_id ( "attach_input" ) \n 
+submit_action = ajax . Update ( \n 
+render = lambda r : r . div ( comp . render ( r , model = None ) , r . script ( component_to_update = + self . comp_id , \n 
+kw [ ] = model \n 
+onclick = _ ( ) \n 
+form_id = h . generate_id ( ) \n 
+img_id = h . generate_id ( ) \n 
+"YAHOO.util.Event.onContentReady(%s," \n 
+ajax . py2js ( self . crop_height ( ) ) \n 
+local_handler = getattr ( self , , None ) \n 
+upper_res = comp . answer ( event ) \n 
+#!/usr/bin/python2.7 \n 
+####################################################################################################################### \n 
+genie2 . client . wrapper . RetryPolicy ( \n 
+tries = 8 , none_on_404 = True , no_retry_http_codes = range ( 400 , 500 ) ) \n 
+criteria . add ( "type:yarn" ) \n 
+cluster_criteria . tags = criteria \n 
+command_criteria . add ( "type:pig" ) \n 
+tagging . add_argument ( , , dest = , action = conf_action ( context . ami ) , help = \n 
+ami_name = context . ami . get ( , None ) \n 
+ON = 1 \n 
+DISCONNECTED = 20 \n 
+CONNECTED = 30 \n 
+DEFAULT_EVENT_VERSION = 1 \n 
+LOG_LEVEL = "DEBUG" \n 
+LOG_FILE = "/var/log/security_monkey/security_monkey-deploy.log" \n 
+SQLALCHEMY_DATABASE_URI = \n 
+SQLALCHEMY_POOL_SIZE = 50 \n 
+SQLALCHEMY_MAX_OVERFLOW = 15 \n 
+ENVIRONMENT = \n 
+USE_ROUTE53 = False \n 
+FQDN = \n 
+API_PORT = \n 
+WEB_PORT = \n 
+WEB_PATH = \n 
+FRONTED_BY_NGINX = True \n 
+NGINX_PORT = \n 
+BASE_URL = . format ( FQDN ) \n 
+MAIL_DEFAULT_SENDER = \n 
+SECURITY_REGISTERABLE = True \n 
+SECURITY_CONFIRMABLE = False \n 
+SECURITY_RECOVERABLE = False \n 
+SECURITY_PASSWORD_HASH = \n 
+SECURITY_PASSWORD_SALT = \n 
+SECURITY_TRACKABLE = True \n 
+SECURITY_POST_LOGIN_VIEW = BASE_URL \n 
+SECURITY_POST_REGISTER_VIEW = BASE_URL \n 
+SECURITY_POST_CONFIRM_VIEW = BASE_URL \n 
+SECURITY_POST_RESET_VIEW = BASE_URL \n 
+SECURITY_POST_CHANGE_VIEW = BASE_URL \n 
+SECURITY_TEAM_EMAIL = [ ] \n 
+SES_REGION = \n 
+MAIL_SERVER = \n 
+MAIL_PORT = 465 \n 
+MAIL_USE_SSL = True \n 
+MAIL_USERNAME = \n 
+MAIL_PASSWORD = \n 
+WTF_CSRF_ENABLED = True \n 
+WTF_CSRF_METHODS = [ , , , ] \n 
+SECURITYGROUP_INSTANCE_DETAIL = \n 
+CORE_THREADS = 25 \n 
+MAX_THREADS = 30 \n 
+network_whitelist = [ ] \n 
+severity = 5 \n 
+CONFIG_ONE = { \n 
+CONFIG_TWO = { \n 
+CONFIG_THREE = { \n 
+CONFIG_FOUR = { \n 
+CONFIG_FIVE = { \n 
+CONFIG_SIX = { \n 
+CONFIG_SEVEN = { \n 
+CONFIG_EIGHT = { \n 
+CONFIG_NINE = { \n 
+"name" : "es_test_9" , \n 
+WHITELIST_CIDRS = [ \n 
+ElasticSearchServiceItem ( region = "us-east-1" , account = "TEST_ACCOUNT" , name = "es_test" , config ElasticSearchServiceItem ( region = "us-west-2" , account = "TEST_ACCOUNT" , name = "es_test_2" , config ElasticSearchServiceItem ( region = "eu-west-1" , account = "TEST_ACCOUNT" , name = "es_test_3" , config ElasticSearchServiceItem ( region = "us-east-1" , account = "TEST_ACCOUNT" , name = "es_test_4" , config ElasticSearchServiceItem ( region = "us-east-1" , account = "TEST_ACCOUNT" , name = "es_test_5" , config ElasticSearchServiceItem ( region = "eu-west-1" , account = "TEST_ACCOUNT" , name = "es_test_6" , config ElasticSearchServiceItem ( region = "eu-west-1" , account = "TEST_ACCOUNT" , name = "es_test_7" , config ElasticSearchServiceItem ( region = "eu-west-1" , account = "TEST_ACCOUNT" , name = "es_test_8" , config ElasticSearchServiceItem ( region = "us-east-1" , account = "TEST_ACCOUNT" , name = "es_test_9" , config ] \n 
+test_account . role_name = "TEST_ACCOUNT" \n 
+whitelist_cidr . name = cidr [ 0 ] \n 
+es_auditor . network_whitelist . append ( whitelist_cidr ) \n 
+i_am_singular = \n 
+i_am_plural = \n 
+item_list = [ ] \n 
+exception_map = { } \n 
+redshift . describe_clusters , \n 
+marker = marker \n 
+all_clusters . extend ( response [ ] [ if response [ ] [ ] [ ] ~~~ marker = response [ ] [ ] [ ~~ else : \n 
+region = region , \n 
+account = account , \n 
+new_config = config ) \n 
+_container_child_objects = ( , ) \n 
+_data_child_objects = ( , ) \n 
+_multi_child_objects = ( , ) \n 
+_single_parent_objects = ( , ) \n 
+_recommended_attrs = ( ( ( , np . ndarray , 1 , np . dtype ( ) ) , \n 
+pszMsgBuffer = ctypes . create_string_buffer ( 256 ) \n 
+errstr = . format ( errno , pszMsgBuffer . value ) \n 
+Exception . __init__ ( self , errstr ) \n 
+is_readable = True \n 
+is_writable = False \n 
+supported_objects = [ Segment , AnalogSignal , EventArray , SpikeTrain ] \n 
+readable_objects = [ Segment ] \n 
+writeable_objects = [ ] \n 
+has_header = False \n 
+is_streameable = False \n 
+read_params = { Segment : [ ] } \n 
+write_params = None \n 
+BaseIO . __init__ ( self ) \n 
+lazy = False , cascade = True ) : \n 
+fileinfo = ns_FILEINFO ( ) \n 
+pdwDataRetSize = ctypes . c_uint32 ( 0 ) \n 
+labels . append ( str ( pData . value ) ) \n 
+ea . labels = np . array ( labels , dtype = ) \n 
+total_read = 0 \n 
+dwStopIndex , ctypes . byref ( pdwContCount ) , pData [ total_read : ] . ctypes total_read += pdwContCount . value \n 
+#t_start \n 
+pdTime = ctypes . c_double ( 0 ) \n 
+anaSig . annotate ( probe_info = str ( pAnalogInfo . szProbeInfo ) ) \n 
+#segment \n 
+dwDataBufferSize = pdwSegmentInfo . dwMaxSampleCount * pdwSegmentInfo . dwSourceCount \n 
+pData = np . zeros ( ( dwDataBufferSize ) , dtype = ) \n 
+pdwSampleCount = ctypes . c_uint32 ( 0 ) \n 
+pdwUnitID = ctypes . c_uint32 ( 0 ) \n 
+nsample = int ( dwDataBufferSize ) \n 
+waveforms = pq . Quantity ( waveforms , units = str ( pdwSegmentInfo left_sweep = nsample / 2. / float ( pdwSegmentInfo . dSampleRate ) * pq sampling_rate = float ( pdwSegmentInfo . dSampleRate ) * pq . Hz , \n 
+ctypes . byref ( pNeuralInfo ) , ctypes . sizeof ( pNeuralInfo ) ) \n 
+dwStartIndex = 0 \n 
+neuroshare . ns_GetNeuralData ( hFile , dwEntityID , dwStartIndex , \n 
+dwIndexCount , pData . ctypes . data_as ( ctypes . POINTER ( ctypes . c_double ) ) ) \n 
+times = pData * pq . s \n 
+t_stop = times . max ( ) \n 
+1 : , \n 
+4 : , \n 
+Epoch , EpochArray , \n 
+get_fake_values , get_annotations , \n 
+clone_object , TEST_ANNOTATIONS ) \n 
+range ( len ( TEST_ANNOTATIONS ) ) ] ) \n 
+file_datetime = get_fake_value ( , datetime , seed = 0 ) \n 
+rec_datetime = get_fake_value ( , datetime , seed = 1 ) \n 
+file_origin = get_fake_value ( , str ) \n 
+attrs1 = { : file_datetime , \n 
+attrs2 . update ( self . annotations ) \n 
+res21 = get_fake_values ( Segment , annotate = True , seed = 0 ) \n 
+res22 = get_fake_values ( , annotate = True , seed = 0 ) \n 
+obj_type = Segment \n 
+cascade = False \n 
+targ0 = get_fake_value ( , datetime , seed = seed + 0 ) \n 
+targ2 = get_fake_value ( , int , seed = seed + 2 ) \n 
+targ4 = get_fake_value ( , str , \n 
+seed = seed + 4 , obj = Segment ) \n 
+targ5 = get_fake_value ( , str ) \n 
+targ6 [ ] = seed \n 
+seg1a . irregularlysampledsignals ) \n 
+childobjs = ( , , \n 
+childconts = ( , , \n 
+children = ( self . sigs1a + self . sigarrs1a + \n 
+"analogsignals" : self . nchildren ** 2 , \n 
+"irregularlysampledsignals" : self . nchildren ** 2 , \n 
+"spikes" : self . nchildren ** 2 , \n 
+"spiketrains" : self . nchildren ** 2 , \n 
+"epocharrays" : self . nchildren , "eventarrays" : self . nchildren , \n 
+"analogsignalarrays" : self . nchildren } \n 
+targdict = { : 5 } ) \n 
+res6 = filterdata ( data , name = self . epcs2 [ 0 ] . name , j = 5 ) \n 
+res7 = filterdata ( data , { : self . epcs2 [ 1 ] . name , : 5 } ) \n 
+res8 = filterdata ( data , targdict = { : self . epcs2 [ 1 ] . name , : 5 } ) \n 
+res9 = filterdata ( data , { : self . epcs2 [ 1 ] . name } , j = 5 ) \n 
+res10 = filterdata ( data , targdict = { : self . epcs2 [ 1 ] . name } , j = 5 ) \n 
+res11 = filterdata ( data , name = self . epcs2 [ 1 ] . name , targdict = { : 5 } ) \n 
+res12 = filterdata ( data , { : self . epcs1a [ 1 ] . name } , j = 5 ) \n 
+res13 = filterdata ( data , targdict = { : self . epcs1a [ 1 ] . name } , j = 5 ) \n 
+res14 = filterdata ( data , name = self . epcs1a [ 1 ] . name , targdict = { : 5 } ) \n 
+targ = [ self . epcs1a [ 1 ] ] \n 
+res0 = filterdata ( data , name = self . epcs1a [ 1 ] . name , j = 5 ) \n 
+res1 = filterdata ( data , { : self . epcs1a [ 1 ] . name , : 5 } ) \n 
+res2 = filterdata ( data , targdict = { : self . epcs1a [ 1 ] . name , : 5 } ) \n 
+res3 = filterdata ( data , [ { : 1 } , { : 2 } ] ) \n 
+res4 = filterdata ( data , { : 1 } , i = 2 ) \n 
+res5 = filterdata ( data , [ { : 1 } ] , i = 2 ) \n 
+ann = pretty ( ann ) . replace ( , ) \n 
+sig0 = sig0 . replace ( , ) \n 
+sig1 = sig1 . replace ( , ) \n 
+sig2 = sig2 . replace ( , ) \n 
+sig3 = sig3 . replace ( , ) \n 
+sigarr0 = sigarr0 . replace ( , ) \n 
+sigarr1 = sigarr1 . replace ( , ) \n 
+nb_unit = 7 \n 
+unit_with_sig = np . array ( [ 0 , 2 , 5 ] ) \n 
+signal_types = [ , ] \n 
+sig_len = 100 \n 
+#recordingchannelgroups \n 
+rcgs = [ RecordingChannelGroup ( name = , \n 
+RecordingChannelGroup ( name = , \n 
+all_unit . append ( un ) \n 
+blk . recordingchannelgroups = rcgs \n 
+t_start = 0. , t_stop = 10 ) \n 
+st . unit = all_unit [ j ] \n 
+sampling_rate = 1000. * pq . Hz , \n 
+channel_indexes = unit_with_sig ) \n 
+seg . analogsignalarrays . append ( anasigarr ) \n 
+newseg = seg . construct_subsegment_by_unit ( all_unit [ : 4 ] ) \n 
+assert_neo_object_is_compliant ( newseg ) \n 
+ind2 = self . unit2 . channel_indexes [ 0 ] \n 
+result22 = self . seg1 . take_analogsignal_by_channelindex ( [ ind2 ] ) \n 
+targ1 = [ self . sigarrs1a [ 0 ] [ : , np . array ( [ True ] ) ] , \n 
+targ3 = [ self . sigarrs1a [ 0 ] [ : , np . array ( [ False ] ) ] , \n 
+assert_same_sub_schema ( result23 , targ3 ) \n 
+ind1 = self . unit1 . channel_indexes [ 0 ] \n 
+ind3 = self . unit3 . channel_indexes [ 0 ] \n 
+result1 = seg . take_slice_of_analogsignalarray_by_channelindex ( ) \n 
+result21 = seg . take_slice_of_analogsignalarray_by_channelindex ( [ ind1 ] ) \n 
+result23 = seg . take_slice_of_analogsignalarray_by_channelindex ( [ ind3 ] ) \n 
+files_to_test = [ ] \n 
+files_to_download = [ , \n 
+dir = os . path . abspath ( os . path . dirname ( __file__ ) ) \n 
+CognitiveAtlasContrast = apps . get_model ( "statmaps" , "CognitiveAtlasContrast" ) \n 
+json_content = json_content . decode ( "utf-8" ) . replace ( , ) \n 
+task . save ( ) \n 
+DOI = ) \n 
+Image1 = StatisticMap ( name = , collection = self . Collection1 , file = , Image1 . file = SimpleUploadedFile ( , file ( os . path . join ( self . test_path , Image1 . save ( ) \n 
+images_processing = count_processing_comparisons ( Image1 . pk ) \n 
+post_dict = { \n 
+fname = os . path . basename ( os . path . join ( self . test_path , ) ) file_dict = { : SimpleUploadedFile ( fname , zip_file . read ( ) ) } \n 
+zip_file . close ( ) \n 
+form = NIDMResultsForm ( post_dict , file_dict ) \n 
+nidm = form . save ( ) \n 
+Image2ss = StatisticMap ( name = , collection = self . Collection3 , file = Image2ss . file = SimpleUploadedFile ( , file ( os . path . join ( self . test_path , Image2ss . save ( ) \n 
+total_comparisons = count_existing_comparisons ( Image2ss . pk ) \n 
+number_comparisons = len ( Comparison . objects . all ( ) ) \n 
+srng = RandomStreams ( ) \n 
+acc_new = rho * acc + ( 1 - rho ) * g ** 2 \n 
+gradient_scaling = T . sqrt ( acc_new + epsilon ) \n 
+h2 = dropout ( h2 , p_drop_hidden ) \n 
+py_x = softmax ( T . dot ( h2 , w_o ) ) \n 
+w_h = init_weights ( ( 784 , 625 ) ) \n 
+w_h2 = init_weights ( ( 625 , 625 ) ) \n 
+w_o = init_weights ( ( 625 , 10 ) ) \n 
+noise_h , noise_h2 , noise_py_x = model ( X , w_h , w_h2 , w_o , 0.2 , 0.5 ) \n 
+h , h2 , py_x = model ( X , w_h , w_h2 , w_o , 0. , 0. ) \n 
+y_x = T . argmax ( py_x , axis = 1 ) \n 
+cost = T . mean ( T . nnet . categorical_crossentropy ( noise_py_x , Y ) ) \n 
+updates = RMSprop ( cost , params , lr = 0.001 ) \n 
+train = theano . function ( inputs = [ X , Y ] , outputs = cost , updates = updates , allow_input_downcast = True ) \n 
+predict = theano . function ( inputs = [ X ] , outputs = y_x , allow_input_downcast = True ) \n 
+settings . DATABASE_CONFIG_DICT [ ] ) \n 
+timeout = self . TIMEOUT , \n 
+job . run ( ) \n 
+TEMPLATES [ 0 ] [ ] [ ] = DEBUG \n 
+SECRET_KEY = env ( "DJANGO_SECRET_KEY" , default = ) \n 
+EMAIL_HOST = \n 
+EMAIL_PORT = 1025 \n 
+EMAIL_BACKEND = env ( , \n 
+CACHES = { \n 
+MIDDLEWARE_CLASSES += ( , ) \n 
+INSTALLED_APPS += ( , ) \n 
+INTERNAL_IPS = ( , , ) \n 
+DEBUG_TOOLBAR_CONFIG = { \n 
+TEST_RUNNER = \n 
+profile . save ( ) \n 
+redirect_url = request . POST . get ( ) or \n 
+logout ( request ) \n 
+messages . success ( request , ) \n 
+user_form = UserForm ( ) \n 
+reddit_user . save ( ) \n 
+cur2 = self . con . cursor ( ) \n 
+MemoryProfilerWidget , is_memoryprofiler_installed ) \n 
+use_color_box = self . create_checkbox ( \n 
+results_label1 . setWordWrap ( True ) \n 
+results_label2 . setWordWrap ( True ) \n 
+settings_layout . addWidget ( use_color_box ) \n 
+settings_group . setLayout ( settings_layout ) \n 
+results_layout . addWidget ( results_label2 ) \n 
+results_group . setLayout ( results_layout ) \n 
+vlayout . addStretch ( 1 ) \n 
+CONF_SECTION = \n 
+CONFIGWIDGET_CLASS = MemoryProfilerConfigPage \n 
+SpyderPluginMixin . __init__ ( self , parent ) \n 
+icon = self . get_plugin_icon ( ) , \n 
+triggered = self . run_memoryprofiler ) \n 
+memoryprofiler_act . setEnabled ( is_memoryprofiler_installed ( ) ) \n 
+runconf = runconfig . get_run_configuration ( filename ) \n 
+wdir , args = None , None \n 
+use_colors = self . get_option ( , True ) ) \n 
+#============================================================================== \n 
+package = , \n 
+_PUSHNOTIFICATION = _descriptor . Descriptor ( \n 
+full_name = , \n 
+containing_type = None , \n 
+_descriptor . FieldDescriptor ( \n 
+message_type = None , enum_type = None , containing_type = None , \n 
+is_extension = False , extension_scope = None , \n 
+extensions = [ \n 
+nested_types = [ ] , \n 
+enum_types = [ \n 
+is_extendable = False , \n 
+extension_ranges = [ ] , \n 
+_BATCHNOTIFICATIONREQUEST . fields_by_name [ ] . message_type = _PUSHNOTIFICATION \n 
+mocker . patch ( ) \n 
+pushkin_cli . init ( ) \n 
+notification_batch_json ) : \n 
+RequestProcessor . submit . return_value = False \n 
+dev_type = 1 , \n 
+dev_rev = 2 , \n 
+app_version = 100 , \n 
+app_fw = "firmwares/bar.hex" \n 
+bootloader_fw = "firmwares/bar.hex" ) \n 
+expected_zip_content = [ "manifest.json" , "sd_bl.bin" , "sd_bl.dat" ] \n 
+sd_req = [ 0x1000 , 0xffff ] , \n 
+softdevice_fw = "firmwares/bar.hex" , \n 
+pkg_name = os . path . join ( self . work_directory , "mypackage.zip" ) \n 
+unpacked_dir = os . path . join ( self . work_directory , "unpacked" ) \n 
+manifest = self . p . unpack_package ( os . path . join ( self . work_directory , pkg_name ) , unpacked_dir ) \n 
+dfu_ver = 0.7 ) \n 
+key_file = "key.pem" ) \n 
+AboutBox ( info ) \n 
+#self.ShowModal()#Boa:FramePanel:pnlMethods \n 
+wxID_PNLMETHODSRBGENERATE , wxID_PNLMETHODSRBSELECT , \n 
+wxID_PNLMETHODSRICHTEXTCTRL1 , \n 
+tool = LoggerTool ( ) \n 
+id = wxID_PNLMETHODSRBCREATENEW ) \n 
+style = wx . richtext . RE_MULTILINE , value = ) \n 
+fgSizer1 . Add ( self . lblChangelt , 0 , wx . ALL , 5 ) \n 
+sbThreshold . Add ( fgSizer1 , 0 , wx . EXPAND , 5 ) \n 
+bsValueThresh . Add ( sbThreshold , 1 , 0 , 5 ) \n 
+cbGapTimeChoices = [ u"second" , u"minute" , u"hour" , u"day" ] \n 
+fgSizer2 . Add ( self . cbGapTime , 0 , wx . ALL , 5 ) \n 
+sbGaps . Add ( fgSizer2 , 1 , wx . EXPAND , 5 ) \n 
+bsGaps . Add ( sbGaps , 0 , 0 , 5 ) \n 
+fmt24hr = True , spinButton = self . sbBefore , oob_color = ) \n 
+fgSizer3 . Add ( self . sbBefore , 0 , wx . ALL , 5 ) \n 
+sbDate . Add ( fgSizer3 , 1 , wx . EXPAND , 5 ) \n 
+bsDate . Add ( sbDate , 1 , wx . EXPAND , 5 ) \n 
+fgSizer4 . Add ( self . lblChangeLT , 0 , wx . ALL , 5 ) \n 
+sbValChange . Add ( fgSizer4 , 1 , wx . EXPAND , 5 ) \n 
+bsValChange . Add ( sbValChange , 1 , 0 , 5 ) \n 
+bsButtons . Add ( self . btnOK , 1 , wx . ALL | wx . EXPAND , 5 ) \n 
+bSizer3 . Add ( bsButtons , 1 , wx . EXPAND , 0 ) \n 
+bSizer1 . Add ( bSizer3 , 1 , wx . EXPAND , 5 ) \n 
+backends = [ , ] \n 
+valuetype = numpy . float64 \n 
+NUM_ELE = 12 \n 
+NUM_NODES = 36 \n 
+NUM_ENTRIES = 4 \n 
+mat ( op2 . INC , ( elem_node [ op2 . i [ 0 ] ] , \n 
+elem_node [ op2 . i [ 1 ] ] ) ) , \n 
+partition_size = NUM_ELE / 2 , \n 
+matrix_coloring = True ) \n 
+eidx = 0 \n 
+allStars = data . getDict ( ) \n 
+outputPath = data . outputPath \n 
+N_exposures = len ( data . getPaths ( ) ) \n 
+meanDarkFrame = data . getMeanDarkFrame ( ) \n 
+masterFlat = data . masterFlat \n 
+statusBarAx . barh ( [ 0 ] , [ 100.0 * expNumber / len ( data . getPaths ( ) ) ] , \n 
+plottingThings , \n 
+zoom = data . trackingZoom , \n 
+fluxes , errors , photFlags = photometry . multirad ( image , x , y , \n 
+ccdGain = data . ccdGain , \n 
+photFlag = any ( photFlags ) \n 
+meanComparisonStars , meanComparisonStarErrors = data . calcMeanComparison_multirad ( ccdGain = data . ccdGain ) \n 
+lightCurves , lightCurveErrors = data . computeLightCurve_multirad ( meanComparisonStars , \n 
+meanComparisonStarErrors ) \n 
+oscaar . IO . save ( data , outputPath ) \n 
+"access_token" : self . access_token \n 
+errcode = json_data . get ( ) \n 
+"grant_type" : "client_credential" , \n 
+"appid" : self . __app_id , \n 
+"secret" : self . __app_secret \n 
+json_data = self . _send_request ( , url , params = params ) \n 
+site_settings = { \n 
+"settings_module" : , \n 
+"settings_local" : , \n 
+"application_name" : , \n 
+"git_location" : "https://github.com/OfferTeam/OfferListing.git" , \n 
+"git_branch" : "develop" , \n 
+"static_dir" : "resources/static" , \n 
+"media_dir" : "resources/media" , \n 
+"requirements_file" : , \n 
+mkdir ( env . hosts_data . log_path ( ) ) \n 
+put ( \n 
+use_sudo = True \n 
+StringIO ( env . hosts_data . celery_supervisor_config ( ) ) , \n 
+env . hosts_data . celery_supervisor_config_path ( ) , \n 
+rmdir ( env . hosts_data . celery_supervisor_config_path ( ) , sudo_access = True ) \n 
+create_folders ( ) \n 
+run ( env . hosts_data . git_clone_command ( ) ) \n 
+create_local_settings ( ) \n 
+migrate_database ( ) \n 
+create_demo_superuser ( ) \n 
+collect_static ( ) \n 
+create_gunicorn_config ( ) \n 
+create_gunicorn_supervisor ( ) \n 
+create_celery_supervisor ( ) \n 
+create_nginx_config ( ) \n 
+sudo ( . format ( env . hosts_data . application_name ( ) ) ) \n 
+delete_gunicorn_supervisor ( ) \n 
+delete_celery_supervisor ( ) \n 
+delete_nginx_config ( ) \n 
+server_start ( ) \n 
+view_class = SearchView , \n 
+form_class = OfferSearchForm , \n 
+results_per_page = 8 , \n 
+__productname__ = \n 
+__author_email__ = "nicolas.s-dev@laposte.net" \n 
+__homepage__ = "http://github.com/OfflineIMAP/imapfw" \n 
+collection_response = SharedCollectionResponse ( json . loads ( self . send ( ) . content ) ) \n 
+HEADERS = glob . glob ( \n 
+ffi , \n 
+libraries = [ "sodium" ] , \n 
+ext_package = "nacl._lib" , \n 
+cursor . execute ( ) \n 
+notifications = cursor . fetchall ( ) \n 
+DEBUG = 5 \n 
+WARNING = 4 \n 
+INFO = 3 \n 
+ERROR = 2 \n 
+CRITICAL = 1 \n 
+warning = theLogger . warning \n 
+critical = theLogger . critical \n 
+_PEERSEEDS = _descriptor . Descriptor ( \n 
+number = 2 , type = 12 , cpp_type = 9 , label = 2 , \n 
+has_default_value = False , default_value = _b ( "" ) , \n 
+oneofs = [ \n 
+serialized_start = 15 , \n 
+serialized_end = 69 , \n 
+PeerSeeds = _reflection . GeneratedProtocolMessageType ( , ( _message . Message , ) , dict ( \n 
+DESCRIPTOR = _PEERSEEDS , \n 
+__module__ = \n 
+_sym_db . RegisterMessage ( PeerSeeds ) \n 
+tstream = BytearrayStream ( istream . read ( self . length ) ) \n 
+ostream . write ( tstream . buffer ) \n 
+opts , args = parser . parse_args ( sys . argv [ 1 : ] ) \n 
+opaque_type = enums . OpaqueDataType . NONE \n 
+"{0}" . format ( uid ) ) \n 
+"located." . format ( path ) \n 
+"section." \n 
+"file." . format ( setting ) \n 
+protocol_versions = self . protocol_versions_two \n 
+length_received = len ( stream ) \n 
+length_expected , length_received ) \n 
+discover_versions . DiscoverVersionsResponsePayload , ** kwargs ) \n 
+payload = discover_versions . DiscoverVersionsResponsePayload ( ) \n 
+sqltypes . Base . metadata . create_all ( self . engine ) \n 
+enums . OpaqueDataType . NONE , \n 
+binascii . hexlify ( self . bytes_a ) , enums . OpaqueDataType . NONE ) \n 
+expected = str ( binascii . hexlify ( self . bytes_a ) ) \n 
+observed = str ( obj ) \n 
+Session = sessionmaker ( bind = self . engine ) \n 
+session . commit ( ) \n 
+test_name = \n 
+get_obj = session . query ( OpaqueObject ) . filter ( \n 
+ManagedObject . unique_identifier == obj . unique_identifier \n 
+remove_index = 1 \n 
+0 ) ) \n 
+expected_mo_names . append ( sqltypes . ManagedObjectName ( expected_names [ 1 ] , \n 
+added_name = \n 
+expected_names = [ first_name , added_name ] \n 
+update_obj . names . append ( ) \n 
+] } , \n 
+types . MethodType ( _lib_dir_option , None , MSVCCompiler ) ) \n 
+sdkdir = os . environ . get ( ) \n 
+sources = [ , \n 
+include_dirs = include_dirs , \n 
+library_dirs = library_dirs ) \n 
+kwds . update ( config . todict ( ) ) \n 
+setup ( ** kwds ) \n 
+release = \n 
+today_fmt = \n 
+exclude_trees = [ ] \n 
+html_style = \n 
+html_last_updated_fmt = \n 
+html_theme = "default" \n 
+html_theme_options = { \n 
+"headtextcolor" : "darkred" , \n 
+"headbgcolor" : "gainsboro" , \n 
+"headfont" : "Arial" , \n 
+"relbarbgcolor" : "black" , \n 
+"relbartextcolor" : "white" , \n 
+"relbarlinkcolor" : "white" , \n 
+"sidebarbgcolor" : "gainsboro" , \n 
+"sidebartextcolor" : "darkred" , \n 
+"sidebarlinkcolor" : "black" , \n 
+"footerbgcolor" : "gainsboro" , \n 
+"footertextcolor" : "darkred" , \n 
+"textcolor" : "black" , \n 
+"linkcolor" : "darkred" , \n 
+"codebgcolor" : "#ffffcc" , \n 
+todo_include_todos = True \n 
+intersphinx_mapping = { : None } \n 
+autodoc_member_order = \n 
+#!/usr/local/bin/python \n 
+new_w = int ( width * wrat ) \n 
+new_h = int ( height * wrat ) \n 
+im . getbbox ( ) , Image . BICUBIC ) \n 
+newim . save ( fname ) \n 
+system ( cmd ) \n 
+resize_image ( os . path . abspath ( os . path . join ( , dest + ) ) ) \n 
+f_x = Float ( 0.0 , iotype = "out" ) \n 
+doe_c = [ 0.1 , 0.2 , 0.3 , 0.5 , 0.7 , 0.8 , 0.9 ] + doe_e \n 
+responses = ( , ) , nfi = self . nfi ) ) \n 
+ngrid = 100 \n 
+sim_cok . run ( ) \n 
+sigma_cok = np . array ( [ d . sigma for d in sim_cok . mm_checker . case_outputs . meta_model . f_x ] ) \n 
+sim_k . run ( ) \n 
+sigma_k = np . array ( [ d . sigma for d in sim_k . mm_checker . case_outputs . meta_model . f_x ] ) \n 
+actual = sim_k . mm_checker . case_outputs . model . f_x \n 
+check = sim_k . mm_checker . case_inputs . meta_model . x \n 
+predicted_cok - 2 * sigma_cok , facecolor = , alpha = 0.2 ) \n 
+predicted_k - 2 * sigma_k , facecolor = , alpha = 0.2 ) \n 
+plt . show ( ) \n 
+setupfile = os . path . abspath ( setupfile ) \n 
+newsetupfile = os . path . join ( os . path . dirname ( setupfile ) , \n 
+startdir = os . getcwd ( ) \n 
+resp = urllib2 . urlopen ( ) \n 
+setup_contents = setupf . read ( ) \n 
+setupf . close ( ) \n 
+srcdir = os . path . abspath ( os . path . expanduser ( srcdir ) ) . replace ( , ) \n 
+setupname = os . path . join ( srcdir , ) \n 
+cmd . extend ( [ , destdir ] ) \n 
+shell = True ) \n 
+list ( newfiles ) ) \n 
+destdir = os . path . abspath ( os . path . expanduser ( options . destdir ) ) \n 
+_GLOBAL_DICT = dict ( __builtins__ = None ) \n 
+all_names . extend ( [ prefix + name \n 
+case_id = metadata [ ] \n 
+case_driver_id = metadata [ ] \n 
+case_driver_name = metadata [ ] \n 
+case_itername = metadata [ ] \n 
+#continue \n 
+lnames = [ prefix + rec for rec in driver [ ] ] \n 
+expressions = self . simulation_info [ ] \n 
+parent_itername_parts = self . _parent_itername . split ( ) \n 
+itername_parts = itername . split ( ) \n 
+#else: \n 
+driver_grp = self . _inp [ ] [ driver_name ] \n 
+iteration_grp = self . _inp [ ] [ driver_name ] [ iteration_case_name ] \n 
+data_grp = iteration_grp [ ] \n 
+float_names = driver_grp [ ] \n 
+int_names = driver_grp [ ] \n 
+str_names = driver_grp [ ] \n 
+sim_info = { } \n 
+driver_info = [ ] \n 
+iteration_cases_grp = self . _inp [ ] \n 
+case_timestamps = { } \n 
+info = self . read_iteration_case_from_hdf5 ( self . _inp , driver_name , iteration_case_name ) yield info \n 
+sleep_time = Float ( 0.0 , iotype = , desc = ) \n 
+CARTESIAN = \n 
+CYLINDRICAL = \n 
+_COORD_SYSTEMS = ( CARTESIAN , CYLINDRICAL ) \n 
+doc = ) \n 
+grid_ghosts ) \n 
+flow_ghosts ) \n 
+zone . symmetry_instances = self . symmetry_instances \n 
+accuracy = Float ( 1.0e-6 , iotype = , \n 
+desc = ) \n 
+maxiter = Int ( 50 , iotype = , \n 
+iprint = Enum ( 0 , [ 0 , 1 , 2 , 3 ] , iotype = , \n 
+iout = Int ( 6 , iotype = , \n 
+output_filename = Str ( , iotype = , \n 
+error_code = Int ( 0 , iotype = , \n 
+meq = self . neqcon \n 
+la = max ( m , 1 ) \n 
+gg = zeros ( [ la ] , ) \n 
+dg = zeros ( [ la , n + 1 ] , ) \n 
+mineq = m - meq + 2 * ( n + 1 ) \n 
+lsq = ( n + 1 ) * ( ( n + 1 ) + 1 ) + meq * ( ( n + 1 ) + 1 ) + mineq * ( ( n + 1 ) + 1 ) \n 
+lsi = ( ( n + 1 ) - meq + 1 ) * ( mineq + 2 ) + 2 * mineq \n 
+lsei = ( ( n + 1 ) + mineq ) * ( ( n + 1 ) - meq ) + 2 * meq + ( n + 1 ) \n 
+slsqpb = ( n + 1 ) * ( n / 2 ) + 2 * m + 3 * n + 3 * ( n + 1 ) + 1 \n 
+lw = lsq + lsi + lsei + slsqpb + n + m \n 
+w = zeros ( [ lw ] , ) \n 
+ljw = max ( mineq , ( n + 1 ) - meq ) \n 
+jw = zeros ( [ ljw ] , ) \n 
+#slsqp(m,meq,la,n,xx,xl,xu,ff,gg,df,dg,acc,maxit,iprint, \n 
+_copydict = { \n 
+_iodict = { : , : } \n 
+__missing__ = object ( ) \n 
+reraise_exceptions = True , \n 
+__metaclass__ = _MetaSafe \n 
+implements ( IContainer ) \n 
+id_self = id ( self ) \n 
+saved_p = self . _parent \n 
+saved_c = self . _cached_traits_ \n 
+saved_s = self . _setcache \n 
+saved_g = self . _getcache \n 
+dct = { } \n 
+state [ ] = { } \n 
+fixups . append ( name ) \n 
+copy = self . _copycache . get ( path , _missing ) \n 
+NameError ) \n 
+removed = self . _prep_for_add ( name , obj ) \n 
+ancestor = self \n 
+ValueError ) \n 
+addr_type = connection . address_type ( proxy . _token . address ) \n 
+key = ( addr_type , addr , proxy . _authkey ) \n 
+address = ( ip_addr , 0 ) \n 
+allowed_hosts = None \n 
+access = addr if addr_type == else addr_type \n 
+manager = ObjectManager ( self , address , authkey = proxy . _authkey , \n 
+cp . _relink ( ) \n 
+container . _relink ( ) \n 
+match_dict = self . _alltraits ( ** metadata ) \n 
+traits . update ( self . _instance_traits ( ) ) \n 
+AttributeError ) \n 
+childname , _ , restofpath = traitpath . partition ( ) \n 
+mdict . setdefault ( , t . __class__ . __name__ ) \n 
+_local_setter_ = value \n 
+expr = compile ( assign , assign , mode = ) \n 
+src_files = None , child_objs = None , dst_dir = None , \n 
+tstamp = % ( now . year , now . month , now . day , now . hour , now . minute ) \n 
+entry_pts = [ ( self , name , _get_entry_group ( self ) ) ] \n 
+root_start = root_start + 1 if root_start >= 0 else 0 \n 
+root_pathname += \n 
+src_dir , src_files , dst_dir , \n 
+need_requirements ) \n 
+entry_group = \n 
+observer = None ) : \n 
+instance_name , logger , observer ) \n 
+t_iotype = getattr ( obj , , None ) \n 
+RuntimeError ) \n 
+Container . _bases ( type ( obj ) , names ) \n 
+names . append ( % ( cls . __module__ , cls . __name__ ) ) \n 
+#self._logger.error(msg) \n 
+CLASSES_TO_PROXY . append ( FileRef ) \n 
+_get_entry_group . group_map = [ \n 
+pprint . pprint ( dict ( [ ( n , str ( v ) ) \n 
+** metadata ) ] ) , \n 
+classname = obj . __class__ . __name__ . lower ( ) \n 
+trait = None \n 
+TypeError ) \n 
+io_attr [ ] = \n 
+original_stdout_fd = sys . stdout . fileno ( ) \n 
+original_stderr_fd = sys . stderr . fileno ( ) \n 
+sname = "%s.out" % rank \n 
+_redirect_streams ( ofile . fileno ( ) ) \n 
+COMM_NULL = None \n 
+PETSc = PETSc ( ) \n 
+leftover = arr_size % num_divisions \n 
+sizes [ : leftover ] += 1 \n 
+offsets [ 1 : ] = numpy . cumsum ( sizes ) [ : - 1 ] \n 
+z1 = Float ( 0. , iotype = ) \n 
+z2 = Float ( 0. , iotype = ) \n 
+z_store = Array ( [ 0. , 0. ] , iotype = ) \n 
+ssa_F = Array ( [ 0.0 ] , iotype = ) \n 
+ssa_G = Array ( [ 0.0 , 0.0 ] , iotype = ) \n 
+ssa_dF = Array ( [ 0.0 , 0.0 ] , iotype = ) \n 
+ssa_dG = Array ( [ [ 0.0 , 0.0 ] , [ 0.0 , 0.0 ] ] , iotype = ) \n 
+con2 = Float ( 0.0 , iotype = ) \n 
+prob . run ( ) \n 
+arr_out = Array ( [ 1. , 2. , 3. ] , iotype = , units = ) \n 
+drv . clear_constraints ( ) \n 
+#self.assertEqual(str(err), \n 
+arg [ ] = np . array ( [ 3.1 ] ) \n 
+input_keys = ( , ) \n 
+output_keys = ( , ) \n 
+jacs [ ] = np . array ( [ [ 100.0 , 101 , 102 , 103 ] , \n 
+J_abs = np . abs ( J ) \n 
+con1 = cons [ ] \n 
+cons = drv . list_constraints ( ) \n 
+assert_rel_error ( self , J [ 3 ] [ 0 ] , 3.0 , 1e-5 ) \n 
+f_out = Float ( iotype = ) \n 
+arr_in = Array ( iotype = ) \n 
+list_in = List ( iotype = ) \n 
+asm . revert_to_defaults ( ) \n 
+end = len ( self . newtext ) \n 
+newval = _getformat ( val ) % val \n 
+templatefile . close ( ) \n 
+max_lines = len ( self . data ) \n 
+j = self . current_row + row \n 
+field_start = 0 \n 
+newline = re . sub ( self . reg , sub . replace_array , line ) \n 
+infile . close ( ) \n 
+inputfile = open ( filename , ) \n 
+fields = self . _parse_line ( ) . parseString ( line . replace ( key , "KeyField" ) ) \n 
+j1 = self . current_row + rowstart \n 
+parsed = self . _parse_line ( ) . parseString ( line ) \n 
+j2 = self . current_row + rowend + 1 \n 
+dot = "." \n 
+ee = CaselessLiteral ( ) | CaselessLiteral ( ) \n 
+num_int = ToInteger ( Combine ( Optional ( sign ) + digits ) ) \n 
+num_float = ToFloat ( Combine ( Optional ( sign ) + \n 
+Optional ( ee + Optional ( sign ) + digits ) \n 
+mixed_exp = ToFloat ( Combine ( digits + ee + Optional ( sign ) + digits ) ) \n 
+string_text ) ) ) \n 
+y1 = params [ ] \n 
+y2 = params [ ] \n 
+J [ , ] = - 1.0 \n 
+top [ ] = - 7.0 \n 
+newexpr = _combined_expr ( expr ) \n 
+lhs , op , rhs = _parse_constraint ( expr ) \n 
+first , second = ( rhs , lhs ) if op . startswith ( ) else ( lhs , rhs ) \n 
+force_check = os . environ . get ( ) \n 
+trace = os . environ . get ( ) \n 
+prom_noconns = self . _add_implicit_connections ( connections ) \n 
+usrcs = set ( ) \n 
+input_graph . add_edges_from ( ( ( start , p ) for p in plist [ 1 : ] ) , \n 
+idxs = None ) \n 
+src_idxs = { src : None } \n 
+sidxs = src_idxs [ s ] \n 
+units = [ params_dict [ n ] . get ( ) for n in connected_inputs ] \n 
+vals = [ params_dict [ n ] [ ] for n in connected_inputs ] \n 
+diff_units = [ ] \n 
+tname , t = connected_inputs [ i ] , u \n 
+correct_src = params_dict [ connected_inputs [ 0 ] ] [ ] \n 
+diff_vals ) ) ) \n 
+ss = meta . get ( ) \n 
+sorted ( [ ( v , k ) for k , v in forms . items ( ) ] ) ) ) \n 
+full_order = { s . pathname : i for i , s in \n 
+enumerate ( self . root . subsystems ( recurse = True ) ) } \n 
+ubcs = [ ] \n 
+ssys = srcs [ 0 ] . rsplit ( , 1 ) [ 0 ] \n 
+tree_changed = False \n 
+meta_changed = False \n 
+params_dict , unknowns_dict = self . root . _setup_variables ( ) \n 
+connections = self . _setup_connections ( params_dict , unknowns_dict ) \n 
+tmeta [ ] = smeta [ ] \n 
+is not Component . setup_distrib ) ) : \n 
+oois = self . driver . outputs_of_interest ( ) \n 
+parallel_p = False \n 
+pois , oois , mode ) \n 
+broken_edges = None \n 
+head_sys = self . root \n 
+alloc_derivs = not self . root . fd_options [ ] \n 
+iterated_states = set ( ) \n 
+group_states = [ ] \n 
+has_iter_solver = { } \n 
+"recommended)." \n 
+dangling_params = sorted ( set ( [ \n 
+nocomps = sorted ( [ c . pathname for c in self . root . components ( recurse = True , \n 
+local = True ) \n 
+include_self = True ) : \n 
+recorders . extend ( grp . ln_solver . recorders ) \n 
+conn_comps . update ( [ s . rsplit ( , 1 ) [ 0 ] \n 
+noconn_comps = sorted ( [ c . pathname \n 
+pargrps . append ( grp . pathname ) \n 
+ooo = [ ] \n 
+strong = [ s for s in nx . strongly_connected_components ( graph ) \n 
+subs = [ s for s in grp . _subsystems ] \n 
+tups = sorted ( [ ( subs . index ( s ) , s ) for s in relstrong [ - 1 ] ] ) \n 
+relstrong [ - 1 ] = [ t [ 1 ] for t in tups ] \n 
+cycles . append ( relstrong ) \n 
+visited = set ( ) \n 
+out_of_order = { } \n 
+nearest_child ( grp . pathname , n ) for n in out_of_order [ name ] \n 
+pbos = [ var for var in vec if vec . metadata ( var ) . get ( ) ] \n 
+rels = set ( ) \n 
+content = stream . getvalue ( ) \n 
+driver = self . driver \n 
+metadata = driver . metadata ) \n 
+iteritems ( self . root . _params_dict ) ) : \n 
+uset . remove ( prom_name ) \n 
+pset . remove ( prom_name ) \n 
+cn_scale = cn_scale , \n 
+sparsity = sparsity ) \n 
+dv_scale = None , cn_scale = None , sparsity = None ) : \n 
+to_abs_pnames = root . _sysdata . to_abs_pnames \n 
+to_abs_uname = root . _sysdata . to_abs_uname \n 
+fd_unknowns = [ var for var in unknown_list if var not in indep_list ] \n 
+fd_params = abs_params , fd_unknowns = fd_unknowns , \n 
+pass_unknowns = pass_unknowns , \n 
+fd_ikey = get_fd_ikey ( abs_ikey ) \n 
+usize += len ( idx ) \n 
+psize += len ( idx ) \n 
+ui = 0 \n 
+relevance = root . _probdata . relevance \n 
+unknowns_dict = root . _unknowns_dict \n 
+comm = root . comm \n 
+iproc = comm . rank \n 
+nproc = comm . size \n 
+owned = root . _owning_ranks \n 
+fwd = mode == \n 
+Jslices = OrderedDict ( ) \n 
+poi_indices , qoi_indices = self . _poi_indices , self . _qoi_indices \n 
+in_scale , un_scale = cn_scale , dv_scale \n 
+input_set = set ( ) \n 
+voi_idxs = { } \n 
+old_size = None \n 
+duvec = self . root . dumat [ vkey ] \n 
+voi_srcs [ vkey ] = voi \n 
+rhs [ vkey ] [ : ] = 0.0 \n 
+qoi_indices , \n 
+get_slice = True ) \n 
+dxval = dx [ out_idxs ] \n 
+isinstance ( self . root . ln_solver , LinearGaussSeidel ) ) : \n 
+compact_print = False ) : \n 
+voi = None \n 
+allcomps = root . components ( recurse = True ) \n 
+requested = set ( comps ) \n 
+diff = requested . difference ( allcompnames ) \n 
+sorted_diff . sort ( ) \n 
+fwd_rev = True \n 
+fd_desc = None \n 
+jac_fd = OrderedDict ( ) \n 
+states = comp . states \n 
+param_list . extend ( states ) \n 
+unkn_list = [ item for item in dunknowns if not dunknowns . metadata ( item ) . get ( ) ] \n 
+p_size = np . size ( dinputs [ p_name ] ) \n 
+dresids . _dat [ u_name ] . val [ idx ] = 1.0 \n 
+dunknowns , dresids , ) \n 
+jac_rev [ ( u_name , p_name ) ] [ idx , : ] = dinputs . _dat [ p_name ] . val \n 
+dinputs . _dat [ p_name ] . val [ idx ] = 1.0 \n 
+dparams . _apply_unit_derivatives ( ) \n 
+jac_fd2 = fd_func ( params , unknowns , resids ) \n 
+opt [ ] = save_form \n 
+OptionsDictionary . locked = True \n 
+jac_fwd , jac_rev , jac_fd , out_stream , \n 
+c_name = cname , jac_fd2 = jac_fd2 , fd_desc = fd_desc , \n 
+to_abs_name = root . _sysdata . to_abs_uname \n 
+param_srcs = [ root . connections [ p ] for p in abs_indep_list if not root . _params_dict [ p ] . get ( ) ] \n 
+indep_list = [ \n 
+to_prom_name [ p ] for p , idxs in param_srcs \n 
+unknown_list = [ item for item in unknown_list if not root . unknowns . metadata ( item ) . get ( ) ] \n 
+return_format = ) \n 
+Jrev = _jac_to_flat_dict ( Jrev ) \n 
+Jfd = _jac_to_flat_dict ( Jfd ) \n 
+_assemble_deriv_data ( indep_list , unknown_list , data , \n 
+Jfor , Jrev , Jfd , out_stream ) \n 
+solver . recorders . record_metadata ( self . root ) \n 
+smeta = unknowns_dict [ source ] \n 
+tgt_unit , \n 
+_both_names ( tmeta , to_prom_name ) ) \n 
+dangling = set ( ) \n 
+abs_unames = self . root . _sysdata . to_abs_uname \n 
+grp . nl_solver . print_all_convergence ( ) \n 
+param_owners = { } \n 
+new_jac = OrderedDict ( ) \n 
+l_name = len ( name ) \n 
+fd_desc2 = None , compact_print = False ) : \n 
+Jsub_fd = jac_fd [ key ] \n 
+magrev = np . linalg . norm ( Jsub_rev ) \n 
+ldata [ ] = Jsub_fd2 \n 
+magfd2 = np . linalg . norm ( Jsub_fd2 ) \n 
+out_str = tmp1 . format ( _pad_name ( ) , _pad_name ( ) , \n 
+started = True \n 
+magfor , magrev , magfd , abs1 , abs2 , \n 
+rel1 , rel2 ) ) \n 
+_pad_name ( , 12 , quotes = False ) \n 
+magfd , magfd2 , abs4 , rel4 ) ) \n 
+out_stream . write ( str ( Jsub_fd2 ) ) \n 
+sqlite_dict_args . setdefault ( , ) \n 
+resids = group . resids . iteritems ( ) \n 
+unknowns = group . unknowns . iteritems ( ) \n 
+iteration_coordinate = metadata [ ] \n 
+group_name = % group_name \n 
+_logger = logging . getLogger ( ) \n 
+THETA0_DEFAULT = 0.5 \n 
+THETAL_DEFAULT = 1e-5 \n 
+THETAU_DEFAULT = 50 \n 
+ll_1 = ll_0 + n_samples - k - 1 \n 
+n_samples_X , n_features_X = X . shape \n 
+n_samples_Y , n_features_Y = Y . shape \n 
+n_nonzero_cross_dist = n_samples_X * n_samples_Y \n 
+_regression_types = { \n 
+D = self . D [ lvl ] \n 
+corr = squareform ( self . corr ( theta , D ) ) \n 
+initial_range = INITIAL_RANGE_DEFAULT , tol = TOLERANCE_DEFAULT ) : \n 
+nlevel = self . nlevel \n 
+n_samples = self . n_samples \n 
+y_best = y [ nlevel - 1 ] \n 
+q = self . q [ lvl ] \n 
++ str ( theta ) ) \n 
+Yt = solve_triangular ( C , y , lower = True ) \n 
+err2 = np . dot ( err . T , err ) [ 0 , 0 ] \n 
+sigma2 = err2 / ( n_samples - p - q ) \n 
+detR = ( ( np . diag ( C ) ) ** ( 2. / n_samples ) ) . prod ( ) \n 
+rlf_value = ( n_samples - p - q ) * np . log10 ( sigma2 ) + n_samples * np . log10 ( detR ) \n 
+thetaL = self . thetaL [ lvl ] \n 
+thetaU = self . thetaU [ lvl ] \n 
+x0 = np . log10 ( theta0 [ 0 ] ) \n 
+log10t [ i ] - np . log10 ( thetaL [ 0 ] [ i ] ) } ) \n 
+np . log10 ( thetaU [ 0 ] [ i ] ) - log10t [ i ] } ) \n 
+sol = minimize ( rlf_transform , x0 , method = , \n 
+constraints = constraints , \n 
+log10_optimal_x = sol [ ] \n 
+optimal_rlf_value = sol [ ] \n 
+optimal_theta = 10. ** log10_optimal_x \n 
+res [ ] = optimal_rlf_value \n 
+n_eval , n_features_X = X . shape \n 
+f0 = self . regr ( X ) \n 
+Ft = solve_triangular ( C , F , lower = True ) \n 
+r_t = solve_triangular ( C , r_ . T , lower = True ) \n 
+F = self . F [ i ] \n 
+dx = l1_cross_distances ( X , Y = self . X [ i ] ) \n 
+r_ = self . corr ( self . theta [ i ] , dx ) . reshape ( n_eval , self . n_samples [ i ] ) \n 
+yt = solve_triangular ( C , self . y [ i ] , lower = True ) \n 
+G = self . G [ i ] \n 
+mu [ : , i ] = ( np . dot ( f . T , beta ) + np . dot ( r_t . T , yt - np . dot ( Ft , beta ) ) ) . ravel ( ) \n 
+u_ = solve_triangular ( G . T , f - np . dot ( Ft . T , r_t ) , lower = True ) \n 
+sigma2_rho = ( sigma2_rho * g ) . sum ( axis = 1 ) \n 
+MSE [ : , i ] = sigma2_rho * MSE [ : , i - 1 ] + Q_ / ( 2 * ( self . n_samples [ i ] - self . p [ i ] - self . q [ i ] ) ) * ( 1 - ( r_t ** 2 ) . sum ( axis = 0 ) ) + self . sigma2 [ i ] * ( u_ ** 2 ) . sum ( axis = 0 ) \n 
+n_features = np . zeros ( nlevel , dtype = int ) \n 
+n_samples_y [ i ] = y [ i ] . shape [ 0 ] \n 
+"thetaU." ) \n 
+tolerance = TOLERANCE_DEFAULT , initial_range = INITIAL_RANGE_DEFAULT ) : \n 
+theta0 = theta0 , thetaL = thetaL , thetaU = thetaU ) \n 
+Y_pred , MSE = self . model . predict ( [ new_x ] ) \n 
+X , Y = self . _fit_adapter ( X , Y ) \n 
+Y = [ np . array ( y ) for y in reversed ( Y ) ] \n 
+doctest . testmod ( ) \n 
+field_end ) : \n 
+newdata = np . array ( parsed [ : ] ) \n 
+#""" \n 
+#file. \n 
+file_content = f . read ( ) \n 
+populated_settings = file_content . format ( ** values ) \n 
+INSTANCE_DIR = os . path . join ( icc . DEFAULT_INSTANCE_DIR , instance_name ) \n 
+template = os . path . join ( INSTANCE_DIR , ) \n 
+icc . DB_USER ) , shell = True ) \n 
+database = instance_db_name , \n 
+host = icc . DB_HOST \n 
+working_dir = os . path . join ( icc . DEFAULT_INSTANCE_DIR , instance_name ) \n 
+syncdb . wait ( ) \n 
+collectstatic . wait ( ) \n 
+supervisord . wait ( ) \n 
+nginx . wait ( ) \n 
+time . sleep ( 5 ) \n 
+requests . get ( url ) \n 
+shutil . rmtree ( INSTANCE_DIR ) \n 
+instance_db_name , shell = True ) \n 
+dropdb . wait ( ) \n 
+INSTANCE_DB_NAME = opts . instance_data [ 1 ] \n 
+dependencies = [ \n 
+blank = True , \n 
+related_query_name = , \n 
+to = , \n 
+help_text = , \n 
+related_name = , \n 
+customslide = CustomSlide . objects . create ( title = , text = default_projector = Projector . objects . get ( pk = 1 ) \n 
+default_projector = Projector . objects . get ( pk = 1 ) \n 
+reverse ( , args = [ ] ) ) \n 
+filter_obj = filter ( \n 
+yield ConfigVariable ( \n 
+default_value = , \n 
+input_type = , \n 
+{ : , : } , { : , : } ) \n 
+validators = ( validator_for_testing , ) ) \n 
+hidden = True ) \n 
+generate_username . return_value = \n 
+new_data = serializer . validate ( data ) \n 
+view = MagicMock ( action = ) \n 
+serializer = UserFullSerializer ( context = { : view } ) \n 
+#domain... #localhost... \n 
+USERNAME_REGEX = re . compile ( , re . I ) \n 
+FULLNAME_REGEX = re . compile ( , re . U ) \n 
+EMAIL_REGEX = re . compile ( , re . IGNORECASE ) \n 
+len_input = len ( data ) \n 
+regex = re . compile ( , re . IGNORECASE ) \n 
+afi = AFI ( AFI . ipv4 ) \n 
+safi = SAFI ( SAFI . mpls_vpn ) \n 
+RouteDistinguisher . TYPE_IP_LOC , None , \n 
+10000 + label ) \n 
+nh = Inet ( 1 , socket . inet_pton ( socket . AF_INET , \n 
+route . attributes . add ( ECommunities ( self . readvertiseToRTs ) ) \n 
+nlri . prefix , label ) \n 
+advertiseSubnet ) \n 
+routeEntry = self . _routeForReAdvertisement ( prefix , label ) \n 
+set ( self . importRTs ) ) ) > 0 ) \n 
+newRoute . nlri . labelStack [ 0 ] . labelValue , newRoute . nlri , encaps ) \n 
+prefix , oldRoute . attributes . get ( NextHop . ID ) . next_hop , \n 
+oldRoute . nlri . labelStack [ 0 ] . labelValue , oldRoute . nlri ) \n 
+"readvertised" : ( LGMap . VALUE , [ repr ( prefix ) for prefix in \n 
+FLAG = Flag . TRANSITIVE \n 
+MULTIPLE = False \n 
+IGP = 0x00 \n 
+EGP = 0x01 \n 
+INCOMPLETE = 0x02 \n 
+setuptools . setup ( \n 
+setup_requires = [ ] , \n 
+pbr = True ) \n 
+DIRECTORY = os . path . abspath ( os . path . dirname ( __file__ ) ) \n 
+DEFAULT_REACTORS = { \n 
+REACTORNAME = DEFAULT_REACTORS . get ( platform . system ( ) , ) \n 
+kqreactor . install ( ) \n 
+epollreactor . install ( ) \n 
+pollreactor . install ( ) \n 
+selectreactor . install ( ) \n 
+set_reactor = lambda : reactor \n 
+untilConcludes ( self . write , text ) \n 
+unforkedPid = 0 \n 
+childProcessPid = self . transport . pid \n 
+SIGNALS = dict ( ( k , v ) for v , k in signal . __dict__ . iteritems ( ) if v . startswith ( ) and not v . startswith ( ) ) \n 
+pargs = ( self . name , self . label , self . reactor ) \n 
+pkwargs = { } \n 
+* pargs , ** pkwargs \n 
+logdir = env . pop ( , os . path . join ( os . path . sep , ) ) \n 
+masksignals = bool ( env . pop ( , True ) ) \n 
+closestdin = bool ( env . pop ( , True ) ) \n 
+label = env . pop ( , ) \n 
+usetty = bool ( env . pop ( , ) ) \n 
+maxfd = resource . getrlimit ( resource . RLIMIT_NOFILE ) [ 1 ] \n 
+hasattr ( os , "devnull" ) and os . devnull or "/dev/null" , \n 
+loggers = [ \n 
+droned . logging . logToDir ( \n 
+directory = logdir , \n 
+LOG_TYPE = tuple ( loggers ) , \n 
+OBSERVER = ManagedLogger \n 
+dmx . log ( ) \n 
+reactor . run ( ) \n 
+team . removeMember ( conversation . buddy ) \n 
+otherAgent . tell ( message ) \n 
+told += 1 \n 
+summaries = [ ] \n 
+listing = . join ( summaries ) \n 
+conversation . say ( contextSummary , useHTML = False ) \n 
+existingAgent . conversation . nevermind ( ) \n 
+agent . engage ( issue ) \n 
+issue . resolve ( resolution ) \n 
+moduleProvides ( IDroneDService ) #requirement \n 
+SERVICENAME = \n 
+t2 = os . path . getmtime ( f2 ) \n 
+hour = property ( lambda foo : 3600 ) \n 
+day = property ( lambda foo : 86400 ) \n 
+week = property ( lambda f : 604800 ) \n 
+oldfiles = { } \n 
+watchDict = property ( lambda s : SERVICECONFIG . wrapped . get ( , { } ) ) \n 
+busy = defer . DeferredLock ( ) \n 
+tmp = copy . deepcopy ( self . watchDict ) \n 
+SERVICECONFIG . JANITIZE = tmp \n 
+files . remove ( f ) \n 
+Service . stopService ( self ) \n 
+parentService = _parentService \n 
+service . stopService ( ) \n 
+num_range = [ 0 , 0.8834 ] , \n 
+regen_mode = ) \n 
+pore_prop = , \n 
+psd_name = , \n 
+psd_shape = 3.07 , \n 
+psd_loc = 1.97e-6 , \n 
+psd_scale = 1.6e-5 , \n 
+psd_offset = 18e-6 ) \n 
+tsd_name = , \n 
+tsd_shape = 3.07 , \n 
+tsd_loc = 1.97e-6 , \n 
+tsd_scale = 1.6e-5 , \n 
+tsd_offset = 18e-6 ) \n 
+model = gm . throat_surface_area . cylinder ) \n 
+network = geometry . _net \n 
+throats = network . throats ( geometry . name ) \n 
+pores = network . find_connected_pores ( throats , flatten = False ) \n 
+C0 = network [ ] [ pores , 0 ] \n 
+C1 = network [ ] [ pores , 1 ] \n 
+V = C1 - C0 \n 
+pore_MW = , \n 
+pore_density = , \n 
+MW = phase [ pore_MW ] \n 
+pore_pressure = , \n 
+pore_temperature = , \n 
+pore_P = , \n 
+pore_T = , \n 
+pore_Pc = , \n 
+pore_Tc = , \n 
+P = phase [ pore_P ] / 100000 \n 
+T = phase [ pore_T ] \n 
+Tc = phase [ pore_Tc ] \n 
+a1 = - 1 / b \n 
+a2 = ( R * T + b * P ) / ( a * b ) \n 
+a3 = - P / ( a * b ) \n 
+a0 = sp . ones ( sp . shape ( a1 ) ) \n 
+coeffs = sp . vstack ( ( a0 , a1 , a2 , a3 ) ) . T \n 
+density = sp . array ( [ sp . roots ( C ) for C in coeffs ] ) \n 
+main_ = { } \n 
+ver_path = convert_path ( ) \n 
+packages = [ \n 
+comp2 = OpenPNM . Phases . GenericPhase ( network = self . net ) \n 
+OpenPNM . Phases . GenericPhase ( network = self . net , \n 
+components = [ comp1 , comp2 ] ) \n 
+phase . set_component ( comp2 , mode = ) \n 
+fout = FastaWriter ( output_filename ) \n 
+best_qual = None \n 
+err = 9999999 \n 
+max_len = 0 \n 
+best_seq = fd [ x ] . sequence \n 
+best_err = err \n 
+id_to_rep [ best_id ] = pb_id \n 
+coords = { } \n 
+best_id , best_seq , best_qual = rep_info [ pb_id ] \n 
+isoform_index = 1 \n 
+record_storage [ pb_id ] = r \n 
+old_r = record_storage [ pb_id ] \n 
+_id_ = "{0}|{1}|{2}" . format ( pb_id , coords [ best_id ] , best_id ) \n 
+_seq_ = best_seq \n 
+merged = True \n 
+iter = BioReaders . GMAPSAMReader ( gmap_sam_filename , True , query_len_dict = transfrag_len_dict ) \n 
+TmpRec = namedtuple ( , [ , , , , , , ] ) \n 
+reader = BioReaders . GMAPSAMReader ( sam_filename , True , query_len_dict = query_len_dict ) \n 
+compressed_records_pointer_dict = defaultdict ( lambda : [ ] ) \n 
+merged_exons = [ ] \n 
+check_ids_unique ( fa_or_fq_filename , is_fq = is_fq ) \n 
+bs = branch_simple2 . BranchSimple ( fa_or_fq_filename , is_fq = is_fq ) \n 
+fusion_candidates = find_fusion_candidates ( sam_filename , bs . transfrag_len_dict , min_locus_coverage \n 
+merged_i += 1 \n 
+gene_index = 1 \n 
+already_seen = set ( ) \n 
+#raw_input("") \n 
+records = merged_exons [ i ] \n 
+pbid1 , groups1 = line . strip ( ) . split ( ) \n 
+pbid2 , groups2 = f . readline ( ) . strip ( ) . split ( ) \n 
+f_group . write ( "{0}\\t{1}\\n" . format ( pbid1 [ : pbid1 . rfind ( ) ] , "," . join ( group ) ) ) \n 
+group_info [ pbid1 [ : pbid1 . rfind ( ) ] ] = list ( group ) \n 
+gff_filename = output_prefix + \n 
+group_filename = output_prefix + \n 
+d1 . update ( d [ ] ) \n 
+fusion_main ( args . input , args . sam , args . prefix , \n 
+is_fq = args . fq , allow_extra_5_exons = args . allow_extra_5exon , \n 
+skip_5_exon_alt = False , prefix_dict_pickle_filename = args . prefix_dict_pickle_filename , min_locus_coverage = args . min_locus_coverage , min_locus_coverage_bp = args . min_locus_coverage_bp min_total_coverage = args . min_total_coverage , \n 
+min_dist_between_loci = args . min_dist_between_loci ) \n 
+raw = self . f . readline ( ) . strip ( ) . split ( ) \n 
+iden = float ( raw [ 3 ] ) \n 
+qStrand = int ( raw [ 4 ] ) \n 
+qEnd = int ( raw [ 6 ] ) \n 
+qLen = int ( raw [ 7 ] ) \n 
+sStrand = int ( raw [ 8 ] ) \n 
+sStart = int ( raw [ 9 ] ) \n 
+sEnd = int ( raw [ 10 ] ) \n 
+sLen = int ( raw [ 11 ] ) \n 
+_qStart , qAln = self . f . readline ( ) . strip ( ) . split ( ) \n 
+_sStart , sAln = self . f . readline ( ) . strip ( ) . split ( ) [ : 2 ] \n 
+qStart = r . qStart , qEnd = r . qEnd , \n 
+missed_q = missed_q * 1. / r . qLength , \n 
+missed_t = missed_t * 1. / r . sLength , \n 
+record = r , \n 
+qver_get_func = qver_get_func , \n 
+sID_starts_with_c = sID_starts_with_c , \n 
+qv_prob_threshold = qv_prob_threshold , \n 
+qvmean_get_func = qvmean_get_func ) \n 
+ece_penalty , ece_min_len ) : \n 
+fakecigar = cigar_str , \n 
+ece_arr = ece_arr ) \n 
+ZERO_OR_MORE = \n 
+PARSER = \n 
+REMAINDER = \n 
+_UNRECOGNIZED_ARGS_ATTR = \n 
+indent_increment = 2 , \n 
+max_help_position = 24 , \n 
+heading = % ( current_indent , , self . heading ) \n 
+section = self . _Section ( self , self . _current_section , heading ) \n 
+invocations = [ get_invocation ( action ) ] \n 
+action_length ) \n 
+optionals = [ ] \n 
+action_usage = format ( optionals + positionals , groups ) \n 
+text_width = self . _width - self . _current_indent \n 
+opt_usage = format ( optionals , groups ) \n 
+pos_usage = format ( positionals , groups ) \n 
+opt_parts = _re . findall ( part_regexp , opt_usage ) \n 
+pos_parts = _re . findall ( part_regexp , pos_usage ) \n 
+line_len += len ( part ) + 1 \n 
+inserts = { } \n 
+args_string = self . _format_args ( action , default ) \n 
+part = % ( option_string , args_string ) \n 
+open = \n 
+close = \n 
+indent = * self . _current_indent \n 
+help_width = self . _width - help_position \n 
+action_width = help_position - self . _current_indent - 2 \n 
+action_header = % tup \n 
+indent_first = help_position \n 
+help_lines = self . _split_lines ( help_text , help_width ) \n 
+subsequent_indent = indent ) \n 
+argument_name = self . argument_name ) \n 
+option_strings = option_strings , \n 
+metavar = metavar ) \n 
+const = False , \n 
+items . append ( self . const ) \n 
+dest = SUPPRESS , \n 
+sup . __init__ ( option_strings = [ ] , dest = name , help = help ) \n 
+parser_class , \n 
+nargs = PARSER , \n 
+choices = self . _name_parser_map , \n 
+choice_action = self . _ChoicesPseudoAction ( name , help ) \n 
+arg_strings = values [ 1 : ] \n 
+args_str = . join ( [ repr ( arg ) for arg in args if arg is not None ] ) \n 
+chars = self . prefix_chars \n 
+type_func = self . _registry_get ( , action . type , action . type ) \n 
+required = group . required ) \n 
+long_option_strings = [ ] \n 
+confl_optionals . append ( ( option_string , confl_optional ) ) \n 
+conflict_string = . join ( [ option_string \n 
+in conflicting_actions ] ) \n 
+super_init ( description = description , ** kwargs ) \n 
+prog = None , \n 
+epilog = None , \n 
+parents = [ ] , \n 
+formatter_class = HelpFormatter , \n 
+fromfile_prefix_chars = None , \n 
+add_help = True ) : \n 
+"""instead""" , DeprecationWarning ) \n 
+superinit ( description = description , \n 
+prefix_chars = prefix_chars , \n 
+argument_default = argument_default , \n 
+conflict_handler = conflict_handler ) \n 
+add_group = self . add_argument_group \n 
+default_prefix + , default_prefix * 2 + , \n 
+positionals = self . _get_positional_actions ( ) \n 
+conflicts . extend ( group_actions [ i + 1 : ] ) \n 
+arg_string_pattern_parts = [ ] \n 
+arg_strings_iter = iter ( arg_strings ) \n 
+seen_actions = set ( ) \n 
+seen_non_default_actions = set ( ) \n 
+argument_values = self . _get_values ( action , argument_strings ) \n 
+action_name = _get_action_name ( conflict_action ) \n 
+action , option_string , explicit_arg = option_tuple \n 
+match_argument = self . _match_argument \n 
+char = option_string [ 0 ] \n 
+option_string = char + explicit_arg [ 0 ] \n 
+new_explicit_arg = explicit_arg [ 1 : ] or None \n 
+optionals_map = self . _option_string_actions \n 
+action_tuples . append ( ( action , args , option_string ) ) \n 
+selected_patterns = arg_strings_pattern [ start : ] \n 
+arg_count = match_argument ( action , selected_patterns ) \n 
+stop = start + arg_count \n 
+selected_pattern = arg_strings_pattern [ start_index : ] \n 
+arg_counts = match_partial ( positionals , selected_pattern ) \n 
+take_action ( action , args ) \n 
+start_index = next_option_string_index \n 
+extras . extend ( arg_strings [ stop_index : ] ) \n 
+new_arg_strings . extend ( arg_strings ) \n 
+OPTIONAL : _ ( ) , \n 
+ONE_OR_MORE : _ ( ) , \n 
+pattern = . join ( [ self . _get_nargs_pattern ( action ) \n 
+explicit_arg = None \n 
+short_option_prefix = option_string [ : 2 ] \n 
+short_explicit_arg = option_string [ 2 : ] \n 
+tup = action , option_string , short_explicit_arg \n 
+nargs_pattern = nargs_pattern . replace ( , ) \n 
+not action . option_strings ) : \n 
+DeprecationWarning ) \n 
+formatter . add_text ( self . version ) \n 
+######################################################### \n 
+libpath = os . path . dirname ( os . path . abspath ( __file__ ) ) \n 
+vulnerability = obj [ ] [ ] [ ] [ ] [ ] \n 
+threats = phone_home + vulnerability \n 
+debug = common . check_debug ( kwargs ) \n 
+usage ( ) \n 
+sessionKey = settings [ ] \n 
+apikey = common . apikey ( sessionKey , args [ 0 ] , debug ) \n 
+device = pandevice . base . PanDevice ( args [ 0 ] , api_key = apikey ) \n 
+app_xml = device . xapi . xml_document \n 
+threat_xml = device . xapi . xml_document \n 
+csv = parse_threats ( threat_xml ) \n 
+cluster , \n 
+rebalance_max_retries = 5 , \n 
+rebalance_backoff_ms = 2 * 1000 , \n 
+zookeeper_connection_timeout_ms = 6 * 1000 , \n 
+zookeeper_connect = , \n 
+zookeeper = None , \n 
+post_rebalance_callback = None , \n 
+use_rdkafka = False , \n 
+hostname = socket . gethostname ( ) , \n 
+uuid = uuid4 ( ) \n 
+topic = self . _topic . name ) \n 
+module = self . __class__ . __module__ , \n 
+"" . join ( traceback . format_tb ( tb ) ) ) \n 
+kazoo_kwargs = { : timeout / 1000 } \n 
+new_offsets = cns . held_offsets \n 
+consumer_group = self . _consumer_group , \n 
+partitions = partitions , \n 
+auto_commit_enable = self . _auto_commit_enable , \n 
+auto_commit_interval_ms = self . _auto_commit_interval_ms , \n 
+fetch_message_max_bytes = self . _fetch_message_max_bytes , \n 
+fetch_min_bytes = self . _fetch_min_bytes , \n 
+num_consumer_fetchers = self . _num_consumer_fetchers , \n 
+queued_max_messages = self . _queued_max_messages , \n 
+fetch_wait_max_ms = self . _fetch_wait_max_ms , \n 
+consumer_timeout_ms = self . _consumer_timeout_ms , \n 
+offsets_channel_backoff_ms = self . _offsets_channel_backoff_ms , \n 
+offsets_commit_max_retries = self . _offsets_commit_max_retries , \n 
+auto_offset_reset = self . _auto_offset_reset , \n 
+reset_offset_on_start = reset_offset_on_start , \n 
+auto_start = start , \n 
+compacted_topic = self . _is_compacted_topic , \n 
+generation_id = self . _generation_id , \n 
+consumer_id = self . _consumer_id \n 
+p_to_str = lambda p : . join ( [ str ( p . topic . name ) , str ( p . leader . id ) , str ( p . id ) ] ) \n 
+all_parts = sorted ( all_parts , key = p_to_str ) \n 
+idx = participants . index ( consumer_id or self . _consumer_id ) \n 
+parts_per_consumer = len ( all_parts ) // len ( participants ) \n 
+remainder_ppc = len ( all_parts ) % len ( participants ) \n 
+num_parts = parts_per_consumer + ( 0 if ( idx + 1 > remainder_ppc ) else 1 ) \n 
+new_partitions = set ( new_partitions ) \n 
+log . debug ( , [ p_to_str ( p ) for p in new_partitions ] ) \n 
+proxy = weakref . proxy ( self ) \n 
+broker_path = \n 
+_brokers_changed \n 
+_topics_changed \n 
+_consumers_changed \n 
+id_ = get_string ( self . _consumer_id ) \n 
+participants . append ( self . _consumer_id ) \n 
+ex . partition , i ) \n 
+ephemeral = True \n 
+zk_partition_ids = set ( ) \n 
+all_partitions = self . _zookeeper . get_children ( self . _topic_path ) \n 
+path = self . _topic_path , slug = partition_slug ) ) \n 
+HZ_cls = ( \n 
+HZ_st = ( \n 
+HZCharLenTable = ( 0 , 0 , 0 , 0 , 0 , 0 ) \n 
+HZSMModel = { : HZ_cls , \n 
+ISO2022CN_cls = ( \n 
+ISO2022CN_st = ( \n 
+ISO2022CNCharLenTable = ( 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 ) \n 
+ISO2022CNSMModel = { : ISO2022CN_cls , \n 
+ISO2022JP_cls = ( \n 
+ISO2022JP_st = ( \n 
+ISO2022JPCharLenTable = ( 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 ) \n 
+ISO2022JPSMModel = { : ISO2022JP_cls , \n 
+ISO2022KR_cls = ( \n 
+ISO2022KR_st = ( \n 
+ISO2022KRCharLenTable = ( 0 , 0 , 0 , 0 , 0 , 0 ) \n 
+ISO2022KRSMModel = { : ISO2022KR_cls , \n 
+logging . basicConfig ( level = logging . INFO ) \n 
+tasa . __version__ , sys . version ) ) \n 
+type = lambda w : w . partition ( ) [ : : 2 ] , \n 
+worker_class_name = args . worker [ 1 ] or \n 
+potential_workers = inspect . getmembers ( \n 
+worker_module , \n 
+worker . __class__ . __name__ , \n 
+str ( job ) [ : 50 ] ) \n 
+signal . signal ( signal . SIGINT , signal_handler ) \n 
+processes = [ Process ( target = run , args = ( ) ) for x in range ( count ) ] \n 
+color = models . CharField ( max_length = 6 , validators = [ color_regex ] , help_text = \n 
+DEVELOPER_ROLE = \n 
+QUALITY_ASSURANCE_ROLE = \n 
+OPERATIONS_ROLE = \n 
+MANAGER_ROLE = \n 
+SECURITY_OFFICER_ROLE = \n 
+SECURITY_CHAMPION_ROLE = \n 
+ROLE_CHOICES = ( \n 
+first_name = models . CharField ( max_length = 64 ) \n 
+last_name = models . CharField ( max_length = 64 ) \n 
+role = models . CharField ( max_length = 17 , choices = ROLE_CHOICES ) \n 
+phone_work = models . CharField ( max_length = 15 , validators = [ phone_regex ] , blank = True ) \n 
+phone_mobile = models . CharField ( max_length = 15 , validators = [ phone_regex ] , blank = True ) \n 
+job_title = models . CharField ( max_length = 128 , blank = True ) \n 
+verbose_name_plural = \n 
+people = models . ManyToManyField ( Person , blank = True ) \n 
+GLOBAL_CATEGORY = \n 
+PERSONAL_CATEGORY = \n 
+COMPANY_CATEGORY = \n 
+STUDENT_CATEGORY = \n 
+GOVERNMENT_CATEGORY = \n 
+PCI_CATEGORY = \n 
+MEDICAL_CATEGORY = \n 
+CATEGORY_CHOICES = ( \n 
+weight = models . PositiveIntegerField ( ) \n 
+PROGRAMMING_LANGUAGE_CATEGORY = \n 
+OPERATING_SYSTEM_CATEGORY = \n 
+DATA_STORE_CATEGORY = \n 
+FRAMEWORK_CATEGORY = \n 
+THIRD_PARTY_COMPONENT = \n 
+WEB_SERVER_CATEGORY = \n 
+APPLICATION_SERVER_CATEGORY = \n 
+HOSTING_PROVIDER_CATEGORY = \n 
+DENIAL_OF_SERVICE_CATEGORY = \n 
+FIREWALL_CATEGORY = \n 
+category = models . CharField ( max_length = 21 , choices = CATEGORY_CHOICES , help_text = description = models . CharField ( max_length = 256 , blank = True , help_text = reference = models . URLField ( blank = True , help_text = ) \n 
+PRIVACY_CATEGORY = \n 
+FINANCE_CATEGORY = \n 
+EDUCATION_CATEGORY = \n 
+OTHER_CATEGORY = \n 
+acronym = models . CharField ( max_length = 20 , unique = True , help_text = category = models . CharField ( max_length = 9 , choices = CATEGORY_CHOICES , help_text = jurisdiction = models . CharField ( max_length = 64 , help_text = description = models . TextField ( blank = True , help_text = reference = models . URLField ( blank = True , help_text = ) \n 
+description = models . CharField ( max_length = 256 , blank = True , help_text = \n 
+WEB_PLATFORM = \n 
+DESKTOP_PLATFORM = \n 
+MOBILE_PLATFORM = \n 
+WEB_SERVICE_PLATFORM = \n 
+PLATFORM_CHOICES = ( \n 
+IDEA_LIFECYCLE = \n 
+EXPLORE_LIFECYCLE = \n 
+VALIDATE_LIFECYCLE = \n 
+GROW_LIFECYCLE = \n 
+SUSTAIN_LIFECYCLE = \n 
+RETIRE_LIFECYCLE = \n 
+LIFECYCLE_CHOICES = ( \n 
+THIRD_PARTY_LIBRARY_ORIGIN = \n 
+PURCHASED_ORIGIN = \n 
+CONTRACTOR_ORIGIN = \n 
+INTERNALLY_DEVELOPED_ORIGIN = \n 
+OPEN_SOURCE_ORIGIN = \n 
+OUTSOURCED_ORIGIN = \n 
+ORIGIN_CHOICES = ( \n 
+VERY_HIGH_CRITICALITY = \n 
+HIGH_CRITICALITY = \n 
+MEDIUM_CRITICALITY = \n 
+LOW_CRITICALITY = \n 
+VERY_LOW_CRITICALITY = \n 
+NONE_CRITICALITY = \n 
+BUSINESS_CRITICALITY_CHOICES = ( \n 
+DCL_1 = 1 \n 
+DCL_2 = 2 \n 
+DCL_3 = 3 \n 
+DCL_4 = 4 \n 
+DATA_CLASSIFICATION_CHOICES = ( \n 
+ASVS_0 = 0 \n 
+ASVS_1 = 1 \n 
+ASVS_2 = 2 \n 
+ASVS_3 = 3 \n 
+ASVS_CHOICES = ( \n 
+business_criticality = models . CharField ( max_length = 9 , choices = BUSINESS_CRITICALITY_CHOICES , blank platform = models . CharField ( max_length = 11 , choices = PLATFORM_CHOICES , blank = True , null = True ) \n 
+lifecycle = models . CharField ( max_length = 8 , choices = LIFECYCLE_CHOICES , blank = True , null = True ) \n 
+origin = models . CharField ( max_length = 19 , choices = ORIGIN_CHOICES , blank = True , null = True ) \n 
+user_records = models . PositiveIntegerField ( blank = True , null = True , help_text = revenue = models . DecimalField ( max_digits = 15 , decimal_places = 2 , blank = True , null = True , help_text = external_audience = models . BooleanField ( default = False , help_text = internet_accessible = models . BooleanField ( default = False , help_text = requestable = models . NullBooleanField ( default = True , help_text = _ ( \n 
+technologies = models . ManyToManyField ( Technology , blank = True ) \n 
+regulations = models . ManyToManyField ( Regulation , blank = True ) \n 
+service_level_agreements = models . ManyToManyField ( ServiceLevelAgreement , blank = True ) \n 
+data_elements = models . ManyToManyField ( DataElement , blank = True ) \n 
+override_dcl = models . IntegerField ( choices = DATA_CLASSIFICATION_CHOICES , blank = True , null = True , help_text override_reason = models . TextField ( blank = True , help_text = \n 
+threadfix = models . ForeignKey ( ThreadFix , blank = True , null = True , help_text = threadfix_team_id = models . PositiveIntegerField ( blank = True , null = True , help_text = threadfix_application_id = models . PositiveIntegerField ( blank = True , null = True , help_text = \n 
+asvs_level = models . IntegerField ( choices = ASVS_CHOICES , blank = True , null = True , help_text = asvs_level_percent_achieved = models . PositiveIntegerField ( blank = True , null = True , help_text = asvs_doc_url = models . URLField ( blank = True , help_text = ) \n 
+asvs_level_target = models . IntegerField ( choices = ASVS_CHOICES , blank = True , null = True , help_text = \n 
+organization = models . ForeignKey ( Organization , help_text = people = models . ManyToManyField ( Person , through = , blank = True ) \n 
+delta = self . created_date - timezone . now ( ) \n 
+critical_count = models . PositiveIntegerField ( default = 0 ) \n 
+high_count = models . PositiveIntegerField ( default = 0 ) \n 
+medium_count = models . PositiveIntegerField ( default = 0 ) \n 
+low_count = models . PositiveIntegerField ( default = 0 ) \n 
+informational_count = models . PositiveIntegerField ( default = 0 ) \n 
+verbose_name = \n 
+person = models . ForeignKey ( Person , help_text = ) \n 
+DEVELOPMENT_ENVIRONMENT = \n 
+INTEGRATION_ENVIRONMENT = \n 
+QUALITY_ASSURANCE_ENVIRONMENT = \n 
+PRE_PRODUCTION_ENVIRONMENT = \n 
+CUSTOMER_ACCEPTANCE_ENVIRONMENT = \n 
+PRODUCTION_ENVIRONMENT = \n 
+ENVIRONMENT_CHOICES = ( \n 
+environment_type = models . CharField ( max_length = 4 , choices = ENVIRONMENT_CHOICES , help_text = description = models . TextField ( blank = True , help_text = testing_approved = models . BooleanField ( default = False , help_text = \n 
+location = models . URLField ( help_text = notes = models . TextField ( blank = True , help_text = \n 
+environment = models . ForeignKey ( Environment ) \n 
+role_description = models . CharField ( max_length = 128 , blank = True , help_text = notes = models . TextField ( blank = True , help_text = \n 
+ordering = [ , ] \n 
+PENDING_STATUS = \n 
+OPEN_STATUS = \n 
+CLOSED_STATUS = \n 
+STATUS_CHOICES = ( \n 
+start_date = models . DateField ( help_text = ) \n 
+end_date = models . DateField ( help_text = ) \n 
+open_date = models . DateTimeField ( blank = True , null = True , help_text = close_date = models . DateTimeField ( blank = True , null = True , help_text = duration = models . DurationField ( blank = True , null = True ) \n 
+now = timezone . now ( ) \n 
+metrics = managers . ActivityTypeMetrics . from_queryset ( managers . ActivityTypeQuerySet ) ( ) \n 
+activity_type = models . ForeignKey ( ActivityType ) \n 
+engagement = models . ForeignKey ( Engagement ) \n 
+objects = managers . ActivityManager . from_queryset ( managers . ActivityQuerySet ) ( ) \n 
+message = models . TextField ( ) \n 
+activity = models . ForeignKey ( Activity ) \n 
+token = models . UUIDField ( default = uuid . uuid4 , editable = False ) \n 
+requestor = models . ForeignKey ( Person ) \n 
+application = models . ForeignKey ( Application , blank = True ) \n 
+activities = models . ManyToManyField ( ActivityType , limit_choices_to = { : True } ) \n 
+file = models . FileField ( ) \n 
+REPORT_FILE_TYPE = \n 
+DOCUMENTATION_FILE_TYPE = \n 
+FILE_TYPE_CHOICES = ( \n 
+file_type = models . CharField ( max_length = 13 , choices = FILE_TYPE_CHOICES ) \n 
+User , \n 
+Address , \n 
+outputDir = "output" \n 
+languageDir = "languages" \n 
+basicString = "/get.php?username=%s&password=%s&type=m3u&output=mpegts" \n 
+opener . addheaders = [ ( , ) ] \n 
+fileLength = fileLength - 1 \n 
+progressBar . update ( ) \n 
+outputFile . close ( ) \n 
+False = 0 \n 
+protocol_name = \n 
+option_pattern = chr ( 0 ) * 8 \n 
+streamno += 1 \n 
+begin = toint ( s [ 5 : 9 ] ) \n 
+length = len ( s ) - 9 \n 
+x = self . next_func ( m ) \n 
+i += len ( word ) + 1 \n 
+longkeyed [ longname ] = option \n 
+GIT_FILEMODE_TREE , GIT_STATUS_CURRENT , \n 
+GIT_BRANCH_LOCAL , GIT_FILEMODE_BLOB_EXECUTABLE ) \n 
+DivergeCommits = namedtuple ( "DivergeCommits" , [ "common_parent" , \n 
+"first_commits" , "second_commits" ] ) \n 
+local_branch = self . lookup_branch ( branch , GIT_BRANCH_LOCAL ) \n 
+remote_branch ) \n 
+behind = len ( diverge_commits . second_commits ) > 0 \n 
+ahead = len ( diverge_commits . first_commits ) > 0 \n 
+full_path , \n 
+onerror = lambda function , fpath , excinfo : log . info ( \n 
+current_stat = os . lstat ( full_path ) \n 
+commiter = Signature ( commiter [ 0 ] , commiter [ 1 ] ) \n 
+tree , parents ) \n 
+callbacks = credentials ) \n 
+repo . checkout_head ( ) \n 
+len ( path_components ) == 1 and \n 
+entry_name == path_components [ 0 ] ) \n 
+git_obj = None \n 
+path_components , \n 
+lambda entry : self . _repo [ entry . id ] ) \n 
+GIT_FILEMODE_LINK : { \n 
+iterators = [ self . _repo . walk ( branch . target , sort ) \n 
+stop_iteration = [ False for branch in branches ] \n 
+commits [ index ] = commit \n 
+remote = [ remote for remote in self . _repo . remotes \n 
+first_commits = CommitsList ( ) \n 
+second_commits = CommitsList ( ) \n 
+walker = self . walk_branches ( GIT_SORT_TOPOLOGICAL , \n 
+first_branch , second_branch ) \n 
+second_commit in first_commits ) : \n 
+common_parent = second_commit \n 
+new_commit = Commit ( 2 , 2 , "21111111111" ) \n 
+mocked_commit . hex = \n 
+asserted_time . second ) \n 
+mocked_repo . walk . assert_called_once_with ( "head" , GIT_SORT_TIME ) \n 
+to_datetime = True ) == datetime \n 
+date = dt . date ( 1970 , 1 , 1 ) \n 
+datetime = dt . datetime ( 1970 , 1 , 1 , 13 , 30 ) \n 
+mocked_pattern . match . return_value = False \n 
+repos = github . orgs . django . repos \n 
+internationalizeDocstring = lambda x : x \n 
+Filter = conf . registerPlugin ( ) \n 
+__contributors__ = { } \n 
+reload ( plugin ) \n 
+configure = config . configure \n 
+__author__ = supybot . authors . jemfinch \n 
+__url__ = \n 
+SSLError = ssl . SSLError \n 
+conf . supybot . drivers . maxReconnectWait ( ) ) \n 
+server = drivers . ServersMixin . _getNextServer ( self ) \n 
+inst . conn . _sock . __class__ is socket . _closedsocket ) : \n 
+msg = drivers . parseMsg ( line ) \n 
+network_config = getattr ( conf . supybot . networks , self . irc . network ) \n 
+attempt = self . _attempt ) \n 
+socks_proxy = socks_proxy , \n 
+vhost = conf . supybot . protocols . irc . vhost ( ) , \n 
+vhostv6 = conf . supybot . protocols . irc . vhostv6 ( ) , \n 
+setTimeout ( ) \n 
+when = now + 60 \n 
+whenS = log . timestamp ( when ) \n 
+drivers . log . debug ( ) \n 
+certfile = certfile , \n 
+verify = verifyCertificates , \n 
+trusted_fingerprints = network_config . ssl . serverFingerprints ( ) , \n 
+ca_file = network_config . ssl . authorityCertificate ( ) , \n 
+newf . __doc__ = doc \n 
+LOCK = \n 
+lock . acquire ( ) \n 
+_debug_software_version = None \n 
+stack = [ ] \n 
+while tb : \n 
+tb = tb . tb_next \n 
+frame . f_lineno ) ) \n 
+frame_locals = frame . f_locals \n 
+UNASSIGNED_DISTRICT_ID = 0 \n 
+websession . save ( ) \n 
+window = timedelta ( 0 , 0 , 0 , 0 , settings . SESSION_TIMEOUT ) \n 
+note_session_activity ( request ) \n 
+ps = Plan . objects . filter ( pk = planid ) \n 
+p = Plan . objects . get ( pk = planid ) \n 
+shared = request . POST . get ( "shared" , False ) \n 
+plan_copy . save ( ) \n 
+criterion = ValidationCriteria . objects . filter ( legislative_body = plan . legislative_body ) \n 
+index = body_member_short_label . find ( ) \n 
+calculator_reports = [ ] \n 
+} , p . score_functions . all ( ) . filter ( selectable_bodies = plan . legislative_body } , report_displays [ 0 ] . scorepanel_set . all ( ) . order_by ( ) ) \n 
+levels = list ( ) \n 
+editable = False \n 
+default_demo = None \n 
+max_dists = 0 \n 
+body_member_short_label = \n 
+body_member_long_label = _ ( ) + \n 
+body_members = _n ( , , 2 ) \n 
+reporting_template = None \n 
+snaplayers = [ ] \n 
+long_label = body_member_long_label . strip ( ) . lower ( ) \n 
+has_regions = Region . objects . all ( ) . count ( ) > 1 \n 
+bodies = LegislativeBody . objects . all ( ) . order_by ( , ) \n 
+l_bodies = [ b for b in bodies if b in [ sd . legislative_body for sd in ScoreDisplay . objects . filter \n 
+planid = int ( planid ) \n 
+cfg [ ] = datetime . now ( ) \n 
+pt1 . transform ( SpatialReference ( ) ) \n 
+ll = ModestMaps . Geo . Location ( pt1 . y , pt1 . x ) \n 
+pt2 . transform ( SpatialReference ( ) ) \n 
+ur = ModestMaps . Geo . Location ( pt2 . y , pt2 . x ) \n 
+dims = ModestMaps . Core . Point ( width , height ) \n 
+basemap = ModestMaps . mapByExtent ( provider , ll , ur , dims ) \n 
+provider = ModestMaps . WMS . Provider ( cfg [ ] , { \n 
+maskImg = ImageChops . invert ( overlayImg ) \n 
+overlayImg = Image . blend ( overlayImg , ModestMaps . mapByExtent ( provider , ll , ur , dims ) . draw ( ) , \n 
+fullImg . save ( settings . WEB_TEMP + ( % sha . hexdigest ( ) ) , , quality = 100 ) \n 
+page = t . render ( DjangoContext ( cfg ) ) \n 
+CreatePDF ( page , result , show_error_as_pdf = True ) \n 
+body = LegislativeBody . objects . get ( id = int ( request . POST [ ] ) ) \n 
+index_file = request . FILES . get ( , False ) \n 
+PlanReport . createreport . delay ( planid , stamp , req , language = translation . get_language ( ) ) \n 
+sha . update ( function_ids ) \n 
+stamp = request . POST . get ( , sha . hexdigest ( ) ) \n 
+rptstatus = CalculatorReport . checkreport ( planid , stamp ) \n 
+req = { : function_ids } \n 
+CalculatorReport . createcalculatorreport . delay ( planid , stamp , req , language = translation . get_language ~~ else : \n 
+object_pk = district . id , \n 
+content_type = ct , \n 
+site_id = Site . objects . get_current ( ) . id , \n 
+user_name = request . user . username , \n 
+user_email = request . user . email , \n 
+transaction . commit ( ) \n 
+counts = request . POST . getlist ( ) \n 
+changed += 1 \n 
+from_id = int ( request . POST . get ( , - 1 ) ) \n 
+to_id = int ( request . POST . get ( , None ) ) \n 
+from_districts = filter ( lambda d : True if d . district_id == from_id else False , all_districts to_district = filter ( lambda d : True if d . district_id == to_id else False , all_districts ) [ 0 ] \n 
+locked = to_district . is_locked \n 
+otherid = int ( otherid ) \n 
+plan_ids = request . REQUEST . getlist ( ) \n 
+inverse = request . REQUEST [ ] == if in request . REQUEST else False \n 
+extended = request . REQUEST [ ] == if in request . REQUEST else False \n 
+layers = request . REQUEST . getlist ( ) \n 
+my_context . update ( plan . compute_splits ( layer , version = version , inverse = inverse , extended last_item = layer is layers [ - 1 ] \n 
+community_info = plan . get_community_type_info ( layer , version = version , inverse = inverse if community_info is not None : \n 
+html += report . render ( calc_context ) \n 
+geounit_ids = string . split ( request . REQUEST [ "geounits" ] , "|" ) \n 
+max_version = max ( [ d . version for d in districts ] ) \n 
+can_undo = max_version > plan . min_version \n 
+bbox = tuple ( map ( lambda x : float ( x ) , bbox . split ( ) ) ) \n 
+geom = GEOSGeometry ( wkt ) \n 
+wkt = wkt . replace ( , ) . replace ( , ) \n 
+districts = [ d . id for d in plan . get_districts_at_version ( version , include_geom = True ) if locked = District . objects . filter ( id__in = districts ) . collect ( ) \n 
+locked_buffered = locked . simplify ( 100 , True ) . buffer ( 100 ) if locked else None \n 
+filtered = Geolevel . objects . get ( id = geolevel ) . geounit_set . filter ( selection ) \n 
+logger . warn ( str ( request . POST ) ) \n 
+t_tuple = t . timetuple ( ) \n 
+t_seconds = time . mktime ( t_tuple ) \n 
+file_status = DistrictFile . get_file_status ( plan , shape = is_shape ) \n 
+status [ ] = ex \n 
+pfilter = Q ( legislative_body = leg_body ) & Q ( is_valid = True ) \n 
+leg_body = LegislativeBody . objects . get ( pk = body_pk ) \n 
+panels = display . scorepanel_set . all ( ) . order_by ( ) \n 
+writer . writerow ( [ , , ] + [ p . __unicode__ ( ) for p in panels ] ) \n 
+score = ComputedPlanScore . compute ( function , plan ) \n 
+rows = int ( request . POST . get ( , 10 ) ) \n 
+sidx = request . POST . get ( , ) \n 
+sord = request . POST . get ( , ) \n 
+owner_filter = request . POST . get ( ) ; \n 
+body_pk = int ( body_pk ) if body_pk else body_pk ; \n 
+search = request . POST . get ( , False ) ; \n 
+search_string = request . POST . get ( , ) ; \n 
+is_community = request . POST . get ( , False ) == ; \n 
+start = end - rows \n 
+all_plans = Plan . objects . filter ( available , not_creating , search_filter , community_filter ) . order_by \n 
+plans_list = list ( ) \n 
+all_districts = ( ) \n 
+districts_list = list ( ) \n 
+new_description = request . POST . get ( , ) \n 
+_ ( ) ) \n 
+space = os . statvfs ( ) \n 
+scorefunctions = [ ] \n 
+user_functions = ScoreFunction . objects . filter ( selectable_bodies = plan . legislative_body ) . order_by for f in user_functions : \n 
+admin_display_names = [ \n 
+"%s_sidebar_demo" % plan . legislative_body . name , \n 
+plan . legislative_body . name ) \n 
+owner__is_superuser = True , \n 
+legislative_body = plan . legislative_body , \n 
+name__in = admin_display_names \n 
+owner = request . user , \n 
+qset = display . scorepanel_set . all ( ) \n 
+functions = map ( lambda x : int ( x ) , functions ) \n 
+is_page = False , \n 
+display = display . copy_from ( display = demo , title = request . POST . get ( ) , owner = result [ ] = True \n 
+version = min ( plan . version , int ( version ) ) \n 
+district_copy . clone_relations_from ( district ) \n 
+district = district_copy \n 
+Comment . objects . filter ( object_pk = district . id , content_type = ct ) . delete ( ) \n 
+comment = Comment ( \n 
+TaggedItem . objects . filter ( tag__in = tset , object_id = district . id ) . delete ( ) \n 
+purge_plan_clear_cache ( district , version ) \n 
+geolevel = plans [ 0 ] . legislative_body . get_geolevels ( ) [ 0 ] \n 
+extent = geolevel . geounit_set . collect ( ) . extent \n 
+xml = feed . render ( DjangoContext ( context ) ) \n 
+plans = Plan . objects . filter ( is_shared = True ) . order_by ( ) [ 0 : 10 ] \n 
+cmp_to_key ) \n 
+#------------------------------------------------------------------------------- \n 
+mem0 . wait ( ) \n 
+mem1 . wait ( ) \n 
+mem2 . wait ( ) \n 
+mem3 . wait ( ) \n 
+channel . read ( ) \n 
+mem_d1 . wait ( ) \n 
+write_page = 0 if write_page == 1 else write_page + 1 \n 
+st_step ( mesh_size , b_offset , a_offset ) \n 
+read_addr = a_offset \n 
+init_sum = 1 if i == 0 else 0 \n 
+calc_sum = 1 \n 
+mesh_size = iochannel . read ( ) \n 
+num_iter = iochannel . read ( ) \n 
+a_offset = iochannel . read ( ) \n 
+b_offset = iochannel . read ( ) \n 
+st_set_mesh_size ( mesh_size ) \n 
+st_computation ( num_iter , mesh_size ) \n 
+check_sum = st_sum ( mesh_size ) \n 
+iochannel . write ( check_sum ) \n 
+mem_d0 . read_nonblocking ( 1 , write_addr , mesh_size - 2 ) \n 
+write_addr += mesh_size * DSIZE \n 
+lines = f . readlines ( ) \n 
+p_thread = re . compile ( ) \n 
+p_thread_id = re . compile ( ) \n 
+p_object_id = re . compile ( ) \n 
+p_width = re . compile ( ) \n 
+p_depth = re . compile ( ) \n 
+p_indexwidth = re . compile ( ) \n 
+p_logdepth = re . compile ( ) \n 
+p_sub_id = re . compile ( ) \n 
+thread_name = None \n 
+module_name = re . search ( , line ) . group ( 1 ) \n 
+mode = True \n 
+thread_id = re . match ( , tid_str ) . group ( 2 ) \n 
+object_id = re . match ( , oid_str ) . group ( 2 ) \n 
+depth = re . match ( , depth_str ) . group ( 1 ) \n 
+indexwidth = re . match ( , indexwidth_str ) . group ( 1 ) \n 
+logdepth = re . match ( , logdepth_str ) . group ( 1 ) \n 
+sub_id_m = re . search ( , sid_str ) \n 
+sub_id = sub_id_m . group ( 0 ) \n 
+sub_id_num = sub_id_m . group ( 2 ) \n 
+sub_id_base = ( 10 if sub_id_m . group ( 1 ) . count ( "\'d" ) > 0 else \n 
+16 if sub_id_m . group ( 1 ) . count ( "\'h" ) > 0 else \n 
+2 if sub_id_m . group ( 1 ) . count ( "\'b" ) > 0 else \n 
+10 ) \n 
+optparser . add_option ( "--noreorder" , action = "store_true" , dest = "noreorder" , \n 
+filelist = args \n 
+directives = analyzer . get_directives ( ) \n 
+signals = analyzer . getSignals ( ) \n 
+consts = analyzer . getConsts ( ) \n 
+truenode = replaceUndefined ( tree . truenode , termname ) \n 
+falsenode = replaceUndefined ( tree . falsenode , termname ) \n 
+lsb = replaceUndefined ( tree . lsb , termname ) \n 
+var = replaceUndefined ( tree . var , termname ) \n 
+codedir = os . path . dirname ( os . path . dirname ( os . path . dirname ( os . path . abspath ( __file__ ) ) ) ) + \n 
+topmodule = \n 
+include = None \n 
+define = None \n 
+analyzer = VerilogDataflowAnalyzer ( filelist , topmodule , \n 
+noreorder = noreorder , \n 
+nobind = nobind , \n 
+preprocess_include = include , \n 
+preprocess_define = define ) \n 
+instances = analyzer . getInstances ( ) \n 
+terms = analyzer . getTerms ( ) \n 
+optimizer . resolveConstant ( ) \n 
+c_analyzer = VerilogControlflowAnalyzer ( topmodule , terms , \n 
+binddict , \n 
+resolved_terms = optimizer . getResolvedTerms ( ) , \n 
+resolved_binddict = optimizer . getResolvedBinddict ( ) , \n 
+constlist = optimizer . getConstlist ( ) \n 
+expected_ast = parser . parse ( expected_verilog ) \n 
+codegen = ASTCodeGenerator ( ) \n 
+expected_code = codegen . visit ( expected_ast ) \n 
+interval = m . Parameter ( , 16 ) \n 
+verilog = led . to_verilog ( ) \n 
+sub = mkSub ( ) \n 
+inst_sub = m . Reg ( , 32 ) \n 
+#print(verilog) \n 
+led ( led + 1 ) , \n 
+SingleStatement ( SystemTask ( , , led ) ) \n 
+y = dataflow . Variable ( , valid = , ready = , point = 4 ) \n 
+z . output ( , valid = , ready = ) \n 
+df = dataflow . Dataflow ( z ) \n 
+main = mkMain ( ) \n 
+xdata = ports [ ] \n 
+xvalid = ports [ ] \n 
+xready = ports [ ] \n 
+ydata = ports [ ] \n 
+yvalid = ports [ ] \n 
+yready = ports [ ] \n 
+zdata = ports [ ] \n 
+zvalid = ports [ ] \n 
+zready = ports [ ] \n 
+xdata_orig = m . RegLike ( ports [ ] , name = , initval = 0 ) \n 
+ydata_orig = m . RegLike ( ports [ ] , name = , initval = 0 ) \n 
+zdata_orig = m . WireLike ( ports [ ] , name = ) \n 
+params = m . connect_params ( main ) , \n 
+reset_stmt . append ( ydata_orig ( 0 ) ) \n 
+reset_done ( 1 ) , \n 
+nclk ( clk ) , \n 
+Delay ( 10000 ) , \n 
+yinit = fsm . current ( ) \n 
+send ( , ydata_orig , yvalid , yready , step = 1 , waitnum = 20 ) \n 
+receive ( , zdata , zvalid , zready , waitnum = 50 ) \n 
+If ( AndList ( zvalid , zready ) ) ( \n 
+Systask ( , , zdata_orig ) \n 
+sim = simulation . Simulator ( test ) \n 
+#sim.view_waveform(background=True) \n 
+count = m . Reg ( , width = 32 , initval = 0 ) \n 
+up = m . Wire ( ) \n 
+down = m . Wire ( ) \n 
+fsm . add ( valid ( down ) , cond = c , delay = 4 , eager_val = True , lazy_cond = True ) \n 
+clk = m . Reg ( ) \n 
+rst = m . Reg ( ) \n 
+uut = m . Instance ( mkLed ( ) , , \n 
+simulation . setup_waveform ( m , uut ) \n 
+init = simulation . setup_reset ( m , rst , period = 100 ) \n 
+update = m . Input ( ) \n 
+rslt = m . Wire ( , retwidth , signed = True ) \n 
+__a = _a \n 
+__b = _b \n 
+_a ( a ) , \n 
+_b ( b ) , \n 
+tmpval [ 0 ] ( rslt ) , \n 
+retwidth = lwidth + rwidth \n 
+mult = mkMultiplierCore ( index , lwidth , rwidth , lsigned , rsigned , depth ) \n 
+enable = m . Input ( ) \n 
+vtypes . If ( rst ) ( \n 
+valid_reg [ 0 ] ( enable ) , \n 
+ports = [ ( , clk ) , ( , update ) , ( , a ) , ( , b ) , ( , c ) ] \n 
+m . Instance ( mult , , ports = ports ) \n 
+mul = mkMultiplier ( index_count , lwidth , rwidth , lsigned , rsigned , depth ) \n 
+index_count = 0 \n 
+conn = self . connections [ 0 ] \n 
+OperationalError , \n 
+MROW = 1000 * 1000. \n 
+COLDCACHE = 5 \n 
+WARMCACHE = 5 \n 
+rdm_cod = [ , ] \n 
+stdout = subprocess . PIPE ) . stdout \n 
+line = [ l for l in sout ] [ 0 ] \n 
+lmean = ltimes . mean ( ) \n 
+lstd = ltimes . std ( ) \n 
+nmean = ntimes . mean ( ) \n 
+nstd = ntimes . std ( ) \n 
+ntimes = len ( ltimes ) \n 
+ctimes = ltimes [ 1 : COLDCACHE ] \n 
+cmean , cstd = self . norm_times ( ctimes ) \n 
+wtimes = ltimes [ WARMCACHE : ] \n 
+wmean , wstd = self . norm_times ( wtimes ) \n 
+round ( wmean , prec ) , "+-" , round ( wstd , prec ) ) \n 
+size = stop - start ) \n 
+arr_i4 = numpy . array ( arr_f8 , dtype = ) \n 
+init_size = self . get_db_size ( ) \n 
+t1 = time ( ) \n 
+table_size = self . get_db_size ( ) \n 
+indexes_size = self . get_db_size ( ) \n 
+idx_cols = [ , ] \n 
+base = numpy . random . randint ( self . nrows ) \n 
+random . seed ( rseed ) \n 
+numpy . random . seed ( rseed ) \n 
+rndbase = numpy . random . randint ( self . nrows , size = niter ) \n 
+ltimes = [ ] \n 
+psyco_imported = 1 \n 
+usepostgres = 0 \n 
+verbose = 0 \n 
+doprofile = 0 \n 
+dokprofile = 0 \n 
+usepsyco = 0 \n 
+userandom = 0 \n 
+docreate = 0 \n 
+optlevel = 0 \n 
+kind = "medium" \n 
+complib = "zlib" \n 
+doquery = False \n 
+rng = [ - 1000 , - 1000 ] \n 
+repeatquery = 0 \n 
+krows = \n 
+dtype = "all" \n 
+datadir = "data.nobackup" \n 
+onlyidxquery = True \n 
+onlynonidxquery = True \n 
+inkernel = False \n 
+"\'ultralight\'" ) \n 
+repeatvalue = int ( option [ 1 ] ) \n 
+docompress , complib , kind , optlevel ) \n 
+psyco . bind ( db . query_db ) \n 
+kcg . output ( ofile ) \n 
+ofile . close ( ) \n 
+benchtime , stones = prof . run ( \n 
+prof . close ( ) \n 
+stats . print_stats ( 20 ) \n 
+avoidfscache , verbose , inkernel ) \n 
+db . rng = [ - rng / 2 , rng / 2 ] \n 
+KB_ = 1024 \n 
+MB_ = 1024 * KB_ \n 
+GB_ = 1024 * MB_ \n 
+markers = [ , , , , , , , , , ] \n 
+markersize = 8 \n 
+memcpyw = float ( tmp . split ( ) [ 1 ] ) \n 
+memcpyr = float ( tmp . split ( ) [ 1 ] ) \n 
+values [ "memcpyr" ] . append ( memcpyr ) \n 
+speedw = float ( tmp . split ( ) [ 1 ] ) \n 
+ratio = float ( line . split ( ) [ - 1 ] ) \n 
+speedsw . append ( speedw ) \n 
+ratios . append ( ratio ) \n 
+speedr = float ( tmp . split ( ) [ 1 ] ) \n 
+speedsr . append ( speedr ) \n 
+ylabel ( ) \n 
+xlim ( 0 , xmax ) \n 
+ylim ( 0 , None ) \n 
+grid ( True ) \n 
+legend ( [ p [ 0 ] for p in plots \n 
+savefig ( outfile , dpi = 64 ) \n 
+compress_title = \n 
+decompress_title = \n 
+yaxis = \n 
+help = , ) \n 
+parser . add_option ( , , action = , \n 
+default = False ) \n 
+plot_title = decompress_title \n 
+cspeed = options . cspeed \n 
+dspeed = options . dspeed \n 
+legends = [ ] \n 
+nthreads , values = get_values ( filename ) \n 
+plots . append ( plot_ ) \n 
+nmarker = nt \n 
+linewidth = linewidth ) \n 
+show_plot ( plots , yaxis , legends , gtitle , xmax = int ( options . xmax ) if \n 
+options . xmax else None ) \n 
+hdfarray . attrs . object = { "a" : 32.1 , "b" : 1 , "c" : [ 1 , 2 ] } \n 
+tearDown ( fileh ) \n 
+fileh . remove_node ( ) \n 
+demo_manyops ( ) \n 
+######################################################################## \n 
+PerformanceWarning ) \n 
+__docformat__ = \n 
+cname = self . __class__ . __name__ \n 
+addr = hex ( id ( self ) ) \n 
+class_name_dict [ class_ . __name__ ] = class_ \n 
+cid = getattr ( class_ , , None ) \n 
+_AttributeSet = AttributeSet \n 
+_v_isopen = False \n 
+parentnode . _g_check_open ( ) \n 
+parentdepth = parentnode . _v_depth \n 
+root_uep = file_ . root_uep \n 
+newdepth = newpath . count ( ) \n 
+pathname = self . _v_pathname \n 
+node_manager . registry . pop ( pathname , None ) \n 
+myDict . clear ( ) \n 
+file_ . _log ( , oldpathname ) \n 
+move_to_shadow ( file_ , oldpathname ) \n 
+oldname = self . _v_name \n 
+oldparent . _g_unrefnode ( oldname ) \n 
+oldpathname , self . _v_pathname ) \n 
+newpath = newparent \n 
+oldpath = oldparent . _v_pathname \n 
+newparent = file_ . _get_or_create_path ( newparent , createparents ) \n 
+recursive = False , _log = False , ** kwargs ) \n 
+overwrite = False , recursive = False , createparents = False , \n 
+srcfile = self . _v_file \n 
+srcparent = self . _v_parent \n 
+srcname = self . _v_name \n 
+dstparent = newparent \n 
+dstname = newname \n 
+dstpath = dstparent \n 
+UndoRedoWarning ) \n 
+% node . _v_pathname ) \n 
+or pathname . startswith ( mypathname + ) ) : \n 
+h5file = self . h5file \n 
+newarr = self . h5file . create_array ( , , [ 1 ] ) \n 
+initmid = self . h5file . get_current_mark ( ) \n 
+with self . assertRaises ( tables . UndoRedoError ) : \n 
+m1 = self . h5file . mark ( ) \n 
+m2 = self . h5file . mark ( ) \n 
+mid = self . h5file . mark ( ) \n 
+_reopen_flag = True \n 
+"/othergroup1/othergroup2/othergroup3" not in self . h5file ) \n 
+var2 = BoolCol ( dflt = 0 , pos = 2 ) \n 
+var3 = IntCol ( dflt = 0 , pos = 3 ) \n 
+var4 = FloatCol ( dflt = 0 , pos = 4 ) \n 
+None , nrows ) \n 
+indexrows = table . cols . var3 . create_index ( ) \n 
+populateTable ( self . h5file . root , ) \n 
+oldNode = self . h5file . root . agroup \n 
+new_node = self . h5file . copy_children ( \n 
+, , recursive = 1 ) \n 
+setattr ( attrs , , 11 ) \n 
+delattr ( attrs , ) \n 
+rattrs . attr_1 = 100 \n 
+array = self . h5file . root . array \n 
+attrs . attr_1 = 11 \n 
+arr . _v_attrs . foo = \n 
+g1 = self . h5file . create_group ( , ) \n 
+paths = [ , , , ] \n 
+doit ( newpath ) \n 
+after = self . existing ( paths ) \n 
+post ( newpath ) \n 
+niter = 1 \n 
+theSuite . addTest ( unittest . makeSuite ( CreateParentsTestCase ) ) \n 
+common . print_versions ( ) \n 
+app = TestApp ( app ) \n 
+TestWSGIController . setUp ( self ) \n 
+environ . update ( self . environ ) \n 
+warnings . simplefilter ( , Warning ) \n 
+assert response . header ( ) == \n 
+############################################################################## \n 
+CHANGES = open ( os . path . join ( here , ) , encoding = "utf-8" ) . read ( ) \n 
+docs_extras = [ , ] \n 
+maintainer_email = "domen@dev.si" , \n 
+tests_require = requires + [ ] , \n 
+Table , \n 
+ForeignKey , \n 
+scoped_session , \n 
+sessionmaker , \n 
+relation , \n 
+column_property , \n 
+synonym , \n 
+joinedload , \n 
+Integer , \n 
+Unicode , \n 
+UnicodeText , \n 
+Everyone , \n 
+Authenticated , \n 
+Allow , \n 
+Base = declarative_base ( ) \n 
+crypt = cryptacular . bcrypt . BCRYPTPasswordManager ( ) \n 
+user_id = Column ( Integer , primary_key = True ) \n 
+username = Column ( Unicode ( 20 ) , unique = True ) \n 
+email = Column ( Unicode ( 50 ) ) \n 
+hits = Column ( Integer , default = 0 ) \n 
+misses = Column ( Integer , default = 0 ) \n 
+delivered_hits = Column ( Integer , default = 0 ) \n 
+delivered_misses = Column ( Integer , default = 0 ) \n 
+_password = Column ( , Unicode ( 60 ) ) \n 
+Column ( , Integer , ForeignKey ( ) ) \n 
+tag_id = Column ( Integer , primary_key = True ) \n 
+DBSession . add ( tag ) \n 
+idea_id = Column ( Integer , primary_key = True ) \n 
+target_id = Column ( Integer , ForeignKey ( ) ) \n 
+comments = relation ( , cascade = "delete" , \n 
+author_id = Column ( Integer , ForeignKey ( ) ) \n 
+author = relation ( User , cascade = "delete" , backref = ) \n 
+text = Column ( UnicodeText ) \n 
+tags = relation ( Tag , secondary = ideas_tags , backref = ) \n 
+voted_users = relation ( User , secondary = voted_users , lazy = , \n 
+backref = ) \n 
+hit_percentage = column_property ( hit_percentage . label ( ) ) \n 
+total_votes = column_property ( ( hits + misses ) . label ( ) ) \n 
+vote_differential = column_property ( \n 
+query = query . filter ( cls . target == None ) . order_by ( order_by ) \n 
+auditlog = AuditLog ( ) \n 
+mock_get_auditlog . side_effect = lambda c : auditlog \n 
+entries = list ( auditlog . entries ) \n 
+entry = entries [ 0 ] \n 
+json . loads ( entry [ 2 ] . payload ) , \n 
+: 5 \n 
+registry . content = DummyContentRegistry ( ) \n 
+evolve_packages ) \n 
+gc = Dummy_get_connection ( root ) \n 
+ep = DummyFunction ( True ) \n 
+app_root = object ( ) \n 
+connection_will_close , \n 
+ZODBConnectionOpened , \n 
+ZODBConnectionWillClose , \n 
+includeme ( config ) \n 
+config . subscriptions , \n 
+connection_opened ( event ) \n 
+L , \n 
+savepointed = False \n 
+FilePropertiesSchema , \n 
+FileUploadTempStore , \n 
+file_upload_widget , \n 
+file_name_node , \n 
+USE_MAGIC , \n 
+IFile , \n 
+IFolder , \n 
+http_cache = 0 , \n 
+tab_title = , \n 
+deform . schema . FileData ( ) , \n 
+widget = file_upload_widget , \n 
+missing = colander . null , \n 
+name_node . validator ( node [ ] , filename ) \n 
+node , \n 
+renderer = , \n 
+addable_content = , \n 
+tab_condition = False \n 
+schema [ ] . missing = colander . null \n 
+buttons = ( , ) \n 
+title = appstruct [ ] or None \n 
+mimetype = appstruct [ ] or USE_MAGIC \n 
+fileob = self . _makeob ( stream , title , mimetype ) \n 
+tmpstore . clear ( ) \n 
+tempstore = FileUploadTempStore ( request ) \n 
+filedata = tempstore . get ( uid , { } ) \n 
+filename = filedata [ ] \n 
+fp = open ( onepixel , ) \n 
+root = testing . DummyResource ( ) \n 
+directlyProvides ( root , IFolder ) \n 
+groups [ ] = testing . DummyResource ( ) \n 
+site [ ] = group \n 
+users [ ] = testing . DummyResource ( ) \n 
+reset = testing . DummyResource ( ) \n 
+parent [ ] = user \n 
+user . __acl__ , \n 
+resource1 . __acl__ = [ ( None , , None ) , ( None , 1 , None ) ] \n 
+resource2 . __acl__ = [ ( None , , None ) , ( None , 2 , None ) ] \n 
+resource . __objectmap__ = objectmap \n 
+event = DummyEvent ( \n 
+object = resource , \n 
+new_acl = [ ( None , , None ) , ( None , 1 , None ) ] , \n 
+old_acl = [ ( None , , None ) , ( None , 2 , None ) ] , \n 
+objectmap . disconnections , \n 
+HTTPForbidden , \n 
+HTTPFound \n 
+remember , \n 
+forget , \n 
+NO_PERMISSION_REQUIRED , \n 
+permission = NO_PERMISSION_REQUIRED , \n 
+effective_principals = Authenticated , \n 
+referrer = request . url \n 
+adapter = request . registry . queryMultiAdapter ( \n 
+IUserLocator \n 
+request . registry . notify ( LoggedIn ( login , user , context , request ) ) \n 
+came_from = came_from , \n 
+login = login , \n 
+password = password , \n 
+login_template = template , \n 
+headers = headers ) \n 
+mimetypes . add_type ( , ) \n 
+result = stx2html ( context . source ) \n 
+dirname , filename = os . path . split ( context . path ) \n 
+mt , encoding = mimetypes . guess_type ( filename ) \n 
+response . content_type = mt or \n 
+setup_dir = os . path . abspath ( os . path . dirname ( setup_file ) ) \n 
+test_dir = os . path . join ( setup_dir , ) \n 
+test_suite = unittest . defaultTestLoader . discover ( test_dir ) \n 
+blacklist = [ ] \n 
+new_suite = unittest . TestSuite ( ) \n 
+method , \n 
+getattr ( SkipCase ( ) , ) ) \n 
+surrogateescape . register_surrogateescape ( ) \n 
+_builtin_next = next \n 
+_SENTINEL = object ( ) \n 
+iterator . __class__ . __name__ ) ) \n 
+_builtin_bytes = bytes \n 
+encoding = kwargs [ ] \n 
+errors = kwargs [ ] \n 
+register_surrogateescape ( ) \n 
+parts = super ( newbytes , self ) . splitlines ( keepends ) \n 
+pos = self . rfind ( sub , * args ) \n 
+replaced_builtins = . split ( ) \n 
+expression = . join ( [ "name=\'{0}\'" . format ( name ) for name in replaced_builtins ] ) \n 
+run_order = 9 \n 
+touch_import_top ( , name . value , node ) \n 
+super ( TestPasteurize , self ) . setUp ( ) \n 
+code = \n 
+retcode = main ( [ self . textfilename ] ) \n 
+fnode = copy . deepcopy ( fnode ) \n 
+finfo = inspect_function ( fnode ) \n 
+remap [ n . id ] = new_name \n 
+dindex = i - offset \n 
+s . append ( a ) \n 
+v = self . visit ( node . values [ i ] ) \n 
+bases . add ( n ) \n 
+props . update ( self . _class_props [ p ] ) \n 
+base_classes . add ( self . _classes [ p ] ) \n 
+kwargs_init = [ % ( x . split ( ) [ 0 ] , x . split ( ) [ 0 ] ) for x in kwargs ] \n 
+TransformSuperCalls ( b , bases ) \n 
+operator = False \n 
+else : nargs = node . args . args \n 
+kwargs . append ( % ( a , default_value ) ) \n 
+target = node . targets [ 0 ] \n 
+value = self . visit ( node . value ) \n 
+setter = False \n 
+args_typedefs = { } \n 
+offset = len ( node . args . args ) - len ( node . args . defaults ) \n 
+varargs_name = None \n 
+varargs = [ % n for n in range ( 16 ) ] \n 
+oargs . append ( % ( a , default_value ) ) \n 
+buffer += % self . indent ( ) \n 
+rem = [ ] \n 
+arg_name = args = None \n 
+direct = False \n 
+comp . append ( self . visit ( node . comparators [ i ] ) ) \n 
+n = 3000 \n 
+seq = [ ] \n 
+cache = [ ] \n 
+sleep ( 1.0 ) \n 
+testtime = time ( ) - starttime \n 
+primes_per_sec = len ( seq ) * ( 1.0 / testtime ) \n 
+a = None \n 
+b = range ( 1 , 10 ) \n 
+threading . start_webworker = l \n 
+w1 = threading . start_webworker ( worker , ( seq , , ) ) \n 
+w2 = threading . start_webworker ( worker , ( seq , , ) ) \n 
+TestError ( in seq ) \n 
+del self . face_groups [ : ] \n 
+file_in = open ( fname ) \n 
+command = words [ 0 ] \n 
+data = words [ 1 : ] \n 
+mtllib_path = os . path . join ( model_path , data [ 0 ] ) \n 
+vertex = ( float ( x ) , float ( y ) , float ( z ) ) \n 
+tex_coord = ( float ( s ) , float ( t ) ) \n 
+normal = ( float ( x ) , float ( y ) , float ( z ) ) \n 
+indices = ( int ( vi ) - 1 , int ( ti ) - 1 , int ( ni ) - 1 ) \n 
+current_face_group . tri_indices . append ( indices ) \n 
+texture_path = os . path . join ( model_path , material . texture_fname ) \n 
+texture_surface = pygame . image . load ( texture_path ) \n 
+glBindTexture ( GL_TEXTURE_2D , material . texture_id ) \n 
+glTexParameteri ( GL_TEXTURE_2D , \n 
+GL_TEXTURE_MAG_FILTER , \n 
+GL_LINEAR ) \n 
+GL_TEXTURE_MIN_FILTER , \n 
+GL_LINEAR_MIPMAP_LINEAR ) \n 
+glPixelStorei ( GL_UNPACK_ALIGNMENT , 1 ) \n 
+gluBuild2DMipmaps ( GL_TEXTURE_2D , \n 
+3 , \n 
+width , \n 
+height , \n 
+GL_RGB , \n 
+GL_UNSIGNED_BYTE , \n 
+texture_data ) \n 
+material . name = data [ 0 ] \n 
+tex_coords = self . tex_coords \n 
+normals = self . normals \n 
+glBegin ( GL_TRIANGLES ) \n 
+glNormal3fv ( normals [ ni ] ) \n 
+glVertex3fv ( vertices [ vi ] ) \n 
+glNewList ( self . display_list_id , GL_COMPILE ) \n 
+red = min ( red , 255 ) \n 
+green = min ( green , 255 ) \n 
+blue = min ( blue , 255 ) \n 
+picture_file = \n 
+picture = pygame . image . load ( picture_file ) . convert ( ) \n 
+scroll_speed = 1000. \n 
+clock = pygame . time . Clock ( ) \n 
+joystick . init ( ) \n 
+exit ( ) \n 
+scroll_direction . normalize ( ) \n 
+screen . blit ( picture , ( - picture_pos . x , picture_pos . y ) ) \n 
+time_passed = clock . tick ( ) \n 
+time_passed_seconds = time_passed / 1000.0 \n 
+picture_pos += scroll_direction * scroll_speed * time_passed_seconds \n 
+pygame . display . update ( ) \n 
+__version__ = "0.0.3" \n 
+THISDIR = os . path . dirname ( os . path . abspath ( __file__ ) ) \n 
+os . chdir ( THISDIR ) \n 
+VERSION = open ( "version.txt" ) . readline ( ) . strip ( ) \n 
+HOMEPAGE = "https://github.com/ofpay/dubbo-client-py" \n 
+DOWNLOAD_BASEURL = "https://github.com/ofpay/dubbo-client-py/raw/master/dist/" \n 
+DOWNLOAD_URL = DOWNLOAD_BASEURL + "dubbo-client-%s-py2.7.egg" % VERSION \n 
+name = "dubbo-client" , \n 
+long_description = open ( "README.md" ) . read ( ) , \n 
+keywords = ( \n 
+author_email = "chinalibra@gmail.com" , \n 
+url = HOMEPAGE , \n 
+download_url = DOWNLOAD_URL , \n 
+install_requires = [ "kazoo>=2.0" , "python-jsonrpc>=0.7.3" ] , \n 
+field = models . BooleanField ( default = False ) , \n 
+WA = 1 \n 
+AC = 0 \n 
+SPJ_ERROR = - 1 \n 
+max_cpu_time = max_cpu_time , max_memory = max_memory , \n 
+args = [ in_path , user_out_path ] , env = [ "PATH=" + os . environ . get ( "PATH" , "" ) use_sandbox = True , use_nobody = True ) \n 
+migrations . RemoveField ( \n 
+d = "Distance" , \n 
+print_skip = 5 , * args , ** kwargs ) : \n 
+iterate += 1 \n 
+error = np . max ( np . abs ( new_v - v ) ) \n 
+_print_after_skip ( print_skip , iterate , error , etime ) \n 
+a_1 = 0.5 \n 
+rho = 0.9 \n 
+sigma_d = 0.05 \n 
+beta = 0.95 \n 
+c = 2 \n 
+gamma = 50.0 \n 
+theta = 0.002 \n 
+ac = ( a_0 - c ) / 2.0 \n 
+R = - R \n 
+Q = gamma / 2 \n 
+A = np . array ( [ [ 1. , 0. , 0. ] , \n 
+B = np . array ( [ [ 0. ] , \n 
+C = np . array ( [ [ 0. ] , \n 
+Fr , Kr , Pr = self . Fr , self . Kr , self . Pr \n 
+Fs , Ks , Ps = rblq . robust_rule_simple ( P_init = Pr , tol = 1e-12 ) \n 
+K_f2k , P_f2k = rblq . F_to_K ( Fr ) \n 
+F_k2f , P_k2f = rblq . K_to_F ( Kr ) \n 
+Kf , Pf , df , Of , of = rblq . evaluate_F ( Fr ) \n 
+assert_allclose ( Kf , Kr ) \n 
+fileName = "defaultAlphaFileName.h5" \n 
+exchange = pt . StringCol ( 10 ) \n 
+alphaValue = pt . Float32Col ( ) \n 
+timestamp = pt . Time64Col ( ) \n 
+group = h5f . createGroup ( "/" , ) \n 
+opened = True \n 
+global ctr \n 
+raise IOError \n 
+table . flush ( ) \n 
+h5f . close ( ) \n 
+listOfInputPaths . append ( rootdir + "/Raw/Yahoo/US/NYSE/" ) \n 
+listOfOutputPaths . append ( rootdir + "/Processed/Yahoo/US/NYSE/" ) \n 
+sys . exit ( "FAILURE" ) \n 
+stocks_at_this_path = dircache . listdir ( str ( path ) ) \n 
+filtered_names = map ( lambda x : ( x . partition ( str ( fileExtensionToRemove ) ) [ 0 ] ) , filtered_names ) \n 
+stock_ctr = - 1 \n 
+stock_data = np . loadtxt ( path + stock + ".csv" , np . float , None , "," , None , 1 , use_cols ) \n 
+stock_data_shape = stock_data . shape \n 
+pkl . dump ( stock_data , f , - 1 ) \n 
+symbols = list ( [ ] ) \n 
+startday = dt . datetime ( t [ 2 ] , t [ 0 ] , t [ 1 ] ) \n 
+t = map ( int , sys . argv [ 2 ] . split ( ) ) \n 
+endday = dt . datetime ( t [ 2 ] , t [ 0 ] , t [ 1 ] ) \n 
+timeofday = dt . timedelta ( hours = 16 ) \n 
+timestamps = du . getNYSEdays ( startday , endday , timeofday ) \n 
+dataobj = da . DataAccess ( ) \n 
+historic = dataobj . get_data ( timestamps , symbols , "close" ) \n 
+alloc_val = random . random ( ) \n 
+alloc = alloc . append ( DataMatrix ( index = [ historic . index [ date ] ] , data = [ alloc_val ] , columns = [ symbols ~~ alloc [ ] = 1 - alloc [ symbols [ 0 ] ] \n 
+output = open ( sys . argv [ 3 ] , "wb" ) \n 
+cPickle . dump ( alloc , output ) \n 
+fileExtensionToRemove = ".h5" \n 
+stocksAtThisPath = map ( lambda x : ( x . partition ( str ( fileExtensionToRemove ) ) [ 0 ] ) , stocksAtThisPath \n 
+dataItemsList . append ( ) \n 
+#listOfPaths.append("/hzr71/research/QSData/Processed/Norgate/Equities/US_NASDAQ/") \n 
+#listOfPaths.append("/hzr71/research/QSData/Processed/Norgate/Equities/Delisted_US_Recent/") \n 
+#listOfPaths.append("/hzr71/research/QSData/Processed/Norgate/Equities/OTC/") \n 
+#listOfPaths.append("/hzr71/research/QSData/Processed/Norgate/Equities/US_AMEX/") \n 
+#listOfPaths.append("/hzr71/research/QSData/Processed/Norgate/Equities/US_Delisted/") \n 
+#listOfPaths.append("/hzr71/research/QSData/Processed/Norgate/Equities/US_NYSE/") \n 
+#listOfStocks.append("AAPL") \n 
+#listOfStocks.append("YHOO") \n 
+#listOfStocks.append("AMZN") \n 
+listOfPaths . append ( "C:\\\\test\\\\temp\\\\" ) \n 
+#listOfPaths.append("C:\\\\test\\\\hdf\\\\") \n 
+listOfStocks = getStocks ( listOfPaths ) \n 
+tslist = list ( alpha . getTimestampArray ( ) ) \n 
+listOfTS = alpha . getTimestampArray ( ) \n 
+ctr += 1 \n 
+DOCSTRING_PARAM_PATTERNS = [ \n 
+DOCSTRING_RETURN_PATTERNS = [ \n 
+REST_ROLE_PATTERN = re . compile ( ) \n 
+@ memoize_default ( None , evaluator_is_first_arg = True ) \n 
+param_str = _search_param_in_docstr ( func . raw_doc , str ( param . get_name ( ) ) ) \n 
+patterns = [ re . compile ( p % re . escape ( param_str ) ) \n 
+match = REST_ROLE_PATTERN . match ( type_str ) \n 
+pseudo_cls = p . module . subscopes [ 0 ] \n 
+definitions = evaluator . eval_statement ( stmt ) \n 
+it = ( evaluator . execute ( d ) for d in definitions ) \n 
+tok = parsed . module . subscopes [ 0 ] . statements [ 0 ] . _token_list [ 2 ] \n 
+__all__ = [ , , ] \n 
+SPARQL_DATASET = 0 \n 
+NAMED_GRAPH = 1 \n 
+__slots__ = ( "graphVariable" , \n 
+"DAWG_DATASET_COMPLIANCE" , \n 
+"identifier" , \n 
+"graphKind" , \n 
+"graph" ) \n 
+( None , \n 
+f = None \n 
+localBnodes = { } \n 
+triplet = [ ] \n 
+valid = True \n 
+retval += other \n 
+def __init__ ( self , patterns = [ ] , prolog = None ) : \n 
+GraphPattern . __init__ ( self , patterns ) \n 
+return term . n3 ( ) \n 
+. join ( [ + . join ( [ \n 
+v1 = Variable ( "a" ) \n 
+u1 = Unbound ( "a" ) \n 
+g = BasicGraphPattern ( \n 
+[ ( "a" , "?b" , 24 ) , ( "?r" , "?c" , 12345 ) , ( v1 , "?c" , 3333 ) , ( u1 , "?c" , 9999 ) ] ) \n 
+result_json = results . serialize ( format = ) \n 
+results = self . graph . query ( test_header_query ) \n 
+import rdflib \n 
+rt = self . testGraph . query ( sparqlQ4 ) \n 
+unittest . TextTestRunner ( verbosity = 3 ) . run ( suite ) \n 
+) . parse ( "http://www.w3.org/People/Berners-Lee/card.rdf" ) \n 
+graph . get_context ( URIRef ( ) \n 
+bob . set ( FOAF . name , Literal ( "Bob" ) ) \n 
+bill . add ( FOAF . knows , bob ) \n 
+print g . serialize ( format = ) \n 
+source = inputsource . getByteStream ( ) \n 
+predicate = self . predicate ( ) \n 
+obj = self . object ( ) \n 
+context = self . uriref ( ) or self . nodeid ( ) or self . sink . identifier \n 
+from rdflib . query import Result , ResultSerializer , ResultParser \n 
+class CSVResultParser ( ResultParser ) : \n 
+r . bindings = [ ] \n 
+self . delim = "," \n 
+if result . type != "SELECT" : \n 
+stream = codecs . getwriter ( encoding ) ( stream ) \n 
+vs = [ self . serializeTerm ( v , encoding ) for v in self . result . vars ] \n 
+out . writerow ( vs ) \n 
+for row in self . result . bindings : \n 
+row . get ( v ) , encoding ) for v in self . result . vars ] ) \n 
+NOSE_ARGS = [ \n 
+COVERAGE_EXTRA_ARGS = [ \n 
+DEFAULT_ATTRS = [ ] \n 
+DEFAULT_DIRS = [ , ] \n 
+try : import nose \n 
+except ImportError : \n 
+argv . remove ( ) \n 
+~~~ argv += DEFAULT_DIRS \n 
+nose . run_exit ( argv = finalArgs ) \n 
