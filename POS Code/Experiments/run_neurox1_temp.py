@@ -130,6 +130,8 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
         #Get scores of probes
         bert_scores = linear_probe.evaluate_probe(bert_probe, bert_X_test, bert_y_test, idx_to_class=bert_idx2label)
         print(bert_scores)
+        train_scores = linear_probe.evaluate_probe(bert_probe, bert_X_train, bert_y_train, idx_to_class=bert_idx2label)
+        print("Score on the training set:",train_scores)
         # codebert_scores = linear_probe.evaluate_probe(codebert_probe, codebert_X_test, codebert_y_test, idx_to_class=codebert_idx2label)
         # print(codebert_scores)
         # graphcodebert_scores = linear_probe.evaluate_probe(graphcodebert_probe, graphcodebert_X_test, graphcodebert_y_test, idx_to_class=graphcodebert_idx2label)
