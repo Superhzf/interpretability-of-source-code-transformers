@@ -376,6 +376,10 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
     graphcodebert_label2idx = {label:idx for (label,idx) in graphcodebert_label2idx.items() if idx <= 40}
     graphcodebert_idx2label = {idx:label for (idx,label) in graphcodebert_idx2label.items() if idx <= 40}
 
+    count = collections.Counter(bert_y)
+    distribution = {k: v for k, v/len(bert_y) in sorted(count.items(), key=lambda item: item[1],reverse=True)}
+    print("distribution after trauncating:")
+    print(distribution)
 
     bert_X_train, bert_X_test, bert_y_train, bert_y_test = \
         train_test_split(bert_X, bert_y, test_size=0.2,random_state=50, shuffle=True)
