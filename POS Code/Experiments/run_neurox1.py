@@ -377,7 +377,7 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
     graphcodebert_idx2label = {idx:label for (idx,label) in graphcodebert_idx2label.items() if idx <= 40}
 
     count = collections.Counter(bert_y)
-    distribution = {k: v for k, v/len(bert_y) in sorted(count.items(), key=lambda item: item[1],reverse=True)}
+    distribution = {k: v/len(bert_y) for k, v in sorted(count.items(), key=lambda item: item[1],reverse=True)}
     print("distribution after trauncating:")
     print(distribution)
 
