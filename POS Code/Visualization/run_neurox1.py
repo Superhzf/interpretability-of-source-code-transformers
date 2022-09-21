@@ -14,14 +14,14 @@ import neurox.analysis.corpus as corpus
 import os
 
 
-bert_idx = [46,49,75,827]
-bert_top_neurons = [2178]
+bert_idx = [382,612,697,734]
+bert_top_neurons = [2903]
 bert_class = "GREATER"
-codebert_idx = [1,3,6,17]
-codebert_top_neurons = [1690]
+codebert_idx = [3,4,7,8,9,11]
+codebert_top_neurons = [1938]
 codebert_class = "KEYWORD"
-graphcodebert_idx = [2,4,8,12,15]
-graphcodebert_top_neurons = [482]
+graphcodebert_idx = [5,28,53,67,82]
+graphcodebert_top_neurons = [32]
 graphcodebert_class = "EQUAL"
 
 
@@ -34,7 +34,6 @@ def extract_activations():
         'bert_activations.json',
         device=device,
         aggregation="average",#last, first
-        decompose_layers=False # we need this to be true to work with different layers
     )
 
     #Extract representations from CodeBERT
@@ -43,7 +42,6 @@ def extract_activations():
         'codebert_activations.json',
         device=device,
         aggregation="average", # #last, first
-        decompose_layers=False
     )
 
     #Extract representations from GraphCodeBERT
@@ -52,7 +50,6 @@ def extract_activations():
         'graphcodebert_activations.json',
         device=device,
         aggregation="average",#last, first
-        decompose_layers=False
     )
 
     return(load_extracted_activations())
