@@ -45,10 +45,10 @@ def plot_distribution(top_neurons,model_name):
     plt.xlabel("Layers")
     plt.ylabel("The number of neurons selected")
     plt.title(f"{model_name}:neuron distribution across layers")
-    plt.savefig(f"./distribution/{model_name}_neuron_dist.png")
+    plt.savefig(f"./{folder_name}/{model_name}_neuron_dist.png")
 
-
-mkdir_if_needed("./distribution_finetuned/")
+folder_name = "distribution_finetuned"
+mkdir_if_needed(f"./{folder_name}/")
 model_names = ["BERT","CODEBERT","GRAPHCODEBERT"]
 regex_list = [regex_bert_top_neurons,regex_codebert_top_neurons,regex_graphcodebert_top_neurons]
 for this_regex, this_model_name in zip(regex_list,model_names):
