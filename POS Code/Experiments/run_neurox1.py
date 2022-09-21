@@ -196,7 +196,39 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
 
     def get_top_words(bert_top_neurons, codebert_top_neurons, graphcodebert_top_neurons):
         #relate neurons to corpus elements like words and sentences
+        """
+        BERT:
+        idx: 1169, NAME
+        [('nh', 1.0), ('ts', 0.9368543327236498), ('bk', 0.7797181845932368), ('leaders', 0.7338799023084398), ('bias', 0.7298205393199121)]
+        idx: 4100 STAR
+        [('Orientation', 1.0), ('*', 0.9590381176401255), ('selector', 0.8984144128018782), ('Mock', 0.8927492917214652), ('easter', 0.8893109745730953)]
+        idx: 484 PERCENT
+        [('%', 1.0), ('plot', 0.9291268513168732), ('{', 0.9155056691047887), ('uniform', 0.8875826274073034), ('st', 0.8838933131118305)]
 
+        CODEBERT:
+        idx: 83, RSQB
+        [(']', 1.0), ('gen', 0.8978395588370207), ('genes', 0.8583926365691852), ('src', 0.85231653219694), ('release', 0.8498507896190105)]
+        idx: 234 NUMBER
+        [('319', 1.0), ('102', 0.982483609803209), ('625', 0.9824103180473372), ('192', 0.9813310622249785), ('1024', 0.9724426546786248)]
+        idx: 2002, STRING
+        [('emitter', 1.0), ('easter', 0.9536935621647816), ('"instance"', 0.8215065421481901), ('"driven"', 0.8134414348372471), ('"shader"', 0.7777029467232262)]
+        idx: 652, LBRACE
+        [('intern', 1.0), ('{', 0.9675976830669575), ('principal', 0.9291783036096599), ('Off', 0.9134737089218941), ('factories', 0.8882033031149721)]
+        idx: 8991, MINUS
+        [('-', 1.0), ('@', 0.783963625194319), ('filter_by', 0.7684178121629761), ('"headtextcolor"', 0.7650026602484139), ('"textcolor"', 0.7589861261515543)]
+
+        GRAPHCODEBERT:
+        idx: 83, RSQB
+        [(']', 1.0), ('lookup', 0.9501715866645286), ('communities', 0.9482650915781232), ('gen', 0.9356474625343222), ('WAYS', 0.8742862253662748)]
+        idx: 284 NUMBER
+        [('120', 1.0), ('503', 0.9669304378066406), ('302', 0.9588958846028263), ('192', 0.9333921868105192), ('8000', 0.9087051688114941)]
+        idx: 8962 MINUS
+        [('-', 1.0), ('DataFrame', 0.9650571679043924), ('pandas', 0.9459861451873764), ('authorityCertificate', 0.9149520446943905), ('psycopg2', 0.8922085426479229)]
+        idx: 5586 NOTEQUAL
+        [('!=', 1.0), ('external_audience', 0.7733831302458536), ('ix', 0.7636406579259619), ('Output', 0.7596070007130915), ('none_on_404', 0.7425271132925706)]
+        idx: 2059, AT
+        [('@', 1.0), ('Delay', 0.9338737596823018), ('Bytes', 0.8771050612134269), ('GENERATOR', 0.8247529369592388), ('ACLU_NJ', 0.8237272451291417)]
+        """
         print("BERT top words")
         for neuron in bert_top_neurons:
             bert_top_words = corpus.get_top_words(bert_tokens, bert_activations, neuron, num_tokens=5)
