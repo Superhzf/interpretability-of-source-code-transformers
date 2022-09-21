@@ -14,7 +14,7 @@ import neurox.analysis.corpus as corpus
 import os
 
 
-bert_idx = [382,612,697,734]
+bert_idx = [697,734,751,790,1777,1793]
 bert_top_neurons = [2903]
 bert_class = "GREATER"
 codebert_idx = [3,4,7,8,9,11]
