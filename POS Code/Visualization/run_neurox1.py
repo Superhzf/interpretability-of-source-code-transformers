@@ -30,7 +30,7 @@ def extract_activations():
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     #Extract representations from BERT
     transformers_extractor.extract_representations('bert-base-uncased',
-        'codetest2.in',
+        'codetest2_unique.in',
         'bert_activations.json',
         device=device,
         aggregation="average",#last, first
@@ -38,7 +38,7 @@ def extract_activations():
 
     #Extract representations from CodeBERT
     transformers_extractor.extract_representations('microsoft/codebert-base',
-        'codetest2.in',
+        'codetest2_unique.in',
         'codebert_activations.json',
         device=device,
         aggregation="average", # #last, first
@@ -46,7 +46,7 @@ def extract_activations():
 
     #Extract representations from GraphCodeBERT
     transformers_extractor.extract_representations('microsoft/graphcodebert-base',
-        'codetest2.in',
+        'codetest2_unique.in',
         'graphcodebert_activations.json',
         device=device,
         aggregation="average",#last, first
@@ -70,28 +70,28 @@ def load_extracted_activations(dev):
 
 def load_tokens(bert_activations,codebert_activations=None, graphcodebert_activations=None,dev=True):
     if dev:
-        bert_tokens = data_loader.load_data('codetest2.in',
-                                       'codetest2.label',
+        bert_tokens = data_loader.load_data('codetest2_unique.in',
+                                       'codetest2_unique.label',
                                        bert_activations,
                                        512 # max_sent_length
                                       )
         return bert_tokens
     else:
         #Load tokens and sanity checks for parallelism between tokens, labels and activations
-        bert_tokens = data_loader.load_data('codetest2.in',
-                                       'codetest2.label',
+        bert_tokens = data_loader.load_data('codetest2_unique.in',
+                                       'codetest2_unique.label',
                                        bert_activations,
                                        512 # max_sent_length
                                       )
 
-        codebert_tokens = data_loader.load_data('codetest2.in',
-                                       'codetest2.label',
+        codebert_tokens = data_loader.load_data('codetest2_unique.in',
+                                       'codetest2_unique.label',
                                        codebert_activations,
                                        512 # max_sent_length
                                       )
 
-        graphcodebert_tokens = data_loader.load_data('codetest2.in',
-                                       'codetest2.label',
+        graphcodebert_tokens = data_loader.load_data('codetest2_unique.in',
+                                       'codetest2_unique.label',
                                        graphcodebert_activations,
                                        512 # max_sent_length
                                       )
