@@ -4,7 +4,7 @@
 #SBATCH --mem=128G
 #SBATCH --time=5:00:00
 #SBATCH --partition=gpu
-#SBATCH --gres=gpu:a100-pcie:1
+#SBATCH --gres=gpu:v100-pcie-16G:1
 
 module load ml-gpu
 cd /work/LAS/cjquinn-lab/zefuh/selectivity/interpretability-of-source-code-transformers/POS\ Code/Visualization
