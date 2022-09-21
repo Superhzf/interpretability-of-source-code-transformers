@@ -49,7 +49,7 @@ def plot_distribution(top_neurons,model_name):
 
 folder_name = "distribution_finetuned"
 mkdir_if_needed(f"./{folder_name}/")
-model_names = ["BERT","CODEBERT","GRAPHCODEBERT"]
+model_names = ["BERT","Finetuned_CodeBert","Finetuned_GraphCodeBert"]
 regex_list = [regex_bert_top_neurons,regex_codebert_top_neurons,regex_graphcodebert_top_neurons]
 for this_regex, this_model_name in zip(regex_list,model_names):
     this_top_neurons = str2int_top_neurons(this_regex)

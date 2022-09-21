@@ -24,7 +24,11 @@ graphcodebert_idx = [5,53,67,82]
 graphcodebert_top_neurons = [32]
 graphcodebert_class = "EQUAL"
 
+FOLDER_NAME ="result_finetuned"
 
+def mkdir_if_needed(dir_name):
+    if not os.path.isdir(dir_name):
+        os.makedirs(dir_name)
 #Extract activations.json files
 def extract_activations():
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
@@ -116,7 +120,7 @@ def visualization(bert_tokens, bert_activations,
                 this_svg_bert = vis.visualize_activations(bert_tokens["source"][this_idx-1],
                                                      bert_activations[this_idx-1][:, this_neuron],
                                                      filter_fn="top_tokens")
-                name = f"result/bert_{this_idx-1}_{layer}_{this_neuron}.svg"
+                name = f"{FOLDER_NAME}/bert_{this_idx-1}_{layer}_{this_neuron}.svg"
                 this_svg_bert.saveas(name,pretty=True, indent=2)
     else:
         # starting from 1.
@@ -127,7 +131,7 @@ def visualization(bert_tokens, bert_activations,
                                                      filter_fn="top_tokens")
                 layer_idx = this_neuron//768
                 neuron_idx = this_neuron%768
-                name = f"result/bert_{this_idx-1}_{layer_idx}_{neuron_idx}.svg"
+                name = f"{FOLDER_NAME}/bert_{this_idx-1}_{layer_idx}_{neuron_idx}.svg"
                 this_svg_bert.saveas(name,pretty=True, indent=2)
 
         for this_neuron in codebert_top_neurons:
@@ -137,7 +141,7 @@ def visualization(bert_tokens, bert_activations,
                                                      filter_fn="top_tokens")
                 layer_idx = this_neuron//768
                 neuron_idx = this_neuron%768
-                name = f"result/codebert_{this_idx-1}_{layer_idx}_{neuron_idx}.svg"
+                name = f"{FOLDER_NAME}/codebert_{this_idx-1}_{layer_idx}_{neuron_idx}.svg"
                 this_svg_codebert.saveas(name,pretty=True, indent=2)
 
         for this_neuron in graphcodebert_top_neurons:
@@ -147,7 +151,7 @@ def visualization(bert_tokens, bert_activations,
                                                      filter_fn="top_tokens")
                 layer_idx = this_neuron//768
                 neuron_idx = this_neuron%768
-                name = f"result/graphcodebert_{this_idx-1}_{layer_idx}_{neuron_idx}.svg"
+                name = f"{FOLDER_NAME}/graphcodebert_{this_idx-1}_{layer_idx}_{neuron_idx}.svg"
                 this_svg_graphcodebert.saveas(name,pretty=True, indent=2)
 
 
@@ -161,7 +165,7 @@ def main():
     else:
         print("Getting activations from json files. If you need to extract them, run with --extract=True \n" )
 
-
+    mkdir_if_needed(f"./{FOLDER_NAME}/")
  # MINEQUAL
     if args.dev == 'True':
         bert_activations = load_extracted_activations(True)
