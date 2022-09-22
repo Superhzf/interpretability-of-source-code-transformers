@@ -41,24 +41,24 @@ def preprocessing():
 def extract_activations():
     #Extract representations from BERT
     transformers_extractor.extract_representations('bert-base-uncased',
-        'codetest2_unique.in',
-        'bert_activations.json',
+        'temp.in',
+        'bert_temp_activations.json',
         'cuda',
         aggregation="average" #last, first
     )
 
     #Extract representations from CodeBERT
     transformers_extractor.extract_representations('microsoft/codebert-base',
-        'codetest2_unique.in',
-        'codebert_activations.json',
+        'temp.in',
+        'codebert_temp_activations.json',
         'cuda',
         aggregation="average" #last, first
     )
 
     #Extract representations from GraphCodeBERT
     transformers_extractor.extract_representations('microsoft/graphcodebert-base',
-        'codetest2_unique.in',
-        'graphcodebert_activations.json',
+        'temp.in',
+        'graphcodebert_temp_activations.json',
         'cuda',
         aggregation="average" #last, first
     )
@@ -68,28 +68,28 @@ def extract_activations():
 
 def load_extracted_activations():
     #Load activations from json files
-    bert_activations, bert_num_layers = data_loader.load_activations('bert_activations.json',13) #num_layers is 13 not 768
-    codebert_activations, codebert_num_layers = data_loader.load_activations('codebert_defdet_activations.json',13) #num_layers is 13 not 768
-    graphcodebert_activations, graphcodebert_num_layers = data_loader.load_activations('graphcodebert_defdet_activations.json',13)
+    bert_activations, bert_num_layers = data_loader.load_activations('bert_temp_activations.json',13) #num_layers is 13 not 768
+    codebert_activations, codebert_num_layers = data_loader.load_activations('codebert_temp_activations.json',13) #num_layers is 13 not 768
+    graphcodebert_activations, graphcodebert_num_layers = data_loader.load_activations('graphcodebert_temp_activations.json',13)
 
     return bert_activations, codebert_activations, graphcodebert_activations
 
 def load_tokens(bert_activations,codebert_activations, graphcodebert_activations):
     #Load tokens and sanity checks for parallelism between tokens, labels and activations
-    bert_tokens = data_loader.load_data('codetest2_unique.in',
-                                   'codetest2_unique.label',
+    bert_tokens = data_loader.load_data('temp.in',
+                                   'temp.label',
                                    bert_activations,
                                    512 # max_sent_length
                                   )
 
-    codebert_tokens = data_loader.load_data('codetest2_unique.in',
-                                   'codetest2_unique.label',
+    codebert_tokens = data_loader.load_data('temp.in',
+                                   'temp.label',
                                    codebert_activations,
                                    512 # max_sent_length
                                   )
 
-    graphcodebert_tokens = data_loader.load_data('codetest2_unique.in',
-                                   'codetest2_unique.label',
+    graphcodebert_tokens = data_loader.load_data('temp.in',
+                                   'temp.label',
                                    graphcodebert_activations,
                                    512 # max_sent_length
                                   )
@@ -119,22 +119,25 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
         #Train the linear probes (logistic regression) - POS(code) tagging
 
         bert_probe = linear_probe.train_logistic_regression_probe(bert_X_train, bert_y_train, lambda_l1=0.001, lambda_l2=0.001)
-        codebert_probe = linear_probe.train_logistic_regression_probe(codebert_X_train, codebert_y_train, lambda_l1=0.001, lambda_l2=0.001)
-        graphcodebert_probe = linear_probe.train_logistic_regression_probe(graphcodebert_X_train, graphcodebert_y_train, lambda_l1=0.001, lambda_l2=0.001)
+        # codebert_probe = linear_probe.train_logistic_regression_probe(codebert_X_train, codebert_y_train, lambda_l1=0.001, lambda_l2=0.001)
+        # graphcodebert_probe = linear_probe.train_logistic_regression_probe(graphcodebert_X_train, graphcodebert_y_train, lambda_l1=0.001, lambda_l2=0.001)
 
         #Evaluate linear probes for POS(code) tagging
         linear_probe.evaluate_probe(bert_probe, bert_X_test, bert_y_test, idx_to_class=bert_idx2label)
-        linear_probe.evaluate_probe(codebert_probe, codebert_X_test, codebert_y_test, idx_to_class=codebert_idx2label)
-        linear_probe.evaluate_probe(graphcodebert_probe, graphcodebert_X_test, graphcodebert_y_test, idx_to_class=graphcodebert_idx2label)
+        # linear_probe.evaluate_probe(codebert_probe, codebert_X_test, codebert_y_test, idx_to_class=codebert_idx2label)
+        # linear_probe.evaluate_probe(graphcodebert_probe, graphcodebert_X_test, graphcodebert_y_test, idx_to_class=graphcodebert_idx2label)
 
         #Get scores of probes
         bert_scores = linear_probe.evaluate_probe(bert_probe, bert_X_test, bert_y_test, idx_to_class=bert_idx2label)
-        print(bert_scores)
-        codebert_scores = linear_probe.evaluate_probe(codebert_probe, codebert_X_test, codebert_y_test, idx_to_class=codebert_idx2label)
-        print(codebert_scores)
-        graphcodebert_scores = linear_probe.evaluate_probe(graphcodebert_probe, graphcodebert_X_test, graphcodebert_y_test, idx_to_class=graphcodebert_idx2label)
-        print(graphcodebert_scores)
-        return bert_probe, codebert_probe, graphcodebert_probe, bert_scores, codebert_scores, graphcodebert_scores
+        print("Score on the test set:",bert_scores)
+        train_scores = linear_probe.evaluate_probe(bert_probe, bert_X_train, bert_y_train, idx_to_class=bert_idx2label)
+        print("Score on the training set:",train_scores)
+        # codebert_scores = linear_probe.evaluate_probe(codebert_probe, codebert_X_test, codebert_y_test, idx_to_class=codebert_idx2label)
+        # print(codebert_scores)
+        # graphcodebert_scores = linear_probe.evaluate_probe(graphcodebert_probe, graphcodebert_X_test, graphcodebert_y_test, idx_to_class=graphcodebert_idx2label)
+        # print(graphcodebert_scores)
+        # return bert_probe, codebert_probe, graphcodebert_probe, bert_scores, codebert_scores, graphcodebert_scores
+        return bert_probe, bert_scores
 
 
     def get_imp_neurons():
@@ -196,39 +199,7 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
 
     def get_top_words(bert_top_neurons, codebert_top_neurons, graphcodebert_top_neurons):
         #relate neurons to corpus elements like words and sentences
-        """
-        BERT:
-        idx: 1169, NAME
-        [('nh', 1.0), ('ts', 0.9368543327236498), ('bk', 0.7797181845932368), ('leaders', 0.7338799023084398), ('bias', 0.7298205393199121)]
-        idx: 4100 STAR
-        [('Orientation', 1.0), ('*', 0.9590381176401255), ('selector', 0.8984144128018782), ('Mock', 0.8927492917214652), ('easter', 0.8893109745730953)]
-        idx: 484 PERCENT
-        [('%', 1.0), ('plot', 0.9291268513168732), ('{', 0.9155056691047887), ('uniform', 0.8875826274073034), ('st', 0.8838933131118305)]
 
-        CODEBERT:
-        idx: 83, RSQB
-        [(']', 1.0), ('gen', 0.8978395588370207), ('genes', 0.8583926365691852), ('src', 0.85231653219694), ('release', 0.8498507896190105)]
-        idx: 284 NUMBER
-        [('319', 1.0), ('102', 0.982483609803209), ('625', 0.9824103180473372), ('192', 0.9813310622249785), ('1024', 0.9724426546786248)]
-        idx: 2002, STRING
-        [('emitter', 1.0), ('easter', 0.9536935621647816), ('"instance"', 0.8215065421481901), ('"driven"', 0.8134414348372471), ('"shader"', 0.7777029467232262)]
-        idx: 652, LBRACE
-        [('intern', 1.0), ('{', 0.9675976830669575), ('principal', 0.9291783036096599), ('Off', 0.9134737089218941), ('factories', 0.8882033031149721)]
-        idx: 8991, MINUS
-        [('-', 1.0), ('@', 0.783963625194319), ('filter_by', 0.7684178121629761), ('"headtextcolor"', 0.7650026602484139), ('"textcolor"', 0.7589861261515543)]
-
-        GRAPHCODEBERT:
-        idx: 83, RSQB
-        [(']', 1.0), ('lookup', 0.9501715866645286), ('communities', 0.9482650915781232), ('gen', 0.9356474625343222), ('WAYS', 0.8742862253662748)]
-        idx: 284 NUMBER
-        [('120', 1.0), ('503', 0.9669304378066406), ('302', 0.9588958846028263), ('192', 0.9333921868105192), ('8000', 0.9087051688114941)]
-        idx: 8962 MINUS
-        [('-', 1.0), ('DataFrame', 0.9650571679043924), ('pandas', 0.9459861451873764), ('authorityCertificate', 0.9149520446943905), ('psycopg2', 0.8922085426479229)]
-        idx: 5586 NOTEQUAL
-        [('!=', 1.0), ('external_audience', 0.7733831302458536), ('ix', 0.7636406579259619), ('Output', 0.7596070007130915), ('none_on_404', 0.7425271132925706)]
-        idx: 2059, AT
-        [('@', 1.0), ('Delay', 0.9338737596823018), ('Bytes', 0.8771050612134269), ('GENERATOR', 0.8247529369592388), ('ACLU_NJ', 0.8237272451291417)]
-        """
         print("BERT top words")
         for neuron in bert_top_neurons:
             bert_top_words = corpus.get_top_words(bert_tokens, bert_activations, neuron, num_tokens=5)
@@ -386,39 +357,25 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
     print("distribution:")
     print(distribution)
 
-    print("bert_label2idx")
-    print(bert_label2idx)
-
-    idx_selected = bert_y <= 40
+    idx_selected = bert_y <= 15
     bert_y = bert_y[idx_selected]
     bert_X = bert_X[idx_selected]
-
-    codebert_y = codebert_y[idx_selected]
-    codebert_X = codebert_X[idx_selected]
-
-    graphcodebert_y = graphcodebert_y[idx_selected]
-    graphcodebert_X = graphcodebert_X[idx_selected]
-
-    bert_label2idx = {label:idx for (label,idx) in bert_label2idx.items() if idx <= 40}
-    bert_idx2label = {idx:label for (idx,label) in bert_idx2label.items() if idx <= 40}
-
-    codebert_label2idx = {label:idx for (label,idx) in codebert_label2idx.items() if idx <= 40}
-    codebert_idx2label = {idx:label for (idx,label) in codebert_idx2label.items() if idx <= 40}
-
-    graphcodebert_label2idx = {label:idx for (label,idx) in graphcodebert_label2idx.items() if idx <= 40}
-    graphcodebert_idx2label = {idx:label for (idx,label) in graphcodebert_idx2label.items() if idx <= 40}
+    '''
+    idx_selected = np.random.choice(bert_X.shape[0],size=int(bert_X.shape[0]*0.05),replace=False)
+    bert_X = bert_X[idx_selected]
+    bert_y = bert_y[idx_selected]
 
     count = collections.Counter(bert_y)
-    distribution = {k: v/len(bert_y) for k, v in sorted(count.items(), key=lambda item: item[1],reverse=True)}
-    print("distribution after trauncating:")
+    distribution = {k: v for k, v in sorted(count.items(), key=lambda item: item[1],reverse=True)}
+    print("distribution after selecting a random subset:")
     print(distribution)
-
+    '''
     bert_X_train, bert_X_test, bert_y_train, bert_y_test = \
-        train_test_split(bert_X, bert_y, test_size=0.2,random_state=50, shuffle=True)
-    codebert_X_train, codebert_X_test, codebert_y_train, codebert_y_test = \
-        train_test_split(codebert_X, codebert_y, test_size=0.2,random_state=50, shuffle=True)
-    graphcodebert_X_train, graphcodebert_X_test, graphcodebert_y_train, graphcodebert_y_test = \
-        train_test_split(graphcodebert_X, graphcodebert_y, test_size=0.2,random_state=50, shuffle=True)
+        train_test_split(bert_X, bert_y, test_size=0.2,random_state=50, shuffle=False)
+    # codebert_X_train, codebert_X_test, codebert_y_train, codebert_y_test = \
+    #     train_test_split(codebert_X, codebert_y, test_size=0.2,random_state=50, shuffle=False)
+    # graphcodebert_X_train, graphcodebert_X_test, graphcodebert_y_train, graphcodebert_y_test = \
+    #     train_test_split(graphcodebert_X, graphcodebert_y, test_size=0.2,random_state=50, shuffle=False)
 
     del bert_X, bert_y, codebert_X, codebert_y, graphcodebert_X, graphcodebert_y
 
@@ -428,37 +385,39 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
     bert_X_test = bert_norm.norm(bert_X_test)
     del bert_norm
 
-    codebert_norm = Normalization(codebert_X_train)
-    codebert_X_train = codebert_norm.norm(codebert_X_train)
-    codebert_X_test = codebert_norm.norm(codebert_X_test)
-    del codebert_norm
-
-    graphcodebert_norm = Normalization(graphcodebert_X_train)
-    graphcodebert_X_train = graphcodebert_norm.norm(graphcodebert_X_train)
-    graphcodebert_X_test = graphcodebert_norm.norm(graphcodebert_X_test)
-    del graphcodebert_norm
+    # codebert_norm = Normalization(codebert_X_train)
+    # codebert_X_train = codebert_norm.norm(codebert_X_train)
+    # codebert_X_test = codebert_norm.norm(codebert_X_test)
+    # del codebert_norm
+    #
+    # graphcodebert_norm = Normalization(graphcodebert_X_train)
+    # graphcodebert_X_train = graphcodebert_norm.norm(graphcodebert_X_train)
+    # graphcodebert_X_test = graphcodebert_norm.norm(graphcodebert_X_test)
+    # del graphcodebert_norm
 
     #Probeless clustering experiments
-    probeless(bert_X_train,bert_y_train,
-              codebert_X_train, codebert_y_train,
-              graphcodebert_X_train, graphcodebert_y_train)
+    # probeless(bert_X_train,bert_y_train,
+    #           codebert_X_train, codebert_y_train,
+    #           graphcodebert_X_train, graphcodebert_y_train)
 
     #All activations probes
-    bert_probe, codebert_probe, graphcodebert_probe, bert_scores, codebert_scores, graphcodebert_scores = all_activations_probe()
+    # bert_probe, codebert_probe, graphcodebert_probe, bert_scores, codebert_scores, graphcodebert_scores = all_activations_probe()
+    bert_probe, bert_scores = all_activations_probe()
 
     #Layerwise Probes
-    layerwise_probes_inference()
+    # layerwise_probes_inference()
 
     #Important neuron probes
-    bert_top_neurons, codebert_top_neurons, graphcodebert_top_neurons = get_imp_neurons()
-    get_top_words(bert_top_neurons, codebert_top_neurons, graphcodebert_top_neurons)
-    del bert_X_train, bert_X_test, bert_y_train, bert_y_test
-    del codebert_X_train, codebert_X_test, codebert_y_train, codebert_y_test
-    del graphcodebert_X_train, graphcodebert_X_test, graphcodebert_y_train, graphcodebert_y_test
+    # bert_top_neurons, codebert_top_neurons, graphcodebert_top_neurons = get_imp_neurons()
+    # get_top_words(bert_top_neurons, codebert_top_neurons, graphcodebert_top_neurons)
+    # del bert_X_train, bert_X_test, bert_y_train, bert_y_test
+    # del codebert_X_train, codebert_X_test, codebert_y_train, codebert_y_test
+    # del graphcodebert_X_train, graphcodebert_X_test, graphcodebert_y_train, graphcodebert_y_test
     #Control task probes
-    bert_selectivity, codebert_selectivity, graphcodebert_selectivity = control_task_probes(bert_scores,codebert_scores, graphcodebert_scores)
+    # bert_selectivity, codebert_selectivity, graphcodebert_selectivity = control_task_probes(bert_scores,codebert_scores, graphcodebert_scores)
 
-    return bert_probe, codebert_probe, graphcodebert_probe
+    # return bert_probe, codebert_probe, graphcodebert_probe
+    return bert_probe
 
 
 def main():
@@ -478,7 +437,111 @@ def main():
 
     bert_tokens, codebert_tokens, graphcodebert_tokens =  load_tokens(bert_activations, codebert_activations, graphcodebert_activations)
 
-    bert_probe, codebert_probe, graphcodebert_probe = linear_probes_inference(bert_tokens, bert_activations, codebert_tokens, codebert_activations, graphcodebert_tokens, graphcodebert_activations)
+    # print("0:")
+    # print(bert_tokens['source'][0])
+    # print(bert_tokens['target'][0])
+    # feature_matrix0 = bert_activations[0]
+    #
+    # print(":1")
+    # print(bert_tokens['source'][1])
+    # print(bert_tokens['target'][1])
+    # feature_matrix1 = bert_activations[1]
+    #
+    # print("2:")
+    # print(bert_tokens['source'][2])
+    # print(bert_tokens['target'][2])
+    # feature_matrix2 = bert_activations[2]
+    #
+    # print("3:")
+    # print(bert_tokens['source'][3])
+    # print(bert_tokens['target'][3])
+    # feature_matrix3 = bert_activations[3]
+    #
+    # diff01 = np.sum(feature_matrix0[2][:768] - feature_matrix1[2][:768])
+    # diff13 = feature_matrix1[2] - feature_matrix3[3]
+    # diff02 = feature_matrix0[2] - feature_matrix2[3]
+    # print("Dimension of diff:",diff.shape)
+    # with np.printoptions(threshold=np.inf):
+    #     print("Difference if the left are equal but the right are not:",repr(diff01))
+    #     print("------------------------------------------------------")
+    #     print("Difference if the left are not equal but the right are:",repr(diff13))
+    #     print("------------------------------------------------------")
+    #     print("Difference if both the left and right are not equal:",repr(diff13))
+    # exit(0)
+
+
+
+    # with open("codetest2_unique.in",'r') as f:
+    #     code = f.readlines()
+    # f.close()
+    #
+    # with open("codetest2_unique.label",'r') as f:
+    #     label = f.readlines()
+    # f.close()
+    #
+    # assert len(code) == len(label)
+    #
+    # label_unique = []
+    # idx_drop = []
+    # for idx,this_label in enumerate(label):
+    #     if this_label not in label_unique:
+    #         label_unique.append(this_label)
+    #     else:
+    #         idx_drop.append(idx)
+    #
+    # bert_activations_new = []
+    # source_new = []
+    # target_new = []
+    # idx = 0
+    # for this_activation,this_token_source,this_token_target in zip(bert_activations,bert_tokens["source"],bert_tokens["target"]):
+    #     if idx not in idx_drop:
+    #         bert_activations_new.append(this_activation)
+    #         source_new.append(this_token_source)
+    #         target_new.append(this_token_target)
+    #     idx += 1
+    #
+    # bert_tokens_new = {"source":source_new,"target":target_new}
+    # bert_activations = bert_activations_new
+    # bert_tokens = bert_tokens_new
+    #
+    # print("The length of this_activation:",len(bert_activations))
+    # print("The length of bert_tokens[source]:",len(bert_tokens['source']))
+    # print("The length of bert_tokens[target]:",len(bert_tokens['target']))
+
+    # bert_activations_new = []
+    # source_new = []
+    # target_new = []
+    # interested_tokens = ["NAME","NEWLINE","LPAR","KEYWORD","RPAR","DOT","COMMA",
+    #                      "EQUAL","DEDENT","COLON","INDENT","LSQB","RSQB","NUMBER"]
+    # for this_activation,this_token_source,this_token_target in zip(bert_activations,bert_tokens["source"],bert_tokens["target"]):
+    #     count = 0
+    #     idx_select = None
+    #     while True:
+    #         idx_select = np.random.choice(this_activation.shape[0],size=1,replace=False)[0]
+    #         if this_token_target[idx_select] in interested_tokens:
+    #             break
+    #         else:
+    #             count += 1
+    #
+    #         if count >= 5:
+    #             break
+    #     if idx_select is not None:
+    #         this_activation_new = this_activation[[idx_select]]
+    #         bert_activations_new.append(this_activation_new)
+    #         # since size = 1, this_token_source[idx_select] will be a single token
+    #         # not a list.
+    #         source_new.append([this_token_source[idx_select]])
+    #         target_new.append([this_token_target[idx_select]])
+    #
+    # bert_tokens_new = {"source":source_new,"target":target_new}
+    # print("The length of this_activation_new:",len(bert_activations_new))
+    # print("The length of bert_tokens_new[source]:",len(bert_tokens_new['source']))
+    # print("The length of bert_tokens_new[target]:",len(bert_tokens_new['target']))
+
+
+
+    # bert_probe, codebert_probe, graphcodebert_probe = linear_probes_inference(bert_tokens, bert_activations, codebert_tokens, codebert_activations, graphcodebert_tokens, graphcodebert_activations)
+    bert_probe = linear_probes_inference(bert_tokens, bert_activations, codebert_tokens, codebert_activations, graphcodebert_tokens, graphcodebert_activations)
     #neurox.interpretation.utils.print_overall_stats(all_results)
 
     #Compare linear probe top neurons with probeless neuron ordering

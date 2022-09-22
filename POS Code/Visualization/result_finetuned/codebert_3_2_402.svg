@@ -2,7 +2,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink" baseProfile="full" height="30.0" version="1.1" viewBox="0,0,733.22,30.0" width="733.22">
   <defs/>
   <g>
-    <rect height="25.000px" style="opacity:0.00000;
+    <rect height="25.000px" style="opacity:1.00000;
             fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
@@ -13,7 +13,7 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="0.0" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.00000;
+    <rect height="25.000px" style="opacity:1.00000;
             fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
@@ -24,7 +24,7 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="12.02" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.00000;
+    <rect height="25.000px" style="opacity:1.00000;
             fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
@@ -35,7 +35,7 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="24.04" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.00000;
+    <rect height="25.000px" style="opacity:1.00000;
             fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
@@ -46,7 +46,7 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="36.06" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.00000;
+    <rect height="25.000px" style="opacity:1.00000;
             fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
@@ -57,7 +57,7 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="48.08" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.00000;
+    <rect height="25.000px" style="opacity:1.00000;
             fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
@@ -68,8 +68,8 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="60.099999999999994" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.82707;
-            fill:#00aad4;
+    <rect height="25.000px" style="opacity:0.00000;
+            fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
             stroke-width:0.26499999;
@@ -79,8 +79,8 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="72.12" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.82707;
-            fill:#00aad4;
+    <rect height="25.000px" style="opacity:0.00000;
+            fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
             stroke-width:0.26499999;
@@ -90,8 +90,8 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="84.14" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.82707;
-            fill:#00aad4;
+    <rect height="25.000px" style="opacity:0.00000;
+            fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
             stroke-width:0.26499999;
@@ -101,8 +101,8 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="96.16" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.82707;
-            fill:#00aad4;
+    <rect height="25.000px" style="opacity:0.00000;
+            fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
             stroke-width:0.26499999;
@@ -288,7 +288,7 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="300.5" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.99232;
+    <rect height="25.000px" style="opacity:0.00000;
             fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
@@ -299,7 +299,7 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="312.52" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.99232;
+    <rect height="25.000px" style="opacity:0.00000;
             fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
@@ -310,7 +310,7 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="324.53999999999996" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.99232;
+    <rect height="25.000px" style="opacity:0.00000;
             fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
@@ -321,7 +321,7 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="336.56" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.99232;
+    <rect height="25.000px" style="opacity:0.00000;
             fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
@@ -332,7 +332,7 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="348.58" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.99232;
+    <rect height="25.000px" style="opacity:0.00000;
             fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
@@ -343,7 +343,7 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="360.59999999999997" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.99232;
+    <rect height="25.000px" style="opacity:0.00000;
             fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
@@ -354,8 +354,8 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="372.62" y="7.0"/>
-    <rect height="25.000px" style="opacity:1.00000;
-            fill:#00aad4;
+    <rect height="25.000px" style="opacity:0.00000;
+            fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
             stroke-width:0.26499999;
@@ -365,8 +365,8 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="384.64" y="7.0"/>
-    <rect height="25.000px" style="opacity:1.00000;
-            fill:#00aad4;
+    <rect height="25.000px" style="opacity:0.00000;
+            fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
             stroke-width:0.26499999;
@@ -464,8 +464,8 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="492.82" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.91912;
-            fill:#00aad4;
+    <rect height="25.000px" style="opacity:0.00000;
+            fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
             stroke-width:0.26499999;
@@ -475,8 +475,8 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="504.84" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.91912;
-            fill:#00aad4;
+    <rect height="25.000px" style="opacity:0.00000;
+            fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
             stroke-width:0.26499999;
@@ -486,138 +486,6 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="516.86" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.95744;
-            fill:#00aad4;
-            fill-opacity:1;
-            stroke:none;
-            stroke-width:0.26499999;
-            stroke-linecap:round;
-            stroke-linejoin:miter;
-            stroke-miterlimit:4;
-            stroke-dasharray:none;
-            stroke-dashoffset:0;
-            stroke-opacity:1" width="12.020px" x="528.88" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.95744;
-            fill:#00aad4;
-            fill-opacity:1;
-            stroke:none;
-            stroke-width:0.26499999;
-            stroke-linecap:round;
-            stroke-linejoin:miter;
-            stroke-miterlimit:4;
-            stroke-dasharray:none;
-            stroke-dashoffset:0;
-            stroke-opacity:1" width="12.020px" x="540.9" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.95744;
-            fill:#00aad4;
-            fill-opacity:1;
-            stroke:none;
-            stroke-width:0.26499999;
-            stroke-linecap:round;
-            stroke-linejoin:miter;
-            stroke-miterlimit:4;
-            stroke-dasharray:none;
-            stroke-dashoffset:0;
-            stroke-opacity:1" width="12.020px" x="552.92" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.95744;
-            fill:#00aad4;
-            fill-opacity:1;
-            stroke:none;
-            stroke-width:0.26499999;
-            stroke-linecap:round;
-            stroke-linejoin:miter;
-            stroke-miterlimit:4;
-            stroke-dasharray:none;
-            stroke-dashoffset:0;
-            stroke-opacity:1" width="12.020px" x="564.9399999999999" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.95744;
-            fill:#00aad4;
-            fill-opacity:1;
-            stroke:none;
-            stroke-width:0.26499999;
-            stroke-linecap:round;
-            stroke-linejoin:miter;
-            stroke-miterlimit:4;
-            stroke-dasharray:none;
-            stroke-dashoffset:0;
-            stroke-opacity:1" width="12.020px" x="576.96" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.00000;
-            fill:#d35f5f;
-            fill-opacity:1;
-            stroke:none;
-            stroke-width:0.26499999;
-            stroke-linecap:round;
-            stroke-linejoin:miter;
-            stroke-miterlimit:4;
-            stroke-dasharray:none;
-            stroke-dashoffset:0;
-            stroke-opacity:1" width="12.020px" x="588.98" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.00000;
-            fill:#d35f5f;
-            fill-opacity:1;
-            stroke:none;
-            stroke-width:0.26499999;
-            stroke-linecap:round;
-            stroke-linejoin:miter;
-            stroke-miterlimit:4;
-            stroke-dasharray:none;
-            stroke-dashoffset:0;
-            stroke-opacity:1" width="12.020px" x="601.0" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.00000;
-            fill:#d35f5f;
-            fill-opacity:1;
-            stroke:none;
-            stroke-width:0.26499999;
-            stroke-linecap:round;
-            stroke-linejoin:miter;
-            stroke-miterlimit:4;
-            stroke-dasharray:none;
-            stroke-dashoffset:0;
-            stroke-opacity:1" width="12.020px" x="613.02" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.00000;
-            fill:#d35f5f;
-            fill-opacity:1;
-            stroke:none;
-            stroke-width:0.26499999;
-            stroke-linecap:round;
-            stroke-linejoin:miter;
-            stroke-miterlimit:4;
-            stroke-dasharray:none;
-            stroke-dashoffset:0;
-            stroke-opacity:1" width="12.020px" x="625.04" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.00000;
-            fill:#d35f5f;
-            fill-opacity:1;
-            stroke:none;
-            stroke-width:0.26499999;
-            stroke-linecap:round;
-            stroke-linejoin:miter;
-            stroke-miterlimit:4;
-            stroke-dasharray:none;
-            stroke-dashoffset:0;
-            stroke-opacity:1" width="12.020px" x="637.06" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.00000;
-            fill:#d35f5f;
-            fill-opacity:1;
-            stroke:none;
-            stroke-width:0.26499999;
-            stroke-linecap:round;
-            stroke-linejoin:miter;
-            stroke-miterlimit:4;
-            stroke-dasharray:none;
-            stroke-dashoffset:0;
-            stroke-opacity:1" width="12.020px" x="649.0799999999999" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.00000;
-            fill:#d35f5f;
-            fill-opacity:1;
-            stroke:none;
-            stroke-width:0.26499999;
-            stroke-linecap:round;
-            stroke-linejoin:miter;
-            stroke-miterlimit:4;
-            stroke-dasharray:none;
-            stroke-dashoffset:0;
-            stroke-opacity:1" width="12.020px" x="661.1" y="7.0"/>
     <text fill="black" style="font-style: normal;
             font-variant: normal;
             font-weight: normal;
@@ -632,8 +500,8 @@
             text-align: start;
             writing-mode: lr-tb;
             text-anchor: start;
-            stroke-width: 0.26458332px" x="0" y="25.0">utf-8 def status ( self , query = , agent = None ) : \n</text>
-    <rect height="25.000px" style="opacity:0.00000;
+            stroke-width: 0.26458332px" x="0" y="25.0">class NetworkProfileTab ( tabs . Tab ) : \n</text>
+    <rect height="25.000px" style="opacity:1.00000;
             fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
@@ -644,7 +512,7 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="0.0" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.00000;
+    <rect height="25.000px" style="opacity:1.00000;
             fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
@@ -655,7 +523,7 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="12.02" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.00000;
+    <rect height="25.000px" style="opacity:1.00000;
             fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
@@ -666,7 +534,7 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="24.04" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.00000;
+    <rect height="25.000px" style="opacity:1.00000;
             fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
@@ -677,7 +545,7 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="36.06" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.00000;
+    <rect height="25.000px" style="opacity:1.00000;
             fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
@@ -688,7 +556,7 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="48.08" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.00000;
+    <rect height="25.000px" style="opacity:1.00000;
             fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
@@ -699,8 +567,8 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="60.099999999999994" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.82707;
-            fill:#00aad4;
+    <rect height="25.000px" style="opacity:0.00000;
+            fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
             stroke-width:0.26499999;
@@ -710,8 +578,8 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="72.12" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.82707;
-            fill:#00aad4;
+    <rect height="25.000px" style="opacity:0.00000;
+            fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
             stroke-width:0.26499999;
@@ -721,8 +589,8 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="84.14" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.82707;
-            fill:#00aad4;
+    <rect height="25.000px" style="opacity:0.00000;
+            fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
             stroke-width:0.26499999;
@@ -732,8 +600,8 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="96.16" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.82707;
-            fill:#00aad4;
+    <rect height="25.000px" style="opacity:0.00000;
+            fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
             stroke-width:0.26499999;
@@ -919,7 +787,7 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="300.5" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.99232;
+    <rect height="25.000px" style="opacity:0.00000;
             fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
@@ -930,7 +798,7 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="312.52" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.99232;
+    <rect height="25.000px" style="opacity:0.00000;
             fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
@@ -941,7 +809,7 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="324.53999999999996" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.99232;
+    <rect height="25.000px" style="opacity:0.00000;
             fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
@@ -952,7 +820,7 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="336.56" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.99232;
+    <rect height="25.000px" style="opacity:0.00000;
             fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
@@ -963,7 +831,7 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="348.58" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.99232;
+    <rect height="25.000px" style="opacity:0.00000;
             fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
@@ -974,7 +842,7 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="360.59999999999997" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.99232;
+    <rect height="25.000px" style="opacity:0.00000;
             fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
@@ -985,8 +853,8 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="372.62" y="7.0"/>
-    <rect height="25.000px" style="opacity:1.00000;
-            fill:#00aad4;
+    <rect height="25.000px" style="opacity:0.00000;
+            fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
             stroke-width:0.26499999;
@@ -996,8 +864,8 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="384.64" y="7.0"/>
-    <rect height="25.000px" style="opacity:1.00000;
-            fill:#00aad4;
+    <rect height="25.000px" style="opacity:0.00000;
+            fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
             stroke-width:0.26499999;
@@ -1095,8 +963,8 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="492.82" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.91912;
-            fill:#00aad4;
+    <rect height="25.000px" style="opacity:0.00000;
+            fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
             stroke-width:0.26499999;
@@ -1106,8 +974,8 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="504.84" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.91912;
-            fill:#00aad4;
+    <rect height="25.000px" style="opacity:0.00000;
+            fill:#d35f5f;
             fill-opacity:1;
             stroke:none;
             stroke-width:0.26499999;
@@ -1117,138 +985,6 @@
             stroke-dasharray:none;
             stroke-dashoffset:0;
             stroke-opacity:1" width="12.020px" x="516.86" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.95744;
-            fill:#00aad4;
-            fill-opacity:1;
-            stroke:none;
-            stroke-width:0.26499999;
-            stroke-linecap:round;
-            stroke-linejoin:miter;
-            stroke-miterlimit:4;
-            stroke-dasharray:none;
-            stroke-dashoffset:0;
-            stroke-opacity:1" width="12.020px" x="528.88" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.95744;
-            fill:#00aad4;
-            fill-opacity:1;
-            stroke:none;
-            stroke-width:0.26499999;
-            stroke-linecap:round;
-            stroke-linejoin:miter;
-            stroke-miterlimit:4;
-            stroke-dasharray:none;
-            stroke-dashoffset:0;
-            stroke-opacity:1" width="12.020px" x="540.9" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.95744;
-            fill:#00aad4;
-            fill-opacity:1;
-            stroke:none;
-            stroke-width:0.26499999;
-            stroke-linecap:round;
-            stroke-linejoin:miter;
-            stroke-miterlimit:4;
-            stroke-dasharray:none;
-            stroke-dashoffset:0;
-            stroke-opacity:1" width="12.020px" x="552.92" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.95744;
-            fill:#00aad4;
-            fill-opacity:1;
-            stroke:none;
-            stroke-width:0.26499999;
-            stroke-linecap:round;
-            stroke-linejoin:miter;
-            stroke-miterlimit:4;
-            stroke-dasharray:none;
-            stroke-dashoffset:0;
-            stroke-opacity:1" width="12.020px" x="564.9399999999999" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.95744;
-            fill:#00aad4;
-            fill-opacity:1;
-            stroke:none;
-            stroke-width:0.26499999;
-            stroke-linecap:round;
-            stroke-linejoin:miter;
-            stroke-miterlimit:4;
-            stroke-dasharray:none;
-            stroke-dashoffset:0;
-            stroke-opacity:1" width="12.020px" x="576.96" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.00000;
-            fill:#d35f5f;
-            fill-opacity:1;
-            stroke:none;
-            stroke-width:0.26499999;
-            stroke-linecap:round;
-            stroke-linejoin:miter;
-            stroke-miterlimit:4;
-            stroke-dasharray:none;
-            stroke-dashoffset:0;
-            stroke-opacity:1" width="12.020px" x="588.98" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.00000;
-            fill:#d35f5f;
-            fill-opacity:1;
-            stroke:none;
-            stroke-width:0.26499999;
-            stroke-linecap:round;
-            stroke-linejoin:miter;
-            stroke-miterlimit:4;
-            stroke-dasharray:none;
-            stroke-dashoffset:0;
-            stroke-opacity:1" width="12.020px" x="601.0" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.00000;
-            fill:#d35f5f;
-            fill-opacity:1;
-            stroke:none;
-            stroke-width:0.26499999;
-            stroke-linecap:round;
-            stroke-linejoin:miter;
-            stroke-miterlimit:4;
-            stroke-dasharray:none;
-            stroke-dashoffset:0;
-            stroke-opacity:1" width="12.020px" x="613.02" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.00000;
-            fill:#d35f5f;
-            fill-opacity:1;
-            stroke:none;
-            stroke-width:0.26499999;
-            stroke-linecap:round;
-            stroke-linejoin:miter;
-            stroke-miterlimit:4;
-            stroke-dasharray:none;
-            stroke-dashoffset:0;
-            stroke-opacity:1" width="12.020px" x="625.04" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.00000;
-            fill:#d35f5f;
-            fill-opacity:1;
-            stroke:none;
-            stroke-width:0.26499999;
-            stroke-linecap:round;
-            stroke-linejoin:miter;
-            stroke-miterlimit:4;
-            stroke-dasharray:none;
-            stroke-dashoffset:0;
-            stroke-opacity:1" width="12.020px" x="637.06" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.00000;
-            fill:#d35f5f;
-            fill-opacity:1;
-            stroke:none;
-            stroke-width:0.26499999;
-            stroke-linecap:round;
-            stroke-linejoin:miter;
-            stroke-miterlimit:4;
-            stroke-dasharray:none;
-            stroke-dashoffset:0;
-            stroke-opacity:1" width="12.020px" x="649.0799999999999" y="7.0"/>
-    <rect height="25.000px" style="opacity:0.00000;
-            fill:#d35f5f;
-            fill-opacity:1;
-            stroke:none;
-            stroke-width:0.26499999;
-            stroke-linecap:round;
-            stroke-linejoin:miter;
-            stroke-miterlimit:4;
-            stroke-dasharray:none;
-            stroke-dashoffset:0;
-            stroke-opacity:1" width="12.020px" x="661.1" y="7.0"/>
     <text fill="black" style="font-style: normal;
             font-variant: normal;
             font-weight: normal;
@@ -1263,6 +999,6 @@
             text-align: start;
             writing-mode: lr-tb;
             text-anchor: start;
-            stroke-width: 0.26458332px" x="0" y="25.0">utf-8 def status ( self , query = , agent = None ) : \n</text>
+            stroke-width: 0.26458332px" x="0" y="25.0">class NetworkProfileTab ( tabs . Tab ) : \n</text>
   </g>
 </svg>
