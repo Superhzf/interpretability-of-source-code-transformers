@@ -14,6 +14,7 @@ import neurox.analysis.corpus as corpus
 import os
 
 
+# This set of idx is for pretrained, finetuned defdet, and finetuned clonedet models
 bert_idx = [697,734,751,790,1777]
 bert_top_neurons = [2903]
 bert_class = "GREATER"
@@ -24,7 +25,7 @@ graphcodebert_idx = [5,53,67,82]
 graphcodebert_top_neurons = [32]
 graphcodebert_class = "EQUAL"
 
-FOLDER_NAME ="result_finetuned"
+FOLDER_NAME ="result_finetuned_clonedet"
 
 def mkdir_if_needed(dir_name):
     if not os.path.isdir(dir_name):
@@ -66,8 +67,8 @@ def load_extracted_activations(dev):
     else:
         #Load activations from json files
         bert_activations, bert_num_layers = data_loader.load_activations('bert_activations.json',13) #num_layers is 13 not 768
-        codebert_activations, codebert_num_layers = data_loader.load_activations('codebert_defdet_activations.json',13) #num_layers is 13 not 768
-        graphcodebert_activations, graphcodebert_num_layers = data_loader.load_activations('graphcodebert_defdet_activations.json',13)
+        codebert_activations, codebert_num_layers = data_loader.load_activations('codebert_clonedet_activations1.json',13) #num_layers is 13 not 768
+        graphcodebert_activations, graphcodebert_num_layers = data_loader.load_activations('graphcodebert_clonedet_activations1.json',13)
 
         return bert_activations, codebert_activations, graphcodebert_activations
 
