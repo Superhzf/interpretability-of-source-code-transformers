@@ -69,8 +69,8 @@ def extract_activations():
 def load_extracted_activations():
     #Load activations from json files
     bert_activations, bert_num_layers = data_loader.load_activations('bert_activations.json',13) #num_layers is 13 not 768
-    codebert_activations, codebert_num_layers = data_loader.load_activations('codebert_defdet_activations.json',13) #num_layers is 13 not 768
-    graphcodebert_activations, graphcodebert_num_layers = data_loader.load_activations('graphcodebert_defdet_activations.json',13)
+    codebert_activations, codebert_num_layers = data_loader.load_activations('codebert_clonedet_activations1.json',13) #num_layers is 13 not 768
+    graphcodebert_activations, graphcodebert_num_layers = data_loader.load_activations('graphcodebert_clonedet_activations1.json',13)
 
     return bert_activations, codebert_activations, graphcodebert_activations
 
@@ -467,13 +467,10 @@ def main():
 
     args = parser.parse_args()
     if args.extract == 'True':
-        #bert_activations, codebert_activations = extract_activations()
         bert_activations, codebert_activations,graphcodebert_activations = extract_activations()
     else:
         print("Getting activations from json files. If you need to extract them, run with --extract=True \n" )
-        #bert_activations, codebert_activations = load_extracted_activations()
 
-    #bert_activations, codebert_activations,graphcodebert_activations = extract_activations()
     bert_activations, codebert_activations, graphcodebert_activations = load_extracted_activations()
 
     bert_tokens, codebert_tokens, graphcodebert_tokens =  load_tokens(bert_activations, codebert_activations, graphcodebert_activations)
