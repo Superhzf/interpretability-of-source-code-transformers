@@ -5,7 +5,7 @@ from run_neurox1 import load_extracted_activations
 from run_neurox1 import load_tokens
 import neurox.analysis.corpus as corpus
 
-with open('log_finetuned') as f:
+with open('log_finetuned_clonedet') as f:
     lines = f.read()
 f.close()
 
@@ -47,9 +47,9 @@ def plot_distribution(top_neurons,model_name):
     plt.title(f"{model_name}:neuron distribution across layers")
     plt.savefig(f"./{folder_name}/{model_name}_neuron_dist.png")
 
-folder_name = "distribution_finetuned"
+folder_name = "distribution_finetuned_clonedet"
 mkdir_if_needed(f"./{folder_name}/")
-model_names = ["BERT","Finetuned_CodeBert","Finetuned_GraphCodeBert"]
+model_names = ["BERT","Finetuned_CodeBert_clonedet","Finetuned_GraphCodeBert_clonedet"]
 regex_list = [regex_bert_top_neurons,regex_codebert_top_neurons,regex_graphcodebert_top_neurons]
 for this_regex, this_model_name in zip(regex_list,model_names):
     this_top_neurons = str2int_top_neurons(this_regex)
