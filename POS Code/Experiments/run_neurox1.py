@@ -97,8 +97,8 @@ def linear_probes_inference(tokens, activations,model_name):
 
         #Get scores of probes
         print(f"Accuracy on the test set of probing {model_name} of all layers:")
-        bert_scores = linear_probe.evaluate_probe(probe, X_test, y_test, idx_to_class=idx2label)
-        print(bert_scores)
+        scores = linear_probe.evaluate_probe(probe, X_test, y_test, idx_to_class=idx2label)
+        print(scores)
         return probe, scores
 
     def get_imp_neurons(X_train,y_train,X_test,y_test,probe,label2idx,idx2label,model_name):
@@ -113,7 +113,7 @@ def linear_probes_inference(tokens, activations,model_name):
 
         #Train probes on top neurons and save them
         X_selected = ablation.filter_activations_keep_neurons(X_train, top_neurons)
-        print("The shape of selected features",bert_X_selected.shape)
+        print("The shape of selected features",X_selected.shape)
         probe_selected = linear_probe.train_logistic_regression_probe(X_selected, y_train, lambda_l1=0.001, lambda_l2=0.001)
         del X_selected
         X_selected_test = ablation.filter_activations_keep_neurons(X_test, top_neurons)
@@ -208,11 +208,11 @@ def linear_probes_inference(tokens, activations,model_name):
         """
         print(f"{model_name} top words")
         for neuron in top_neurons:
-            bert_top_words = corpus.get_top_words(tokens, activations, neuron, num_tokens=5)
-            print(f"Top words for {model_name} neuron indx {neuron}",bert_top_words)
+            top_words = corpus.get_top_words(tokens, activations, neuron, num_tokens=5)
+            print(f"Top words for {model_name} neuron indx {neuron}",top_words)
         print("----------------------------------------------------------------")
 
-    def layerwise_probes_inference(X_train,y_train,X_test,y_test,model_name):
+    def layerwise_probes_inference(X_train,y_train,X_test,y_test,idx2label,model_name):
         ''' Returns models and accuracy(score) of the probes trained on activations from different layers '''
         for i in range(13):
             print(f"{model_name} Layer", i)
@@ -221,7 +221,7 @@ def linear_probes_inference(tokens, activations,model_name):
             del layer_train
             pickle.dump(layer_probe, open(f"{model_name}_{i}_probe.sav", 'wb'))
             layer_test = ablation.filter_activations_by_layers(X_test, [i], 13)
-            linear_probe.evaluate_probe(layer_probe, layer_test, y_test, idx_to_class=bert_idx2label)
+            linear_probe.evaluate_probe(layer_probe, layer_test, y_test, idx_to_class=idx2label)
             del layer_test
             del layer_probe
 
@@ -236,8 +236,8 @@ def linear_probes_inference(tokens, activations,model_name):
             train_test_split(X_ct, y_ct, test_size=0.2,random_state=50, shuffle=True)
         # normalization
         ct_norm = Normalization(X_ct_train)
-        X_ct_train = bert_ct_norm.norm(X_ct_train)
-        X_ct_test = bert_ct_norm.norm(X_ct_test)
+        X_ct_train = ct_norm.norm(X_ct_train)
+        X_ct_test = ct_norm.norm(X_ct_test)
         del ct_norm
 
         ct_probe = linear_probe.train_logistic_regression_probe(X_ct_train, y_ct_train, lambda_l1=0.001, lambda_l2=0.001)
@@ -308,7 +308,7 @@ def linear_probes_inference(tokens, activations,model_name):
     probe, scores = all_activations_probe(X_train,y_train,idx2label,model_name)
 
     #Layerwise Probes
-    layerwise_probes_inference(X_train,y_train,X_test,y_test,model_name)
+    layerwise_probes_inference(X_train,y_train,X_test,y_test,idx2label,model_name)
 
     #Important neuron probes
     top_neurons = get_imp_neurons(X_train,y_train,X_test,y_test,probe,label2idx,idx2label,model_name)
