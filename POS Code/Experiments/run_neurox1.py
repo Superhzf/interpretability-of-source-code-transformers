@@ -241,6 +241,7 @@ def linear_probes_inference(tokens, activations,model_name):
         del ct_norm
 
         ct_probe = linear_probe.train_logistic_regression_probe(X_ct_train, y_ct_train, lambda_l1=0.001, lambda_l2=0.001)
+        print(f"Accuracy on the test set of {model_name} control model:")
         ct_scores = linear_probe.evaluate_probe(ct_probe, X_ct_test, y_ct_test, idx_to_class=idx2label_ct)
         selectivity = original_scores['__OVERALL__'] - ct_scores['__OVERALL__']
         print(f'{model_name} Selectivity (Diff. between true task and probing task performance): ', selectivity)
