@@ -270,7 +270,7 @@ def linear_probes_inference(tokens, activations,model_name):
         print(neurox.interpretation.clustering.create_correlation_clusters(X, use_abs_correlation=True, clustering_threshold=0.5, method='average'))
 
     #Get mappings
-    X, y, label2idx, idx2label, src2idx, idx2src = get_mappings()
+    X, y, label2idx, idx2label, src2idx, idx2src = get_mappings(tokens,activations)
 
     import collections
     count = collections.Counter(y)
