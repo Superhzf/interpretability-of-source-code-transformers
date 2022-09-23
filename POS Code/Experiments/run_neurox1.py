@@ -165,30 +165,30 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
         print(graphcodebert_top_neurons_per_class)
 
         #Train probes on top neurons and save them
-        bert_X_selected = ablation.filter_activations_keep_neurons(bert_X_train, bert_ordering[:100])
+        bert_X_selected = ablation.filter_activations_keep_neurons(bert_X_train, bert_top_neurons])
         bert_X_selected.shape
         bert_probe_selected = linear_probe.train_logistic_regression_probe(bert_X_selected, bert_y_train, lambda_l1=0.001, lambda_l2=0.001)
-        pickle.dump(bert_probe_selected, open("bert_probe_selected.sav", 'wb'))
         del bert_X_selected
-        bert_X_selected_test = ablation.filter_activations_keep_neurons(bert_X_test, bert_ordering[:100])
+        bert_X_selected_test = ablation.filter_activations_keep_neurons(bert_X_test, bert_top_neurons)
+        print("Accuracy on the test set of BERT model on top neurons:")
         linear_probe.evaluate_probe(bert_probe_selected, bert_X_selected_test, bert_y_test, idx_to_class=bert_idx2label)
         del bert_X_selected_test
 
-        codebert_X_selected = ablation.filter_activations_keep_neurons(codebert_X_train, codebert_ordering[:100])
+        codebert_X_selected = ablation.filter_activations_keep_neurons(codebert_X_train, codebert_top_neurons)
         codebert_X_selected.shape
         codebert_probe_selected = linear_probe.train_logistic_regression_probe(codebert_X_selected, codebert_y_train, lambda_l1=0.001, lambda_l2=0.001)
-        pickle.dump(codebert_probe_selected, open("codebert_probe_selected.sav", 'wb'))
         del codebert_X_selected
-        codebert_X_selected_test = ablation.filter_activations_keep_neurons(codebert_X_test, codebert_ordering[:100])
+        codebert_X_selected_test = ablation.filter_activations_keep_neurons(codebert_X_test, codebert_top_neurons)
+        print("Accuracy on the test set of CodeBERT model on top neurons:")
         linear_probe.evaluate_probe(codebert_probe_selected, codebert_X_selected_test, codebert_y_test, idx_to_class=codebert_idx2label)
         del codebert_X_selected_test
 
-        graphcodebert_X_selected = ablation.filter_activations_keep_neurons(graphcodebert_X_train, graphcodebert_ordering[:100])
+        graphcodebert_X_selected = ablation.filter_activations_keep_neurons(graphcodebert_X_train, graphcodebert_top_neurons)
         graphcodebert_X_selected.shape
         graphcodebert_probe_selected = linear_probe.train_logistic_regression_probe(graphcodebert_X_selected, graphcodebert_y_train, lambda_l1=0.001, lambda_l2=0.001)
         del graphcodebert_X_selected
-        pickle.dump(graphcodebert_probe_selected, open("graphcodebert_probe_selected.sav", 'wb'))
-        graphcodebert_X_selected_test = ablation.filter_activations_keep_neurons(graphcodebert_X_test, graphcodebert_ordering[:100])
+        graphcodebert_X_selected_test = ablation.filter_activations_keep_neurons(graphcodebert_X_test, graphcodebert_top_neurons)
+        print("Accuracy on the test set of GraphCodeBERT model on top neurons:")
         linear_probe.evaluate_probe(graphcodebert_probe_selected, graphcodebert_X_selected_test, graphcodebert_y_test, idx_to_class=graphcodebert_idx2label)
         del graphcodebert_X_selected_test
 
@@ -351,9 +351,18 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
         bert_ct_scores = linear_probe.evaluate_probe(bert_ct_probe, bert_X_ct_test, bert_y_ct_test, idx_to_class=bert_idx2label_ct)
         bert_selectivity = bert_scores['__OVERALL__'] - bert_ct_scores['__OVERALL__']
         print('BERT Selectivity (Diff. between true task and probing task performance): ', bert_selectivity)
-        del bert_ct_probe
         del bert_ct_scores
+
+        bert_top_neurons_ct, _ = linear_probe.get_top_neurons(bert_ct_probe, 0.02, bert_label2idx_ct)
+        bert_X_selected_ct = ablation.filter_activations_keep_neurons(bert_X_ct_train, bert_top_neurons_ct])
+        bert_probe_selected_ct = linear_probe.train_logistic_regression_probe(bert_X_selected_ct, bert_y_ct_train, lambda_l1=0.001, lambda_l2=0.001)
+        del bert_X_selected_ct
+        bert_X_selected_test_ct = ablation.filter_activations_keep_neurons(bert_X_ct_test, bert_top_neurons_ct)
+        print("Accuracy on the test set of BERT control model on top neurons:")
+        linear_probe.evaluate_probe(bert_probe_selected_ct, bert_X_selected_test_ct, bert_y_ct_test, idx_to_class=bert_idx2label_ct)
+        del bert_X_selected_test
         del bert_X_ct_train, bert_y_ct_train, bert_X_ct_test, bert_y_ct_test
+        del bert_ct_probe
 
         print("Creating control dataset for CodeBERT POS tagging task")
         [codebert_ct_tokens] = ct.create_sequence_labeling_dataset(codebert_tokens, sample_from='uniform')
@@ -373,9 +382,18 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
         codebert_ct_scores = linear_probe.evaluate_probe(codebert_ct_probe, codebert_X_ct_test, codebert_y_ct_test, idx_to_class=codebert_idx2label_ct)
         codebert_selectivity = codebert_scores['__OVERALL__'] - codebert_ct_scores['__OVERALL__']
         print('CodeBERT Selectivity (Diff. between true task and probing task performance): ', codebert_selectivity)
-        del codebert_ct_probe
         del codebert_ct_scores
+
+        codebert_top_neurons_ct, _ = linear_probe.get_top_neurons(codebert_ct_probe, 0.02, codebert_label2idx_ct)
+        codebert_X_selected_ct = ablation.filter_activations_keep_neurons(codebert_X_ct_train, codebert_top_neurons_ct])
+        codebert_probe_selected_ct = linear_probe.train_logistic_regression_probe(codebert_X_selected_ct, codebert_y_ct_train, lambda_l1=0.001, lambda_l2=0.001)
+        del codebert_X_selected_ct
+        codebert_X_selected_test_ct = ablation.filter_activations_keep_neurons(codebert_X_ct_test, codebert_top_neurons_ct)
+        print("Accuracy on the test set of CodeBERT control model on top neurons:")
+        linear_probe.evaluate_probe(codebert_probe_selected_ct, codebert_X_selected_test_ct, codebert_y_ct_test, idx_to_class=codebert_idx2label_ct)
+        del codebert_X_selected_test_ct
         del codebert_X_ct_train, codebert_y_ct_train, codebert_X_ct_test, codebert_y_ct_test
+        del codebert_ct_probe
 
         print("Creating control dataset for GraphCodeBERT POS tagging task")
         [graphcodebert_ct_tokens] = ct.create_sequence_labeling_dataset(graphcodebert_tokens, sample_from='uniform')
@@ -395,8 +413,17 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
         graphcodebert_ct_scores = linear_probe.evaluate_probe(graphcodebert_ct_probe, graphcodebert_X_ct_test, graphcodebert_y_ct_test, idx_to_class=graphcodebert_idx2label_ct)
         graphcodebert_selectivity = graphcodebert_scores['__OVERALL__'] - graphcodebert_ct_scores['__OVERALL__']
         print('GraphCodeBERT Selectivity (Diff. between true task and probing task performance): ', graphcodebert_selectivity)
-        del graphcodebert_ct_probe
         del graphcodebert_ct_scores
+
+        graphcodebert_top_neurons_ct, _ = linear_probe.get_top_neurons(graphcodebert_ct_probe, 0.02, graphcodebert_label2idx_ct)
+        graphcodebert_X_selected_ct = ablation.filter_activations_keep_neurons(graphcodebert_X_ct_train, graphcodebert_top_neurons_ct])
+        graphcodebert_probe_selected_ct = linear_probe.train_logistic_regression_probe(graphcodebert_X_selected_ct, graphcodebert_y_ct_train, lambda_l1=0.001, lambda_l2=0.001)
+        del graphcodebert_X_selected_ct
+        graphcodebert_X_selected_test_ct = ablation.filter_activations_keep_neurons(graphcodebert_X_ct_test, graphcodebert_top_neurons_ct)
+        print("Accuracy on the test set of GraphCodeBERT control model on top neurons:")
+        linear_probe.evaluate_probe(graphcodebert_probe_selected_ct, graphcodebert_X_selected_test_ct, graphcodebert_y_ct_test, idx_to_class=graphcodebert_idx2label_ct)
+        del graphcodebert_ct_probe
+        del graphcodebert_X_selected_test_ct
         del graphcodebert_X_ct_train, graphcodebert_y_ct_train, graphcodebert_X_ct_test, graphcodebert_y_ct_test
 
         return bert_selectivity, codebert_selectivity, graphcodebert_selectivity
