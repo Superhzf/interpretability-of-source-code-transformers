@@ -87,7 +87,7 @@ def linear_probes_inference(tokens, activations,model_name):
     def get_mappings(tokens,activations):
         ''' Get mappings for all models'''
         X, y, mapping = utils.create_tensors(tokens, activations, 'NAME') #mapping contains tuple of 4 dictionaries
-        label2idx, idx2label, src2idx, bert_idx2src = mapping
+        label2idx, idx2label, src2idx, idx2src = mapping
 
         return X, y, label2idx, idx2label, src2idx, idx2src
 
