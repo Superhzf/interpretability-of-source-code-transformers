@@ -66,135 +66,64 @@ def extract_activations():
     return(load_extracted_activations())
 
 
-def load_extracted_activations():
+def load_extracted_activations(activation_file_name):
     #Load activations from json files
-    bert_activations, bert_num_layers = data_loader.load_activations('bert_activations.json',13) #num_layers is 13 not 768
-    codebert_activations, codebert_num_layers = data_loader.load_activations('codebert_clonedet_activations1.json',13) #num_layers is 13 not 768
-    graphcodebert_activations, graphcodebert_num_layers = data_loader.load_activations('graphcodebert_clonedet_activations1.json',13)
+    activations, num_layers = data_loader.load_activations(activation_file_name,13)
+    return bert_activations
 
-    return bert_activations, codebert_activations, graphcodebert_activations
-
-def load_tokens(bert_activations,codebert_activations, graphcodebert_activations):
+def load_tokens(activations):
     #Load tokens and sanity checks for parallelism between tokens, labels and activations
-    bert_tokens = data_loader.load_data('codetest2_unique.in',
+    tokens = data_loader.load_data('codetest2_unique.in',
                                    'codetest2_unique.label',
-                                   bert_activations,
+                                   activations,
                                    512 # max_sent_length
                                   )
-
-    codebert_tokens = data_loader.load_data('codetest2_unique.in',
-                                   'codetest2_unique.label',
-                                   codebert_activations,
-                                   512 # max_sent_length
-                                  )
-
-    graphcodebert_tokens = data_loader.load_data('codetest2_unique.in',
-                                   'codetest2_unique.label',
-                                   graphcodebert_activations,
-                                   512 # max_sent_length
-                                  )
+    return tokens
 
 
-    return bert_tokens, codebert_tokens, graphcodebert_tokens
-
-
-
-def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, codebert_activations, graphcodebert_tokens, graphcodebert_activations):
+def linear_probes_inference(tokens, activations,model_name):
     ''' Returns models and accuracy(score) of the probes trained on entire activation space '''
 
-    def get_mappings():
+    def get_mappings(tokens,activations):
         ''' Get mappings for all models'''
-        bert_X, bert_y, bert_mapping = utils.create_tensors(bert_tokens, bert_activations, 'NAME') #mapping contains tuple of 4 dictionaries
-        bert_label2idx, bert_idx2label, bert_src2idx, bert_idx2src = bert_mapping
+        X, y, mapping = utils.create_tensors(tokens, activations, 'NAME') #mapping contains tuple of 4 dictionaries
+        label2idx, idx2label, src2idx, bert_idx2src = mapping
 
-        codebert_X, codebert_y, codebert_mapping = utils.create_tensors(codebert_tokens, codebert_activations, 'NAME') #mapping contains tuple of 4 dictionaries
-        codebert_label2idx, codebert_idx2label, codebert_src2idx, codebert_idx2src = codebert_mapping
+        return X, y, label2idx, idx2label, src2idx, idx2src
 
-        graphcodebert_X, graphcodebert_y, graphcodebert_mapping = utils.create_tensors(graphcodebert_tokens, graphcodebert_activations, 'NAME') #mapping contains tuple of 4 dictionaries
-        graphcodebert_label2idx, graphcodebert_idx2label, graphcodebert_src2idx, graphcodebert_idx2src = graphcodebert_mapping
-
-        return bert_X, bert_y, codebert_X, codebert_y,  bert_label2idx, bert_idx2label, bert_src2idx, bert_idx2src, codebert_label2idx, codebert_idx2label, codebert_src2idx, codebert_idx2src, graphcodebert_X, graphcodebert_y, graphcodebert_label2idx, graphcodebert_idx2label, graphcodebert_src2idx, graphcodebert_idx2src
-
-    def all_activations_probe():
+    def all_activations_probe(X_train,y_train,idx2label,model_name):
         #Train the linear probes (logistic regression) - POS(code) tagging
-
-        bert_probe = linear_probe.train_logistic_regression_probe(bert_X_train, bert_y_train, lambda_l1=0.001, lambda_l2=0.001)
-        codebert_probe = linear_probe.train_logistic_regression_probe(codebert_X_train, codebert_y_train, lambda_l1=0.001, lambda_l2=0.001)
-        graphcodebert_probe = linear_probe.train_logistic_regression_probe(graphcodebert_X_train, graphcodebert_y_train, lambda_l1=0.001, lambda_l2=0.001)
-
-        #Evaluate linear probes for POS(code) tagging
-        linear_probe.evaluate_probe(bert_probe, bert_X_test, bert_y_test, idx_to_class=bert_idx2label)
-        linear_probe.evaluate_probe(codebert_probe, codebert_X_test, codebert_y_test, idx_to_class=codebert_idx2label)
-        linear_probe.evaluate_probe(graphcodebert_probe, graphcodebert_X_test, graphcodebert_y_test, idx_to_class=graphcodebert_idx2label)
+        probe = linear_probe.train_logistic_regression_probe(X_train, y_train, lambda_l1=0.001, lambda_l2=0.001)
 
         #Get scores of probes
-        bert_scores = linear_probe.evaluate_probe(bert_probe, bert_X_test, bert_y_test, idx_to_class=bert_idx2label)
+        print(f"Accuracy on the test set of probing {model_name} of all layers:")
+        bert_scores = linear_probe.evaluate_probe(probe, X_test, y_test, idx_to_class=idx2label)
         print(bert_scores)
-        codebert_scores = linear_probe.evaluate_probe(codebert_probe, codebert_X_test, codebert_y_test, idx_to_class=codebert_idx2label)
-        print(codebert_scores)
-        graphcodebert_scores = linear_probe.evaluate_probe(graphcodebert_probe, graphcodebert_X_test, graphcodebert_y_test, idx_to_class=graphcodebert_idx2label)
-        print(graphcodebert_scores)
-        return bert_probe, codebert_probe, graphcodebert_probe, bert_scores, codebert_scores, graphcodebert_scores
+        return probe, scores
 
-
-    def get_imp_neurons():
-        ''' Returns top 10% neurons for each model'''
-
-        #Get neuron ordering
-        bert_ordering, bert_cutoffs = linear_probe.get_neuron_ordering(bert_probe, bert_label2idx)
-        codebert_ordering, codebert_cutoffs = linear_probe.get_neuron_ordering(codebert_probe, codebert_label2idx)
-        graphcodebert_ordering, graphcodebert_cutoffs = linear_probe.get_neuron_ordering(graphcodebert_probe, graphcodebert_label2idx)
+    def get_imp_neurons(X_train,y_train,X_test,y_test,probe,label2idx,idx2label,model_name):
+        ''' Returns top 2% neurons for each model'''
 
         #Top neurons
-        bert_top_neurons, bert_top_neurons_per_class = linear_probe.get_top_neurons(bert_probe, 0.02, bert_label2idx)
-        print("Bert top neurons")
-        print(repr(bert_top_neurons))
-        print("Bert top neurons per class")
-        print(bert_top_neurons_per_class)
-
-        codebert_top_neurons, codebert_top_neurons_per_class = linear_probe.get_top_neurons(codebert_probe, 0.02, codebert_label2idx)
-        print("CodeBert top neurons")
-        print(repr(codebert_top_neurons))
-        print("CodeBert top neurons per class")
-        print(codebert_top_neurons_per_class)
-
-        graphcodebert_top_neurons, graphcodebert_top_neurons_per_class = linear_probe.get_top_neurons(graphcodebert_probe, 0.02, graphcodebert_label2idx)
-        print("GraphCodeBert top neurons")
-        print(repr(graphcodebert_top_neurons))
-        print("GraphCodeBert top neurons per class")
-        print(graphcodebert_top_neurons_per_class)
+        top_neurons, top_neurons_per_class = linear_probe.get_top_neurons(probe, 0.02, label2idx)
+        print(f"{model_name} top neurons")
+        print(repr(top_neurons))
+        print(f"{model_name} top neurons per class")
+        print(top_neurons_per_class)
 
         #Train probes on top neurons and save them
-        bert_X_selected = ablation.filter_activations_keep_neurons(bert_X_train, bert_top_neurons])
-        bert_X_selected.shape
-        bert_probe_selected = linear_probe.train_logistic_regression_probe(bert_X_selected, bert_y_train, lambda_l1=0.001, lambda_l2=0.001)
-        del bert_X_selected
-        bert_X_selected_test = ablation.filter_activations_keep_neurons(bert_X_test, bert_top_neurons)
-        print("Accuracy on the test set of BERT model on top neurons:")
-        linear_probe.evaluate_probe(bert_probe_selected, bert_X_selected_test, bert_y_test, idx_to_class=bert_idx2label)
-        del bert_X_selected_test
+        X_selected = ablation.filter_activations_keep_neurons(X_train, top_neurons])
+        print("The shape of selected features",bert_X_selected.shape)
+        probe_selected = linear_probe.train_logistic_regression_probe(X_selected, y_train, lambda_l1=0.001, lambda_l2=0.001)
+        del X_selected
+        X_selected_test = ablation.filter_activations_keep_neurons(X_test, top_neurons)
+        print(f"Accuracy on the test set of {model_name} model on top neurons:")
+        linear_probe.evaluate_probe(probe_selected, X_selected_test, y_test, idx_to_class=idx2label)
+        del X_selected_test
 
-        codebert_X_selected = ablation.filter_activations_keep_neurons(codebert_X_train, codebert_top_neurons)
-        codebert_X_selected.shape
-        codebert_probe_selected = linear_probe.train_logistic_regression_probe(codebert_X_selected, codebert_y_train, lambda_l1=0.001, lambda_l2=0.001)
-        del codebert_X_selected
-        codebert_X_selected_test = ablation.filter_activations_keep_neurons(codebert_X_test, codebert_top_neurons)
-        print("Accuracy on the test set of CodeBERT model on top neurons:")
-        linear_probe.evaluate_probe(codebert_probe_selected, codebert_X_selected_test, codebert_y_test, idx_to_class=codebert_idx2label)
-        del codebert_X_selected_test
+        return top_neurons
 
-        graphcodebert_X_selected = ablation.filter_activations_keep_neurons(graphcodebert_X_train, graphcodebert_top_neurons)
-        graphcodebert_X_selected.shape
-        graphcodebert_probe_selected = linear_probe.train_logistic_regression_probe(graphcodebert_X_selected, graphcodebert_y_train, lambda_l1=0.001, lambda_l2=0.001)
-        del graphcodebert_X_selected
-        graphcodebert_X_selected_test = ablation.filter_activations_keep_neurons(graphcodebert_X_test, graphcodebert_top_neurons)
-        print("Accuracy on the test set of GraphCodeBERT model on top neurons:")
-        linear_probe.evaluate_probe(graphcodebert_probe_selected, graphcodebert_X_selected_test, graphcodebert_y_test, idx_to_class=graphcodebert_idx2label)
-        del graphcodebert_X_selected_test
-
-        return bert_top_neurons, codebert_top_neurons, graphcodebert_top_neurons
-
-    def get_top_words(bert_top_neurons, codebert_top_neurons, graphcodebert_top_neurons):
+    def get_top_words(top_neurons,tokens,activations,model_name):
         #relate neurons to corpus elements like words and sentences
         """
         pretrained_Bert:
@@ -277,263 +206,116 @@ def linear_probes_inference( bert_tokens, bert_activations, codebert_tokens, cod
         idx: 2059, AT
         [('straight', 1.0), ('ACLU_NJ', 0.942600446611766), ('@', 0.860884857370497), ('POST', 0.8565302777694044), ('through', 0.8317164966072599)]
         """
-        print("BERT top words")
-        for neuron in bert_top_neurons:
-            bert_top_words = corpus.get_top_words(bert_tokens, bert_activations, neuron, num_tokens=5)
-            print(f"Top words for bert neuron indx {neuron}",bert_top_words)
+        print(f"{model_name} top words")
+        for neuron in top_neurons:
+            bert_top_words = corpus.get_top_words(tokens, activations, neuron, num_tokens=5)
+            print(f"Top words for {model_name} neuron indx {neuron}",bert_top_words)
         print("----------------------------------------------------------------")
-        print("CodeBERT top words")
-        for neuron in codebert_top_neurons:
-            codebert_top_words = corpus.get_top_words(codebert_tokens, codebert_activations, neuron, num_tokens=5)
-            print(f"Top words for codebert neuron indx {neuron}",codebert_top_words)
-        print("----------------------------------------------------------------")
-        print("GraphCodeBERT top words")
-        for neuron in graphcodebert_top_neurons:
-            graphcodebert_top_words = corpus.get_top_words(graphcodebert_tokens, graphcodebert_activations, neuron, num_tokens=5)
-            print(f"Top words for graphcodebert neuron indx {neuron}",graphcodebert_top_words)
 
-
-    def layerwise_probes_inference():
+    def layerwise_probes_inference(X_train,y_train,X_test,y_test,model_name):
         ''' Returns models and accuracy(score) of the probes trained on activations from different layers '''
-
-        #BERT
         for i in range(13):
-            print("Bert Layer", i)
-            layer_train = ablation.filter_activations_by_layers(bert_X_train, [i], 13)
-            layer_probe = linear_probe.train_logistic_regression_probe(layer_train, bert_y_train, lambda_l1=0.001, lambda_l2=0.001)
+            print(f"{model_name} Layer", i)
+            layer_train = ablation.filter_activations_by_layers(X_train, [i], 13)
+            layer_probe = linear_probe.train_logistic_regression_probe(layer_train, y_train, lambda_l1=0.001, lambda_l2=0.001)
             del layer_train
-            pickle.dump(layer_probe, open(f"bert_layer{i}_probe.sav", 'wb'))
-            layer_test = ablation.filter_activations_by_layers(bert_X_test, [i], 13)
-            linear_probe.evaluate_probe(layer_probe, layer_test, bert_y_test, idx_to_class=bert_idx2label)
+            pickle.dump(layer_probe, open(f"{model_name}_{i}_probe.sav", 'wb'))
+            layer_test = ablation.filter_activations_by_layers(X_test, [i], 13)
+            linear_probe.evaluate_probe(layer_probe, layer_test, y_test, idx_to_class=bert_idx2label)
             del layer_test
             del layer_probe
 
-        #CodeBERT
-        for i in range(13):
-            print("Codebert Layer", i)
-            layer_train = ablation.filter_activations_by_layers(codebert_X_train, [i], 13)
-            layer_probe = linear_probe.train_logistic_regression_probe(layer_train, codebert_y_train, lambda_l1=0.001, lambda_l2=0.001)
-            del layer_train
-            pickle.dump(layer_probe, open(f"codebert_layer{i}_probe.sav", 'wb'))
-            layer_test = ablation.filter_activations_by_layers(codebert_X_test, [i], 13)
-            linear_probe.evaluate_probe(layer_probe, layer_test, codebert_y_test, idx_to_class=codebert_idx2label)
-            del layer_test
-            del layer_probe
+    def control_task_probes(tokens,activations,original_scores,model_name):
+        print(f"Creating control dataset for {model_name} POS tagging task")
+        [ct_tokens] = ct.create_sequence_labeling_dataset(tokens, sample_from='uniform')
+        print([s+'/'+str(t) for s,t in zip(ct_tokens['source'][0], ct_tokens['target'][0])])
+        X_ct, y_ct, mapping_ct = utils.create_tensors(ct_tokens, activations, 'NAME')
+        label2idx_ct, idx2label_ct, src2idx_ct, idx2src_ct = mapping_ct
 
-         #GraphCodeBERT
-        for i in range(13):
-            print("GraphCodebert Layer", i)
-            layer_train = ablation.filter_activations_by_layers(graphcodebert_X_train, [i], 13)
-            layer_probe = linear_probe.train_logistic_regression_probe(layer_train, graphcodebert_y_train, lambda_l1=0.001, lambda_l2=0.001)
-            del layer_train
-            pickle.dump(layer_probe, open(f"graphcodebert_layer{i}_probe.sav", 'wb'))
-            layer_test = ablation.filter_activations_by_layers(graphcodebert_X_test, [i], 13)
-            linear_probe.evaluate_probe(layer_probe, layer_test, graphcodebert_y_test, idx_to_class=graphcodebert_idx2label)
-            del layer_test
-            del layer_probe
-
-    def control_task_probes(bert_scores, codebert_scores, graphcodebert_scores):
-        print("Creating control dataset for BERT POS tagging task")
-        [bert_ct_tokens] = ct.create_sequence_labeling_dataset(bert_tokens, sample_from='uniform')
-        print([s+'/'+str(t) for s,t in zip(bert_ct_tokens['source'][0], bert_ct_tokens['target'][0])])
-        bert_X_ct, bert_y_ct, bert_mapping_ct = utils.create_tensors(bert_ct_tokens, bert_activations, 'NAME')
-        bert_label2idx_ct, bert_idx2label_ct, bert_src2idx_ct, bert_idx2src_ct = bert_mapping_ct
-
-        bert_X_ct_train, bert_X_ct_test, bert_y_ct_train, bert_y_ct_test = \
-            train_test_split(bert_X_ct, bert_y_ct, test_size=0.2,random_state=50, shuffle=False)
+        X_ct_train, X_ct_test, y_ct_train, y_ct_test = \
+            train_test_split(X_ct, y_ct, test_size=0.2,random_state=50, shuffle=True)
         # normalization
-        bert_ct_norm = Normalization(bert_X_ct_train)
-        bert_X_ct_train = bert_ct_norm.norm(bert_X_ct_train)
-        bert_X_ct_test = bert_ct_norm.norm(bert_X_ct_test)
-        del bert_ct_norm
+        ct_norm = Normalization(X_ct_train)
+        X_ct_train = bert_ct_norm.norm(X_ct_train)
+        X_ct_test = bert_ct_norm.norm(X_ct_test)
+        del ct_norm
 
-        bert_ct_probe = linear_probe.train_logistic_regression_probe(bert_X_ct_train, bert_y_ct_train, lambda_l1=0.001, lambda_l2=0.001)
-        bert_ct_scores = linear_probe.evaluate_probe(bert_ct_probe, bert_X_ct_test, bert_y_ct_test, idx_to_class=bert_idx2label_ct)
-        bert_selectivity = bert_scores['__OVERALL__'] - bert_ct_scores['__OVERALL__']
-        print('BERT Selectivity (Diff. between true task and probing task performance): ', bert_selectivity)
-        del bert_ct_scores
+        ct_probe = linear_probe.train_logistic_regression_probe(X_ct_train, y_ct_train, lambda_l1=0.001, lambda_l2=0.001)
+        ct_scores = linear_probe.evaluate_probe(ct_probe, X_ct_test, y_ct_test, idx_to_class=idx2label_ct)
+        selectivity = original_scores['__OVERALL__'] - ct_scores['__OVERALL__']
+        print(f'{model_name} Selectivity (Diff. between true task and probing task performance): ', selectivity)
+        del ct_scores
 
-        bert_top_neurons_ct, _ = linear_probe.get_top_neurons(bert_ct_probe, 0.02, bert_label2idx_ct)
-        bert_X_selected_ct = ablation.filter_activations_keep_neurons(bert_X_ct_train, bert_top_neurons_ct])
-        bert_probe_selected_ct = linear_probe.train_logistic_regression_probe(bert_X_selected_ct, bert_y_ct_train, lambda_l1=0.001, lambda_l2=0.001)
-        del bert_X_selected_ct
-        bert_X_selected_test_ct = ablation.filter_activations_keep_neurons(bert_X_ct_test, bert_top_neurons_ct)
-        print("Accuracy on the test set of BERT control model on top neurons:")
-        linear_probe.evaluate_probe(bert_probe_selected_ct, bert_X_selected_test_ct, bert_y_ct_test, idx_to_class=bert_idx2label_ct)
-        del bert_X_selected_test
-        del bert_X_ct_train, bert_y_ct_train, bert_X_ct_test, bert_y_ct_test
-        del bert_ct_probe
+        top_neurons_ct, _ = linear_probe.get_top_neurons(ct_probe, 0.02, label2idx_ct)
+        X_selected_ct = ablation.filter_activations_keep_neurons(X_ct_train, top_neurons_ct])
+        probe_selected_ct = linear_probe.train_logistic_regression_probe(X_selected_ct, y_ct_train, lambda_l1=0.001, lambda_l2=0.001)
+        del X_selected_ct
+        X_selected_test_ct = ablation.filter_activations_keep_neurons(X_ct_test, top_neurons_ct)
+        print(f"Accuracy on the test set of {model_name} control model on top neurons:")
+        linear_probe.evaluate_probe(probe_selected_ct, X_selected_test_ct, y_ct_test, idx_to_class=idx2label_ct)
+        del X_selected_test
+        del X_ct_train, y_ct_train, X_ct_test, y_ct_test
+        del ct_probe
 
-        print("Creating control dataset for CodeBERT POS tagging task")
-        [codebert_ct_tokens] = ct.create_sequence_labeling_dataset(codebert_tokens, sample_from='uniform')
-        print([s+'/'+str(t) for s,t in zip(codebert_ct_tokens['source'][0], codebert_ct_tokens['target'][0])])
-        codebert_X_ct, codebert_y_ct, codebert_mapping_ct = utils.create_tensors(codebert_ct_tokens, codebert_activations, 'NAME')
-        codebert_label2idx_ct, codebert_idx2label_ct, codebert_src2idx_ct, codebert_idx2src_ct = codebert_mapping_ct
+        return selectivity
 
-        codebert_X_ct_train, codebert_X_ct_test, codebert_y_ct_train, codebert_y_ct_test = \
-            train_test_split(codebert_X_ct, codebert_y_ct, test_size=0.2,random_state=50, shuffle=False)
-        # normalization
-        codebert_ct_norm = Normalization(codebert_X_ct_train)
-        codebert_X_ct_train = codebert_ct_norm.norm(codebert_X_ct_train)
-        codebert_X_ct_test = codebert_ct_norm.norm(codebert_X_ct_test)
-        del codebert_ct_norm
-
-        codebert_ct_probe = linear_probe.train_logistic_regression_probe(codebert_X_ct_train, codebert_y_ct_train, lambda_l1=0, lambda_l2=0)
-        codebert_ct_scores = linear_probe.evaluate_probe(codebert_ct_probe, codebert_X_ct_test, codebert_y_ct_test, idx_to_class=codebert_idx2label_ct)
-        codebert_selectivity = codebert_scores['__OVERALL__'] - codebert_ct_scores['__OVERALL__']
-        print('CodeBERT Selectivity (Diff. between true task and probing task performance): ', codebert_selectivity)
-        del codebert_ct_scores
-
-        codebert_top_neurons_ct, _ = linear_probe.get_top_neurons(codebert_ct_probe, 0.02, codebert_label2idx_ct)
-        codebert_X_selected_ct = ablation.filter_activations_keep_neurons(codebert_X_ct_train, codebert_top_neurons_ct])
-        codebert_probe_selected_ct = linear_probe.train_logistic_regression_probe(codebert_X_selected_ct, codebert_y_ct_train, lambda_l1=0.001, lambda_l2=0.001)
-        del codebert_X_selected_ct
-        codebert_X_selected_test_ct = ablation.filter_activations_keep_neurons(codebert_X_ct_test, codebert_top_neurons_ct)
-        print("Accuracy on the test set of CodeBERT control model on top neurons:")
-        linear_probe.evaluate_probe(codebert_probe_selected_ct, codebert_X_selected_test_ct, codebert_y_ct_test, idx_to_class=codebert_idx2label_ct)
-        del codebert_X_selected_test_ct
-        del codebert_X_ct_train, codebert_y_ct_train, codebert_X_ct_test, codebert_y_ct_test
-        del codebert_ct_probe
-
-        print("Creating control dataset for GraphCodeBERT POS tagging task")
-        [graphcodebert_ct_tokens] = ct.create_sequence_labeling_dataset(graphcodebert_tokens, sample_from='uniform')
-        print([s+'/'+str(t) for s,t in zip(graphcodebert_ct_tokens['source'][0], graphcodebert_ct_tokens['target'][0])])
-        graphcodebert_X_ct, graphcodebert_y_ct, graphcodebert_mapping_ct = utils.create_tensors(graphcodebert_ct_tokens, graphcodebert_activations, 'NAME')
-        graphcodebert_label2idx_ct, graphcodebert_idx2label_ct, graphcodebert_src2idx_ct, graphcodebert_idx2src_ct = graphcodebert_mapping_ct
-
-        graphcodebert_X_ct_train, graphcodebert_X_ct_test, graphcodebert_y_ct_train, graphcodebert_y_ct_test = \
-            train_test_split(codebert_X_ct, codebert_y_ct, test_size=0.2,random_state=50, shuffle=False)
-        # normalization
-        graphcodebert_ct_norm = Normalization(graphcodebert_X_ct_train)
-        graphcodebert_X_ct_train = graphcodebert_ct_norm.norm(graphcodebert_X_ct_train)
-        graphcodebert_X_ct_test = graphcodebert_ct_norm.norm(graphcodebert_X_ct_test)
-        del graphcodebert_ct_norm
-
-        graphcodebert_ct_probe = linear_probe.train_logistic_regression_probe(graphcodebert_X_ct_train, graphcodebert_y_ct_train, lambda_l1=0.001, lambda_l2=0.001)
-        graphcodebert_ct_scores = linear_probe.evaluate_probe(graphcodebert_ct_probe, graphcodebert_X_ct_test, graphcodebert_y_ct_test, idx_to_class=graphcodebert_idx2label_ct)
-        graphcodebert_selectivity = graphcodebert_scores['__OVERALL__'] - graphcodebert_ct_scores['__OVERALL__']
-        print('GraphCodeBERT Selectivity (Diff. between true task and probing task performance): ', graphcodebert_selectivity)
-        del graphcodebert_ct_scores
-
-        graphcodebert_top_neurons_ct, _ = linear_probe.get_top_neurons(graphcodebert_ct_probe, 0.02, graphcodebert_label2idx_ct)
-        graphcodebert_X_selected_ct = ablation.filter_activations_keep_neurons(graphcodebert_X_ct_train, graphcodebert_top_neurons_ct])
-        graphcodebert_probe_selected_ct = linear_probe.train_logistic_regression_probe(graphcodebert_X_selected_ct, graphcodebert_y_ct_train, lambda_l1=0.001, lambda_l2=0.001)
-        del graphcodebert_X_selected_ct
-        graphcodebert_X_selected_test_ct = ablation.filter_activations_keep_neurons(graphcodebert_X_ct_test, graphcodebert_top_neurons_ct)
-        print("Accuracy on the test set of GraphCodeBERT control model on top neurons:")
-        linear_probe.evaluate_probe(graphcodebert_probe_selected_ct, graphcodebert_X_selected_test_ct, graphcodebert_y_ct_test, idx_to_class=graphcodebert_idx2label_ct)
-        del graphcodebert_ct_probe
-        del graphcodebert_X_selected_test_ct
-        del graphcodebert_X_ct_train, graphcodebert_y_ct_train, graphcodebert_X_ct_test, graphcodebert_y_ct_test
-
-        return bert_selectivity, codebert_selectivity, graphcodebert_selectivity
-
-    def probeless(bert_X,bert_y, codebert_X, codebert_y, graphcodebert_X, graphcodebert_y):
+    def probeless(X,y,model_name):
         '''General and Task specific probeless '''
         #Task specific : POS Tagging
-        print("BERT Probless neuron ordering")
-        print(neurox.interpretation.probeless.get_neuron_ordering(bert_X,bert_y))
-        print("CodeBERT Probless neuron ordering")
-        print(neurox.interpretation.probeless.get_neuron_ordering(codebert_X,codebert_y))
-        print("GraphCodeBERT Probless neuron ordering")
-        print(neurox.interpretation.probeless.get_neuron_ordering(graphcodebert_X,graphcodebert_y))
-
+        print(f"{model_name} Probless neuron ordering")
+        print(neurox.interpretation.probeless.get_neuron_ordering(X,y))
         #General clustering analysis of POS dataset
         ''' Neuron Analysis on general tasks -- clustering'''
-        print("BERT Clustering POS")
-        print(neurox.interpretation.clustering.create_correlation_clusters(bert_X, use_abs_correlation=True, clustering_threshold=0.5, method='average'))
-        print("CodeBERT Clustering POS")
-        print(neurox.interpretation.clustering.create_correlation_clusters(codebert_X, use_abs_correlation=True, clustering_threshold=0.5, method='average'))
-        print("GraphCodeBERT Clustering POS")
-        print(neurox.interpretation.clustering.create_correlation_clusters(graphcodebert_X, use_abs_correlation=True, clustering_threshold=0.5, method='average'))
-
+        print(f"{model_name} Clustering POS")
+        print(neurox.interpretation.clustering.create_correlation_clusters(X, use_abs_correlation=True, clustering_threshold=0.5, method='average'))
 
     #Get mappings
-    bert_X, bert_y, codebert_X, codebert_y,  bert_label2idx, bert_idx2label, \
-    bert_src2idx, bert_idx2src, codebert_label2idx, codebert_idx2label, \
-    codebert_src2idx, codebert_idx2src, graphcodebert_X, graphcodebert_y, \
-    graphcodebert_label2idx, graphcodebert_idx2label, graphcodebert_src2idx, \
-    graphcodebert_idx2src = get_mappings()
+    X, y, label2idx, idx2label, src2idx, idx2src = get_mappings()
 
     import collections
-    count = collections.Counter(bert_y)
+    count = collections.Counter(y)
     distribution = {k: v for k, v in sorted(count.items(), key=lambda item: item[1],reverse=True)}
-    print("distribution:")
+    print(f"{model_name} distribution:")
     print(distribution)
 
-    print("bert_label2idx")
-    print(bert_label2idx)
+    idx_selected = y <= 40
+    y = y[idx_selected]
+    X = X[idx_selected]
 
-    idx_selected = bert_y <= 40
-    bert_y = bert_y[idx_selected]
-    bert_X = bert_X[idx_selected]
+    label2idx = {label:idx for (label,idx) in label2idx.items() if idx <= 40}
+    idx2label = {idx:label for (idx,label) in idx2label.items() if idx <= 40}
 
-    codebert_y = codebert_y[idx_selected]
-    codebert_X = codebert_X[idx_selected]
-
-    graphcodebert_y = graphcodebert_y[idx_selected]
-    graphcodebert_X = graphcodebert_X[idx_selected]
-
-    bert_label2idx = {label:idx for (label,idx) in bert_label2idx.items() if idx <= 40}
-    bert_idx2label = {idx:label for (idx,label) in bert_idx2label.items() if idx <= 40}
-
-    codebert_label2idx = {label:idx for (label,idx) in codebert_label2idx.items() if idx <= 40}
-    codebert_idx2label = {idx:label for (idx,label) in codebert_idx2label.items() if idx <= 40}
-
-    graphcodebert_label2idx = {label:idx for (label,idx) in graphcodebert_label2idx.items() if idx <= 40}
-    graphcodebert_idx2label = {idx:label for (idx,label) in graphcodebert_idx2label.items() if idx <= 40}
-
-    count = collections.Counter(bert_y)
+    count = collections.Counter(y)
     distribution = {k: v/len(bert_y) for k, v in sorted(count.items(), key=lambda item: item[1],reverse=True)}
-    print("distribution after trauncating:")
+    print(f"{model_name} distribution after trauncating:")
     print(distribution)
 
-    bert_X_train, bert_X_test, bert_y_train, bert_y_test = \
-        train_test_split(bert_X, bert_y, test_size=0.2,random_state=50, shuffle=True)
-    codebert_X_train, codebert_X_test, codebert_y_train, codebert_y_test = \
-        train_test_split(codebert_X, codebert_y, test_size=0.2,random_state=50, shuffle=True)
-    graphcodebert_X_train, graphcodebert_X_test, graphcodebert_y_train, graphcodebert_y_test = \
-        train_test_split(graphcodebert_X, graphcodebert_y, test_size=0.2,random_state=50, shuffle=True)
+    X_train, X_test, y_train, y_test = \
+        train_test_split(X, y, test_size=0.2,random_state=50, shuffle=True)
 
-    del bert_X, bert_y, codebert_X, codebert_y, graphcodebert_X, graphcodebert_y
+    del X, y
 
     #normalize the inputs before doing probing
-    bert_norm = Normalization(bert_X_train)
-    bert_X_train = bert_norm.norm(bert_X_train)
-    bert_X_test = bert_norm.norm(bert_X_test)
-    del bert_norm
-
-    codebert_norm = Normalization(codebert_X_train)
-    codebert_X_train = codebert_norm.norm(codebert_X_train)
-    codebert_X_test = codebert_norm.norm(codebert_X_test)
-    del codebert_norm
-
-    graphcodebert_norm = Normalization(graphcodebert_X_train)
-    graphcodebert_X_train = graphcodebert_norm.norm(graphcodebert_X_train)
-    graphcodebert_X_test = graphcodebert_norm.norm(graphcodebert_X_test)
-    del graphcodebert_norm
+    norm = Normalization(X_train)
+    X_train = norm.norm(X_train)
+    X_test = norm.norm(X_test)
+    del norm
 
     #Probeless clustering experiments
-    probeless(bert_X_train,bert_y_train,
-              codebert_X_train, codebert_y_train,
-              graphcodebert_X_train, graphcodebert_y_train)
+    probeless(X_train,y_train,model_name)
 
     #All activations probes
-    bert_probe, codebert_probe, graphcodebert_probe, bert_scores, codebert_scores, graphcodebert_scores = all_activations_probe()
+    probe, scores = all_activations_probe(X_train,y_train,idx2label,model_name)
 
     #Layerwise Probes
-    layerwise_probes_inference()
+    layerwise_probes_inference(X_train,y_train,X_test,y_test,model_name)
 
     #Important neuron probes
-    bert_top_neurons, codebert_top_neurons, graphcodebert_top_neurons = get_imp_neurons()
-    get_top_words(bert_top_neurons, codebert_top_neurons, graphcodebert_top_neurons)
-    del bert_X_train, bert_X_test, bert_y_train, bert_y_test
-    del codebert_X_train, codebert_X_test, codebert_y_train, codebert_y_test
-    del graphcodebert_X_train, graphcodebert_X_test, graphcodebert_y_train, graphcodebert_y_test
+    top_neurons = get_imp_neurons(X_train,y_train,X_test,y_test,probe,label2idx,idx2label,model_name)
+    get_top_words(top_neurons,tokens,activations,model_name)
+    del X_train, X_test, y_train, y_test
     #Control task probes
-    bert_selectivity, codebert_selectivity, graphcodebert_selectivity = control_task_probes(bert_scores,codebert_scores, graphcodebert_scores)
-
-    return bert_probe, codebert_probe, graphcodebert_probe
+    selectivity = control_task_probes(tokens,activations,original_scores,model_name)
 
 
 def main():
@@ -545,15 +327,20 @@ def main():
         bert_activations, codebert_activations,graphcodebert_activations = extract_activations()
     else:
         print("Getting activations from json files. If you need to extract them, run with --extract=True \n" )
+    model_names = ['pretrained_BERT',
+                   'pretrained_CodeBERT','pretrained_GraphCodeBERT',
+                   'finetuned_defdet_CodeBERT','finetuned_defdet_GraphCodeBERT',
+                   'finetuned_clonedet_CodeBERT','finetuned_clonedet_GraphCodeBERT']
+    activation_names = ['bert_activations.json',
+                        'codebert_activations.json','graphcodebert_activations.json',
+                        'codebert_defdet_activations.json','graphcodebert_defdet_activations.json',
+                        'codebert_clonedet_activations1.json','graphcodebert_clonedet_activations1.json']
+    for this_model, this_activation_name in zip(model_names,activation_names):
+        activations = load_extracted_activations(this_activation_name)
 
-    bert_activations, codebert_activations, graphcodebert_activations = load_extracted_activations()
+        tokens =  load_tokens(activations)
 
-    bert_tokens, codebert_tokens, graphcodebert_tokens =  load_tokens(bert_activations, codebert_activations, graphcodebert_activations)
-
-    bert_probe, codebert_probe, graphcodebert_probe = linear_probes_inference(bert_tokens, bert_activations, codebert_tokens, codebert_activations, graphcodebert_tokens, graphcodebert_activations)
-    #neurox.interpretation.utils.print_overall_stats(all_results)
-
-    #Compare linear probe top neurons with probeless neuron ordering
+        linear_probes_inference(tokens,activations,this_model)
 
 
 if __name__ == "__main__":
