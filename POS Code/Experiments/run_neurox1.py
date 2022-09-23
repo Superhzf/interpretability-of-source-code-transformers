@@ -219,7 +219,7 @@ def linear_probes_inference(tokens, activations,model_name):
             layer_train = ablation.filter_activations_by_layers(X_train, [i], 13)
             layer_probe = linear_probe.train_logistic_regression_probe(layer_train, y_train, lambda_l1=0.001, lambda_l2=0.001)
             del layer_train
-            pickle.dump(layer_probe, open(f"{model_name}_{i}_probe.sav", 'wb'))
+            pickle.dump(layer_probe, open(f"{model_name}_layer{i}_probe.sav", 'wb'))
             layer_test = ablation.filter_activations_by_layers(X_test, [i], 13)
             linear_probe.evaluate_probe(layer_probe, layer_test, y_test, idx_to_class=idx2label)
             del layer_test
