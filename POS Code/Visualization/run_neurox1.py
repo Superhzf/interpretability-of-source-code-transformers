@@ -25,7 +25,7 @@ graphcodebert_idx = [5,53,67,82]
 graphcodebert_top_neurons = [32]
 graphcodebert_class = "EQUAL"
 
-FOLDER_NAME ="result_finetuned_clonedet"
+FOLDER_NAME ="result_finetuned"
 
 def mkdir_if_needed(dir_name):
     if not os.path.isdir(dir_name):
