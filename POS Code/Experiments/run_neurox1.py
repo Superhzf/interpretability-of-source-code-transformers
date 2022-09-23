@@ -316,7 +316,7 @@ def linear_probes_inference(tokens, activations,model_name):
     get_top_words(top_neurons,tokens,activations,model_name)
     del X_train, X_test, y_train, y_test
     #Control task probes
-    selectivity = control_task_probes(tokens,activations,original_scores,model_name)
+    selectivity = control_task_probes(tokens,activations,scores,model_name)
 
 
 def main():
