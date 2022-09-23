@@ -69,7 +69,7 @@ def extract_activations():
 def load_extracted_activations(activation_file_name):
     #Load activations from json files
     activations, num_layers = data_loader.load_activations(activation_file_name,13)
-    return bert_activations
+    return activations
 
 def load_tokens(activations):
     #Load tokens and sanity checks for parallelism between tokens, labels and activations
