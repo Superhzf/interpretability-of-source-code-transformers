@@ -286,7 +286,7 @@ def linear_probes_inference(tokens, activations,model_name):
     idx2label = {idx:label for (idx,label) in idx2label.items() if idx <= 40}
 
     count = collections.Counter(y)
-    distribution = {k: v/len(bert_y) for k, v in sorted(count.items(), key=lambda item: item[1],reverse=True)}
+    distribution = {k: v/len(y) for k, v in sorted(count.items(), key=lambda item: item[1],reverse=True)}
     print(f"{model_name} distribution after trauncating:")
     print(distribution)
 
