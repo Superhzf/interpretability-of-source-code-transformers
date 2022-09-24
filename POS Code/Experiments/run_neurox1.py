@@ -210,7 +210,6 @@ def linear_probes_inference(tokens, activations,model_name):
         for neuron in top_neurons:
             top_words = corpus.get_top_words(tokens, activations, neuron, num_tokens=5)
             print(f"Top words for {model_name} neuron indx {neuron}",top_words)
-        print("----------------------------------------------------------------")
 
     def layerwise_probes_inference(X_train,y_train,X_test,y_test,idx2label,model_name):
         ''' Returns models and accuracy(score) of the probes trained on activations from different layers '''
@@ -337,11 +336,13 @@ def main():
                         'codebert_defdet_activations.json','graphcodebert_defdet_activations.json',
                         'codebert_clonedet_activations1.json','graphcodebert_clonedet_activations1.json']
     for this_model, this_activation_name in zip(model_names,activation_names):
+        print(f"Anayzing {this_model}")
         activations = load_extracted_activations(this_activation_name)
 
         tokens =  load_tokens(activations)
 
         linear_probes_inference(tokens,activations,this_model)
+        print("----------------------------------------------------------------")
 
 
 if __name__ == "__main__":
