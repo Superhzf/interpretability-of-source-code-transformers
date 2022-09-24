@@ -19,6 +19,15 @@ import neurox.analysis.corpus as corpus
 import numpy as np
 
 
+MODEL_NAMES = ['pretrained_BERT',
+               'pretrained_CodeBERT','pretrained_GraphCodeBERT',
+               'finetuned_defdet_CodeBERT','finetuned_defdet_GraphCodeBERT',
+               'finetuned_clonedet_CodeBERT','finetuned_clonedet_GraphCodeBERT']
+ACTIVATION_NAMES = ['bert_activations.json',
+                    'codebert_activations.json','graphcodebert_activations.json',
+                    'codebert_defdet_activations.json','graphcodebert_defdet_activations.json',
+                    'codebert_clonedet_activations1.json','graphcodebert_clonedet_activations1.json']
+
 class Normalization:
     def __init__(self,df):
         self.var_mean = np.mean(df,axis=0)
@@ -27,14 +36,6 @@ class Normalization:
     def norm(self,df):
         norm_df = (df-self.var_mean)/self.var_std
         return norm_df
-
-
-def preprocessing():
-    ''' Create codetest.in and codetest.label from python code files'''
-
-    def skiplines():
-        #Modify the cloned NeuroX library to remove the restriction on number of skip lines. Consolidate everything.Include preprocessing here.
-        None
 
 
 #Extract activations.json files
@@ -327,15 +328,8 @@ def main():
         bert_activations, codebert_activations,graphcodebert_activations = extract_activations()
     else:
         print("Getting activations from json files. If you need to extract them, run with --extract=True \n" )
-    model_names = ['pretrained_BERT',
-                   'pretrained_CodeBERT','pretrained_GraphCodeBERT',
-                   'finetuned_defdet_CodeBERT','finetuned_defdet_GraphCodeBERT',
-                   'finetuned_clonedet_CodeBERT','finetuned_clonedet_GraphCodeBERT']
-    activation_names = ['bert_activations.json',
-                        'codebert_activations.json','graphcodebert_activations.json',
-                        'codebert_defdet_activations.json','graphcodebert_defdet_activations.json',
-                        'codebert_clonedet_activations1.json','graphcodebert_clonedet_activations1.json']
-    for this_model, this_activation_name in zip(model_names,activation_names):
+
+    for this_model, this_activation_name in zip(MODEL_NAMES,ACTIVATION_NAMES):
         print(f"Anayzing {this_model}")
         activations = load_extracted_activations(this_activation_name)
 
