@@ -254,7 +254,7 @@ def linear_probes_inference(tokens, activations,model_name):
         X_selected_test_ct = ablation.filter_activations_keep_neurons(X_ct_test, top_neurons_ct)
         print(f"Accuracy on the test set of {model_name} control model on top neurons:")
         linear_probe.evaluate_probe(probe_selected_ct, X_selected_test_ct, y_ct_test, idx_to_class=idx2label_ct)
-        del X_selected_test
+        del X_selected_test_ct
         del X_ct_train, y_ct_train, X_ct_test, y_ct_test
         del ct_probe
 
