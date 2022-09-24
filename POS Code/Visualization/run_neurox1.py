@@ -14,9 +14,18 @@ import neurox.analysis.corpus as corpus
 import os
 
 
+MODEL_NAMES = ['pretrained_BERT',
+               'pretrained_CodeBERT','pretrained_GraphCodeBERT',
+               'finetuned_defdet_CodeBERT','finetuned_defdet_GraphCodeBERT',
+               'finetuned_clonedet_CodeBERT','finetuned_clonedet_GraphCodeBERT']
+ACTIVATION_NAMES = ['bert_activations.json',
+                    'codebert_activations.json','graphcodebert_activations.json',
+                    'codebert_defdet_activations.json','graphcodebert_defdet_activations.json',
+                    'codebert_clonedet_activations1.json','graphcodebert_clonedet_activations1.json']
+
 # This set of idx is for pretrained, finetuned defdet, and finetuned clonedet models
 bert_idx = [697,734,751,790,1777]
-bert_top_neurons = [2903]
+bert_top_neurons = [144]
 bert_class = "GREATER"
 codebert_idx = [3,4,8,11]
 codebert_top_neurons = [1938]
@@ -25,7 +34,17 @@ graphcodebert_idx = [5,53,67,82]
 graphcodebert_top_neurons = [32]
 graphcodebert_class = "EQUAL"
 
-FOLDER_NAME ="result_finetuned"
+IDX = {"pretrained_BERT":bert_idx,
+       "pretrained_CodeBERT":codebert_idx,"pretrained_GraphCodeBERT":graphcodebert_idx,
+       "finetuned_defdet_CodeBERT":codebert_idx,"finetuned_defdet_GraphCodeBERT":graphcodebert_idx,
+       "finetuned_clonedet_CodeBERT":codebert_idx,"finetuned_clonedet_GraphCodeBERT":graphcodebert_idx}
+TOP_NEURONS = {"pretrained_BERT":bert_top_neurons,
+               "pretrained_CodeBERT":codebert_top_neurons,"pretrained_GraphCodeBERT":graphcodebert_top_neurons,
+               "finetuned_defdet_CodeBERT":codebert_top_neurons,"finetuned_defdet_GraphCodeBERT":graphcodebert_top_neurons,
+               "finetuned_clonedet_CodeBERT":codebert_top_neurons,"finetuned_clonedet_GraphCodeBERT":graphcodebert_top_neurons}
+
+
+FOLDER_NAME ="result_all"
 
 def mkdir_if_needed(dir_name):
     if not os.path.isdir(dir_name):
@@ -60,106 +79,37 @@ def extract_activations():
     return(load_extracted_activations())
 
 
-def load_extracted_activations(dev):
-    if dev:
-        bert_activations, bert_num_layers = data_loader.load_activations('bert_activations.json',13) #num_layers is 13 not 768
-        return bert_activations
-    else:
-        #Load activations from json files
-        bert_activations, bert_num_layers = data_loader.load_activations('bert_activations.json',13) #num_layers is 13 not 768
-        codebert_activations, codebert_num_layers = data_loader.load_activations('codebert_clonedet_activations1.json',13) #num_layers is 13 not 768
-        graphcodebert_activations, graphcodebert_num_layers = data_loader.load_activations('graphcodebert_clonedet_activations1.json',13)
-
-        return bert_activations, codebert_activations, graphcodebert_activations
+def load_extracted_activations(activation_file_name):
+    #Load activations from json files
+    activations, num_layers = data_loader.load_activations(activation_file_name,13)
+    return activations
 
 
-def load_tokens(bert_activations,codebert_activations=None, graphcodebert_activations=None,dev=True):
-    if dev:
-        bert_tokens = data_loader.load_data('codetest2_unique.in',
-                                       'codetest2_unique.label',
-                                       bert_activations,
-                                       512 # max_sent_length
-                                      )
-        return bert_tokens
-    else:
-        #Load tokens and sanity checks for parallelism between tokens, labels and activations
-        bert_tokens = data_loader.load_data('codetest2_unique.in',
-                                       'codetest2_unique.label',
-                                       bert_activations,
-                                       512 # max_sent_length
-                                      )
-
-        codebert_tokens = data_loader.load_data('codetest2_unique.in',
-                                       'codetest2_unique.label',
-                                       codebert_activations,
-                                       512 # max_sent_length
-                                      )
-
-        graphcodebert_tokens = data_loader.load_data('codetest2_unique.in',
-                                       'codetest2_unique.label',
-                                       graphcodebert_activations,
-                                       512 # max_sent_length
-                                      )
+def load_tokens(activations):
+    #Load tokens and sanity checks for parallelism between tokens, labels and activations
+    tokens = data_loader.load_data('codetest2_unique.in',
+                                   'codetest2_unique.label',
+                                   activations,
+                                   512 # max_sent_length
+                                  )
+    return tokens
 
 
-        return bert_tokens, codebert_tokens, graphcodebert_tokens
-
-
-
-def visualization(bert_tokens, bert_activations,
-                  codebert_tokens = None, codebert_activations = None,
-                  graphcodebert_tokens = None, graphcodebert_activations = None,
-                  dev=True):
-    # viz_bert = TransformersVisualizer('bert-base-uncased')
-    # viz_codebert = TransformersVisualizer('microsoft/codebert-base')
-    # viz_graphcoderbert = TransformersVisualizer('microsoft/graphcodebert-base')
-
-    if dev:
-        # starting from 1.
-        for this_neuron in bert_top_neurons:
-            for this_idx in bert_idx:
-                this_svg_bert = vis.visualize_activations(bert_tokens["source"][this_idx-1],
-                                                     bert_activations[this_idx-1][:, this_neuron],
-                                                     filter_fn="top_tokens")
-                name = f"{FOLDER_NAME}/bert_{this_idx-1}_{layer}_{this_neuron}.svg"
-                this_svg_bert.saveas(name,pretty=True, indent=2)
-    else:
-        # starting from 1.
-        for this_neuron in bert_top_neurons:
-            for this_idx in bert_idx:
-                this_svg_bert = vis.visualize_activations(bert_tokens["source"][this_idx-1],
-                                                     bert_activations[this_idx-1][:, this_neuron],
-                                                     filter_fn="top_tokens")
-                layer_idx = this_neuron//768
-                neuron_idx = this_neuron%768
-                name = f"{FOLDER_NAME}/bert_{this_idx-1}_{layer_idx}_{neuron_idx}.svg"
-                this_svg_bert.saveas(name,pretty=True, indent=2)
-
-        for this_neuron in codebert_top_neurons:
-            for this_idx in codebert_idx:
-                this_svg_codebert = vis.visualize_activations(codebert_tokens["source"][this_idx-1],
-                                                     codebert_activations[this_idx-1][:, this_neuron],
-                                                     filter_fn="top_tokens")
-                layer_idx = this_neuron//768
-                neuron_idx = this_neuron%768
-                name = f"{FOLDER_NAME}/codebert_{this_idx-1}_{layer_idx}_{neuron_idx}.svg"
-                this_svg_codebert.saveas(name,pretty=True, indent=2)
-
-        for this_neuron in graphcodebert_top_neurons:
-            for this_idx in graphcodebert_idx:
-                this_svg_graphcodebert = vis.visualize_activations(codebert_tokens["source"][this_idx-1],
-                                                     graphcodebert_activations[this_idx-1][:, this_neuron],
-                                                     filter_fn="top_tokens")
-                layer_idx = this_neuron//768
-                neuron_idx = this_neuron%768
-                name = f"{FOLDER_NAME}/graphcodebert_{this_idx-1}_{layer_idx}_{neuron_idx}.svg"
-                this_svg_graphcodebert.saveas(name,pretty=True, indent=2)
+def visualization(tokens, activations,top_neurons,idx,model_name):
+    for this_neuron in top_neurons:
+        for this_idx in idx:
+            this_svg_bert = vis.visualize_activations(tokens["source"][this_idx-1],
+                                                 activations[this_idx-1][:, this_neuron],
+                                                 filter_fn="top_tokens")
+            layer_idx = this_neuron//768
+            neuron_idx = this_neuron%768
+            name = f"{FOLDER_NAME}/{model_name}_{this_idx-1}_{layer_idx}_{neuron_idx}.svg"
+            this_svg_bert.saveas(name,pretty=True, indent=2)
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--extract",choices=('True','False'), default='False')
-    parser.add_argument("--dev",choices=('True','False'), default='True')
     args = parser.parse_args()
     if args.extract == 'True':
         bert_activations, codebert_activations,graphcodebert_activations = extract_activations()
@@ -167,44 +117,21 @@ def main():
         print("Getting activations from json files. If you need to extract them, run with --extract=True \n" )
 
     mkdir_if_needed(f"./{FOLDER_NAME}/")
-    if args.dev == 'True':
-        bert_activations = load_extracted_activations(True)
-        bert_tokens =  load_tokens(bert_activations, None, None,True)
-        print("Length of bert_activations:",len(bert_activations))
-        print("Length of bert_tokens source:",len(bert_tokens["source"]))
-        _, num_neurons = bert_activations[0].shape
-        for idx in range(len(bert_activations)):
-            assert bert_activations[idx].shape[1] == num_neurons
-        print("The number of neurons for each token:",num_neurons)
-        visualization(bert_tokens, bert_activations, None, None, None, None, True)
-    else:
-        bert_activations, codebert_activations, graphcodebert_activations = load_extracted_activations(False)
-        bert_tokens, codebert_tokens, graphcodebert_tokens =  load_tokens(bert_activations, codebert_activations, graphcodebert_activations,False)
-        print("Length of bert_activations:",len(bert_activations))
-        print("Length of bert_tokens source:",len(bert_tokens["source"]))
-        _, num_neurons = bert_activations[0].shape
-        for idx in range(len(bert_activations)):
-            assert bert_activations[idx].shape[1] == num_neurons
-        print("The number of neurons for each token:",num_neurons)
 
-        print("Length of codebert_activations:",len(codebert_activations))
-        print("Length of codebert_tokens source:",len(codebert_tokens["source"]))
-        _, num_neurons = codebert_activations[0].shape
-        for idx in range(len(codebert_activations)):
-            assert codebert_activations[idx].shape[1] == num_neurons
-        print("The number of neurons for each token:",num_neurons)
-
-        print("Length of graphcodebert_activations:",len(graphcodebert_activations))
-        print("Length of graphcodebert_tokens source:",len(graphcodebert_tokens["source"]))
-        _, num_neurons = graphcodebert_activations[0].shape
-        for idx in range(len(graphcodebert_activations)):
-            assert graphcodebert_activations[idx].shape[1] == num_neurons
-        print("The number of neurons for each token:",num_neurons)
-
-        visualization(bert_tokens, bert_activations,
-                      codebert_tokens,codebert_activations,
-                      graphcodebert_tokens,graphcodebert_activations,
-                      False)
+    for this_model, this_activation_name in zip(MODEL_NAMES,ACTIVATION_NAMES):
+        print(f"Generate svg files for {this_model}")
+        activations = load_extracted_activations(this_activation_name)
+        tokens =  load_tokens(activations)
+        print(f"Length of {this_model} activations:",len(activations))
+        print(f"Length of {this_model} tokens source:",len(tokens["source"]))
+        _, num_neurons = activations[0].shape
+        for idx in range(len(activations)):
+            assert activations[idx].shape[1] == num_neurons
+        print(f"The number of neurons for each token in {this_model}:",num_neurons)
+        this_idx = IDX[this_model]
+        this_top_neurons = TOP_NEURONS[this_model]
+        visualization(tokens, activations,this_top_neurons,this_idx,this_model)
+        print("-----------------------------------------------------------------")
 
 if __name__ == "__main__":
     main()
