@@ -22,6 +22,13 @@ def str2int_top_neurons(regex):
     return top_neurons
 
 
+def str2top_neurons_per_class(regex):
+    top_neurons_per_class = re.findall(this_regex, lines)[0].replace("\n","")
+    top_neurons_per_class = top_neurons_per_class.replace('array','np.array')
+    top_neurons_per_class = eval(top_neurons_per_class)
+    return top_neurons_per_class
+
+
 def plot_distribution(top_neurons,model_name):
     distribution = []
     for this_neuron in top_neurons:
@@ -35,11 +42,52 @@ def plot_distribution(top_neurons,model_name):
     plt.bar(list(data.keys()), list(data.values()), color ='b',
         width = 0.4)
     plt.savefig(f"./{folder_name}/{model_name}_neuron_dist.png")
+    plt.close()
+
+def plot_classVSneurons(height,pos,bar_width,color,model_name):
+    plt.bar(pos, height, color =color, width = bar_width,
+        edgecolor ='grey', label =model_name)
+
+
 
 folder_name = "distribution_all"
 mkdir_if_needed(f"./{folder_name}/")
+
+
 for this_model_name in MODEL_NAMES:
     this_regex = re.compile(f'{this_model_name} top neurons\narray\(\[([\S\s]*)\]\)\n{this_model_name} top neurons per class\n',
                             re.MULTILINE)
     this_top_neurons = str2int_top_neurons(this_regex)
     plot_distribution(this_top_neurons,this_model_name)
+
+
+features_selected = {'pretrained_BERT':475,
+                     'pretrained_CodeBERT':425,'pretrained_GraphCodeBERT':411,
+                     'finetuned_defdet_CodeBERT':374,'finetuned_defdet_GraphCodeBERT':389,
+                     'finetuned_clonedet_CodeBERT':416,'finetuned_clonedet_GraphCodeBERT':410}
+
+classes_interested = ['NAME',"KEYWORD","NOTEQUAL","GREATER","TILDE"]
+
+color = ['red','green','blue','orange','purple','cool','pink']
+
+bar_width = 0.25
+fig = plt.subplots(figsize =(12, 8))
+
+for count,this_model_name in enumerate(MODEL_NAMES):
+    this_features_selected = features_selected[this_model_name]
+    this_regex = re.compile(f'{this_model_name} top neurons per class\n([\S\s]*)\]\)\}\nThe shape of selected features \(260064, {features_selected}\)',
+                        re.MULTILINE)
+    this_top_neurons_per_class = str2top_neurons_per_class(this_regex)
+    this_height = []
+    for this_class in classes_interested:
+        this_height.append(len(this_top_neurons_per_class[this_class]))
+    if count == 0:
+        this_pos = np.arange(len(classes_interested))
+    else:
+        this_pos = [x + bar_width for x in this_pos]
+    plot_classVSneurons(this_height,this_pos,bar_width,,this_model_name)
+
+plt.xticks([r + bar_width for r in range(len(classes_interested))],
+        classes_interested)
+plt.legend()
+plt.savefig(f"./{folder_name}/neurons_per_class.png")
