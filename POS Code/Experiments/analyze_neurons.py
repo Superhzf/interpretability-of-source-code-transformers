@@ -31,14 +31,13 @@ def plot_distribution(fig,ax,top_neurons,model_name):
     # 13 layers
     for this_layer in range(13):
         data[this_layer] = distribution.count(this_layer)
-    fig = plt.figure(figsize = (10, 5))
     ax.bar(list(data.keys()), list(data.values()), color ='b',
         width = 0.4)
     ax.set_xlabel(model_name)
 
 folder_name = "distribution_all"
 mkdir_if_needed(f"./{folder_name}/")
-fig, ((ax1,axNone),(ax2, ax3), (ax4, ax5)) = plt.subplots(3,2,sharex=True)
+fig, ((ax1,axNone),(ax2, ax3), (ax4, ax5)) = plt.subplots(3,2,sharex=True,figsize=(10, 5))
 fig.suptitle('Neuron distributions')
 fig.text(0.04, 0.5, 'The number of neurons selected', va='center',rotation='vertical')
 fig.text(0.5, 0.0001, 'Layers', ha='center')
