@@ -2,6 +2,7 @@ import re
 import matplotlib.pyplot as plt
 import os
 from run_neurox1 import MODEL_NAMES
+import numpy as np
 
 with open('log_all') as f:
     lines = f.read()
@@ -65,14 +66,14 @@ features_selected = {'pretrained_BERT':475,
 
 classes_interested = ['NAME',"KEYWORD","NOTEQUAL","GREATER","TILDE"]
 
-colors = ['red','green','blue','orange','purple','cool','pink']
+colors = ["silver", "lightgreen", "lightcyan", "lightsteelblue", "lightyellow", "lightblue", "lightpink"]
 
-bar_width = 0.25
-fig = plt.subplots(figsize =(12, 8))
+bar_width = 0.1
+fig = plt.subplots(figsize =(20, 8))
 
 for count,this_model_name in enumerate(MODEL_NAMES):
     this_features_selected = features_selected[this_model_name]
-    this_regex = re.compile(f'{this_model_name} top neurons per class\n([\S\s]*)\nThe shape of selected features \(260064, {features_selected}\)',
+    this_regex = re.compile(f'{this_model_name} top neurons per class\n([\S\s]*)\nThe shape of selected features \(260064, {this_features_selected}\)',
                         re.MULTILINE)
     this_top_neurons_per_class = str2top_neurons_per_class(this_regex)
     this_height = []
@@ -85,7 +86,7 @@ for count,this_model_name in enumerate(MODEL_NAMES):
     this_color = colors[count]
     plot_classVSneurons(this_height,this_pos,bar_width,this_color,this_model_name)
 
-plt.xticks([r + bar_width for r in range(len(classes_interested))],
+plt.xticks([r + 3*bar_width for r in range(len(classes_interested))],
         classes_interested)
 plt.legend()
 plt.savefig(f"./{folder_name}/neurons_per_class.png")
