@@ -37,7 +37,7 @@ def plot_distribution(fig,ax,top_neurons,model_name):
 
 folder_name = "distribution_all"
 mkdir_if_needed(f"./{folder_name}/")
-fig, ((ax1,axNone),(ax2, ax3), (ax4, ax5)) = plt.subplots(3,2,sharex=True,figsize=(10, 5))
+fig, ((ax1,axNone),(ax2, ax3), (ax4, ax5),(ax6,ax7)) = plt.subplots(4,2,sharex=True,figsize=(10, 5))
 fig.suptitle('Neuron distributions')
 fig.text(0.04, 0.5, 'The number of neurons selected', va='center',rotation='vertical')
 fig.text(0.5, 0.0001, 'Layers', ha='center')
