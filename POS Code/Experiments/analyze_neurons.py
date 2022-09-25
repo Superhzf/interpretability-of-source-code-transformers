@@ -22,7 +22,7 @@ def str2int_top_neurons(regex):
     return top_neurons
 
 
-def plot_distribution(fig,ax,top_neurons,model_name):
+def plot_distribution(top_neurons,model_name):
     distribution = []
     for this_neuron in top_neurons:
         layer = this_neuron//768
@@ -31,25 +31,15 @@ def plot_distribution(fig,ax,top_neurons,model_name):
     # 13 layers
     for this_layer in range(13):
         data[this_layer] = distribution.count(this_layer)
-    ax.bar(list(data.keys()), list(data.values()), color ='b',
+    fig = plt.figure(figsize = (10, 5))
+    plt.bar(list(data.keys()), list(data.values()), color ='b',
         width = 0.4)
-    ax.set_xlabel(model_name)
+    plt.savefig(f"./{folder_name}/{model_name}_neuron_dist.png")
 
 folder_name = "distribution_all"
 mkdir_if_needed(f"./{folder_name}/")
-fig, ((ax1,axNone),(ax2, ax3), (ax4, ax5),(ax6,ax7)) = plt.subplots(4,2,sharex=True,figsize=(10, 9))
-fig.text(0.05, 0.5, 'The number of neurons selected', va='center',rotation='vertical')
-fig.text(0.5, 0.05, 'Layers', ha='center')
-fig.delaxes(axNone)
-subplots={'pretrained_BERT':ax1,
-          'pretrained_CodeBERT':ax2,'pretrained_GraphCodeBERT':ax3,
-          'finetuned_defdet_CodeBERT':ax4,'finetuned_defdet_GraphCodeBERT':ax5,
-          'finetuned_clonedet_CodeBERT':ax6,'finetuned_clonedet_GraphCodeBERT':ax7}
 for this_model_name in MODEL_NAMES:
     this_regex = re.compile(f'{this_model_name} top neurons\narray\(\[([\S\s]*)\]\)\n{this_model_name} top neurons per class\n',
                             re.MULTILINE)
     this_top_neurons = str2int_top_neurons(this_regex)
-    this_ax = subplots[this_model_name]
-    plot_distribution(fig,this_ax,this_top_neurons,this_model_name)
-
-plt.savefig(f"./{folder_name}/neuron_dist.png")
+    plot_distribution(this_top_neurons,this_model_name)
