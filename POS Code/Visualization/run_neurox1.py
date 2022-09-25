@@ -24,7 +24,7 @@ ACTIVATION_NAMES = ['bert_activations.json',
                     'codebert_clonedet_activations1.json','graphcodebert_clonedet_activations1.json']
 
 # This set of idx is for pretrained, finetuned defdet, and finetuned clonedet models
-bert_idx = [697,734,751,790,1777]
+bert_idx = [734,751,790,1777]
 bert_top_neurons = [144]
 bert_class = "GREATER"
 codebert_idx = [3,4,8,11]
@@ -42,7 +42,10 @@ TOP_NEURONS = {"pretrained_BERT":bert_top_neurons,
                "pretrained_CodeBERT":codebert_top_neurons,"pretrained_GraphCodeBERT":graphcodebert_top_neurons,
                "finetuned_defdet_CodeBERT":codebert_top_neurons,"finetuned_defdet_GraphCodeBERT":graphcodebert_top_neurons,
                "finetuned_clonedet_CodeBERT":codebert_top_neurons,"finetuned_clonedet_GraphCodeBERT":graphcodebert_top_neurons}
-
+CLASSES = {"pretrained_BERT":bert_class,
+           "pretrained_CodeBERT":codebert_class,"pretrained_GraphCodeBERT":graphcodebert_class,
+           "finetuned_defdet_CodeBERT":codebert_class,"finetuned_defdet_GraphCodeBERT":graphcodebert_class,
+           "finetuned_clonedet_CodeBERT":codebert_class,"finetuned_clonedet_GraphCodeBERT":graphcodebert_class}
 
 FOLDER_NAME ="result_all"
 
