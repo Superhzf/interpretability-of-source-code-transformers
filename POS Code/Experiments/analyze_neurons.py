@@ -39,7 +39,7 @@ def plot_distribution(top_neurons,model_name):
     fig = plt.figure(figsize = (10, 5))
     plt.bar(list(data.keys()), list(data.values()), color ='b',
         width = 0.4)
-    plt.ylim(0, 80)
+    plt.ylim(0, 70)
     plt.savefig(f"./{folder_name}/{model_name}_neuron_dist.png")
     plt.close()
 
