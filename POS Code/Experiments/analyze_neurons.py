@@ -38,8 +38,8 @@ def plot_distribution(fig,ax,top_neurons,model_name):
 folder_name = "distribution_all"
 mkdir_if_needed(f"./{folder_name}/")
 fig, ((ax1,axNone),(ax2, ax3), (ax4, ax5),(ax6,ax7)) = plt.subplots(4,2,sharex=True,figsize=(10, 9))
-fig.text(0.1, 0.5, 'The number of neurons selected', va='center',rotation='vertical')
-fig.text(0.5, 0.1, 'Layers', ha='center')
+fig.text(0.05, 0.5, 'The number of neurons selected', va='center',rotation='vertical')
+fig.text(0.5, 0.05, 'Layers', ha='center')
 fig.delaxes(axNone)
 subplots={'pretrained_BERT':ax1,
           'pretrained_CodeBERT':ax2,'pretrained_GraphCodeBERT':ax3,
