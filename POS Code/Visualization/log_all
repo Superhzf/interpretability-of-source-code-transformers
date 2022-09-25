@@ -1,0 +1,51 @@
+Getting activations from json files. If you need to extract them, run with --extract=True 
+
+Generate svg files for pretrained_BERT
+Loading json activations from bert_activations.json...
+32002 13.0
+Length of pretrained_BERT activations: 32002
+Length of pretrained_BERT tokens source: 32002
+The number of neurons for each token in pretrained_BERT: 9984
+-----------------------------------------------------------------
+Generate svg files for pretrained_CodeBERT
+Loading json activations from codebert_activations.json...
+32002 13.0
+Length of pretrained_CodeBERT activations: 32002
+Length of pretrained_CodeBERT tokens source: 32002
+The number of neurons for each token in pretrained_CodeBERT: 9984
+-----------------------------------------------------------------
+Generate svg files for pretrained_GraphCodeBERT
+Loading json activations from graphcodebert_activations.json...
+32002 13.0
+Length of pretrained_GraphCodeBERT activations: 32002
+Length of pretrained_GraphCodeBERT tokens source: 32002
+The number of neurons for each token in pretrained_GraphCodeBERT: 9984
+-----------------------------------------------------------------
+Generate svg files for finetuned_defdet_CodeBERT
+Loading json activations from codebert_defdet_activations.json...
+32002 13.0
+Length of finetuned_defdet_CodeBERT activations: 32002
+Length of finetuned_defdet_CodeBERT tokens source: 32002
+The number of neurons for each token in finetuned_defdet_CodeBERT: 9984
+-----------------------------------------------------------------
+Generate svg files for finetuned_defdet_GraphCodeBERT
+Loading json activations from graphcodebert_defdet_activations.json...
+32002 13.0
+Length of finetuned_defdet_GraphCodeBERT activations: 32002
+Length of finetuned_defdet_GraphCodeBERT tokens source: 32002
+The number of neurons for each token in finetuned_defdet_GraphCodeBERT: 9984
+-----------------------------------------------------------------
+Generate svg files for finetuned_clonedet_CodeBERT
+Loading json activations from codebert_clonedet_activations1.json...
+32002 13.0
+Length of finetuned_clonedet_CodeBERT activations: 32002
+Length of finetuned_clonedet_CodeBERT tokens source: 32002
+The number of neurons for each token in finetuned_clonedet_CodeBERT: 9984
+-----------------------------------------------------------------
+Generate svg files for finetuned_clonedet_GraphCodeBERT
+Loading json activations from graphcodebert_clonedet_activations1.json...
+32002 13.0
+Length of finetuned_clonedet_GraphCodeBERT activations: 32002
+Length of finetuned_clonedet_GraphCodeBERT tokens source: 32002
+The number of neurons for each token in finetuned_clonedet_GraphCodeBERT: 9984
+-----------------------------------------------------------------
