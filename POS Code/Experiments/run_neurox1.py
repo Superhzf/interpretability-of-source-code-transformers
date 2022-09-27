@@ -118,10 +118,17 @@ def linear_probes_inference(tokens, activations,model_name):
         probe_selected = linear_probe.train_logistic_regression_probe(X_selected, y_train, lambda_l1=0.001, lambda_l2=0.001)
         del X_selected
         X_selected_test = ablation.filter_activations_keep_neurons(X_test, top_neurons)
-        print(f"Accuracy on the test set of {model_name} model on top neurons:")
+        print(f"Accuracy on the test set of {model_name} model on top 2% neurons:")
         linear_probe.evaluate_probe(probe_selected, X_selected_test, y_test, idx_to_class=idx2label)
         del X_selected_test
 
+        ordering, cutoffs = linear_probe.get_neuron_ordering(probe, label2idx)
+        X_selected = ablation.filter_activations_keep_neurons(X_train, ordering[:200])
+        probe_selected = linear_probe.train_logistic_regression_probe(X_selected, y_train, lambda_l1=0.001, lambda_l2=0.001)
+        del X_selected
+        X_selected_test = ablation.filter_activations_keep_neurons(X_test, ordering[:200])
+        print(f"Accuracy on the test set of {model_name} model on top 200 neurons:")
+        linear_probe.evaluate_probe(probe_selected, X_selected_test, y_test, idx_to_class=idx2label)
         return top_neurons
 
     def get_top_words(top_neurons,tokens,activations,model_name):
@@ -257,6 +264,14 @@ def linear_probes_inference(tokens, activations,model_name):
         del X_selected_test_ct
         del X_ct_train, y_ct_train, X_ct_test, y_ct_test
         del ct_probe
+
+        ordering, cutoffs = linear_probe.get_neuron_ordering(ct_probe, label2idx_ct)
+        X_selected_ct = ablation.filter_activations_keep_neurons(X_ct_train, ordering[:200])
+        probe_selected_ct = linear_probe.train_logistic_regression_probe(X_selected_ct, y_ct_train, lambda_l1=0.001, lambda_l2=0.001)
+        del X_selected_ct
+        X_selected_test_ct = ablation.filter_activations_keep_neurons(X_ct_test, ordering[:200])
+        print(f"Accuracy on the test set of {model_name} control model on top 200 neurons:")
+        linear_probe.evaluate_probe(probe_selected_ct, X_selected_test_ct, y_ct_test, idx_to_class=idx2label_ct)
 
         return selectivity
 
