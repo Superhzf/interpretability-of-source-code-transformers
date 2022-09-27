@@ -65,7 +65,7 @@ features_selected = {'pretrained_BERT':475,
                      'finetuned_defdet_CodeBERT':374,'finetuned_defdet_GraphCodeBERT':389,
                      'finetuned_clonedet_CodeBERT':416,'finetuned_clonedet_GraphCodeBERT':410}
 
-classes_interested = ['NAME',"KEYWORD","NOTEQUAL","GREATER","TILDE"]
+classes_interested = ['INDENT','NAME',"KEYWORD","NOTEQUAL","GREATER"]
 
 colors = ["silver", "lightgreen", "lightcyan", "lightsteelblue", "lightyellow", "lightblue", "lightpink"]
 
