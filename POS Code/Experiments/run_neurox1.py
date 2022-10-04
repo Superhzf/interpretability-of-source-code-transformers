@@ -357,8 +357,8 @@ def main():
         tokens =  load_tokens(activations)
 
         linear_probes_inference(tokens,activations,this_model)
-        break
         print("----------------------------------------------------------------")
+        break
 
 
 if __name__ == "__main__":
