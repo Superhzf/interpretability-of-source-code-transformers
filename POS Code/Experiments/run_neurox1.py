@@ -327,7 +327,7 @@ def linear_probes_inference(tokens, activations,model_name):
     # probeless(X_train,y_train,model_name)
 
     #All activations probes
-    probe, scores = all_activations_probe(X_train,y_train,idx2label,model_name)
+    probe, scores = all_activations_probe(X_train,y_train,X_test, y_test,idx2label,model_name)
 
     #Layerwise Probes
     # layerwise_probes_inference(X_train,y_train,X_test,y_test,idx2label,model_name)
