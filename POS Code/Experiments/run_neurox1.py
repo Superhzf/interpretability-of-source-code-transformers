@@ -241,7 +241,7 @@ def linear_probes_inference(tokens, activations,model_name):
         X_ct, y_ct, mapping_ct = utils.create_tensors(ct_tokens, activations, 'NAME')
         label2idx_ct, idx2label_ct, src2idx_ct, idx2src_ct = mapping_ct
 
-        X_ct,y_ct,label2idx_ct,idx2label_ct=filter_by_frequency(X_ct,y_ct,label2idx_ct,idx2label_ct,40)
+        X_ct,y_ct,label2idx_ct,idx2label_ct=filter_by_frequency(X_ct,y_ct,label2idx_ct,idx2label_ct,40,model_name+'_control_task')
 
         X_ct_train, X_ct_test, y_ct_train, y_ct_test = \
             train_test_split(X_ct, y_ct, test_size=0.2,random_state=50, shuffle=True)
@@ -293,7 +293,7 @@ def linear_probes_inference(tokens, activations,model_name):
         print(f"{model_name} Clustering POS")
         print(neurox.interpretation.clustering.create_correlation_clusters(X, use_abs_correlation=True, clustering_threshold=0.5, method='average'))
 
-    def filter_by_frequency(X,y,label2idx,idx2label,threshold=40):
+    def filter_by_frequency(X,y,label2idx,idx2label,threshold=40,model_name):
         import collections
         count = collections.Counter(y)
         distribution = {k: v for k, v in sorted(count.items(), key=lambda item: item[1],reverse=True)}
@@ -317,7 +317,7 @@ def linear_probes_inference(tokens, activations,model_name):
     #Get mappings
     X, y, label2idx, idx2label, src2idx, idx2src = get_mappings(tokens,activations)
 
-    X, y, label2idx, idx2label = filter_by_frequency(X,y,label2idx,idx2label,40)
+    X, y, label2idx, idx2label = filter_by_frequency(X,y,label2idx,idx2label,40,model_name)
 
     X_train, X_test, y_train, y_test = \
         train_test_split(X, y, test_size=0.2,random_state=50, shuffle=True)
