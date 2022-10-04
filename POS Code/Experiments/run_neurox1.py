@@ -128,7 +128,9 @@ def linear_probes_inference(tokens, activations,model_name):
         del X_selected
         X_selected_test = ablation.filter_activations_keep_neurons(X_test, ordering[:200])
         print(f"Accuracy on the test set of {model_name} model on top 200 neurons:")
-        linear_probe.evaluate_probe(probe_selected, X_selected_test, y_test, idx_to_class=idx2label)
+        X_selected_baseline = np.zeros_like(X_selected_test)
+        print(f"Accuracy on the test set of {model_name} model using the intercept:")
+        linear_probe.evaluate_probe(probe_selected, X_selected_baseline, y_test, idx_to_class=idx2label)
         return top_neurons
 
     def get_top_words(top_neurons,tokens,activations,model_name):
@@ -270,7 +272,10 @@ def linear_probes_inference(tokens, activations,model_name):
         X_selected_test_ct = ablation.filter_activations_keep_neurons(X_ct_test, ordering[:200])
         print(f"Accuracy on the test set of {model_name} control model on top 200 neurons:")
         linear_probe.evaluate_probe(probe_selected_ct, X_selected_test_ct, y_ct_test, idx_to_class=idx2label_ct)
-        del X_selected_test_ct
+        X_selected_test_baseline_ct = np.zeros_like(X_selected_test_ct)
+        print(f"Accuracy on the test set of {model_name} control model using the intercept:")
+        linear_probe.evaluate_probe(probe_selected_ct, X_selected_test_baseline_ct, y_ct_test, idx_to_class=idx2label_ct)
+        del X_selected_test_ct,X_selected_test_baseline_ct
         del X_ct_train, y_ct_train, X_ct_test, y_ct_test
         del ct_probe
 
@@ -319,17 +324,17 @@ def linear_probes_inference(tokens, activations,model_name):
     del norm
 
     #Probeless clustering experiments
-    probeless(X_train,y_train,model_name)
+    # probeless(X_train,y_train,model_name)
 
     #All activations probes
     probe, scores = all_activations_probe(X_train,y_train,idx2label,model_name)
 
     #Layerwise Probes
-    layerwise_probes_inference(X_train,y_train,X_test,y_test,idx2label,model_name)
+    # layerwise_probes_inference(X_train,y_train,X_test,y_test,idx2label,model_name)
 
     #Important neuron probes
     top_neurons = get_imp_neurons(X_train,y_train,X_test,y_test,probe,label2idx,idx2label,model_name)
-    get_top_words(top_neurons,tokens,activations,model_name)
+    # get_top_words(top_neurons,tokens,activations,model_name)
     del X_train, X_test, y_train, y_test
     #Control task probes
     selectivity = control_task_probes(tokens,activations,scores,model_name)
@@ -352,6 +357,7 @@ def main():
         tokens =  load_tokens(activations)
 
         linear_probes_inference(tokens,activations,this_model)
+        break
         print("----------------------------------------------------------------")
 
 
