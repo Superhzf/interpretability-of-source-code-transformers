@@ -92,7 +92,7 @@ def linear_probes_inference(tokens, activations,model_name):
 
         return X, y, label2idx, idx2label, src2idx, idx2src
 
-    def all_activations_probe(X_train,y_train,idx2label,model_name):
+    def all_activations_probe(X_train,y_train,X_test,y_test,idx2label,model_name):
         #Train the linear probes (logistic regression) - POS(code) tagging
         probe = linear_probe.train_logistic_regression_probe(X_train, y_train, lambda_l1=0.001, lambda_l2=0.001)
 
@@ -100,6 +100,9 @@ def linear_probes_inference(tokens, activations,model_name):
         print(f"Accuracy on the test set of probing {model_name} of all layers:")
         scores = linear_probe.evaluate_probe(probe, X_test, y_test, idx_to_class=idx2label)
         print(scores)
+        X_test_baseline = np.zeros_like(X_test)
+        print(f"Accuracy on the test set of {model_name} model using the intercept:")
+        linear_probe.evaluate_probe(probe, X_test_baseline, y_test, idx_to_class=idx2label)
         return probe, scores
 
     def get_imp_neurons(X_train,y_train,X_test,y_test,probe,label2idx,idx2label,model_name):
@@ -128,9 +131,6 @@ def linear_probes_inference(tokens, activations,model_name):
         del X_selected
         X_selected_test = ablation.filter_activations_keep_neurons(X_test, ordering[:200])
         print(f"Accuracy on the test set of {model_name} model on top 200 neurons:")
-        X_selected_baseline = np.zeros_like(X_selected_test)
-        print(f"Accuracy on the test set of {model_name} model using the intercept:")
-        linear_probe.evaluate_probe(probe_selected, X_selected_baseline, y_test, idx_to_class=idx2label)
         return top_neurons
 
     def get_top_words(top_neurons,tokens,activations,model_name):
@@ -255,6 +255,9 @@ def linear_probes_inference(tokens, activations,model_name):
         selectivity = original_scores['__OVERALL__'] - ct_scores['__OVERALL__']
         print(f'{model_name} Selectivity (Diff. between true task and probing task performance): ', selectivity)
         del ct_scores
+        X_ct_test_baseline = np.zeros_like(X_ct_test)
+        print(f"Accuracy on the test set of {model_name} control model using the intercept:")
+        linear_probe.evaluate_probe(ct_probe, X_ct_test_baseline, y_ct_test, idx_to_class=idx2label_ct)
 
         top_neurons_ct, _ = linear_probe.get_top_neurons(ct_probe, 0.02, label2idx_ct)
         X_selected_ct = ablation.filter_activations_keep_neurons(X_ct_train, top_neurons_ct)
@@ -272,10 +275,7 @@ def linear_probes_inference(tokens, activations,model_name):
         X_selected_test_ct = ablation.filter_activations_keep_neurons(X_ct_test, ordering[:200])
         print(f"Accuracy on the test set of {model_name} control model on top 200 neurons:")
         linear_probe.evaluate_probe(probe_selected_ct, X_selected_test_ct, y_ct_test, idx_to_class=idx2label_ct)
-        X_selected_test_baseline_ct = np.zeros_like(X_selected_test_ct)
-        print(f"Accuracy on the test set of {model_name} control model using the intercept:")
-        linear_probe.evaluate_probe(probe_selected_ct, X_selected_test_baseline_ct, y_ct_test, idx_to_class=idx2label_ct)
-        del X_selected_test_ct,X_selected_test_baseline_ct
+        del X_selected_test_ct
         del X_ct_train, y_ct_train, X_ct_test, y_ct_test
         del ct_probe
 
