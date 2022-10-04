@@ -293,7 +293,7 @@ def linear_probes_inference(tokens, activations,model_name):
         print(f"{model_name} Clustering POS")
         print(neurox.interpretation.clustering.create_correlation_clusters(X, use_abs_correlation=True, clustering_threshold=0.5, method='average'))
 
-    def filter_by_frequency(X,y,label2idx,idx2label,threshold=40,model_name):
+    def filter_by_frequency(X,y,label2idx,idx2label,threshold,model_name):
         import collections
         count = collections.Counter(y)
         distribution = {k: v for k, v in sorted(count.items(), key=lambda item: item[1],reverse=True)}
