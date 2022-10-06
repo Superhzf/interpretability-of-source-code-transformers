@@ -236,8 +236,8 @@ def linear_probes_inference(tokens, activations,model_name):
 
     def control_task_probes(tokens,activations,original_scores,model_name):
         print(f"Creating control dataset for {model_name} POS tagging task")
-        [ct_tokens] = ct.create_sequence_labeling_dataset(tokens, sample_from='uniform')
-        print([s+'/'+str(t) for s,t in zip(ct_tokens['source'][0], ct_tokens['target'][0])])
+        # [ct_tokens] = ct.create_sequence_labeling_dataset(tokens, sample_from='uniform')
+        [ct_tokens] = ct.create_sequence_labeling_dataset(tokens, sample_from='same')
         X_ct, y_ct, mapping_ct = utils.create_tensors(ct_tokens, activations, 'NAME')
         label2idx_ct, idx2label_ct, src2idx_ct, idx2src_ct = mapping_ct
 
