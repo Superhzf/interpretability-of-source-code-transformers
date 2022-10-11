@@ -23,7 +23,11 @@ def main():
         this_activation_name = extract_activations()
     
     activations = load_extracted_activations(this_activation_name)
-    print(activations)
+    print("The length of activations",len(activations))
+    print("The activation of the first sentence, length:",activations[0].shape)
+    print(activations[0])
+    print("The activation of the first sentence, length:",activations[1].shape)
+    print(activations[1])
 
 if __name__ == "__main__":
     main()
