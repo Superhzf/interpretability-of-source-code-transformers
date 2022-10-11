@@ -18,6 +18,7 @@ def extract_activations():
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--extract",choices=('True','False'), default='False')
+    args = parser.parse_args()
     if args.extract == 'True':
         this_activation_name = extract_activations()
     
