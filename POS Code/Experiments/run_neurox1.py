@@ -13,7 +13,6 @@ import neurox.interpretation.linear_probe as linear_probe
 import neurox.interpretation.ablation as ablation
 import neurox.data.control_task as ct
 import neurox.interpretation.clustering
-import neurox.interpretation.probeless
 from sklearn.model_selection import train_test_split
 import neurox.analysis.corpus as corpus
 import numpy as np
