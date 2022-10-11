@@ -28,6 +28,9 @@ def main():
     print(activations[0])
     print("The activation of the first sentence, length:",activations[1].shape)
     print(activations[1])
+    print("The difference of the activations between i")
+    print((activations[0][1] - activations[1][1]).sum())
+
 
 if __name__ == "__main__":
     main()
