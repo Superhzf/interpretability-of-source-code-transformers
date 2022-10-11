@@ -1,2 +1,2 @@
 for i in range ( 5 ) : \n
-if i > 10 : \n
+if i > 10 and j < 9 \n
