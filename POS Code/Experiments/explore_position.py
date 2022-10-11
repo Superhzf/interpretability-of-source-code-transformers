@@ -1,7 +1,9 @@
 # this script aims to explore 
 # 1. whether the same token at the same position will have the same activation value after the first layer
 
+import argparse
 from run_neurox1 import load_extracted_activations
+import neurox.data.extraction.transformers_extractor as transformers_extractor
 
 def extract_activations():
     #Extract representations from BERT
