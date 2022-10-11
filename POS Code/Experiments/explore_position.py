@@ -22,4 +22,7 @@ def main():
     activations = load_extracted_activations(this_activation_name)
     print(activations)
 
+if __name__ == "__main__":
+    main()
+
 
