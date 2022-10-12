@@ -93,8 +93,8 @@ def linear_probes_inference(tokens, activations,model_name):
 
     def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,model_name):
         #Train the linear probes (logistic regression) - POS(code) tagging
-        l2 = 0.001
-        for this_l1 in [0.001,0.01,0.1,1,10]:
+        l2 = 0
+        for this_l1 in [0]:
             this_probe = linear_probe.train_logistic_regression_probe(X_train, y_train,
                                                                     lambda_l1=this_l1,
                                                                     lambda_l2=l2,
