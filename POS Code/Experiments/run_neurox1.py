@@ -91,18 +91,30 @@ def linear_probes_inference(tokens, activations,model_name):
 
         return X, y, label2idx, idx2label, src2idx, idx2src
 
-    def all_activations_probe(X_train,y_train,X_test,y_test,idx2label,model_name):
+    def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,model_name):
         #Train the linear probes (logistic regression) - POS(code) tagging
-        probe = linear_probe.train_logistic_regression_probe(X_train, y_train, lambda_l1=0.001, lambda_l2=0.001)
+        for this_l1,this_l2 in zip([0.001,0.01,0.1,1,10],[0.001,0.01,0.1,1,10]):
+            this_probe = linear_probe.train_logistic_regression_probe(X_train, y_train,
+                                                                    lambda_l1=this_l1,
+                                                                    lambda_l2=this_l2,
+                                                                    batch_size=64)
+            this_score = linear_probe.evaluate_probe(this_probe, X_valid, y_valid, idx_to_class=idx2label)
+            this_weights = list(this_probe.parameters())[0].data.cpu().numpy()
+            this_weights_mean = np.mean(np.abs(this_weights))
+            print(f"l1={this_l1},l2={this_l2}")
+            print("Absolute average value of parameters:",this_weights_mean)
+            print("Number of parameters that are not zero:",sum(this_weights!=0))
+            print("Accuracy on the validation set:",this_score)
+
 
         #Get scores of probes
-        print(f"Accuracy on the test set of probing {model_name} of all layers:")
-        scores = linear_probe.evaluate_probe(probe, X_test, y_test, idx_to_class=idx2label)
-        print(scores)
-        X_test_baseline = np.zeros_like(X_test)
-        print(f"Accuracy on the test set of {model_name} model using the intercept:")
-        linear_probe.evaluate_probe(probe, X_test_baseline, y_test, idx_to_class=idx2label)
-        return probe, scores
+        # print(f"Accuracy on the test set of probing {model_name} of all layers:")
+        # scores = linear_probe.evaluate_probe(probe, X_test, y_test, idx_to_class=idx2label)
+        # print(scores)
+        # X_test_baseline = np.zeros_like(X_test)
+        # print(f"Accuracy on the test set of {model_name} model using the intercept:")
+        # linear_probe.evaluate_probe(probe, X_test_baseline, y_test, idx_to_class=idx2label)
+        return this_probe, this_score
 
     def get_imp_neurons(X_train,y_train,X_test,y_test,probe,label2idx,idx2label,model_name):
         ''' Returns top 2% neurons for each model'''
@@ -319,13 +331,17 @@ def linear_probes_inference(tokens, activations,model_name):
     X, y, label2idx, idx2label = filter_by_frequency(X,y,label2idx,idx2label,40,model_name)
 
     X_train, X_test, y_train, y_test = \
-        train_test_split(X, y, test_size=0.2,random_state=50, shuffle=True)
+        train_test_split(X, y, test_size=0.1,random_state=50, shuffle=True)
+    
+    X_train, X_valid, y_train, y_valid = \
+        train_test_split(X_train, y_train, test_size=0.1,random_state=50, shuffle=True)
 
     del X, y
 
     #normalize the inputs before doing probing
     norm = Normalization(X_train)
     X_train = norm.norm(X_train)
+    X_valid = norm.norm(X_valid)
     X_test = norm.norm(X_test)
     del norm
 
@@ -333,17 +349,17 @@ def linear_probes_inference(tokens, activations,model_name):
     # probeless(X_train,y_train,model_name)
 
     #All activations probes
-    probe, scores = all_activations_probe(X_train,y_train,X_test, y_test,idx2label,model_name)
+    probe, scores = all_activations_probe(X_train,y_train,X_valid,y_valid,X_test, y_test,idx2label,model_name)
 
     #Layerwise Probes
     # layerwise_probes_inference(X_train,y_train,X_test,y_test,idx2label,model_name)
 
     #Important neuron probes
-    top_neurons = get_imp_neurons(X_train,y_train,X_test,y_test,probe,label2idx,idx2label,model_name)
+    # top_neurons = get_imp_neurons(X_train,y_train,X_test,y_test,probe,label2idx,idx2label,model_name)
     # get_top_words(top_neurons,tokens,activations,model_name)
-    del X_train, X_test, y_train, y_test
+    del X_train, X_test, X_valid,y_train, y_test,y_valid
     #Control task probes
-    selectivity = control_task_probes(tokens,activations,scores,model_name)
+    # selectivity = control_task_probes(tokens,activations,scores,model_name)
 
 
 def main():
