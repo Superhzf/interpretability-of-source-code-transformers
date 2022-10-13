@@ -28,9 +28,14 @@ def main():
     print(activations[0])
     print("The activation of the first sentence, length:",activations[1].shape)
     print(activations[1])
-    print("The difference of the activations between i")
+    print("The activation of the third sentence, length:",activations[2].shape)
+    print(activations[2])
+    print("The difference of the activations between i at the same position")
     print((activations[0][1][:768] - activations[1][1][:768]).sum())
-
+    print("The difference of the activations between i at the different position")
+    print((activations[2][0][:768] - activations[1][1][:768]).sum())
+    print((activations[2][0][:768] - activations[0][1][:768]).sum())
+    
 
 if __name__ == "__main__":
     main()
