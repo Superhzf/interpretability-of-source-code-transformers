@@ -37,7 +37,7 @@ def main():
     print(np.abs((activations[2][0][:768] - activations[1][1][:768])).sum())
     print(np.abs((activations[2][0][:768] - activations[0][1][:768])).sum())
     print("The difference of the activations of i at the different position in the second layer")
-    print((activations[0][1][768:768*2] - activations[1][1][768:768*2]).sum())
+    print(np.abs((activations[0][1][768:768*2] - activations[1][1][768:768*2])).sum())
     
 
 if __name__ == "__main__":
