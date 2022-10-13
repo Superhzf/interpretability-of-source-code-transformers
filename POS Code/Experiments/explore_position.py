@@ -4,6 +4,7 @@
 import argparse
 from run_neurox1 import load_extracted_activations
 import neurox.data.extraction.transformers_extractor as transformers_extractor
+import numpy as np
 
 def extract_activations():
     #Extract representations from BERT
@@ -33,8 +34,8 @@ def main():
     print("The difference of the activations between i at the same position")
     print((activations[0][1][:768] - activations[1][1][:768]).sum())
     print("The difference of the activations between i at the different position")
-    print((activations[2][0][:768] - activations[1][1][:768]).sum())
-    print((activations[2][0][:768] - activations[0][1][:768]).sum())
+    print(np.abs((activations[2][0][:768] - activations[1][1][:768])).sum())
+    print(np.abs((activations[2][0][:768] - activations[0][1][:768])).sum())
     
 
 if __name__ == "__main__":
