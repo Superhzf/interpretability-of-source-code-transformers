@@ -99,11 +99,11 @@ def linear_probes_inference(tokens, activations,model_name):
         best_probe = None
         for this_l1 in [0,0.001,0.01,0.1]:
             for this_l2 in [0,0.001,0.01,0.1]:
-                this_probe = linear_probe.train_logistic_regression_probe(X_train, y_train,
+                this_probe = linear_probe.train_logistic_regression_probe(X_train[:768], y_train,
                                                                         lambda_l1=this_l1,
                                                                         lambda_l2=this_l2,
                                                                         batch_size=128)
-                this_score = linear_probe.evaluate_probe(this_probe, X_valid, y_valid, idx_to_class=idx2label)
+                this_score = linear_probe.evaluate_probe(this_probe, X_valid[:768], y_valid, idx_to_class=idx2label)
                 this_weights = list(this_probe.parameters())[0].data.cpu().numpy()
                 this_weights_mean = np.mean(np.abs(this_weights))
                 print(f"l1={this_l1},l2={this_l2}")
@@ -119,11 +119,11 @@ def linear_probes_inference(tokens, activations,model_name):
         #Get scores of probes
         print(f"The best l1={best_l1}, the best l2={best_l2} for {model_name}")
         print(f"Accuracy on the test set of probing {model_name} of all layers:")
-        scores = linear_probe.evaluate_probe(best_probe, X_test, y_test, idx_to_class=idx2label)
+        scores = linear_probe.evaluate_probe(best_probe, X_test[:768], y_test, idx_to_class=idx2label)
         print(scores)
         X_test_baseline = np.zeros_like(X_test)
         print(f"Accuracy on the test set of {model_name} model using the intercept:")
-        linear_probe.evaluate_probe(best_probe, X_test_baseline, y_test, idx_to_class=idx2label)
+        linear_probe.evaluate_probe(best_probe, X_test_baseline[:768], y_test, idx_to_class=idx2label)
         return this_probe, scores
 
     def get_imp_neurons(X_train,y_train,X_test,y_test,probe,label2idx,idx2label,model_name):
@@ -395,9 +395,9 @@ def linear_probes_inference(tokens, activations,model_name):
     # layerwise_probes_inference(X_train,y_train,X_test,y_test,idx2label,model_name)
 
     #Important neuron probes
-    top_neurons = get_imp_neurons(X_train,y_train,X_test,y_test,probe,label2idx,idx2label,model_name)
+    # top_neurons = get_imp_neurons(X_train,y_train,X_test,y_test,probe,label2idx,idx2label,model_name)
     # get_top_words(top_neurons,tokens,activations,model_name)
-    del X_train, X_test, X_valid,y_train, y_test,y_valid
+    # del X_train, X_test, X_valid,y_train, y_test,y_valid
     #Control task probes
     # selectivity = control_task_probes(tokens,activations,scores,model_name)
 
