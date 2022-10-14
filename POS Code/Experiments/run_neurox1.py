@@ -93,6 +93,10 @@ def linear_probes_inference(tokens, activations,model_name):
 
     def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,model_name):
         #Train the linear probes (logistic regression) - POS(code) tagging
+        best_l1 = None
+        best_l2 = None
+        best_score = -float('inf')
+        best_probe = None
         for this_l1 in [0,0.001,0.01,0.1]:
             for this_l2 in [0,0.001,0.01,0.1]:
                 this_probe = linear_probe.train_logistic_regression_probe(X_train, y_train,
@@ -106,15 +110,19 @@ def linear_probes_inference(tokens, activations,model_name):
                 print("Absolute average value of parameters:",this_weights_mean)
                 print("Number of parameters that are not zero:",np.sum(this_weights != 0,axis=1))
                 print("Accuracy on the validation set:",this_score)
-
+                if this_score['__OVERALL__'] > best_score:
+                    best_score = this_score['__OVERALL__']
+                    best_l1 = this_l1
+                    best_l2 = this_l2
+                    best_probe = this_probe
 
         #Get scores of probes
-        # print(f"Accuracy on the test set of probing {model_name} of all layers:")
-        # scores = linear_probe.evaluate_probe(probe, X_test, y_test, idx_to_class=idx2label)
-        # print(scores)
-        # X_test_baseline = np.zeros_like(X_test)
-        # print(f"Accuracy on the test set of {model_name} model using the intercept:")
-        # linear_probe.evaluate_probe(probe, X_test_baseline, y_test, idx_to_class=idx2label)
+        print(f"Accuracy on the test set of probing {model_name} of all layers:")
+        scores = linear_probe.evaluate_probe(best_probe, X_test, y_test, idx_to_class=idx2label)
+        print(scores)
+        X_test_baseline = np.zeros_like(X_test)
+        print(f"Accuracy on the test set of {model_name} model using the intercept:")
+        linear_probe.evaluate_probe(best_probe, X_test_baseline, y_test, idx_to_class=idx2label)
         return this_probe, this_score
 
     def get_imp_neurons(X_train,y_train,X_test,y_test,probe,label2idx,idx2label,model_name):
