@@ -102,6 +102,7 @@ def linear_probes_inference(tokens, activations,model_name):
                 this_probe = linear_probe.train_logistic_regression_probe(X_train[:,:768], y_train,
                                                                         lambda_l1=this_l1,
                                                                         lambda_l2=this_l2,
+                                                                        num_epochs=10,
                                                                         batch_size=128)
                 this_score = linear_probe.evaluate_probe(this_probe, X_valid[:,:768], y_valid, idx_to_class=idx2label)
                 this_weights = list(this_probe.parameters())[0].data.cpu().numpy()
@@ -397,7 +398,7 @@ def linear_probes_inference(tokens, activations,model_name):
     # layerwise_probes_inference(X_train,y_train,X_test,y_test,idx2label,model_name)
 
     #Important neuron probes
-    # top_neurons = get_imp_neurons(X_train,y_train,X_test,y_test,probe,label2idx,idx2label,model_name)
+    top_neurons = get_imp_neurons(X_train,y_train,X_test,y_test,probe,label2idx,idx2label,model_name)
     # get_top_words(top_neurons,tokens,activations,model_name)
     # del X_train, X_test, X_valid,y_train, y_test,y_valid
     #Control task probes
