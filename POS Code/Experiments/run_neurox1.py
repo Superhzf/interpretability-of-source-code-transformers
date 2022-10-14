@@ -139,7 +139,7 @@ def linear_probes_inference(tokens, activations,model_name):
         #Train probes on top neurons and save them
         X_selected = ablation.filter_activations_keep_neurons(X_train, top_neurons)
         print("The shape of selected features",X_selected.shape)
-        probe_selected = linear_probe.train_logistic_regression_probe(X_selected, y_train, lambda_l1=0, lambda_l2=0)
+        probe_selected = linear_probe.train_logistic_regression_probe(X_selected, y_train, lambda_l1=0, lambda_l2=0,batch_size=128)
         del X_selected
         X_selected_test = ablation.filter_activations_keep_neurons(X_test, top_neurons)
         print(f"Accuracy on the test set of {model_name} model on top 2% neurons:")
@@ -149,7 +149,7 @@ def linear_probes_inference(tokens, activations,model_name):
 
         ordering, cutoffs = linear_probe.get_neuron_ordering(probe, label2idx)
         X_selected = ablation.filter_activations_keep_neurons(X_train, ordering[:200])
-        probe_selected = linear_probe.train_logistic_regression_probe(X_selected, y_train, lambda_l1=0, lambda_l2=0)
+        probe_selected = linear_probe.train_logistic_regression_probe(X_selected, y_train, lambda_l1=0, lambda_l2=0,batch_size=128)
         del X_selected
         X_selected_test = ablation.filter_activations_keep_neurons(X_test, ordering[:200])
         print(f"Accuracy on the test set of {model_name} model on top 200 neurons:")
