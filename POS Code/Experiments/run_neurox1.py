@@ -102,7 +102,7 @@ def linear_probes_inference(tokens, activations,model_name):
                 this_probe = linear_probe.train_logistic_regression_probe(X_train[:,:768], y_train,
                                                                         lambda_l1=this_l1,
                                                                         lambda_l2=this_l2,
-                                                                        num_epochs=10,
+                                                                        num_epochs=0,
                                                                         batch_size=128)
                 this_score = linear_probe.evaluate_probe(this_probe, X_valid[:,:768], y_valid, idx_to_class=idx2label)
                 this_weights = list(this_probe.parameters())[0].data.cpu().numpy()
