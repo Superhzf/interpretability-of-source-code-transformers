@@ -256,7 +256,7 @@ def linear_probes_inference(tokens, activations,model_name):
         X_ct,y_ct,label2idx_ct,idx2label_ct=filter_by_frequency(X_ct,y_ct,label2idx_ct,idx2label_ct,40,model_name+'_control_task')
 
         X_ct_train, X_ct_test, y_ct_train, y_ct_test = \
-            train_test_split(X_ct, y_ct, test_size=0.2,random_state=50, shuffle=True)
+            train_test_split(X_ct, y_ct, test_size=0.2,random_state=50, shuffle=False)
         # normalization
         ct_norm = Normalization(X_ct_train)
         X_ct_train = ct_norm.norm(X_ct_train)
@@ -332,10 +332,10 @@ def linear_probes_inference(tokens, activations,model_name):
     X, y, label2idx, idx2label = filter_by_frequency(X,y,label2idx,idx2label,40,model_name)
 
     X_train, X_test, y_train, y_test = \
-        train_test_split(X, y, test_size=0.1,random_state=50, shuffle=True)
+        train_test_split(X, y, test_size=0.1,random_state=50, shuffle=False)
     
     X_train, X_valid, y_train, y_valid = \
-        train_test_split(X_train, y_train, test_size=0.1,random_state=50, shuffle=True)
+        train_test_split(X_train, y_train, test_size=0.1,random_state=50, shuffle=False)
 
     del X, y
 
