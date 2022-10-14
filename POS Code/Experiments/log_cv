@@ -8,7 +8,7 @@ length of source dictionary:  17255
 length of target dictionary:  47
 325100
 Total instances: 325100
-['chunk_size', '"critical"', 'testInfo', 'defaultdict', '"maximum"', '"severity"', 'model_path', 'add_constraint', 'n_samples_y', 'streamBuffer', 'EngagementManager', 'local_images', 'LAshowAlignReader', 'tweet_id', 'createarray', 'CONNECTED', 'provides', 'no_docstr', 'email', 'targ3']
+['localPort', 'ArgumentParser', '_max_rlf', 'nagare', 'K_R', 'R', 'class_name', 'ravel', 'picture_file', 'sigma_k', 'GafferSceneTest', '"bar.bin"', 'get_output_shape_for', 'ov', 'fill_arrays', 'shts', 'get_run_configuration', 'redo', 'convertFile', 'sandbox']
 Number of samples:  325100
 Stats: Labels with their frequencies in the final set
 NAME 104243
@@ -66,695 +66,44 @@ Training classification probe
 Creating model...
 Number of training instances: 263314
 Number of classes: 41
-Epoch: [1/10], Loss: 0.0011
-Epoch: [2/10], Loss: 0.0007
-Epoch: [3/10], Loss: 0.0006
-Epoch: [4/10], Loss: 0.0006
+Epoch: [1/10], Loss: 0.0006
+Epoch: [2/10], Loss: 0.0004
+Epoch: [3/10], Loss: 0.0003
+Epoch: [4/10], Loss: 0.0003
+Epoch: [5/10], Loss: 0.0003
+Epoch: [6/10], Loss: 0.0003
+Epoch: [7/10], Loss: 0.0003
+Epoch: [8/10], Loss: 0.0002
+Epoch: [9/10], Loss: 0.0002
+Epoch: [10/10], Loss: 0.0002
+Score (accuracy) of the probe: 1.00
+l1=0,l2=0
+Absolute average value of parameters: 0.053130932
+Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
+ 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
+ 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
+Accuracy on the validation set: {'__OVERALL__': 0.9963428805796705, 'NAME': 0.9994633465707846, 'NEWLINE': 0.9886547811993517, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 1.0, 'COMMA': 1.0, 'EQUAL': 0.9994347088750707, 'COLON': 1.0, 'DEDENT': 0.9986504723346828, 'INDENT': 0.9489164086687306, 'LSQB': 1.0, 'RSQB': 1.0, 'NUMBER': 0.994991652754591, 'STRING': 1.0, 'NL': 0.9524752475247524, 'PLUS': 1.0, 'LBRACE': 1.0, 'EQEQUAL': 1.0, 'MINUS': 1.0, 'RBRACE': 1.0, 'STAR': 1.0, 'PERCENT': 1.0, 'DOUBLESTAR': 0.9473684210526315, 'PLUSEQUAL': 1.0, 'GREATER': 1.0, 'SLASH': 1.0, 'NOTEQUAL': 1.0, 'AT': 1.0, 'LESS': 1.0, 'COMMENT': 0.3333333333333333, 'GREATEREQUAL': 1.0, 'LESSEQUAL': 1.0, 'VBAR': 1.0, 'LEFTSHIFT': 0.125, 'SEMI': 1.0, 'MINEQUAL': nan, 'AMPER': 1.0, 'DOUBLESLASH': 1.0, 'STAREQUAL': nan, 'TILDE': 0.0}
+Training classification probe
+Creating model...
+Number of training instances: 263314
+Number of classes: 41
+Epoch: [1/10], Loss: 0.0008
+Epoch: [2/10], Loss: 0.0005
+Epoch: [3/10], Loss: 0.0005
+Epoch: [4/10], Loss: 0.0005
 Epoch: [5/10], Loss: 0.0005
 Epoch: [6/10], Loss: 0.0005
 Epoch: [7/10], Loss: 0.0005
 Epoch: [8/10], Loss: 0.0005
 Epoch: [9/10], Loss: 0.0005
-Epoch: [10/10], Loss: 0.0004
+Epoch: [10/10], Loss: 0.0007
 Score (accuracy) of the probe: 1.00
-l1=0,l2=0.0
-Absolute average value of parameters: 0.06933912
+l1=0,l2=0.001
+Absolute average value of parameters: 0.040001884
 Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
  9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
  9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.9962061658349853, 'NAME': 1.0, 'NEWLINE': 0.9975922953451043, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 1.0, 'COMMA': 0.9993777224642191, 'EQUAL': 1.0, 'COLON': 1.0, 'DEDENT': 0.9973684210526316, 'INDENT': 0.9021897810218978, 'LSQB': 1.0, 'RSQB': 1.0, 'NUMBER': 1.0, 'STRING': 0.9943181818181818, 'NL': 0.9096573208722741, 'PLUS': 1.0, 'LBRACE': 1.0, 'EQEQUAL': 1.0, 'MINUS': 1.0, 'RBRACE': 1.0, 'STAR': 0.9811320754716981, 'PERCENT': 1.0, 'DOUBLESTAR': 1.0, 'PLUSEQUAL': 0.9411764705882353, 'GREATER': 1.0, 'SLASH': 1.0, 'NOTEQUAL': 1.0, 'AT': 1.0, 'LESS': 1.0, 'COMMENT': 1.0, 'GREATEREQUAL': 0.8, 'LESSEQUAL': 1.0, 'VBAR': 1.0, 'LEFTSHIFT': 0.8, 'SEMI': 1.0, 'MINEQUAL': 1.0, 'AMPER': 1.0, 'DOUBLESLASH': 1.0, 'STAREQUAL': nan, 'TILDE': nan}
-Training classification probe
-Creating model...
-Number of training instances: 263314
-Number of classes: 41
-Epoch: [1/10], Loss: 0.0020
-Epoch: [2/10], Loss: 0.0021
-Epoch: [3/10], Loss: 0.0021
-Epoch: [4/10], Loss: 0.0022
-Epoch: [5/10], Loss: 0.0021
-Epoch: [6/10], Loss: 0.0021
-Epoch: [7/10], Loss: 0.0022
-Epoch: [8/10], Loss: 0.0021
-Epoch: [9/10], Loss: 0.0020
-Epoch: [10/10], Loss: 0.0021
-Score (accuracy) of the probe: 1.00
-l1=1e-05,l2=0.0
-Absolute average value of parameters: 0.025330504
-Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.9965821313828697, 'NAME': 0.9997859589041096, 'NEWLINE': 0.9991974317817014, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 1.0, 'COMMA': 1.0, 'EQUAL': 1.0, 'COLON': 1.0, 'DEDENT': 0.9947368421052631, 'INDENT': 0.9941605839416059, 'LSQB': 1.0, 'RSQB': 1.0, 'NUMBER': 1.0, 'STRING': 0.9971590909090909, 'NL': 0.7694704049844237, 'PLUS': 1.0, 'LBRACE': 0.9782608695652174, 'EQEQUAL': 1.0, 'MINUS': 1.0, 'RBRACE': 1.0, 'STAR': 1.0, 'PERCENT': 1.0, 'DOUBLESTAR': 0.9047619047619048, 'PLUSEQUAL': 1.0, 'GREATER': 1.0, 'SLASH': 1.0, 'NOTEQUAL': 0.7142857142857143, 'AT': 1.0, 'LESS': 1.0, 'COMMENT': 0.6, 'GREATEREQUAL': 0.6, 'LESSEQUAL': 1.0, 'VBAR': 1.0, 'LEFTSHIFT': 1.0, 'SEMI': 1.0, 'MINEQUAL': 1.0, 'AMPER': 1.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': nan}
-Training classification probe
-Creating model...
-Number of training instances: 263314
-Number of classes: 41
-Epoch: [1/10], Loss: 0.0052
-Epoch: [2/10], Loss: 0.0054
-Epoch: [3/10], Loss: 0.0056
-Epoch: [4/10], Loss: 0.0053
-Epoch: [5/10], Loss: 0.0053
-Epoch: [6/10], Loss: 0.0052
-Epoch: [7/10], Loss: 0.0052
-Epoch: [8/10], Loss: 0.0053
-Epoch: [9/10], Loss: 0.0051
-Epoch: [10/10], Loss: 0.0051
-Score (accuracy) of the probe: 0.99
-l1=0.0001,l2=0.0
-Absolute average value of parameters: 0.0052210893
-Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.9940187299200218, 'NAME': 0.9996789383561644, 'NEWLINE': 0.9987961476725522, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 0.9994734070563455, 'COMMA': 0.9993777224642191, 'EQUAL': 0.9985724482512491, 'COLON': 1.0, 'DEDENT': 0.9723684210526315, 'INDENT': 0.997080291970803, 'LSQB': 1.0, 'RSQB': 1.0, 'NUMBER': 0.9654605263157895, 'STRING': 0.9886363636363636, 'NL': 0.8255451713395638, 'PLUS': 1.0, 'LBRACE': 1.0, 'EQEQUAL': 1.0, 'MINUS': 1.0, 'RBRACE': 0.9482758620689655, 'STAR': 1.0, 'PERCENT': 1.0, 'DOUBLESTAR': 0.9523809523809523, 'PLUSEQUAL': 0.29411764705882354, 'GREATER': 0.2631578947368421, 'SLASH': 1.0, 'NOTEQUAL': 0.2857142857142857, 'AT': 0.8461538461538461, 'LESS': 0.2, 'COMMENT': 0.4, 'GREATEREQUAL': 0.0, 'LESSEQUAL': 1.0, 'VBAR': 1.0, 'LEFTSHIFT': 0.0, 'SEMI': 1.0, 'MINEQUAL': 0.0, 'AMPER': 1.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': nan}
-Training classification probe
-Creating model...
-Number of training instances: 263314
-Number of classes: 41
-Epoch: [1/10], Loss: 0.0096
-Epoch: [2/10], Loss: 0.0093
-Epoch: [3/10], Loss: 0.0091
-Epoch: [4/10], Loss: 0.0089
-Epoch: [5/10], Loss: 0.0089
-Epoch: [6/10], Loss: 0.0091
-Epoch: [7/10], Loss: 0.0089
-Epoch: [8/10], Loss: 0.0089
-Epoch: [9/10], Loss: 0.0089
-Epoch: [10/10], Loss: 0.0089
-Score (accuracy) of the probe: 0.98
-l1=0.001,l2=0.0
-Absolute average value of parameters: 0.0016062746
-Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.9752204525258049, 'NAME': 0.9975385273972602, 'NEWLINE': 1.0, 'DOT': 0.9800079968012795, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 0.9594523433385993, 'COMMA': 0.9993777224642191, 'EQUAL': 0.9814418272662384, 'COLON': 1.0, 'DEDENT': 0.9171052631578948, 'INDENT': 0.9912408759124087, 'LSQB': 1.0, 'RSQB': 1.0, 'NUMBER': 0.9638157894736842, 'STRING': 0.9829545454545454, 'NL': 0.018691588785046728, 'PLUS': 1.0, 'LBRACE': 1.0, 'EQEQUAL': 1.0, 'MINUS': 1.0, 'RBRACE': 1.0, 'STAR': 1.0, 'PERCENT': 0.6363636363636364, 'DOUBLESTAR': 0.0, 'PLUSEQUAL': 0.0, 'GREATER': 0.0, 'SLASH': 1.0, 'NOTEQUAL': 0.0, 'AT': 0.0, 'LESS': 0.0, 'COMMENT': 0.0, 'GREATEREQUAL': 0.0, 'LESSEQUAL': 0.0, 'VBAR': 0.0, 'LEFTSHIFT': 0.0, 'SEMI': 0.0, 'MINEQUAL': 0.0, 'AMPER': 0.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': nan}
-Training classification probe
-Creating model...
-Number of training instances: 263314
-Number of classes: 41
-Epoch: [1/10], Loss: 0.0237
-Epoch: [2/10], Loss: 0.0222
-Epoch: [3/10], Loss: 0.0221
-Epoch: [4/10], Loss: 0.0221
-Epoch: [5/10], Loss: 0.0221
-Epoch: [6/10], Loss: 0.0221
-Epoch: [7/10], Loss: 0.0221
-Epoch: [8/10], Loss: 0.0221
-Epoch: [9/10], Loss: 0.0221
-Epoch: [10/10], Loss: 0.0221
-Score (accuracy) of the probe: 0.95
-l1=0.01,l2=0.0
-Absolute average value of parameters: 0.00025211545
-Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.9487319707430446, 'NAME': 0.9991438356164384, 'NEWLINE': 1.0, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 0.9457609268035808, 'COMMA': 1.0, 'EQUAL': 1.0, 'COLON': 0.9989550679205852, 'DEDENT': 0.8381578947368421, 'INDENT': 0.656934306569343, 'LSQB': 1.0, 'RSQB': 1.0, 'NUMBER': 0.8782894736842105, 'STRING': 0.59375, 'NL': 0.0, 'PLUS': 1.0, 'LBRACE': 0.0, 'EQEQUAL': 0.0, 'MINUS': 0.0, 'RBRACE': 0.6551724137931034, 'STAR': 0.0, 'PERCENT': 0.0, 'DOUBLESTAR': 0.0, 'PLUSEQUAL': 0.0, 'GREATER': 0.0, 'SLASH': 0.0, 'NOTEQUAL': 0.0, 'AT': 0.0, 'LESS': 0.0, 'COMMENT': 0.0, 'GREATEREQUAL': 0.0, 'LESSEQUAL': 0.0, 'VBAR': 0.0, 'LEFTSHIFT': 0.0, 'SEMI': 0.0, 'MINEQUAL': 0.0, 'AMPER': 0.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': nan}
-----------------------------------------------------------------
-Anayzing pretrained_CodeBERT
-Loading json activations from codebert_activations.json...
-32002 13.0
-Number of tokens:  325100
-length of source dictionary:  17255
-length of target dictionary:  47
-325100
-Total instances: 325100
-['chunk_size', '"critical"', 'testInfo', 'defaultdict', '"maximum"', '"severity"', 'model_path', 'add_constraint', 'n_samples_y', 'streamBuffer', 'EngagementManager', 'local_images', 'LAshowAlignReader', 'tweet_id', 'createarray', 'CONNECTED', 'provides', 'no_docstr', 'email', 'targ3']
-Number of samples:  325100
-Stats: Labels with their frequencies in the final set
-NAME 104243
-NEWLINE 28415
-DOT 27737
-LPAR 24899
-RPAR 23914
-KEYWORD 21043
-COMMA 18332
-EQUAL 15063
-COLON 10649
-DEDENT 8365
-INDENT 7255
-LSQB 7221
-RSQB 7056
-NUMBER 6667
-STRING 3985
-NL 3586
-PLUS 928
-LBRACE 870
-EQEQUAL 827
-MINUS 701
-RBRACE 673
-STAR 606
-PERCENT 459
-DOUBLESTAR 242
-PLUSEQUAL 204
-GREATER 187
-SLASH 177
-NOTEQUAL 176
-AT 165
-LESS 90
-COMMENT 72
-GREATEREQUAL 55
-LESSEQUAL 40
-VBAR 39
-LEFTSHIFT 32
-SEMI 22
-MINEQUAL 21
-AMPER 20
-DOUBLESLASH 19
-STAREQUAL 16
-TILDE 10
-ELLIPSIS 6
-VBAREQUAL 5
-RIGHTSHIFT 3
-SLASHEQUAL 2
-ERRORTOKEN 2
-AMPEREQUAL 1
-pretrained_CodeBERT distribution:
-{0: 104243, 1: 28415, 2: 27737, 3: 24899, 4: 23914, 5: 21043, 6: 18332, 7: 15063, 8: 10649, 9: 8365, 10: 7255, 11: 7221, 12: 7056, 13: 6667, 14: 3985, 15: 3586, 16: 928, 17: 870, 18: 827, 19: 701, 20: 673, 21: 606, 22: 459, 23: 242, 24: 204, 25: 187, 26: 177, 27: 176, 28: 165, 29: 90, 30: 72, 31: 55, 32: 40, 33: 39, 34: 32, 35: 22, 36: 21, 37: 20, 38: 19, 39: 16, 40: 10, 41: 6, 42: 5, 43: 3, 44: 2, 45: 2, 46: 1}
-pretrained_CodeBERT distribution after trauncating:
-{0: 0.3206677720322012, 1: 0.0874089842223938, 2: 0.08532335018041658, 3: 0.07659321830559153, 4: 0.07356320424755676, 5: 0.06473155921139655, 6: 0.05639209919989172, 7: 0.04633614391490121, 8: 0.03275798954722054, 9: 0.025732048320264794, 10: 0.022317514711718004, 11: 0.022212925393978733, 12: 0.021705359587302856, 13: 0.020508734746109432, 14: 0.012258483270323396, 15: 0.011031096865089008, 16: 0.002854673143001283, 17: 0.0026762560715637026, 18: 0.0025439813461875654, 19: 0.0021563856392714433, 20: 0.002070253259956749, 21: 0.0018641507808823032, 22: 0.0014119557894801604, 23: 0.0007444298497912828, 24: 0.0006275359064356268, 25: 0.0005752412475659912, 26: 0.0005444796835250292, 27: 0.0005414035271209329, 28: 0.0005075658066758746, 29: 0.0002768540763686589, 30: 0.0002214832610949271, 31: 0.00016918860222529155, 32: 0.0001230462561638484, 33: 0.00011997009975975218, 34: 9.843700493107872e-05, 35: 6.767544089011662e-05, 36: 6.45992844860204e-05, 37: 6.15231280819242e-05, 38: 5.8446971677827984e-05, 39: 4.921850246553936e-05, 40: 3.07615640409621e-05}
-Training classification probe
-Creating model...
-Number of training instances: 263314
-Number of classes: 41
-Epoch: [1/10], Loss: 0.0005
-Epoch: [2/10], Loss: 0.0004
-Epoch: [3/10], Loss: 0.0003
-Epoch: [4/10], Loss: 0.0003
-Epoch: [5/10], Loss: 0.0003
-Epoch: [6/10], Loss: 0.0003
-Epoch: [7/10], Loss: 0.0003
-Epoch: [8/10], Loss: 0.0003
-Epoch: [9/10], Loss: 0.0002
-Epoch: [10/10], Loss: 0.0002
-Score (accuracy) of the probe: 1.00
-l1=0,l2=0.0
-Absolute average value of parameters: 0.05160731
-Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.9965821313828697, 'NAME': 0.9997859589041096, 'NEWLINE': 0.963884430176565, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 1.0, 'COMMA': 1.0, 'EQUAL': 1.0, 'COLON': 1.0, 'DEDENT': 1.0, 'INDENT': 1.0, 'LSQB': 1.0, 'RSQB': 1.0, 'NUMBER': 1.0, 'STRING': 0.9971590909090909, 'NL': 0.9781931464174455, 'PLUS': 1.0, 'LBRACE': 1.0, 'EQEQUAL': 1.0, 'MINUS': 1.0, 'RBRACE': 1.0, 'STAR': 1.0, 'PERCENT': 1.0, 'DOUBLESTAR': 1.0, 'PLUSEQUAL': 1.0, 'GREATER': 1.0, 'SLASH': 1.0, 'NOTEQUAL': 1.0, 'AT': 1.0, 'LESS': 1.0, 'COMMENT': 1.0, 'GREATEREQUAL': 1.0, 'LESSEQUAL': 1.0, 'VBAR': 1.0, 'LEFTSHIFT': 1.0, 'SEMI': 1.0, 'MINEQUAL': 1.0, 'AMPER': 1.0, 'DOUBLESLASH': 1.0, 'STAREQUAL': nan, 'TILDE': nan}
-Training classification probe
-Creating model...
-Number of training instances: 263314
-Number of classes: 41
-Epoch: [1/10], Loss: 0.0014
-Epoch: [2/10], Loss: 0.0016
-Epoch: [3/10], Loss: 0.0015
-Epoch: [4/10], Loss: 0.0015
-Epoch: [5/10], Loss: 0.0014
-Epoch: [6/10], Loss: 0.0015
-Epoch: [7/10], Loss: 0.0015
-Epoch: [8/10], Loss: 0.0014
-Epoch: [9/10], Loss: 0.0014
-Epoch: [10/10], Loss: 0.0014
-Score (accuracy) of the probe: 1.00
-l1=1e-05,l2=0.0
-Absolute average value of parameters: 0.0128945615
-Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.9977442067126939, 'NAME': 0.9998929794520548, 'NEWLINE': 0.9963884430176565, 'DOT': 1.0, 'LPAR': 0.9885310983678871, 'RPAR': 1.0, 'KEYWORD': 1.0, 'COMMA': 1.0, 'EQUAL': 1.0, 'COLON': 0.9947753396029259, 'DEDENT': 1.0, 'INDENT': 1.0, 'LSQB': 1.0, 'RSQB': 0.9971305595408895, 'NUMBER': 0.9983552631578947, 'STRING': 1.0, 'NL': 0.9376947040498442, 'PLUS': 1.0, 'LBRACE': 0.9782608695652174, 'EQEQUAL': 1.0, 'MINUS': 1.0, 'RBRACE': 1.0, 'STAR': 1.0, 'PERCENT': 1.0, 'DOUBLESTAR': 1.0, 'PLUSEQUAL': 1.0, 'GREATER': 1.0, 'SLASH': 1.0, 'NOTEQUAL': 1.0, 'AT': 1.0, 'LESS': 1.0, 'COMMENT': 1.0, 'GREATEREQUAL': 1.0, 'LESSEQUAL': 1.0, 'VBAR': 1.0, 'LEFTSHIFT': 1.0, 'SEMI': 1.0, 'MINEQUAL': 1.0, 'AMPER': 1.0, 'DOUBLESLASH': 1.0, 'STAREQUAL': nan, 'TILDE': nan}
-Training classification probe
-Creating model...
-Number of training instances: 263314
-Number of classes: 41
-Epoch: [1/10], Loss: 0.0041
-Epoch: [2/10], Loss: 0.0042
-Epoch: [3/10], Loss: 0.0041
-Epoch: [4/10], Loss: 0.0041
-Epoch: [5/10], Loss: 0.0041
-Epoch: [6/10], Loss: 0.0041
-Epoch: [7/10], Loss: 0.0040
-Epoch: [8/10], Loss: 0.0040
-Epoch: [9/10], Loss: 0.0041
-Epoch: [10/10], Loss: 0.0040
-Score (accuracy) of the probe: 1.00
-l1=0.0001,l2=0.0
-Absolute average value of parameters: 0.0038253288
-Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.996958096930754, 'NAME': 0.9995719178082192, 'NEWLINE': 0.9987961476725522, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 0.9984202211690363, 'COMMA': 1.0, 'EQUAL': 0.9992862241256245, 'COLON': 1.0, 'DEDENT': 0.9986842105263158, 'INDENT': 1.0, 'LSQB': 1.0, 'RSQB': 1.0, 'NUMBER': 0.9917763157894737, 'STRING': 0.9943181818181818, 'NL': 0.8660436137071651, 'PLUS': 0.96, 'LBRACE': 1.0, 'EQEQUAL': 1.0, 'MINUS': 1.0, 'RBRACE': 0.8620689655172413, 'STAR': 1.0, 'PERCENT': 1.0, 'DOUBLESTAR': 1.0, 'PLUSEQUAL': 1.0, 'GREATER': 1.0, 'SLASH': 0.6428571428571429, 'NOTEQUAL': 1.0, 'AT': 0.5384615384615384, 'LESS': 1.0, 'COMMENT': 0.6, 'GREATEREQUAL': 1.0, 'LESSEQUAL': 0.6666666666666666, 'VBAR': 1.0, 'LEFTSHIFT': 1.0, 'SEMI': 1.0, 'MINEQUAL': 0.0, 'AMPER': 1.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': nan}
-Training classification probe
-Creating model...
-Number of training instances: 263314
-Number of classes: 41
-Epoch: [1/10], Loss: 0.0077
-Epoch: [2/10], Loss: 0.0072
-Epoch: [3/10], Loss: 0.0073
-Epoch: [4/10], Loss: 0.0071
-Epoch: [5/10], Loss: 0.0072
-Epoch: [6/10], Loss: 0.0071
-Epoch: [7/10], Loss: 0.0072
-Epoch: [8/10], Loss: 0.0072
-Epoch: [9/10], Loss: 0.0071
-Epoch: [10/10], Loss: 0.0072
-Score (accuracy) of the probe: 0.99
-l1=0.001,l2=0.0
-Absolute average value of parameters: 0.00059989915
-Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.9870462779410759, 'NAME': 0.9998929794520548, 'NEWLINE': 1.0, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 0.9899947340705635, 'COMMA': 1.0, 'EQUAL': 1.0, 'COLON': 1.0, 'DEDENT': 1.0, 'INDENT': 1.0, 'LSQB': 1.0, 'RSQB': 1.0, 'NUMBER': 0.9868421052631579, 'STRING': 0.9346590909090909, 'NL': 0.2897196261682243, 'PLUS': 1.0, 'LBRACE': 0.9782608695652174, 'EQEQUAL': 1.0, 'MINUS': 1.0, 'RBRACE': 1.0, 'STAR': 1.0, 'PERCENT': 0.9318181818181818, 'DOUBLESTAR': 0.9523809523809523, 'PLUSEQUAL': 0.0, 'GREATER': 0.0, 'SLASH': 1.0, 'NOTEQUAL': 0.0, 'AT': 0.0, 'LESS': 0.0, 'COMMENT': 0.0, 'GREATEREQUAL': 1.0, 'LESSEQUAL': 0.0, 'VBAR': 0.0, 'LEFTSHIFT': 0.0, 'SEMI': 0.0, 'MINEQUAL': 0.0, 'AMPER': 0.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': nan}
-Training classification probe
-Creating model...
-Number of training instances: 263314
-Number of classes: 41
-Epoch: [1/10], Loss: 0.0229
-Epoch: [2/10], Loss: 0.0213
-Epoch: [3/10], Loss: 0.0213
-Epoch: [4/10], Loss: 0.0213
-Epoch: [5/10], Loss: 0.0213
-Epoch: [6/10], Loss: 0.0213
-Epoch: [7/10], Loss: 0.0213
-Epoch: [8/10], Loss: 0.0213
-Epoch: [9/10], Loss: 0.0213
-Epoch: [10/10], Loss: 0.0213
-Score (accuracy) of the probe: 0.96
-l1=0.01,l2=0.0
-Absolute average value of parameters: 0.00025890276
-Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.9619933009775105, 'NAME': 0.9964683219178082, 'NEWLINE': 1.0, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 0.9931542917324908, 'COMMA': 1.0, 'EQUAL': 1.0, 'COLON': 0.9885057471264368, 'DEDENT': 1.0, 'INDENT': 1.0, 'LSQB': 1.0, 'RSQB': 0.9971305595408895, 'NUMBER': 0.8207236842105263, 'STRING': 0.5426136363636364, 'NL': 0.0, 'PLUS': 1.0, 'LBRACE': 0.0, 'EQEQUAL': 0.9855072463768116, 'MINUS': 0.0, 'RBRACE': 0.0, 'STAR': 0.0, 'PERCENT': 0.0, 'DOUBLESTAR': 0.0, 'PLUSEQUAL': 0.0, 'GREATER': 0.0, 'SLASH': 0.0, 'NOTEQUAL': 0.0, 'AT': 0.0, 'LESS': 0.0, 'COMMENT': 0.0, 'GREATEREQUAL': 0.0, 'LESSEQUAL': 0.0, 'VBAR': 0.0, 'LEFTSHIFT': 0.0, 'SEMI': 0.0, 'MINEQUAL': 0.0, 'AMPER': 0.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': nan}
-----------------------------------------------------------------
-Anayzing pretrained_GraphCodeBERT
-Loading json activations from graphcodebert_activations.json...
-32002 13.0
-Number of tokens:  325100
-length of source dictionary:  17255
-length of target dictionary:  47
-325100
-Total instances: 325100
-['chunk_size', '"critical"', 'testInfo', 'defaultdict', '"maximum"', '"severity"', 'model_path', 'add_constraint', 'n_samples_y', 'streamBuffer', 'EngagementManager', 'local_images', 'LAshowAlignReader', 'tweet_id', 'createarray', 'CONNECTED', 'provides', 'no_docstr', 'email', 'targ3']
-Number of samples:  325100
-Stats: Labels with their frequencies in the final set
-NAME 104243
-NEWLINE 28415
-DOT 27737
-LPAR 24899
-RPAR 23914
-KEYWORD 21043
-COMMA 18332
-EQUAL 15063
-COLON 10649
-DEDENT 8365
-INDENT 7255
-LSQB 7221
-RSQB 7056
-NUMBER 6667
-STRING 3985
-NL 3586
-PLUS 928
-LBRACE 870
-EQEQUAL 827
-MINUS 701
-RBRACE 673
-STAR 606
-PERCENT 459
-DOUBLESTAR 242
-PLUSEQUAL 204
-GREATER 187
-SLASH 177
-NOTEQUAL 176
-AT 165
-LESS 90
-COMMENT 72
-GREATEREQUAL 55
-LESSEQUAL 40
-VBAR 39
-LEFTSHIFT 32
-SEMI 22
-MINEQUAL 21
-AMPER 20
-DOUBLESLASH 19
-STAREQUAL 16
-TILDE 10
-ELLIPSIS 6
-VBAREQUAL 5
-RIGHTSHIFT 3
-SLASHEQUAL 2
-ERRORTOKEN 2
-AMPEREQUAL 1
-pretrained_GraphCodeBERT distribution:
-{0: 104243, 1: 28415, 2: 27737, 3: 24899, 4: 23914, 5: 21043, 6: 18332, 7: 15063, 8: 10649, 9: 8365, 10: 7255, 11: 7221, 12: 7056, 13: 6667, 14: 3985, 15: 3586, 16: 928, 17: 870, 18: 827, 19: 701, 20: 673, 21: 606, 22: 459, 23: 242, 24: 204, 25: 187, 26: 177, 27: 176, 28: 165, 29: 90, 30: 72, 31: 55, 32: 40, 33: 39, 34: 32, 35: 22, 36: 21, 37: 20, 38: 19, 39: 16, 40: 10, 41: 6, 42: 5, 43: 3, 44: 2, 45: 2, 46: 1}
-pretrained_GraphCodeBERT distribution after trauncating:
-{0: 0.3206677720322012, 1: 0.0874089842223938, 2: 0.08532335018041658, 3: 0.07659321830559153, 4: 0.07356320424755676, 5: 0.06473155921139655, 6: 0.05639209919989172, 7: 0.04633614391490121, 8: 0.03275798954722054, 9: 0.025732048320264794, 10: 0.022317514711718004, 11: 0.022212925393978733, 12: 0.021705359587302856, 13: 0.020508734746109432, 14: 0.012258483270323396, 15: 0.011031096865089008, 16: 0.002854673143001283, 17: 0.0026762560715637026, 18: 0.0025439813461875654, 19: 0.0021563856392714433, 20: 0.002070253259956749, 21: 0.0018641507808823032, 22: 0.0014119557894801604, 23: 0.0007444298497912828, 24: 0.0006275359064356268, 25: 0.0005752412475659912, 26: 0.0005444796835250292, 27: 0.0005414035271209329, 28: 0.0005075658066758746, 29: 0.0002768540763686589, 30: 0.0002214832610949271, 31: 0.00016918860222529155, 32: 0.0001230462561638484, 33: 0.00011997009975975218, 34: 9.843700493107872e-05, 35: 6.767544089011662e-05, 36: 6.45992844860204e-05, 37: 6.15231280819242e-05, 38: 5.8446971677827984e-05, 39: 4.921850246553936e-05, 40: 3.07615640409621e-05}
-Training classification probe
-Creating model...
-Number of training instances: 263314
-Number of classes: 41
-Epoch: [1/10], Loss: 0.0005
-Epoch: [2/10], Loss: 0.0004
-Epoch: [3/10], Loss: 0.0003
-Epoch: [4/10], Loss: 0.0003
-Epoch: [5/10], Loss: 0.0003
-Epoch: [6/10], Loss: 0.0003
-Epoch: [7/10], Loss: 0.0002
-Epoch: [8/10], Loss: 0.0002
-Epoch: [9/10], Loss: 0.0002
-Epoch: [10/10], Loss: 0.0002
-Score (accuracy) of the probe: 1.00
-l1=0,l2=0.0
-Absolute average value of parameters: 0.053094793
-Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.9959669150317861, 'NAME': 1.0, 'NEWLINE': 0.9546548956661316, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 1.0, 'COMMA': 1.0, 'EQUAL': 1.0, 'COLON': 1.0, 'DEDENT': 1.0, 'INDENT': 1.0, 'LSQB': 1.0, 'RSQB': 1.0, 'NUMBER': 1.0, 'STRING': 1.0, 'NL': 0.9844236760124611, 'PLUS': 1.0, 'LBRACE': 1.0, 'EQEQUAL': 1.0, 'MINUS': 1.0, 'RBRACE': 1.0, 'STAR': 1.0, 'PERCENT': 1.0, 'DOUBLESTAR': 1.0, 'PLUSEQUAL': 1.0, 'GREATER': 1.0, 'SLASH': 1.0, 'NOTEQUAL': 1.0, 'AT': 1.0, 'LESS': 1.0, 'COMMENT': 1.0, 'GREATEREQUAL': 1.0, 'LESSEQUAL': 1.0, 'VBAR': 1.0, 'LEFTSHIFT': 1.0, 'SEMI': 1.0, 'MINEQUAL': 1.0, 'AMPER': 1.0, 'DOUBLESLASH': 1.0, 'STAREQUAL': nan, 'TILDE': nan}
-Training classification probe
-Creating model...
-Number of training instances: 263314
-Number of classes: 41
-Epoch: [1/10], Loss: 0.0014
-Epoch: [2/10], Loss: 0.0016
-Epoch: [3/10], Loss: 0.0015
-Epoch: [4/10], Loss: 0.0015
-Epoch: [5/10], Loss: 0.0015
-Epoch: [6/10], Loss: 0.0015
-Epoch: [7/10], Loss: 0.0014
-Epoch: [8/10], Loss: 0.0014
-Epoch: [9/10], Loss: 0.0015
-Epoch: [10/10], Loss: 0.0014
-Score (accuracy) of the probe: 1.00
-l1=1e-05,l2=0.0
-Absolute average value of parameters: 0.013044038
-Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.9990429967872035, 'NAME': 1.0, 'NEWLINE': 0.9967897271268058, 'DOT': 0.9996001599360256, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 1.0, 'COMMA': 1.0, 'EQUAL': 1.0, 'COLON': 1.0, 'DEDENT': 1.0, 'INDENT': 1.0, 'LSQB': 1.0, 'RSQB': 1.0, 'NUMBER': 0.9983552631578947, 'STRING': 0.9971590909090909, 'NL': 0.956386292834891, 'PLUS': 1.0, 'LBRACE': 1.0, 'EQEQUAL': 1.0, 'MINUS': 1.0, 'RBRACE': 1.0, 'STAR': 1.0, 'PERCENT': 1.0, 'DOUBLESTAR': 1.0, 'PLUSEQUAL': 1.0, 'GREATER': 1.0, 'SLASH': 1.0, 'NOTEQUAL': 1.0, 'AT': 1.0, 'LESS': 1.0, 'COMMENT': 0.8, 'GREATEREQUAL': 1.0, 'LESSEQUAL': 1.0, 'VBAR': 1.0, 'LEFTSHIFT': 1.0, 'SEMI': 0.8333333333333334, 'MINEQUAL': 1.0, 'AMPER': 1.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': nan}
-Training classification probe
-Creating model...
-Number of training instances: 263314
-Number of classes: 41
-Epoch: [1/10], Loss: 0.0042
-Epoch: [2/10], Loss: 0.0043
-Epoch: [3/10], Loss: 0.0041
-Epoch: [4/10], Loss: 0.0043
-Epoch: [5/10], Loss: 0.0041
-Epoch: [6/10], Loss: 0.0041
-Epoch: [7/10], Loss: 0.0041
-Epoch: [8/10], Loss: 0.0042
-Epoch: [9/10], Loss: 0.0041
-Epoch: [10/10], Loss: 0.0041
-Score (accuracy) of the probe: 1.00
-l1=0.0001,l2=0.0
-Absolute average value of parameters: 0.004746147
-Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.9970948116754392, 'NAME': 0.9991438356164384, 'NEWLINE': 0.9939807383627608, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 0.9994734070563455, 'COMMA': 1.0, 'EQUAL': 1.0, 'COLON': 1.0, 'DEDENT': 1.0, 'INDENT': 1.0, 'LSQB': 0.9952456418383518, 'RSQB': 1.0, 'NUMBER': 0.9983552631578947, 'STRING': 0.9886363636363636, 'NL': 0.9470404984423676, 'PLUS': 1.0, 'LBRACE': 1.0, 'EQEQUAL': 1.0, 'MINUS': 0.95, 'RBRACE': 1.0, 'STAR': 1.0, 'PERCENT': 0.9772727272727273, 'DOUBLESTAR': 1.0, 'PLUSEQUAL': 0.058823529411764705, 'GREATER': 0.8421052631578947, 'SLASH': 1.0, 'NOTEQUAL': 0.7142857142857143, 'AT': 1.0, 'LESS': 0.8, 'COMMENT': 0.6, 'GREATEREQUAL': 1.0, 'LESSEQUAL': 1.0, 'VBAR': 1.0, 'LEFTSHIFT': 0.4, 'SEMI': 1.0, 'MINEQUAL': 1.0, 'AMPER': 0.5, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': nan}
-Training classification probe
-Creating model...
-Number of training instances: 263314
-Number of classes: 41
-Epoch: [1/10], Loss: 0.0078
-Epoch: [2/10], Loss: 0.0076
-Epoch: [3/10], Loss: 0.0074
-Epoch: [4/10], Loss: 0.0074
-Epoch: [5/10], Loss: 0.0074
-Epoch: [6/10], Loss: 0.0074
-Epoch: [7/10], Loss: 0.0074
-Epoch: [8/10], Loss: 0.0073
-Epoch: [9/10], Loss: 0.0073
-Epoch: [10/10], Loss: 0.0074
-Score (accuracy) of the probe: 0.99
-l1=0.001,l2=0.0
-Absolute average value of parameters: 0.0006334216
-Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.9857133091803951, 'NAME': 1.0, 'NEWLINE': 1.0, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 0.9978936282253817, 'COMMA': 1.0, 'EQUAL': 1.0, 'COLON': 1.0, 'DEDENT': 1.0, 'INDENT': 1.0, 'LSQB': 1.0, 'RSQB': 0.9971305595408895, 'NUMBER': 0.9819078947368421, 'STRING': 0.9488636363636364, 'NL': 0.11214953271028037, 'PLUS': 1.0, 'LBRACE': 1.0, 'EQEQUAL': 1.0, 'MINUS': 0.9375, 'RBRACE': 1.0, 'STAR': 1.0, 'PERCENT': 1.0, 'DOUBLESTAR': 0.9523809523809523, 'PLUSEQUAL': 0.0, 'GREATER': 0.0, 'SLASH': 1.0, 'NOTEQUAL': 0.0, 'AT': 0.0, 'LESS': 0.0, 'COMMENT': 0.0, 'GREATEREQUAL': 1.0, 'LESSEQUAL': 0.0, 'VBAR': 0.0, 'LEFTSHIFT': 0.0, 'SEMI': 0.0, 'MINEQUAL': 0.0, 'AMPER': 1.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': nan}
-Training classification probe
-Creating model...
-Number of training instances: 263314
-Number of classes: 41
-Epoch: [1/10], Loss: 0.0231
-Epoch: [2/10], Loss: 0.0214
-Epoch: [3/10], Loss: 0.0214
-Epoch: [4/10], Loss: 0.0214
-Epoch: [5/10], Loss: 0.0214
-Epoch: [6/10], Loss: 0.0214
-Epoch: [7/10], Loss: 0.0214
-Epoch: [8/10], Loss: 0.0214
-Epoch: [9/10], Loss: 0.0214
-Epoch: [10/10], Loss: 0.0214
-Score (accuracy) of the probe: 0.96
-l1=0.01,l2=0.0
-Absolute average value of parameters: 0.00026206713
-Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.9637705926584182, 'NAME': 1.0, 'NEWLINE': 1.0, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 0.9863085834649815, 'COMMA': 1.0, 'EQUAL': 1.0, 'COLON': 1.0, 'DEDENT': 1.0, 'INDENT': 1.0, 'LSQB': 1.0, 'RSQB': 0.9971305595408895, 'NUMBER': 0.8404605263157895, 'STRING': 0.5681818181818182, 'NL': 0.0, 'PLUS': 1.0, 'LBRACE': 0.0, 'EQEQUAL': 0.9710144927536232, 'MINUS': 0.0, 'RBRACE': 0.017241379310344827, 'STAR': 0.0, 'PERCENT': 0.0, 'DOUBLESTAR': 0.0, 'PLUSEQUAL': 0.0, 'GREATER': 0.0, 'SLASH': 0.0, 'NOTEQUAL': 0.0, 'AT': 0.0, 'LESS': 0.0, 'COMMENT': 0.0, 'GREATEREQUAL': 0.0, 'LESSEQUAL': 0.0, 'VBAR': 0.0, 'LEFTSHIFT': 0.0, 'SEMI': 0.0, 'MINEQUAL': 0.0, 'AMPER': 0.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': nan}
-----------------------------------------------------------------
-Anayzing finetuned_defdet_CodeBERT
-Loading json activations from codebert_defdet_activations.json...
-32002 13.0
-Number of tokens:  325100
-length of source dictionary:  17255
-length of target dictionary:  47
-325100
-Total instances: 325100
-['chunk_size', '"critical"', 'testInfo', 'defaultdict', '"maximum"', '"severity"', 'model_path', 'add_constraint', 'n_samples_y', 'streamBuffer', 'EngagementManager', 'local_images', 'LAshowAlignReader', 'tweet_id', 'createarray', 'CONNECTED', 'provides', 'no_docstr', 'email', 'targ3']
-Number of samples:  325100
-Stats: Labels with their frequencies in the final set
-NAME 104243
-NEWLINE 28415
-DOT 27737
-LPAR 24899
-RPAR 23914
-KEYWORD 21043
-COMMA 18332
-EQUAL 15063
-COLON 10649
-DEDENT 8365
-INDENT 7255
-LSQB 7221
-RSQB 7056
-NUMBER 6667
-STRING 3985
-NL 3586
-PLUS 928
-LBRACE 870
-EQEQUAL 827
-MINUS 701
-RBRACE 673
-STAR 606
-PERCENT 459
-DOUBLESTAR 242
-PLUSEQUAL 204
-GREATER 187
-SLASH 177
-NOTEQUAL 176
-AT 165
-LESS 90
-COMMENT 72
-GREATEREQUAL 55
-LESSEQUAL 40
-VBAR 39
-LEFTSHIFT 32
-SEMI 22
-MINEQUAL 21
-AMPER 20
-DOUBLESLASH 19
-STAREQUAL 16
-TILDE 10
-ELLIPSIS 6
-VBAREQUAL 5
-RIGHTSHIFT 3
-SLASHEQUAL 2
-ERRORTOKEN 2
-AMPEREQUAL 1
-finetuned_defdet_CodeBERT distribution:
-{0: 104243, 1: 28415, 2: 27737, 3: 24899, 4: 23914, 5: 21043, 6: 18332, 7: 15063, 8: 10649, 9: 8365, 10: 7255, 11: 7221, 12: 7056, 13: 6667, 14: 3985, 15: 3586, 16: 928, 17: 870, 18: 827, 19: 701, 20: 673, 21: 606, 22: 459, 23: 242, 24: 204, 25: 187, 26: 177, 27: 176, 28: 165, 29: 90, 30: 72, 31: 55, 32: 40, 33: 39, 34: 32, 35: 22, 36: 21, 37: 20, 38: 19, 39: 16, 40: 10, 41: 6, 42: 5, 43: 3, 44: 2, 45: 2, 46: 1}
-finetuned_defdet_CodeBERT distribution after trauncating:
-{0: 0.3206677720322012, 1: 0.0874089842223938, 2: 0.08532335018041658, 3: 0.07659321830559153, 4: 0.07356320424755676, 5: 0.06473155921139655, 6: 0.05639209919989172, 7: 0.04633614391490121, 8: 0.03275798954722054, 9: 0.025732048320264794, 10: 0.022317514711718004, 11: 0.022212925393978733, 12: 0.021705359587302856, 13: 0.020508734746109432, 14: 0.012258483270323396, 15: 0.011031096865089008, 16: 0.002854673143001283, 17: 0.0026762560715637026, 18: 0.0025439813461875654, 19: 0.0021563856392714433, 20: 0.002070253259956749, 21: 0.0018641507808823032, 22: 0.0014119557894801604, 23: 0.0007444298497912828, 24: 0.0006275359064356268, 25: 0.0005752412475659912, 26: 0.0005444796835250292, 27: 0.0005414035271209329, 28: 0.0005075658066758746, 29: 0.0002768540763686589, 30: 0.0002214832610949271, 31: 0.00016918860222529155, 32: 0.0001230462561638484, 33: 0.00011997009975975218, 34: 9.843700493107872e-05, 35: 6.767544089011662e-05, 36: 6.45992844860204e-05, 37: 6.15231280819242e-05, 38: 5.8446971677827984e-05, 39: 4.921850246553936e-05, 40: 3.07615640409621e-05}
-Training classification probe
-Creating model...
-Number of training instances: 263314
-Number of classes: 41
-Epoch: [1/10], Loss: 0.0005
-Epoch: [2/10], Loss: 0.0004
-Epoch: [3/10], Loss: 0.0004
-Epoch: [4/10], Loss: 0.0003
-Epoch: [5/10], Loss: 0.0003
-Epoch: [6/10], Loss: 0.0003
-Epoch: [7/10], Loss: 0.0003
-Epoch: [8/10], Loss: 0.0002
-Epoch: [9/10], Loss: 0.0002
-Epoch: [10/10], Loss: 0.0002
-Score (accuracy) of the probe: 1.00
-l1=0,l2=0.0
-Absolute average value of parameters: 0.05216677
-Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.9992822475904026, 'NAME': 1.0, 'NEWLINE': 0.9971910112359551, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 1.0, 'COMMA': 1.0, 'EQUAL': 1.0, 'COLON': 1.0, 'DEDENT': 1.0, 'INDENT': 1.0, 'LSQB': 1.0, 'RSQB': 1.0, 'NUMBER': 1.0, 'STRING': 1.0, 'NL': 0.956386292834891, 'PLUS': 1.0, 'LBRACE': 1.0, 'EQEQUAL': 1.0, 'MINUS': 1.0, 'RBRACE': 1.0, 'STAR': 1.0, 'PERCENT': 1.0, 'DOUBLESTAR': 1.0, 'PLUSEQUAL': 1.0, 'GREATER': 1.0, 'SLASH': 1.0, 'NOTEQUAL': 1.0, 'AT': 1.0, 'LESS': 1.0, 'COMMENT': 1.0, 'GREATEREQUAL': 1.0, 'LESSEQUAL': 1.0, 'VBAR': 1.0, 'LEFTSHIFT': 1.0, 'SEMI': 1.0, 'MINEQUAL': 1.0, 'AMPER': 1.0, 'DOUBLESLASH': 1.0, 'STAREQUAL': nan, 'TILDE': nan}
-Training classification probe
-Creating model...
-Number of training instances: 263314
-Number of classes: 41
-Epoch: [1/10], Loss: 0.0014
-Epoch: [2/10], Loss: 0.0015
-Epoch: [3/10], Loss: 0.0016
-Epoch: [4/10], Loss: 0.0015
-Epoch: [5/10], Loss: 0.0015
-Epoch: [6/10], Loss: 0.0015
-Epoch: [7/10], Loss: 0.0015
-Epoch: [8/10], Loss: 0.0015
-Epoch: [9/10], Loss: 0.0015
-Epoch: [10/10], Loss: 0.0014
-Score (accuracy) of the probe: 1.00
-l1=1e-05,l2=0.0
-Absolute average value of parameters: 0.013237096
-Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.9991797115318887, 'NAME': 0.9998929794520548, 'NEWLINE': 0.9975922953451043, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 1.0, 'COMMA': 1.0, 'EQUAL': 1.0, 'COLON': 1.0, 'DEDENT': 1.0, 'INDENT': 1.0, 'LSQB': 1.0, 'RSQB': 1.0, 'NUMBER': 1.0, 'STRING': 1.0, 'NL': 0.9501557632398754, 'PLUS': 1.0, 'LBRACE': 1.0, 'EQEQUAL': 1.0, 'MINUS': 1.0, 'RBRACE': 1.0, 'STAR': 1.0, 'PERCENT': 1.0, 'DOUBLESTAR': 1.0, 'PLUSEQUAL': 1.0, 'GREATER': 1.0, 'SLASH': 1.0, 'NOTEQUAL': 1.0, 'AT': 1.0, 'LESS': 1.0, 'COMMENT': 1.0, 'GREATEREQUAL': 1.0, 'LESSEQUAL': 1.0, 'VBAR': 1.0, 'LEFTSHIFT': 1.0, 'SEMI': 1.0, 'MINEQUAL': 1.0, 'AMPER': 1.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': nan}
-Training classification probe
-Creating model...
-Number of training instances: 263314
-Number of classes: 41
-Epoch: [1/10], Loss: 0.0042
-Epoch: [2/10], Loss: 0.0043
-Epoch: [3/10], Loss: 0.0041
-Epoch: [4/10], Loss: 0.0042
-Epoch: [5/10], Loss: 0.0041
-Epoch: [6/10], Loss: 0.0040
-Epoch: [7/10], Loss: 0.0041
-Epoch: [8/10], Loss: 0.0040
-Epoch: [9/10], Loss: 0.0040
-Epoch: [10/10], Loss: 0.0039
-Score (accuracy) of the probe: 0.99
-l1=0.0001,l2=0.0
-Absolute average value of parameters: 0.00543671
-Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.9930959053933966, 'NAME': 0.9993578767123288, 'NEWLINE': 0.9991974317817014, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 0.9994734070563455, 'COMMA': 0.9887990043559427, 'EQUAL': 0.9778729478943612, 'COLON': 0.9989550679205852, 'DEDENT': 1.0, 'INDENT': 1.0, 'LSQB': 0.9540412044374009, 'RSQB': 0.9913916786226685, 'NUMBER': 0.9901315789473685, 'STRING': 0.9971590909090909, 'NL': 0.8691588785046729, 'PLUS': 1.0, 'LBRACE': 0.8369565217391305, 'EQEQUAL': 0.927536231884058, 'MINUS': 1.0, 'RBRACE': 1.0, 'STAR': 0.9056603773584906, 'PERCENT': 0.9090909090909091, 'DOUBLESTAR': 0.8571428571428571, 'PLUSEQUAL': 1.0, 'GREATER': 1.0, 'SLASH': 0.9285714285714286, 'NOTEQUAL': 0.5714285714285714, 'AT': 0.9230769230769231, 'LESS': 0.4, 'COMMENT': 0.4, 'GREATEREQUAL': 0.0, 'LESSEQUAL': 1.0, 'VBAR': 1.0, 'LEFTSHIFT': 0.0, 'SEMI': 1.0, 'MINEQUAL': 0.0, 'AMPER': 0.0, 'DOUBLESLASH': 1.0, 'STAREQUAL': nan, 'TILDE': nan}
-Training classification probe
-Creating model...
-Number of training instances: 263314
-Number of classes: 41
-Epoch: [1/10], Loss: 0.0076
-Epoch: [2/10], Loss: 0.0073
-Epoch: [3/10], Loss: 0.0072
-Epoch: [4/10], Loss: 0.0071
-Epoch: [5/10], Loss: 0.0072
-Epoch: [6/10], Loss: 0.0071
-Epoch: [7/10], Loss: 0.0071
-Epoch: [8/10], Loss: 0.0071
-Epoch: [9/10], Loss: 0.0071
-Epoch: [10/10], Loss: 0.0071
-Score (accuracy) of the probe: 0.99
-l1=0.001,l2=0.0
-Absolute average value of parameters: 0.00060203025
-Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.9926515824731698, 'NAME': 0.9998929794520548, 'NEWLINE': 0.9991974317817014, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 0.9973670352817272, 'COMMA': 1.0, 'EQUAL': 1.0, 'COLON': 1.0, 'DEDENT': 1.0, 'INDENT': 1.0, 'LSQB': 1.0, 'RSQB': 0.9985652797704447, 'NUMBER': 0.9884868421052632, 'STRING': 0.9034090909090909, 'NL': 0.7850467289719626, 'PLUS': 1.0, 'LBRACE': 1.0, 'EQEQUAL': 1.0, 'MINUS': 1.0, 'RBRACE': 1.0, 'STAR': 1.0, 'PERCENT': 1.0, 'DOUBLESTAR': 0.9047619047619048, 'PLUSEQUAL': 0.0, 'GREATER': 0.0, 'SLASH': 1.0, 'NOTEQUAL': 0.0, 'AT': 0.0, 'LESS': 0.0, 'COMMENT': 0.0, 'GREATEREQUAL': 1.0, 'LESSEQUAL': 0.0, 'VBAR': 0.0, 'LEFTSHIFT': 0.0, 'SEMI': 0.0, 'MINEQUAL': 0.0, 'AMPER': 0.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': nan}
-Training classification probe
-Creating model...
-Number of training instances: 263314
-Number of classes: 41
-Epoch: [1/10], Loss: 0.0231
-Epoch: [2/10], Loss: 0.0215
-Epoch: [3/10], Loss: 0.0215
-Epoch: [4/10], Loss: 0.0214
-Epoch: [5/10], Loss: 0.0215
-Epoch: [6/10], Loss: 0.0215
-Epoch: [7/10], Loss: 0.0215
-Epoch: [8/10], Loss: 0.0215
-Epoch: [9/10], Loss: 0.0215
-Epoch: [10/10], Loss: 0.0215
-Score (accuracy) of the probe: 0.96
-l1=0.01,l2=0.0
-Absolute average value of parameters: 0.00026396257
-Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.9612071911955704, 'NAME': 0.9967893835616438, 'NEWLINE': 1.0, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 0.989468141126909, 'COMMA': 1.0, 'EQUAL': 1.0, 'COLON': 0.9822361546499477, 'DEDENT': 1.0, 'INDENT': 1.0, 'LSQB': 1.0, 'RSQB': 0.9971305595408895, 'NUMBER': 0.8026315789473685, 'STRING': 0.5369318181818182, 'NL': 0.0, 'PLUS': 1.0, 'LBRACE': 0.0, 'EQEQUAL': 0.9855072463768116, 'MINUS': 0.0, 'RBRACE': 0.0, 'STAR': 0.0, 'PERCENT': 0.0, 'DOUBLESTAR': 0.0, 'PLUSEQUAL': 0.0, 'GREATER': 0.0, 'SLASH': 0.0, 'NOTEQUAL': 0.0, 'AT': 0.0, 'LESS': 0.0, 'COMMENT': 0.0, 'GREATEREQUAL': 0.0, 'LESSEQUAL': 0.0, 'VBAR': 0.0, 'LEFTSHIFT': 0.0, 'SEMI': 0.0, 'MINEQUAL': 0.0, 'AMPER': 0.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': nan}
-----------------------------------------------------------------
-Anayzing finetuned_defdet_GraphCodeBERT
-Loading json activations from graphcodebert_defdet_activations.json...
-32002 13.0
-Number of tokens:  325100
-length of source dictionary:  17255
-length of target dictionary:  47
-325100
-Total instances: 325100
-['chunk_size', '"critical"', 'testInfo', 'defaultdict', '"maximum"', '"severity"', 'model_path', 'add_constraint', 'n_samples_y', 'streamBuffer', 'EngagementManager', 'local_images', 'LAshowAlignReader', 'tweet_id', 'createarray', 'CONNECTED', 'provides', 'no_docstr', 'email', 'targ3']
-Number of samples:  325100
-Stats: Labels with their frequencies in the final set
-NAME 104243
-NEWLINE 28415
-DOT 27737
-LPAR 24899
-RPAR 23914
-KEYWORD 21043
-COMMA 18332
-EQUAL 15063
-COLON 10649
-DEDENT 8365
-INDENT 7255
-LSQB 7221
-RSQB 7056
-NUMBER 6667
-STRING 3985
-NL 3586
-PLUS 928
-LBRACE 870
-EQEQUAL 827
-MINUS 701
-RBRACE 673
-STAR 606
-PERCENT 459
-DOUBLESTAR 242
-PLUSEQUAL 204
-GREATER 187
-SLASH 177
-NOTEQUAL 176
-AT 165
-LESS 90
-COMMENT 72
-GREATEREQUAL 55
-LESSEQUAL 40
-VBAR 39
-LEFTSHIFT 32
-SEMI 22
-MINEQUAL 21
-AMPER 20
-DOUBLESLASH 19
-STAREQUAL 16
-TILDE 10
-ELLIPSIS 6
-VBAREQUAL 5
-RIGHTSHIFT 3
-SLASHEQUAL 2
-ERRORTOKEN 2
-AMPEREQUAL 1
-finetuned_defdet_GraphCodeBERT distribution:
-{0: 104243, 1: 28415, 2: 27737, 3: 24899, 4: 23914, 5: 21043, 6: 18332, 7: 15063, 8: 10649, 9: 8365, 10: 7255, 11: 7221, 12: 7056, 13: 6667, 14: 3985, 15: 3586, 16: 928, 17: 870, 18: 827, 19: 701, 20: 673, 21: 606, 22: 459, 23: 242, 24: 204, 25: 187, 26: 177, 27: 176, 28: 165, 29: 90, 30: 72, 31: 55, 32: 40, 33: 39, 34: 32, 35: 22, 36: 21, 37: 20, 38: 19, 39: 16, 40: 10, 41: 6, 42: 5, 43: 3, 44: 2, 45: 2, 46: 1}
-finetuned_defdet_GraphCodeBERT distribution after trauncating:
-{0: 0.3206677720322012, 1: 0.0874089842223938, 2: 0.08532335018041658, 3: 0.07659321830559153, 4: 0.07356320424755676, 5: 0.06473155921139655, 6: 0.05639209919989172, 7: 0.04633614391490121, 8: 0.03275798954722054, 9: 0.025732048320264794, 10: 0.022317514711718004, 11: 0.022212925393978733, 12: 0.021705359587302856, 13: 0.020508734746109432, 14: 0.012258483270323396, 15: 0.011031096865089008, 16: 0.002854673143001283, 17: 0.0026762560715637026, 18: 0.0025439813461875654, 19: 0.0021563856392714433, 20: 0.002070253259956749, 21: 0.0018641507808823032, 22: 0.0014119557894801604, 23: 0.0007444298497912828, 24: 0.0006275359064356268, 25: 0.0005752412475659912, 26: 0.0005444796835250292, 27: 0.0005414035271209329, 28: 0.0005075658066758746, 29: 0.0002768540763686589, 30: 0.0002214832610949271, 31: 0.00016918860222529155, 32: 0.0001230462561638484, 33: 0.00011997009975975218, 34: 9.843700493107872e-05, 35: 6.767544089011662e-05, 36: 6.45992844860204e-05, 37: 6.15231280819242e-05, 38: 5.8446971677827984e-05, 39: 4.921850246553936e-05, 40: 3.07615640409621e-05}
-Training classification probe
-Creating model...
-Number of training instances: 263314
-Number of classes: 41
-Epoch: [1/10], Loss: 0.0005
-Epoch: [2/10], Loss: 0.0004
-Epoch: [3/10], Loss: 0.0003
-Epoch: [4/10], Loss: 0.0003
-Epoch: [5/10], Loss: 0.0003
-Epoch: [6/10], Loss: 0.0003
-Epoch: [7/10], Loss: 0.0002
-Epoch: [8/10], Loss: 0.0002
-Epoch: [9/10], Loss: 0.0003
-Epoch: [10/10], Loss: 0.0002
-Score (accuracy) of the probe: 1.00
-l1=0,l2=0.0
-Absolute average value of parameters: 0.053796984
-Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.9983936017499487, 'NAME': 1.0, 'NEWLINE': 0.9835473515248796, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 1.0, 'COMMA': 1.0, 'EQUAL': 1.0, 'COLON': 1.0, 'DEDENT': 1.0, 'INDENT': 1.0, 'LSQB': 1.0, 'RSQB': 1.0, 'NUMBER': 1.0, 'STRING': 1.0, 'NL': 0.9813084112149533, 'PLUS': 1.0, 'LBRACE': 1.0, 'EQEQUAL': 1.0, 'MINUS': 1.0, 'RBRACE': 1.0, 'STAR': 1.0, 'PERCENT': 1.0, 'DOUBLESTAR': 1.0, 'PLUSEQUAL': 1.0, 'GREATER': 1.0, 'SLASH': 1.0, 'NOTEQUAL': 1.0, 'AT': 1.0, 'LESS': 1.0, 'COMMENT': 1.0, 'GREATEREQUAL': 1.0, 'LESSEQUAL': 1.0, 'VBAR': 1.0, 'LEFTSHIFT': 1.0, 'SEMI': 1.0, 'MINEQUAL': 1.0, 'AMPER': 1.0, 'DOUBLESLASH': 1.0, 'STAREQUAL': nan, 'TILDE': nan}
+Accuracy on the validation set: {'__OVERALL__': 0.9962403445211566, 'NAME': 0.9992486851990984, 'NEWLINE': 0.9850081037277147, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 0.9994731296101159, 'COMMA': 1.0, 'EQUAL': 1.0, 'COLON': 0.9829383886255925, 'DEDENT': 0.9986504723346828, 'INDENT': 0.9984520123839009, 'LSQB': 1.0, 'RSQB': 1.0, 'NUMBER': 1.0, 'STRING': 0.990990990990991, 'NL': 0.9524752475247524, 'PLUS': 1.0, 'LBRACE': 1.0, 'EQEQUAL': 1.0, 'MINUS': 1.0, 'RBRACE': 1.0, 'STAR': 0.9636363636363636, 'PERCENT': 1.0, 'DOUBLESTAR': 1.0, 'PLUSEQUAL': 1.0, 'GREATER': 1.0, 'SLASH': 1.0, 'NOTEQUAL': 1.0, 'AT': 1.0, 'LESS': 1.0, 'COMMENT': 0.3333333333333333, 'GREATEREQUAL': 1.0, 'LESSEQUAL': 1.0, 'VBAR': 0.6363636363636364, 'LEFTSHIFT': 0.375, 'SEMI': 0.25, 'MINEQUAL': nan, 'AMPER': 1.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': 1.0}
 Training classification probe
 Creating model...
 Number of training instances: 263314
@@ -762,417 +111,296 @@ Number of classes: 41
 Epoch: [1/10], Loss: 0.0014
 Epoch: [2/10], Loss: 0.0015
 Epoch: [3/10], Loss: 0.0015
-Epoch: [4/10], Loss: 0.0016
-Epoch: [5/10], Loss: 0.0015
-Epoch: [6/10], Loss: 0.0015
-Epoch: [7/10], Loss: 0.0015
-Epoch: [8/10], Loss: 0.0015
-Epoch: [9/10], Loss: 0.0014
-Epoch: [10/10], Loss: 0.0014
-Score (accuracy) of the probe: 1.00
-l1=1e-05,l2=0.0
-Absolute average value of parameters: 0.0166297
-Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.9966846674413835, 'NAME': 0.9998929794520548, 'NEWLINE': 0.9654895666131621, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 1.0, 'COMMA': 1.0, 'EQUAL': 1.0, 'COLON': 1.0, 'DEDENT': 1.0, 'INDENT': 1.0, 'LSQB': 1.0, 'RSQB': 1.0, 'NUMBER': 0.9967105263157895, 'STRING': 0.9971590909090909, 'NL': 0.9813084112149533, 'PLUS': 1.0, 'LBRACE': 1.0, 'EQEQUAL': 1.0, 'MINUS': 1.0, 'RBRACE': 1.0, 'STAR': 1.0, 'PERCENT': 1.0, 'DOUBLESTAR': 1.0, 'PLUSEQUAL': 1.0, 'GREATER': 1.0, 'SLASH': 1.0, 'NOTEQUAL': 1.0, 'AT': 1.0, 'LESS': 1.0, 'COMMENT': 1.0, 'GREATEREQUAL': 1.0, 'LESSEQUAL': 1.0, 'VBAR': 1.0, 'LEFTSHIFT': 1.0, 'SEMI': 1.0, 'MINEQUAL': 1.0, 'AMPER': 0.5, 'DOUBLESLASH': 1.0, 'STAREQUAL': nan, 'TILDE': nan}
-Training classification probe
-Creating model...
-Number of training instances: 263314
-Number of classes: 41
-Epoch: [1/10], Loss: 0.0043
-Epoch: [2/10], Loss: 0.0042
-Epoch: [3/10], Loss: 0.0042
-Epoch: [4/10], Loss: 0.0042
-Epoch: [5/10], Loss: 0.0042
-Epoch: [6/10], Loss: 0.0040
-Epoch: [7/10], Loss: 0.0041
-Epoch: [8/10], Loss: 0.0041
-Epoch: [9/10], Loss: 0.0040
-Epoch: [10/10], Loss: 0.0040
-Score (accuracy) of the probe: 1.00
-l1=0.0001,l2=0.0
-Absolute average value of parameters: 0.00575487
-Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.9970264543030966, 'NAME': 0.999464897260274, 'NEWLINE': 0.9991974317817014, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 0.9931542917324908, 'COMMA': 1.0, 'EQUAL': 1.0, 'COLON': 1.0, 'DEDENT': 1.0, 'INDENT': 1.0, 'LSQB': 0.9968304278922345, 'RSQB': 1.0, 'NUMBER': 1.0, 'STRING': 0.9914772727272727, 'NL': 0.8566978193146417, 'PLUS': 1.0, 'LBRACE': 1.0, 'EQEQUAL': 0.9855072463768116, 'MINUS': 1.0, 'RBRACE': 1.0, 'STAR': 1.0, 'PERCENT': 1.0, 'DOUBLESTAR': 1.0, 'PLUSEQUAL': 1.0, 'GREATER': 0.7368421052631579, 'SLASH': 1.0, 'NOTEQUAL': 0.9285714285714286, 'AT': 1.0, 'LESS': 1.0, 'COMMENT': 0.6, 'GREATEREQUAL': 1.0, 'LESSEQUAL': 1.0, 'VBAR': 1.0, 'LEFTSHIFT': 0.0, 'SEMI': 1.0, 'MINEQUAL': 0.0, 'AMPER': 1.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': nan}
-Training classification probe
-Creating model...
-Number of training instances: 263314
-Number of classes: 41
-Epoch: [1/10], Loss: 0.0079
-Epoch: [2/10], Loss: 0.0075
-Epoch: [3/10], Loss: 0.0075
-Epoch: [4/10], Loss: 0.0074
-Epoch: [5/10], Loss: 0.0074
-Epoch: [6/10], Loss: 0.0074
-Epoch: [7/10], Loss: 0.0073
-Epoch: [8/10], Loss: 0.0073
-Epoch: [9/10], Loss: 0.0074
-Epoch: [10/10], Loss: 0.0073
-Score (accuracy) of the probe: 0.99
-l1=0.001,l2=0.0
-Absolute average value of parameters: 0.0006028997
-Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.9912844350263176, 'NAME': 1.0, 'NEWLINE': 0.9991974317817014, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 0.9978936282253817, 'COMMA': 1.0, 'EQUAL': 1.0, 'COLON': 1.0, 'DEDENT': 1.0, 'INDENT': 1.0, 'LSQB': 1.0, 'RSQB': 0.9971305595408895, 'NUMBER': 0.9786184210526315, 'STRING': 0.9005681818181818, 'NL': 0.7133956386292835, 'PLUS': 1.0, 'LBRACE': 0.967391304347826, 'EQEQUAL': 1.0, 'MINUS': 0.9875, 'RBRACE': 1.0, 'STAR': 1.0, 'PERCENT': 1.0, 'DOUBLESTAR': 0.6190476190476191, 'PLUSEQUAL': 0.0, 'GREATER': 0.0, 'SLASH': 0.9285714285714286, 'NOTEQUAL': 0.0, 'AT': 0.0, 'LESS': 0.0, 'COMMENT': 0.0, 'GREATEREQUAL': 1.0, 'LESSEQUAL': 0.0, 'VBAR': 0.0, 'LEFTSHIFT': 0.0, 'SEMI': 0.0, 'MINEQUAL': 0.0, 'AMPER': 0.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': nan}
-Training classification probe
-Creating model...
-Number of training instances: 263314
-Number of classes: 41
-Epoch: [1/10], Loss: 0.0232
-Epoch: [2/10], Loss: 0.0215
-Epoch: [3/10], Loss: 0.0215
-Epoch: [4/10], Loss: 0.0214
-Epoch: [5/10], Loss: 0.0214
-Epoch: [6/10], Loss: 0.0214
-Epoch: [7/10], Loss: 0.0214
-Epoch: [8/10], Loss: 0.0214
-Epoch: [9/10], Loss: 0.0214
-Epoch: [10/10], Loss: 0.0214
-Score (accuracy) of the probe: 0.96
-l1=0.01,l2=0.0
-Absolute average value of parameters: 0.00026251576
-Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.9628477681317931, 'NAME': 1.0, 'NEWLINE': 1.0, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 0.9873617693522907, 'COMMA': 1.0, 'EQUAL': 1.0, 'COLON': 1.0, 'DEDENT': 1.0, 'INDENT': 1.0, 'LSQB': 1.0, 'RSQB': 0.9971305595408895, 'NUMBER': 0.8273026315789473, 'STRING': 0.5340909090909091, 'NL': 0.0, 'PLUS': 1.0, 'LBRACE': 0.0, 'EQEQUAL': 0.8405797101449275, 'MINUS': 0.0, 'RBRACE': 0.017241379310344827, 'STAR': 0.0, 'PERCENT': 0.0, 'DOUBLESTAR': 0.0, 'PLUSEQUAL': 0.0, 'GREATER': 0.0, 'SLASH': 0.0, 'NOTEQUAL': 0.0, 'AT': 0.0, 'LESS': 0.0, 'COMMENT': 0.0, 'GREATEREQUAL': 0.0, 'LESSEQUAL': 0.0, 'VBAR': 0.0, 'LEFTSHIFT': 0.0, 'SEMI': 0.0, 'MINEQUAL': 0.0, 'AMPER': 0.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': nan}
-----------------------------------------------------------------
-Anayzing finetuned_clonedet_CodeBERT
-Loading json activations from codebert_clonedet_activations1.json...
-32002 13.0
-Number of tokens:  325100
-length of source dictionary:  17255
-length of target dictionary:  47
-325100
-Total instances: 325100
-['chunk_size', '"critical"', 'testInfo', 'defaultdict', '"maximum"', '"severity"', 'model_path', 'add_constraint', 'n_samples_y', 'streamBuffer', 'EngagementManager', 'local_images', 'LAshowAlignReader', 'tweet_id', 'createarray', 'CONNECTED', 'provides', 'no_docstr', 'email', 'targ3']
-Number of samples:  325100
-Stats: Labels with their frequencies in the final set
-NAME 104243
-NEWLINE 28415
-DOT 27737
-LPAR 24899
-RPAR 23914
-KEYWORD 21043
-COMMA 18332
-EQUAL 15063
-COLON 10649
-DEDENT 8365
-INDENT 7255
-LSQB 7221
-RSQB 7056
-NUMBER 6667
-STRING 3985
-NL 3586
-PLUS 928
-LBRACE 870
-EQEQUAL 827
-MINUS 701
-RBRACE 673
-STAR 606
-PERCENT 459
-DOUBLESTAR 242
-PLUSEQUAL 204
-GREATER 187
-SLASH 177
-NOTEQUAL 176
-AT 165
-LESS 90
-COMMENT 72
-GREATEREQUAL 55
-LESSEQUAL 40
-VBAR 39
-LEFTSHIFT 32
-SEMI 22
-MINEQUAL 21
-AMPER 20
-DOUBLESLASH 19
-STAREQUAL 16
-TILDE 10
-ELLIPSIS 6
-VBAREQUAL 5
-RIGHTSHIFT 3
-SLASHEQUAL 2
-ERRORTOKEN 2
-AMPEREQUAL 1
-finetuned_clonedet_CodeBERT distribution:
-{0: 104243, 1: 28415, 2: 27737, 3: 24899, 4: 23914, 5: 21043, 6: 18332, 7: 15063, 8: 10649, 9: 8365, 10: 7255, 11: 7221, 12: 7056, 13: 6667, 14: 3985, 15: 3586, 16: 928, 17: 870, 18: 827, 19: 701, 20: 673, 21: 606, 22: 459, 23: 242, 24: 204, 25: 187, 26: 177, 27: 176, 28: 165, 29: 90, 30: 72, 31: 55, 32: 40, 33: 39, 34: 32, 35: 22, 36: 21, 37: 20, 38: 19, 39: 16, 40: 10, 41: 6, 42: 5, 43: 3, 44: 2, 45: 2, 46: 1}
-finetuned_clonedet_CodeBERT distribution after trauncating:
-{0: 0.3206677720322012, 1: 0.0874089842223938, 2: 0.08532335018041658, 3: 0.07659321830559153, 4: 0.07356320424755676, 5: 0.06473155921139655, 6: 0.05639209919989172, 7: 0.04633614391490121, 8: 0.03275798954722054, 9: 0.025732048320264794, 10: 0.022317514711718004, 11: 0.022212925393978733, 12: 0.021705359587302856, 13: 0.020508734746109432, 14: 0.012258483270323396, 15: 0.011031096865089008, 16: 0.002854673143001283, 17: 0.0026762560715637026, 18: 0.0025439813461875654, 19: 0.0021563856392714433, 20: 0.002070253259956749, 21: 0.0018641507808823032, 22: 0.0014119557894801604, 23: 0.0007444298497912828, 24: 0.0006275359064356268, 25: 0.0005752412475659912, 26: 0.0005444796835250292, 27: 0.0005414035271209329, 28: 0.0005075658066758746, 29: 0.0002768540763686589, 30: 0.0002214832610949271, 31: 0.00016918860222529155, 32: 0.0001230462561638484, 33: 0.00011997009975975218, 34: 9.843700493107872e-05, 35: 6.767544089011662e-05, 36: 6.45992844860204e-05, 37: 6.15231280819242e-05, 38: 5.8446971677827984e-05, 39: 4.921850246553936e-05, 40: 3.07615640409621e-05}
-Training classification probe
-Creating model...
-Number of training instances: 263314
-Number of classes: 41
-Epoch: [1/10], Loss: 0.0006
-Epoch: [2/10], Loss: 0.0004
-Epoch: [3/10], Loss: 0.0004
-Epoch: [4/10], Loss: 0.0003
-Epoch: [5/10], Loss: 0.0003
-Epoch: [6/10], Loss: 0.0003
-Epoch: [7/10], Loss: 0.0003
-Epoch: [8/10], Loss: 0.0002
-Epoch: [9/10], Loss: 0.0002
-Epoch: [10/10], Loss: 0.0002
-Score (accuracy) of the probe: 1.00
-l1=0,l2=0.0
-Absolute average value of parameters: 0.05724047
-Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.9985644951808053, 'NAME': 1.0, 'NEWLINE': 0.9883627608346709, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 1.0, 'COMMA': 1.0, 'EQUAL': 1.0, 'COLON': 1.0, 'DEDENT': 1.0, 'INDENT': 1.0, 'LSQB': 1.0, 'RSQB': 1.0, 'NUMBER': 1.0, 'STRING': 1.0, 'NL': 0.9595015576323987, 'PLUS': 1.0, 'LBRACE': 1.0, 'EQEQUAL': 1.0, 'MINUS': 1.0, 'RBRACE': 1.0, 'STAR': 1.0, 'PERCENT': 1.0, 'DOUBLESTAR': 1.0, 'PLUSEQUAL': 1.0, 'GREATER': 1.0, 'SLASH': 1.0, 'NOTEQUAL': 1.0, 'AT': 1.0, 'LESS': 1.0, 'COMMENT': 1.0, 'GREATEREQUAL': 1.0, 'LESSEQUAL': 1.0, 'VBAR': 1.0, 'LEFTSHIFT': 1.0, 'SEMI': 1.0, 'MINEQUAL': 1.0, 'AMPER': 1.0, 'DOUBLESLASH': 1.0, 'STAREQUAL': nan, 'TILDE': nan}
-Training classification probe
-Creating model...
-Number of training instances: 263314
-Number of classes: 41
-Epoch: [1/10], Loss: 0.0015
-Epoch: [2/10], Loss: 0.0016
-Epoch: [3/10], Loss: 0.0016
-Epoch: [4/10], Loss: 0.0015
-Epoch: [5/10], Loss: 0.0015
+Epoch: [4/10], Loss: 0.0017
+Epoch: [5/10], Loss: 0.0018
 Epoch: [6/10], Loss: 0.0015
 Epoch: [7/10], Loss: 0.0016
-Epoch: [8/10], Loss: 0.0015
-Epoch: [9/10], Loss: 0.0015
-Epoch: [10/10], Loss: 0.0015
-Score (accuracy) of the probe: 0.99
-l1=1e-05,l2=0.0
-Absolute average value of parameters: 0.017858472
+Epoch: [8/10], Loss: 0.0017
+Epoch: [9/10], Loss: 0.0019
+Epoch: [10/10], Loss: 0.0016
+Score (accuracy) of the probe: 1.00
+l1=0,l2=0.01
+Absolute average value of parameters: 0.015954562
 Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
  9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
  9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.9934035135689384, 'NAME': 0.9997859589041096, 'NEWLINE': 1.0, 'DOT': 0.9996001599360256, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 1.0, 'COMMA': 1.0, 'EQUAL': 1.0, 'COLON': 1.0, 'DEDENT': 0.9986842105263158, 'INDENT': 1.0, 'LSQB': 1.0, 'RSQB': 1.0, 'NUMBER': 0.9983552631578947, 'STRING': 0.9971590909090909, 'NL': 0.42990654205607476, 'PLUS': 1.0, 'LBRACE': 1.0, 'EQEQUAL': 1.0, 'MINUS': 1.0, 'RBRACE': 1.0, 'STAR': 1.0, 'PERCENT': 1.0, 'DOUBLESTAR': 1.0, 'PLUSEQUAL': 1.0, 'GREATER': 1.0, 'SLASH': 1.0, 'NOTEQUAL': 0.9285714285714286, 'AT': 1.0, 'LESS': 1.0, 'COMMENT': 0.4, 'GREATEREQUAL': 1.0, 'LESSEQUAL': 1.0, 'VBAR': 1.0, 'LEFTSHIFT': 1.0, 'SEMI': 1.0, 'MINEQUAL': 1.0, 'AMPER': 1.0, 'DOUBLESLASH': 1.0, 'STAREQUAL': nan, 'TILDE': nan}
+Accuracy on the validation set: {'__OVERALL__': 0.9950099118189897, 'NAME': 0.99860470108404, 'NEWLINE': 1.0, 'DOT': 0.9964014394242303, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 1.0, 'COMMA': 1.0, 'EQUAL': 0.9954776710005653, 'COLON': 1.0, 'DEDENT': 0.9959514170040485, 'INDENT': 0.9984520123839009, 'LSQB': 1.0, 'RSQB': 1.0, 'NUMBER': 1.0, 'STRING': 0.963963963963964, 'NL': 0.8415841584158416, 'PLUS': 1.0, 'LBRACE': 1.0, 'EQEQUAL': 1.0, 'MINUS': 1.0, 'RBRACE': 1.0, 'STAR': 1.0, 'PERCENT': 1.0, 'DOUBLESTAR': 1.0, 'PLUSEQUAL': 0.90625, 'GREATER': 1.0, 'SLASH': 1.0, 'NOTEQUAL': 1.0, 'AT': 1.0, 'LESS': 0.0, 'COMMENT': 0.3333333333333333, 'GREATEREQUAL': 1.0, 'LESSEQUAL': 1.0, 'VBAR': 1.0, 'LEFTSHIFT': 0.0, 'SEMI': 1.0, 'MINEQUAL': nan, 'AMPER': 0.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': 1.0}
 Training classification probe
 Creating model...
 Number of training instances: 263314
 Number of classes: 41
-Epoch: [1/10], Loss: 0.0042
-Epoch: [2/10], Loss: 0.0042
-Epoch: [3/10], Loss: 0.0043
-Epoch: [4/10], Loss: 0.0042
+Epoch: [1/10], Loss: 0.0038
+Epoch: [2/10], Loss: 0.0038
+Epoch: [3/10], Loss: 0.0042
+Epoch: [4/10], Loss: 0.0039
 Epoch: [5/10], Loss: 0.0042
-Epoch: [6/10], Loss: 0.0040
-Epoch: [7/10], Loss: 0.0041
+Epoch: [6/10], Loss: 0.0038
+Epoch: [7/10], Loss: 0.0040
 Epoch: [8/10], Loss: 0.0041
-Epoch: [9/10], Loss: 0.0040
-Epoch: [10/10], Loss: 0.0042
-Score (accuracy) of the probe: 1.00
-l1=0.0001,l2=0.0
-Absolute average value of parameters: 0.0045115617
+Epoch: [9/10], Loss: 0.0038
+Epoch: [10/10], Loss: 0.0040
+Score (accuracy) of the probe: 0.98
+l1=0,l2=0.1
+Absolute average value of parameters: 0.0036297734
 Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
  9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
  9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.9970264543030966, 'NAME': 0.9995719178082192, 'NEWLINE': 0.9943820224719101, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 0.9994734070563455, 'COMMA': 1.0, 'EQUAL': 1.0, 'COLON': 1.0, 'DEDENT': 1.0, 'INDENT': 1.0, 'LSQB': 1.0, 'RSQB': 1.0, 'NUMBER': 0.9983552631578947, 'STRING': 0.9375, 'NL': 0.9252336448598131, 'PLUS': 1.0, 'LBRACE': 1.0, 'EQEQUAL': 1.0, 'MINUS': 0.975, 'RBRACE': 0.9655172413793104, 'STAR': 1.0, 'PERCENT': 1.0, 'DOUBLESTAR': 1.0, 'PLUSEQUAL': 0.6470588235294118, 'GREATER': 1.0, 'SLASH': 1.0, 'NOTEQUAL': 0.7857142857142857, 'AT': 1.0, 'LESS': 1.0, 'COMMENT': 0.2, 'GREATEREQUAL': 1.0, 'LESSEQUAL': 0.6666666666666666, 'VBAR': 1.0, 'LEFTSHIFT': 1.0, 'SEMI': 1.0, 'MINEQUAL': 0.0, 'AMPER': 0.5, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': nan}
+Accuracy on the validation set: {'__OVERALL__': 0.9783990703397362, 'NAME': 0.9948481270795321, 'NEWLINE': 1.0, 'DOT': 0.9996001599360256, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 0.9863013698630136, 'COMMA': 1.0, 'EQUAL': 0.9943470887507067, 'COLON': 1.0, 'DEDENT': 0.9770580296896086, 'INDENT': 0.9690402476780186, 'LSQB': 1.0, 'RSQB': 1.0, 'NUMBER': 0.9449081803005008, 'STRING': 0.5855855855855856, 'NL': 0.37425742574257426, 'PLUS': 0.9642857142857143, 'LBRACE': 1.0, 'EQEQUAL': 1.0, 'MINUS': 1.0, 'RBRACE': 1.0, 'STAR': 0.8727272727272727, 'PERCENT': 1.0, 'DOUBLESTAR': 0.631578947368421, 'PLUSEQUAL': 0.84375, 'GREATER': 0.5, 'SLASH': 0.25, 'NOTEQUAL': 0.8333333333333334, 'AT': 0.0, 'LESS': 0.0, 'COMMENT': 0.0, 'GREATEREQUAL': 0.0, 'LESSEQUAL': 1.0, 'VBAR': 0.0, 'LEFTSHIFT': 0.0, 'SEMI': 0.0, 'MINEQUAL': nan, 'AMPER': 0.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': 0.0}
 Training classification probe
 Creating model...
 Number of training instances: 263314
 Number of classes: 41
-Epoch: [1/10], Loss: 0.0076
-Epoch: [2/10], Loss: 0.0074
-Epoch: [3/10], Loss: 0.0073
-Epoch: [4/10], Loss: 0.0072
-Epoch: [5/10], Loss: 0.0072
-Epoch: [6/10], Loss: 0.0071
-Epoch: [7/10], Loss: 0.0072
-Epoch: [8/10], Loss: 0.0071
-Epoch: [9/10], Loss: 0.0072
-Epoch: [10/10], Loss: 0.0071
-Score (accuracy) of the probe: 0.99
-l1=0.001,l2=0.0
-Absolute average value of parameters: 0.0006518961
-Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.9898147515209516, 'NAME': 0.9997859589041096, 'NEWLINE': 0.9991974317817014, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 0.9931542917324908, 'COMMA': 1.0, 'EQUAL': 1.0, 'COLON': 1.0, 'DEDENT': 1.0, 'INDENT': 1.0, 'LSQB': 1.0, 'RSQB': 1.0, 'NUMBER': 0.9983552631578947, 'STRING': 0.9204545454545454, 'NL': 0.5794392523364486, 'PLUS': 1.0, 'LBRACE': 1.0, 'EQEQUAL': 1.0, 'MINUS': 0.8875, 'RBRACE': 1.0, 'STAR': 0.9811320754716981, 'PERCENT': 0.9772727272727273, 'DOUBLESTAR': 0.47619047619047616, 'PLUSEQUAL': 0.0, 'GREATER': 0.0, 'SLASH': 1.0, 'NOTEQUAL': 0.0, 'AT': 0.0, 'LESS': 0.0, 'COMMENT': 0.0, 'GREATEREQUAL': 0.8, 'LESSEQUAL': 0.0, 'VBAR': 0.0, 'LEFTSHIFT': 0.0, 'SEMI': 0.0, 'MINEQUAL': 0.0, 'AMPER': 0.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': nan}
-Training classification probe
-Creating model...
-Number of training instances: 263314
-Number of classes: 41
-Epoch: [1/10], Loss: 0.0232
-Epoch: [2/10], Loss: 0.0216
-Epoch: [3/10], Loss: 0.0215
-Epoch: [4/10], Loss: 0.0215
-Epoch: [5/10], Loss: 0.0215
-Epoch: [6/10], Loss: 0.0215
-Epoch: [7/10], Loss: 0.0215
-Epoch: [8/10], Loss: 0.0215
-Epoch: [9/10], Loss: 0.0215
-Epoch: [10/10], Loss: 0.0215
+Epoch: [1/10], Loss: 0.0050
+Epoch: [2/10], Loss: 0.0046
+Epoch: [3/10], Loss: 0.0046
+Epoch: [4/10], Loss: 0.0047
+Epoch: [5/10], Loss: 0.0048
+Epoch: [6/10], Loss: 0.0047
+Epoch: [7/10], Loss: 0.0047
+Epoch: [8/10], Loss: 0.0044
+Epoch: [9/10], Loss: 0.0046
+Epoch: [10/10], Loss: 0.0048
 Score (accuracy) of the probe: 0.96
-l1=0.01,l2=0.0
-Absolute average value of parameters: 0.0002649501
+l1=0.001,l2=0
+Absolute average value of parameters: 0.0010102047
 Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
  9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
  9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.9613780846264269, 'NAME': 0.996896404109589, 'NEWLINE': 1.0, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 0.981042654028436, 'COMMA': 1.0, 'EQUAL': 1.0, 'COLON': 0.9864158829676071, 'DEDENT': 1.0, 'INDENT': 1.0, 'LSQB': 1.0, 'RSQB': 0.9971305595408895, 'NUMBER': 0.8289473684210527, 'STRING': 0.5369318181818182, 'NL': 0.0, 'PLUS': 1.0, 'LBRACE': 0.0, 'EQEQUAL': 0.9855072463768116, 'MINUS': 0.0, 'RBRACE': 0.0, 'STAR': 0.0, 'PERCENT': 0.0, 'DOUBLESTAR': 0.0, 'PLUSEQUAL': 0.0, 'GREATER': 0.0, 'SLASH': 0.0, 'NOTEQUAL': 0.0, 'AT': 0.0, 'LESS': 0.0, 'COMMENT': 0.0, 'GREATEREQUAL': 0.0, 'LESSEQUAL': 0.0, 'VBAR': 0.0, 'LEFTSHIFT': 0.0, 'SEMI': 0.0, 'MINEQUAL': 0.0, 'AMPER': 0.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': nan}
-----------------------------------------------------------------
-Anayzing finetuned_clonedet_GraphCodeBERT
-Loading json activations from graphcodebert_clonedet_activations1.json...
-32002 13.0
-Number of tokens:  325100
-length of source dictionary:  17255
-length of target dictionary:  47
-325100
-Total instances: 325100
-['chunk_size', '"critical"', 'testInfo', 'defaultdict', '"maximum"', '"severity"', 'model_path', 'add_constraint', 'n_samples_y', 'streamBuffer', 'EngagementManager', 'local_images', 'LAshowAlignReader', 'tweet_id', 'createarray', 'CONNECTED', 'provides', 'no_docstr', 'email', 'targ3']
-Number of samples:  325100
-Stats: Labels with their frequencies in the final set
-NAME 104243
-NEWLINE 28415
-DOT 27737
-LPAR 24899
-RPAR 23914
-KEYWORD 21043
-COMMA 18332
-EQUAL 15063
-COLON 10649
-DEDENT 8365
-INDENT 7255
-LSQB 7221
-RSQB 7056
-NUMBER 6667
-STRING 3985
-NL 3586
-PLUS 928
-LBRACE 870
-EQEQUAL 827
-MINUS 701
-RBRACE 673
-STAR 606
-PERCENT 459
-DOUBLESTAR 242
-PLUSEQUAL 204
-GREATER 187
-SLASH 177
-NOTEQUAL 176
-AT 165
-LESS 90
-COMMENT 72
-GREATEREQUAL 55
-LESSEQUAL 40
-VBAR 39
-LEFTSHIFT 32
-SEMI 22
-MINEQUAL 21
-AMPER 20
-DOUBLESLASH 19
-STAREQUAL 16
-TILDE 10
-ELLIPSIS 6
-VBAREQUAL 5
-RIGHTSHIFT 3
-SLASHEQUAL 2
-ERRORTOKEN 2
-AMPEREQUAL 1
-finetuned_clonedet_GraphCodeBERT distribution:
-{0: 104243, 1: 28415, 2: 27737, 3: 24899, 4: 23914, 5: 21043, 6: 18332, 7: 15063, 8: 10649, 9: 8365, 10: 7255, 11: 7221, 12: 7056, 13: 6667, 14: 3985, 15: 3586, 16: 928, 17: 870, 18: 827, 19: 701, 20: 673, 21: 606, 22: 459, 23: 242, 24: 204, 25: 187, 26: 177, 27: 176, 28: 165, 29: 90, 30: 72, 31: 55, 32: 40, 33: 39, 34: 32, 35: 22, 36: 21, 37: 20, 38: 19, 39: 16, 40: 10, 41: 6, 42: 5, 43: 3, 44: 2, 45: 2, 46: 1}
-finetuned_clonedet_GraphCodeBERT distribution after trauncating:
-{0: 0.3206677720322012, 1: 0.0874089842223938, 2: 0.08532335018041658, 3: 0.07659321830559153, 4: 0.07356320424755676, 5: 0.06473155921139655, 6: 0.05639209919989172, 7: 0.04633614391490121, 8: 0.03275798954722054, 9: 0.025732048320264794, 10: 0.022317514711718004, 11: 0.022212925393978733, 12: 0.021705359587302856, 13: 0.020508734746109432, 14: 0.012258483270323396, 15: 0.011031096865089008, 16: 0.002854673143001283, 17: 0.0026762560715637026, 18: 0.0025439813461875654, 19: 0.0021563856392714433, 20: 0.002070253259956749, 21: 0.0018641507808823032, 22: 0.0014119557894801604, 23: 0.0007444298497912828, 24: 0.0006275359064356268, 25: 0.0005752412475659912, 26: 0.0005444796835250292, 27: 0.0005414035271209329, 28: 0.0005075658066758746, 29: 0.0002768540763686589, 30: 0.0002214832610949271, 31: 0.00016918860222529155, 32: 0.0001230462561638484, 33: 0.00011997009975975218, 34: 9.843700493107872e-05, 35: 6.767544089011662e-05, 36: 6.45992844860204e-05, 37: 6.15231280819242e-05, 38: 5.8446971677827984e-05, 39: 4.921850246553936e-05, 40: 3.07615640409621e-05}
+Accuracy on the validation set: {'__OVERALL__': 0.9602160092966027, 'NAME': 0.9962434259954921, 'NEWLINE': 0.9991896272285251, 'DOT': 1.0, 'LPAR': 0.9935838680109991, 'RPAR': 0.9793033821302373, 'KEYWORD': 0.964172813487882, 'COMMA': 1.0, 'EQUAL': 0.9909553420011306, 'COLON': 0.9592417061611375, 'DEDENT': 0.9959514170040485, 'INDENT': 0.7105263157894737, 'LSQB': 0.9153543307086615, 'RSQB': 0.892, 'NUMBER': 0.8981636060100167, 'STRING': 0.21621621621621623, 'NL': 0.5405940594059406, 'PLUS': 0.7857142857142857, 'LBRACE': 0.371900826446281, 'EQEQUAL': 1.0, 'MINUS': 1.0, 'RBRACE': 0.6197183098591549, 'STAR': 0.9454545454545454, 'PERCENT': 0.9655172413793104, 'DOUBLESTAR': 0.0, 'PLUSEQUAL': 0.0, 'GREATER': 0.8809523809523809, 'SLASH': 0.0, 'NOTEQUAL': 0.5416666666666666, 'AT': 0.0, 'LESS': 0.0, 'COMMENT': 0.0, 'GREATEREQUAL': 0.0, 'LESSEQUAL': 0.0, 'VBAR': 0.0, 'LEFTSHIFT': 0.0, 'SEMI': 0.0, 'MINEQUAL': nan, 'AMPER': 0.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': 0.0}
 Training classification probe
 Creating model...
 Number of training instances: 263314
 Number of classes: 41
-Epoch: [1/10], Loss: 0.0006
-Epoch: [2/10], Loss: 0.0004
-Epoch: [3/10], Loss: 0.0004
-Epoch: [4/10], Loss: 0.0003
-Epoch: [5/10], Loss: 0.0003
-Epoch: [6/10], Loss: 0.0003
-Epoch: [7/10], Loss: 0.0003
-Epoch: [8/10], Loss: 0.0003
-Epoch: [9/10], Loss: 0.0003
-Epoch: [10/10], Loss: 0.0002
-Score (accuracy) of the probe: 0.99
-l1=0,l2=0.0
-Absolute average value of parameters: 0.056192838
+Epoch: [1/10], Loss: 0.0053
+Epoch: [2/10], Loss: 0.0047
+Epoch: [3/10], Loss: 0.0047
+Epoch: [4/10], Loss: 0.0047
+Epoch: [5/10], Loss: 0.0048
+Epoch: [6/10], Loss: 0.0049
+Epoch: [7/10], Loss: 0.0047
+Epoch: [8/10], Loss: 0.0046
+Epoch: [9/10], Loss: 0.0047
+Epoch: [10/10], Loss: 0.0048
+Score (accuracy) of the probe: 0.94
+l1=0.001,l2=0.001
+Absolute average value of parameters: 0.0008511883
 Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
  9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
  9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.9948390183881332, 'NAME': 1.0, 'NEWLINE': 0.942215088282504, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 1.0, 'COMMA': 1.0, 'EQUAL': 1.0, 'COLON': 1.0, 'DEDENT': 1.0, 'INDENT': 1.0, 'LSQB': 1.0, 'RSQB': 1.0, 'NUMBER': 0.9983552631578947, 'STRING': 0.9943181818181818, 'NL': 0.9875389408099688, 'PLUS': 1.0, 'LBRACE': 1.0, 'EQEQUAL': 1.0, 'MINUS': 1.0, 'RBRACE': 1.0, 'STAR': 1.0, 'PERCENT': 1.0, 'DOUBLESTAR': 1.0, 'PLUSEQUAL': 1.0, 'GREATER': 1.0, 'SLASH': 1.0, 'NOTEQUAL': 1.0, 'AT': 1.0, 'LESS': 1.0, 'COMMENT': 1.0, 'GREATEREQUAL': 1.0, 'LESSEQUAL': 1.0, 'VBAR': 1.0, 'LEFTSHIFT': 1.0, 'SEMI': 1.0, 'MINEQUAL': 1.0, 'AMPER': 1.0, 'DOUBLESLASH': 1.0, 'STAREQUAL': nan, 'TILDE': nan}
+Accuracy on the validation set: {'__OVERALL__': 0.9431950235832934, 'NAME': 0.9916282065042396, 'NEWLINE': 0.9995948136142626, 'DOT': 1.0, 'LPAR': 0.9986251145737856, 'RPAR': 0.9586067642604745, 'KEYWORD': 0.9810326659641728, 'COMMA': 0.9923031379514505, 'EQUAL': 0.821368004522329, 'COLON': 0.9175355450236967, 'DEDENT': 0.9959514170040485, 'INDENT': 0.6965944272445821, 'LSQB': 0.9468503937007874, 'RSQB': 0.886, 'NUMBER': 0.9031719532554258, 'STRING': 0.09009009009009009, 'NL': 0.3465346534653465, 'PLUS': 0.9285714285714286, 'LBRACE': 0.45454545454545453, 'EQEQUAL': 1.0, 'MINUS': 1.0, 'RBRACE': 0.676056338028169, 'STAR': 0.23636363636363636, 'PERCENT': 0.9827586206896551, 'DOUBLESTAR': 1.0, 'PLUSEQUAL': 0.0, 'GREATER': 1.0, 'SLASH': 0.0, 'NOTEQUAL': 0.041666666666666664, 'AT': 0.0, 'LESS': 0.0, 'COMMENT': 0.0, 'GREATEREQUAL': 0.0, 'LESSEQUAL': 0.0, 'VBAR': 0.0, 'LEFTSHIFT': 0.0, 'SEMI': 0.0, 'MINEQUAL': nan, 'AMPER': 0.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': 0.0}
 Training classification probe
 Creating model...
 Number of training instances: 263314
 Number of classes: 41
-Epoch: [1/10], Loss: 0.0015
-Epoch: [2/10], Loss: 0.0017
-Epoch: [3/10], Loss: 0.0017
-Epoch: [4/10], Loss: 0.0016
-Epoch: [5/10], Loss: 0.0016
-Epoch: [6/10], Loss: 0.0016
-Epoch: [7/10], Loss: 0.0015
-Epoch: [8/10], Loss: 0.0016
-Epoch: [9/10], Loss: 0.0015
-Epoch: [10/10], Loss: 0.0015
-Score (accuracy) of the probe: 1.00
-l1=1e-05,l2=0.0
-Absolute average value of parameters: 0.013286654
-Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.9977442067126939, 'NAME': 1.0, 'NEWLINE': 0.9991974317817014, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 1.0, 'COMMA': 1.0, 'EQUAL': 1.0, 'COLON': 1.0, 'DEDENT': 1.0, 'INDENT': 1.0, 'LSQB': 1.0, 'RSQB': 1.0, 'NUMBER': 1.0, 'STRING': 0.9630681818181818, 'NL': 0.8442367601246106, 'PLUS': 1.0, 'LBRACE': 1.0, 'EQEQUAL': 0.9855072463768116, 'MINUS': 1.0, 'RBRACE': 1.0, 'STAR': 1.0, 'PERCENT': 1.0, 'DOUBLESTAR': 1.0, 'PLUSEQUAL': 1.0, 'GREATER': 1.0, 'SLASH': 1.0, 'NOTEQUAL': 1.0, 'AT': 1.0, 'LESS': 1.0, 'COMMENT': 1.0, 'GREATEREQUAL': 1.0, 'LESSEQUAL': 1.0, 'VBAR': 1.0, 'LEFTSHIFT': 1.0, 'SEMI': 1.0, 'MINEQUAL': 1.0, 'AMPER': 1.0, 'DOUBLESLASH': 1.0, 'STAREQUAL': nan, 'TILDE': nan}
-Training classification probe
-Creating model...
-Number of training instances: 263314
-Number of classes: 41
-Epoch: [1/10], Loss: 0.0043
-Epoch: [2/10], Loss: 0.0044
-Epoch: [3/10], Loss: 0.0045
-Epoch: [4/10], Loss: 0.0042
-Epoch: [5/10], Loss: 0.0043
-Epoch: [6/10], Loss: 0.0043
-Epoch: [7/10], Loss: 0.0043
-Epoch: [8/10], Loss: 0.0042
-Epoch: [9/10], Loss: 0.0041
-Epoch: [10/10], Loss: 0.0043
-Score (accuracy) of the probe: 1.00
-l1=0.0001,l2=0.0
-Absolute average value of parameters: 0.005647493
-Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.9962061658349853, 'NAME': 0.999464897260274, 'NEWLINE': 0.9991974317817014, 'DOT': 0.9996001599360256, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 0.9978936282253817, 'COMMA': 1.0, 'EQUAL': 1.0, 'COLON': 1.0, 'DEDENT': 1.0, 'INDENT': 1.0, 'LSQB': 1.0, 'RSQB': 1.0, 'NUMBER': 0.9983552631578947, 'STRING': 0.9659090909090909, 'NL': 0.8411214953271028, 'PLUS': 1.0, 'LBRACE': 1.0, 'EQEQUAL': 1.0, 'MINUS': 0.85, 'RBRACE': 1.0, 'STAR': 1.0, 'PERCENT': 1.0, 'DOUBLESTAR': 1.0, 'PLUSEQUAL': 1.0, 'GREATER': 0.7894736842105263, 'SLASH': 1.0, 'NOTEQUAL': 1.0, 'AT': 1.0, 'LESS': 0.0, 'COMMENT': 0.2, 'GREATEREQUAL': 1.0, 'LESSEQUAL': 1.0, 'VBAR': 0.0, 'LEFTSHIFT': 0.0, 'SEMI': 1.0, 'MINEQUAL': 0.0, 'AMPER': 1.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': nan}
-Training classification probe
-Creating model...
-Number of training instances: 263314
-Number of classes: 41
-Epoch: [1/10], Loss: 0.0082
-Epoch: [2/10], Loss: 0.0078
-Epoch: [3/10], Loss: 0.0077
-Epoch: [4/10], Loss: 0.0077
-Epoch: [5/10], Loss: 0.0078
-Epoch: [6/10], Loss: 0.0077
-Epoch: [7/10], Loss: 0.0076
-Epoch: [8/10], Loss: 0.0077
-Epoch: [9/10], Loss: 0.0077
-Epoch: [10/10], Loss: 0.0077
-Score (accuracy) of the probe: 0.99
-l1=0.001,l2=0.0
-Absolute average value of parameters: 0.0006145539
-Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
- 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.992446510356142, 'NAME': 0.9997859589041096, 'NEWLINE': 0.9959871589085072, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 0.9968404423380727, 'COMMA': 1.0, 'EQUAL': 1.0, 'COLON': 1.0, 'DEDENT': 1.0, 'INDENT': 0.9985401459854014, 'LSQB': 1.0, 'RSQB': 0.9971305595408895, 'NUMBER': 0.9967105263157895, 'STRING': 0.9659090909090909, 'NL': 0.7258566978193146, 'PLUS': 1.0, 'LBRACE': 0.9891304347826086, 'EQEQUAL': 1.0, 'MINUS': 1.0, 'RBRACE': 1.0, 'STAR': 1.0, 'PERCENT': 1.0, 'DOUBLESTAR': 0.8571428571428571, 'PLUSEQUAL': 0.0, 'GREATER': 0.0, 'SLASH': 1.0, 'NOTEQUAL': 0.0, 'AT': 0.0, 'LESS': 0.0, 'COMMENT': 0.0, 'GREATEREQUAL': 1.0, 'LESSEQUAL': 0.0, 'VBAR': 0.0, 'LEFTSHIFT': 0.0, 'SEMI': 0.0, 'MINEQUAL': 0.0, 'AMPER': 0.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': nan}
-Training classification probe
-Creating model...
-Number of training instances: 263314
-Number of classes: 41
-Epoch: [1/10], Loss: 0.0232
-Epoch: [2/10], Loss: 0.0216
-Epoch: [3/10], Loss: 0.0215
-Epoch: [4/10], Loss: 0.0215
-Epoch: [5/10], Loss: 0.0215
-Epoch: [6/10], Loss: 0.0215
-Epoch: [7/10], Loss: 0.0215
-Epoch: [8/10], Loss: 0.0215
-Epoch: [9/10], Loss: 0.0215
-Epoch: [10/10], Loss: 0.0215
+Epoch: [1/10], Loss: 0.0051
+Epoch: [2/10], Loss: 0.0051
+Epoch: [3/10], Loss: 0.0050
+Epoch: [4/10], Loss: 0.0047
+Epoch: [5/10], Loss: 0.0052
+Epoch: [6/10], Loss: 0.0052
+Epoch: [7/10], Loss: 0.0051
+Epoch: [8/10], Loss: 0.0049
+Epoch: [9/10], Loss: 0.0051
+Epoch: [10/10], Loss: 0.0050
 Score (accuracy) of the probe: 0.96
-l1=0.01,l2=0.0
-Absolute average value of parameters: 0.00026407317
+l1=0.001,l2=0.01
+Absolute average value of parameters: 0.0004964678
 Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
  9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
  9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
-Accuracy on the validation set: {'__OVERALL__': 0.9626768747009365, 'NAME': 0.9995719178082192, 'NEWLINE': 1.0, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 0.985781990521327, 'COMMA': 1.0, 'EQUAL': 1.0, 'COLON': 0.9979101358411703, 'DEDENT': 1.0, 'INDENT': 1.0, 'LSQB': 1.0, 'RSQB': 0.9985652797704447, 'NUMBER': 0.8108552631578947, 'STRING': 0.5511363636363636, 'NL': 0.0, 'PLUS': 1.0, 'LBRACE': 0.0, 'EQEQUAL': 0.9565217391304348, 'MINUS': 0.0, 'RBRACE': 0.0, 'STAR': 0.0, 'PERCENT': 0.0, 'DOUBLESTAR': 0.0, 'PLUSEQUAL': 0.0, 'GREATER': 0.0, 'SLASH': 0.0, 'NOTEQUAL': 0.0, 'AT': 0.0, 'LESS': 0.0, 'COMMENT': 0.0, 'GREATEREQUAL': 0.0, 'LESSEQUAL': 0.0, 'VBAR': 0.0, 'LEFTSHIFT': 0.0, 'SEMI': 0.0, 'MINEQUAL': 0.0, 'AMPER': 0.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': nan}
+Accuracy on the validation set: {'__OVERALL__': 0.9594982568870053, 'NAME': 0.9979607169689815, 'NEWLINE': 1.0, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 0.9863013698630136, 'COMMA': 1.0, 'EQUAL': 0.9542114188807236, 'COLON': 1.0, 'DEDENT': 0.9959514170040485, 'INDENT': 0.673374613003096, 'LSQB': 1.0, 'RSQB': 1.0, 'NUMBER': 0.9081803005008348, 'STRING': 0.0, 'NL': 0.0039603960396039604, 'PLUS': 0.9910714285714286, 'LBRACE': 0.8264462809917356, 'EQEQUAL': 1.0, 'MINUS': 1.0, 'RBRACE': 0.9295774647887324, 'STAR': 1.0, 'PERCENT': 1.0, 'DOUBLESTAR': 0.0, 'PLUSEQUAL': 0.0, 'GREATER': 1.0, 'SLASH': 0.0, 'NOTEQUAL': 0.20833333333333334, 'AT': 0.0, 'LESS': 0.0, 'COMMENT': 0.0, 'GREATEREQUAL': 0.0, 'LESSEQUAL': 0.0, 'VBAR': 0.0, 'LEFTSHIFT': 0.0, 'SEMI': 0.0, 'MINEQUAL': nan, 'AMPER': 0.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': 0.0}
+Training classification probe
+Creating model...
+Number of training instances: 263314
+Number of classes: 41
+Epoch: [1/10], Loss: 0.0063
+Epoch: [2/10], Loss: 0.0059
+Epoch: [3/10], Loss: 0.0061
+Epoch: [4/10], Loss: 0.0061
+Epoch: [5/10], Loss: 0.0060
+Epoch: [6/10], Loss: 0.0059
+Epoch: [7/10], Loss: 0.0059
+Epoch: [8/10], Loss: 0.0059
+Epoch: [9/10], Loss: 0.0058
+Epoch: [10/10], Loss: 0.0061
+Score (accuracy) of the probe: 0.95
+l1=0.001,l2=0.1
+Absolute average value of parameters: 0.0005166173
+Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
+ 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
+ 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
+Accuracy on the validation set: {'__OVERALL__': 0.948663613370702, 'NAME': 0.9971020714822367, 'NEWLINE': 1.0, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 0.8967334035827187, 'COMMA': 1.0, 'EQUAL': 0.8954211418880723, 'COLON': 0.9990521327014218, 'DEDENT': 0.9230769230769231, 'INDENT': 0.8839009287925697, 'LSQB': 1.0, 'RSQB': 1.0, 'NUMBER': 0.8631051752921536, 'STRING': 0.0, 'NL': 0.0, 'PLUS': 0.017857142857142856, 'LBRACE': 1.0, 'EQEQUAL': 1.0, 'MINUS': 0.82, 'RBRACE': 0.9436619718309859, 'STAR': 1.0, 'PERCENT': 1.0, 'DOUBLESTAR': 0.0, 'PLUSEQUAL': 0.0, 'GREATER': 1.0, 'SLASH': 0.0, 'NOTEQUAL': 0.5833333333333334, 'AT': 0.0, 'LESS': 0.0, 'COMMENT': 0.0, 'GREATEREQUAL': 0.0, 'LESSEQUAL': 0.0, 'VBAR': 0.0, 'LEFTSHIFT': 0.0, 'SEMI': 0.0, 'MINEQUAL': nan, 'AMPER': 0.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': 0.0}
+Training classification probe
+Creating model...
+Number of training instances: 263314
+Number of classes: 41
+Epoch: [1/10], Loss: 0.0127
+Epoch: [2/10], Loss: 0.0115
+Epoch: [3/10], Loss: 0.0114
+Epoch: [4/10], Loss: 0.0113
+Epoch: [5/10], Loss: 0.0113
+Epoch: [6/10], Loss: 0.0113
+Epoch: [7/10], Loss: 0.0113
+Epoch: [8/10], Loss: 0.0113
+Epoch: [9/10], Loss: 0.0113
+Epoch: [10/10], Loss: 0.0113
+Score (accuracy) of the probe: 0.92
+l1=0.01,l2=0
+Absolute average value of parameters: 0.0002458475
+Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
+ 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
+ 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
+Accuracy on the validation set: {'__OVERALL__': 0.915783717273908, 'NAME': 0.9964580873671782, 'NEWLINE': 1.0, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 0.8951527924130663, 'COMMA': 0.9994079336885732, 'EQUAL': 1.0, 'COLON': 0.9725118483412323, 'DEDENT': 1.0, 'INDENT': 0.0, 'LSQB': 0.9822834645669292, 'RSQB': 0.984, 'NUMBER': 0.67779632721202, 'STRING': 0.0, 'NL': 0.0, 'PLUS': 0.0, 'LBRACE': 0.0, 'EQEQUAL': 0.0, 'MINUS': 0.0, 'RBRACE': 0.0, 'STAR': 0.0, 'PERCENT': 1.0, 'DOUBLESTAR': 0.0, 'PLUSEQUAL': 0.0, 'GREATER': 0.0, 'SLASH': 0.0, 'NOTEQUAL': 0.0, 'AT': 0.0, 'LESS': 0.0, 'COMMENT': 0.0, 'GREATEREQUAL': 0.0, 'LESSEQUAL': 0.0, 'VBAR': 0.0, 'LEFTSHIFT': 0.0, 'SEMI': 0.0, 'MINEQUAL': nan, 'AMPER': 0.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': 0.0}
+Training classification probe
+Creating model...
+Number of training instances: 263314
+Number of classes: 41
+Epoch: [1/10], Loss: 0.0127
+Epoch: [2/10], Loss: 0.0115
+Epoch: [3/10], Loss: 0.0114
+Epoch: [4/10], Loss: 0.0114
+Epoch: [5/10], Loss: 0.0113
+Epoch: [6/10], Loss: 0.0113
+Epoch: [7/10], Loss: 0.0113
+Epoch: [8/10], Loss: 0.0113
+Epoch: [9/10], Loss: 0.0113
+Epoch: [10/10], Loss: 0.0113
+Score (accuracy) of the probe: 0.92
+l1=0.01,l2=0.001
+Absolute average value of parameters: 0.00024550056
+Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
+ 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
+ 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
+Accuracy on the validation set: {'__OVERALL__': 0.9160913254494497, 'NAME': 0.9965654180530213, 'NEWLINE': 1.0, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 0.8935721812434141, 'COMMA': 0.9994079336885732, 'EQUAL': 1.0, 'COLON': 0.9753554502369668, 'DEDENT': 1.0, 'INDENT': 0.0, 'LSQB': 0.9881889763779528, 'RSQB': 0.984, 'NUMBER': 0.6861435726210351, 'STRING': 0.0, 'NL': 0.0, 'PLUS': 0.0, 'LBRACE': 0.0, 'EQEQUAL': 0.0, 'MINUS': 0.0, 'RBRACE': 0.0, 'STAR': 0.0, 'PERCENT': 1.0, 'DOUBLESTAR': 0.0, 'PLUSEQUAL': 0.0, 'GREATER': 0.0, 'SLASH': 0.0, 'NOTEQUAL': 0.0, 'AT': 0.0, 'LESS': 0.0, 'COMMENT': 0.0, 'GREATEREQUAL': 0.0, 'LESSEQUAL': 0.0, 'VBAR': 0.0, 'LEFTSHIFT': 0.0, 'SEMI': 0.0, 'MINEQUAL': nan, 'AMPER': 0.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': 0.0}
+Training classification probe
+Creating model...
+Number of training instances: 263314
+Number of classes: 41
+Epoch: [1/10], Loss: 0.0129
+Epoch: [2/10], Loss: 0.0117
+Epoch: [3/10], Loss: 0.0116
+Epoch: [4/10], Loss: 0.0116
+Epoch: [5/10], Loss: 0.0116
+Epoch: [6/10], Loss: 0.0116
+Epoch: [7/10], Loss: 0.0116
+Epoch: [8/10], Loss: 0.0116
+Epoch: [9/10], Loss: 0.0116
+Epoch: [10/10], Loss: 0.0116
+Score (accuracy) of the probe: 0.92
+l1=0.01,l2=0.01
+Absolute average value of parameters: 0.00024769673
+Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
+ 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
+ 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
+Accuracy on the validation set: {'__OVERALL__': 0.915100143550482, 'NAME': 0.9958141032521198, 'NEWLINE': 1.0, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 0.8830347734457323, 'COMMA': 0.9994079336885732, 'EQUAL': 1.0, 'COLON': 0.9838862559241706, 'DEDENT': 1.0, 'INDENT': 0.0, 'LSQB': 0.9980314960629921, 'RSQB': 0.98, 'NUMBER': 0.666110183639399, 'STRING': 0.0, 'NL': 0.0, 'PLUS': 0.0, 'LBRACE': 0.0, 'EQEQUAL': 0.0, 'MINUS': 0.0, 'RBRACE': 0.0, 'STAR': 0.0, 'PERCENT': 0.9655172413793104, 'DOUBLESTAR': 0.0, 'PLUSEQUAL': 0.0, 'GREATER': 0.0, 'SLASH': 0.0, 'NOTEQUAL': 0.0, 'AT': 0.0, 'LESS': 0.0, 'COMMENT': 0.0, 'GREATEREQUAL': 0.0, 'LESSEQUAL': 0.0, 'VBAR': 0.0, 'LEFTSHIFT': 0.0, 'SEMI': 0.0, 'MINEQUAL': nan, 'AMPER': 0.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': 0.0}
+Training classification probe
+Creating model...
+Number of training instances: 263314
+Number of classes: 41
+Epoch: [1/10], Loss: 0.0138
+Epoch: [2/10], Loss: 0.0127
+Epoch: [3/10], Loss: 0.0126
+Epoch: [4/10], Loss: 0.0126
+Epoch: [5/10], Loss: 0.0126
+Epoch: [6/10], Loss: 0.0126
+Epoch: [7/10], Loss: 0.0126
+Epoch: [8/10], Loss: 0.0126
+Epoch: [9/10], Loss: 0.0126
+Epoch: [10/10], Loss: 0.0126
+Score (accuracy) of the probe: 0.90
+l1=0.01,l2=0.1
+Absolute average value of parameters: 0.00025674308
+Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
+ 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
+ 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
+Accuracy on the validation set: {'__OVERALL__': 0.904402214778864, 'NAME': 0.9959214339379628, 'NEWLINE': 1.0, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 0.8282402528977871, 'COMMA': 0.9988158673771462, 'EQUAL': 1.0, 'COLON': 0.9829383886255925, 'DEDENT': 1.0, 'INDENT': 0.0, 'LSQB': 0.9645669291338582, 'RSQB': 0.824, 'NUMBER': 0.4774624373956594, 'STRING': 0.0, 'NL': 0.0, 'PLUS': 0.0, 'LBRACE': 0.0, 'EQEQUAL': 0.0, 'MINUS': 0.0, 'RBRACE': 0.0, 'STAR': 0.0, 'PERCENT': 0.9655172413793104, 'DOUBLESTAR': 0.0, 'PLUSEQUAL': 0.0, 'GREATER': 0.0, 'SLASH': 0.0, 'NOTEQUAL': 0.0, 'AT': 0.0, 'LESS': 0.0, 'COMMENT': 0.0, 'GREATEREQUAL': 0.0, 'LESSEQUAL': 0.0, 'VBAR': 0.0, 'LEFTSHIFT': 0.0, 'SEMI': 0.0, 'MINEQUAL': nan, 'AMPER': 0.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': 0.0}
+Training classification probe
+Creating model...
+Number of training instances: 263314
+Number of classes: 41
+Epoch: [1/10], Loss: 0.0660
+Epoch: [2/10], Loss: 0.0569
+Epoch: [3/10], Loss: 0.0561
+Epoch: [4/10], Loss: 0.0559
+Epoch: [5/10], Loss: 0.0559
+Epoch: [6/10], Loss: 0.0559
+Epoch: [7/10], Loss: 0.0559
+Epoch: [8/10], Loss: 0.0559
+Epoch: [9/10], Loss: 0.0559
+Epoch: [10/10], Loss: 0.0559
+Score (accuracy) of the probe: 0.69
+l1=0.1,l2=0
+Absolute average value of parameters: 0.00014282441
+Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
+ 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
+ 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
+Accuracy on the validation set: {'__OVERALL__': 0.692870326064666, 'NAME': 1.0, 'NEWLINE': 1.0, 'DOT': 0.9988004798080767, 'LPAR': 0.9986251145737856, 'RPAR': 0.9989904088844018, 'KEYWORD': 0.09905163329820864, 'COMMA': 0.6400236826524571, 'EQUAL': 0.18032786885245902, 'COLON': 0.23033175355450236, 'DEDENT': 0.0, 'INDENT': 0.0, 'LSQB': 0.0, 'RSQB': 0.0, 'NUMBER': 0.0, 'STRING': 0.0, 'NL': 0.0, 'PLUS': 0.0, 'LBRACE': 0.0, 'EQEQUAL': 0.0, 'MINUS': 0.0, 'RBRACE': 0.0, 'STAR': 0.0, 'PERCENT': 0.0, 'DOUBLESTAR': 0.0, 'PLUSEQUAL': 0.0, 'GREATER': 0.0, 'SLASH': 0.0, 'NOTEQUAL': 0.0, 'AT': 0.0, 'LESS': 0.0, 'COMMENT': 0.0, 'GREATEREQUAL': 0.0, 'LESSEQUAL': 0.0, 'VBAR': 0.0, 'LEFTSHIFT': 0.0, 'SEMI': 0.0, 'MINEQUAL': nan, 'AMPER': 0.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': 0.0}
+Training classification probe
+Creating model...
+Number of training instances: 263314
+Number of classes: 41
+Epoch: [1/10], Loss: 0.0660
+Epoch: [2/10], Loss: 0.0569
+Epoch: [3/10], Loss: 0.0561
+Epoch: [4/10], Loss: 0.0559
+Epoch: [5/10], Loss: 0.0559
+Epoch: [6/10], Loss: 0.0559
+Epoch: [7/10], Loss: 0.0559
+Epoch: [8/10], Loss: 0.0559
+Epoch: [9/10], Loss: 0.0559
+Epoch: [10/10], Loss: 0.0559
+Score (accuracy) of the probe: 0.70
+l1=0.1,l2=0.001
+Absolute average value of parameters: 0.00014268172
+Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
+ 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
+ 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
+Accuracy on the validation set: {'__OVERALL__': 0.7039783990703398, 'NAME': 1.0, 'NEWLINE': 1.0, 'DOT': 0.9992003198720512, 'LPAR': 0.9986251145737856, 'RPAR': 0.9994952044422009, 'KEYWORD': 0.0958904109589041, 'COMMA': 0.6980461811722913, 'EQUAL': 0.3103448275862069, 'COLON': 0.23127962085308057, 'DEDENT': 0.0, 'INDENT': 0.0, 'LSQB': 0.0, 'RSQB': 0.0, 'NUMBER': 0.0, 'STRING': 0.0, 'NL': 0.0, 'PLUS': 0.0, 'LBRACE': 0.0, 'EQEQUAL': 0.0, 'MINUS': 0.0, 'RBRACE': 0.0, 'STAR': 0.0, 'PERCENT': 0.0, 'DOUBLESTAR': 0.0, 'PLUSEQUAL': 0.0, 'GREATER': 0.0, 'SLASH': 0.0, 'NOTEQUAL': 0.0, 'AT': 0.0, 'LESS': 0.0, 'COMMENT': 0.0, 'GREATEREQUAL': 0.0, 'LESSEQUAL': 0.0, 'VBAR': 0.0, 'LEFTSHIFT': 0.0, 'SEMI': 0.0, 'MINEQUAL': nan, 'AMPER': 0.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': 0.0}
+Training classification probe
+Creating model...
+Number of training instances: 263314
+Number of classes: 41
+Epoch: [1/10], Loss: 0.0660
+Epoch: [2/10], Loss: 0.0569
+Epoch: [3/10], Loss: 0.0562
+Epoch: [4/10], Loss: 0.0560
+Epoch: [5/10], Loss: 0.0560
+Epoch: [6/10], Loss: 0.0560
+Epoch: [7/10], Loss: 0.0560
+Epoch: [8/10], Loss: 0.0560
+Epoch: [9/10], Loss: 0.0560
+Epoch: [10/10], Loss: 0.0560
+Score (accuracy) of the probe: 0.69
+l1=0.1,l2=0.01
+Absolute average value of parameters: 0.00014277002
+Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
+ 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
+ 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
+Accuracy on the validation set: {'__OVERALL__': 0.69297286212318, 'NAME': 1.0, 'NEWLINE': 1.0, 'DOT': 0.9992003198720512, 'LPAR': 0.9995417048579285, 'RPAR': 0.9994952044422009, 'KEYWORD': 0.0958904109589041, 'COMMA': 0.6814683244523386, 'EQUAL': 0.18089315997738836, 'COLON': 0.16777251184834124, 'DEDENT': 0.0, 'INDENT': 0.0, 'LSQB': 0.0, 'RSQB': 0.0, 'NUMBER': 0.0, 'STRING': 0.0, 'NL': 0.0, 'PLUS': 0.0, 'LBRACE': 0.0, 'EQEQUAL': 0.0, 'MINUS': 0.0, 'RBRACE': 0.0, 'STAR': 0.0, 'PERCENT': 0.0, 'DOUBLESTAR': 0.0, 'PLUSEQUAL': 0.0, 'GREATER': 0.0, 'SLASH': 0.0, 'NOTEQUAL': 0.0, 'AT': 0.0, 'LESS': 0.0, 'COMMENT': 0.0, 'GREATEREQUAL': 0.0, 'LESSEQUAL': 0.0, 'VBAR': 0.0, 'LEFTSHIFT': 0.0, 'SEMI': 0.0, 'MINEQUAL': nan, 'AMPER': 0.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': 0.0}
+Training classification probe
+Creating model...
+Number of training instances: 263314
+Number of classes: 41
+Epoch: [1/10], Loss: 0.0665
+Epoch: [2/10], Loss: 0.0573
+Epoch: [3/10], Loss: 0.0566
+Epoch: [4/10], Loss: 0.0565
+Epoch: [5/10], Loss: 0.0565
+Epoch: [6/10], Loss: 0.0565
+Epoch: [7/10], Loss: 0.0565
+Epoch: [8/10], Loss: 0.0566
+Epoch: [9/10], Loss: 0.0565
+Epoch: [10/10], Loss: 0.0565
+Score (accuracy) of the probe: 0.67
+l1=0.1,l2=0.1
+Absolute average value of parameters: 0.00014321017
+Number of parameters that are not zero: [9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
+ 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984
+ 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984 9984]
+Accuracy on the validation set: {'__OVERALL__': 0.6670654180053319, 'NAME': 1.0, 'NEWLINE': 1.0, 'DOT': 0.9996001599360256, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 0.06796628029504742, 'COMMA': 0.5145056246299585, 'EQUAL': 0.0395703787450537, 'COLON': 0.0009478672985781991, 'DEDENT': 0.0, 'INDENT': 0.0, 'LSQB': 0.0, 'RSQB': 0.0, 'NUMBER': 0.0, 'STRING': 0.0, 'NL': 0.0, 'PLUS': 0.0, 'LBRACE': 0.0, 'EQEQUAL': 0.0, 'MINUS': 0.0, 'RBRACE': 0.0, 'STAR': 0.0, 'PERCENT': 0.0, 'DOUBLESTAR': 0.0, 'PLUSEQUAL': 0.0, 'GREATER': 0.0, 'SLASH': 0.0, 'NOTEQUAL': 0.0, 'AT': 0.0, 'LESS': 0.0, 'COMMENT': 0.0, 'GREATEREQUAL': 0.0, 'LESSEQUAL': 0.0, 'VBAR': 0.0, 'LEFTSHIFT': 0.0, 'SEMI': 0.0, 'MINEQUAL': nan, 'AMPER': 0.0, 'DOUBLESLASH': 0.0, 'STAREQUAL': nan, 'TILDE': 0.0}
+Accuracy on the test set of probing pretrained_BERT of all layers:
+Score (accuracy) of the probe: 1.00
+{'__OVERALL__': 0.9962779537974099, 'NAME': 0.9993468930770666, 'NEWLINE': 0.9900736471341659, 'DOT': 1.0, 'LPAR': 1.0, 'RPAR': 1.0, 'KEYWORD': 0.997348652231551, 'COMMA': 1.0, 'EQUAL': 1.0, 'COLON': 1.0, 'DEDENT': 0.997624703087886, 'INDENT': 0.9560155239327296, 'LSQB': 1.0, 'RSQB': 1.0, 'NUMBER': 1.0, 'STRING': 1.0, 'NL': 0.9069767441860465, 'PLUS': 1.0, 'LBRACE': 1.0, 'EQEQUAL': 1.0, 'MINUS': 1.0, 'RBRACE': 1.0, 'STAR': 1.0, 'PERCENT': 1.0, 'DOUBLESTAR': 0.9444444444444444, 'PLUSEQUAL': 1.0, 'GREATER': 1.0, 'SLASH': 1.0, 'NOTEQUAL': 1.0, 'AT': 1.0, 'LESS': 1.0, 'COMMENT': 0.29411764705882354, 'GREATEREQUAL': 1.0, 'LESSEQUAL': nan, 'VBAR': nan, 'LEFTSHIFT': nan, 'SEMI': 1.0, 'MINEQUAL': nan, 'AMPER': nan, 'DOUBLESLASH': nan, 'STAREQUAL': nan, 'TILDE': nan}
+Accuracy on the test set of pretrained_BERT model using the intercept:
+Score (accuracy) of the probe: 0.33
 ----------------------------------------------------------------
