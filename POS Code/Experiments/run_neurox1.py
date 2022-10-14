@@ -139,7 +139,7 @@ def linear_probes_inference(tokens, activations,model_name):
         #Train probes on top neurons and save them
         X_selected = ablation.filter_activations_keep_neurons(X_train, top_neurons)
         print("The shape of selected features",X_selected.shape)
-        probe_selected = linear_probe.train_logistic_regression_probe(X_selected, y_train, lambda_l1=0.001, lambda_l2=0.001)
+        probe_selected = linear_probe.train_logistic_regression_probe(X_selected, y_train, lambda_l1=0, lambda_l2=0)
         del X_selected
         X_selected_test = ablation.filter_activations_keep_neurons(X_test, top_neurons)
         print(f"Accuracy on the test set of {model_name} model on top 2% neurons:")
@@ -148,7 +148,7 @@ def linear_probes_inference(tokens, activations,model_name):
 
         ordering, cutoffs = linear_probe.get_neuron_ordering(probe, label2idx)
         X_selected = ablation.filter_activations_keep_neurons(X_train, ordering[:200])
-        probe_selected = linear_probe.train_logistic_regression_probe(X_selected, y_train, lambda_l1=0.001, lambda_l2=0.001)
+        probe_selected = linear_probe.train_logistic_regression_probe(X_selected, y_train, lambda_l1=0, lambda_l2=0)
         del X_selected
         X_selected_test = ablation.filter_activations_keep_neurons(X_test, ordering[:200])
         print(f"Accuracy on the test set of {model_name} model on top 200 neurons:")
@@ -391,11 +391,11 @@ def linear_probes_inference(tokens, activations,model_name):
     # layerwise_probes_inference(X_train,y_train,X_test,y_test,idx2label,model_name)
 
     #Important neuron probes
-    # top_neurons = get_imp_neurons(X_train,y_train,X_test,y_test,probe,label2idx,idx2label,model_name)
+    top_neurons = get_imp_neurons(X_train,y_train,X_test,y_test,probe,label2idx,idx2label,model_name)
     # get_top_words(top_neurons,tokens,activations,model_name)
     del X_train, X_test, X_valid,y_train, y_test,y_valid
     #Control task probes
-    selectivity = control_task_probes(tokens,activations,scores,model_name)
+    # selectivity = control_task_probes(tokens,activations,scores,model_name)
 
 
 def main():
