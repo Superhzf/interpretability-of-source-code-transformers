@@ -117,13 +117,14 @@ def linear_probes_inference(tokens, activations,model_name):
                     best_probe = this_probe
 
         #Get scores of probes
+        print(f"The best l1={best_l1}, the best l2={best_l2} for {model_name}")
         print(f"Accuracy on the test set of probing {model_name} of all layers:")
         scores = linear_probe.evaluate_probe(best_probe, X_test, y_test, idx_to_class=idx2label)
         print(scores)
         X_test_baseline = np.zeros_like(X_test)
         print(f"Accuracy on the test set of {model_name} model using the intercept:")
         linear_probe.evaluate_probe(best_probe, X_test_baseline, y_test, idx_to_class=idx2label)
-        return this_probe, this_score
+        return this_probe, scores
 
     def get_imp_neurons(X_train,y_train,X_test,y_test,probe,label2idx,idx2label,model_name):
         ''' Returns top 2% neurons for each model'''
@@ -264,35 +265,61 @@ def linear_probes_inference(tokens, activations,model_name):
         X_ct,y_ct,label2idx_ct,idx2label_ct=filter_by_frequency(X_ct,y_ct,label2idx_ct,idx2label_ct,40,model_name+'_control_task')
 
         X_ct_train, X_ct_test, y_ct_train, y_ct_test = \
-            train_test_split(X_ct, y_ct, test_size=0.2,random_state=50, shuffle=False)
+            train_test_split(X_ct, y_ct, test_size=0.1, shuffle=False)
+        X_ct_train, X_ct_valid, y_ct_train, y_ct_valid = \
+            train_test_split(X_ct_train, y_ct_train, test_size=0.1,shuffle=False)
         # normalization
         ct_norm = Normalization(X_ct_train)
         X_ct_train = ct_norm.norm(X_ct_train)
+        X_ct_valid = ct_norm.norm(X_ct_valid)
         X_ct_test = ct_norm.norm(X_ct_test)
         del ct_norm
 
-        ct_probe = linear_probe.train_logistic_regression_probe(X_ct_train, y_ct_train, lambda_l1=0.001, lambda_l2=0.001)
+        best_l1 = None
+        best_l2 = None
+        best_score = -float('inf')
+        best_ct_probe = None
+        for this_l1 in [0,0.001,0.01,0.1]:
+            for this_l2 in [0,0.001,0.01,0.1]:
+                this_probe = linear_probe.train_logistic_regression_probe(X_ct_train, y_ct_train,
+                                                                        lambda_l1=this_l1,
+                                                                        lambda_l2=this_l2,
+                                                                        batch_size=128)
+                this_score = linear_probe.evaluate_probe(this_probe, X_ct_valid, y_ct_valid, idx_to_class=idx2label)
+                this_weights = list(this_probe.parameters())[0].data.cpu().numpy()
+                this_weights_mean = np.mean(np.abs(this_weights))
+                print(f"l1={this_l1},l2={this_l2}")
+                print("Absolute average value of parameters:",this_weights_mean)
+                print("Number of parameters that are not zero:",np.sum(this_weights != 0,axis=1))
+                print("Accuracy on the validation set:",this_score)
+                if this_score['__OVERALL__'] > best_score:
+                    best_score = this_score['__OVERALL__']
+                    best_l1 = this_l1
+                    best_l2 = this_l2
+                    best_ct_probe = this_probe
+
+        print(f"The best l1={best_l1}, the best l2={best_l2} for {model_name} control model")
         print(f"Accuracy on the test set of {model_name} control model:")
-        ct_scores = linear_probe.evaluate_probe(ct_probe, X_ct_test, y_ct_test, idx_to_class=idx2label_ct)
+        ct_scores = linear_probe.evaluate_probe(best_ct_probe, X_ct_test, y_ct_test, idx_to_class=idx2label_ct)
         selectivity = original_scores['__OVERALL__'] - ct_scores['__OVERALL__']
         print(f'{model_name} Selectivity (Diff. between true task and probing task performance): ', selectivity)
         del ct_scores
         X_ct_test_baseline = np.zeros_like(X_ct_test)
         print(f"Accuracy on the test set of {model_name} control model using the intercept:")
-        linear_probe.evaluate_probe(ct_probe, X_ct_test_baseline, y_ct_test, idx_to_class=idx2label_ct)
+        linear_probe.evaluate_probe(best_ct_probe, X_ct_test_baseline, y_ct_test, idx_to_class=idx2label_ct)
 
-        top_neurons_ct, _ = linear_probe.get_top_neurons(ct_probe, 0.02, label2idx_ct)
+        top_neurons_ct, _ = linear_probe.get_top_neurons(best_ct_probe, 0.02, label2idx_ct)
         X_selected_ct = ablation.filter_activations_keep_neurons(X_ct_train, top_neurons_ct)
-        probe_selected_ct = linear_probe.train_logistic_regression_probe(X_selected_ct, y_ct_train, lambda_l1=0.001, lambda_l2=0.001)
+        probe_selected_ct = linear_probe.train_logistic_regression_probe(X_selected_ct, y_ct_train, lambda_l1=0, lambda_l2=0)
         del X_selected_ct
         X_selected_test_ct = ablation.filter_activations_keep_neurons(X_ct_test, top_neurons_ct)
         print(f"Accuracy on the test set of {model_name} control model on top neurons:")
         linear_probe.evaluate_probe(probe_selected_ct, X_selected_test_ct, y_ct_test, idx_to_class=idx2label_ct)
         del X_selected_test_ct
 
-        ordering, cutoffs = linear_probe.get_neuron_ordering(ct_probe, label2idx_ct)
+        ordering, cutoffs = linear_probe.get_neuron_ordering(best_ct_probe, label2idx_ct)
         X_selected_ct = ablation.filter_activations_keep_neurons(X_ct_train, ordering[:200])
-        probe_selected_ct = linear_probe.train_logistic_regression_probe(X_selected_ct, y_ct_train, lambda_l1=0.001, lambda_l2=0.001)
+        probe_selected_ct = linear_probe.train_logistic_regression_probe(X_selected_ct, y_ct_train, lambda_l1=0, lambda_l2=0)
         del X_selected_ct
         X_selected_test_ct = ablation.filter_activations_keep_neurons(X_ct_test, ordering[:200])
         print(f"Accuracy on the test set of {model_name} control model on top 200 neurons:")
@@ -368,7 +395,7 @@ def linear_probes_inference(tokens, activations,model_name):
     # get_top_words(top_neurons,tokens,activations,model_name)
     del X_train, X_test, X_valid,y_train, y_test,y_valid
     #Control task probes
-    # selectivity = control_task_probes(tokens,activations,scores,model_name)
+    selectivity = control_task_probes(tokens,activations,scores,model_name)
 
 
 def main():
@@ -390,7 +417,6 @@ def main():
         linear_probes_inference(tokens,activations,this_model)
         print("----------------------------------------------------------------")
         break
-
 
 if __name__ == "__main__":
     main()
