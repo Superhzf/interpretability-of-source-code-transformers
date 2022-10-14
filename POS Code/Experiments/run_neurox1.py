@@ -152,6 +152,7 @@ def linear_probes_inference(tokens, activations,model_name):
         del X_selected
         X_selected_test = ablation.filter_activations_keep_neurons(X_test, ordering[:200])
         print(f"Accuracy on the test set of {model_name} model on top 200 neurons:")
+        linear_probe.evaluate_probe(probe_selected, X_selected_test, y_test, idx_to_class=idx2label)
         return top_neurons
 
     def get_top_words(top_neurons,tokens,activations,model_name):
