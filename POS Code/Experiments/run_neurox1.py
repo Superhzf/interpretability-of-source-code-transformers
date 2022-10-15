@@ -472,7 +472,7 @@ def main():
         activations_train = load_extracted_activations(this_activation_name)
         activations_test = load_extracted_activations('bert_activations_test.json')
 
-        tokens_train =  load_tokens(activations,'codetest2_unique.in','codetest2_unique.label')
+        tokens_train =  load_tokens(activations_train,'codetest2_unique.in','codetest2_unique.label')
         tokens_test = load_tokens(activations_test,'codetest2_test_unique.in','codetest2_test_unique.label')
 
         linear_probes_inference(tokens_train,activations_train,
