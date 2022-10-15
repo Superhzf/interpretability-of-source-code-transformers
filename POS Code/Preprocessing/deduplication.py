@@ -1,8 +1,15 @@
-with open("codetest2.in",'r') as f:
+import os
+FOLDER = '../Experiments/'
+INPUT_IN = "codetest2_test.in"
+INPUT_LABEL = "codetest2_test.label"
+OUTPUT_IN = "codetest2_test_unique.in"
+OUTPUT_LABEL = "codetest2_test_unique.label"
+
+with open(os.path.join(FOLDER, INPUT_IN),'r') as f:
     code = f.readlines()
 f.close()
 
-with open("codetest2.label",'r') as f:
+with open(os.path.join(FOLDER, INPUT_LABEL),'r') as f:
     label = f.readlines()
 f.close()
 
@@ -16,13 +23,12 @@ for this_code, this_label in zip(code, label):
         label_unique.append(this_label)
 
 assert len(code_unique) == len(label_unique)
-
-with open("codetest2_unique.in","w") as f:
+with open(os.path.join(FOLDER, OUTPUT_IN),"w") as f:
     for this_code in code_unique:
         f.writelines(f"{this_code}")
 f.close()
 
-with open("codetest2_unique.label","w") as f:
+with open(os.path.join(FOLDER, OUTPUT_LABEL),"w") as f:
     for this_label in label_unique:
         f.writelines(f"{this_label}")
 f.close()
