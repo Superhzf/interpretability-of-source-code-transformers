@@ -420,15 +420,20 @@ def linear_probes_inference(tokens_train, activations_train,tokens_test,activati
 
     X_train, y_train, label2idx_train, idx2label_train = filter_by_frequency(X_train,y_train,label2idx_train,idx2label_train,4,model_name)
     X_test, y_test, label2idx_test, idx2label_test = filter_by_frequency(X_test,y_test,label2idx_test,idx2label_test,4,model_name)
-    exit(0)
+    lookup_table = {1:4,2:1,3:2}
+    for idx, this_y in y_test:
+        if this_y in lookup_table:
+            y_test[idx] = lookup_table[this_y]
+        elif this_y == 4:
+            y_test[idx] = 3
 
-    X_train, X_test, y_train, y_test = \
-        train_test_split(X, y, test_size=0.1,random_state=50, shuffle=False)
+    # X_train, X_test, y_train, y_test = \
+    #     train_test_split(X, y, test_size=0.1,random_state=50, shuffle=False)
     
     X_train, X_valid, y_train, y_valid = \
         train_test_split(X_train, y_train, test_size=0.1,random_state=50, shuffle=False)
 
-    del X, y
+    # del X, y
 
     #normalize the inputs before doing probing
     norm = Normalization(X_train)
@@ -441,7 +446,7 @@ def linear_probes_inference(tokens_train, activations_train,tokens_test,activati
     # probeless(X_train,y_train,model_name)
 
     #All activations probes
-    probe, scores = all_activations_probe(X_train,y_train,X_valid,y_valid,X_test, y_test,idx2label,model_name)
+    probe, scores = all_activations_probe(X_train,y_train,X_valid,y_valid,X_test, y_test,idx2label_train,model_name)
 
     #Layerwise Probes
     # layerwise_probes_inference(X_train,y_train,X_test,y_test,idx2label,model_name)
