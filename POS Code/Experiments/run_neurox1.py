@@ -114,17 +114,17 @@ def load_extracted_activations(activation_file_name):
     activations, num_layers = data_loader.load_activations(activation_file_name,13)
     return activations
 
-def load_tokens(activations):
+def load_tokens(activations,FILES_IN,FILES_LABEL):
     #Load tokens and sanity checks for parallelism between tokens, labels and activations
-    tokens = data_loader.load_data('codetest2_unique.in',
-                                   'codetest2_unique.label',
+    tokens = data_loader.load_data(FILES_IN,
+                                   FILES_LABEL,
                                    activations,
                                    512 # max_sent_length
                                   )
     return tokens
 
 
-def linear_probes_inference(tokens, activations,model_name):
+def linear_probes_inference(tokens_train, activations_train,tokens_test,activations_test,model_name):
     ''' Returns models and accuracy(score) of the probes trained on entire activation space '''
 
     def get_mappings(tokens,activations):
@@ -411,11 +411,15 @@ def linear_probes_inference(tokens, activations,model_name):
         return X,y,label2idx,idx2label
 
 
-    tokens,activations=remove_seen_tokens(tokens,activations)
+    tokens_train,activations_train=remove_seen_tokens(tokens_train,activations_train)
+    tokens_test,activations_test=remove_seen_tokens(tokens_test,activations_test)
     #Get mappings
-    X, y, label2idx, idx2label, src2idx, idx2src = get_mappings(tokens,activations)
+    X_train, y_train, label2idx_train, idx2label_train, _, _ = get_mappings(tokens_train,activations_train)
+    X_test, y_test, label2idx_test, idx2label_test, _, _ = get_mappings(tokens_test,activations_test)
 
-    X, y, label2idx, idx2label = filter_by_frequency(X,y,label2idx,idx2label,4,model_name)
+    X_train, y_train, label2idx_train, idx2label_train = filter_by_frequency(X_train,y_train,label2idx_train,idx2label_train,4,model_name)
+    X_test, y_test, label2idx_test, idx2label_test = filter_by_frequency(X_test,y_test,label2idx_test,idx2label_test,4,model_name)
+    exit(0)
 
     X_train, X_test, y_train, y_test = \
         train_test_split(X, y, test_size=0.1,random_state=50, shuffle=False)
@@ -460,17 +464,20 @@ def main():
             if this_model == 'pretrained_BERT':
                 activation_file_name="bert_activations_test.json"
                 extract_activations('codetest2_test_unique.in',MODEL_DESC[this_model],activation_file_name)
-            exit(0)
     else:
         print("Getting activations from json files. If you need to extract them, run with --extract=True \n" )
 
     for this_model, this_activation_name in zip(MODEL_NAMES,ACTIVATION_NAMES):
         print(f"Anayzing {this_model}")
-        activations = load_extracted_activations(this_activation_name)
+        activations_train = load_extracted_activations(this_activation_name)
+        activations_test = load_extracted_activations('bert_activations_test.json')
 
-        tokens =  load_tokens(activations)
+        tokens_train =  load_tokens(activations,'codetest2_unique.in','codetest2_unique.label')
+        tokens_test = load_tokens(activations_test,'codetest2_test_unique.in','codetest2_test_unique.label')
 
-        linear_probes_inference(tokens,activations,this_model)
+        linear_probes_inference(tokens_train,activations_train,
+                                tokens_test,activations_test,
+                                this_model)
         print("----------------------------------------------------------------")
         break
 
