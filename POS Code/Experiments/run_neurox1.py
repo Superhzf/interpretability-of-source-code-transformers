@@ -48,9 +48,13 @@ def remove_seen_tokens(tokens,activations):
                 this_activation.append(activations[obs_idx][token_idx])
         assert len(this_source) == len(this_target)
         assert len(this_source) == len(this_activation)
-        new_source_tokens.append(this_source)
-        new_target_tokens.append(this_target)
-        new_activations.append(this_activation)
+        if len(this_source)>0:
+            this_source = np.array(this_source)
+            this_target = np.array(this_target)
+            this_activation = np.array(this_activation)
+            new_source_tokens.append(this_source)
+            new_target_tokens.append(this_target)
+            new_activations.append(this_activation)
     new_source_tokens = np.array(new_source_tokens)
     new_target_tokens = np.array(new_target_tokens)
     new_activations = np.array(new_activations)
@@ -406,6 +410,7 @@ def linear_probes_inference(tokens, activations,model_name):
     X, y, label2idx, idx2label, src2idx, idx2src = get_mappings(tokens,activations)
 
     X, y, label2idx, idx2label = filter_by_frequency(X,y,label2idx,idx2label,40,model_name)
+    break
 
     X_train, X_test, y_train, y_test = \
         train_test_split(X, y, test_size=0.1,random_state=50, shuffle=False)
