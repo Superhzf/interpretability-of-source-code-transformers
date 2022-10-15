@@ -408,6 +408,7 @@ def linear_probes_inference(tokens_train, activations_train,tokens_test,activati
         print(f"{model_name} distribution after trauncating:")
         print(distribution_rate)
         print(distribution)
+        print(label2idx)
         return X,y,label2idx,idx2label
 
 
