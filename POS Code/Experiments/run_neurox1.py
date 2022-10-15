@@ -406,8 +406,7 @@ def linear_probes_inference(tokens, activations,model_name):
     #Get mappings
     X, y, label2idx, idx2label, src2idx, idx2src = get_mappings(tokens,activations)
 
-    X, y, label2idx, idx2label = filter_by_frequency(X,y,label2idx,idx2label,40,model_name)
-    exit(0)
+    X, y, label2idx, idx2label = filter_by_frequency(X,y,label2idx,idx2label,4,model_name)
 
     X_train, X_test, y_train, y_test = \
         train_test_split(X, y, test_size=0.1,random_state=50, shuffle=False)
