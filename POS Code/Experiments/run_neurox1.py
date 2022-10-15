@@ -403,6 +403,10 @@ def linear_probes_inference(tokens, activations,model_name):
 
 
     tokens,activations=remove_seen_tokens(tokens,activations)
+    print("Tokens:")
+    print(tokens['source'])
+    print(tokens['target'])
+    exit(0)
     #Get mappings
     X, y, label2idx, idx2label, src2idx, idx2src = get_mappings(tokens,activations)
 
