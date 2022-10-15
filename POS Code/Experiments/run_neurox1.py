@@ -27,6 +27,39 @@ ACTIVATION_NAMES = ['bert_activations.json',
                     'codebert_defdet_activations.json','graphcodebert_defdet_activations.json',
                     'codebert_clonedet_activations1.json','graphcodebert_clonedet_activations1.json']
 
+
+def remove_seen_tokens(tokens,activations):
+    seen_before = []
+    new_source_tokens = []
+    new_target_tokens = []
+    new_activations = []
+
+    source_tokens = tokens['source']
+    target_tokens = tokens['target']
+    for obs_idx,this_obs in enumerate(source_tokens):
+        this_source = []
+        this_target = []
+        this_activation = []
+        for token_idx,this_token in enumerate(this_obs):
+            if this_token not in seen_before:
+                seen_before.append(this_token)
+                this_source.append(this_token)
+                this_target.append(target_tokens[obs_idx][token_idx])
+                this_activation.append(activations[obs_idx][token_idx])
+        assert len(this_source) == len(this_target)
+        assert len(this_source) == len(this_activation)
+        new_source_tokens.append(this_source)
+        new_target_tokens.append(this_target)
+        new_activations.append(this_activation)
+    new_source_tokens = np.array(new_source_tokens)
+    new_target_tokens = np.array(new_target_tokens)
+    new_activations = np.array(new_activations)
+    new_tokens = {"source":new_source_tokens,"target":new_target_tokens}
+    return new_tokens,new_activations
+
+
+
+
 class Normalization:
     def __init__(self,df):
         self.var_mean = np.mean(df,axis=0)
@@ -102,7 +135,7 @@ def linear_probes_inference(tokens, activations,model_name):
                 this_probe = linear_probe.train_logistic_regression_probe(X_train[:,:768], y_train,
                                                                         lambda_l1=this_l1,
                                                                         lambda_l2=this_l2,
-                                                                        num_epochs=0,
+                                                                        num_epochs=10,
                                                                         batch_size=128)
                 this_score = linear_probe.evaluate_probe(this_probe, X_valid[:,:768], y_valid, idx_to_class=idx2label)
                 this_weights = list(this_probe.parameters())[0].data.cpu().numpy()
@@ -368,6 +401,7 @@ def linear_probes_inference(tokens, activations,model_name):
         return X,y,label2idx,idx2label
 
 
+    tokens,activations=remove_seen_tokens(tokens,activations)
     #Get mappings
     X, y, label2idx, idx2label, src2idx, idx2src = get_mappings(tokens,activations)
 
@@ -398,7 +432,7 @@ def linear_probes_inference(tokens, activations,model_name):
     # layerwise_probes_inference(X_train,y_train,X_test,y_test,idx2label,model_name)
 
     #Important neuron probes
-    top_neurons = get_imp_neurons(X_train,y_train,X_test,y_test,probe,label2idx,idx2label,model_name)
+    # top_neurons = get_imp_neurons(X_train,y_train,X_test,y_test,probe,label2idx,idx2label,model_name)
     # get_top_words(top_neurons,tokens,activations,model_name)
     # del X_train, X_test, X_valid,y_train, y_test,y_valid
     #Control task probes
