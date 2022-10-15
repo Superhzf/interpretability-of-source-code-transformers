@@ -26,7 +26,9 @@ ACTIVATION_NAMES = ['bert_activations.json',
                     'codebert_activations.json','graphcodebert_activations.json',
                     'codebert_defdet_activations.json','graphcodebert_defdet_activations.json',
                     'codebert_clonedet_activations1.json','graphcodebert_clonedet_activations1.json']
-
+MODEL_DESC = {"pretrained_BERT":'bert-base-uncased',
+              "pretrained_CodeBERT":'microsoft/codebert-base',
+              "pretrained_GraphCodeBERT":'microsoft/graphcodebert-base'}
 
 def remove_seen_tokens(tokens,activations):
     seen_before = []
@@ -72,32 +74,39 @@ class Normalization:
 
 
 #Extract activations.json files
-def extract_activations():
-    #Extract representations from BERT
-    transformers_extractor.extract_representations('bert-base-uncased',
-        'codetest2_unique.in',
-        'bert_activations.json',
+def extract_activations(file_in_name,model_description,activation_name):
+    transformers_extractor.extract_representations(model_description,
+        file_in_name,
+        activation_name,
         'cuda',
         aggregation="average" #last, first
     )
 
-    #Extract representations from CodeBERT
-    transformers_extractor.extract_representations('microsoft/codebert-base',
-        'codetest2_unique.in',
-        'codebert_activations.json',
-        'cuda',
-        aggregation="average" #last, first
-    )
+    # #Extract representations from BERT
+    # transformers_extractor.extract_representations('bert-base-uncased',
+    #     'codetest2_unique.in',
+    #     'bert_activations.json',
+    #     'cuda',
+    #     aggregation="average" #last, first
+    # )
 
-    #Extract representations from GraphCodeBERT
-    transformers_extractor.extract_representations('microsoft/graphcodebert-base',
-        'codetest2_unique.in',
-        'graphcodebert_activations.json',
-        'cuda',
-        aggregation="average" #last, first
-    )
+    # #Extract representations from CodeBERT
+    # transformers_extractor.extract_representations('microsoft/codebert-base',
+    #     'codetest2_unique.in',
+    #     'codebert_activations.json',
+    #     'cuda',
+    #     aggregation="average" #last, first
+    # )
 
-    return(load_extracted_activations())
+    # #Extract representations from GraphCodeBERT
+    # transformers_extractor.extract_representations('microsoft/graphcodebert-base',
+    #     'codetest2_unique.in',
+    #     'graphcodebert_activations.json',
+    #     'cuda',
+    #     aggregation="average" #last, first
+    # )
+
+    # return(load_extracted_activations())
 
 
 def load_extracted_activations(activation_file_name):
@@ -446,7 +455,12 @@ def main():
 
     args = parser.parse_args()
     if args.extract == 'True':
-        bert_activations, codebert_activations,graphcodebert_activations = extract_activations()
+        for this_model in MODEL_NAMES:
+            print(f"Generating the activation file for {this_model}")
+            if this_model == 'pretrained_BERT':
+                activation_file_name="bert_activations_test.json"
+                extract_activations('codetest2_test_unique.in',MODEL_DESC[this_model],activation_file_name)
+            exit(0)
     else:
         print("Getting activations from json files. If you need to extract them, run with --extract=True \n" )
 
