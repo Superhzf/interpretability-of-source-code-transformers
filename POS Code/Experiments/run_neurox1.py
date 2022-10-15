@@ -55,9 +55,6 @@ def remove_seen_tokens(tokens,activations):
             new_source_tokens.append(this_source)
             new_target_tokens.append(this_target)
             new_activations.append(this_activation)
-    new_source_tokens = np.array(new_source_tokens)
-    new_target_tokens = np.array(new_target_tokens)
-    new_activations = np.array(new_activations)
     new_tokens = {"source":new_source_tokens,"target":new_target_tokens}
     return new_tokens,new_activations
 
