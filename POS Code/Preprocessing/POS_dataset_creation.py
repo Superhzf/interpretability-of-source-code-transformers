@@ -34,21 +34,19 @@ with open('myfile_tokens.txt') as f_in:
         lst.append(my_list) #store in list of lists
         clean = [x for x in lst if x is not None]
         tup_to_dict = dict(clean)
-    print(clean)
-    print(len(clean))
 
 f_in.close()
 
-try:
-    os.remove("POS.csv")
-except OSError:
-    pass
+# try:
+#     os.remove("POS.csv")
+# except OSError:
+#     pass
 
-#Store intermediate result in csv file
-with open('POS.csv', 'a') as f:
-    for item in clean:
-        f.write("%s,%s\n"%(item[0],item[1]))
-f.close()
+# #Store intermediate result in csv file
+# with open('POS.csv', 'a') as f:
+#     for item in clean:
+#         f.write("%s,%s\n"%(item[0],item[1]))
+# f.close()
 
 try:
     os.remove('codetest.label')

@@ -1,7 +1,7 @@
 import os
-FOLDER = '../Experiments/'
-INPUT_IN = "codetest2_test.in"
-INPUT_LABEL = "codetest2_test.label"
+FOLDER = './'
+INPUT_IN = "codetest2.in"
+INPUT_LABEL = "codetest2.label"
 OUTPUT_IN = "codetest2_test_unique.in"
 OUTPUT_LABEL = "codetest2_test_unique.label"
 

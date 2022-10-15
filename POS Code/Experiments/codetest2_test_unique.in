@@ -1,0 +1,562 @@
+utf-8 import copy \n 
+import numpy as np \n 
+import math \n 
+from . activation_functions import ReLU , Sigmoid , Softmax , TanH , LeakyReLU , FullSoftmax \n 
+\n 
+class Layer ( object ) : \n 
+~~~ def set_input_shape ( self , shape ) : \n 
+self . input_shape = shape \n 
+~~ def layer_name ( self ) : \n 
+return self . __class__ . name__ \n 
+~~ def parameters ( self ) : \n 
+return 0 \n 
+~~ def backward_pass ( self , accum_grad ) : \n 
+pass \n 
+~~ def output_shape ( self ) : \n 
+~~ ~~ class Dense ( Layer ) : \n 
+def __init__ ( self , n_units , input_shape = None , trainable = True ) : \n 
+~~~ self . input_shape = input_shape \n 
+self . layer_input = [ ] \n 
+self . n_units = n_units \n 
+self . trainable = trainable \n 
+self . W = None \n 
+self . b = None \n 
+~~ def initialize ( self , optimizer ) : \n 
+~~~ limit = 1 / math . sqrt ( self . input_shape [ 1 ] ) \n 
+self . W = np . random . uniform ( - limit , limit , ( self . input_shape [ 1 ] , self . n_units ) ) \n 
+self . b = np . zeros ( ( 1 , self . n_units ) ) \n 
+self . W_opt = copy . deepcopy ( optimizer ) \n 
+self . b_opt = copy . deepcopy ( optimizer ) \n 
+self . dw = np . zeros_like ( self . W ) \n 
+self . db = np . zeros_like ( self . b ) \n 
+~~~ return np . prod ( self . W . shape ) + np . prod ( self . b . shape ) \n 
+~~ def forward_pass ( self , X , training = True ) : \n 
+~~~ self . layer_input . append ( X ) \n 
+~~~ W = self . W . copy ( ) \n 
+this_layer_input = self . layer_input . pop ( ) \n 
+self . dw += this_layer_input . T . dot ( accum_grad ) \n 
+self . db += np . sum ( accum_grad , axis = 0 , keepdims = True ) \n 
+if self . trainable : \n 
+~~~ self . W = self . W_opt . update ( self . W , self . dw ) \n 
+self . b = self . b_opt . update ( self . b , self . db ) \n 
+return accum_grad \n 
+~~~ return ( self . n_units , ) \n 
+~~ ~~ class BatchNormalization ( Layer ) : \n 
+def __init__ ( self , momentum = 0.99 , input_shape = None ) : \n 
+~~~ self . momentum = momentum \n 
+self . trainable = True \n 
+self . eps = 1e-05 \n 
+self . running_mean = None \n 
+self . running_var = None \n 
+self . input_shape = input_shape \n 
+~~~ self . gamma = np . ones ( self . input_shape ) \n 
+self . beta = np . zeros ( self . input_shape ) \n 
+self . gamma_opt = copy . copy ( optimizer ) \n 
+self . beta_opt = copy . copy ( optimizer ) \n 
+~~~ return np . prod ( self . gamma . shape ) + np . prod ( self . beta . shape ) \n 
+~~~ if self . running_mean is None : \n 
+~~~ self . running_mean = np . mean ( X , axis = 0 ) \n 
+self . running_var = np . var ( X , axis = 0 ) \n 
+~~ if training and self . trainable : \n 
+~~~ mean = np . mean ( X , axis = 0 ) \n 
+var = np . var ( X , axis = 0 ) \n 
+self . running_mean = self . momentum * self . running_mean + ( 1 - self . momentum ) * mean \n 
+self . running_var = self . momentum * self . running_var + ( 1 - self . momentum ) * var \n 
+~~ else : \n 
+~~~ mean = self . running_mean \n 
+var = self . running_var \n 
+self . stddev_inv = 1 / np . sqrt ( var + self . eps ) \n 
+X_norm = self . X_centered * self . stddev_inv \n 
+output = self . gamma * X_norm + self . beta \n 
+return output \n 
+~~~ return self . input_shape \n 
+~~~ gamma = self . gamma \n 
+~~~ X_norm = self . X_centered * self . stddev_inv \n 
+self . grad_gamma = np . sum ( accum_grad * X_norm , axis = 0 ) \n 
+self . grad_beta = np . sum ( accum_grad , axis = 0 ) \n 
+if self . gamma_opt is not None and self . beta_opt is not None : \n 
+~~~ self . gamma = self . gamma_opt . update ( self . gamma , self . grad_gamma ) \n 
+self . beta = self . beta_opt . update ( self . beta , self . grad_beta ) \n 
+~~ ~~ batch_size = accum_grad . shape [ 0 ] \n 
+accum_grad = ( 1 / batch_size ) * gamma * self . stddev_inv * ( \n 
+batch_size * accum_grad \n 
+- np . sum ( accum_grad , axis = 0 ) \n 
+- self . X_centered * self . stddev_inv ** 2 * np . sum ( accum_grad * self . X_centered , axis = 0 ) \n 
+) \n 
+~~ ~~ class Dropout ( Layer ) : \n 
+def __init__ ( self , p = 0.2 ) : \n 
+~~~ self . p = p \n 
+self . _mask = None \n 
+self . input_shape = None \n 
+self . n_units = None \n 
+self . pass_through = True \n 
+~~~ if training : \n 
+~~~ c = ( 1 - self . p ) \n 
+self . _mask = np . random . uniform ( size = X . shape ) > self . p \n 
+X = X * c \n 
+~~ return X \n 
+~~~ return accum_grad * self . _mask \n 
+~~ ~~ class Activation ( Layer ) : \n 
+def __init__ ( self , name ) : \n 
+~~~ if name not in good_act_fn_names : \n 
+~~~ raise Exception ( ) \n 
+~~ self . activation_name = name \n 
+self . activation_func = activation_functions [ name ] ( ) \n 
+~~~ self . layer_input = X \n 
+return self . activation_func ( X ) \n 
+~~~ return accum_grad * self . activation_func . gradient ( self . layer_input ) \n 
+~~ ~~ activation_functions = { \n 
+: ReLU , \n 
+: Sigmoid , \n 
+: Softmax , \n 
+: LeakyReLU , \n 
+: TanH , \n 
+} \n 
+good_act_fn_names = [ , , , , ] \n 
+class RNNCell ( Layer ) : \n 
+def __init__ ( self , n_units , activation = , bptt_trunc = 5 , input_shape = None , trainable = True ) : \n 
+self . activation = activation_functions [ activation ] ( ) \n 
+self . bptt_trunc = bptt_trunc \n 
+self . W_p = None \n 
+self . W_i = None \n 
+~~~ self . X = [ ] \n 
+_ , input_dim = self . input_shape \n 
+limit = 1 / math . sqrt ( input_dim ) \n 
+self . W_i = np . random . uniform ( - limit , limit , ( input_dim , self . n_units ) ) \n 
+self . b_i = np . zeros ( ( 1 , self . n_units ) ) \n 
+limit = 1 / math . sqrt ( self . n_units ) \n 
+self . W_p = np . random . uniform ( - limit , limit , ( self . n_units , self . n_units ) ) \n 
+self . b_p = np . zeros ( ( 1 , self . n_units ) ) \n 
+self . W_i_opt = copy . copy ( optimizer ) \n 
+self . b_i_opt = copy . copy ( optimizer ) \n 
+self . W_p_opt = copy . copy ( optimizer ) \n 
+self . b_p_opt = copy . copy ( optimizer ) \n 
+self . dW_i = np . zeros_like ( self . W_i ) \n 
+self . db_i = np . zeros_like ( self . b_i ) \n 
+self . dW_p = np . zeros_like ( self . W_p ) \n 
+self . db_p = np . zeros_like ( self . b_p ) \n 
+self . derived_variables = { \n 
+"A" : [ ] , \n 
+"Z" : [ ] , \n 
+"max_timesteps" : 0 , \n 
+"current_step" : 0 , \n 
+"dLdA_accumulator" : [ ] \n 
+~~~ return np . prod ( self . W_i . shape ) + np . prod ( self . W_o . shape ) + np . prod ( self . W_p . shape ) \n 
+~~ def forward_pass ( self , Xt ) : \n 
+self . derived_variables [ ] += 1 \n 
+As = self . derived_variables [ "A" ] \n 
+if len ( As ) == 0 : \n 
+~~~ n_ex , n_in = Xt . shape \n 
+A0 = np . zeros ( ( n_ex , self . n_units ) ) \n 
+As . append ( A0 ) \n 
+~~ Zt = As [ - 1 ] @ self . W_p + self . b_p + Xt @ self . W_i + self . b_i \n 
+At = self . activation ( Zt ) \n 
+self . derived_variables [ "Z" ] . append ( Zt ) \n 
+self . derived_variables [ "A" ] . append ( At ) \n 
+self . X . append ( Xt ) \n 
+return At \n 
+~~ def backward_pass ( self , dLdAt ) : \n 
+~~~ self . derived_variables [ "current_step" ] -= 1 \n 
+Zs = self . derived_variables [ "Z" ] \n 
+t = self . derived_variables [ "current_step" ] \n 
+dA_acc = self . derived_variables [ "dLdA_accumulator" ] \n 
+if len ( dA_acc ) == 0 : \n 
+~~~ dA_acc . insert ( 0 , dLdAt ) \n 
+~~ dA = dLdAt \n 
+dZ = self . activation . gradient ( Zs [ t ] ) * dA \n 
+assert dZ . size == Zs [ t ] . size \n 
+dXt = dZ @ self . W_i . T \n 
+assert dXt . shape == self . X [ t ] . shape \n 
+self . dW_i = self . dW_i + self . X [ t ] . T @ dZ \n 
+self . dW_p = self . dW_p + As [ t ] . T @ dZ \n 
+self . db_i = self . db_i + np . sum ( dZ , axis = 0 , keepdims = True ) \n 
+self . db_p = self . db_p + np . sum ( dZ , axis = 0 , keepdims = True ) \n 
+dLdHidden = dZ @ self . W_p . transpose ( ) \n 
+self . derived_variables [ "dLdA_accumulator" ] . insert ( 0 , dLdHidden ) \n 
+return dXt , dLdHidden \n 
+~~ def update ( self ) : \n 
+~~~ if self . trainable : \n 
+~~~ self . W_i = self . W_i_opt . update ( self . W_i , self . dW_i ) \n 
+self . b_i = self . b_i_opt . update ( self . b_i , self . db_i ) \n 
+self . W_p = self . W_p_opt . update ( self . W_p , self . dW_p ) \n 
+self . b_p = self . b_p_opt . update ( self . b_p , self . db_p ) \n 
+~~ ~~ def output_shape ( self ) : \n 
+~~ ~~ class many2oneRNN ( Layer ) : \n 
+self . activation = activation \n 
+~~~ self . cell = RNNCell ( n_units = self . n_units , \n 
+activation = self . activation , \n 
+bptt_trunc = self . bptt_trunc , \n 
+input_shape = self . input_shape , \n 
+trainable = self . trainable ) \n 
+self . cell . initialize ( optimizer ) \n 
+~~ def forward_pass ( self , X ) : \n 
+Y = [ ] \n 
+n_ex , n_in , self . n_t = X . shape \n 
+for t in range ( self . n_t ) : \n 
+~~~ yt = self . cell . forward_pass ( X [ : , : , t ] ) \n 
+Y . append ( yt ) \n 
+~~ return np . dstack ( Y ) \n 
+~~ def backward_pass ( self , dLdA ) : \n 
+~~~ dLdX = [ ] \n 
+for t in reversed ( range ( self . n_t ) ) : \n 
+~~~ dLdXt , dLdHidden_t = self . cell . backward_pass ( dLdA ) \n 
+dLdA = dLdHidden_t \n 
+dLdX . insert ( 0 , dLdXt ) \n 
+~~ dLdX = np . dstack ( dLdX ) \n 
+self . cell . update ( ) \n 
+return dLdX \n 
+~~ ~~ class Embedding ( Layer ) : \n 
+~~~ def __init__ ( self , n_out , vocab_size , trainable = True ) : \n 
+self . n_out = n_out \n 
+self . vocab_size = vocab_size \n 
+~~~ limit = 1 \n 
+self . W = np . random . uniform ( - limit , limit , ( self . vocab_size , self . n_out ) ) \n 
+self . grad_W = np . zeros_like ( self . W ) \n 
+self . W_opt = copy . copy ( optimizer ) \n 
+~~~ return np . prod ( self . W . shape ) \n 
+self . X = X \n 
+Y = self . W [ X ] \n 
+return Y \n 
+for dy , x in zip ( accum_grad , self . X ) : \n 
+~~~ dW = np . zeros_like ( self . grad_W ) \n 
+dy = dy . reshape ( - 1 , self . n_out ) \n 
+for ix , v_id in enumerate ( x . flatten ( ) ) : \n 
+~~~ dW [ v_id ] += dy [ ix ] \n 
+~~ self . grad_W += dW \n 
+~~ if self . trainable : \n 
+~~~ self . W = self . W_opt . update ( self . W , self . grad_W ) \n 
+~~~ if self . n_in is not None : \n 
+~~~ return ( self . n_in * self . n_out , ) \n 
+~~~ return ( None , ) \n 
+~~ ~~ ~~ class LSTMCell ( Layer ) : \n 
+~~~ def __init__ ( self , \n 
+n_units , \n 
+input_shape , \n 
+act_fn = "tanh" , \n 
+gate_fn = "sigmoid" , \n 
+trainable = True ) : \n 
+self . act_fn = activation_functions [ act_fn ] ( ) \n 
+self . gate_fn = activation_functions [ gate_fn ] ( ) \n 
+limit = 1 / math . sqrt ( self . input_shape [ 1 ] ) \n 
+self . W_ih = np . random . uniform ( - limit , limit , ( self . input_shape [ 1 ] , 4 * self . n_units ) ) \n 
+self . b_ih = np . zeros ( ( 1 , 4 * self . n_units ) ) \n 
+self . W_hh = np . random . uniform ( - limit , limit , ( self . n_units , 4 * self . n_units ) ) \n 
+self . b_hh = np . zeros ( ( 1 , 4 * self . n_units ) ) \n 
+self . dW_ih = np . zeros_like ( self . W_ih ) \n 
+self . db_ih = np . zeros_like ( self . b_ih ) \n 
+self . dW_hh = np . zeros_like ( self . W_hh ) \n 
+self . db_hh = np . zeros_like ( self . b_hh ) \n 
+self . W_ih_opt = copy . copy ( optimizer ) \n 
+self . b_ih_opt = copy . copy ( optimizer ) \n 
+self . W_hh_opt = copy . copy ( optimizer ) \n 
+self . b_bh_opt = copy . copy ( optimizer ) \n 
+"C" : [ ] , \n 
+"Cc" : [ ] , \n 
+"Gc" : [ ] , \n 
+"Gf" : [ ] , \n 
+"Go" : [ ] , \n 
+"Gu" : [ ] , \n 
+"dLdA_prev" : [ ] , \n 
+"dLdC_prev" : [ ] , \n 
+if len ( self . derived_variables [ ] ) == 0 : \n 
+init = np . zeros ( ( n_ex , self . n_units ) ) \n 
+self . derived_variables [ ] . append ( init ) \n 
+gates = Xt @ self . W_ih + self . b_ih + A_prev @ self . W_hh + self . b_hh \n 
+ut , ft , cellt , ot = np . array_split ( gates , 4 , axis = 1 ) \n 
+Gut = self . gate_fn ( ut ) \n 
+Gft = self . gate_fn ( ft ) \n 
+Cct = self . act_fn ( cellt ) \n 
+Got = self . gate_fn ( ot ) \n 
+Ct = Gft * C_prev + Gut * Cct \n 
+At = Got * self . act_fn ( Ct ) \n 
+self . derived_variables [ ] . append ( At ) \n 
+self . derived_variables [ ] . append ( Ct ) \n 
+self . derived_variables [ ] . append ( Cct ) \n 
+self . derived_variables [ ] . append ( Gft ) \n 
+self . derived_variables [ ] . append ( Gut ) \n 
+self . derived_variables [ ] . append ( Got ) \n 
+return At , Ct \n 
+self . derived_variables [ ] -= 1 \n 
+t = self . derived_variables [ ] \n 
+return self . _bwd ( t , dLdAt ) \n 
+~~ def _bwd ( self , t , dLdAt ) : \n 
+~~~ A_prev = self . derived_variables [ ] [ t ] \n 
+C_prev = self . derived_variables [ ] [ t ] \n 
+Ct = self . derived_variables [ ] [ t + 1 ] \n 
+Cct = self . derived_variables [ ] [ t ] \n 
+Gft = self . derived_variables [ ] [ t ] \n 
+Got = self . derived_variables [ ] [ t ] \n 
+Gut = self . derived_variables [ ] [ t ] \n 
+Xt = self . X [ t ] \n 
+dLdA_prev_list = self . derived_variables [ "dLdA_prev" ] \n 
+dLdC_prev_list = self . derived_variables [ "dLdC_prev" ] \n 
+if len ( dLdA_prev_list ) == 0 : \n 
+~~~ dLdA_prev_list . insert ( 0 , dLdAt ) \n 
+if len ( dLdC_prev_list ) == 0 : \n 
+~~~ dC = dA * Got * self . act_fn . gradient ( Ct ) \n 
+self . dLdC_prev = dC \n 
+~~~ dC = dA * Got * self . act_fn . gradient ( Ct ) + self . dLdC_prev \n 
+~~ dLdC_prev_list . insert ( 0 , dC ) \n 
+dcellt = dC * Gut * self . act_fn . gradient ( cellt ) \n 
+dft = dC * C_prev * self . gate_fn . gradient ( ft ) \n 
+dot = dA * self . act_fn ( Ct ) * self . gate_fn . gradient ( ot ) \n 
+dut = dC * Cct * self . gate_fn . gradient ( ut ) \n 
+dgates = np . concatenate ( ( dut , dft , dcellt , dot ) , axis = 1 ) \n 
+assert dgates . shape == gates . shape \n 
+dXt = dgates @ self . W_ih . transpose ( ) \n 
+self . dW_ih = self . dW_ih + Xt . T @ dgates \n 
+self . dW_hh = self . dW_hh + A_prev . T @ dgates \n 
+self . db_ih = self . db_ih + dgates . sum ( axis = 0 , keepdims = True ) \n 
+self . db_hh = self . db_hh + dgates . sum ( axis = 0 , keepdims = True ) \n 
+dLdA_prev = dgates @ self . W_hh . transpose ( ) \n 
+self . derived_variables [ ] . insert ( 0 , dLdA_prev ) \n 
+self . dLdC_prev = dC * Gft \n 
+return dXt , dLdA_prev \n 
+~~~ self . Wc_opt . update ( self . Wc , self . dWc ) \n 
+self . Wf_opt . update ( self . Wf , self . dWf ) \n 
+self . Wo_opt . update ( self . Wo , self . dWo ) \n 
+self . Wu_opt . update ( self . Wu , self . dWu ) \n 
+self . bc_opt . update ( self . bc , self . dbc ) \n 
+self . bf_opt . update ( self . bf , self . dbf ) \n 
+self . bo_opt . update ( self . bo , self . dbo ) \n 
+self . bu_opt . update ( self . bu , self . dbu ) \n 
+~~ ~~ ~~ class many2oneLSTM ( Layer ) : \n 
+~~~ def __init__ ( self , n_units , input_shape , act_fn = , gate_fn = , trainable = True ) : \n 
+if act_fn not in good_act_fn_names : \n 
+~~ if gate_fn not in good_act_fn_names : \n 
+~~ self . act_fn = act_fn \n 
+self . gate_fn = gate_fn \n 
+~~~ self . cell = LSTMCell ( \n 
+n_units = self . n_units , \n 
+act_fn = self . act_fn , \n 
+gate_fn = self . gate_fn , \n 
+self . curr_backward_t = 0 \n 
+~~~ ht , ct = self . cell . forward_pass ( X [ : , : , t ] ) \n 
+H . append ( ht ) \n 
+C . append ( ct ) \n 
+~~ return np . dstack ( H ) , np . dstack ( C ) \n 
+dLdX = [ ] \n 
+self . cell . derived_variables [ ] = [ ] \n 
+for t in reversed ( range ( self . n_t - self . curr_backward_t ) ) : \n 
+~~~ dLdXt , dLdA_prev = self . cell . backward_pass ( dLdAt ) \n 
+dLdAt = dLdA_prev \n 
+~~ self . cell . update ( ) \n 
+dLdX = np . dstack ( dLdX ) \n 
+self . curr_backward_t += 1 \n 
+self . cell . derived_variables [ ] -= 1 \n 
+self . cell . derived_variables [ ] = self . cell . derived_variables [ ] \n 
+~~ ~~ class BidirectionalLSTM ( Layer ) : \n 
+act_fn = , \n 
+gate_fn = , \n 
+~~~ self . cell_fwd = LSTMCell ( \n 
+self . cell_fwd . initialize ( optimizer ) \n 
+self . cell_bwd = LSTMCell ( \n 
+self . cell_bwd . initialize ( optimizer ) \n 
+~~~ H_fwd , H_bwd , C_fwd , C_bwd = [ ] , [ ] , [ ] , [ ] \n 
+~~~ ht_fwd , ct_fwd = self . cell_fwd . forward_pass ( X [ : , : , t ] ) \n 
+H_fwd . append ( ht_fwd ) \n 
+C_fwd . append ( ct_fwd ) \n 
+ht_bwd , ct_bwd = self . cell_bwd . forward_pass ( X [ : , : , self . n_t - t - 1 ] ) \n 
+H_bwd . insert ( 0 , ht_bwd ) \n 
+C_bwd . insert ( 0 , ct_bwd ) \n 
+~~ return np . dstack ( H_fwd ) , np . dstack ( H_bwd ) , np . dstack ( C_fwd ) , np . dstack ( C_bwd ) \n 
+~~ def backward_pass ( self , dLdA_fwd , dLdA_bwd ) : \n 
+~~~ dLdX_fwd , dLdX_bwd , dLdX = [ ] , [ ] , [ ] \n 
+dLdAt = dLdA_fwd . copy ( ) \n 
+~~~ dLdXt_fwd , dLdA_prev_fwd = self . cell_fwd . backward_pass ( dLdAt ) \n 
+dLdAt = dLdA_prev_fwd \n 
+dLdX_fwd . insert ( 0 , dLdXt_fwd ) \n 
+~~ self . cell_fwd . update ( ) \n 
+dLdAt = dLdA_bwd . copy ( ) \n 
+~~~ dLdXt_bwd , dLdA_prev_bwd = self . cell_bwd . backward_pass ( dLdAt ) \n 
+dLdAt = dLdA_prev_bwd \n 
+dLdX_bwd . append ( dLdXt_bwd ) \n 
+~~ self . cell_bwd . update ( ) \n 
+return np . dstack ( dLdX_fwd ) , np . dstack ( dLdX_bwd ) \n 
+~~ ~~ class DotProductAttention ( Layer ) : \n 
+~~~ def __init__ ( self , emb_dim , d_k = None , d_v = None , trainable = True , num_heads = 1 ) : \n 
+self . emb_dim = emb_dim \n 
+self . num_heads = num_heads \n 
+self . head_dim = self . emb_dim // num_heads \n 
+if d_k is None : \n 
+~~~ self . d_k = self . emb_dim \n 
+~~~ self . d_k = d_k \n 
+~~ if d_v is None : \n 
+~~~ self . d_v = self . emb_dim \n 
+~~~ self . d_v = d_v \n 
+~~ self . trainable = trainable \n 
+~~~ self . softmax = FullSoftmax ( ) \n 
+if self . emb_dim == self . d_k and self . emb_dim == self . d_v : \n 
+~~~ limit = 1 / math . sqrt ( self . emb_dim ) \n 
+self . in_weight = np . random . uniform ( - limit , limit , ( self . emb_dim , 3 * self . emb_dim ) ) \n 
+self . out_weight = np . random . uniform ( - limit , limit , ( self . emb_dim , self . emb_dim ) ) \n 
+self . qkv_same = True \n 
+self . scale = 1 / np . sqrt ( self . head_dim ) \n 
+self . dLdout_weight = np . zeros_like ( self . out_weight ) \n 
+self . dLdin_weight = np . zeros_like ( self . in_weight ) \n 
+self . in_weight_opt = copy . deepcopy ( optimizer ) \n 
+self . out_weight_opt = copy . deepcopy ( optimizer ) \n 
+~~~ limit_Q = 1 / math . sqrt ( self . d_k ) \n 
+self . Q = np . random . uniform ( - limit_Q , limit_Q , ( self . emb_dim , self . d_k ) ) \n 
+self . K = np . random . uniform ( - limit_Q , limit_Q , ( self . emb_dim , self . d_k ) ) \n 
+limit_V = 1 / math . sqrt ( self . d_v ) \n 
+self . V = np . random . uniform ( - limit_V , limit_V , ( self . emb_dim , self . d_v ) ) \n 
+self . qkv_same = False \n 
+self . scale = 1 / np . sqrt ( self . d_k ) \n 
+~~ ~~ def forward_pass ( self , Q , K , V ) : \n 
+if self . qkv_same : \n 
+~~~ assert Q . shape == K . shape and Q . shape == V . shape \n 
+assert Q . shape [ - 1 ] == self . emb_dim \n 
+tgt_len , bsz , embed_dim = Q . shape \n 
+src_len , _ , _ = V . shape \n 
+self . weights = [ ] \n 
+if Q is K and Q is V : \n 
+~~~ self . X = Q \n 
+qkv = self . X @ self . in_weight \n 
+self . q = qkv [ : , : , : self . emb_dim ] * self . scale \n 
+self . k = qkv [ : , : , self . emb_dim : 2 * self . emb_dim ] \n 
+self . v = qkv [ : , : , 2 * self . emb_dim : ] \n 
+~~ self . q = self . q . reshape ( ( tgt_len , bsz * self . num_heads , self . head_dim ) ) \n 
+self . k = self . k . reshape ( ( src_len , bsz * self . num_heads , self . head_dim ) ) \n 
+self . v = self . v . reshape ( ( src_len , bsz * self . num_heads , self . head_dim ) ) \n 
+self . q = np . swapaxes ( self . q , 0 , 1 ) \n 
+self . k = np . swapaxes ( self . k , 0 , 1 ) \n 
+self . v = np . swapaxes ( self . v , 0 , 1 ) \n 
+self . k = np . swapaxes ( self . k , 1 , 2 ) \n 
+self . scores = self . q @ self . k \n 
+for this_target_len in range ( tgt_len ) : \n 
+~~~ this_weights = self . softmax ( self . scores [ : , this_target_len , : ] ) \n 
+self . weights . append ( this_weights ) \n 
+~~ self . weights = np . stack ( self . weights ) \n 
+self . weights = np . swapaxes ( self . weights , 0 , 1 ) \n 
+self . outputs = self . weights @ self . v \n 
+self . weights_gd = self . weights \n 
+self . weights = self . weights . reshape ( bsz , self . num_heads , tgt_len , src_len ) \n 
+self . weights = self . weights . sum ( axis = 1 ) / self . num_heads \n 
+self . outputs = np . swapaxes ( self . outputs , 0 , 1 ) \n 
+self . outputs = self . outputs . reshape ( ( tgt_len , bsz , embed_dim ) ) \n 
+return self . outputs @ self . out_weight , self . weights , self . scores \n 
+~~ ~~ def backward_pass ( self , dLdOutput ) : \n 
+~~~ this_dLdout_weight = np . swapaxes ( self . outputs , 1 , 2 ) @ dLdOutput \n 
+self . dLdout_weight += np . sum ( this_dLdout_weight , axis = 0 ) \n 
+dLdoutputs = dLdOutput @ self . out_weight . transpose ( ) \n 
+weights_gd = np . swapaxes ( self . weights_gd , 1 , 2 ) \n 
+tgt_seq , bsz , emd_dim = dLdoutputs . shape \n 
+dLdoutputs = dLdoutputs . reshape ( ( tgt_seq , bsz * self . num_heads , self . head_dim ) ) \n 
+dLdv = weights_gd @ np . swapaxes ( dLdoutputs , 0 , 1 ) \n 
+self . dLdv = dLdv \n 
+swaped_v = np . swapaxes ( self . v , 1 , 2 ) \n 
+dLdweights = np . swapaxes ( dLdoutputs , 0 , 1 ) @ swaped_v \n 
+target_seq = self . scores . shape [ 1 ] \n 
+dweightdscore = [ ] \n 
+for this_target_len in range ( target_seq ) : \n 
+~~~ this_dweightdscore = self . softmax . gradient ( self . scores [ : , this_target_len , : ] , \n 
+dLdweights [ : , this_target_len , : ] ) \n 
+dweightdscore . append ( this_dweightdscore ) \n 
+~~ dweightdscore = np . stack ( dweightdscore ) \n 
+dLdscores = np . swapaxes ( dweightdscore , 0 , 1 ) \n 
+dLdq = dLdscores @ np . swapaxes ( self . k , 1 , 2 ) \n 
+dLdq = dLdq * self . scale \n 
+self . dLdq = dLdq \n 
+dLdk = np . swapaxes ( dLdscores , 1 , 2 ) @ self . q \n 
+self . dLdk = dLdk \n 
+dLdq = np . swapaxes ( dLdq , 1 , 2 ) \n 
+dLdk = np . swapaxes ( dLdk , 1 , 2 ) \n 
+dLdv = np . swapaxes ( dLdv , 1 , 2 ) \n 
+bszTheads , head_dim , tgt_len = dLdq . shape \n 
+_ , _ , src_len = dLdk . shape \n 
+bsz = int ( bszTheads / self . num_heads ) \n 
+assert bsz == bszTheads // self . num_heads \n 
+emb_dim = head_dim * self . num_heads \n 
+dLdq = dLdq . reshape ( ( bsz , emb_dim , tgt_len ) ) \n 
+dLdk = dLdk . reshape ( ( bsz , emb_dim , src_len ) ) \n 
+dLdv = dLdv . reshape ( ( bsz , emb_dim , src_len ) ) \n 
+dLdqkv = np . concatenate ( ( dLdq , dLdk , dLdv ) , axis = 2 ) \n 
+X = np . swapaxes ( self . X , 0 , 1 ) \n 
+X = np . swapaxes ( X , 1 , 2 ) \n 
+self . dLdin_weight += np . sum ( X @ dLdqkv , axis = 0 ) \n 
+dLdX = dLdqkv @ self . in_weight . transpose ( ) \n 
+dLdX = np . swapaxes ( dLdX , 0 , 1 ) \n 
+~~ ~~ def update ( self ) : \n 
+~~~ self . in_weight = self . in_weight_opt . update ( self . in_weight , \n 
+self . dLdin_weight ) \n 
+self . out_weight = self . out_weight_opt . update ( self . out_weight , \n 
+self . dLdout_weight ) \n 
+~~ ~~ ~~ class Conv2D ( Layer ) : \n 
+~~~ def __init__ ( self , in_channels , out_channels , kernel_size , stride = 1 , padding = 0 , dilation = 1 , groups = 1 ) : \n 
+self . in_channels = in_channels \n 
+self . out_channels = out_channels \n 
+if isinstance ( kernel_size , tuple ) : \n 
+~~~ self . kernel_size = kernel_size \n 
+~~ elif isinstance ( kernel_size , int ) : \n 
+~~~ self . kernel_size = ( kernel_size , kernel_size ) \n 
+~~ self . stride = stride \n 
+self . padding = padding \n 
+self . dilation = dilation \n 
+self . groups = groups \n 
+~~ def initialization ( self , optimizer ) : \n 
+limit = 1 / math . sqrt ( self . in_channels * self . kernel_size [ 0 ] * self . kernel_size [ 1 ] ) \n 
+self . W = np . random . uniform ( - limit , limit , ( self . out_channels , self . in_channels , self . kernel_size [ 0 ] , self . kernel_size [ 1 ] ) ) \n 
+self . b = np . random . uniform ( - limit , limit , ( 1 , self . out_channels , 1 , 1 ) ) \n 
+~~ def forward ( self , X , training = True ) : \n 
+C_out = self . out_channels \n 
+Z = self . conv2D_naive ( X , self . W , self . stride , self . padding , self . dilation , self . groups ) + self . b \n 
+return Z \n 
+~~ def conv2D_naive ( self , X , W , stride = 1 , padding = 0 , dilation = 1 , groups = 1 ) : \n 
+N , C_i , H_in , W_in = X . shape \n 
+C_out , _ , kernel_height , kernel_width = W . shape \n 
+X_pad , p = self . pad2D ( X , padding , ( kernel_height , kernel_width ) , stride , dilation ) \n 
+kernel_height = ( kernel_height - 1 ) * ( dilation - 1 ) + kernel_height \n 
+kernel_width = ( kernel_width - 1 ) * ( dilation - 1 ) + kernel_width \n 
+H_out = ( H_in - kernel_height + 2 * p [ 0 ] ) // stride + 1 \n 
+W_out = ( W_in - kernel_width + 2 * p [ 1 ] ) // stride + 1 \n 
+Z = np . zeros ( ( N , C_out , H_out , W_out ) ) \n 
+for this_obs in range ( N ) : \n 
+~~~ for this_c in range ( C_out ) : \n 
+~~~ for i in range ( H_out ) : \n 
+~~~ for j in range ( W_out ) : \n 
+~~~ i0 = i * stride \n 
+i1 = i * stride + kernel_height \n 
+j0 = j * stride \n 
+j1 = j * stride + kernel_width \n 
+window = X_pad [ this_obs , : , i0 : i1 : dilation , j0 : j1 : dilation ] \n 
+Z [ this_obs , this_c , i , j ] = np . sum ( window * W [ this_c , : , : , : ] ) \n 
+~~ ~~ ~~ ~~ return Z \n 
+~~ def pad2D ( self , X , padding , kernel_size , stride = 1 , dilation = 1 ) : \n 
+if isinstance ( padding , int ) or isinstance ( padding , np . int64 ) : \n 
+~~~ X_pad = np . pad ( X , \n 
+pad_width = ( ( 0 , 0 ) , ( 0 , 0 ) , ( padding , padding ) , ( padding , padding ) ) , \n 
+mode = "constant" , \n 
+constant_values = 0 ) \n 
+p = ( padding , padding ) \n 
+~~ elif isinstance ( padding , tuple ) : \n 
+pad_width = ( ( 0 , 0 ) , ( 0 , 0 ) , ( padding [ 0 ] , padding [ 0 ] ) , ( padding [ 1 ] , padding [ 1 ] ) ) , \n 
+p = ( padding [ 0 ] , padding [ 1 ] ) \n 
+~~ elif padding == : \n 
+~~~ p = self . calc_pad_dim ( ( X . shape [ 2 ] , X . shape [ 3 ] ) , \n 
+( X . shape [ 2 ] , X . shape [ 3 ] ) , \n 
+kernel_size , \n 
+stride , \n 
+dilation ) \n 
+X_pad , p = self . pad2D ( X , p , kernel_size , stride , dilation ) \n 
+~~ return X_pad , p \n 
+~~ def calc_pad_dim ( self , in_dim , out_dim , kernel_size , stride , dilation ) : \n 
+in_height , in_width = in_dim \n 
+out_height , out_width = out_dim \n 
+kernel_height , kernel_width = kernel_size \n 
+p_height = ( ( out_height - 1 ) * stride - in_height + kernel_height ) // 2 \n 
+p_width = ( ( out_width - 1 ) * stride - in_width + kernel_width ) // 2 \n 
+out_height2 = ( in_height - kernel_height + 2 * p_height ) // stride + 1 \n 
+out_width2 = ( in_width - kernel_width + 2 * p_width ) // stride + 1 \n 
+if out_height2 == out_height - 1 : \n 
+~~~ p_height += 1 \n 
+~~ elif out_height2 != out_height : \n 
+~~~ raise AssertionError \n 
+~~ if out_width2 == out_width - 1 : \n 
+~~~ p_width += 1 \n 
+~~ elif out_width2 != out_width : \n 
+~~ if any ( np . array ( [ p_height , p_width ] ) < 0 ) : \n 
+~~~ raise ValueError ( \n 
+~~ return ( p_height , p_width ) \n 
+~~ def backward ( self , dLdOutput , trainable = False ) : \n 
+~~ ~~ 
