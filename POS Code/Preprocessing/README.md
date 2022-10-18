@@ -5,7 +5,7 @@ the path to your work space**. The ETA to run the `script` without the validatio
 part would take less than 10 minutes, the validation part would take ~2 hours.
 
 Only the first 500 Python files of the evaluation dataset in the ETH Python 150 dataset
-is used because the evaluation dataset is small and we do not need many Python files
+are used because the evaluation dataset is small and we do not need many Python files
 to do the probing task.
 
 ## Download the datasets
