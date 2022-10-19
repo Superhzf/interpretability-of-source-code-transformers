@@ -15,10 +15,6 @@ NeuroX_env/
 py150_files.tar.gz
 py150_files
 
-myfile_tokens.txt
-POS.csv
-myfile.txt
-
 *logs*
 *slurm*
 
