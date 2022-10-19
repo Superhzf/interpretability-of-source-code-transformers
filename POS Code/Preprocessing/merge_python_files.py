@@ -2,7 +2,7 @@ import os
 
 folder1 = "./"
 folder2 = "./py150_files/"
-file_name = "train.txt"
+file_name = "test.txt"
 f = open(os.path.join(folder1,file_name),'r')
 # this way will remove the newline.
 eval_files = f.read().splitlines()
