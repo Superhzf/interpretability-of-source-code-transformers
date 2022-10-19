@@ -1,7 +1,7 @@
 import os
 
 
-folder = "./py150_files/"
+folder = "./"
 file_name = "train.txt"
 f = open(os.path.join(folder,file_name),'r')
 # this way will remove the newline.
