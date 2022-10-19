@@ -420,7 +420,8 @@ def linear_probes_inference(tokens_train, activations_train,tokens_test,activati
 
     X_train, y_train, label2idx_train, idx2label_train = filter_by_frequency(X_train,y_train,label2idx_train,idx2label_train,4,model_name)
     X_test, y_test, label2idx_test, idx2label_test = filter_by_frequency(X_test,y_test,label2idx_test,idx2label_test,4,model_name)
-    lookup_table = {1:4,2:1,3:2}
+    exit(0)
+    # lookup_table = {1:4,2:1,3:2}
     for idx, this_y in enumerate(y_test):
         if this_y in lookup_table:
             y_test[idx] = lookup_table[this_y]
@@ -474,14 +475,13 @@ def main():
                 extract_activations('codetest2_train_unique.in',MODEL_DESC[this_model],activation_file_name)
     else:
         print("Getting activations from json files. If you need to extract them, run with --extract=True \n" )
-    exit(0)
 
     for this_model, this_activation_name in zip(MODEL_NAMES,ACTIVATION_NAMES):
         print(f"Anayzing {this_model}")
-        activations_train = load_extracted_activations(this_activation_name)
+        activations_train = load_extracted_activations('bert_activations_train.json')
         activations_test = load_extracted_activations('bert_activations_test.json')
 
-        tokens_train =  load_tokens(activations_train,'codetest2_unique.in','codetest2_unique.label')
+        tokens_train =  load_tokens(activations_train,'codetest2_train_unique.in','codetest2_train_unique.label')
         tokens_test = load_tokens(activations_test,'codetest2_test_unique.in','codetest2_test_unique.label')
 
         linear_probes_inference(tokens_train,activations_train,
