@@ -1,9 +1,9 @@
 import os
 
-
-folder = "./"
+folder1 = "./"
+folder2 = "./py150_files/"
 file_name = "train.txt"
-f = open(os.path.join(folder,file_name),'r')
+f = open(os.path.join(folder1,file_name),'r')
 # this way will remove the newline.
 eval_files = f.read().splitlines()
 f.close()
@@ -17,7 +17,7 @@ except OSError:
 
 g = open(my_file,'a')
 for idx,this_file_name in enumerate(eval_files):
-    complete_file = os.path.join(folder,this_file_name)
+    complete_file = os.path.join(folder2,this_file_name)
     f = open(complete_file,'r')
     py_code = f.readlines()
     f.close()
