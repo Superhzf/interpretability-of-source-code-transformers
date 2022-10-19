@@ -1,562 +1,494 @@
-utf-8 import copy \n 
-import numpy as np \n 
-import math \n 
-from . activation_functions import ReLU , Sigmoid , Softmax , TanH , LeakyReLU , FullSoftmax \n 
+from __future__ import division , print_function , unicode_literals \n 
 \n 
-class Layer ( object ) : \n 
-~~~ def set_input_shape ( self , shape ) : \n 
-self . input_shape = shape \n 
-~~ def layer_name ( self ) : \n 
-return self . __class__ . name__ \n 
-~~ def parameters ( self ) : \n 
-return 0 \n 
-~~ def backward_pass ( self , accum_grad ) : \n 
-pass \n 
-~~ def output_shape ( self ) : \n 
-~~ ~~ class Dense ( Layer ) : \n 
-def __init__ ( self , n_units , input_shape = None , trainable = True ) : \n 
-~~~ self . input_shape = input_shape \n 
-self . layer_input = [ ] \n 
-self . n_units = n_units \n 
-self . trainable = trainable \n 
-self . W = None \n 
-self . b = None \n 
-~~ def initialize ( self , optimizer ) : \n 
-~~~ limit = 1 / math . sqrt ( self . input_shape [ 1 ] ) \n 
-self . W = np . random . uniform ( - limit , limit , ( self . input_shape [ 1 ] , self . n_units ) ) \n 
-self . b = np . zeros ( ( 1 , self . n_units ) ) \n 
-self . W_opt = copy . deepcopy ( optimizer ) \n 
-self . b_opt = copy . deepcopy ( optimizer ) \n 
-self . dw = np . zeros_like ( self . W ) \n 
-self . db = np . zeros_like ( self . b ) \n 
-~~~ return np . prod ( self . W . shape ) + np . prod ( self . b . shape ) \n 
-~~ def forward_pass ( self , X , training = True ) : \n 
-~~~ self . layer_input . append ( X ) \n 
-~~~ W = self . W . copy ( ) \n 
-this_layer_input = self . layer_input . pop ( ) \n 
-self . dw += this_layer_input . T . dot ( accum_grad ) \n 
-self . db += np . sum ( accum_grad , axis = 0 , keepdims = True ) \n 
-if self . trainable : \n 
-~~~ self . W = self . W_opt . update ( self . W , self . dw ) \n 
-self . b = self . b_opt . update ( self . b , self . db ) \n 
-return accum_grad \n 
-~~~ return ( self . n_units , ) \n 
-~~ ~~ class BatchNormalization ( Layer ) : \n 
-def __init__ ( self , momentum = 0.99 , input_shape = None ) : \n 
-~~~ self . momentum = momentum \n 
-self . trainable = True \n 
-self . eps = 1e-05 \n 
-self . running_mean = None \n 
-self . running_var = None \n 
-self . input_shape = input_shape \n 
-~~~ self . gamma = np . ones ( self . input_shape ) \n 
-self . beta = np . zeros ( self . input_shape ) \n 
-self . gamma_opt = copy . copy ( optimizer ) \n 
-self . beta_opt = copy . copy ( optimizer ) \n 
-~~~ return np . prod ( self . gamma . shape ) + np . prod ( self . beta . shape ) \n 
-~~~ if self . running_mean is None : \n 
-~~~ self . running_mean = np . mean ( X , axis = 0 ) \n 
-self . running_var = np . var ( X , axis = 0 ) \n 
-~~ if training and self . trainable : \n 
-~~~ mean = np . mean ( X , axis = 0 ) \n 
-var = np . var ( X , axis = 0 ) \n 
-self . running_mean = self . momentum * self . running_mean + ( 1 - self . momentum ) * mean \n 
-self . running_var = self . momentum * self . running_var + ( 1 - self . momentum ) * var \n 
-~~ else : \n 
-~~~ mean = self . running_mean \n 
-var = self . running_var \n 
-self . stddev_inv = 1 / np . sqrt ( var + self . eps ) \n 
-X_norm = self . X_centered * self . stddev_inv \n 
-output = self . gamma * X_norm + self . beta \n 
-return output \n 
-~~~ return self . input_shape \n 
-~~~ gamma = self . gamma \n 
-~~~ X_norm = self . X_centered * self . stddev_inv \n 
-self . grad_gamma = np . sum ( accum_grad * X_norm , axis = 0 ) \n 
-self . grad_beta = np . sum ( accum_grad , axis = 0 ) \n 
-if self . gamma_opt is not None and self . beta_opt is not None : \n 
-~~~ self . gamma = self . gamma_opt . update ( self . gamma , self . grad_gamma ) \n 
-self . beta = self . beta_opt . update ( self . beta , self . grad_beta ) \n 
-~~ ~~ batch_size = accum_grad . shape [ 0 ] \n 
-accum_grad = ( 1 / batch_size ) * gamma * self . stddev_inv * ( \n 
-batch_size * accum_grad \n 
-- np . sum ( accum_grad , axis = 0 ) \n 
-- self . X_centered * self . stddev_inv ** 2 * np . sum ( accum_grad * self . X_centered , axis = 0 ) \n 
-) \n 
-~~ ~~ class Dropout ( Layer ) : \n 
-def __init__ ( self , p = 0.2 ) : \n 
-~~~ self . p = p \n 
-self . _mask = None \n 
-self . input_shape = None \n 
-self . n_units = None \n 
-self . pass_through = True \n 
-~~~ if training : \n 
-~~~ c = ( 1 - self . p ) \n 
-self . _mask = np . random . uniform ( size = X . shape ) > self . p \n 
-X = X * c \n 
-~~ return X \n 
-~~~ return accum_grad * self . _mask \n 
-~~ ~~ class Activation ( Layer ) : \n 
-def __init__ ( self , name ) : \n 
-~~~ if name not in good_act_fn_names : \n 
-~~~ raise Exception ( ) \n 
-~~ self . activation_name = name \n 
-self . activation_func = activation_functions [ name ] ( ) \n 
-~~~ self . layer_input = X \n 
-return self . activation_func ( X ) \n 
-~~~ return accum_grad * self . activation_func . gradient ( self . layer_input ) \n 
-~~ ~~ activation_functions = { \n 
-: ReLU , \n 
-: Sigmoid , \n 
-: Softmax , \n 
-: LeakyReLU , \n 
-: TanH , \n 
+from collections import OrderedDict \n 
+from brainstorm . layers . base_layer import Layer \n 
+from brainstorm . structure . buffer_structure import ( BufferStructure , \n 
+StructureTemplate ) \n 
+from brainstorm . structure . construction import ConstructionWrapper \n 
+from brainstorm . utils import flatten_all_but_last \n 
+def BatchNorm ( name = None , decay = 0.9 , epsilon = 1.0e-5 ) : \n 
+return ConstructionWrapper . create ( BatchNormLayerImpl , \n 
+name = name , \n 
+decay = decay , \n 
+epsilon = epsilon ) \n 
+~~ class BatchNormLayerImpl ( Layer ) : \n 
+~~~ expected_inputs = { : StructureTemplate ( , , ) } \n 
+expected_kwargs = { , } \n 
+def setup ( self , kwargs , in_shapes ) : \n 
+~~~ self . epsilon = kwargs . get ( , 1.0e-5 ) \n 
+self . decay = kwargs . get ( , 0.9 ) \n 
+outputs = OrderedDict ( ) \n 
+outputs [ ] = in_shapes [ ] \n 
+parameters = OrderedDict ( ) \n 
+buf = BufferStructure ( self . in_shapes [ ] . feature_shape [ - 1 ] ) \n 
+parameters [ ] = buf \n 
+internals = OrderedDict ( ) \n 
+internals [ ] = buf \n 
+internals [ ] = self . in_shapes [ ] \n 
+return outputs , parameters , internals \n 
+~~ def forward_pass ( self , buffers , training_pass = True ) : \n 
+~~~ _h = self . handler \n 
+sigma_b , centered , x_hat = buffers . internals \n 
+gamma , beta , mu , sigma = buffers . parameters \n 
+inputs = flatten_all_but_last ( buffers . inputs . default ) \n 
+centered = flatten_all_but_last ( centered ) \n 
+x_hat = flatten_all_but_last ( x_hat ) \n 
+out = flatten_all_but_last ( buffers . outputs . default ) \n 
+m = inputs . shape [ 0 ] \n 
+if training_pass : \n 
+_h . sum_t ( inputs , 0 , mu_b ) \n 
+_h . mult_st ( - 1.0 / m , mu_b , mu_b ) \n 
+_h . mult_st ( self . decay , mu , mu ) \n 
+_h . mult_add_st ( 1.0 - self . decay , mu_b , mu ) \n 
+mu = mu_b \n 
+~~ _h . add_mv ( inputs , mu . reshape ( ( 1 , mu . size ) ) , centered ) \n 
+_h . mult_tt ( centered , centered , centered2 ) \n 
+_h . sum_t ( centered2 , 0 , sigma2 ) \n 
+_h . sqrt_t ( sigma2 , sigma_b ) \n 
+_h . mult_st ( self . decay , sigma , sigma ) \n 
+_h . mult_add_st ( 1.0 - self . decay , sigma_b , sigma ) \n 
+sigma = sigma_b \n 
+~~ _h . divide_mv ( centered , sigma . reshape ( ( 1 , sigma . size ) ) , x_hat ) \n 
+_h . mult_mv ( x_hat , gamma . reshape ( ( 1 , gamma . size ) ) , out ) \n 
+_h . add_mv ( out , beta . reshape ( ( 1 , beta . size ) ) , out ) \n 
+~~ def backward_pass ( self , buffers ) : \n 
+gamma = buffers . parameters . gamma \n 
+dgamma = buffers . gradients . gamma \n 
+dbeta = buffers . gradients . beta \n 
+outdeltas = flatten_all_but_last ( buffers . output_deltas . default ) \n 
+indeltas = flatten_all_but_last ( buffers . input_deltas . default ) \n 
+m = outdeltas . shape [ 0 ] \n 
+tmp = big_tmp \n 
+dgamma_tmp = small_tmp \n 
+_h . mult_tt ( outdeltas , x_hat , tmp ) \n 
+_h . sum_t ( tmp , axis = 0 , out = dgamma_tmp ) \n 
+_h . add_tt ( dgamma_tmp , dgamma , dgamma ) \n 
+_h . mult_st ( 1 / m , dgamma_tmp , dgamma_tmp ) \n 
+term1 = big_tmp \n 
+_h . mult_mv ( x_hat , dgamma_tmp . reshape ( ( 1 , gamma . size ) ) , term1 ) \n 
+dbeta_tmp = small_tmp \n 
+_h . sum_t ( outdeltas , axis = 0 , out = dbeta_tmp ) \n 
+_h . add_tt ( dbeta_tmp , dbeta , dbeta ) \n 
+_h . mult_st ( 1 / m , dbeta_tmp , dbeta_tmp ) \n 
+term2 = big_tmp \n 
+term3 = big_tmp \n 
+_h . subtract_tt ( outdeltas , term1 , term2 ) \n 
+_h . subtract_mv ( term2 , dbeta_tmp . reshape ( ( 1 , dbeta . size ) ) , term3 ) \n 
+coeff = small_tmp \n 
+_h . divide_tt ( gamma , sigma_b , coeff ) \n 
+term4 = big_tmp \n 
+_h . mult_mv ( term3 , coeff . reshape ( ( 1 , coeff . size ) ) , term4 ) \n 
+_h . add_tt ( term4 , indeltas , indeltas ) \n 
+~~ ~~ from __future__ import division , print_function , unicode_literals \n 
+import numpy as np \n 
+from brainstorm . describable import Describable \n 
+class Scorer ( Describable ) : \n 
+~~~ def __init__ ( self , out_name = , targets_name = , mask_name = , \n 
+name = None ) : \n 
+~~~ self . out_name = out_name \n 
+self . targets_name = targets_name \n 
+self . mask_name = mask_name \n 
+self . __name__ = name if name is not None else self . __class__ . __name__ \n 
+~~ def __call__ ( self , true_labels , predicted , mask = None ) : \n 
+~~~ pass \n 
+~~ @ staticmethod \n 
+def aggregate ( errors ) : \n 
+~~~ errors = np . array ( errors ) \n 
+assert errors . ndim == 2 and errors . shape [ 1 ] == 2 \n 
+return np . sum ( errors [ : , 1 ] ) / np . sum ( errors [ : , 0 ] ) \n 
+~~ ~~ def gather_losses_and_scores ( net , scorers , scores , out_name = , \n 
+targets_name = , mask_name = ) : \n 
+~~~ ls = net . get_loss_values ( ) \n 
+for name , loss in ls . items ( ) : \n 
+~~~ scores [ name ] . append ( ( net . _buffer_manager . batch_size , loss ) ) \n 
+~~ for sc in scorers : \n 
+~~~ name = sc . __name__ \n 
+predicted = net . get ( sc . out_name or out_name or net . output_name ) \n 
+true_labels = net . get_input ( sc . targets_name ) if sc . targets_name else net . get_input ( targets_name ) \n 
+mask = net . get_input ( sc . mask_name ) if sc . mask_name else ( net . get_input ( mask_name ) if mask_name else None ) \n 
+predicted = _flatten_all_but_last ( predicted ) \n 
+true_labels = _flatten_all_but_last ( true_labels ) \n 
+mask = _flatten_all_but_last ( mask ) \n 
+weight = mask . sum ( ) if mask is not None else predicted . shape [ 0 ] \n 
+scores [ name ] . append ( ( weight , sc ( true_labels , predicted , mask ) ) ) \n 
+~~ ~~ def aggregate_losses_and_scores ( scores , net , scorers ) : \n 
+~~~ results = OrderedDict ( ) \n 
+for name in net . get_loss_values ( ) : \n 
+~~~ results [ name ] = _weighted_average ( scores [ name ] ) \n 
+~~~ results [ sc . __name__ ] = sc . aggregate ( scores [ sc . __name__ ] ) \n 
+~~ return results \n 
+~~ class Accuracy ( Scorer ) : \n 
+~~~ def __call__ ( self , true_labels , predicted , mask = None ) : \n 
+~~~ if predicted . shape [ 1 ] > 1 : \n 
+~~~ predicted = predicted . argmax ( 1 ) . reshape ( - 1 , 1 ) \n 
+~~ correct = ( predicted == true_labels ) . astype ( np . float ) \n 
+if mask is not None : \n 
+~~~ correct *= mask \n 
+~~ return np . sum ( correct ) \n 
+~~ ~~ class Hamming ( Scorer ) : \n 
+~~~ def __init__ ( self , threshold = 0.5 , out_name = , targets_name = , \n 
+mask_name = , name = None ) : \n 
+~~~ super ( Hamming , self ) . __init__ ( out_name , targets_name , mask_name , name ) \n 
+self . threshold = threshold \n 
+~~~ correct = np . logical_xor ( predicted < self . threshold , \n 
+true_labels ) . astype ( np . float ) \n 
+~~ return np . sum ( correct ) / true_labels . shape [ 1 ] \n 
+~~ ~~ class MeanSquaredError ( Scorer ) : \n 
+~~~ errors = ( true_labels - predicted ) ** 2 \n 
+~~~ errors *= mask \n 
+~~ return 0.5 * np . sum ( errors ) \n 
+~~ ~~ def _flatten_all_but_last ( a ) : \n 
+~~~ if a is None : \n 
+~~~ return None \n 
+~~ return a . reshape ( - 1 , a . shape [ - 1 ] ) \n 
+~~ def _weighted_average ( errors ) : \n 
+return np . sum ( errors [ : , 1 ] * errors [ : , 0 ] / np . sum ( errors [ : , 0 ] ) ) \n 
+~~ from __future__ import division , print_function , unicode_literals \n 
+import pytest \n 
+import six \n 
+from brainstorm . training . schedules import Exponential , Linear , MultiStep \n 
+def test_linear ( ) : \n 
+~~~ sch = Linear ( initial_value = 1.0 , final_value = 0.5 , num_changes = 5 ) \n 
+epochs = [ 0 ] * 2 + [ 1 ] * 2 + [ 2 ] * 2 + [ 3 ] * 2 + [ 4 ] * 2 \n 
+updates = range ( 10 ) \n 
+values = [ sch ( epoch , update , , 1 , None , None , None ) \n 
+for epoch , update in six . moves . zip ( epochs , updates ) ] \n 
+assert values == [ 1.0 , 1.0 , 0.9 , 0.9 , 0.8 , 0.8 , 0.7 , 0.7 , 0.6 , 0.6 ] \n 
+assert values == [ 1.0 , 0.9 , 0.8 , 0.7 , 0.6 , 0.5 , 0.5 , 0.5 , 0.5 , 0.5 ] \n 
+values = [ sch ( epoch , update , , 3 , None , None , None ) \n 
+assert values == [ 1.0 , 1.0 , 1.0 , 0.9 , 0.9 , 0.9 , 0.8 , 0.8 , 0.8 , 0.7 ] \n 
+~~ def test_exponential ( ) : \n 
+~~~ sch = Exponential ( initial_value = 1.0 , factor = 0.99 , minimum = 0.97 ) \n 
+epochs = [ 0 ] * 4 + [ 1 ] * 4 + [ 2 ] * 4 \n 
+updates = range ( 12 ) \n 
+assert values == [ 1.0 ] * 4 + [ 0.99 ] * 4 + [ 0.99 * 0.99 ] * 4 \n 
+assert values == [ 1.0 * ( 0.99 ** x ) for x in range ( 4 ) ] + [ 0.97 ] * 8 \n 
+assert values == [ 1.0 ] * 3 + [ 0.99 ] * 3 + [ 0.9801 ] * 3 + [ 0.99 ** 3 ] * 3 \n 
+~~ def test_multistep ( ) : \n 
+~~~ sch = MultiStep ( initial_value = 1.0 , steps = [ 3 , 5 , 8 ] , \n 
+values = [ 0.1 , 0.01 , 0.001 ] ) \n 
+assert values == [ 1.0 , 1.0 , 1.0 , 1.0 , 1.0 , 1.0 , 0.1 , 0.1 , 0.1 , 0.1 ] \n 
+assert values == [ 1.0 , 1.0 , 1.0 , 0.1 , 0.1 , 0.01 , 0.01 , 0.01 , 0.001 , 0.001 ] \n 
+with pytest . raises ( AssertionError ) : \n 
+~~~ _ = sch ( 0 , 0 , , 3 , None , None , None ) \n 
+# \n 
+~~ ~~ import os \n 
+import sys \n 
+try : \n 
+~~~ from unittest . mock import MagicMock \n 
+~~ except ImportError : \n 
+~~~ from mock import Mock as MagicMock \n 
+~~ class Mock ( MagicMock ) : \n 
+~~~ @ classmethod \n 
+def __getattr__ ( cls , name ) : \n 
+~~~ return Mock ( ) \n 
+~~ ~~ MOCK_MODULES = [ , ] \n 
+sys . modules . update ( ( mod_name , Mock ( ) ) for mod_name in MOCK_MODULES ) \n 
+cwd = os . getcwd ( ) \n 
+parent = os . path . dirname ( cwd ) \n 
+sys . path . insert ( 0 , parent ) \n 
+import brainstorm \n 
+extensions = [ , , \n 
+] \n 
+templates_path = [ ] \n 
+source_suffix = \n 
+master_doc = \n 
+project = \n 
+copyright = \n 
+version = brainstorm . __version__ \n 
+release = brainstorm . __version__ \n 
+exclude_patterns = [ ] \n 
+pygments_style = \n 
+on_rtd = os . environ . get ( , None ) == \n 
+if not on_rtd : \n 
+~~~ try : \n 
+~~~ import sphinx_rtd_theme \n 
+html_theme = \n 
+html_theme_path = [ sphinx_rtd_theme . get_html_theme_path ( ) ] \n 
+~~~ html_theme = \n 
+~~ ~~ html_static_path = [ ] \n 
+htmlhelp_basename = \n 
+latex_elements = { \n 
 } \n 
-good_act_fn_names = [ , , , , ] \n 
-class RNNCell ( Layer ) : \n 
-def __init__ ( self , n_units , activation = , bptt_trunc = 5 , input_shape = None , trainable = True ) : \n 
-self . activation = activation_functions [ activation ] ( ) \n 
-self . bptt_trunc = bptt_trunc \n 
-self . W_p = None \n 
-self . W_i = None \n 
-~~~ self . X = [ ] \n 
-_ , input_dim = self . input_shape \n 
-limit = 1 / math . sqrt ( input_dim ) \n 
-self . W_i = np . random . uniform ( - limit , limit , ( input_dim , self . n_units ) ) \n 
-self . b_i = np . zeros ( ( 1 , self . n_units ) ) \n 
-limit = 1 / math . sqrt ( self . n_units ) \n 
-self . W_p = np . random . uniform ( - limit , limit , ( self . n_units , self . n_units ) ) \n 
-self . b_p = np . zeros ( ( 1 , self . n_units ) ) \n 
-self . W_i_opt = copy . copy ( optimizer ) \n 
-self . b_i_opt = copy . copy ( optimizer ) \n 
-self . W_p_opt = copy . copy ( optimizer ) \n 
-self . b_p_opt = copy . copy ( optimizer ) \n 
-self . dW_i = np . zeros_like ( self . W_i ) \n 
-self . db_i = np . zeros_like ( self . b_i ) \n 
-self . dW_p = np . zeros_like ( self . W_p ) \n 
-self . db_p = np . zeros_like ( self . b_p ) \n 
-self . derived_variables = { \n 
-"A" : [ ] , \n 
-"Z" : [ ] , \n 
-"max_timesteps" : 0 , \n 
-"current_step" : 0 , \n 
-"dLdA_accumulator" : [ ] \n 
-~~~ return np . prod ( self . W_i . shape ) + np . prod ( self . W_o . shape ) + np . prod ( self . W_p . shape ) \n 
-~~ def forward_pass ( self , Xt ) : \n 
-self . derived_variables [ ] += 1 \n 
-As = self . derived_variables [ "A" ] \n 
-if len ( As ) == 0 : \n 
-~~~ n_ex , n_in = Xt . shape \n 
-A0 = np . zeros ( ( n_ex , self . n_units ) ) \n 
-As . append ( A0 ) \n 
-~~ Zt = As [ - 1 ] @ self . W_p + self . b_p + Xt @ self . W_i + self . b_i \n 
-At = self . activation ( Zt ) \n 
-self . derived_variables [ "Z" ] . append ( Zt ) \n 
-self . derived_variables [ "A" ] . append ( At ) \n 
-self . X . append ( Xt ) \n 
-return At \n 
-~~ def backward_pass ( self , dLdAt ) : \n 
-~~~ self . derived_variables [ "current_step" ] -= 1 \n 
-Zs = self . derived_variables [ "Z" ] \n 
-t = self . derived_variables [ "current_step" ] \n 
-dA_acc = self . derived_variables [ "dLdA_accumulator" ] \n 
-if len ( dA_acc ) == 0 : \n 
-~~~ dA_acc . insert ( 0 , dLdAt ) \n 
-~~ dA = dLdAt \n 
-dZ = self . activation . gradient ( Zs [ t ] ) * dA \n 
-assert dZ . size == Zs [ t ] . size \n 
-dXt = dZ @ self . W_i . T \n 
-assert dXt . shape == self . X [ t ] . shape \n 
-self . dW_i = self . dW_i + self . X [ t ] . T @ dZ \n 
-self . dW_p = self . dW_p + As [ t ] . T @ dZ \n 
-self . db_i = self . db_i + np . sum ( dZ , axis = 0 , keepdims = True ) \n 
-self . db_p = self . db_p + np . sum ( dZ , axis = 0 , keepdims = True ) \n 
-dLdHidden = dZ @ self . W_p . transpose ( ) \n 
-self . derived_variables [ "dLdA_accumulator" ] . insert ( 0 , dLdHidden ) \n 
-return dXt , dLdHidden \n 
-~~ def update ( self ) : \n 
-~~~ if self . trainable : \n 
-~~~ self . W_i = self . W_i_opt . update ( self . W_i , self . dW_i ) \n 
-self . b_i = self . b_i_opt . update ( self . b_i , self . db_i ) \n 
-self . W_p = self . W_p_opt . update ( self . W_p , self . dW_p ) \n 
-self . b_p = self . b_p_opt . update ( self . b_p , self . db_p ) \n 
-~~ ~~ def output_shape ( self ) : \n 
-~~ ~~ class many2oneRNN ( Layer ) : \n 
-self . activation = activation \n 
-~~~ self . cell = RNNCell ( n_units = self . n_units , \n 
-activation = self . activation , \n 
-bptt_trunc = self . bptt_trunc , \n 
-input_shape = self . input_shape , \n 
-trainable = self . trainable ) \n 
-self . cell . initialize ( optimizer ) \n 
-~~ def forward_pass ( self , X ) : \n 
-Y = [ ] \n 
-n_ex , n_in , self . n_t = X . shape \n 
-for t in range ( self . n_t ) : \n 
-~~~ yt = self . cell . forward_pass ( X [ : , : , t ] ) \n 
-Y . append ( yt ) \n 
-~~ return np . dstack ( Y ) \n 
-~~ def backward_pass ( self , dLdA ) : \n 
-~~~ dLdX = [ ] \n 
-for t in reversed ( range ( self . n_t ) ) : \n 
-~~~ dLdXt , dLdHidden_t = self . cell . backward_pass ( dLdA ) \n 
-dLdA = dLdHidden_t \n 
-dLdX . insert ( 0 , dLdXt ) \n 
-~~ dLdX = np . dstack ( dLdX ) \n 
-self . cell . update ( ) \n 
-return dLdX \n 
-~~ ~~ class Embedding ( Layer ) : \n 
-~~~ def __init__ ( self , n_out , vocab_size , trainable = True ) : \n 
-self . n_out = n_out \n 
-self . vocab_size = vocab_size \n 
-~~~ limit = 1 \n 
-self . W = np . random . uniform ( - limit , limit , ( self . vocab_size , self . n_out ) ) \n 
-self . grad_W = np . zeros_like ( self . W ) \n 
-self . W_opt = copy . copy ( optimizer ) \n 
-~~~ return np . prod ( self . W . shape ) \n 
-self . X = X \n 
-Y = self . W [ X ] \n 
-return Y \n 
-for dy , x in zip ( accum_grad , self . X ) : \n 
-~~~ dW = np . zeros_like ( self . grad_W ) \n 
-dy = dy . reshape ( - 1 , self . n_out ) \n 
-for ix , v_id in enumerate ( x . flatten ( ) ) : \n 
-~~~ dW [ v_id ] += dy [ ix ] \n 
-~~ self . grad_W += dW \n 
-~~ if self . trainable : \n 
-~~~ self . W = self . W_opt . update ( self . W , self . grad_W ) \n 
-~~~ if self . n_in is not None : \n 
-~~~ return ( self . n_in * self . n_out , ) \n 
-~~~ return ( None , ) \n 
-~~ ~~ ~~ class LSTMCell ( Layer ) : \n 
-~~~ def __init__ ( self , \n 
-n_units , \n 
-input_shape , \n 
-act_fn = "tanh" , \n 
-gate_fn = "sigmoid" , \n 
-trainable = True ) : \n 
-self . act_fn = activation_functions [ act_fn ] ( ) \n 
-self . gate_fn = activation_functions [ gate_fn ] ( ) \n 
-limit = 1 / math . sqrt ( self . input_shape [ 1 ] ) \n 
-self . W_ih = np . random . uniform ( - limit , limit , ( self . input_shape [ 1 ] , 4 * self . n_units ) ) \n 
-self . b_ih = np . zeros ( ( 1 , 4 * self . n_units ) ) \n 
-self . W_hh = np . random . uniform ( - limit , limit , ( self . n_units , 4 * self . n_units ) ) \n 
-self . b_hh = np . zeros ( ( 1 , 4 * self . n_units ) ) \n 
-self . dW_ih = np . zeros_like ( self . W_ih ) \n 
-self . db_ih = np . zeros_like ( self . b_ih ) \n 
-self . dW_hh = np . zeros_like ( self . W_hh ) \n 
-self . db_hh = np . zeros_like ( self . b_hh ) \n 
-self . W_ih_opt = copy . copy ( optimizer ) \n 
-self . b_ih_opt = copy . copy ( optimizer ) \n 
-self . W_hh_opt = copy . copy ( optimizer ) \n 
-self . b_bh_opt = copy . copy ( optimizer ) \n 
-"C" : [ ] , \n 
-"Cc" : [ ] , \n 
-"Gc" : [ ] , \n 
-"Gf" : [ ] , \n 
-"Go" : [ ] , \n 
-"Gu" : [ ] , \n 
-"dLdA_prev" : [ ] , \n 
-"dLdC_prev" : [ ] , \n 
-if len ( self . derived_variables [ ] ) == 0 : \n 
-init = np . zeros ( ( n_ex , self . n_units ) ) \n 
-self . derived_variables [ ] . append ( init ) \n 
-gates = Xt @ self . W_ih + self . b_ih + A_prev @ self . W_hh + self . b_hh \n 
-ut , ft , cellt , ot = np . array_split ( gates , 4 , axis = 1 ) \n 
-Gut = self . gate_fn ( ut ) \n 
-Gft = self . gate_fn ( ft ) \n 
-Cct = self . act_fn ( cellt ) \n 
-Got = self . gate_fn ( ot ) \n 
-Ct = Gft * C_prev + Gut * Cct \n 
-At = Got * self . act_fn ( Ct ) \n 
-self . derived_variables [ ] . append ( At ) \n 
-self . derived_variables [ ] . append ( Ct ) \n 
-self . derived_variables [ ] . append ( Cct ) \n 
-self . derived_variables [ ] . append ( Gft ) \n 
-self . derived_variables [ ] . append ( Gut ) \n 
-self . derived_variables [ ] . append ( Got ) \n 
-return At , Ct \n 
-self . derived_variables [ ] -= 1 \n 
-t = self . derived_variables [ ] \n 
-return self . _bwd ( t , dLdAt ) \n 
-~~ def _bwd ( self , t , dLdAt ) : \n 
-~~~ A_prev = self . derived_variables [ ] [ t ] \n 
-C_prev = self . derived_variables [ ] [ t ] \n 
-Ct = self . derived_variables [ ] [ t + 1 ] \n 
-Cct = self . derived_variables [ ] [ t ] \n 
-Gft = self . derived_variables [ ] [ t ] \n 
-Got = self . derived_variables [ ] [ t ] \n 
-Gut = self . derived_variables [ ] [ t ] \n 
-Xt = self . X [ t ] \n 
-dLdA_prev_list = self . derived_variables [ "dLdA_prev" ] \n 
-dLdC_prev_list = self . derived_variables [ "dLdC_prev" ] \n 
-if len ( dLdA_prev_list ) == 0 : \n 
-~~~ dLdA_prev_list . insert ( 0 , dLdAt ) \n 
-if len ( dLdC_prev_list ) == 0 : \n 
-~~~ dC = dA * Got * self . act_fn . gradient ( Ct ) \n 
-self . dLdC_prev = dC \n 
-~~~ dC = dA * Got * self . act_fn . gradient ( Ct ) + self . dLdC_prev \n 
-~~ dLdC_prev_list . insert ( 0 , dC ) \n 
-dcellt = dC * Gut * self . act_fn . gradient ( cellt ) \n 
-dft = dC * C_prev * self . gate_fn . gradient ( ft ) \n 
-dot = dA * self . act_fn ( Ct ) * self . gate_fn . gradient ( ot ) \n 
-dut = dC * Cct * self . gate_fn . gradient ( ut ) \n 
-dgates = np . concatenate ( ( dut , dft , dcellt , dot ) , axis = 1 ) \n 
-assert dgates . shape == gates . shape \n 
-dXt = dgates @ self . W_ih . transpose ( ) \n 
-self . dW_ih = self . dW_ih + Xt . T @ dgates \n 
-self . dW_hh = self . dW_hh + A_prev . T @ dgates \n 
-self . db_ih = self . db_ih + dgates . sum ( axis = 0 , keepdims = True ) \n 
-self . db_hh = self . db_hh + dgates . sum ( axis = 0 , keepdims = True ) \n 
-dLdA_prev = dgates @ self . W_hh . transpose ( ) \n 
-self . derived_variables [ ] . insert ( 0 , dLdA_prev ) \n 
-self . dLdC_prev = dC * Gft \n 
-return dXt , dLdA_prev \n 
-~~~ self . Wc_opt . update ( self . Wc , self . dWc ) \n 
-self . Wf_opt . update ( self . Wf , self . dWf ) \n 
-self . Wo_opt . update ( self . Wo , self . dWo ) \n 
-self . Wu_opt . update ( self . Wu , self . dWu ) \n 
-self . bc_opt . update ( self . bc , self . dbc ) \n 
-self . bf_opt . update ( self . bf , self . dbf ) \n 
-self . bo_opt . update ( self . bo , self . dbo ) \n 
-self . bu_opt . update ( self . bu , self . dbu ) \n 
-~~ ~~ ~~ class many2oneLSTM ( Layer ) : \n 
-~~~ def __init__ ( self , n_units , input_shape , act_fn = , gate_fn = , trainable = True ) : \n 
-if act_fn not in good_act_fn_names : \n 
-~~ if gate_fn not in good_act_fn_names : \n 
-~~ self . act_fn = act_fn \n 
-self . gate_fn = gate_fn \n 
-~~~ self . cell = LSTMCell ( \n 
-n_units = self . n_units , \n 
-act_fn = self . act_fn , \n 
-gate_fn = self . gate_fn , \n 
-self . curr_backward_t = 0 \n 
-~~~ ht , ct = self . cell . forward_pass ( X [ : , : , t ] ) \n 
-H . append ( ht ) \n 
-C . append ( ct ) \n 
-~~ return np . dstack ( H ) , np . dstack ( C ) \n 
-dLdX = [ ] \n 
-self . cell . derived_variables [ ] = [ ] \n 
-for t in reversed ( range ( self . n_t - self . curr_backward_t ) ) : \n 
-~~~ dLdXt , dLdA_prev = self . cell . backward_pass ( dLdAt ) \n 
-dLdAt = dLdA_prev \n 
-~~ self . cell . update ( ) \n 
-dLdX = np . dstack ( dLdX ) \n 
-self . curr_backward_t += 1 \n 
-self . cell . derived_variables [ ] -= 1 \n 
-self . cell . derived_variables [ ] = self . cell . derived_variables [ ] \n 
-~~ ~~ class BidirectionalLSTM ( Layer ) : \n 
-act_fn = , \n 
-gate_fn = , \n 
-~~~ self . cell_fwd = LSTMCell ( \n 
-self . cell_fwd . initialize ( optimizer ) \n 
-self . cell_bwd = LSTMCell ( \n 
-self . cell_bwd . initialize ( optimizer ) \n 
-~~~ H_fwd , H_bwd , C_fwd , C_bwd = [ ] , [ ] , [ ] , [ ] \n 
-~~~ ht_fwd , ct_fwd = self . cell_fwd . forward_pass ( X [ : , : , t ] ) \n 
-H_fwd . append ( ht_fwd ) \n 
-C_fwd . append ( ct_fwd ) \n 
-ht_bwd , ct_bwd = self . cell_bwd . forward_pass ( X [ : , : , self . n_t - t - 1 ] ) \n 
-H_bwd . insert ( 0 , ht_bwd ) \n 
-C_bwd . insert ( 0 , ct_bwd ) \n 
-~~ return np . dstack ( H_fwd ) , np . dstack ( H_bwd ) , np . dstack ( C_fwd ) , np . dstack ( C_bwd ) \n 
-~~ def backward_pass ( self , dLdA_fwd , dLdA_bwd ) : \n 
-~~~ dLdX_fwd , dLdX_bwd , dLdX = [ ] , [ ] , [ ] \n 
-dLdAt = dLdA_fwd . copy ( ) \n 
-~~~ dLdXt_fwd , dLdA_prev_fwd = self . cell_fwd . backward_pass ( dLdAt ) \n 
-dLdAt = dLdA_prev_fwd \n 
-dLdX_fwd . insert ( 0 , dLdXt_fwd ) \n 
-~~ self . cell_fwd . update ( ) \n 
-dLdAt = dLdA_bwd . copy ( ) \n 
-~~~ dLdXt_bwd , dLdA_prev_bwd = self . cell_bwd . backward_pass ( dLdAt ) \n 
-dLdAt = dLdA_prev_bwd \n 
-dLdX_bwd . append ( dLdXt_bwd ) \n 
-~~ self . cell_bwd . update ( ) \n 
-return np . dstack ( dLdX_fwd ) , np . dstack ( dLdX_bwd ) \n 
-~~ ~~ class DotProductAttention ( Layer ) : \n 
-~~~ def __init__ ( self , emb_dim , d_k = None , d_v = None , trainable = True , num_heads = 1 ) : \n 
-self . emb_dim = emb_dim \n 
-self . num_heads = num_heads \n 
-self . head_dim = self . emb_dim // num_heads \n 
-if d_k is None : \n 
-~~~ self . d_k = self . emb_dim \n 
-~~~ self . d_k = d_k \n 
-~~ if d_v is None : \n 
-~~~ self . d_v = self . emb_dim \n 
-~~~ self . d_v = d_v \n 
-~~ self . trainable = trainable \n 
-~~~ self . softmax = FullSoftmax ( ) \n 
-if self . emb_dim == self . d_k and self . emb_dim == self . d_v : \n 
-~~~ limit = 1 / math . sqrt ( self . emb_dim ) \n 
-self . in_weight = np . random . uniform ( - limit , limit , ( self . emb_dim , 3 * self . emb_dim ) ) \n 
-self . out_weight = np . random . uniform ( - limit , limit , ( self . emb_dim , self . emb_dim ) ) \n 
-self . qkv_same = True \n 
-self . scale = 1 / np . sqrt ( self . head_dim ) \n 
-self . dLdout_weight = np . zeros_like ( self . out_weight ) \n 
-self . dLdin_weight = np . zeros_like ( self . in_weight ) \n 
-self . in_weight_opt = copy . deepcopy ( optimizer ) \n 
-self . out_weight_opt = copy . deepcopy ( optimizer ) \n 
-~~~ limit_Q = 1 / math . sqrt ( self . d_k ) \n 
-self . Q = np . random . uniform ( - limit_Q , limit_Q , ( self . emb_dim , self . d_k ) ) \n 
-self . K = np . random . uniform ( - limit_Q , limit_Q , ( self . emb_dim , self . d_k ) ) \n 
-limit_V = 1 / math . sqrt ( self . d_v ) \n 
-self . V = np . random . uniform ( - limit_V , limit_V , ( self . emb_dim , self . d_v ) ) \n 
-self . qkv_same = False \n 
-self . scale = 1 / np . sqrt ( self . d_k ) \n 
-~~ ~~ def forward_pass ( self , Q , K , V ) : \n 
-if self . qkv_same : \n 
-~~~ assert Q . shape == K . shape and Q . shape == V . shape \n 
-assert Q . shape [ - 1 ] == self . emb_dim \n 
-tgt_len , bsz , embed_dim = Q . shape \n 
-src_len , _ , _ = V . shape \n 
-self . weights = [ ] \n 
-if Q is K and Q is V : \n 
-~~~ self . X = Q \n 
-qkv = self . X @ self . in_weight \n 
-self . q = qkv [ : , : , : self . emb_dim ] * self . scale \n 
-self . k = qkv [ : , : , self . emb_dim : 2 * self . emb_dim ] \n 
-self . v = qkv [ : , : , 2 * self . emb_dim : ] \n 
-~~ self . q = self . q . reshape ( ( tgt_len , bsz * self . num_heads , self . head_dim ) ) \n 
-self . k = self . k . reshape ( ( src_len , bsz * self . num_heads , self . head_dim ) ) \n 
-self . v = self . v . reshape ( ( src_len , bsz * self . num_heads , self . head_dim ) ) \n 
-self . q = np . swapaxes ( self . q , 0 , 1 ) \n 
-self . k = np . swapaxes ( self . k , 0 , 1 ) \n 
-self . v = np . swapaxes ( self . v , 0 , 1 ) \n 
-self . k = np . swapaxes ( self . k , 1 , 2 ) \n 
-self . scores = self . q @ self . k \n 
-for this_target_len in range ( tgt_len ) : \n 
-~~~ this_weights = self . softmax ( self . scores [ : , this_target_len , : ] ) \n 
-self . weights . append ( this_weights ) \n 
-~~ self . weights = np . stack ( self . weights ) \n 
-self . weights = np . swapaxes ( self . weights , 0 , 1 ) \n 
-self . outputs = self . weights @ self . v \n 
-self . weights_gd = self . weights \n 
-self . weights = self . weights . reshape ( bsz , self . num_heads , tgt_len , src_len ) \n 
-self . weights = self . weights . sum ( axis = 1 ) / self . num_heads \n 
-self . outputs = np . swapaxes ( self . outputs , 0 , 1 ) \n 
-self . outputs = self . outputs . reshape ( ( tgt_len , bsz , embed_dim ) ) \n 
-return self . outputs @ self . out_weight , self . weights , self . scores \n 
-~~ ~~ def backward_pass ( self , dLdOutput ) : \n 
-~~~ this_dLdout_weight = np . swapaxes ( self . outputs , 1 , 2 ) @ dLdOutput \n 
-self . dLdout_weight += np . sum ( this_dLdout_weight , axis = 0 ) \n 
-dLdoutputs = dLdOutput @ self . out_weight . transpose ( ) \n 
-weights_gd = np . swapaxes ( self . weights_gd , 1 , 2 ) \n 
-tgt_seq , bsz , emd_dim = dLdoutputs . shape \n 
-dLdoutputs = dLdoutputs . reshape ( ( tgt_seq , bsz * self . num_heads , self . head_dim ) ) \n 
-dLdv = weights_gd @ np . swapaxes ( dLdoutputs , 0 , 1 ) \n 
-self . dLdv = dLdv \n 
-swaped_v = np . swapaxes ( self . v , 1 , 2 ) \n 
-dLdweights = np . swapaxes ( dLdoutputs , 0 , 1 ) @ swaped_v \n 
-target_seq = self . scores . shape [ 1 ] \n 
-dweightdscore = [ ] \n 
-for this_target_len in range ( target_seq ) : \n 
-~~~ this_dweightdscore = self . softmax . gradient ( self . scores [ : , this_target_len , : ] , \n 
-dLdweights [ : , this_target_len , : ] ) \n 
-dweightdscore . append ( this_dweightdscore ) \n 
-~~ dweightdscore = np . stack ( dweightdscore ) \n 
-dLdscores = np . swapaxes ( dweightdscore , 0 , 1 ) \n 
-dLdq = dLdscores @ np . swapaxes ( self . k , 1 , 2 ) \n 
-dLdq = dLdq * self . scale \n 
-self . dLdq = dLdq \n 
-dLdk = np . swapaxes ( dLdscores , 1 , 2 ) @ self . q \n 
-self . dLdk = dLdk \n 
-dLdq = np . swapaxes ( dLdq , 1 , 2 ) \n 
-dLdk = np . swapaxes ( dLdk , 1 , 2 ) \n 
-dLdv = np . swapaxes ( dLdv , 1 , 2 ) \n 
-bszTheads , head_dim , tgt_len = dLdq . shape \n 
-_ , _ , src_len = dLdk . shape \n 
-bsz = int ( bszTheads / self . num_heads ) \n 
-assert bsz == bszTheads // self . num_heads \n 
-emb_dim = head_dim * self . num_heads \n 
-dLdq = dLdq . reshape ( ( bsz , emb_dim , tgt_len ) ) \n 
-dLdk = dLdk . reshape ( ( bsz , emb_dim , src_len ) ) \n 
-dLdv = dLdv . reshape ( ( bsz , emb_dim , src_len ) ) \n 
-dLdqkv = np . concatenate ( ( dLdq , dLdk , dLdv ) , axis = 2 ) \n 
-X = np . swapaxes ( self . X , 0 , 1 ) \n 
-X = np . swapaxes ( X , 1 , 2 ) \n 
-self . dLdin_weight += np . sum ( X @ dLdqkv , axis = 0 ) \n 
-dLdX = dLdqkv @ self . in_weight . transpose ( ) \n 
-dLdX = np . swapaxes ( dLdX , 0 , 1 ) \n 
-~~ ~~ def update ( self ) : \n 
-~~~ self . in_weight = self . in_weight_opt . update ( self . in_weight , \n 
-self . dLdin_weight ) \n 
-self . out_weight = self . out_weight_opt . update ( self . out_weight , \n 
-self . dLdout_weight ) \n 
-~~ ~~ ~~ class Conv2D ( Layer ) : \n 
-~~~ def __init__ ( self , in_channels , out_channels , kernel_size , stride = 1 , padding = 0 , dilation = 1 , groups = 1 ) : \n 
-self . in_channels = in_channels \n 
-self . out_channels = out_channels \n 
-if isinstance ( kernel_size , tuple ) : \n 
-~~~ self . kernel_size = kernel_size \n 
-~~ elif isinstance ( kernel_size , int ) : \n 
-~~~ self . kernel_size = ( kernel_size , kernel_size ) \n 
-~~ self . stride = stride \n 
-self . padding = padding \n 
-self . dilation = dilation \n 
-self . groups = groups \n 
-~~ def initialization ( self , optimizer ) : \n 
-limit = 1 / math . sqrt ( self . in_channels * self . kernel_size [ 0 ] * self . kernel_size [ 1 ] ) \n 
-self . W = np . random . uniform ( - limit , limit , ( self . out_channels , self . in_channels , self . kernel_size [ 0 ] , self . kernel_size [ 1 ] ) ) \n 
-self . b = np . random . uniform ( - limit , limit , ( 1 , self . out_channels , 1 , 1 ) ) \n 
-~~ def forward ( self , X , training = True ) : \n 
-C_out = self . out_channels \n 
-Z = self . conv2D_naive ( X , self . W , self . stride , self . padding , self . dilation , self . groups ) + self . b \n 
-return Z \n 
-~~ def conv2D_naive ( self , X , W , stride = 1 , padding = 0 , dilation = 1 , groups = 1 ) : \n 
-N , C_i , H_in , W_in = X . shape \n 
-C_out , _ , kernel_height , kernel_width = W . shape \n 
-X_pad , p = self . pad2D ( X , padding , ( kernel_height , kernel_width ) , stride , dilation ) \n 
-kernel_height = ( kernel_height - 1 ) * ( dilation - 1 ) + kernel_height \n 
-kernel_width = ( kernel_width - 1 ) * ( dilation - 1 ) + kernel_width \n 
-H_out = ( H_in - kernel_height + 2 * p [ 0 ] ) // stride + 1 \n 
-W_out = ( W_in - kernel_width + 2 * p [ 1 ] ) // stride + 1 \n 
-Z = np . zeros ( ( N , C_out , H_out , W_out ) ) \n 
-for this_obs in range ( N ) : \n 
-~~~ for this_c in range ( C_out ) : \n 
-~~~ for i in range ( H_out ) : \n 
-~~~ for j in range ( W_out ) : \n 
-~~~ i0 = i * stride \n 
-i1 = i * stride + kernel_height \n 
-j0 = j * stride \n 
-j1 = j * stride + kernel_width \n 
-window = X_pad [ this_obs , : , i0 : i1 : dilation , j0 : j1 : dilation ] \n 
-Z [ this_obs , this_c , i , j ] = np . sum ( window * W [ this_c , : , : , : ] ) \n 
-~~ ~~ ~~ ~~ return Z \n 
-~~ def pad2D ( self , X , padding , kernel_size , stride = 1 , dilation = 1 ) : \n 
-if isinstance ( padding , int ) or isinstance ( padding , np . int64 ) : \n 
-~~~ X_pad = np . pad ( X , \n 
-pad_width = ( ( 0 , 0 ) , ( 0 , 0 ) , ( padding , padding ) , ( padding , padding ) ) , \n 
-mode = "constant" , \n 
-constant_values = 0 ) \n 
-p = ( padding , padding ) \n 
-~~ elif isinstance ( padding , tuple ) : \n 
-pad_width = ( ( 0 , 0 ) , ( 0 , 0 ) , ( padding [ 0 ] , padding [ 0 ] ) , ( padding [ 1 ] , padding [ 1 ] ) ) , \n 
-p = ( padding [ 0 ] , padding [ 1 ] ) \n 
-~~ elif padding == : \n 
-~~~ p = self . calc_pad_dim ( ( X . shape [ 2 ] , X . shape [ 3 ] ) , \n 
-( X . shape [ 2 ] , X . shape [ 3 ] ) , \n 
-kernel_size , \n 
-stride , \n 
-dilation ) \n 
-X_pad , p = self . pad2D ( X , p , kernel_size , stride , dilation ) \n 
-~~ return X_pad , p \n 
-~~ def calc_pad_dim ( self , in_dim , out_dim , kernel_size , stride , dilation ) : \n 
-in_height , in_width = in_dim \n 
-out_height , out_width = out_dim \n 
-kernel_height , kernel_width = kernel_size \n 
-p_height = ( ( out_height - 1 ) * stride - in_height + kernel_height ) // 2 \n 
-p_width = ( ( out_width - 1 ) * stride - in_width + kernel_width ) // 2 \n 
-out_height2 = ( in_height - kernel_height + 2 * p_height ) // stride + 1 \n 
-out_width2 = ( in_width - kernel_width + 2 * p_width ) // stride + 1 \n 
-if out_height2 == out_height - 1 : \n 
-~~~ p_height += 1 \n 
-~~ elif out_height2 != out_height : \n 
-~~~ raise AssertionError \n 
-~~ if out_width2 == out_width - 1 : \n 
-~~~ p_width += 1 \n 
-~~ elif out_width2 != out_width : \n 
-~~ if any ( np . array ( [ p_height , p_width ] ) < 0 ) : \n 
-~~~ raise ValueError ( \n 
-~~ return ( p_height , p_width ) \n 
-~~ def backward ( self , dLdOutput , trainable = False ) : \n 
+latex_documents = [ \n 
+( , , , \n 
+, ) , \n 
+man_pages = [ \n 
+[ ] , 1 ) \n 
+texinfo_documents = [ \n 
+, , , \n 
+) , \n 
+import theano . tensor as T \n 
+from theano . sandbox . rng_mrg import MRG_RandomStreams \n 
+from theano . tensor . nnet . conv import conv2d \n 
+from theano . tensor . signal . downsample import max_pool_2d \n 
+from theano . tensor . shared_randomstreams import RandomStreams \n 
+from toolbox import * \n 
+from modelbase import * \n 
+class LM_gru ( ModelLMBase ) : \n 
+~~~ def __init__ ( self , data , hp ) : \n 
+~~~ super ( LM_gru , self ) . __init__ ( self . __class__ . __name__ , data , hp ) \n 
+self . n_h = 256 \n 
+self . dropout = 0.5 \n 
+self . params = Parameters ( ) \n 
+self . hiddenstates = Parameters ( ) \n 
+n_tokens = self . data [ ] \n 
+n_h = self . n_h \n 
+scale = hp . init_scale \n 
+gates = 3 \n 
+with self . hiddenstates : \n 
+~~~ b1_h = shared_zeros ( ( self . hp . batch_size , n_h ) ) \n 
+b2_h = shared_zeros ( ( self . hp . batch_size , n_h ) ) \n 
+~~ if hp . load_model and os . path . isfile ( self . filename ) : \n 
+~~~ self . params . load ( self . filename ) \n 
+~~ else : \n 
+~~~ with self . params : \n 
+~~~ W_emb = shared_normal ( ( n_tokens , n_h ) , scale = scale ) \n 
+W1 = shared_normal ( ( n_h , n_h * gates ) , scale = scale * 1.5 ) \n 
+V1 = shared_normal ( ( n_h , n_h * gates ) , scale = scale * 1.5 ) \n 
+b1 = shared_zeros ( ( n_h * gates ) ) \n 
+W2 = shared_normal ( ( n_h , n_h * gates ) , scale = scale * 1.5 ) \n 
+V2 = shared_normal ( ( n_h , n_h * gates ) , scale = scale * 1.5 ) \n 
+b2 = shared_zeros ( ( n_h * gates , ) ) \n 
+~~ ~~ def lstm ( X , h , c , W , U , b ) : \n 
+~~~ g_on = T . dot ( X , W ) + T . dot ( h , U ) + b \n 
+i_on = T . nnet . sigmoid ( g_on [ : , : n_h ] ) \n 
+f_on = T . nnet . sigmoid ( g_on [ : , n_h : 2 * n_h ] ) \n 
+o_on = T . nnet . sigmoid ( g_on [ : , 2 * n_h : 3 * n_h ] ) \n 
+c = f_on * c + i_on * T . tanh ( g_on [ : , 3 * n_h : ] ) \n 
+h = o_on * T . tanh ( c ) \n 
+return h , c \n 
+~~ def gru ( X , h , W , U , b ) : \n 
+~~~ z_t = T . nnet . sigmoid ( T . dot ( X , W [ : , : n_h ] ) + T . dot ( h , U [ : , : n_h ] ) + b [ : n_h ] ) \n 
+r_t = T . nnet . sigmoid ( T . dot ( X , W [ : , n_h : 2 * n_h ] ) + T . dot ( h , U [ : , n_h : 2 * n_h ] ) + b [ n_h : 2 * n_h ] ) \n 
+h_t = T . tanh ( T . dot ( X , W [ : , 2 * n_h : 3 * n_h ] ) + r_t * T . dot ( h , U [ : , 2 * n_h : 3 * n_h ] ) + b [ 2 * n_h : 3 * n_h ] ) \n 
+return ( 1 - z_t ) * h + z_t * h_t \n 
+~~ def sgru ( X , h , W , U , b ) : \n 
+~~~ z_t = T . tanh ( T . dot ( X , W [ : , : n_h ] ) + T . dot ( h , U [ : , : n_h ] ) + b [ : n_h ] ) \n 
+h_t = T . tanh ( T . dot ( X , W [ : , 1 * n_h : 2 * n_h ] ) + T . dot ( h , U [ : , 1 * n_h : 2 * n_h ] ) + b [ 1 * n_h : 2 * n_h ] ) \n 
+return z_t * h_t \n 
+~~ def model ( x , p , p_dropout ) : \n 
+~~~ input_size = x . shape [ 1 ] \n 
+h0 = dropout ( h0 , p_dropout ) \n 
+cost , h1 , h2 = [ 0. , b1_h , b2_h ] \n 
+for t in xrange ( 0 , self . hp . seq_size ) : \n 
+~~~ if t >= self . hp . warmup_size : \n 
+~~~ pyx = softmax ( T . dot ( dropout ( h2 , p_dropout ) , T . transpose ( p . W_emb ) ) ) \n 
+cost += T . sum ( T . nnet . categorical_crossentropy ( pyx , theano_one_hot ( x [ t ] , n_tokens ) ) ) \n 
+~~ h1 = gru ( h0 [ t ] , h1 , p . W1 , p . V1 , p . b1 ) \n 
+h2 = gru ( dropout ( h1 , p_dropout ) , h2 , p . W2 , p . V2 , p . b2 ) \n 
+~~ h_updates = [ ( b1_h , h1 ) , ( b2_h , h2 ) ] \n 
+return cost , h_updates \n 
+~~ cost , h_updates = model ( self . X , self . params , self . dropout ) \n 
+te_cost , te_h_updates = model ( self . X , self . params , 0. ) \n 
+self . compile ( cost , te_cost , h_updates , te_h_updates ) \n 
+~~ ~~ from collections import OrderedDict \n 
+from . . import utils \n 
+__all__ = [ \n 
+"Layer" , \n 
+"MergeLayer" , \n 
+class Layer ( object ) : \n 
+def __init__ ( self , incoming , name = None ) : \n 
+~~~ if isinstance ( incoming , tuple ) : \n 
+~~~ self . input_shape = incoming \n 
+self . input_layer = None \n 
+~~~ self . input_shape = incoming . output_shape \n 
+self . input_layer = incoming \n 
+~~ self . name = name \n 
+self . params = OrderedDict ( ) \n 
+self . get_output_kwargs = [ ] \n 
+if any ( d is not None and d <= 0 for d in self . input_shape ) : \n 
+~~~ raise ValueError ( ( \n 
+self . input_shape , self . name ) ) \n 
+~~ ~~ @ property \n 
+def output_shape ( self ) : \n 
+~~~ shape = self . get_output_shape_for ( self . input_shape ) \n 
+if any ( isinstance ( s , T . Variable ) for s in shape ) : \n 
+"dimensions." % ( self . __class__ . __name__ , shape ) ) \n 
+~~ return shape \n 
+~~ def get_params ( self , ** tags ) : \n 
+result = list ( self . params . keys ( ) ) \n 
+only = set ( tag for tag , value in tags . items ( ) if value ) \n 
+if only : \n 
+~~~ result = [ param for param in result \n 
+if not ( only - self . params [ param ] ) ] \n 
+~~ exclude = set ( tag for tag , value in tags . items ( ) if not value ) \n 
+if exclude : \n 
+if not ( self . params [ param ] & exclude ) ] \n 
+~~ return utils . collect_shared_vars ( result ) \n 
+~~ def get_output_shape_for ( self , input_shape ) : \n 
+return input_shape \n 
+~~ def get_output_for ( self , input , ** kwargs ) : \n 
+raise NotImplementedError \n 
+~~ def add_param ( self , spec , shape , name = None , ** tags ) : \n 
+if name is not None : \n 
+~~~ if self . name is not None : \n 
+~~~ name = "%s.%s" % ( self . name , name ) \n 
+~~ ~~ param = utils . create_param ( spec , shape , name ) \n 
+tags [ ] = tags . get ( , True ) \n 
+self . params [ param ] = set ( tag for tag , value in tags . items ( ) if value ) \n 
+return param \n 
+~~ ~~ class MergeLayer ( Layer ) : \n 
+def __init__ ( self , incomings , name = None ) : \n 
+~~~ self . input_shapes = [ incoming if isinstance ( incoming , tuple ) \n 
+else incoming . output_shape \n 
+for incoming in incomings ] \n 
+self . input_layers = [ None if isinstance ( incoming , tuple ) \n 
+else incoming \n 
+self . name = name \n 
+~~ @ Layer . output_shape . getter \n 
+~~~ shape = self . get_output_shape_for ( self . input_shapes ) \n 
+~~ def get_output_shape_for ( self , input_shapes ) : \n 
+~~ def get_output_for ( self , inputs , ** kwargs ) : \n 
+~~ ~~ from mock import Mock \n 
+import numpy \n 
+import theano \n 
+class TestAutocrop : \n 
+~~~ def test_autocrop_array_shapes ( self ) : \n 
+~~~ from lasagne . layers . merge import autocrop_array_shapes \n 
+crop0 = None \n 
+crop1 = [ None , , , ] \n 
+crop2 = [ , ] \n 
+crop_bad = [ , , , ] \n 
+assert autocrop_array_shapes ( \n 
+[ ( 1 , 2 , 3 , 4 ) , ( 5 , 6 , 7 , 8 ) , ( 5 , 4 , 3 , 2 ) ] , crop0 ) == [ ( 1 , 2 , 3 , 4 ) , ( 5 , 6 , 7 , 8 ) , ( 5 , 4 , 3 , 2 ) ] \n 
+[ ( 1 , 2 , 3 , 4 ) , ( 5 , 6 , 7 , 8 ) , ( 5 , 4 , 3 , 2 ) ] , crop1 ) == [ ( 1 , 2 , 3 , 2 ) , ( 5 , 2 , 3 , 2 ) , ( 5 , 2 , 3 , 2 ) ] \n 
+[ ( 1 , 2 , 3 , 4 ) , ( 5 , 6 , 7 , 8 ) , ( 5 , 4 , 3 , 2 ) ] , crop2 ) == [ ( 1 , 2 , 3 , 4 ) , ( 1 , 2 , 7 , 8 ) , ( 1 , 2 , 3 , 2 ) ] \n 
+with pytest . raises ( ValueError ) : \n 
+~~~ autocrop_array_shapes ( \n 
+[ ( 1 , 2 , 3 , 4 ) , ( 5 , 6 , 7 , 8 ) , ( 5 , 4 , 3 , 2 ) ] , crop_bad ) \n 
+~~ with pytest . raises ( ValueError ) : \n 
+[ ( 1 , 2 , 3 , 4 ) , ( 5 , 6 , 7 ) , ( 5 , 4 , 3 , 2 , 10 ) ] , crop1 ) \n 
+~~ ~~ def test_crop_inputs ( self ) : \n 
+~~~ from lasagne . layers . merge import autocrop \n 
+from numpy . testing import assert_array_equal \n 
+crop_0 = None \n 
+crop_1 = [ None , , , ] \n 
+crop_l = [ , , , ] \n 
+crop_c = [ , , , ] \n 
+crop_u = [ , , , ] \n 
+crop_x = [ , ] \n 
+x0 = numpy . random . random ( ( 2 , 3 , 5 , 7 ) ) \n 
+x1 = numpy . random . random ( ( 1 , 2 , 3 , 4 ) ) \n 
+x2 = numpy . random . random ( ( 6 , 3 , 4 , 2 ) ) \n 
+def crop_test ( cropping , inputs , expected ) : \n 
+~~~ inputs = [ theano . shared ( x ) for x in inputs ] \n 
+outs = autocrop ( inputs , cropping ) \n 
+outs = [ o . eval ( ) for o in outs ] \n 
+assert len ( outs ) == len ( expected ) \n 
+for o , e in zip ( outs , expected ) : \n 
+~~~ assert_array_equal ( o , e ) \n 
+~~ ~~ crop_test ( crop_0 , [ x0 , x1 ] , \n 
+[ x0 , x1 ] ) \n 
+crop_test ( crop_1 , [ x0 , x1 ] , \n 
+[ x0 [ : , : 2 , 1 : 4 , 3 : ] , x1 [ : , : , : , : ] ] ) \n 
+crop_test ( crop_l , [ x0 , x1 ] , \n 
+[ x0 [ : 1 , : 2 , : 3 , : 4 ] , x1 [ : , : , : , : ] ] ) \n 
+crop_test ( crop_c , [ x0 , x1 ] , \n 
+[ x0 [ : 1 , : 2 , 1 : 4 , 1 : 5 ] , x1 [ : , : , : , : ] ] ) \n 
+crop_test ( crop_u , [ x0 , x1 ] , \n 
+[ x0 [ 1 : , 1 : , 2 : , 3 : ] , x1 [ : , : , : , : ] ] ) \n 
+crop_test ( crop_0 , [ x0 , x2 ] , \n 
+[ x0 , x2 ] ) \n 
+crop_test ( crop_1 , [ x0 , x2 ] , \n 
+[ x0 [ : , : , : 4 , 5 : ] , x2 [ : , : , : , : ] ] ) \n 
+crop_test ( crop_l , [ x0 , x2 ] , \n 
+[ x0 [ : , : , : 4 , : 2 ] , x2 [ : 2 , : , : , : ] ] ) \n 
+crop_test ( crop_c , [ x0 , x2 ] , \n 
+[ x0 [ : , : , : 4 , 2 : 4 ] , x2 [ 2 : 4 , : , : , : ] ] ) \n 
+crop_test ( crop_u , [ x0 , x2 ] , \n 
+[ x0 [ : , : , 1 : , 5 : ] , x2 [ 4 : , : , : , : ] ] ) \n 
+crop_test ( crop_0 , [ x0 , x1 , x2 ] , \n 
+[ x0 , x1 , x2 ] ) \n 
+crop_test ( crop_1 , [ x0 , x1 , x2 ] , \n 
+[ x0 [ : , : 2 , 1 : 4 , 5 : ] , x1 [ : , : , : , 2 : ] , x2 [ : , : 2 , : 3 , : ] ] ) \n 
+crop_test ( crop_l , [ x0 , x1 , x2 ] , \n 
+[ x0 [ : 1 , : 2 , : 3 , : 2 ] , x1 [ : , : , : , : 2 ] , x2 [ : 1 , : 2 , : 3 , : ] ] ) \n 
+crop_test ( crop_c , [ x0 , x1 , x2 ] , \n 
+[ x0 [ : 1 , : 2 , 1 : 4 , 2 : 4 ] , x1 [ : , : , : , 1 : 3 ] , x2 [ 2 : 3 , : 2 , : 3 , : ] ] ) \n 
+crop_test ( crop_u , [ x0 , x1 , x2 ] , \n 
+[ x0 [ 1 : , 1 : , 2 : , 5 : ] , x1 [ : , : , : , 2 : ] , x2 [ 5 : , 1 : , 1 : , : ] ] ) \n 
+crop_test ( crop_x , [ x0 , x1 , x2 ] , \n 
+[ x0 [ : 1 , : 2 , : , : ] , x1 [ : 1 , : 2 , : , : ] , x2 [ : 1 , : 2 , : , : ] ] ) \n 
+crop_test ( crop_x , [ x0 , x1 , x2 , x0 , x1 , x2 ] , \n 
+[ x0 [ : 1 , : 2 , : , : ] , x1 [ : 1 , : 2 , : , : ] , x2 [ : 1 , : 2 , : , : ] , \n 
+x0 [ : 1 , : 2 , : , : ] , x1 [ : 1 , : 2 , : , : ] , x2 [ : 1 , : 2 , : , : ] ] ) \n 
+~~~ crop_test ( crop_bad , [ x0 , x1 , x2 ] , \n 
+~~~ crop_test ( crop_bad , [ x0 [ : , : , : , 0 ] , x1 , x2 [ : , : , : , : , None ] ] , \n 
+~~ ~~ ~~ class TestConcatLayer : \n 
+~~~ @ pytest . fixture \n 
+def layer ( self ) : \n 
+~~~ from lasagne . layers . merge import ConcatLayer \n 
+return ConcatLayer ( [ Mock ( ) , Mock ( ) ] , axis = 1 ) \n 
+~~ @ pytest . fixture \n 
+def crop_layer_0 ( self ) : \n 
+return ConcatLayer ( [ Mock ( ) , Mock ( ) ] , axis = 0 , \n 
+cropping = [ ] * 2 ) \n 
+def crop_layer_1 ( self ) : \n 
+return ConcatLayer ( [ Mock ( ) , Mock ( ) ] , axis = 1 , \n 
+~~ def test_get_output_shape_for ( self , layer ) : \n 
+~~~ assert layer . get_output_shape_for ( [ ( 3 , 2 ) , ( 3 , 5 ) ] ) == ( 3 , 7 ) \n 
+assert layer . get_output_shape_for ( [ ( 3 , 2 ) , ( 3 , None ) ] ) == ( 3 , None ) \n 
+assert layer . get_output_shape_for ( [ ( None , 2 ) , ( 3 , 5 ) ] ) == ( 3 , 7 ) \n 
+assert layer . get_output_shape_for ( [ ( None , 2 ) , ( None , 5 ) ] ) == ( None , 7 ) \n 
+~~~ layer . get_output_shape_for ( [ ( 4 , None ) , ( 3 , 5 ) ] ) \n 
+~~~ layer . get_output_shape_for ( [ ( 3 , 2 ) , ( 4 , None ) ] ) \n 
+~~~ layer . get_output_shape_for ( [ ( None , 2 ) , ( 3 , 5 ) , ( 4 , 5 ) ] ) \n 
+~~ ~~ def test_get_output_shape_for_cropped ( self , crop_layer_0 , crop_layer_1 ) : \n 
+~~~ input_shapes = [ ( 3 , 2 ) , ( 4 , 5 ) ] \n 
+result_0 = crop_layer_0 . get_output_shape_for ( input_shapes ) \n 
+result_1 = crop_layer_1 . get_output_shape_for ( input_shapes ) \n 
+assert result_0 == ( 7 , 2 ) \n 
+assert result_1 == ( 3 , 7 ) \n 
+~~ def test_get_output_for ( self , layer ) : \n 
+~~~ inputs = [ theano . shared ( numpy . ones ( ( 3 , 3 ) ) ) , \n 
+theano . shared ( numpy . ones ( ( 3 , 2 ) ) ) ] \n 
+result = layer . get_output_for ( inputs ) \n 
+result_eval = result . eval ( ) \n 
+desired_result = numpy . hstack ( [ input . get_value ( ) for input in inputs ] ) \n 
+assert ( result_eval == desired_result ) . all ( ) \n 
+~~ def test_get_output_for_cropped ( self , crop_layer_0 , crop_layer_1 ) : \n 
+~~~ x0 = numpy . random . random ( ( 5 , 3 ) ) \n 
+x1 = numpy . random . random ( ( 4 , 2 ) ) \n 
+inputs = [ theano . shared ( x0 ) , \n 
+theano . shared ( x1 ) ] \n 
+result_0 = crop_layer_0 . get_output_for ( inputs ) . eval ( ) \n 
+result_1 = crop_layer_1 . get_output_for ( inputs ) . eval ( ) \n 
+desired_result_0 = numpy . concatenate ( [ x0 [ : , : 2 ] , x1 [ : , : 2 ] ] , axis = 0 ) \n 
+desired_result_1 = numpy . concatenate ( [ x0 [ : 4 , : ] , x1 [ : 4 , : ] ] , axis = 1 ) \n 
+assert ( result_0 == desired_result_0 ) . all ( ) \n 
+assert ( result_1 == desired_result_1 ) . all ( ) \n 
+~~ ~~ class TestElemwiseSumLayer : \n 
+~~~ from lasagne . layers . merge import ElemwiseSumLayer \n 
+return ElemwiseSumLayer ( [ Mock ( ) , Mock ( ) ] , coeffs = [ 2 , - 1 ] ) \n 
+def crop_layer ( self ) : \n 
+return ElemwiseSumLayer ( [ Mock ( ) , Mock ( ) ] , coeffs = [ 2 , - 1 ] , \n 
+~~~ assert layer . get_output_shape_for ( [ ( 3 , 2 ) , ( 3 , 2 ) ] ) == ( 3 , 2 ) \n 
+assert layer . get_output_shape_for ( [ ( 3 , 2 ) , ( 3 , None ) ] ) == ( 3 , 2 ) \n 
+assert layer . get_output_shape_for ( [ ( None , 2 ) , ( 3 , 2 ) ] ) == ( 3 , 2 ) \n 
+assert layer . get_output_shape_for ( [ ( None , 2 ) , ( None , 2 ) ] ) == ( None , 2 ) \n 
+~~~ layer . get_output_shape_for ( [ ( 3 , None ) , ( 4 , 2 ) ] ) \n 
+~~~ layer . get_output_shape_for ( [ ( None , 2 ) , ( 3 , 2 ) , ( 4 , 2 ) ] ) \n 
+~~ ~~ def test_get_output_for ( self , layer ) : \n 
+~~~ a = numpy . array ( [ [ 0 , 1 ] , [ 2 , 3 ] ] ) \n 
+b = numpy . array ( [ [ 1 , 2 ] , [ 4 , 5 ] ] ) \n 
+inputs = [ theano . shared ( a ) , \n 
+theano . shared ( b ) ] \n 
+desired_result = 2 * a - b \n 
+~~ def test_get_output_for_cropped ( self , crop_layer ) : \n 
+~~~ from numpy . testing import assert_array_almost_equal as aeq \n 
+x0 = numpy . random . random ( ( 5 , 3 ) ) \n 
+result = crop_layer . get_output_for ( inputs ) . eval ( ) \n 
+desired_result = 2 * x0 [ : 4 , : 2 ] - x1 [ : 4 , : 2 ] \n 
+aeq ( result , desired_result ) \n 
+~~ def test_bad_coeffs_fails ( self , layer ) : \n 
+~~~ ElemwiseSumLayer ( [ Mock ( ) , Mock ( ) ] , coeffs = [ 2 , 3 , - 1 ] ) \n 
+~~ ~~ ~~ class TestElemwiseMergeLayerMul : \n 
+~~~ import theano . tensor as T \n 
+from lasagne . layers . merge import ElemwiseMergeLayer \n 
+return ElemwiseMergeLayer ( [ Mock ( ) , Mock ( ) ] , merge_function = T . mul ) \n 
+desired_result = a * b \n 
+~~ ~~ class TestElemwiseMergeLayerMaximum : \n 
+return ElemwiseMergeLayer ( [ Mock ( ) , Mock ( ) ] , merge_function = T . maximum ) \n 
+desired_result = numpy . maximum ( a , b ) \n 
 ~~ ~~ 

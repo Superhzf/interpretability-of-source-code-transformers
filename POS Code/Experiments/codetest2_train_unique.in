@@ -1,0 +1,1289 @@
+\n 
+# \n 
+from horizon import tabs \n 
+class NetworkProfileTab ( tabs . Tab ) : \n 
+slug = "network_profile" \n 
+template_name = \n 
+def get_context_data ( self , request ) : \n 
+~~~ return None \n 
+~~ ~~ class PolicyProfileTab ( tabs . Tab ) : \n 
+slug = "policy_profile" \n 
+preload = False \n 
+~~ class IndexTabs ( tabs . TabGroup ) : \n 
+~~~ slug = "indextabs" \n 
+tabs = ( NetworkProfileTab , PolicyProfileTab ) \n 
+import weakref \n 
+from eventlet import corolocal \n 
+class WeakLocal ( corolocal . local ) : \n 
+~~~ def __getattribute__ ( self , attr ) : \n 
+~~~ rval = corolocal . local . __getattribute__ ( self , attr ) \n 
+if rval : \n 
+~~~ rval = rval ( ) \n 
+~~ return rval \n 
+~~ def __setattr__ ( self , attr , value ) : \n 
+~~~ value = weakref . ref ( value ) \n 
+return corolocal . local . __setattr__ ( self , attr , value ) \n 
+~~ ~~ store = WeakLocal ( ) \n 
+weak_store = WeakLocal ( ) \n 
+strong_store = corolocal . local \n 
+import eventlet \n 
+eventlet . monkey_patch ( ) \n 
+import contextlib \n 
+import sys \n 
+from oslo . config import cfg \n 
+from openstack_dashboard . openstack . common import log as logging \n 
+from openstack_dashboard . openstack . common import rpc \n 
+from openstack_dashboard . openstack . common . rpc import impl_zmq \n 
+CONF = cfg . CONF \n 
+CONF . register_opts ( rpc . rpc_opts ) \n 
+CONF . register_opts ( impl_zmq . zmq_opts ) \n 
+def main ( ) : \n 
+~~~ CONF ( sys . argv [ 1 : ] , project = ) \n 
+logging . setup ( "oslo" ) \n 
+with contextlib . closing ( impl_zmq . ZmqProxy ( CONF ) ) as reactor : \n 
+~~~ reactor . consume_in_thread ( ) \n 
+reactor . wait ( ) \n 
+~~ ~~ from enum import IntEnum \n 
+from . component import Component \n 
+from . object import field \n 
+class ReflectionProbeUsage ( IntEnum ) : \n 
+~~~ Off = 0 \n 
+BlendProbes = 1 \n 
+BlendProbesAndSkybox = 2 \n 
+Simple = 3 \n 
+~~ class ShadowCastingMode ( IntEnum ) : \n 
+On = 1 \n 
+TwoSided = 2 \n 
+ShadowsOnly = 3 \n 
+~~ class Renderer ( Component ) : \n 
+~~~ enabled = field ( "m_Enabled" , bool ) \n 
+lightmap_index = field ( "m_LightmapIndex" ) \n 
+materials = field ( "m_Materials" ) \n 
+probe_anchor = field ( "m_ProbeAnchor" ) \n 
+receive_shadows = field ( "m_ReceiveShadows" , bool ) \n 
+reflection_probe_usage = field ( "m_ReflectionProbeUsage" , ReflectionProbeUsage ) \n 
+shadow_casting_mode = field ( "m_CastShadows" , ShadowCastingMode ) \n 
+sorting_layer_id = field ( "m_SortingLayerID" ) \n 
+sorting_order = field ( "m_SortingOrder" ) \n 
+use_light_probes = field ( "m_UseLightProbes" , bool ) \n 
+lightmap_index_dynamic = field ( "m_LightmapIndexDynamic" ) \n 
+lightmap_tiling_offset = field ( "m_LightmapTilingOffset" ) \n 
+lightmap_tiling_offset_dynamic = field ( "m_LightmapTilingOffsetDynamic" ) \n 
+static_batch_root = field ( "m_StaticBatchRoot" ) \n 
+subset_indices = field ( "m_SubsetIndices" ) \n 
+@ property \n 
+def material ( self ) : \n 
+~~~ return self . materials [ 0 ] \n 
+~~ ~~ class ParticleSystemRenderMode ( IntEnum ) : \n 
+~~~ Billboard = 0 \n 
+Stretch = 1 \n 
+HorizontalBillboard = 2 \n 
+VerticalBillboard = 3 \n 
+Mesh = 4 \n 
+~~ class ParticleSystemSortMode ( IntEnum ) : \n 
+~~~ None_ = 0 \n 
+Distance = 1 \n 
+OldestInFront = 2 \n 
+YoungestInFront = 3 \n 
+~~ class MeshRenderer ( Component ) : \n 
+~~~ pass \n 
+~~ class ParticleRenderer ( Renderer ) : \n 
+~~~ camera_velocity_scale = field ( "m_CameraVelocityScale" ) \n 
+length_scale = field ( "m_LengthScale" ) \n 
+max_particle_size = field ( "m_MaxParticleSize" ) \n 
+velocity_scale = field ( "m_VelocityScale" ) \n 
+stretch_particles = field ( "m_StretchParticles" ) \n 
+~~ class ParticleSystemRenderer ( Renderer ) : \n 
+mesh = field ( "m_Mesh" ) \n 
+mesh1 = field ( "m_Mesh1" ) \n 
+mesh2 = field ( "m_Mesh2" ) \n 
+mesh3 = field ( "m_Mesh3" ) \n 
+normal_direction = field ( "m_NormalDirection" ) \n 
+render_mode = field ( "m_RenderMode" , ParticleSystemRenderMode ) \n 
+sort_mode = field ( "m_SortMode" , ParticleSystemSortMode ) \n 
+sorting_fudge = field ( "m_SortingFudge" ) \n 
+~~ from ConfigParser import * \n 
+from StringIO import * \n 
+from Log import Log \n 
+import datetime \n 
+class Config : \n 
+~~~ @ staticmethod \n 
+def LoadConfig ( ) : \n 
+~~~ Config . parser = ConfigParser ( ) \n 
+try : \n 
+~~~ sconff = open ( CONFIG_FILE , "r" ) \n 
+~~ except : \n 
+return \n 
+~~ sconf = StringIO ( ) \n 
+sconf . write ( "[sysconf]\\n" ) \n 
+sconf . write ( sconff . read ( ) ) \n 
+sconf . seek ( 0 ) \n 
+Config . parser . readfp ( sconf ) \n 
+sconff . close ( ) \n 
+sconf . close ( ) \n 
+~~ @ staticmethod \n 
+def GetBoardsFile ( ) : \n 
+~~~ return BOARDS_FILE \n 
+def GetInt ( name , defval ) : \n 
+~~~ if ( Config . parser . has_option ( , name ) ) : \n 
+~~~ return Config . parser . getint ( , name ) \n 
+~~ else : \n 
+~~~ return defval \n 
+~~ ~~ @ staticmethod \n 
+def GetString ( name , defval ) : \n 
+~~~ val = Config . parser . get ( , name ) \n 
+if ( val [ 0 ] == \'"\' and val . endswith ( \'"\' ) ) : \n 
+~~~ val = val [ 1 : - 1 ] \n 
+~~ return val . decode ( ) \n 
+~~ ~~ ~~ BBS_ROOT = \n 
+BBS_XMPP_CERT_FILE = BBS_ROOT + "xmpp.crt" \n 
+BBS_XMPP_KEY_FILE = BBS_ROOT + "xmpp.key" \n 
+BOARDS_FILE = BBS_ROOT + \n 
+STRLEN = 80 \n 
+ARTICLE_TITLE_LEN = 60 \n 
+BM_LEN = 60 \n 
+MAXBOARD = 400 \n 
+CONFIG_FILE = BBS_ROOT + \n 
+FILENAME_LEN = 20 \n 
+OWNER_LEN = 30 \n 
+SESSIONID_LEN = 32 \n 
+REFRESH_TOKEN_LEN = 128 \n 
+NAMELEN = 40 \n 
+IDLEN = 12 \n 
+MD5PASSLEN = 16 \n 
+OLDPASSLEN = 14 \n 
+MOBILE_NUMBER_LEN = 17 \n 
+MAXCLUB = 128 \n 
+MAXUSERS = 20000 \n 
+MAX_MSG_SIZE = 1024 \n 
+MAXFRIENDS = 400 \n 
+MAXMESSAGE = 5 \n 
+MAXSIGLINES = 6 \n 
+IPLEN = 16 \n 
+DEFAULTBOARD = "sysop" \n 
+BLESS_BOARD = "happy_birthday" \n 
+QUOTED_LINES = 10 \n 
+MAXACTIVE = 8000 \n 
+USHM_SIZE = MAXACTIVE + 10 \n 
+UTMP_HASHSIZE = USHM_SIZE * 4 \n 
+UCACHE_SEMLOCK = 0 \n 
+LEN_FRIEND_EXP = 15 \n 
+SESSION_TIMEOUT = datetime . timedelta ( 30 ) \n 
+SESSION_TIMEOUT_SECONDS = 86400 * 30 \n 
+XMPP_IDLE_TIME = 300 \n 
+XMPP_LONG_IDLE_TIME = 1800 \n 
+XMPP_UPDATE_TIME_INTERVAL = 10 \n 
+XMPP_PING_TIME_INTERVAL = 60 \n 
+PUBLIC_SHMKEY = 3700 \n 
+MAX_ATTACHSIZE = 20 * 1024 * 1024 \n 
+BMDEL_DECREASE = True \n 
+SYSMAIL_BOARD = "sysmail" \n 
+ADD_EDITMARK = True \n 
+SEARCH_COUNT_LIMIT = 20 \n 
+MAIL_SIZE_LIMIT = - 1 \n 
+SEC_DELETED_OLDHOME = 3600 * 24 * 3 \n 
+SELF_INTRO_MAX_LEN = 800 \n 
+import re \n 
+import os \n 
+import stat \n 
+import json \n 
+import struct \n 
+import time \n 
+import Config \n 
+import Board \n 
+import Post \n 
+import BoardManager \n 
+from Util import Util \n 
+from errors import * \n 
+DEFAULT_DIGEST_LIST_COUNT = 20 \n 
+class DigestItem : \n 
+~~~ def __init__ ( self , basepath ) : \n 
+~~~ self . basepath = basepath \n 
+self . title = \n 
+self . host = \n 
+self . port = 0 \n 
+self . attachpos = 0 \n 
+self . fname = \n 
+self . mtitle = \n 
+self . items = [ ] \n 
+self . update_time = 0 \n 
+self . id = 0 \n 
+self . sysop_only = 0 \n 
+self . bms_only = 0 \n 
+self . zixia_only = 0 \n 
+~~ def IsDir ( self ) : \n 
+~~~ try : \n 
+~~~ st = os . stat ( self . realpath ( ) ) \n 
+return stat . S_ISDIR ( st . st_mode ) \n 
+~~~ return False \n 
+~~ ~~ def IsFile ( self ) : \n 
+return stat . S_ISREG ( st . st_mode ) \n 
+~~ ~~ def GetModTime ( self ) : \n 
+mtime = st . st_mtime \n 
+~~~ mtime = time . time ( ) \n 
+~~ return mtime \n 
+~~ def names_path ( self ) : \n 
+~~~ return "%s/.Names" % self . realpath ( ) \n 
+~~ def realpath ( self ) : \n 
+~~~ return "%s/%s" % ( Config . BBS_ROOT , self . path ( ) ) \n 
+~~ def path ( self ) : \n 
+~~~ if ( self . fname ) : \n 
+~~~ return "%s/%s" % ( self . basepath , self . fname ) \n 
+~~~ return self . basepath \n 
+~~ ~~ def CheckUpdate ( self ) : \n 
+~~~ stat = os . stat ( self . names_path ( ) ) \n 
+if ( stat . st_mtime > self . update_time ) : \n 
+~~~ self . LoadNames ( ) \n 
+~~ ~~ except : \n 
+~~ return True \n 
+~~ def LoadNames ( self ) : \n 
+~~~ f = open ( self . names_path ( ) , "r" ) \n 
+~~ except IOError : \n 
+~~~ return 0 \n 
+~~ stat = os . fstat ( f . fileno ( ) ) \n 
+self . update_time = stat . st_mtime \n 
+item = DigestItem ( self . path ( ) ) \n 
+hostname = \n 
+_id = 0 \n 
+bms_only = 0 \n 
+sysop_only = 0 \n 
+zixia_only = 0 \n 
+while ( True ) : \n 
+~~~ line = f . readline ( ) \n 
+if ( line == "" ) : break \n 
+npos = line . find ( "\\n" ) \n 
+if ( npos != - 1 ) : line = line [ : npos ] \n 
+if ( line [ : 1 ] == ) : \n 
+~~~ if ( not self . mtitle ) : \n 
+~~~ self . mtitle = line [ 8 : ] \n 
+~~ ~~ ~~ result = re . match ( , line ) \n 
+if ( result ) : \n 
+~~~ key = result . group ( 1 ) \n 
+value = result . group ( 2 ) \n 
+if ( key == "Name" ) : \n 
+~~~ item . title = value \n 
+item . attachpos = 0 \n 
+~~ elif ( key == "Path" ) : \n 
+~~~ if ( value [ : 2 ] == "~/" ) : \n 
+~~~ item . fname = value [ 2 : ] \n 
+~~~ item . fname = value \n 
+~~ if ( item . fname . find ( ".." ) != - 1 ) : \n 
+~~~ continue \n 
+~~~ bms_only += 1 \n 
+~~~ sysop_only += 1 \n 
+~~~ zixia_only += 1 \n 
+~~ if ( item . fname . find ( "!@#$%" ) != - 1 ) : \n 
+~~~ parts = re . split ( , item . fname ) \n 
+newparts = [ ] \n 
+for part in parts : \n 
+~~~ if ( part ) : \n 
+~~~ newparts += [ part ] \n 
+~~ ~~ hostname = newparts [ 0 ] \n 
+item . fname = newparts [ 1 ] \n 
+~~~ item . port = int ( newparts [ 2 ] ) \n 
+~~~ item . port = 0 \n 
+~~ ~~ item . id = _id \n 
+_id += 1 \n 
+item . bms_only = bms_only \n 
+item . sysop_only = sysop_only \n 
+item . zixia_only = zixia_only \n 
+item . host = hostname \n 
+self . items += [ item ] \n 
+~~ elif ( key == "Host" ) : \n 
+~~~ hostname = value \n 
+~~ elif ( key == "Port" ) : \n 
+~~~ item . port = int ( value ) \n 
+~~ ~~ elif ( key == "Attach" ) : \n 
+~~~ item . attachpos = int ( value ) \n 
+~~~ item . attachpos = 0 \n 
+~~ ~~ ~~ ~~ f . close ( ) \n 
+return 1 \n 
+~~ def GetItem ( self , user , route , has_perm = False , need_perm = False ) : \n 
+~~~ self . CheckUpdate ( ) \n 
+if ( self . mtitle . find ( "(BM:" ) != - 1 ) : \n 
+~~~ if ( Board . Board . IsBM ( user , self . mtitle [ 4 : ] , ) or user . IsSysop ( ) ) : \n 
+~~~ has_perm = True \n 
+~~ elif ( need_perm and not has_perm ) : \n 
+~~ if ( len ( route ) == 0 ) : \n 
+~~~ return self \n 
+~~ target = route [ 0 ] - 1 \n 
+_id = target \n 
+if ( _id >= len ( self . items ) ) : \n 
+~~ while ( self . items [ _id ] . EffectiveId ( user ) < target ) : \n 
+~~~ _id += 1 \n 
+~~ ~~ item = self . items [ _id ] \n 
+item . mtitle = item . title \n 
+if ( len ( route ) == 1 ) : \n 
+~~~ return item \n 
+~~~ if ( item . IsDir ( ) ) : \n 
+~~~ if ( not item . CheckUpdate ( ) ) : \n 
+~~ return item . GetItem ( user , route [ 1 : ] , has_perm , need_perm ) \n 
+~~ ~~ ~~ def GetRange ( self , user , route , start , end , has_perm = False , need_perm = False ) : \n 
+firstitem = self . GetItem ( user , route + [ start ] , has_perm , need_perm ) \n 
+if ( not firstitem ) : \n 
+~~~ return [ ] \n 
+~~ parent = self . GetItem ( user , route , has_perm , need_perm ) \n 
+if ( not parent ) : \n 
+~~ if ( not parent . IsDir ( ) ) : \n 
+~~ result = [ ] \n 
+_id = start - 1 \n 
+for i in range ( start , end + 1 ) : \n 
+~~~ target = i - 1 \n 
+if ( _id >= len ( parent . items ) ) : \n 
+~~ while ( parent . items [ _id ] . EffectiveId ( user ) < target ) : \n 
+~~~ return result \n 
+~~ ~~ item = parent . items [ _id ] \n 
+result += [ item ] \n 
+~~ return result \n 
+~~ def EffectiveId ( self , user ) : \n 
+~~~ _id = self . id \n 
+if ( user . IsSysop ( ) ) : \n 
+~~~ return _id \n 
+~~ if ( not user . IsSysop ( ) ) : \n 
+~~~ _id -= self . sysop_only \n 
+~~ if ( not user . IsBM ( ) ) : \n 
+~~~ _id -= self . bms_only \n 
+~~ if ( not user . IsSECANC ( ) ) : \n 
+~~~ _id -= self . zixia_only \n 
+~~ return _id \n 
+~~ def GetInfo ( self ) : \n 
+~~~ info = { } \n 
+info [ ] = Util . gbkDec ( self . mtitle ) \n 
+info [ ] = Util . gbkDec ( self . title ) \n 
+info [ ] = self . attachpos \n 
+if ( self . host != ) : \n 
+~~~ info [ ] = self . host \n 
+info [ ] = self . port \n 
+info [ ] = \n 
+~~ elif ( self . IsDir ( ) ) : \n 
+~~~ info [ ] = \n 
+~~ elif ( self . IsFile ( ) ) : \n 
+~~ info [ ] = int ( self . GetModTime ( ) ) \n 
+return info \n 
+~~ def GetInfoForUser ( self , user ) : \n 
+~~~ info = self . GetInfo ( ) \n 
+info [ ] = self . EffectiveId ( user ) + 1 \n 
+~~ def GetAttachLink ( self , session ) : \n 
+filename = \n 
+for i in range ( 2 ) : \n 
+~~~ filename += "%0x" % struct . unpack ( , _hash [ i * 4 : ( i + 1 ) * 4 ] ) \n 
+~~ link = "http://%s/bbscon.php?b=xattach&f=%s" % ( session . GetMirror ( Config . Config . GetInt ( , 80 ) ) , filename ) \n 
+linkfile = "%s/boards/xattach/%s" % ( Config . BBS_ROOT , filename ) \n 
+target = "../../%s" % self . path ( ) \n 
+~~~ os . symlink ( target , linkfile ) \n 
+~~ return link \n 
+~~ ~~ class Digest : \n 
+~~~ root = DigestItem ( "0Announce" ) \n 
+def __init__ ( self , board , path ) : \n 
+~~~ self . board = board \n 
+self . path = path \n 
+self . root = DigestItem ( self . path ) \n 
+def GET ( svc , session , params , action ) : \n 
+~~~ if ( session is None ) : raise Unauthorized ( ) \n 
+user = session . GetUser ( ) \n 
+boardname = svc . get_str ( params , , ) \n 
+if ( boardname ) : \n 
+~~~ board = BoardManager . BoardManager . GetBoard ( boardname ) \n 
+if ( board is None ) : raise NotFound ( % boardname ) \n 
+if ( not board . CheckReadPerm ( user ) ) : \n 
+~~~ raise NoPerm ( ) \n 
+~~ basenode = board . digest . root \n 
+has_perm = user . IsDigestMgr ( ) or user . IsSysop ( ) or user . IsSuperBM ( ) \n 
+~~~ basenode = Digest . root \n 
+has_perm = user . IsDigestMgr ( ) \n 
+~~ if ( action == "list" ) : \n 
+~~~ route = svc . get_str ( params , ) \n 
+start = svc . get_int ( params , , 1 ) \n 
+end = svc . get_int ( params , , start + DEFAULT_DIGEST_LIST_COUNT - 1 ) \n 
+Digest . List ( svc , basenode , route , start , end , session , has_perm ) \n 
+~~ elif ( action == "view" ) : \n 
+start = svc . get_int ( params , , 0 ) \n 
+count = svc . get_int ( params , , 0 ) \n 
+Digest . View ( svc , basenode , route , session , has_perm , start , count ) \n 
+~~~ raise WrongArgs ( % action ) \n 
+def ParseRoute ( route ) : \n 
+~~~ ret = [ ] \n 
+items = re . split ( , route ) \n 
+items = items [ 1 : ] \n 
+for item in items : \n 
+~~~ ret += [ int ( item ) ] \n 
+~~~ raise WrongArgs ( % item ) \n 
+~~ ~~ return ret \n 
+def List ( svc , basenode , route , start , end , session , has_perm ) : \n 
+~~~ route_array = Digest . ParseRoute ( route ) \n 
+parent = basenode . GetItem ( session . GetUser ( ) , route_array , has_perm ) \n 
+~~~ raise WrongArgs ( % route ) \n 
+~~ items = basenode . GetRange ( session . GetUser ( ) , route_array , start , end , has_perm ) \n 
+result = { } \n 
+result [ ] = parent . GetInfoForUser ( session . GetUser ( ) ) \n 
+result [ ] = len ( items ) \n 
+result_list = [ ] \n 
+~~~ result_list += [ item . GetInfoForUser ( session . GetUser ( ) ) ] \n 
+~~ result [ ] = result_list \n 
+svc . writedata ( json . dumps ( result ) ) \n 
+def View ( svc , basenode , route , session , has_perm , start , count ) : \n 
+item = basenode . GetItem ( session . GetUser ( ) , route_array , has_perm ) \n 
+if ( not item ) : \n 
+~~ if ( not item . IsFile ( ) ) : \n 
+~~ result = { } \n 
+result [ ] = item . GetInfoForUser ( session . GetUser ( ) ) \n 
+postinfo = Post . Post ( item . realpath ( ) , None ) \n 
+( result [ ] , result [ ] ) = postinfo . GetContent ( start , count ) \n 
+attachlist = postinfo . GetAttachListByType ( ) \n 
+result [ ] = attachlist [ 0 ] \n 
+result [ ] = attachlist [ 1 ] \n 
+if ( attachlist [ 0 ] or attachlist [ 1 ] ) : \n 
+~~~ result [ ] = item . GetAttachLink ( session ) \n 
+~~ svc . writedata ( json . dumps ( result ) ) \n 
+~~ ~~ import time \n 
+import UserManager \n 
+import UserInfo \n 
+from Session import Session \n 
+import UCache \n 
+import MsgBox \n 
+import xmpp \n 
+import modes \n 
+import Util \n 
+import traceback \n 
+from xmpp . features import NoRoute \n 
+__disco_info_ns__ = \n 
+__disco_items_ns__ = \n 
+__vcard_ns__ = \n 
+STEAL_AFTER_SEEN = 3 \n 
+def elem_to_str ( elem ) : \n 
+~~ class XMPPServer ( xmpp . Plugin ) : \n 
+def __init__ ( self , rosters , host ) : \n 
+~~~ self . probed = False \n 
+self . _closed = False \n 
+self . rosters = rosters \n 
+self . _session = None \n 
+self . rosters . set_resources ( self . get_resources ( ) ) \n 
+self . _fixedjid = UCache . UCache . formalize_jid ( unicode ( self . authJID ) ) \n 
+self . _userid = self . _fixedjid . partition ( ) [ 0 ] . encode ( "gbk" ) \n 
+if ( not self . rosters . allow_login ( self . authJID . bare ) ) : \n 
+self . stream_error ( , ) \n 
+if self . authJID . resource [ : - 8 ] != "Resource" and len ( self . authJID . resource ) > 8 : \n 
+~~~ routes = self . routes ( self . authJID . bare ) \n 
+for route in routes : \n 
+~~~ jid = route [ 0 ] \n 
+if jid . resource [ : - 8 ] == self . authJID . resource [ : - 8 ] : \n 
+~~~ if jid . resource != self . authJID . resource : \n 
+route [ 1 ] . stream_error ( , ) \n 
+~~ ~~ else : \n 
+~~ ~~ ~~ except NoRoute : \n 
+~~ self . _user = UserManager . UserManager . LoadUser ( self . _userid ) \n 
+if ( self . _user == None ) : \n 
+~~ self . _peer_addr = self . getpeername ( ) \n 
+self . _session = Session ( self . _user , self . _peer_addr [ 0 ] ) \n 
+self . _session . RecordLogin ( ) \n 
+self . _userinfo = self . _session . Register ( ) \n 
+self . _loginid = self . _session . utmpent \n 
+self . _hostname = host \n 
+self . bind ( xmpp . ReceivedCloseStream , self . recv_close ) \n 
+self . bind ( xmpp . StreamClosed , self . stream_closed ) \n 
+self . bind ( xmpp . SentCloseStream , self . sent_close ) \n 
+self . rosters . register_conn ( self ) \n 
+msgbox = MsgBox . MsgBox ( self . _userid ) \n 
+if self . rosters . get_xmpp_read ( self . _user . GetUID ( ) ) is None : \n 
+~~~ self . rosters . set_xmpp_read ( self . _user . GetUID ( ) , msgbox . GetMsgCount ( all = False ) - msgbox . GetUnreadCount ( ) ) \n 
+~~ self . check_msg ( ) \n 
+~~ def get_loginid ( self ) : \n 
+~~~ return self . _loginid \n 
+~~ def recv_close ( self ) : \n 
+return self . close ( ) \n 
+~~ def stream_closed ( self ) : \n 
+~~ def sent_close ( self ) : \n 
+~~ def close ( self ) : \n 
+~~~ if ( self . _closed ) : \n 
+~~ self . _closed = True \n 
+if ( self . _session ) : \n 
+~~~ self . _session . Unregister ( ) \n 
+~~ self . unbind_res ( ) \n 
+self . rosters . unregister_conn ( self ) \n 
+~~ @ xmpp . iq ( ) \n 
+def ping ( self , iq ) : \n 
+self . refresh ( ) \n 
+return self . iq ( , iq ) \n 
+~~ @ xmpp . stanza ( ) \n 
+def message ( self , elem ) : \n 
+to_jid = elem . get ( ) \n 
+from_jid = elem . get ( ) \n 
+if ( from_jid == None ) : \n 
+~~~ return \n 
+~~ text_body = None \n 
+for child in elem : \n 
+~~~ if ( child . tag . endswith ( ) ) : \n 
+~~~ text_body = child . text \n 
+~~ ~~ if ( text_body == None ) : \n 
+~~ ret = self . rosters . send_msg ( from_jid , to_jid , text_body ) \n 
+if ( ret <= 0 ) : \n 
+errors = { \n 
+if ( ret in errors ) : \n 
+~~~ elem = self . E . message ( { : to_jid , \n 
+: from_jid , \n 
+: } , \n 
+self . E . body ( errors [ ret ] ) ) \n 
+self . recv ( from_jid , elem ) \n 
+~~ ~~ ~~ def make_jid ( self , userid ) : \n 
+~~~ return "%s@%s" % ( userid , self . _hostname ) \n 
+~~ def refresh ( self ) : \n 
+~~~ self . _userinfo . freshtime = int ( time . time ( ) ) \n 
+self . _userinfo . save ( ) \n 
+~~ def ping_result ( self , iq ) : \n 
+~~~ self . refresh ( ) \n 
+~~ def ping_client ( self ) : \n 
+~~~ pingelem = self . E . ping ( xmlns = ) \n 
+return self . iq ( , self . ping_result , pingelem ) \n 
+~~ except Exception as e : \n 
+Log . debug ( traceback . format_exc ( ) ) \n 
+return False \n 
+~~ ~~ def get_uid ( self ) : \n 
+~~~ return self . _user . GetUID ( ) \n 
+~~ def recv_msg ( self , from_ , msgtext ) : \n 
+~~~ elem = self . E . message ( { : from_ , : unicode ( self . authJID ) } , \n 
+self . E . body ( msgtext ) ) \n 
+self . recv ( unicode ( self . authJID ) , elem ) \n 
+~~ def check_msg ( self ) : \n 
+msg_count = msgbox . GetMsgCount ( all = False ) \n 
+my_pid = os . getpid ( ) \n 
+xmpp_read = self . rosters . get_xmpp_read ( self . _user . GetUID ( ) ) \n 
+if xmpp_read > msg_count : \n 
+~~~ xmpp_read = 0 \n 
+self . rosters . set_xmpp_read ( self . _user . GetUID ( ) , msg_count ) \n 
+if xmpp_read < msg_count : \n 
+~~~ return xmpp_read \n 
+~~~ return - 1 \n 
+~~ ~~ def deliver_msg ( self , start ) : \n 
+for i in range ( start , msg_count ) : \n 
+~~~ msghead = msgbox . LoadMsgHead ( i , all = False ) \n 
+if msghead . topid == my_pid : \n 
+~~~ msgtext = msgbox . LoadMsgText ( msghead ) \n 
+self . recv_msg ( self . make_jid ( msghead . id ) , msgtext ) \n 
+~~ ~~ ~~ def steal_msg ( self ) : \n 
+msg_unread = msgbox . GetUnreadCount ( ) \n 
+read_count = msg_count - msg_unread \n 
+term_read = self . rosters . get_term_read ( self . get_uid ( ) ) \n 
+term_stealed = self . rosters . get_term_stealed ( self . get_uid ( ) ) \n 
+all_xmpp = True \n 
+new_unread = { } \n 
+for i in range ( read_count - 1 , msg_count ) : \n 
+~~ msghead = msgbox . LoadMsgHead ( i , all = False ) \n 
+if i >= read_count and all_xmpp : \n 
+~~~ if msghead . topid == my_pid : \n 
+~~~ msgbox . GetUnreadMsg ( ) \n 
+~~~ all_xmpp = False \n 
+~~ ~~ if msghead . topid == my_pid : \n 
+~~~ session = self . rosters . find_session ( self . authJID . bare , msghead . topid ) \n 
+if session is None or session . get_mode ( ) != modes . MSG : \n 
+~~ if msghead . topid not in new_unread : \n 
+new_unread [ msghead . topid ] = i \n 
+~~ ~~ final_unread = { } \n 
+to_steal = { } \n 
+to_steal_begin = msg_count \n 
+for pid in term_read : \n 
+~~~ if pid in new_unread : \n 
+~~~ if new_unread [ pid ] == term_read [ pid ] [ 0 ] : \n 
+~~~ final_unread [ pid ] = ( term_read [ pid ] [ 0 ] , term_read [ pid ] [ 1 ] + 1 ) \n 
+if final_unread [ pid ] [ 1 ] > STEAL_AFTER_SEEN : \n 
+~~~ to_steal [ pid ] = final_unread [ pid ] \n 
+if pid in term_stealed : \n 
+~~~ steal_begin = max ( final_unread [ pid ] [ 0 ] , term_stealed [ pid ] + 1 ) \n 
+~~~ steal_begin = final_unread [ pid ] [ 0 ] \n 
+~~ if steal_begin < to_steal_begin : \n 
+~~~ to_steal_begin = steal_begin \n 
+~~ ~~ ~~ else : \n 
+~~~ final_unread [ pid ] = ( new_unread [ pid ] , 1 ) \n 
+pass \n 
+~~ ~~ for pid in new_unread : \n 
+~~~ if pid not in term_read : \n 
+final_unread [ pid ] = ( new_unread [ pid ] , 1 ) \n 
+~~ ~~ if to_steal : \n 
+for i in range ( to_steal_begin , msg_count ) : \n 
+msgbox . GetUnreadMsg ( ) \n 
+~~ elif msghead . topid in to_steal : \n 
+~~~ if msghead . topid not in term_stealed or i > term_stealed [ msghead . topid ] : \n 
+msgtext = msgbox . LoadMsgText ( msghead ) \n 
+term_stealed [ msghead . topid ] = i \n 
+~~ ~~ ~~ ~~ self . rosters . set_term_read ( self . get_uid ( ) , final_unread ) \n 
+def presence ( self , elem ) : \n 
+if self . authJID == elem . get ( ) : \n 
+~~~ if ( elem . get ( ) == None or ( not self . authJID . match_bare ( elem . get ( ) ) ) ) : \n 
+~~~ return self . send_presence ( elem ) \n 
+~~ ~~ self . recv_presence ( elem ) \n 
+~~ def send_presence ( self , elem ) : \n 
+direct = elem . get ( ) \n 
+if not direct : \n 
+~~~ self . rosters . broadcast ( self , elem ) \n 
+if elem . get ( ) != : \n 
+~~~ self . recv_presence ( elem ) \n 
+~~ if not self . probed : \n 
+~~~ self . probed = True \n 
+self . rosters . probe ( self ) \n 
+~~ ~~ elif not self . rosters . send ( self , direct , elem ) : \n 
+~~~ self . send ( direct , elem ) \n 
+~~ ~~ def recv_presence ( self , elem ) : \n 
+if not self . rosters . recv ( self , elem ) : \n 
+self . write ( elem ) \n 
+~~ ~~ @ xmpp . iq ( ) \n 
+def roster ( self , iq ) : \n 
+roster = self . rosters . get ( self ) \n 
+method = getattr ( self , % iq . get ( ) ) \n 
+return method and method ( iq , roster ) \n 
+~~ def get_roster ( self , iq , roster ) : \n 
+~~~ query = self . E . query ( { : } ) \n 
+for item in roster . items ( ) : \n 
+~~~ query . append ( item ) \n 
+~~ return self . iq ( , iq , query ) \n 
+~~ def set_roster ( self , iq , roster ) : \n 
+~~~ query = self . E . query ( xmlns = ) \n 
+for item in iq [ 0 ] : \n 
+~~~ result = roster . set ( item ) \n 
+if result is not None : \n 
+~~~ query . append ( result ) \n 
+~~ ~~ if len ( query ) > 0 : \n 
+~~~ self . push ( roster , query ) \n 
+~~ return self . iq ( , iq ) \n 
+~~ def push ( self , roster , query ) : \n 
+for jid in roster . requests ( ) : \n 
+~~~ for ( to , route ) in self . routes ( jid ) : \n 
+~~~ route . iq ( , self . ignore , query ) \n 
+~~ ~~ ~~ def ignore ( self , iq ) : \n 
+def vcard ( self , iq ) : \n 
+if iq . get ( ) == : \n 
+~~~ if ( iq . get ( ) == None ) : \n 
+~~~ target = iq . get ( ) \n 
+~~ form_target = UCache . UCache . formalize_jid ( target ) \n 
+name = form_target . partition ( ) [ 0 ] \n 
+user = UserManager . UserManager . LoadUser ( name ) \n 
+info = user . GetInfo ( ) \n 
+desc = % ( info [ ] , info [ ] , info [ ] , \n 
+info [ ] , info [ ] , info [ ] , info [ ] ) \n 
+if ( in info ) : \n 
+~~~ desc += "Plan:\\r%s" % ( info [ ] . replace ( , ) ) \n 
+~~ vcard = self . E . vCard ( { : } , \n 
+self . E ( , name ) , \n 
+self . E ( , Util . Util . RemoveTags ( info [ ] ) ) , \n 
+self . E ( , Util . Util . RemoveTags ( desc ) ) ) \n 
+if ( iq . get ( ) == None ) : \n 
+~~~ return self . iq ( , iq , vcard ) \n 
+~~~ return self . iq ( , iq , vcard , { : iq . get ( ) } ) \n 
+~~ ~~ ~~ @ xmpp . iq ( % __disco_info_ns__ ) \n 
+def disco_info ( self , iq ) : \n 
+target = iq . get ( ) \n 
+if ( target . find ( ) < 0 ) : \n 
+~~~ query = self . E . query ( { : __disco_info_ns__ } , \n 
+self . E . identity ( { : , \n 
+: , \n 
+: Config . Config . GetString ( , ) , \n 
+} ) ) \n 
+features = [ __disco_info_ns__ , __disco_items_ns__ , __vcard_ns__ ] \n 
+for feature in features : \n 
+~~~ query . append ( self . E . feature ( { : feature } ) ) \n 
+~~ ~~ return self . iq ( , iq , query , { : target } ) \n 
+~~ @ xmpp . iq ( % __disco_items_ns__ ) \n 
+def disco_items ( self , iq ) : \n 
+~~~ query = self . E . query ( { : __disco_items_ns__ } ) \n 
+~~ return self . iq ( , iq , query , { : target } ) \n 
+### \n 
+~~ ~~ from __future__ import print_function \n 
+from __future__ import unicode_literals \n 
+from __future__ import division \n 
+from __future__ import absolute_import \n 
+from builtins import range \n 
+from future import standard_library \n 
+standard_library . install_aliases ( ) \n 
+PYTHON_VERSION = sys . version_info [ : 3 ] \n 
+PY2 = ( PYTHON_VERSION [ 0 ] == 2 ) \n 
+if PY2 : \n 
+~~~ if PYTHON_VERSION < ( 2 , 7 , 9 ) : \n 
+~~~ raise Exception ( ) \n 
+~~ ~~ elif PYTHON_VERSION < ( 3 , 4 ) : \n 
+~~ import hpOneView as hpov \n 
+from pprint import pprint \n 
+from hpOneView . common import uri \n 
+import hpOneView . profile as profile \n 
+def acceptEULA ( con ) : \n 
+~~~ con . get_eula_status ( ) \n 
+~~~ if con . get_eula_status ( ) is True : \n 
+~~~ print ( ) \n 
+con . set_eula ( ) \n 
+~~ ~~ except Exception as e : \n 
+print ( e ) \n 
+~~ ~~ def login ( con , credential ) : \n 
+~~~ con . login ( credential ) \n 
+~~ ~~ def get_eg_uri_from_arg ( srv , name ) : \n 
+~~~ if srv and name : \n 
+~~~ if name . startswith ( ) and uri [ ] in name : \n 
+~~~ return name \n 
+~~~ egs = srv . get_enclosure_groups ( ) \n 
+for eg in egs : \n 
+~~~ if eg [ ] == name : \n 
+~~~ return eg [ ] \n 
+~~ ~~ ~~ ~~ return None \n 
+~~ def get_sht_from_arg ( srv , name ) : \n 
+~~~ shts = srv . get_server_hardware_types ( ) \n 
+for sht in shts : \n 
+~~~ if sht [ ] == name : \n 
+~~~ return sht \n 
+~~ def define_profile_template ( \n 
+srv , \n 
+name , \n 
+desc , \n 
+sp_desc , \n 
+server_hwt , \n 
+enc_group , \n 
+affinity , \n 
+hide_flexnics , \n 
+conn_list , \n 
+fw_settings , \n 
+boot , \n 
+bootmode ) : \n 
+~~~ if conn_list : \n 
+~~~ conn = json . loads ( open ( conn_list ) . read ( ) ) \n 
+~~~ conn = [ ] \n 
+~~ profile_template = srv . create_server_profile_template ( \n 
+name = name , \n 
+description = desc , \n 
+serverProfileDescription = sp_desc , \n 
+serverHardwareTypeUri = server_hwt , \n 
+enclosureGroupUri = enc_group , \n 
+affinity = affinity , \n 
+hideUnusedFlexNics = hide_flexnics , \n 
+profileConnectionV4 = conn , \n 
+firmwareSettingsV3 = fw_settings , \n 
+bootSettings = boot , \n 
+bootModeSetting = bootmode ) \n 
+if in profile_template : \n 
+~~~ print ( , profile_template [ ] ) \n 
+print ( , profile_template [ ] ) \n 
+print ( ) \n 
+for connection in profile_template [ ] : \n 
+~~~ print ( , connection [ ] ) \n 
+print ( , connection [ ] ) \n 
+~~ print ( ) \n 
+print ( , profile_template [ ] [ ] ) \n 
+print ( , profile_template [ ] [ ] , ) \n 
+~~~ pprint ( profile_template ) \n 
+~~ ~~ def main ( ) : \n 
+~~~ parser = argparse . ArgumentParser ( add_help = True , \n 
+formatter_class = argparse . RawTextHelpFormatter , \n 
+description = ) \n 
+parser . add_argument ( , dest = , required = True , \n 
+help = ) \n 
+parser . add_argument ( , dest = , required = False , \n 
+default = , \n 
+parser . add_argument ( , dest = , \n 
+required = True , \n 
+required = False , \n 
+required = False , choices = [ , ] , \n 
+action = , \n 
+nargs = , \n 
+choices = [ , , ] , \n 
+choices = [ , , , \n 
+, ] , \n 
+args = parser . parse_args ( ) \n 
+credential = { : args . user , : args . passwd } \n 
+con = hpov . connection ( args . host ) \n 
+srv = hpov . servers ( con ) \n 
+sts = hpov . settings ( con ) \n 
+if args . proxy : \n 
+~~~ con . set_proxy ( args . proxy . split ( ) [ 0 ] , args . proxy . split ( ) [ 1 ] ) \n 
+~~ if args . cert : \n 
+~~~ con . set_trusted_ssl_bundle ( args . cert ) \n 
+~~ login ( con , credential ) \n 
+acceptEULA ( con ) \n 
+eg_uri = get_eg_uri_from_arg ( srv , args . enc_group ) \n 
+sht = get_sht_from_arg ( srv , args . server_hwt ) \n 
+fw_settings = profile . make_firmware_dict ( sts , args . baseline ) \n 
+boot , bootmode = profile . make_boot_settings_dict ( srv , sht , args . disable_manage_boot , \n 
+args . boot_order , args . boot_mode , args . pxe ) \n 
+define_profile_template ( srv , \n 
+args . name , \n 
+args . desc , \n 
+args . sp_desc , \n 
+sht [ ] , \n 
+eg_uri , \n 
+args . affinity , \n 
+args . hide_flexnics , \n 
+args . conn_list , \n 
+bootmode ) \n 
+~~ if __name__ == : \n 
+~~~ import argparse \n 
+sys . exit ( main ( ) ) \n 
+~~ from __future__ import print_function \n 
+~~ ~~ def get_address_pools ( con , srv , types ) : \n 
+~~~ if types == or types == : \n 
+~~~ vmac = srv . get_vmac_pool ( ) \n 
+for key in sorted ( vmac ) : \n 
+~~~ print ( . format ( key , vmac [ key ] ) ) \n 
+~~ if in vmac : \n 
+~~~ for uri in vmac [ ] : \n 
+~~~ ranges = con . get ( uri ) \n 
+print ( , ranges [ ] ) \n 
+~~ ~~ ~~ if types == or types == : \n 
+~~~ vwwn = srv . get_vwwn_pool ( ) \n 
+for key in sorted ( vwwn ) : \n 
+~~~ print ( . format ( key , vwwn [ key ] ) ) \n 
+~~ if in vwwn : \n 
+~~~ for uri in vwwn [ ] : \n 
+~~~ vsn = srv . get_vsn_pool ( ) \n 
+for key in sorted ( vsn ) : \n 
+~~~ print ( . format ( key , vsn [ key ] ) ) \n 
+~~ if in vsn : \n 
+~~~ for uri in vsn [ ] : \n 
+~~ ~~ ~~ ~~ def main ( ) : \n 
+choices = [ , , , ] , default = , \n 
+credential = { : args . domain . upper ( ) , : args . user , : args . passwd } \n 
+get_address_pools ( con , srv , args . types ) \n 
+~~~ import sys \n 
+import argparse \n 
+~~ ~~ def get_managed_sans ( fcs ) : \n 
+~~~ sans = fcs . get_managed_sans ( ) \n 
+pprint ( sans ) \n 
+~~ def main ( ) : \n 
+fcs = hpov . fcsans ( con ) \n 
+get_managed_sans ( fcs ) \n 
+~~ ~~ def getpolicy ( sts ) : \n 
+~~~ policy = sts . get_storage_vol_template_policy ( ) \n 
+print ( policy [ ] ) \n 
+getpolicy ( sts ) \n 
+from __future__ import print_function \n 
+__title__ = \n 
+__version__ = \n 
+__copyright__ = \n 
+__license__ = \n 
+__status__ = \n 
+from hpOneView . common import * \n 
+from hpOneView . connection import * \n 
+from hpOneView . activity import * \n 
+from hpOneView . exceptions import * \n 
+class servers ( object ) : \n 
+~~~ def __init__ ( self , con ) : \n 
+~~~ self . _con = con \n 
+self . _activity = activity ( con ) \n 
+########################################################################### \n 
+~~ def get_connections ( self , filter = ) : \n 
+return get_members ( self . _con . get ( uri [ ] + filter ) ) \n 
+~~ def get_connection ( self , server ) : \n 
+body = self . _con . get ( server [ ] ) \n 
+return body \n 
+~~ def get_server_by_bay ( self , baynum ) : \n 
+~~~ servers = get_members ( self . _con . get ( uri [ ] ) ) \n 
+for server in servers : \n 
+~~~ if server [ ] == baynum : \n 
+~~~ return server \n 
+~~ ~~ ~~ def get_server_by_name ( self , name ) : \n 
+~~~ if server [ ] == name : \n 
+~~ ~~ ~~ def get_available_servers ( self , server_hardware_type = None , \n 
+enclosure_group = None , server_profile = None ) : \n 
+~~~ filters = [ ] \n 
+if server_hardware_type : \n 
+~~~ filters . append ( + server_hardware_type [ ] ) \n 
+~~ if enclosure_group : \n 
+~~~ filters . append ( + enclosure_group [ ] ) \n 
+~~ if server_profile : \n 
+~~~ filters . append ( + server_profile [ ] ) \n 
+~~ query_string = \n 
+if filters : \n 
+~~~ query_string = + . join ( filters ) \n 
+~~ return self . _con . get ( uri [ ] + query_string ) \n 
+~~ def get_servers ( self ) : \n 
+~~~ return get_members ( self . _con . get ( uri [ ] ) ) \n 
+~~ def get_utilization ( self , server ) : \n 
+body = self . _con . get ( server [ ] + ) \n 
+~~ def get_env_conf ( self , server ) : \n 
+~~ def set_server_powerstate ( self , server , state , force = False , blocking = True , \n 
+verbose = False ) : \n 
+~~~ if state == and force is True : \n 
+~~~ powerRequest = make_powerstate_dict ( , ) \n 
+~~ elif state == and force is False : \n 
+~~ elif state == : \n 
+~~ task , body = self . _con . put ( server [ ] + , powerRequest ) \n 
+if blocking is True : \n 
+~~~ task = self . _activity . wait4task ( task , tout = 60 , verbose = verbose ) \n 
+~~ return task \n 
+~~ def delete_server ( self , server , force = False , blocking = True , verbose = False ) : \n 
+~~~ if force : \n 
+~~~ task , body = self . _con . delete ( server [ ] + ) \n 
+~~~ task , body = self . _con . delete ( server [ ] ) \n 
+~~ if blocking is True : \n 
+~~~ task = self . _activity . wait4task ( task , tout = 600 , verbose = verbose ) \n 
+~~ def update_server ( self , server ) : \n 
+~~~ task , body = self . _con . put ( server [ ] , server ) \n 
+~~ def add_server ( self , server , blocking = True , verbose = False ) : \n 
+~~~ task , body = self . _con . post ( uri [ ] , server ) \n 
+if in task and task [ ] . startswith ( ) : \n 
+~~~ entity = self . _activity . get_task_associated_resource ( task ) \n 
+server = self . _con . get ( entity [ ] ) \n 
+return server \n 
+~~ ~~ return task \n 
+~~ def get_server_schema ( self ) : \n 
+return self . _con . get ( uri [ ] + ) \n 
+~~ def get_bios ( self , server ) : \n 
+return self . _con . get ( server [ ] + ) \n 
+~~ def get_ilo_sso_url ( self , server ) : \n 
+~~ def get_java_remote_console_url ( self , server ) : \n 
+~~ def get_remote_console_url ( self , server ) : \n 
+~~ def get_server_hardware_types ( self ) : \n 
+body = self . _con . get ( uri [ ] ) \n 
+return get_members ( body ) \n 
+~~ def remove_server_hardware_type ( self , server_hardware_type , force = False , blocking = True , verbose = False ) : \n 
+if force : \n 
+~~~ task , body = self . _con . delete ( server_hardware_type [ ] + ) \n 
+~~~ task , body = self . _con . delete ( server_hardware_type [ ] ) \n 
+~~ def get_server_type_schema ( self ) : \n 
+~~ def get_server_hardware_type ( self , server_type ) : \n 
+return self . _con . get ( server_type [ ] ) \n 
+~~ def set_server_hardware_type ( self , server_hardware_type , name , description ) : \n 
+request = make_server_type_dict ( name , description ) \n 
+task , body = self . _con . put ( server_hardware_type [ ] , request ) \n 
+return task \n 
+~~ def create_server_profile ( self , \n 
+affinity = , \n 
+biosSettings = None , \n 
+bootSettings = None , \n 
+bootModeSetting = None , \n 
+profileConnectionV4 = None , \n 
+description = None , \n 
+firmwareSettingsV3 = None , \n 
+hideUnusedFlexNics = True , \n 
+localStorageSettingsV3 = None , \n 
+macType = , \n 
+name = None , \n 
+sanStorageV3 = None , \n 
+serialNumber = None , \n 
+serialNumberType = , \n 
+serverHardwareTypeUri = None , \n 
+serverHardwareUri = None , \n 
+serverProfileTemplateUri = None , \n 
+uuid = None , \n 
+wwnType = , \n 
+blocking = True , verbose = False ) : \n 
+profile = make_ServerProfileV5 ( affinity , biosSettings , bootSettings , \n 
+bootModeSetting , profileConnectionV4 , \n 
+description , firmwareSettingsV3 , \n 
+hideUnusedFlexNics , \n 
+localStorageSettingsV3 , macType , name , \n 
+sanStorageV3 , serialNumber , \n 
+serialNumberType , serverHardwareTypeUri , \n 
+serverHardwareUri , \n 
+serverProfileTemplateUri , uuid , wwnType ) \n 
+task , body = self . _con . post ( uri [ ] , profile ) \n 
+if profile [ ] is None : \n 
+~~~ tout = 600 \n 
+~~~ tout = 3600 \n 
+~~~ task = self . _activity . wait4task ( task , tout , verbose = verbose ) \n 
+profile = self . _con . get ( entity [ ] ) \n 
+return profile \n 
+~~ def post_server_profile ( self , profile , blocking = True , verbose = False ) : \n 
+~~ def remove_server_profile ( self , profile , force = False , blocking = True , verbose = False ) : \n 
+~~~ task , body = self . _con . delete ( profile [ ] + ) \n 
+~~~ task , body = self . _con . delete ( profile [ ] ) \n 
+~~ def get_server_profiles ( self ) : \n 
+~~~ body = self . _con . get ( uri [ ] ) \n 
+~~ def update_server_profile ( self , profile , blocking = True , verbose = False ) : \n 
+~~~ task , body = self . _con . put ( profile [ ] , profile ) \n 
+~~~ if profile [ ] [ ] is None : \n 
+~~ ~~ except Exception : \n 
+~~~ task = self . _activity . wait4task ( task , tout = tout , verbose = verbose ) \n 
+~~ profileResource = self . _activity . get_task_associated_resource ( task ) \n 
+profile = self . _con . get ( profileResource [ ] ) \n 
+~~ def update_server_profile_from_template ( self , profile , blocking = True , verbose = False ) : \n 
+~~~ patch_request = [ { : , : , : } ] \n 
+task , body = self . _con . patch ( profile [ ] , patch_request ) \n 
+~~ ~~ def get_server_profile_by_name ( self , name ) : \n 
+~~~ body = self . _con . get_entity_byfield ( uri [ ] , , name ) \n 
+~~ def get_profile_message ( self , profile ) : \n 
+message = self . _con . get ( profile [ ] + ) \n 
+return message \n 
+~~ def get_profile_compliance_preview ( self , profile ) : \n 
+return self . _con . get ( profile [ ] + ) \n 
+~~ def create_server_profile_template ( \n 
+self , \n 
+serverProfileDescription = None , \n 
+enclosureGroupUri = None , \n 
+affinity = None , \n 
+hideUnusedFlexNics = None , \n 
+blocking = True , \n 
+profile_template = make_ServerProfileTemplateV1 ( name , \n 
+description , \n 
+serverProfileDescription , \n 
+serverHardwareTypeUri , \n 
+enclosureGroupUri , \n 
+profileConnectionV4 , \n 
+firmwareSettingsV3 , \n 
+bootSettings , \n 
+bootModeSetting ) \n 
+task , body = self . _con . post ( uri [ ] , profile_template ) \n 
+tout = 600 \n 
+profile_template = self . _con . get ( entity [ ] ) \n 
+return profile_template \n 
+~~ def remove_server_profile_template ( self , profile_template , blocking = True , verbose = False ) : \n 
+~~~ task , body = self . _con . delete ( profile_template [ ] ) \n 
+~~ return body \n 
+~~ def get_server_profile_templates ( self ) : \n 
+~~ def get_server_profile_template_by_name ( self , name ) : \n 
+~~ def update_server_profile_template ( self , profile_template , blocking = True , verbose = False ) : \n 
+~~~ task , body = self . _con . put ( profile_template [ ] , profile_template ) \n 
+~~ profileTemplateResource = self . _activity . get_task_associated_resource ( task ) \n 
+profile = self . _con . get ( profileTemplateResource [ ] ) \n 
+~~ def get_server_profile_from_template ( self , profile_template ) : \n 
+~~~ profile = self . _con . get ( profile_template [ ] + ) \n 
+~~ def get_enclosures ( self ) : \n 
+~~ def add_enclosure ( self , enclosure , blocking = True , verbose = False ) : \n 
+~~~ task , body = self . _con . post ( uri [ ] , enclosure ) \n 
+if enclosure [ ] is : \n 
+~~ elif enclosure [ ] is None : \n 
+enclosure = self . _con . get ( entity [ ] ) \n 
+return enclosure \n 
+~~ def remove_enclosure ( self , enclosure , force = False , blocking = True , \n 
+~~~ task , body = self . _con . delete ( enclosure [ ] + ) \n 
+~~~ task , body = self . _con . delete ( enclosure [ ] ) \n 
+~~ def create_enclosure_group ( self , associatedLIGs , name , \n 
+powerMode = ) : \n 
+egroup = make_EnclosureGroupV200 ( associatedLIGs , name , powerMode ) \n 
+task , body = self . _con . post ( uri [ ] , egroup ) \n 
+~~ def delete_enclosure_group ( self , egroup ) : \n 
+~~~ self . _con . delete ( egroup [ ] ) \n 
+~~ def get_enclosure_groups ( self ) : \n 
+~~ def update_enclosure_group ( self , enclosuregroup ) : \n 
+~~~ task , body = self . _con . put ( enclosuregroup [ ] , enclosuregroup ) \n 
+~~ def get_pool ( self , pooltype ) : \n 
+~~~ body = self . _con . get ( uri [ ] + + pooltype ) \n 
+~~ def get_vmac_pool ( self ) : \n 
+~~ def get_vwwn_pool ( self ) : \n 
+~~ def get_vsn_pool ( self ) : \n 
+~~ def get_profile_networks ( self ) : \n 
+~~ def get_profile_schema ( self ) : \n 
+~~~ return self . _con . get ( uri [ ] ) \n 
+~~ def get_profile_available_servers ( self ) : \n 
+~~ def get_profile_available_storage_systems ( self ) : \n 
+~~ def get_profile_ports ( self ) : \n 
+~~ def allocate_pool_ids ( self , url , count ) : \n 
+~~~ allocatorUrl = % url \n 
+allocatorBody = { : count } \n 
+task , body = self . _con . put ( allocatorUrl , allocatorBody ) \n 
+~~ def release_pool_ids ( self , url , idList ) : \n 
+~~~ collectorUrl = % url \n 
+collectorBody = { : idList } \n 
+task , body = self . _con . put ( collectorUrl , collectorBody ) \n 
+~~ def allocate_range_ids ( self , allocatorUrl , count ) : \n 
+~~~ task , body = self . _con . put ( allocatorUrl , { : count } ) \n 
+~~ def release_range_ids ( self , collectorUrl , idList ) : \n 
+~~~ task , body = self . _con . put ( collectorUrl , { : idList } ) \n 
+~~ def enable_range ( self , url ) : \n 
+~~~ prange = self . _con . get ( url ) \n 
+prange [ ] = True \n 
+task , body = self . _con . put ( url , prange ) \n 
+~~ def disable_range ( self , url ) : \n 
+prange [ ] = False \n 
+~~ ~~ from . constants import MILLI_MICROS , SECOND_MICROS , MINUTE_MICROS \n 
+import calendar \n 
+from datetime import datetime \n 
+from dateutil import parser \n 
+from dateutil . tz import tzlocal \n 
+from . error import TimeConstructionError \n 
+from . sanedelta import SaneDelta \n 
+import pytz \n 
+MICROS_TRANSLATIONS = ( \n 
+( ( , , , , ) , MINUTE_MICROS ) , \n 
+( ( , , , , ) , SECOND_MICROS ) , \n 
+( ( , , , , ) , MILLI_MICROS ) , \n 
+( ( , , , , ) , 1 ) ) \n 
+MICROS_TRANSLATION_HASH = dict ( ( alt , v ) for k , v in MICROS_TRANSLATIONS for alt in k ) \n 
+class SaneTime ( object ) : \n 
+def __init__ ( self , * args , ** kwargs ) : \n 
+super ( time , self ) . __init__ ( ) \n 
+uss = set ( ) \n 
+tzs = set ( ) \n 
+naive_dt = None \n 
+avoid_localize = False \n 
+for k , v in kwargs . iteritems ( ) : \n 
+~~~ if k in ( , ) : \n 
+~~~ tzs . add ( SaneTime . to_timezone ( v ) ) \n 
+~~ elif k in MICROS_TRANSLATION_HASH : \n 
+~~~ uss . add ( MICROS_TRANSLATION_HASH [ k ] * v ) \n 
+~~ ~~ args = list ( args ) \n 
+if len ( args ) > 2 and len ( args ) <= 8 : \n 
+~~~ args = [ datetime ( * args ) ] \n 
+~~ if len ( args ) == 2 : \n 
+~~~ tzs . add ( SaneTime . to_timezone ( args . pop ( ) ) ) \n 
+~~ if len ( args ) == 1 : \n 
+~~~ arg = args . pop ( ) \n 
+if hasattr ( arg , ) : \n 
+~~~ uss . add ( int ( arg ) ) \n 
+if hasattr ( arg , ) : tzs . add ( arg . tz ) \n 
+~~ elif isinstance ( arg , basestring ) : \n 
+~~~ parts = arg . strip ( ) . split ( ) \n 
+if len ( parts ) > 1 and parts [ - 1 ] . startswith ( ) : \n 
+~~~ tzs . add ( SaneTime . to_timezone ( parts [ - 1 ] [ 1 : ] ) ) \n 
+arg = . join ( parts [ : - 1 ] ) \n 
+~~ except : pass \n 
+~~ utc = arg . endswith ( ) or arg . endswith ( ) \n 
+arg = parser . parse ( arg ) \n 
+~~~ if utc : \n 
+~~~ tzs . add ( pytz . utc ) \n 
+arg = arg . replace ( tzinfo = None ) \n 
+~~~ arg = arg . replace ( tzinfo = None ) \n 
+~~~ avoid_localize = True \n 
+arg = arg . astimezone ( pytz . utc ) . replace ( tzinfo = None ) \n 
+~~ ~~ ~~ if type ( arg ) == datetime : \n 
+~~~ naive_dt = arg \n 
+if naive_dt . tzinfo : \n 
+~~~ tzs . add ( SaneTime . to_timezone ( str ( naive_dt . tzinfo ) ) ) \n 
+naive_dt = naive_dt . replace ( tzinfo = None ) \n 
+~~ ~~ ~~ if len ( tzs ) > 1 : \n 
+~~ self . tz = len ( tzs ) and tzs . pop ( ) or pytz . utc \n 
+if naive_dt : \n 
+~~~ if avoid_localize : \n 
+~~~ uss . add ( SaneTime . utc_datetime_to_us ( naive_dt ) ) \n 
+~~~ uss . add ( SaneTime . utc_datetime_to_us ( self . tz . localize ( naive_dt ) . astimezone ( pytz . utc ) ) ) \n 
+~~ ~~ if len ( uss ) == 0 : \n 
+~~~ uss . add ( SaneTime . utc_datetime_to_us ( datetime . utcnow ( ) ) ) \n 
+~~ if len ( uss ) > 1 : \n 
+~~ self . us = uss . pop ( ) \n 
+if len ( args ) > 0 : \n 
+~~ ~~ @ property \n 
+def ms ( self ) : return self . us / MILLI_MICROS \n 
+epoch_milliseconds = epoch_millis = milliseconds = millis = ms \n 
+def s ( self ) : return self . us / SECOND_MICROS \n 
+epoch_seconds = epoch_secs = seconds = secs = s \n 
+def m ( self ) : return self . us / MINUTE_MICROS \n 
+epoch_minutes = epoch_mins = minutes = mins = m \n 
+def micros ( self ) : return self . us \n 
+epoch_microseconds = epoch_micros = microseconds = micros \n 
+def tz_name ( self ) : return self . tz . zone \n 
+def tz_abbr ( self ) : return self . tz . _tzname \n 
+def set_tz ( self , tz ) : \n 
+~~~ self . tz = self . __class__ . to_timezone ( tz ) ; return self \n 
+~~ def with_tz ( self , tz ) : \n 
+~~~ return self . __class__ ( self . us , tz ) \n 
+~~ @ property \n 
+def _tuple ( self ) : return ( self . us , self . tz ) \n 
+def strftime ( self , * args , ** kwargs ) : return self . datetime . strftime ( * args , ** kwargs ) \n 
+def __cmp__ ( self , other ) : \n 
+~~~ if not hasattr ( other , ) : other = SaneTime ( other ) \n 
+return cmp ( self . us , int ( other ) ) \n 
+~~ def __hash__ ( self ) : return self . us . __hash__ ( ) \n 
+def __add__ ( self , operand ) : \n 
+~~~ if not hasattr ( operand , ) : operand = SaneTime ( operand ) \n 
+return self . __class__ ( self . us + int ( operand ) , tz = self . tz ) \n 
+~~ def __sub__ ( self , operand ) : \n 
+if isinstance ( operand , SaneTime ) : return SaneDelta ( self . us - int ( operand ) ) \n 
+return self . __add__ ( - int ( operand ) ) \n 
+~~ def __mul__ ( self , operand ) : \n 
+~~~ return self . us * int ( operand ) \n 
+~~ def __div__ ( self , operand ) : \n 
+~~~ return self . us / int ( operand ) \n 
+~~ def __int__ ( self ) : return int ( self . us ) \n 
+def __long__ ( self ) : return long ( self . us ) \n 
+def __repr__ ( self ) : return u"SaneTime(%s,%s)" % ( self . us , repr ( self . tz ) ) \n 
+def __str__ ( self ) : return unicode ( self ) . encode ( ) \n 
+def __unicode__ ( self ) : \n 
+~~~ dt = self . datetime \n 
+micros = u".%06d" % dt . microsecond if dt . microsecond else \n 
+~~ def clone ( self ) : \n 
+return self . __class__ ( self . us , self . tz ) \n 
+def ny_str ( self ) : \n 
+return self . ny_ndt . strftime ( ) \n 
+def utc_datetime ( self ) : return SaneTime . us_to_utc_datetime ( self . us ) \n 
+utc_dt = utc_datetime \n 
+def utc_naive_datetime ( self ) : return self . utc_datetime . replace ( tzinfo = None ) \n 
+utc_ndt = utc_naive_datetime \n 
+def to_timezoned_datetime ( self , tz ) : return self . utc_datetime . astimezone ( SaneTime . to_timezone ( tz ) ) \n 
+def to_timezoned_naive_datetime ( self , tz ) : return self . to_timezoned_datetime ( tz ) . replace ( tzinfo = None ) \n 
+def datetime ( self ) : return self . to_timezoned_datetime ( self . tz ) \n 
+dt = datetime \n 
+def naive_datetime ( self ) : return self . to_timezoned_naive_datetime ( self . tz ) \n 
+ndt = naive_datetime \n 
+def ny_datetime ( self ) : return self . to_timezoned_datetime ( ) \n 
+ny_dt = ny_datetime \n 
+def ny_naive_datetime ( self ) : return self . to_timezoned_naive_datetime ( ) \n 
+ny_ndt = ny_naive_datetime \n 
+def year ( self ) : return self . dt . year \n 
+def month ( self ) : return self . dt . month \n 
+def day ( self ) : return self . dt . day \n 
+def hour ( self ) : return self . dt . hour \n 
+def minute ( self ) : return self . dt . minute \n 
+def second ( self ) : return self . dt . second \n 
+def microsecond ( self ) : return self . dt . microsecond \n 
+@ classmethod \n 
+def utc_datetime_to_us ( kls , dt ) : \n 
+~~~ return calendar . timegm ( dt . timetuple ( ) ) * 1000 ** 2 + dt . microsecond \n 
+~~ @ classmethod \n 
+def us_to_utc_datetime ( kls , us ) : \n 
+~~~ return pytz . utc . localize ( datetime . utcfromtimestamp ( us / 10 ** 6 ) ) . replace ( microsecond = us % 10 ** 6 ) \n 
+def to_timezone ( kls , tz ) : \n 
+~~~ if not isinstance ( tz , basestring ) : return tz \n 
+return pytz . timezone ( tz ) \n 
+~~ ~~ def ntime ( * args , ** kwargs ) : \n 
+~~~ if args : \n 
+~~~ if args [ 0 ] is None : return None \n 
+~~ elif kwargs : \n 
+~~~ if None in [ v for k , v in kwargs . iteritems ( ) if k != ] : return None \n 
+~~ return SaneTime ( * args , ** kwargs ) \n 
+~~ time = sanetime = SaneTime \n 
+nsanetime = ntime \n 
+from tastypie . authorization import Authorization \n 
+from openpds . authentication import OAuth2Authentication \n 
+from openpds . core . models import Profile , AuditEntry \n 
+import settings \n 
+import pdb \n 
+class PDSAuthorization ( Authorization ) : \n 
+~~~ audit_enabled = True \n 
+scope = "" \n 
+requester_uuid = "" \n 
+def requester ( self ) : \n 
+~~~ return self . requester_uuid \n 
+~~ def trustWrapper ( self , datastore_owner ) : \n 
+~~ def is_authorized ( self , request , object = None ) : \n 
+~~~ authenticator = OAuth2Authentication ( self . scope ) \n 
+if "datastore_owner__uuid" in request . REQUEST : \n 
+~~~ authorized = True \n 
+token = request . REQUEST [ "bearer_token" ] if "bearer_token" in request . REQUEST else request . META [ "HTTP_BEARER_TOKEN" ] \n 
+datastore_owner_uuid = request . REQUEST [ "datastore_owner__uuid" ] \n 
+datastore_owner , ds_owner_created = Profile . objects . get_or_create ( uuid = datastore_owner_uuid ) \n 
+self . requester_uuid = authenticator . get_userinfo_from_token ( token , self . scope ) \n 
+if self . requester_uuid is False or self . requester_uuid is None or len ( self . requester_uuid ) == 0 : \n 
+~~~ self . requester_uuid = "not-specified" \n 
+authorized = False \n 
+~~ self . trustWrapper ( datastore_owner ) \n 
+~~~ if ( self . audit_enabled ) : \n 
+#pdb.set_trace() \n 
+~~~ audit_entry = AuditEntry ( token = token ) \n 
+audit_entry . method = request . method \n 
+audit_entry . scope = self . scope \n 
+audit_entry . purpose = request . REQUEST [ "purpose" ] if "purpose" in request . REQUEST else "" \n 
+audit_entry . system_entity_toggle = request . REQUEST [ "system_entity" ] if "system_entity" in request . REQUEST else False \n 
+audit_entry . datastore_owner = datastore_owner \n 
+audit_entry . requester , created = Profile . objects . get_or_create ( uuid = self . requester_uuid ) \n 
+audit_entry . script = request . path \n 
+audit_entry . save ( ) \n 
+~~~ print e \n 
+~~ return authorized \n 
+~~ return False \n 
+~~ def __init__ ( self , scope , audit_enabled = True ) : \n 
+~~~ self . scope = scope \n 
+self . audit_enabled = audit_enabled \n 
+from django import template \n 
+register = template . Library ( ) \n 
+class VerbatimNode ( template . Node ) : \n 
+~~~ def __init__ ( self , text ) : \n 
+~~~ self . text = text \n 
+~~ def render ( self , context ) : \n 
+~~~ return self . text \n 
+~~ ~~ @ register . tag \n 
+def verbatim ( parser , token ) : \n 
+~~~ text = [ ] \n 
+while 1 : \n 
+~~~ token = parser . tokens . pop ( 0 ) \n 
+if token . contents == : \n 
+~~~ break \n 
+~~ if token . token_type == template . TOKEN_VAR : \n 
+~~~ text . append ( ) \n 
+~~ elif token . token_type == template . TOKEN_BLOCK : \n 
+~~ text . append ( token . contents ) \n 
+if token . token_type == template . TOKEN_VAR : \n 
+~~ ~~ return VerbatimNode ( . join ( text ) ) \n 
+~~ from django . shortcuts import render_to_response \n 
+from django . template import RequestContext \n 
