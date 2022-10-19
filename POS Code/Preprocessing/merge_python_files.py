@@ -2,7 +2,7 @@ import os
 
 
 folder = "./py150_files/"
-file_name = "python50k_eval.txt"
+file_name = "train.txt"
 f = open(os.path.join(folder,file_name),'r')
 # this way will remove the newline.
 eval_files = f.read().splitlines()

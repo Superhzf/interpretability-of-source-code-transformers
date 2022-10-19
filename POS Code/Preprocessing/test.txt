@@ -1,0 +1,7 @@
+data/IDSIA/brainstorm/brainstorm/layers/batch_normalization_layer.py
+data/IDSIA/brainstorm/brainstorm/scorers.py
+data/IDSIA/brainstorm/brainstorm/tests/test_schedules.py
+data/IDSIA/brainstorm/docs/conf.py
+data/Ivaylo-Popov/Theano-Lights/models/lm_gru.py
+data/Lasagne/Lasagne/lasagne/layers/base.py
+data/Lasagne/Lasagne/lasagne/tests/layers/test_merge.py
