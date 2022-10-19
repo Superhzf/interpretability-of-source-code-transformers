@@ -470,8 +470,11 @@ def main():
             if this_model == 'pretrained_BERT':
                 activation_file_name="bert_activations_test.json"
                 extract_activations('codetest2_test_unique.in',MODEL_DESC[this_model],activation_file_name)
+                activation_file_name="bert_activations_train.json"
+                extract_activations('codetest2_train_unique.in',MODEL_DESC[this_model],activation_file_name)
     else:
         print("Getting activations from json files. If you need to extract them, run with --extract=True \n" )
+    exit(0)
 
     for this_model, this_activation_name in zip(MODEL_NAMES,ACTIVATION_NAMES):
         print(f"Anayzing {this_model}")
