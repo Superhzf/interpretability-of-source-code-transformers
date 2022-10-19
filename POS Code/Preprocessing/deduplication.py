@@ -33,4 +33,4 @@ with open(os.path.join(FOLDER, OUTPUT_LABEL),"w") as f:
         f.writelines(f"{this_label}")
 f.close()
 print(f"After removing redundant observations, {len(code_unique)} samples are\
-left and written to the codetest2_unique.in and codetest2_unique.label files")
+left and written to the {OUTPUT_IN} and {OUTPUT_LABEL} files")
