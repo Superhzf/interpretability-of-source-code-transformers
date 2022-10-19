@@ -14,4 +14,3 @@ data/HubSpot/sanetime/sanetime/sanetime.py
 data/HumanDynamics/openPDS/openpds/authorization.py
 data/HumanDynamics/openPDS/openpds/core/templatetags/verbatim.py
 data/HumanDynamics/openPDS/openpds/visualization/views.py
-
