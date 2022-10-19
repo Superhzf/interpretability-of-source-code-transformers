@@ -1,0 +1,494 @@
+from __future__ import division , print_function , unicode_literals \n 
+\n 
+from collections import OrderedDict \n 
+from brainstorm . layers . base_layer import Layer \n 
+from brainstorm . structure . buffer_structure import ( BufferStructure , \n 
+StructureTemplate ) \n 
+from brainstorm . structure . construction import ConstructionWrapper \n 
+from brainstorm . utils import flatten_all_but_last \n 
+def BatchNorm ( name = None , decay = 0.9 , epsilon = 1.0e-5 ) : \n 
+return ConstructionWrapper . create ( BatchNormLayerImpl , \n 
+name = name , \n 
+decay = decay , \n 
+epsilon = epsilon ) \n 
+~~ class BatchNormLayerImpl ( Layer ) : \n 
+~~~ expected_inputs = { : StructureTemplate ( , , ) } \n 
+expected_kwargs = { , } \n 
+def setup ( self , kwargs , in_shapes ) : \n 
+~~~ self . epsilon = kwargs . get ( , 1.0e-5 ) \n 
+self . decay = kwargs . get ( , 0.9 ) \n 
+outputs = OrderedDict ( ) \n 
+outputs [ ] = in_shapes [ ] \n 
+parameters = OrderedDict ( ) \n 
+buf = BufferStructure ( self . in_shapes [ ] . feature_shape [ - 1 ] ) \n 
+parameters [ ] = buf \n 
+internals = OrderedDict ( ) \n 
+internals [ ] = buf \n 
+internals [ ] = self . in_shapes [ ] \n 
+return outputs , parameters , internals \n 
+~~ def forward_pass ( self , buffers , training_pass = True ) : \n 
+~~~ _h = self . handler \n 
+sigma_b , centered , x_hat = buffers . internals \n 
+gamma , beta , mu , sigma = buffers . parameters \n 
+inputs = flatten_all_but_last ( buffers . inputs . default ) \n 
+centered = flatten_all_but_last ( centered ) \n 
+x_hat = flatten_all_but_last ( x_hat ) \n 
+out = flatten_all_but_last ( buffers . outputs . default ) \n 
+m = inputs . shape [ 0 ] \n 
+if training_pass : \n 
+_h . sum_t ( inputs , 0 , mu_b ) \n 
+_h . mult_st ( - 1.0 / m , mu_b , mu_b ) \n 
+_h . mult_st ( self . decay , mu , mu ) \n 
+_h . mult_add_st ( 1.0 - self . decay , mu_b , mu ) \n 
+mu = mu_b \n 
+~~ _h . add_mv ( inputs , mu . reshape ( ( 1 , mu . size ) ) , centered ) \n 
+_h . mult_tt ( centered , centered , centered2 ) \n 
+_h . sum_t ( centered2 , 0 , sigma2 ) \n 
+_h . sqrt_t ( sigma2 , sigma_b ) \n 
+_h . mult_st ( self . decay , sigma , sigma ) \n 
+_h . mult_add_st ( 1.0 - self . decay , sigma_b , sigma ) \n 
+sigma = sigma_b \n 
+~~ _h . divide_mv ( centered , sigma . reshape ( ( 1 , sigma . size ) ) , x_hat ) \n 
+_h . mult_mv ( x_hat , gamma . reshape ( ( 1 , gamma . size ) ) , out ) \n 
+_h . add_mv ( out , beta . reshape ( ( 1 , beta . size ) ) , out ) \n 
+~~ def backward_pass ( self , buffers ) : \n 
+gamma = buffers . parameters . gamma \n 
+dgamma = buffers . gradients . gamma \n 
+dbeta = buffers . gradients . beta \n 
+outdeltas = flatten_all_but_last ( buffers . output_deltas . default ) \n 
+indeltas = flatten_all_but_last ( buffers . input_deltas . default ) \n 
+m = outdeltas . shape [ 0 ] \n 
+tmp = big_tmp \n 
+dgamma_tmp = small_tmp \n 
+_h . mult_tt ( outdeltas , x_hat , tmp ) \n 
+_h . sum_t ( tmp , axis = 0 , out = dgamma_tmp ) \n 
+_h . add_tt ( dgamma_tmp , dgamma , dgamma ) \n 
+_h . mult_st ( 1 / m , dgamma_tmp , dgamma_tmp ) \n 
+term1 = big_tmp \n 
+_h . mult_mv ( x_hat , dgamma_tmp . reshape ( ( 1 , gamma . size ) ) , term1 ) \n 
+dbeta_tmp = small_tmp \n 
+_h . sum_t ( outdeltas , axis = 0 , out = dbeta_tmp ) \n 
+_h . add_tt ( dbeta_tmp , dbeta , dbeta ) \n 
+_h . mult_st ( 1 / m , dbeta_tmp , dbeta_tmp ) \n 
+term2 = big_tmp \n 
+term3 = big_tmp \n 
+_h . subtract_tt ( outdeltas , term1 , term2 ) \n 
+_h . subtract_mv ( term2 , dbeta_tmp . reshape ( ( 1 , dbeta . size ) ) , term3 ) \n 
+coeff = small_tmp \n 
+_h . divide_tt ( gamma , sigma_b , coeff ) \n 
+term4 = big_tmp \n 
+_h . mult_mv ( term3 , coeff . reshape ( ( 1 , coeff . size ) ) , term4 ) \n 
+_h . add_tt ( term4 , indeltas , indeltas ) \n 
+~~ ~~ from __future__ import division , print_function , unicode_literals \n 
+import numpy as np \n 
+from brainstorm . describable import Describable \n 
+class Scorer ( Describable ) : \n 
+~~~ def __init__ ( self , out_name = , targets_name = , mask_name = , \n 
+name = None ) : \n 
+~~~ self . out_name = out_name \n 
+self . targets_name = targets_name \n 
+self . mask_name = mask_name \n 
+self . __name__ = name if name is not None else self . __class__ . __name__ \n 
+~~ def __call__ ( self , true_labels , predicted , mask = None ) : \n 
+~~~ pass \n 
+~~ @ staticmethod \n 
+def aggregate ( errors ) : \n 
+~~~ errors = np . array ( errors ) \n 
+assert errors . ndim == 2 and errors . shape [ 1 ] == 2 \n 
+return np . sum ( errors [ : , 1 ] ) / np . sum ( errors [ : , 0 ] ) \n 
+~~ ~~ def gather_losses_and_scores ( net , scorers , scores , out_name = , \n 
+targets_name = , mask_name = ) : \n 
+~~~ ls = net . get_loss_values ( ) \n 
+for name , loss in ls . items ( ) : \n 
+~~~ scores [ name ] . append ( ( net . _buffer_manager . batch_size , loss ) ) \n 
+~~ for sc in scorers : \n 
+~~~ name = sc . __name__ \n 
+predicted = net . get ( sc . out_name or out_name or net . output_name ) \n 
+true_labels = net . get_input ( sc . targets_name ) if sc . targets_name else net . get_input ( targets_name ) \n 
+mask = net . get_input ( sc . mask_name ) if sc . mask_name else ( net . get_input ( mask_name ) if mask_name else None ) \n 
+predicted = _flatten_all_but_last ( predicted ) \n 
+true_labels = _flatten_all_but_last ( true_labels ) \n 
+mask = _flatten_all_but_last ( mask ) \n 
+weight = mask . sum ( ) if mask is not None else predicted . shape [ 0 ] \n 
+scores [ name ] . append ( ( weight , sc ( true_labels , predicted , mask ) ) ) \n 
+~~ ~~ def aggregate_losses_and_scores ( scores , net , scorers ) : \n 
+~~~ results = OrderedDict ( ) \n 
+for name in net . get_loss_values ( ) : \n 
+~~~ results [ name ] = _weighted_average ( scores [ name ] ) \n 
+~~~ results [ sc . __name__ ] = sc . aggregate ( scores [ sc . __name__ ] ) \n 
+~~ return results \n 
+~~ class Accuracy ( Scorer ) : \n 
+~~~ def __call__ ( self , true_labels , predicted , mask = None ) : \n 
+~~~ if predicted . shape [ 1 ] > 1 : \n 
+~~~ predicted = predicted . argmax ( 1 ) . reshape ( - 1 , 1 ) \n 
+~~ correct = ( predicted == true_labels ) . astype ( np . float ) \n 
+if mask is not None : \n 
+~~~ correct *= mask \n 
+~~ return np . sum ( correct ) \n 
+~~ ~~ class Hamming ( Scorer ) : \n 
+~~~ def __init__ ( self , threshold = 0.5 , out_name = , targets_name = , \n 
+mask_name = , name = None ) : \n 
+~~~ super ( Hamming , self ) . __init__ ( out_name , targets_name , mask_name , name ) \n 
+self . threshold = threshold \n 
+~~~ correct = np . logical_xor ( predicted < self . threshold , \n 
+true_labels ) . astype ( np . float ) \n 
+~~ return np . sum ( correct ) / true_labels . shape [ 1 ] \n 
+~~ ~~ class MeanSquaredError ( Scorer ) : \n 
+~~~ errors = ( true_labels - predicted ) ** 2 \n 
+~~~ errors *= mask \n 
+~~ return 0.5 * np . sum ( errors ) \n 
+~~ ~~ def _flatten_all_but_last ( a ) : \n 
+~~~ if a is None : \n 
+~~~ return None \n 
+~~ return a . reshape ( - 1 , a . shape [ - 1 ] ) \n 
+~~ def _weighted_average ( errors ) : \n 
+return np . sum ( errors [ : , 1 ] * errors [ : , 0 ] / np . sum ( errors [ : , 0 ] ) ) \n 
+~~ from __future__ import division , print_function , unicode_literals \n 
+import pytest \n 
+import six \n 
+from brainstorm . training . schedules import Exponential , Linear , MultiStep \n 
+def test_linear ( ) : \n 
+~~~ sch = Linear ( initial_value = 1.0 , final_value = 0.5 , num_changes = 5 ) \n 
+epochs = [ 0 ] * 2 + [ 1 ] * 2 + [ 2 ] * 2 + [ 3 ] * 2 + [ 4 ] * 2 \n 
+updates = range ( 10 ) \n 
+values = [ sch ( epoch , update , , 1 , None , None , None ) \n 
+for epoch , update in six . moves . zip ( epochs , updates ) ] \n 
+assert values == [ 1.0 , 1.0 , 0.9 , 0.9 , 0.8 , 0.8 , 0.7 , 0.7 , 0.6 , 0.6 ] \n 
+assert values == [ 1.0 , 0.9 , 0.8 , 0.7 , 0.6 , 0.5 , 0.5 , 0.5 , 0.5 , 0.5 ] \n 
+values = [ sch ( epoch , update , , 3 , None , None , None ) \n 
+assert values == [ 1.0 , 1.0 , 1.0 , 0.9 , 0.9 , 0.9 , 0.8 , 0.8 , 0.8 , 0.7 ] \n 
+~~ def test_exponential ( ) : \n 
+~~~ sch = Exponential ( initial_value = 1.0 , factor = 0.99 , minimum = 0.97 ) \n 
+epochs = [ 0 ] * 4 + [ 1 ] * 4 + [ 2 ] * 4 \n 
+updates = range ( 12 ) \n 
+assert values == [ 1.0 ] * 4 + [ 0.99 ] * 4 + [ 0.99 * 0.99 ] * 4 \n 
+assert values == [ 1.0 * ( 0.99 ** x ) for x in range ( 4 ) ] + [ 0.97 ] * 8 \n 
+assert values == [ 1.0 ] * 3 + [ 0.99 ] * 3 + [ 0.9801 ] * 3 + [ 0.99 ** 3 ] * 3 \n 
+~~ def test_multistep ( ) : \n 
+~~~ sch = MultiStep ( initial_value = 1.0 , steps = [ 3 , 5 , 8 ] , \n 
+values = [ 0.1 , 0.01 , 0.001 ] ) \n 
+assert values == [ 1.0 , 1.0 , 1.0 , 1.0 , 1.0 , 1.0 , 0.1 , 0.1 , 0.1 , 0.1 ] \n 
+assert values == [ 1.0 , 1.0 , 1.0 , 0.1 , 0.1 , 0.01 , 0.01 , 0.01 , 0.001 , 0.001 ] \n 
+with pytest . raises ( AssertionError ) : \n 
+~~~ _ = sch ( 0 , 0 , , 3 , None , None , None ) \n 
+# \n 
+~~ ~~ import os \n 
+import sys \n 
+try : \n 
+~~~ from unittest . mock import MagicMock \n 
+~~ except ImportError : \n 
+~~~ from mock import Mock as MagicMock \n 
+~~ class Mock ( MagicMock ) : \n 
+~~~ @ classmethod \n 
+def __getattr__ ( cls , name ) : \n 
+~~~ return Mock ( ) \n 
+~~ ~~ MOCK_MODULES = [ , ] \n 
+sys . modules . update ( ( mod_name , Mock ( ) ) for mod_name in MOCK_MODULES ) \n 
+cwd = os . getcwd ( ) \n 
+parent = os . path . dirname ( cwd ) \n 
+sys . path . insert ( 0 , parent ) \n 
+import brainstorm \n 
+extensions = [ , , \n 
+] \n 
+templates_path = [ ] \n 
+source_suffix = \n 
+master_doc = \n 
+project = \n 
+copyright = \n 
+version = brainstorm . __version__ \n 
+release = brainstorm . __version__ \n 
+exclude_patterns = [ ] \n 
+pygments_style = \n 
+on_rtd = os . environ . get ( , None ) == \n 
+if not on_rtd : \n 
+~~~ try : \n 
+~~~ import sphinx_rtd_theme \n 
+html_theme = \n 
+html_theme_path = [ sphinx_rtd_theme . get_html_theme_path ( ) ] \n 
+~~~ html_theme = \n 
+~~ ~~ html_static_path = [ ] \n 
+htmlhelp_basename = \n 
+latex_elements = { \n 
+} \n 
+latex_documents = [ \n 
+( , , , \n 
+, ) , \n 
+man_pages = [ \n 
+[ ] , 1 ) \n 
+texinfo_documents = [ \n 
+, , , \n 
+) , \n 
+import theano . tensor as T \n 
+from theano . sandbox . rng_mrg import MRG_RandomStreams \n 
+from theano . tensor . nnet . conv import conv2d \n 
+from theano . tensor . signal . downsample import max_pool_2d \n 
+from theano . tensor . shared_randomstreams import RandomStreams \n 
+from toolbox import * \n 
+from modelbase import * \n 
+class LM_gru ( ModelLMBase ) : \n 
+~~~ def __init__ ( self , data , hp ) : \n 
+~~~ super ( LM_gru , self ) . __init__ ( self . __class__ . __name__ , data , hp ) \n 
+self . n_h = 256 \n 
+self . dropout = 0.5 \n 
+self . params = Parameters ( ) \n 
+self . hiddenstates = Parameters ( ) \n 
+n_tokens = self . data [ ] \n 
+n_h = self . n_h \n 
+scale = hp . init_scale \n 
+gates = 3 \n 
+with self . hiddenstates : \n 
+~~~ b1_h = shared_zeros ( ( self . hp . batch_size , n_h ) ) \n 
+b2_h = shared_zeros ( ( self . hp . batch_size , n_h ) ) \n 
+~~ if hp . load_model and os . path . isfile ( self . filename ) : \n 
+~~~ self . params . load ( self . filename ) \n 
+~~ else : \n 
+~~~ with self . params : \n 
+~~~ W_emb = shared_normal ( ( n_tokens , n_h ) , scale = scale ) \n 
+W1 = shared_normal ( ( n_h , n_h * gates ) , scale = scale * 1.5 ) \n 
+V1 = shared_normal ( ( n_h , n_h * gates ) , scale = scale * 1.5 ) \n 
+b1 = shared_zeros ( ( n_h * gates ) ) \n 
+W2 = shared_normal ( ( n_h , n_h * gates ) , scale = scale * 1.5 ) \n 
+V2 = shared_normal ( ( n_h , n_h * gates ) , scale = scale * 1.5 ) \n 
+b2 = shared_zeros ( ( n_h * gates , ) ) \n 
+~~ ~~ def lstm ( X , h , c , W , U , b ) : \n 
+~~~ g_on = T . dot ( X , W ) + T . dot ( h , U ) + b \n 
+i_on = T . nnet . sigmoid ( g_on [ : , : n_h ] ) \n 
+f_on = T . nnet . sigmoid ( g_on [ : , n_h : 2 * n_h ] ) \n 
+o_on = T . nnet . sigmoid ( g_on [ : , 2 * n_h : 3 * n_h ] ) \n 
+c = f_on * c + i_on * T . tanh ( g_on [ : , 3 * n_h : ] ) \n 
+h = o_on * T . tanh ( c ) \n 
+return h , c \n 
+~~ def gru ( X , h , W , U , b ) : \n 
+~~~ z_t = T . nnet . sigmoid ( T . dot ( X , W [ : , : n_h ] ) + T . dot ( h , U [ : , : n_h ] ) + b [ : n_h ] ) \n 
+r_t = T . nnet . sigmoid ( T . dot ( X , W [ : , n_h : 2 * n_h ] ) + T . dot ( h , U [ : , n_h : 2 * n_h ] ) + b [ n_h : 2 * n_h ] ) \n 
+h_t = T . tanh ( T . dot ( X , W [ : , 2 * n_h : 3 * n_h ] ) + r_t * T . dot ( h , U [ : , 2 * n_h : 3 * n_h ] ) + b [ 2 * n_h : 3 * n_h ] ) \n 
+return ( 1 - z_t ) * h + z_t * h_t \n 
+~~ def sgru ( X , h , W , U , b ) : \n 
+~~~ z_t = T . tanh ( T . dot ( X , W [ : , : n_h ] ) + T . dot ( h , U [ : , : n_h ] ) + b [ : n_h ] ) \n 
+h_t = T . tanh ( T . dot ( X , W [ : , 1 * n_h : 2 * n_h ] ) + T . dot ( h , U [ : , 1 * n_h : 2 * n_h ] ) + b [ 1 * n_h : 2 * n_h ] ) \n 
+return z_t * h_t \n 
+~~ def model ( x , p , p_dropout ) : \n 
+~~~ input_size = x . shape [ 1 ] \n 
+h0 = dropout ( h0 , p_dropout ) \n 
+cost , h1 , h2 = [ 0. , b1_h , b2_h ] \n 
+for t in xrange ( 0 , self . hp . seq_size ) : \n 
+~~~ if t >= self . hp . warmup_size : \n 
+~~~ pyx = softmax ( T . dot ( dropout ( h2 , p_dropout ) , T . transpose ( p . W_emb ) ) ) \n 
+cost += T . sum ( T . nnet . categorical_crossentropy ( pyx , theano_one_hot ( x [ t ] , n_tokens ) ) ) \n 
+~~ h1 = gru ( h0 [ t ] , h1 , p . W1 , p . V1 , p . b1 ) \n 
+h2 = gru ( dropout ( h1 , p_dropout ) , h2 , p . W2 , p . V2 , p . b2 ) \n 
+~~ h_updates = [ ( b1_h , h1 ) , ( b2_h , h2 ) ] \n 
+return cost , h_updates \n 
+~~ cost , h_updates = model ( self . X , self . params , self . dropout ) \n 
+te_cost , te_h_updates = model ( self . X , self . params , 0. ) \n 
+self . compile ( cost , te_cost , h_updates , te_h_updates ) \n 
+~~ ~~ from collections import OrderedDict \n 
+from . . import utils \n 
+__all__ = [ \n 
+"Layer" , \n 
+"MergeLayer" , \n 
+class Layer ( object ) : \n 
+def __init__ ( self , incoming , name = None ) : \n 
+~~~ if isinstance ( incoming , tuple ) : \n 
+~~~ self . input_shape = incoming \n 
+self . input_layer = None \n 
+~~~ self . input_shape = incoming . output_shape \n 
+self . input_layer = incoming \n 
+~~ self . name = name \n 
+self . params = OrderedDict ( ) \n 
+self . get_output_kwargs = [ ] \n 
+if any ( d is not None and d <= 0 for d in self . input_shape ) : \n 
+~~~ raise ValueError ( ( \n 
+self . input_shape , self . name ) ) \n 
+~~ ~~ @ property \n 
+def output_shape ( self ) : \n 
+~~~ shape = self . get_output_shape_for ( self . input_shape ) \n 
+if any ( isinstance ( s , T . Variable ) for s in shape ) : \n 
+"dimensions." % ( self . __class__ . __name__ , shape ) ) \n 
+~~ return shape \n 
+~~ def get_params ( self , ** tags ) : \n 
+result = list ( self . params . keys ( ) ) \n 
+only = set ( tag for tag , value in tags . items ( ) if value ) \n 
+if only : \n 
+~~~ result = [ param for param in result \n 
+if not ( only - self . params [ param ] ) ] \n 
+~~ exclude = set ( tag for tag , value in tags . items ( ) if not value ) \n 
+if exclude : \n 
+if not ( self . params [ param ] & exclude ) ] \n 
+~~ return utils . collect_shared_vars ( result ) \n 
+~~ def get_output_shape_for ( self , input_shape ) : \n 
+return input_shape \n 
+~~ def get_output_for ( self , input , ** kwargs ) : \n 
+raise NotImplementedError \n 
+~~ def add_param ( self , spec , shape , name = None , ** tags ) : \n 
+if name is not None : \n 
+~~~ if self . name is not None : \n 
+~~~ name = "%s.%s" % ( self . name , name ) \n 
+~~ ~~ param = utils . create_param ( spec , shape , name ) \n 
+tags [ ] = tags . get ( , True ) \n 
+self . params [ param ] = set ( tag for tag , value in tags . items ( ) if value ) \n 
+return param \n 
+~~ ~~ class MergeLayer ( Layer ) : \n 
+def __init__ ( self , incomings , name = None ) : \n 
+~~~ self . input_shapes = [ incoming if isinstance ( incoming , tuple ) \n 
+else incoming . output_shape \n 
+for incoming in incomings ] \n 
+self . input_layers = [ None if isinstance ( incoming , tuple ) \n 
+else incoming \n 
+self . name = name \n 
+~~ @ Layer . output_shape . getter \n 
+~~~ shape = self . get_output_shape_for ( self . input_shapes ) \n 
+~~ def get_output_shape_for ( self , input_shapes ) : \n 
+~~ def get_output_for ( self , inputs , ** kwargs ) : \n 
+~~ ~~ from mock import Mock \n 
+import numpy \n 
+import theano \n 
+class TestAutocrop : \n 
+~~~ def test_autocrop_array_shapes ( self ) : \n 
+~~~ from lasagne . layers . merge import autocrop_array_shapes \n 
+crop0 = None \n 
+crop1 = [ None , , , ] \n 
+crop2 = [ , ] \n 
+crop_bad = [ , , , ] \n 
+assert autocrop_array_shapes ( \n 
+[ ( 1 , 2 , 3 , 4 ) , ( 5 , 6 , 7 , 8 ) , ( 5 , 4 , 3 , 2 ) ] , crop0 ) == [ ( 1 , 2 , 3 , 4 ) , ( 5 , 6 , 7 , 8 ) , ( 5 , 4 , 3 , 2 ) ] \n 
+[ ( 1 , 2 , 3 , 4 ) , ( 5 , 6 , 7 , 8 ) , ( 5 , 4 , 3 , 2 ) ] , crop1 ) == [ ( 1 , 2 , 3 , 2 ) , ( 5 , 2 , 3 , 2 ) , ( 5 , 2 , 3 , 2 ) ] \n 
+[ ( 1 , 2 , 3 , 4 ) , ( 5 , 6 , 7 , 8 ) , ( 5 , 4 , 3 , 2 ) ] , crop2 ) == [ ( 1 , 2 , 3 , 4 ) , ( 1 , 2 , 7 , 8 ) , ( 1 , 2 , 3 , 2 ) ] \n 
+with pytest . raises ( ValueError ) : \n 
+~~~ autocrop_array_shapes ( \n 
+[ ( 1 , 2 , 3 , 4 ) , ( 5 , 6 , 7 , 8 ) , ( 5 , 4 , 3 , 2 ) ] , crop_bad ) \n 
+~~ with pytest . raises ( ValueError ) : \n 
+[ ( 1 , 2 , 3 , 4 ) , ( 5 , 6 , 7 ) , ( 5 , 4 , 3 , 2 , 10 ) ] , crop1 ) \n 
+~~ ~~ def test_crop_inputs ( self ) : \n 
+~~~ from lasagne . layers . merge import autocrop \n 
+from numpy . testing import assert_array_equal \n 
+crop_0 = None \n 
+crop_1 = [ None , , , ] \n 
+crop_l = [ , , , ] \n 
+crop_c = [ , , , ] \n 
+crop_u = [ , , , ] \n 
+crop_x = [ , ] \n 
+x0 = numpy . random . random ( ( 2 , 3 , 5 , 7 ) ) \n 
+x1 = numpy . random . random ( ( 1 , 2 , 3 , 4 ) ) \n 
+x2 = numpy . random . random ( ( 6 , 3 , 4 , 2 ) ) \n 
+def crop_test ( cropping , inputs , expected ) : \n 
+~~~ inputs = [ theano . shared ( x ) for x in inputs ] \n 
+outs = autocrop ( inputs , cropping ) \n 
+outs = [ o . eval ( ) for o in outs ] \n 
+assert len ( outs ) == len ( expected ) \n 
+for o , e in zip ( outs , expected ) : \n 
+~~~ assert_array_equal ( o , e ) \n 
+~~ ~~ crop_test ( crop_0 , [ x0 , x1 ] , \n 
+[ x0 , x1 ] ) \n 
+crop_test ( crop_1 , [ x0 , x1 ] , \n 
+[ x0 [ : , : 2 , 1 : 4 , 3 : ] , x1 [ : , : , : , : ] ] ) \n 
+crop_test ( crop_l , [ x0 , x1 ] , \n 
+[ x0 [ : 1 , : 2 , : 3 , : 4 ] , x1 [ : , : , : , : ] ] ) \n 
+crop_test ( crop_c , [ x0 , x1 ] , \n 
+[ x0 [ : 1 , : 2 , 1 : 4 , 1 : 5 ] , x1 [ : , : , : , : ] ] ) \n 
+crop_test ( crop_u , [ x0 , x1 ] , \n 
+[ x0 [ 1 : , 1 : , 2 : , 3 : ] , x1 [ : , : , : , : ] ] ) \n 
+crop_test ( crop_0 , [ x0 , x2 ] , \n 
+[ x0 , x2 ] ) \n 
+crop_test ( crop_1 , [ x0 , x2 ] , \n 
+[ x0 [ : , : , : 4 , 5 : ] , x2 [ : , : , : , : ] ] ) \n 
+crop_test ( crop_l , [ x0 , x2 ] , \n 
+[ x0 [ : , : , : 4 , : 2 ] , x2 [ : 2 , : , : , : ] ] ) \n 
+crop_test ( crop_c , [ x0 , x2 ] , \n 
+[ x0 [ : , : , : 4 , 2 : 4 ] , x2 [ 2 : 4 , : , : , : ] ] ) \n 
+crop_test ( crop_u , [ x0 , x2 ] , \n 
+[ x0 [ : , : , 1 : , 5 : ] , x2 [ 4 : , : , : , : ] ] ) \n 
+crop_test ( crop_0 , [ x0 , x1 , x2 ] , \n 
+[ x0 , x1 , x2 ] ) \n 
+crop_test ( crop_1 , [ x0 , x1 , x2 ] , \n 
+[ x0 [ : , : 2 , 1 : 4 , 5 : ] , x1 [ : , : , : , 2 : ] , x2 [ : , : 2 , : 3 , : ] ] ) \n 
+crop_test ( crop_l , [ x0 , x1 , x2 ] , \n 
+[ x0 [ : 1 , : 2 , : 3 , : 2 ] , x1 [ : , : , : , : 2 ] , x2 [ : 1 , : 2 , : 3 , : ] ] ) \n 
+crop_test ( crop_c , [ x0 , x1 , x2 ] , \n 
+[ x0 [ : 1 , : 2 , 1 : 4 , 2 : 4 ] , x1 [ : , : , : , 1 : 3 ] , x2 [ 2 : 3 , : 2 , : 3 , : ] ] ) \n 
+crop_test ( crop_u , [ x0 , x1 , x2 ] , \n 
+[ x0 [ 1 : , 1 : , 2 : , 5 : ] , x1 [ : , : , : , 2 : ] , x2 [ 5 : , 1 : , 1 : , : ] ] ) \n 
+crop_test ( crop_x , [ x0 , x1 , x2 ] , \n 
+[ x0 [ : 1 , : 2 , : , : ] , x1 [ : 1 , : 2 , : , : ] , x2 [ : 1 , : 2 , : , : ] ] ) \n 
+crop_test ( crop_x , [ x0 , x1 , x2 , x0 , x1 , x2 ] , \n 
+[ x0 [ : 1 , : 2 , : , : ] , x1 [ : 1 , : 2 , : , : ] , x2 [ : 1 , : 2 , : , : ] , \n 
+x0 [ : 1 , : 2 , : , : ] , x1 [ : 1 , : 2 , : , : ] , x2 [ : 1 , : 2 , : , : ] ] ) \n 
+~~~ crop_test ( crop_bad , [ x0 , x1 , x2 ] , \n 
+~~~ crop_test ( crop_bad , [ x0 [ : , : , : , 0 ] , x1 , x2 [ : , : , : , : , None ] ] , \n 
+~~ ~~ ~~ class TestConcatLayer : \n 
+~~~ @ pytest . fixture \n 
+def layer ( self ) : \n 
+~~~ from lasagne . layers . merge import ConcatLayer \n 
+return ConcatLayer ( [ Mock ( ) , Mock ( ) ] , axis = 1 ) \n 
+~~ @ pytest . fixture \n 
+def crop_layer_0 ( self ) : \n 
+return ConcatLayer ( [ Mock ( ) , Mock ( ) ] , axis = 0 , \n 
+cropping = [ ] * 2 ) \n 
+def crop_layer_1 ( self ) : \n 
+return ConcatLayer ( [ Mock ( ) , Mock ( ) ] , axis = 1 , \n 
+~~ def test_get_output_shape_for ( self , layer ) : \n 
+~~~ assert layer . get_output_shape_for ( [ ( 3 , 2 ) , ( 3 , 5 ) ] ) == ( 3 , 7 ) \n 
+assert layer . get_output_shape_for ( [ ( 3 , 2 ) , ( 3 , None ) ] ) == ( 3 , None ) \n 
+assert layer . get_output_shape_for ( [ ( None , 2 ) , ( 3 , 5 ) ] ) == ( 3 , 7 ) \n 
+assert layer . get_output_shape_for ( [ ( None , 2 ) , ( None , 5 ) ] ) == ( None , 7 ) \n 
+~~~ layer . get_output_shape_for ( [ ( 4 , None ) , ( 3 , 5 ) ] ) \n 
+~~~ layer . get_output_shape_for ( [ ( 3 , 2 ) , ( 4 , None ) ] ) \n 
+~~~ layer . get_output_shape_for ( [ ( None , 2 ) , ( 3 , 5 ) , ( 4 , 5 ) ] ) \n 
+~~ ~~ def test_get_output_shape_for_cropped ( self , crop_layer_0 , crop_layer_1 ) : \n 
+~~~ input_shapes = [ ( 3 , 2 ) , ( 4 , 5 ) ] \n 
+result_0 = crop_layer_0 . get_output_shape_for ( input_shapes ) \n 
+result_1 = crop_layer_1 . get_output_shape_for ( input_shapes ) \n 
+assert result_0 == ( 7 , 2 ) \n 
+assert result_1 == ( 3 , 7 ) \n 
+~~ def test_get_output_for ( self , layer ) : \n 
+~~~ inputs = [ theano . shared ( numpy . ones ( ( 3 , 3 ) ) ) , \n 
+theano . shared ( numpy . ones ( ( 3 , 2 ) ) ) ] \n 
+result = layer . get_output_for ( inputs ) \n 
+result_eval = result . eval ( ) \n 
+desired_result = numpy . hstack ( [ input . get_value ( ) for input in inputs ] ) \n 
+assert ( result_eval == desired_result ) . all ( ) \n 
+~~ def test_get_output_for_cropped ( self , crop_layer_0 , crop_layer_1 ) : \n 
+~~~ x0 = numpy . random . random ( ( 5 , 3 ) ) \n 
+x1 = numpy . random . random ( ( 4 , 2 ) ) \n 
+inputs = [ theano . shared ( x0 ) , \n 
+theano . shared ( x1 ) ] \n 
+result_0 = crop_layer_0 . get_output_for ( inputs ) . eval ( ) \n 
+result_1 = crop_layer_1 . get_output_for ( inputs ) . eval ( ) \n 
+desired_result_0 = numpy . concatenate ( [ x0 [ : , : 2 ] , x1 [ : , : 2 ] ] , axis = 0 ) \n 
+desired_result_1 = numpy . concatenate ( [ x0 [ : 4 , : ] , x1 [ : 4 , : ] ] , axis = 1 ) \n 
+assert ( result_0 == desired_result_0 ) . all ( ) \n 
+assert ( result_1 == desired_result_1 ) . all ( ) \n 
+~~ ~~ class TestElemwiseSumLayer : \n 
+~~~ from lasagne . layers . merge import ElemwiseSumLayer \n 
+return ElemwiseSumLayer ( [ Mock ( ) , Mock ( ) ] , coeffs = [ 2 , - 1 ] ) \n 
+def crop_layer ( self ) : \n 
+return ElemwiseSumLayer ( [ Mock ( ) , Mock ( ) ] , coeffs = [ 2 , - 1 ] , \n 
+~~~ assert layer . get_output_shape_for ( [ ( 3 , 2 ) , ( 3 , 2 ) ] ) == ( 3 , 2 ) \n 
+assert layer . get_output_shape_for ( [ ( 3 , 2 ) , ( 3 , None ) ] ) == ( 3 , 2 ) \n 
+assert layer . get_output_shape_for ( [ ( None , 2 ) , ( 3 , 2 ) ] ) == ( 3 , 2 ) \n 
+assert layer . get_output_shape_for ( [ ( None , 2 ) , ( None , 2 ) ] ) == ( None , 2 ) \n 
+~~~ layer . get_output_shape_for ( [ ( 3 , None ) , ( 4 , 2 ) ] ) \n 
+~~~ layer . get_output_shape_for ( [ ( None , 2 ) , ( 3 , 2 ) , ( 4 , 2 ) ] ) \n 
+~~ ~~ def test_get_output_for ( self , layer ) : \n 
+~~~ a = numpy . array ( [ [ 0 , 1 ] , [ 2 , 3 ] ] ) \n 
+b = numpy . array ( [ [ 1 , 2 ] , [ 4 , 5 ] ] ) \n 
+inputs = [ theano . shared ( a ) , \n 
+theano . shared ( b ) ] \n 
+desired_result = 2 * a - b \n 
+~~ def test_get_output_for_cropped ( self , crop_layer ) : \n 
+~~~ from numpy . testing import assert_array_almost_equal as aeq \n 
+x0 = numpy . random . random ( ( 5 , 3 ) ) \n 
+result = crop_layer . get_output_for ( inputs ) . eval ( ) \n 
+desired_result = 2 * x0 [ : 4 , : 2 ] - x1 [ : 4 , : 2 ] \n 
+aeq ( result , desired_result ) \n 
+~~ def test_bad_coeffs_fails ( self , layer ) : \n 
+~~~ ElemwiseSumLayer ( [ Mock ( ) , Mock ( ) ] , coeffs = [ 2 , 3 , - 1 ] ) \n 
+~~ ~~ ~~ class TestElemwiseMergeLayerMul : \n 
+~~~ import theano . tensor as T \n 
+from lasagne . layers . merge import ElemwiseMergeLayer \n 
+return ElemwiseMergeLayer ( [ Mock ( ) , Mock ( ) ] , merge_function = T . mul ) \n 
+desired_result = a * b \n 
+~~ ~~ class TestElemwiseMergeLayerMaximum : \n 
+return ElemwiseMergeLayer ( [ Mock ( ) , Mock ( ) ] , merge_function = T . maximum ) \n 
+desired_result = numpy . maximum ( a , b ) \n 
+~~ ~~ 
