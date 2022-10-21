@@ -1,0 +1,413 @@
+Getting activations from json files. If you need to extract them, run with --extract=True 
+
+Anayzing pretrained_BERT
+Loading json activations from bert_activations_train.json...
+1289 13.0
+Loading json activations from bert_activations_test.json...
+494 13.0
+Number of tokens:  1042
+length of source dictionary:  1042
+length of target dictionary:  34
+1042
+Total instances: 1042
+['clone', 'mtitle', 'tz_abbr', 'in', 'enable_range', 'title', 'jid', 'login', 'millis', 'request', 'utmpent', 'default', 'sanStorageV3', 'get_server_profile_from_template', 'super', 'IOError', '0', 'dict', 'get_mode', '"(BM:"']
+Number of samples:  1042
+Stats: Labels with their frequencies in the final set
+NAME 876
+STRING 72
+NUMBER 36
+KEYWORD 25
+COMMENT 4
+NL 1
+LPAR 1
+DOT 1
+RPAR 1
+COLON 1
+EQUAL 1
+COMMA 1
+INDENT 1
+DEDENT 1
+LSQB 1
+RSQB 1
+AT 1
+STAR 1
+EQEQUAL 1
+MINUS 1
+PLUS 1
+PERCENT 1
+GREATER 1
+NOTEQUAL 1
+PLUSEQUAL 1
+GREATEREQUAL 1
+LESS 1
+MINEQUAL 1
+LBRACE 1
+RBRACE 1
+LESSEQUAL 1
+DOUBLESTAR 1
+SLASH 1
+SEMI 1
+Number of tokens:  482
+length of source dictionary:  482
+length of target dictionary:  33
+482
+Total instances: 482
+['in', '__call__', 'Layer', 'default', 'super', 'size', '0', 'assert_array_almost_equal', 'layer', 'sum_t', 'name', 'crop_layer_1', 'result_1', 'insert', 'gradients', 'autocrop', '8', 'scores', 'StructureTemplate', 'targets_name']
+Number of samples:  482
+Stats: Labels with their frequencies in the final set
+NAME 400
+NUMBER 27
+KEYWORD 22
+STRING 4
+COMMA 1
+NEWLINE 1
+DOT 1
+LPAR 1
+RPAR 1
+EQUAL 1
+COLON 1
+DEDENT 1
+INDENT 1
+LBRACE 1
+RBRACE 1
+LSQB 1
+RSQB 1
+MINUS 1
+SLASH 1
+AT 1
+EQEQUAL 1
+GREATER 1
+STAREQUAL 1
+LESS 1
+DOUBLESTAR 1
+STAR 1
+PLUS 1
+COMMENT 1
+GREATEREQUAL 1
+PLUSEQUAL 1
+LESSEQUAL 1
+PERCENT 1
+AMPER 1
+pretrained_BERT distribution:
+{0: 876, 1: 72, 2: 36, 3: 25, 4: 4, 5: 1, 6: 1, 7: 1, 8: 1, 9: 1, 10: 1, 11: 1, 12: 1, 13: 1, 14: 1, 15: 1, 16: 1, 17: 1, 18: 1, 19: 1, 20: 1, 21: 1, 22: 1, 23: 1, 24: 1, 25: 1, 26: 1, 27: 1, 28: 1, 29: 1, 30: 1, 31: 1, 32: 1, 33: 1}
+pretrained_BERT distribution after trauncating:
+{0: 0.8681863230921705, 1: 0.07135777998017839, 2: 0.035678889990089196, 3: 0.024777006937561942}
+{0: 876, 1: 72, 2: 36, 3: 25}
+{'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
+pretrained_BERT distribution:
+{0: 400, 1: 27, 2: 22, 3: 4, 4: 1, 5: 1, 6: 1, 7: 1, 8: 1, 9: 1, 10: 1, 11: 1, 12: 1, 13: 1, 14: 1, 15: 1, 16: 1, 17: 1, 18: 1, 19: 1, 20: 1, 21: 1, 22: 1, 23: 1, 24: 1, 25: 1, 26: 1, 27: 1, 28: 1, 29: 1, 30: 1, 31: 1, 32: 1}
+pretrained_BERT distribution after trauncating:
+{0: 0.8830022075055187, 1: 0.059602649006622516, 2: 0.04856512141280353, 3: 0.008830022075055188}
+{0: 400, 1: 27, 2: 22, 3: 4}
+{'NAME': 0, 'NUMBER': 1, 'KEYWORD': 2, 'STRING': 3}
+Training classification probe
+Creating model...
+Number of training instances: 908
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0124
+Epoch: [2/10], Loss: 0.0099
+Epoch: [3/10], Loss: 0.0089
+Epoch: [4/10], Loss: 0.0081
+Epoch: [5/10], Loss: 0.0074
+Epoch: [6/10], Loss: 0.0068
+Epoch: [7/10], Loss: 0.0063
+Epoch: [8/10], Loss: 0.0059
+Epoch: [9/10], Loss: 0.0055
+Epoch: [10/10], Loss: 0.0052
+Score (accuracy) of the probe: 0.79
+l1=0,l2=0
+Absolute average value of parameters: 0.021412468
+Number of parameters that are not zero: [768 768 768 768]
+Accuracy on the validation set: {'__OVERALL__': 0.7920792079207921, 'NAME': 0.7717391304347826, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': nan}
+Training classification probe
+Creating model...
+Number of training instances: 908
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0125
+Epoch: [2/10], Loss: 0.0099
+Epoch: [3/10], Loss: 0.0088
+Epoch: [4/10], Loss: 0.0080
+Epoch: [5/10], Loss: 0.0073
+Epoch: [6/10], Loss: 0.0067
+Epoch: [7/10], Loss: 0.0063
+Epoch: [8/10], Loss: 0.0058
+Epoch: [9/10], Loss: 0.0055
+Epoch: [10/10], Loss: 0.0051
+Score (accuracy) of the probe: 0.80
+l1=0,l2=0.001
+Absolute average value of parameters: 0.020937132
+Number of parameters that are not zero: [768 768 768 768]
+Accuracy on the validation set: {'__OVERALL__': 0.801980198019802, 'NAME': 0.782608695652174, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': nan}
+Training classification probe
+Creating model...
+Number of training instances: 908
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0129
+Epoch: [2/10], Loss: 0.0103
+Epoch: [3/10], Loss: 0.0093
+Epoch: [4/10], Loss: 0.0085
+Epoch: [5/10], Loss: 0.0078
+Epoch: [6/10], Loss: 0.0072
+Epoch: [7/10], Loss: 0.0067
+Epoch: [8/10], Loss: 0.0062
+Epoch: [9/10], Loss: 0.0059
+Epoch: [10/10], Loss: 0.0055
+Score (accuracy) of the probe: 0.80
+l1=0,l2=0.01
+Absolute average value of parameters: 0.020747585
+Number of parameters that are not zero: [768 768 768 768]
+Accuracy on the validation set: {'__OVERALL__': 0.801980198019802, 'NAME': 0.782608695652174, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': nan}
+Training classification probe
+Creating model...
+Number of training instances: 908
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0139
+Epoch: [2/10], Loss: 0.0110
+Epoch: [3/10], Loss: 0.0101
+Epoch: [4/10], Loss: 0.0093
+Epoch: [5/10], Loss: 0.0086
+Epoch: [6/10], Loss: 0.0080
+Epoch: [7/10], Loss: 0.0075
+Epoch: [8/10], Loss: 0.0071
+Epoch: [9/10], Loss: 0.0068
+Epoch: [10/10], Loss: 0.0065
+Score (accuracy) of the probe: 0.83
+l1=0,l2=0.1
+Absolute average value of parameters: 0.01857786
+Number of parameters that are not zero: [768 768 768 768]
+Accuracy on the validation set: {'__OVERALL__': 0.8316831683168316, 'NAME': 0.8152173913043478, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': nan}
+Training classification probe
+Creating model...
+Number of training instances: 908
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0130
+Epoch: [2/10], Loss: 0.0104
+Epoch: [3/10], Loss: 0.0095
+Epoch: [4/10], Loss: 0.0087
+Epoch: [5/10], Loss: 0.0080
+Epoch: [6/10], Loss: 0.0074
+Epoch: [7/10], Loss: 0.0069
+Epoch: [8/10], Loss: 0.0065
+Epoch: [9/10], Loss: 0.0062
+Epoch: [10/10], Loss: 0.0059
+Score (accuracy) of the probe: 0.80
+l1=0.001,l2=0
+Absolute average value of parameters: 0.019825967
+Number of parameters that are not zero: [768 768 768 768]
+Accuracy on the validation set: {'__OVERALL__': 0.801980198019802, 'NAME': 0.782608695652174, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': nan}
+Training classification probe
+Creating model...
+Number of training instances: 908
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0134
+Epoch: [2/10], Loss: 0.0106
+Epoch: [3/10], Loss: 0.0097
+Epoch: [4/10], Loss: 0.0089
+Epoch: [5/10], Loss: 0.0082
+Epoch: [6/10], Loss: 0.0076
+Epoch: [7/10], Loss: 0.0071
+Epoch: [8/10], Loss: 0.0067
+Epoch: [9/10], Loss: 0.0064
+Epoch: [10/10], Loss: 0.0060
+Score (accuracy) of the probe: 0.83
+l1=0.001,l2=0.001
+Absolute average value of parameters: 0.01988375
+Number of parameters that are not zero: [768 768 768 768]
+Accuracy on the validation set: {'__OVERALL__': 0.8316831683168316, 'NAME': 0.8152173913043478, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': nan}
+Training classification probe
+Creating model...
+Number of training instances: 908
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0137
+Epoch: [2/10], Loss: 0.0109
+Epoch: [3/10], Loss: 0.0099
+Epoch: [4/10], Loss: 0.0090
+Epoch: [5/10], Loss: 0.0083
+Epoch: [6/10], Loss: 0.0077
+Epoch: [7/10], Loss: 0.0072
+Epoch: [8/10], Loss: 0.0068
+Epoch: [9/10], Loss: 0.0064
+Epoch: [10/10], Loss: 0.0061
+Score (accuracy) of the probe: 0.79
+l1=0.001,l2=0.01
+Absolute average value of parameters: 0.019321067
+Number of parameters that are not zero: [768 768 768 768]
+Accuracy on the validation set: {'__OVERALL__': 0.7920792079207921, 'NAME': 0.7717391304347826, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': nan}
+Training classification probe
+Creating model...
+Number of training instances: 908
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0141
+Epoch: [2/10], Loss: 0.0115
+Epoch: [3/10], Loss: 0.0104
+Epoch: [4/10], Loss: 0.0096
+Epoch: [5/10], Loss: 0.0089
+Epoch: [6/10], Loss: 0.0084
+Epoch: [7/10], Loss: 0.0079
+Epoch: [8/10], Loss: 0.0075
+Epoch: [9/10], Loss: 0.0072
+Epoch: [10/10], Loss: 0.0069
+Score (accuracy) of the probe: 0.78
+l1=0.001,l2=0.1
+Absolute average value of parameters: 0.01735875
+Number of parameters that are not zero: [768 768 768 768]
+Accuracy on the validation set: {'__OVERALL__': 0.7821782178217822, 'NAME': 0.7608695652173914, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': nan}
+Training classification probe
+Creating model...
+Number of training instances: 908
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0174
+Epoch: [2/10], Loss: 0.0142
+Epoch: [3/10], Loss: 0.0130
+Epoch: [4/10], Loss: 0.0120
+Epoch: [5/10], Loss: 0.0112
+Epoch: [6/10], Loss: 0.0105
+Epoch: [7/10], Loss: 0.0099
+Epoch: [8/10], Loss: 0.0095
+Epoch: [9/10], Loss: 0.0091
+Epoch: [10/10], Loss: 0.0088
+Score (accuracy) of the probe: 0.86
+l1=0.01,l2=0
+Absolute average value of parameters: 0.010075712
+Number of parameters that are not zero: [768 768 768 768]
+Accuracy on the validation set: {'__OVERALL__': 0.8613861386138614, 'NAME': 0.8478260869565217, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': nan}
+Training classification probe
+Creating model...
+Number of training instances: 908
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0174
+Epoch: [2/10], Loss: 0.0144
+Epoch: [3/10], Loss: 0.0131
+Epoch: [4/10], Loss: 0.0121
+Epoch: [5/10], Loss: 0.0112
+Epoch: [6/10], Loss: 0.0105
+Epoch: [7/10], Loss: 0.0099
+Epoch: [8/10], Loss: 0.0095
+Epoch: [9/10], Loss: 0.0092
+Epoch: [10/10], Loss: 0.0089
+Score (accuracy) of the probe: 0.83
+l1=0.01,l2=0.001
+Absolute average value of parameters: 0.009890877
+Number of parameters that are not zero: [768 768 768 768]
+Accuracy on the validation set: {'__OVERALL__': 0.8316831683168316, 'NAME': 0.8152173913043478, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': nan}
+Training classification probe
+Creating model...
+Number of training instances: 908
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0184
+Epoch: [2/10], Loss: 0.0146
+Epoch: [3/10], Loss: 0.0133
+Epoch: [4/10], Loss: 0.0122
+Epoch: [5/10], Loss: 0.0113
+Epoch: [6/10], Loss: 0.0106
+Epoch: [7/10], Loss: 0.0100
+Epoch: [8/10], Loss: 0.0096
+Epoch: [9/10], Loss: 0.0092
+Epoch: [10/10], Loss: 0.0089
+Score (accuracy) of the probe: 0.81
+l1=0.01,l2=0.01
+Absolute average value of parameters: 0.009819512
+Number of parameters that are not zero: [768 768 768 768]
+Accuracy on the validation set: {'__OVERALL__': 0.8118811881188119, 'NAME': 0.7934782608695652, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': nan}
+Training classification probe
+Creating model...
+Number of training instances: 908
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0191
+Epoch: [2/10], Loss: 0.0158
+Epoch: [3/10], Loss: 0.0143
+Epoch: [4/10], Loss: 0.0131
+Epoch: [5/10], Loss: 0.0121
+Epoch: [6/10], Loss: 0.0113
+Epoch: [7/10], Loss: 0.0107
+Epoch: [8/10], Loss: 0.0102
+Epoch: [9/10], Loss: 0.0099
+Epoch: [10/10], Loss: 0.0096
+Score (accuracy) of the probe: 0.87
+l1=0.01,l2=0.1
+Absolute average value of parameters: 0.008703618
+Number of parameters that are not zero: [768 768 768 768]
+Accuracy on the validation set: {'__OVERALL__': 0.8712871287128713, 'NAME': 0.8586956521739131, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': nan}
+Training classification probe
+Creating model...
+Number of training instances: 908
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0544
+Epoch: [2/10], Loss: 0.0387
+Epoch: [3/10], Loss: 0.0275
+Epoch: [4/10], Loss: 0.0200
+Epoch: [5/10], Loss: 0.0159
+Epoch: [6/10], Loss: 0.0143
+Epoch: [7/10], Loss: 0.0133
+Epoch: [8/10], Loss: 0.0127
+Epoch: [9/10], Loss: 0.0123
+Epoch: [10/10], Loss: 0.0121
+Score (accuracy) of the probe: 0.80
+l1=0.1,l2=0
+Absolute average value of parameters: 0.00038780738
+Number of parameters that are not zero: [768 768 768 768]
+Accuracy on the validation set: {'__OVERALL__': 0.801980198019802, 'NAME': 0.8043478260869565, 'STRING': 0.75, 'NUMBER': 1.0, 'KEYWORD': nan}
+Training classification probe
+Creating model...
+Number of training instances: 908
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0547
+Epoch: [2/10], Loss: 0.0389
+Epoch: [3/10], Loss: 0.0274
+Epoch: [4/10], Loss: 0.0197
+Epoch: [5/10], Loss: 0.0157
+Epoch: [6/10], Loss: 0.0143
+Epoch: [7/10], Loss: 0.0132
+Epoch: [8/10], Loss: 0.0126
+Epoch: [9/10], Loss: 0.0123
+Epoch: [10/10], Loss: 0.0120
+Score (accuracy) of the probe: 0.91
+l1=0.1,l2=0.001
+Absolute average value of parameters: 0.00038378444
+Number of parameters that are not zero: [768 768 768 768]
+Accuracy on the validation set: {'__OVERALL__': 0.9108910891089109, 'NAME': 0.9347826086956522, 'STRING': 0.75, 'NUMBER': 0.0, 'KEYWORD': nan}
+Training classification probe
+Creating model...
+Number of training instances: 908
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0536
+Epoch: [2/10], Loss: 0.0379
+Epoch: [3/10], Loss: 0.0269
+Epoch: [4/10], Loss: 0.0193
+Epoch: [5/10], Loss: 0.0155
+Epoch: [6/10], Loss: 0.0142
+Epoch: [7/10], Loss: 0.0131
+Epoch: [8/10], Loss: 0.0125
+Epoch: [9/10], Loss: 0.0122
+Epoch: [10/10], Loss: 0.0120
+Score (accuracy) of the probe: 0.91
+l1=0.1,l2=0.01
+Absolute average value of parameters: 0.00038390313
+Number of parameters that are not zero: [768 768 768 768]
+Accuracy on the validation set: {'__OVERALL__': 0.9108910891089109, 'NAME': 0.9239130434782609, 'STRING': 0.75, 'NUMBER': 1.0, 'KEYWORD': nan}
+Training classification probe
+Creating model...
+Number of training instances: 908
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0554
+Epoch: [2/10], Loss: 0.0391
+Epoch: [3/10], Loss: 0.0277
+Epoch: [4/10], Loss: 0.0200
+Epoch: [5/10], Loss: 0.0159
+Epoch: [6/10], Loss: 0.0144
+Epoch: [7/10], Loss: 0.0133
+Epoch: [8/10], Loss: 0.0128
+Epoch: [9/10], Loss: 0.0124
+Epoch: [10/10], Loss: 0.0122
+Score (accuracy) of the probe: 0.86
+l1=0.1,l2=0.1
+Absolute average value of parameters: 0.00033983926
+Number of parameters that are not zero: [768 768 768 768]
+Accuracy on the validation set: {'__OVERALL__': 0.8613861386138614, 'NAME': 0.9347826086956522, 'STRING': 0.0, 'NUMBER': 1.0, 'KEYWORD': nan}
+The best l1=0.1, the best l2=0.001 for pretrained_BERT
+Accuracy on the test set of probing pretrained_BERT of all layers:
+Score (accuracy) of the probe: 0.76
+{'__OVERALL__': 0.7637969094922737, 'NAME': 0.84, 'STRING': 1.0, 'NUMBER': 0.2222222222222222, 'KEYWORD': 0.0}
+Accuracy on the test set of pretrained_BERT model using the intercept:
+Score (accuracy) of the probe: 0.88
+----------------------------------------------------------------
