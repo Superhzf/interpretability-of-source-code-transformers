@@ -178,12 +178,12 @@ def layerwise_probes_inference(X_train,y_train,X_valid,y_valid,X_test,y_test,idx
     for i in range(13):
         print(f"{model_name} Layer", i)
         layer_train = ablation.filter_activations_by_layers(X_train, [i], 13)
-        _,_,layer_probe=param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2)
-        del layer_train
+        layer_valid = ablation.filter_activations_by_layers(X_valid, [i], 13)
         layer_test = ablation.filter_activations_by_layers(X_test, [i], 13)
+        _,_,layer_probe=param_tuning(layer_train,y_train,layer_valid,y_valid,idx2label,l1,l2)
+        del layer_train, layer_test
         linear_probe.evaluate_probe(layer_probe, layer_test, y_test, idx_to_class=idx2label)
-        del layer_test
-        del layer_probe
+        del layer_test, layer_probe
 
 
 def control_task_probes(X_train,y_train,X_test,y_test,idx2label_train,original_scores,model_name,method):
