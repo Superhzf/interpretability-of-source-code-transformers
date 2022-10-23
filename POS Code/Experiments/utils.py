@@ -171,7 +171,7 @@ def get_top_words(top_neurons,tokens,activations,model_name):
         print(f"Top words for {model_name} neuron indx {neuron}",top_words)
 
 
-def layerwise_probes_inference(X_train,y_train,X_test,y_test,idx2label,model_name):
+def layerwise_probes_inference(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,model_name):
     ''' Returns models and accuracy(score) of the probes trained on activations from different layers '''
     for i in range(13):
         print(f"{model_name} Layer", i)
