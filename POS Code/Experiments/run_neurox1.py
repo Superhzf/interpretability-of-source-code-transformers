@@ -45,10 +45,10 @@ def main():
             freq_threshold = 3
             X_train, y_train, label2idx_train, idx2label_train=preprocess(ACTIVATION_NAMES[this_model][0],
                                                                         './src_files/codetest2_train_unique.in','./src_files/codetest2_train_unique.label',
-                                                                        freq_threshold,model_name)
+                                                                        freq_threshold,this_model)
             X_test, y_test, _, _=preprocess(ACTIVATION_NAMES[this_model][1],
                                             './src_files/codetest2_test_unique.in','./src_files/codetest2_test_unique.label',
-                                            freq_threshold,model_name)
+                                            freq_threshold,this_model)
             lookup_table = {1:2,2:3,3:1}
             for idx, this_y in enumerate(y_test):
                 if this_y in lookup_table:
@@ -70,20 +70,20 @@ def main():
             del norm
 
             #Probeless clustering experiments
-            # probeless(X_train,y_train,model_name)
+            # probeless(X_train,y_train,this_model)
 
             #All activations probes
-            probe, scores = all_activations_probe(X_train,y_train,X_valid,y_valid,X_test, y_test,idx2label_train,model_name)
+            probe, scores = all_activations_probe(X_train,y_train,X_valid,y_valid,X_test, y_test,idx2label_train,this_model)
 
             #Layerwise Probes
-            layerwise_probes_inference(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label_train,model_name)
+            layerwise_probes_inference(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label_train,this_model)
 
             #Important neuron probes
-            top_neurons = get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,probe,label2idx_train,idx2label_train,model_name)
-            # get_top_words(top_neurons,tokens,activations,model_name)
+            top_neurons = get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,probe,label2idx_train,idx2label_train,this_model)
+            # get_top_words(top_neurons,tokens,activations,this_model)
             del X_train, X_test, X_valid,y_train, y_test,y_valid
             #Control task probes
-            selectivity = control_task_probes(X_train_copy,y_train_copy,X_test_copy,y_test_copy,idx2label_train,scores,model_name,'UNIFORM')
+            selectivity = control_task_probes(X_train_copy,y_train_copy,X_test_copy,y_test_copy,idx2label_train,scores,this_model,'UNIFORM')
             print("----------------------------------------------------------------")
             break
 
