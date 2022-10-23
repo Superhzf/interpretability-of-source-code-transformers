@@ -189,7 +189,7 @@ def layerwise_probes_inference(X_train,y_train,X_valid,y_valid,X_test,y_test,idx
 
 def control_task_probes(X_train,y_train,X_test,y_test,idx2label_train,original_scores,model_name,method):
     print(f"Creating control dataset for {model_name} POS tagging task")
-    label_freqs = Counter(y_train)
+    label_freqs = collections.Counter(y_train)
     distribution = []
     if method == 'SAME':
         total = sum(label_freqs.values())
