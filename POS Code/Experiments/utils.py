@@ -93,10 +93,10 @@ def param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2):
             this_score = linear_probe.evaluate_probe(this_probe, X_valid, y_valid, idx_to_class=idx2label)
             this_weights = list(this_probe.parameters())[0].data.cpu().numpy()
             this_weights_mean = np.mean(np.abs(this_weights))
-            print(f"l1={this_l1},l2={this_l2}")
-            print("Absolute average value of parameters:",this_weights_mean)
-            print("Number of parameters that are not zero:",np.sum(this_weights != 0,axis=1))
-            print("Accuracy on the validation set:",this_score)
+            # print(f"l1={this_l1},l2={this_l2}")
+            # print("Absolute average value of parameters:",this_weights_mean)
+            # print("Number of parameters that are not zero:",np.sum(this_weights != 0,axis=1))
+            # print("Accuracy on the validation set:",this_score)
             if this_score['__OVERALL__'] > best_score:
                 best_score = this_score['__OVERALL__']
                 best_l1 = this_l1
@@ -181,7 +181,7 @@ def layerwise_probes_inference(X_train,y_train,X_valid,y_valid,X_test,y_test,idx
         layer_valid = ablation.filter_activations_by_layers(X_valid, [i], 13)
         layer_test = ablation.filter_activations_by_layers(X_test, [i], 13)
         _,_,layer_probe=param_tuning(layer_train,y_train,layer_valid,y_valid,idx2label,l1,l2)
-        del layer_train, layer_test
+        del layer_train, layer_valid
         linear_probe.evaluate_probe(layer_probe, layer_test, y_test, idx_to_class=idx2label)
         del layer_test, layer_probe
 
