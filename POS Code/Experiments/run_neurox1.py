@@ -44,10 +44,10 @@ def main():
             print(f"Anayzing {this_model}")
             freq_threshold = 3
             X_train, y_train, label2idx_train, idx2label_train=preprocess(ACTIVATION_NAMES[this_model][0],
-                                                                        'codetest2_train_unique.in','codetest2_train_unique.label',
+                                                                        './src_files/codetest2_train_unique.in','./src_files/codetest2_train_unique.label',
                                                                         freq_threshold,model_name)
             X_test, y_test, _, _=preprocess(ACTIVATION_NAMES[this_model][1],
-                                            'codetest2_test_unique.in','codetest2_test_unique.label',
+                                            './src_files/codetest2_test_unique.in','./src_files/codetest2_test_unique.label',
                                             freq_threshold,model_name)
             lookup_table = {1:2,2:3,3:1}
             for idx, this_y in enumerate(y_test):
