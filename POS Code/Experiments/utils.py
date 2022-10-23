@@ -122,11 +122,11 @@ def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2labe
     #Get scores of probes
     print(f"The best l1={best_l1}, the best l2={best_l2} for {model_name}")
     print(f"Accuracy on the test set of probing {model_name} of all layers:")
-    scores = linear_probe.evaluate_probe(best_probe, X_test[:,:768], y_test, idx_to_class=idx2label)
+    scores = linear_probe.evaluate_probe(best_probe, X_test, y_test, idx_to_class=idx2label)
     print(scores)
-    X_test_baseline = np.zeros_like(X_test[:,:768])
+    X_test_baseline = np.zeros_like(X_test)
     print(f"Accuracy on the test set of {model_name} model using the intercept:")
-    linear_probe.evaluate_probe(best_probe, X_test_baseline[:,:768], y_test, idx_to_class=idx2label)
+    linear_probe.evaluate_probe(best_probe, X_test_baseline, y_test, idx_to_class=idx2label)
     return this_probe, scores
 
 
