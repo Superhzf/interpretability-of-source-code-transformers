@@ -221,6 +221,7 @@ def control_task_probes(X_train,y_train,X_test,y_test,idx2label_train,original_s
 
     X_train, X_valid, y_train, y_valid = \
         train_test_split(X_train, y_train, test_size=0.1, shuffle=False)
+    assert 0 in set(y_train)
     # normalization
     ct_norm = Normalization(X_train)
     X_train = ct_norm.norm(X_train)
