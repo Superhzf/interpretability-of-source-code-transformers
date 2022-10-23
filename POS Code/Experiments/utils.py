@@ -226,7 +226,7 @@ def control_task_probes(X_train,y_train,X_test,y_test,idx2label_train,original_s
     del ct_norm
 
     model_name = f'{model_name}_control_task'
-    _, ct_scores = all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,model_name)
+    _, ct_scores = all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label_train,model_name)
     
     selectivity = original_scores['__OVERALL__'] - ct_scores['__OVERALL__']
     print(f'{model_name} Selectivity (Diff. between true task and probing task performance): ', selectivity)
