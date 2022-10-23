@@ -202,7 +202,7 @@ def control_task_probes(X_train,y_train,X_test,y_test,idx2label_train,original_s
         assert 1==0, "method is not understood"
     #random assign new class
     lookup_table = {}
-    while 0 is not in list(lookup_table.values()):
+    while 0 not in list(lookup_table.values()):
         for this_class in label_freqs.keys():
             lookup_table[this_class] = np.random.choice(list(label_freqs.keys()), p=distribution)
 
