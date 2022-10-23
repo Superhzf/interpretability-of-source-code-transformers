@@ -17,7 +17,7 @@ ACTIVATION_NAMES = {'pretrained_BERT':['bert_activations_train.json','bert_activ
                     'pretrained_GraphCodeBERT':['graphcodebert_activations_train.json','graphcodebert_activations_test.json'],
                     'finetuned_defdet_CodeBERT':['codebert_defdet_activations_train.json','codebert_defdet_activations_test.json'],
                     'finetuned_defdet_GraphCodeBERT':['graphcodebert_defdet_activations_train.json','graphcodebert_defdet_activations_test.json'],
-                    'finetuned_clonedet_CodeBERT';['codebert_clonedet_activations1_train.json','codebert_clonedet_activations1_test.json'],
+                    'finetuned_clonedet_CodeBERT':['codebert_clonedet_activations1_train.json','codebert_clonedet_activations1_test.json'],
                     'finetuned_clonedet_GraphCodeBERT':['graphcodebert_clonedet_activations1_train.json','graphcodebert_clonedet_activations1_test.json']}
 MODEL_DESC = {"pretrained_BERT":'bert-base-uncased',
               "pretrained_CodeBERT":'microsoft/codebert-base',
