@@ -173,6 +173,8 @@ def get_top_words(top_neurons,tokens,activations,model_name):
 
 def layerwise_probes_inference(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,model_name):
     ''' Returns models and accuracy(score) of the probes trained on activations from different layers '''
+    l1 = [0,0.001,0.01,0.1]
+    l2 = [0,0.001,0.01,0.1]
     for i in range(13):
         print(f"{model_name} Layer", i)
         layer_train = ablation.filter_activations_by_layers(X_train, [i], 13)
