@@ -214,7 +214,7 @@ def control_task_probes(X_train,y_train,X_test,y_test,idx2label_train,original_s
     assert len(new_y_train) == len(y_train)
     assert len(new_y_test) == len(y_test)
     y_train = np.array(new_y_train)
-    y_test = np.array(new_y_tes)
+    y_test = np.array(new_y_test)
 
     X_train, X_valid, y_train, y_valid = \
         train_test_split(X_train, y_train, test_size=0.1, shuffle=False)
