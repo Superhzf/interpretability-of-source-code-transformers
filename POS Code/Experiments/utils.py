@@ -127,7 +127,7 @@ def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2labe
     X_test_baseline = np.zeros_like(X_test)
     print(f"Accuracy on the test set of {model_name} model using the intercept:")
     linear_probe.evaluate_probe(best_probe, X_test_baseline, y_test, idx_to_class=idx2label)
-    return this_probe, scores
+    return best_probe, scores
 
 
 def get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,probe,label2idx,idx2label,model_name):
