@@ -211,8 +211,8 @@ def control_task_probes(X_train,y_train,X_test,y_test,idx2label_train,original_s
     for this_y in y_test:
         new_this_y = lookup_table[this_y]
         new_y_test.append(this_y)
-    assert len(new_y_train) == y_train
-    assert len(new_y_test) == y_test
+    assert len(new_y_train) == len(y_train)
+    assert len(new_y_test) == len(y_test)
     y_train = np.array(new_y_train)
     y_test = np.array(new_y_tes)
 
