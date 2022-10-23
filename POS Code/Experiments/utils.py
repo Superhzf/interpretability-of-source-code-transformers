@@ -198,10 +198,13 @@ def control_task_probes(X_train,y_train,X_test,y_test,idx2label_train,original_s
     elif method == "UNIFORM":
         for this_class,freq in label_freqs.items():
             distribution.append(1/len(label_freqs))
+    else:
+        assert 1==0, "method is not understood"
     #random assign new class
     lookup_table = {}
-    for this_class in label_freqs.keys():
-        lookup_table[this_class] = np.random.choice(list(label_freqs.keys()), p=distribution)
+    while 0 is not in list(lookup_table.values()):
+        for this_class in label_freqs.keys():
+            lookup_table[this_class] = np.random.choice(list(label_freqs.keys()), p=distribution)
 
     new_y_train = []
     new_y_test = []
