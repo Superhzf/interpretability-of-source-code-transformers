@@ -14,8 +14,6 @@ NeuroX_env/
 
 py150_files.tar.gz
 py150_files
-
-*logs*
 *slurm*
 
 *.ipynb*
