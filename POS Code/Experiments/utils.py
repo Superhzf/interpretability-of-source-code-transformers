@@ -9,6 +9,7 @@ import neurox.interpretation.clustering
 from sklearn.model_selection import train_test_split
 import neurox.analysis.corpus as corpus
 import numpy as np
+import collections
 
 
 def remove_seen_tokens(tokens,activations):
@@ -244,7 +245,6 @@ def probeless(X,y,model_name):
     print(neurox.interpretation.clustering.create_correlation_clusters(X, use_abs_correlation=True, clustering_threshold=0.5, method='average'))
 
 def filter_by_frequency(X,y,label2idx,idx2label,threshold,model_name):
-    import collections
     count = collections.Counter(y)
     distribution = {k: v for k, v in sorted(count.items(), key=lambda item: item[1],reverse=True)}
     print(f"{model_name} distribution:")
