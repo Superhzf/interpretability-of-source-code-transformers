@@ -62,32 +62,10 @@ def main():
             X_train = X_train[idx_selected]
             y_train = y_train[idx_selected]
 
-            # new_tokens_train = []
-            # new_activations_train = []
-            # idx = 0
-            # for this_tokens,this_activations in zip(tokens_train,activations_train):
-            #     this_new_tokens = []
-            #     this_new_activations = []
-            #     for this_token,this_activation in zip(this_tokens,this_activations):
-            #         if idx_selected[idx]:
-            #             this_new_tokens.append(this_token)
-            #             this_new_activations.append(this_activation)
-            #         idx+=1
-            #     if len(this_new_tokens)>0:
-            #         this_new_tokens = np.array(this_new_tokens)
-            #         this_new_activations.append(this_new_activations)
-            #         new_tokens_train.append(this_new_tokens)
-            #         new_activations_train.append(this_new_activations)
-            # assert idx == len(idx_selected)
-            # assert len(np.array([l for sublist in new_tokens_train for l in sublist])) == len(flat_tokens_train)
-            # assert len(np.array([l for sublist in new_activations_train for l in sublist])) == len(flat_tokens_train)
-            # assert (np.array([l for sublist in new_tokens_train for l in sublist]) == flat_tokens_train).all()
-            # tokens_train = new_tokens_train
-            # activations_train = new_activations_train
-            # print("The distribution of classes after removing repeated tokens between training and tesing:")
-            # print(Counter.collections(y_train))
-            # print(label2idx_train)
-            # exit(0)
+            print("The distribution of classes after removing repeated tokens between training and tesing:")
+            print(Counter.collections(y_train))
+            print(label2idx_train)
+            exit(0)
 
             lookup_table = {1:2,2:3,3:1}
             for idx, this_y in enumerate(y_test):

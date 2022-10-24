@@ -259,18 +259,50 @@ def probeless(X,y,model_name):
     print(f"{model_name} Clustering POS")
     print(neurox.interpretation.clustering.create_correlation_clusters(X, use_abs_correlation=True, clustering_threshold=0.5, method='average'))
 
-def filter_by_frequency(tokens,X,y,label2idx,idx2label,threshold,model_name):
+
+def alignTokenAct(tokens,activations,idx_selected):
+    new_tokens_src = []
+    new_tokens_trg = []
+    new_activations = []
+    idx = 0
+    for this_tokens_src,this_tokens_trg,this_activations in zip(tokens['source'],tokens['target'],activations):
+        this_new_tokens_src = []
+        this_new_tokens_trg = []
+        this_new_activations = []
+        for this_token_src,this_token_trg,this_activation in zip(this_tokens_src,this_tokens_trg,this_activations):
+            if idx_selected[idx]:
+                this_new_tokens_src.append(this_token_src)
+                this_new_tokens_trg.append(this_token_trg)
+                this_new_activations.append(this_activation)
+            idx+=1
+        if len(this_new_tokens)>0:
+            this_new_tokens_src = np.array(this_new_tokens_src)
+            this_new_tokens_trg = np.array(this_new_tokens_trg)
+            this_new_activations.append(this_new_activations)
+            new_tokens_src.append(this_new_tokens_src)
+            new_tokens_trg.append(this_new_tokens_trg)
+            new_activations.append(this_new_activations)
+    assert idx == len(idx_selected)
+    new_tokens = {'source':new_tokens_src,'target':new_tokens_trg}
+    return new_tokens,new_activations
+
+
+def filter_by_frequency(tokens,activations,X,y,label2idx,idx2label,threshold,model_name):
     count = collections.Counter(y)
     distribution = {k: v for k, v in sorted(count.items(), key=lambda item: item[1],reverse=True)}
     print(f"{model_name} distribution:")
     print(distribution)
 
-    flat_tokens = np.array([l for sublist in tokens for l in sublist])
+    flat_src_tokens = np.array([l for sublist in tokens['source'] for l in sublist])
     assert len(flat_tokens) == len(y)
     idx_selected = y <= threshold
     y = y[idx_selected]
     X = X[idx_selected]
-    tokens = flat_tokens[idx_selected]
+    flat_src_tokens = flat_tokens[idx_selected]
+    tokens,activations=alignTokenAct(tokens,activations,idx_selected)
+    assert (flat_src_tokens == np.array([l for sublist in tokens['source'] for l in sublist])).all()
+    assert len(np.array([l for sublist in activations for l in sublist])) == len(flat_src_tokens)
+    assert len(np.array([l for sublist in tokens['target'] for l in sublist])) == len(flat_src_tokens)
 
     label2idx = {label:idx for (label,idx) in label2idx.items() if idx <= threshold}
     idx2label = {idx:label for (idx,label) in idx2label.items() if idx <= threshold}
@@ -282,7 +314,7 @@ def filter_by_frequency(tokens,X,y,label2idx,idx2label,threshold,model_name):
     print(distribution_rate)
     print(distribution)
     print(label2idx)
-    return tokens,X,y,label2idx,idx2label
+    return tokens,activations,flat_src_tokens,X,y,label2idx,idx2label
 
 
 def preprocess(activation_file_name,IN_file,LABEL_file,freq_threshold,model_name):
@@ -290,5 +322,5 @@ def preprocess(activation_file_name,IN_file,LABEL_file,freq_threshold,model_name
     tokens =  load_tokens(activations,IN_file,LABEL_file)
     tokens,activations=remove_seen_tokens(tokens,activations)
     X, y, label2idx, idx2label, _, _ = get_mappings(tokens,activations)
-    flat_src_tokens,X_train, y_train, label2idx, idx2label = filter_by_frequency(tokens['source'],X,y,label2idx,idx2label,freq_threshold,model_name)
+    tokens,activations,flat_src_tokens,X_train, y_train, label2idx, idx2label = filter_by_frequency(tokens,activations,X,y,label2idx,idx2label,freq_threshold,model_name)
     return tokens,activations,flat_src_tokens,X_train,y_train,label2idx,idx2label
