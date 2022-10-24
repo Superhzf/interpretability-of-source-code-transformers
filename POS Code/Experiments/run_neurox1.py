@@ -43,10 +43,10 @@ def main():
         if this_model in ['pretrained_BERT','pretrained_CodeBERT','pretrained_GraphCodeBERT']:
             print(f"Anayzing {this_model}")
             freq_threshold = 3
-            X_train, y_train, label2idx_train, idx2label_train=preprocess(ACTIVATION_NAMES[this_model][0],
+            tokens_train,X_train, y_train, label2idx_train, idx2label_train=preprocess(ACTIVATION_NAMES[this_model][0],
                                                                         './src_files/codetest2_train_unique.in','./src_files/codetest2_train_unique.label',
                                                                         freq_threshold,this_model)
-            X_test, y_test, _, _=preprocess(ACTIVATION_NAMES[this_model][1],
+            tokens_test,X_test, y_test, _, _=preprocess(ACTIVATION_NAMES[this_model][1],
                                             './src_files/codetest2_test_unique.in','./src_files/codetest2_test_unique.label',
                                             freq_threshold,this_model)
             lookup_table = {1:2,2:3,3:1}
@@ -54,10 +54,10 @@ def main():
                 if this_y in lookup_table:
                     y_test[idx] = lookup_table[this_y]
             
-            X_train_copy = X_train
-            y_train_copy = y_train
-            X_test_copy = X_test
-            y_test_copy = y_test
+            X_train_copy = X_train.copy()
+            y_train_copy = y_train.copy()
+            X_test_copy = X_test.copy()
+            y_test_copy = y_test.copy()
 
             X_train, X_valid, y_train, y_valid = \
                 train_test_split(X_train, y_train, test_size=0.1, shuffle=False)
@@ -83,7 +83,8 @@ def main():
             # get_top_words(top_neurons,tokens,activations,this_model)
             del X_train, X_test, X_valid,y_train, y_test,y_valid
             #Control task probes
-            selectivity = control_task_probes(X_train_copy,y_train_copy,X_test_copy,y_test_copy,idx2label_train,scores,this_model,'UNIFORM')
+            selectivity = control_task_probes(tokens_train,X_train_copy,y_train_copy,
+                                            tokens_test,X_test_copy,y_test_copy,idx2label_train,scores,this_model,'UNIFORM')
             print("----------------------------------------------------------------")
             break
 

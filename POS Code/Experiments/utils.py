@@ -181,7 +181,19 @@ def layerwise_probes_inference(X_train,y_train,X_valid,y_valid,X_test,y_test,idx
         _,_ = all_activations_probe(layer_train,y_train,layer_valid,y_valid,layer_test,y_test,idx2label,this_model_name)
 
 
-def control_task_probes(X_train,y_train,X_test,y_test,idx2label_train,original_scores,model_name,method):
+def randomReassignment(tokens,labels,distribution):
+    lookup_table={}
+    for this_token in tokens:
+            if this_token not in lookup_table:
+                lookup_table[this_token] = np.random.choice(labels, p=distribution)
+    y_ct = []
+    for this_token in tokens:
+        this_y_ct = lookup_table[this_token]
+        y_ct.append(this_y_ct)
+    return y_ct
+
+
+def control_task_probes(tokens_train,X_train,y_train,tokens_test,X_test,y_test,idx2label_train,original_scores,model_name,method):
     print(f"Creating control dataset for {model_name} POS tagging task")
     label_freqs = collections.Counter(y_train)
     distribution = []
@@ -199,18 +211,8 @@ def control_task_probes(X_train,y_train,X_test,y_test,idx2label_train,original_s
         #random assign new class
         # for this_class in label_freqs.keys():
         #     lookup_table[this_class] = np.random.choice(list(label_freqs.keys()), p=distribution)
-        for this_y in y_train:
-            if this_y not in lookup_table:
-                lookup_table[this_y] = np.random.choice(list(label_freqs.keys()), p=distribution)
-
-        y_train_ct = []
-        y_test_ct = []
-        for this_y in y_train:
-            this_y_ct = lookup_table[this_y]
-            y_train_ct.append(this_y_ct)
-        for this_y in y_test:
-            this_y_ct = lookup_table[this_y]
-            y_test_ct.append(this_y_ct)
+        y_train_ct = randomReassignment(tokens_train,list(label_freqs.keys()),distribution)
+        y_test_ct = randomReassignment(tokens_test,list(label_freqs.keys()),distribution)
         assert len(y_train_ct) == len(y_train)
         assert len(y_test_ct) == len(y_test)
         y_train_ct = np.array(y_train_ct)
@@ -254,15 +256,18 @@ def probeless(X,y,model_name):
     print(f"{model_name} Clustering POS")
     print(neurox.interpretation.clustering.create_correlation_clusters(X, use_abs_correlation=True, clustering_threshold=0.5, method='average'))
 
-def filter_by_frequency(X,y,label2idx,idx2label,threshold,model_name):
+def filter_by_frequency(tokens,X,y,label2idx,idx2label,threshold,model_name):
     count = collections.Counter(y)
     distribution = {k: v for k, v in sorted(count.items(), key=lambda item: item[1],reverse=True)}
     print(f"{model_name} distribution:")
     print(distribution)
 
+    flat_tokens = [l for sublist in tokens for l in sublist]
+    assert len(flat_tokens) == len(y)
     idx_selected = y <= threshold
     y = y[idx_selected]
     X = X[idx_selected]
+    tokens = flat_tokens[idx_selected]
 
     label2idx = {label:idx for (label,idx) in label2idx.items() if idx <= threshold}
     idx2label = {idx:label for (idx,label) in idx2label.items() if idx <= threshold}
@@ -274,7 +279,7 @@ def filter_by_frequency(X,y,label2idx,idx2label,threshold,model_name):
     print(distribution_rate)
     print(distribution)
     print(label2idx)
-    return X,y,label2idx,idx2label
+    return tokens,X,y,label2idx,idx2label
 
 
 def preprocess(activation_file_name,IN_file,LABEL_file,freq_threshold,model_name):
@@ -282,5 +287,5 @@ def preprocess(activation_file_name,IN_file,LABEL_file,freq_threshold,model_name
     tokens =  load_tokens(activations,IN_file,LABEL_file)
     tokens,activations=remove_seen_tokens(tokens,activations)
     X, y, label2idx, idx2label, _, _ = get_mappings(tokens,activations)
-    X_train, y_train, label2idx, idx2label = filter_by_frequency(X,y,label2idx,idx2label,freq_threshold,model_name)
-    return X_train,y_train,label2idx,idx2label
+    tokens,X_train, y_train, label2idx, idx2label = filter_by_frequency(tokens,X,y,label2idx,idx2label,freq_threshold,model_name)
+    return tokens,X_train,y_train,label2idx,idx2label
