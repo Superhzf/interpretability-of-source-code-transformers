@@ -89,10 +89,10 @@ def main():
             # print(label2idx_train)
             # exit(0)
 
-            # lookup_table = {1:2,2:3,3:1}
-            # for idx, this_y in enumerate(y_test):
-            #     if this_y in lookup_table:
-            #         y_test[idx] = lookup_table[this_y]
+            lookup_table = {1:2,2:3,3:1}
+            for idx, this_y in enumerate(y_test):
+                if this_y in lookup_table:
+                    y_test[idx] = lookup_table[this_y]
             
             X_train_copy = X_train.copy()
             y_train_copy = y_train.copy()
