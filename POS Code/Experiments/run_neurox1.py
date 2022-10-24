@@ -62,6 +62,13 @@ def main():
             flat_tokens_train = flat_tokens_train[idx_selected]
             X_train = X_train[idx_selected]
             y_train = y_train[idx_selected]
+            tokens_train,activations_train=alignTokenAct(tokens_train,activations_train,idx_selected)
+
+            assert (flat_tokens_train == np.array([l for sublist in tokens_train['source'] for l in sublist])).all()
+            l1 = len([l for sublist in activations_train for l in sublist])
+            l2 = len(flat_tokens_train)
+            assert l1 == l2,f"{l1}!={l2}"
+            assert len(np.array([l for sublist in tokens_train['target'] for l in sublist])) == l2
 
             print("The distribution of classes in training after removing repeated tokens between training and tesing:")
             print(collections.Counter(y_train))
@@ -102,7 +109,7 @@ def main():
 
             #Important neuron probes
             top_neurons = get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,probe,label2idx_train,idx2label_train,this_model)
-            # get_top_words(top_neurons,tokens_train,activations_train,this_model)
+            get_top_words(top_neurons,tokens_train,activations_train,this_model)
             del X_train, X_test, X_valid,y_train, y_test,y_valid
             #Control task probes
             selectivity = control_task_probes(flat_tokens_train,X_train_copy,y_train_copy,
