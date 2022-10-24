@@ -8,7 +8,7 @@ length of source dictionary:  1042
 length of target dictionary:  34
 1042
 Total instances: 1042
-['us', 'SYSMAIL_BOARD', 'second', 'attr', '80', 'authentication', 'preload', 'get_int', 'utcnow', 'utc', 'get_server_schema', 'pytz', '~~', 'XMPP_LONG_IDLE_TIME', 'name', '>', 'SECOND_MICROS', 'get_context_data', '"indextabs"', 'ref']
+['lightmap_tiling_offset', 'description', 'USHM_SIZE', 'set_server_powerstate', 'filter', 'in', 'SESSION_TIMEOUT', 'postinfo', 'define_profile_template', 'S_ISREG', 'required', 'profileResource', 'pooltype', 'choices', 'url', 'year', 'path', 'pdb', 'lightmap_tiling_offset_dynamic', 'RequestContext']
 Number of samples:  1042
 Stats: Labels with their frequencies in the final set
 NAME 876
@@ -58,7 +58,7 @@ length of source dictionary:  482
 length of target dictionary:  33
 482
 Total instances: 482
-['mult_st', 'dropout', 'cost', 'cropping', 'layers', '~~', 'describable', 'merge_function', 'MeanSquaredError', 'name', '>', 'scorers', 'test_get_output_shape_for_cropped', 'T', 'parent', '0', 'try', ',', 'sigma2', 'axis']
+['x0', 'term4', 'in', 'gather_losses_and_scores', 'ValueError', 'path', 'release', 'sigmoid', 'environ', '<=', 'tanh', 'result_1', 'param', 'coeff', 'x2', 'cls', 'weight', 'crop2', '+', '3']
 Number of samples:  482
 Stats: Labels with their frequencies in the final set
 NAME 400
@@ -100,1742 +100,1253 @@ pretrained_BERT distribution after trauncating:
 {0: 0.8830022075055187, 1: 0.059602649006622516, 2: 0.04856512141280353, 3: 0.008830022075055188}
 {0: 400, 1: 27, 2: 22, 3: 4}
 {'NAME': 0, 'NUMBER': 1, 'KEYWORD': 2, 'STRING': 3}
-The shape of the training set: (908, 9984)
-The shape of the validation set: (101, 9984)
+The shape of the training set: (842, 9984)
+The shape of the validation set: (94, 9984)
 The shape of the testing set: (453, 9984)
 Training classification probe
 Creating model...
-Number of training instances: 908
+Number of training instances: 842
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0146
-Epoch: [2/10], Loss: 0.0069
-Epoch: [3/10], Loss: 0.0037
-Epoch: [4/10], Loss: 0.0023
-Epoch: [5/10], Loss: 0.0011
-Epoch: [6/10], Loss: 0.0006
-Epoch: [7/10], Loss: 0.0003
-Epoch: [8/10], Loss: 0.0003
-Epoch: [9/10], Loss: 0.0002
-Epoch: [10/10], Loss: 0.0002
-Score (accuracy) of the probe: 0.98
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0141
-Epoch: [2/10], Loss: 0.0062
-Epoch: [3/10], Loss: 0.0035
-Epoch: [4/10], Loss: 0.0023
-Epoch: [5/10], Loss: 0.0010
-Epoch: [6/10], Loss: 0.0006
-Epoch: [7/10], Loss: 0.0003
-Epoch: [8/10], Loss: 0.0003
-Epoch: [9/10], Loss: 0.0002
-Epoch: [10/10], Loss: 0.0002
-Score (accuracy) of the probe: 0.98
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0143
-Epoch: [2/10], Loss: 0.0065
-Epoch: [3/10], Loss: 0.0039
-Epoch: [4/10], Loss: 0.0025
-Epoch: [5/10], Loss: 0.0013
-Epoch: [6/10], Loss: 0.0008
-Epoch: [7/10], Loss: 0.0005
-Epoch: [8/10], Loss: 0.0004
-Epoch: [9/10], Loss: 0.0003
+Epoch: [1/10], Loss: 0.0199
+Epoch: [2/10], Loss: 0.0076
+Epoch: [3/10], Loss: 0.0056
+Epoch: [4/10], Loss: 0.0033
+Epoch: [5/10], Loss: 0.0017
+Epoch: [6/10], Loss: 0.0012
+Epoch: [7/10], Loss: 0.0007
+Epoch: [8/10], Loss: 0.0005
+Epoch: [9/10], Loss: 0.0004
 Epoch: [10/10], Loss: 0.0003
-Score (accuracy) of the probe: 0.98
+Score (accuracy) of the probe: 0.96
 Training classification probe
 Creating model...
-Number of training instances: 908
+Number of training instances: 842
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0155
+Epoch: [1/10], Loss: 0.0194
 Epoch: [2/10], Loss: 0.0077
-Epoch: [3/10], Loss: 0.0050
-Epoch: [4/10], Loss: 0.0035
-Epoch: [5/10], Loss: 0.0024
-Epoch: [6/10], Loss: 0.0020
-Epoch: [7/10], Loss: 0.0018
-Epoch: [8/10], Loss: 0.0017
-Epoch: [9/10], Loss: 0.0016
+Epoch: [3/10], Loss: 0.0055
+Epoch: [4/10], Loss: 0.0037
+Epoch: [5/10], Loss: 0.0018
+Epoch: [6/10], Loss: 0.0012
+Epoch: [7/10], Loss: 0.0007
+Epoch: [8/10], Loss: 0.0005
+Epoch: [9/10], Loss: 0.0004
+Epoch: [10/10], Loss: 0.0003
+Score (accuracy) of the probe: 0.99
+Training classification probe
+Creating model...
+Number of training instances: 842
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0191
+Epoch: [2/10], Loss: 0.0078
+Epoch: [3/10], Loss: 0.0058
+Epoch: [4/10], Loss: 0.0037
+Epoch: [5/10], Loss: 0.0019
+Epoch: [6/10], Loss: 0.0012
+Epoch: [7/10], Loss: 0.0008
+Epoch: [8/10], Loss: 0.0006
+Epoch: [9/10], Loss: 0.0005
+Epoch: [10/10], Loss: 0.0005
+Score (accuracy) of the probe: 0.99
+Training classification probe
+Creating model...
+Number of training instances: 842
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0204
+Epoch: [2/10], Loss: 0.0084
+Epoch: [3/10], Loss: 0.0069
+Epoch: [4/10], Loss: 0.0044
+Epoch: [5/10], Loss: 0.0029
+Epoch: [6/10], Loss: 0.0024
+Epoch: [7/10], Loss: 0.0020
+Epoch: [8/10], Loss: 0.0018
+Epoch: [9/10], Loss: 0.0017
 Epoch: [10/10], Loss: 0.0016
-Score (accuracy) of the probe: 0.98
-The best l1=0, the best l2=0 for pretrained_BERT
+Score (accuracy) of the probe: 0.97
+The best l1=0, the best l2=0.001 for pretrained_BERT
 Accuracy on the test set of probing pretrained_BERT of all layers:
-Score (accuracy) of the probe: 0.86
-{'__OVERALL__': 0.8631346578366446, 'NAME': 0.845, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 1.0}
+Score (accuracy) of the probe: 0.82
+{'__OVERALL__': 0.8233995584988962, 'NAME': 0.8275, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 0.5}
 Accuracy on the test set of pretrained_BERT model using the intercept:
 Score (accuracy) of the probe: 0.88
 pretrained_BERT Layer 0
 Training classification probe
 Creating model...
-Number of training instances: 908
+Number of training instances: 842
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0129
+Epoch: [1/10], Loss: 0.0122
 Epoch: [2/10], Loss: 0.0104
-Epoch: [3/10], Loss: 0.0093
-Epoch: [4/10], Loss: 0.0084
-Epoch: [5/10], Loss: 0.0077
-Epoch: [6/10], Loss: 0.0071
-Epoch: [7/10], Loss: 0.0065
-Epoch: [8/10], Loss: 0.0061
-Epoch: [9/10], Loss: 0.0057
-Epoch: [10/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0095
+Epoch: [4/10], Loss: 0.0088
+Epoch: [5/10], Loss: 0.0082
+Epoch: [6/10], Loss: 0.0077
+Epoch: [7/10], Loss: 0.0072
+Epoch: [8/10], Loss: 0.0068
+Epoch: [9/10], Loss: 0.0064
+Epoch: [10/10], Loss: 0.0060
 Score (accuracy) of the probe: 0.79
 Training classification probe
 Creating model...
-Number of training instances: 908
+Number of training instances: 842
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0128
-Epoch: [2/10], Loss: 0.0100
-Epoch: [3/10], Loss: 0.0090
-Epoch: [4/10], Loss: 0.0082
-Epoch: [5/10], Loss: 0.0075
-Epoch: [6/10], Loss: 0.0069
-Epoch: [7/10], Loss: 0.0064
-Epoch: [8/10], Loss: 0.0059
-Epoch: [9/10], Loss: 0.0056
-Epoch: [10/10], Loss: 0.0052
-Score (accuracy) of the probe: 0.79
+Epoch: [1/10], Loss: 0.0127
+Epoch: [2/10], Loss: 0.0107
+Epoch: [3/10], Loss: 0.0097
+Epoch: [4/10], Loss: 0.0090
+Epoch: [5/10], Loss: 0.0084
+Epoch: [6/10], Loss: 0.0079
+Epoch: [7/10], Loss: 0.0074
+Epoch: [8/10], Loss: 0.0070
+Epoch: [9/10], Loss: 0.0066
+Epoch: [10/10], Loss: 0.0062
+Score (accuracy) of the probe: 0.77
 Training classification probe
 Creating model...
-Number of training instances: 908
+Number of training instances: 842
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0132
-Epoch: [2/10], Loss: 0.0104
-Epoch: [3/10], Loss: 0.0094
-Epoch: [4/10], Loss: 0.0086
-Epoch: [5/10], Loss: 0.0079
-Epoch: [6/10], Loss: 0.0073
-Epoch: [7/10], Loss: 0.0068
-Epoch: [8/10], Loss: 0.0064
-Epoch: [9/10], Loss: 0.0060
-Epoch: [10/10], Loss: 0.0056
+Epoch: [1/10], Loss: 0.0130
+Epoch: [2/10], Loss: 0.0109
+Epoch: [3/10], Loss: 0.0099
+Epoch: [4/10], Loss: 0.0091
+Epoch: [5/10], Loss: 0.0085
+Epoch: [6/10], Loss: 0.0079
+Epoch: [7/10], Loss: 0.0075
+Epoch: [8/10], Loss: 0.0070
+Epoch: [9/10], Loss: 0.0067
+Epoch: [10/10], Loss: 0.0063
 Score (accuracy) of the probe: 0.76
 Training classification probe
 Creating model...
-Number of training instances: 908
+Number of training instances: 842
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0136
-Epoch: [2/10], Loss: 0.0109
-Epoch: [3/10], Loss: 0.0100
-Epoch: [4/10], Loss: 0.0092
-Epoch: [5/10], Loss: 0.0085
-Epoch: [6/10], Loss: 0.0080
-Epoch: [7/10], Loss: 0.0075
-Epoch: [8/10], Loss: 0.0071
-Epoch: [9/10], Loss: 0.0068
-Epoch: [10/10], Loss: 0.0065
-Score (accuracy) of the probe: 0.81
-The best l1=0, the best l2=0.1 for pretrained_BERT_layer_0
+Epoch: [1/10], Loss: 0.0135
+Epoch: [2/10], Loss: 0.0116
+Epoch: [3/10], Loss: 0.0107
+Epoch: [4/10], Loss: 0.0100
+Epoch: [5/10], Loss: 0.0094
+Epoch: [6/10], Loss: 0.0089
+Epoch: [7/10], Loss: 0.0084
+Epoch: [8/10], Loss: 0.0080
+Epoch: [9/10], Loss: 0.0077
+Epoch: [10/10], Loss: 0.0073
+Score (accuracy) of the probe: 0.77
+The best l1=0, the best l2=0 for pretrained_BERT_layer_0
 Accuracy on the test set of probing pretrained_BERT_layer_0 of all layers:
-Score (accuracy) of the probe: 0.75
-{'__OVERALL__': 0.7483443708609272, 'NAME': 0.715, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 1.0}
+Score (accuracy) of the probe: 0.63
+{'__OVERALL__': 0.6269315673289183, 'NAME': 0.635, 'STRING': 1.0, 'NUMBER': 0.6296296296296297, 'KEYWORD': 0.4090909090909091}
 Accuracy on the test set of pretrained_BERT_layer_0 model using the intercept:
 Score (accuracy) of the probe: 0.88
 pretrained_BERT Layer 1
 Training classification probe
 Creating model...
-Number of training instances: 908
+Number of training instances: 842
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0122
+Epoch: [2/10], Loss: 0.0103
+Epoch: [3/10], Loss: 0.0094
+Epoch: [4/10], Loss: 0.0087
+Epoch: [5/10], Loss: 0.0081
+Epoch: [6/10], Loss: 0.0075
+Epoch: [7/10], Loss: 0.0071
+Epoch: [8/10], Loss: 0.0067
+Epoch: [9/10], Loss: 0.0063
+Epoch: [10/10], Loss: 0.0060
+Score (accuracy) of the probe: 0.81
+Training classification probe
+Creating model...
+Number of training instances: 842
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0126
+Epoch: [2/10], Loss: 0.0107
+Epoch: [3/10], Loss: 0.0097
+Epoch: [4/10], Loss: 0.0090
+Epoch: [5/10], Loss: 0.0084
+Epoch: [6/10], Loss: 0.0078
+Epoch: [7/10], Loss: 0.0074
+Epoch: [8/10], Loss: 0.0069
+Epoch: [9/10], Loss: 0.0066
+Epoch: [10/10], Loss: 0.0062
+Score (accuracy) of the probe: 0.72
+Training classification probe
+Creating model...
+Number of training instances: 842
 Number of classes: 4
 Epoch: [1/10], Loss: 0.0125
-Epoch: [2/10], Loss: 0.0097
-Epoch: [3/10], Loss: 0.0087
-Epoch: [4/10], Loss: 0.0079
-Epoch: [5/10], Loss: 0.0072
-Epoch: [6/10], Loss: 0.0066
-Epoch: [7/10], Loss: 0.0061
-Epoch: [8/10], Loss: 0.0057
-Epoch: [9/10], Loss: 0.0053
-Epoch: [10/10], Loss: 0.0050
-Score (accuracy) of the probe: 0.77
+Epoch: [2/10], Loss: 0.0106
+Epoch: [3/10], Loss: 0.0097
+Epoch: [4/10], Loss: 0.0090
+Epoch: [5/10], Loss: 0.0084
+Epoch: [6/10], Loss: 0.0079
+Epoch: [7/10], Loss: 0.0074
+Epoch: [8/10], Loss: 0.0070
+Epoch: [9/10], Loss: 0.0066
+Epoch: [10/10], Loss: 0.0063
+Score (accuracy) of the probe: 0.81
 Training classification probe
 Creating model...
-Number of training instances: 908
+Number of training instances: 842
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0127
-Epoch: [2/10], Loss: 0.0099
-Epoch: [3/10], Loss: 0.0089
-Epoch: [4/10], Loss: 0.0081
-Epoch: [5/10], Loss: 0.0074
-Epoch: [6/10], Loss: 0.0068
-Epoch: [7/10], Loss: 0.0063
-Epoch: [8/10], Loss: 0.0058
-Epoch: [9/10], Loss: 0.0055
-Epoch: [10/10], Loss: 0.0051
-Score (accuracy) of the probe: 0.79
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0133
-Epoch: [2/10], Loss: 0.0104
-Epoch: [3/10], Loss: 0.0093
-Epoch: [4/10], Loss: 0.0085
-Epoch: [5/10], Loss: 0.0077
-Epoch: [6/10], Loss: 0.0071
-Epoch: [7/10], Loss: 0.0066
-Epoch: [8/10], Loss: 0.0062
-Epoch: [9/10], Loss: 0.0058
-Epoch: [10/10], Loss: 0.0055
-Score (accuracy) of the probe: 0.76
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0145
-Epoch: [2/10], Loss: 0.0113
-Epoch: [3/10], Loss: 0.0103
-Epoch: [4/10], Loss: 0.0095
-Epoch: [5/10], Loss: 0.0087
-Epoch: [6/10], Loss: 0.0082
-Epoch: [7/10], Loss: 0.0077
-Epoch: [8/10], Loss: 0.0073
-Epoch: [9/10], Loss: 0.0069
-Epoch: [10/10], Loss: 0.0066
-Score (accuracy) of the probe: 0.73
-The best l1=0, the best l2=0.001 for pretrained_BERT_layer_1
+Epoch: [1/10], Loss: 0.0139
+Epoch: [2/10], Loss: 0.0118
+Epoch: [3/10], Loss: 0.0108
+Epoch: [4/10], Loss: 0.0101
+Epoch: [5/10], Loss: 0.0095
+Epoch: [6/10], Loss: 0.0090
+Epoch: [7/10], Loss: 0.0085
+Epoch: [8/10], Loss: 0.0081
+Epoch: [9/10], Loss: 0.0078
+Epoch: [10/10], Loss: 0.0074
+Score (accuracy) of the probe: 0.74
+The best l1=0, the best l2=0 for pretrained_BERT_layer_1
 Accuracy on the test set of probing pretrained_BERT_layer_1 of all layers:
-Score (accuracy) of the probe: 0.70
-{'__OVERALL__': 0.7041942604856513, 'NAME': 0.6675, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 0.9545454545454546}
+Score (accuracy) of the probe: 0.64
+{'__OVERALL__': 0.6357615894039735, 'NAME': 0.6225, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 0.36363636363636365}
 Accuracy on the test set of pretrained_BERT_layer_1 model using the intercept:
 Score (accuracy) of the probe: 0.88
 pretrained_BERT Layer 2
 Training classification probe
 Creating model...
-Number of training instances: 908
+Number of training instances: 842
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0125
-Epoch: [2/10], Loss: 0.0097
-Epoch: [3/10], Loss: 0.0087
-Epoch: [4/10], Loss: 0.0079
-Epoch: [5/10], Loss: 0.0072
-Epoch: [6/10], Loss: 0.0066
-Epoch: [7/10], Loss: 0.0062
-Epoch: [8/10], Loss: 0.0058
-Epoch: [9/10], Loss: 0.0054
-Epoch: [10/10], Loss: 0.0051
-Score (accuracy) of the probe: 0.83
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0134
-Epoch: [2/10], Loss: 0.0103
-Epoch: [3/10], Loss: 0.0091
-Epoch: [4/10], Loss: 0.0082
-Epoch: [5/10], Loss: 0.0075
-Epoch: [6/10], Loss: 0.0069
-Epoch: [7/10], Loss: 0.0064
-Epoch: [8/10], Loss: 0.0060
-Epoch: [9/10], Loss: 0.0056
-Epoch: [10/10], Loss: 0.0053
-Score (accuracy) of the probe: 0.78
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0127
-Epoch: [2/10], Loss: 0.0097
-Epoch: [3/10], Loss: 0.0087
-Epoch: [4/10], Loss: 0.0079
-Epoch: [5/10], Loss: 0.0072
-Epoch: [6/10], Loss: 0.0066
-Epoch: [7/10], Loss: 0.0062
-Epoch: [8/10], Loss: 0.0058
-Epoch: [9/10], Loss: 0.0055
-Epoch: [10/10], Loss: 0.0052
-Score (accuracy) of the probe: 0.80
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0138
-Epoch: [2/10], Loss: 0.0109
+Epoch: [1/10], Loss: 0.0128
+Epoch: [2/10], Loss: 0.0108
 Epoch: [3/10], Loss: 0.0098
-Epoch: [4/10], Loss: 0.0090
-Epoch: [5/10], Loss: 0.0083
-Epoch: [6/10], Loss: 0.0077
-Epoch: [7/10], Loss: 0.0073
-Epoch: [8/10], Loss: 0.0069
-Epoch: [9/10], Loss: 0.0066
+Epoch: [4/10], Loss: 0.0091
+Epoch: [5/10], Loss: 0.0085
+Epoch: [6/10], Loss: 0.0080
+Epoch: [7/10], Loss: 0.0075
+Epoch: [8/10], Loss: 0.0071
+Epoch: [9/10], Loss: 0.0067
+Epoch: [10/10], Loss: 0.0064
+Score (accuracy) of the probe: 0.74
+Training classification probe
+Creating model...
+Number of training instances: 842
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0128
+Epoch: [2/10], Loss: 0.0108
+Epoch: [3/10], Loss: 0.0098
+Epoch: [4/10], Loss: 0.0091
+Epoch: [5/10], Loss: 0.0085
+Epoch: [6/10], Loss: 0.0079
+Epoch: [7/10], Loss: 0.0075
+Epoch: [8/10], Loss: 0.0070
+Epoch: [9/10], Loss: 0.0067
 Epoch: [10/10], Loss: 0.0063
-Score (accuracy) of the probe: 0.81
+Score (accuracy) of the probe: 0.72
+Training classification probe
+Creating model...
+Number of training instances: 842
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0128
+Epoch: [2/10], Loss: 0.0108
+Epoch: [3/10], Loss: 0.0098
+Epoch: [4/10], Loss: 0.0091
+Epoch: [5/10], Loss: 0.0085
+Epoch: [6/10], Loss: 0.0080
+Epoch: [7/10], Loss: 0.0076
+Epoch: [8/10], Loss: 0.0072
+Epoch: [9/10], Loss: 0.0068
+Epoch: [10/10], Loss: 0.0065
+Score (accuracy) of the probe: 0.66
+Training classification probe
+Creating model...
+Number of training instances: 842
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0136
+Epoch: [2/10], Loss: 0.0116
+Epoch: [3/10], Loss: 0.0106
+Epoch: [4/10], Loss: 0.0099
+Epoch: [5/10], Loss: 0.0093
+Epoch: [6/10], Loss: 0.0087
+Epoch: [7/10], Loss: 0.0083
+Epoch: [8/10], Loss: 0.0079
+Epoch: [9/10], Loss: 0.0076
+Epoch: [10/10], Loss: 0.0073
+Score (accuracy) of the probe: 0.73
 The best l1=0, the best l2=0 for pretrained_BERT_layer_2
 Accuracy on the test set of probing pretrained_BERT_layer_2 of all layers:
-Score (accuracy) of the probe: 0.70
-{'__OVERALL__': 0.7019867549668874, 'NAME': 0.665, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 0.9545454545454546}
+Score (accuracy) of the probe: 0.63
+{'__OVERALL__': 0.6291390728476821, 'NAME': 0.615, 'STRING': 1.0, 'NUMBER': 0.9629629629629629, 'KEYWORD': 0.4090909090909091}
 Accuracy on the test set of pretrained_BERT_layer_2 model using the intercept:
 Score (accuracy) of the probe: 0.88
 pretrained_BERT Layer 3
 Training classification probe
 Creating model...
-Number of training instances: 908
+Number of training instances: 842
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0134
-Epoch: [2/10], Loss: 0.0102
-Epoch: [3/10], Loss: 0.0090
-Epoch: [4/10], Loss: 0.0081
-Epoch: [5/10], Loss: 0.0073
-Epoch: [6/10], Loss: 0.0067
-Epoch: [7/10], Loss: 0.0062
-Epoch: [8/10], Loss: 0.0057
-Epoch: [9/10], Loss: 0.0054
-Epoch: [10/10], Loss: 0.0051
+Epoch: [1/10], Loss: 0.0125
+Epoch: [2/10], Loss: 0.0105
+Epoch: [3/10], Loss: 0.0095
+Epoch: [4/10], Loss: 0.0088
+Epoch: [5/10], Loss: 0.0082
+Epoch: [6/10], Loss: 0.0077
+Epoch: [7/10], Loss: 0.0072
+Epoch: [8/10], Loss: 0.0068
+Epoch: [9/10], Loss: 0.0064
+Epoch: [10/10], Loss: 0.0061
 Score (accuracy) of the probe: 0.79
 Training classification probe
 Creating model...
-Number of training instances: 908
+Number of training instances: 842
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0136
+Epoch: [1/10], Loss: 0.0132
+Epoch: [2/10], Loss: 0.0110
+Epoch: [3/10], Loss: 0.0100
+Epoch: [4/10], Loss: 0.0092
+Epoch: [5/10], Loss: 0.0086
+Epoch: [6/10], Loss: 0.0080
+Epoch: [7/10], Loss: 0.0075
+Epoch: [8/10], Loss: 0.0071
+Epoch: [9/10], Loss: 0.0067
+Epoch: [10/10], Loss: 0.0064
+Score (accuracy) of the probe: 0.69
+Training classification probe
+Creating model...
+Number of training instances: 842
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0123
 Epoch: [2/10], Loss: 0.0104
-Epoch: [3/10], Loss: 0.0091
-Epoch: [4/10], Loss: 0.0082
-Epoch: [5/10], Loss: 0.0074
-Epoch: [6/10], Loss: 0.0068
-Epoch: [7/10], Loss: 0.0063
-Epoch: [8/10], Loss: 0.0058
-Epoch: [9/10], Loss: 0.0055
-Epoch: [10/10], Loss: 0.0051
+Epoch: [3/10], Loss: 0.0094
+Epoch: [4/10], Loss: 0.0087
+Epoch: [5/10], Loss: 0.0081
+Epoch: [6/10], Loss: 0.0076
+Epoch: [7/10], Loss: 0.0071
+Epoch: [8/10], Loss: 0.0067
+Epoch: [9/10], Loss: 0.0064
+Epoch: [10/10], Loss: 0.0061
 Score (accuracy) of the probe: 0.81
 Training classification probe
 Creating model...
-Number of training instances: 908
+Number of training instances: 842
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0137
-Epoch: [2/10], Loss: 0.0105
-Epoch: [3/10], Loss: 0.0093
-Epoch: [4/10], Loss: 0.0084
-Epoch: [5/10], Loss: 0.0076
-Epoch: [6/10], Loss: 0.0070
-Epoch: [7/10], Loss: 0.0065
-Epoch: [8/10], Loss: 0.0061
-Epoch: [9/10], Loss: 0.0057
-Epoch: [10/10], Loss: 0.0054
-Score (accuracy) of the probe: 0.77
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0145
+Epoch: [1/10], Loss: 0.0136
 Epoch: [2/10], Loss: 0.0114
-Epoch: [3/10], Loss: 0.0103
-Epoch: [4/10], Loss: 0.0094
-Epoch: [5/10], Loss: 0.0086
-Epoch: [6/10], Loss: 0.0081
-Epoch: [7/10], Loss: 0.0076
-Epoch: [8/10], Loss: 0.0072
-Epoch: [9/10], Loss: 0.0069
-Epoch: [10/10], Loss: 0.0065
-Score (accuracy) of the probe: 0.79
-The best l1=0, the best l2=0.001 for pretrained_BERT_layer_3
+Epoch: [3/10], Loss: 0.0104
+Epoch: [4/10], Loss: 0.0097
+Epoch: [5/10], Loss: 0.0091
+Epoch: [6/10], Loss: 0.0086
+Epoch: [7/10], Loss: 0.0081
+Epoch: [8/10], Loss: 0.0078
+Epoch: [9/10], Loss: 0.0074
+Epoch: [10/10], Loss: 0.0071
+Score (accuracy) of the probe: 0.76
+The best l1=0, the best l2=0.01 for pretrained_BERT_layer_3
 Accuracy on the test set of probing pretrained_BERT_layer_3 of all layers:
-Score (accuracy) of the probe: 0.72
-{'__OVERALL__': 0.717439293598234, 'NAME': 0.6825, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 0.9545454545454546}
+Score (accuracy) of the probe: 0.66
+{'__OVERALL__': 0.6578366445916115, 'NAME': 0.6475, 'STRING': 1.0, 'NUMBER': 0.9629629629629629, 'KEYWORD': 0.4090909090909091}
 Accuracy on the test set of pretrained_BERT_layer_3 model using the intercept:
 Score (accuracy) of the probe: 0.88
 pretrained_BERT Layer 4
 Training classification probe
 Creating model...
-Number of training instances: 908
+Number of training instances: 842
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0125
+Epoch: [2/10], Loss: 0.0104
+Epoch: [3/10], Loss: 0.0093
+Epoch: [4/10], Loss: 0.0086
+Epoch: [5/10], Loss: 0.0079
+Epoch: [6/10], Loss: 0.0074
+Epoch: [7/10], Loss: 0.0069
+Epoch: [8/10], Loss: 0.0065
+Epoch: [9/10], Loss: 0.0062
+Epoch: [10/10], Loss: 0.0058
+Score (accuracy) of the probe: 0.85
+Training classification probe
+Creating model...
+Number of training instances: 842
 Number of classes: 4
 Epoch: [1/10], Loss: 0.0127
-Epoch: [2/10], Loss: 0.0097
-Epoch: [3/10], Loss: 0.0085
-Epoch: [4/10], Loss: 0.0077
-Epoch: [5/10], Loss: 0.0070
-Epoch: [6/10], Loss: 0.0064
-Epoch: [7/10], Loss: 0.0059
-Epoch: [8/10], Loss: 0.0055
-Epoch: [9/10], Loss: 0.0052
-Epoch: [10/10], Loss: 0.0048
-Score (accuracy) of the probe: 0.92
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0127
-Epoch: [2/10], Loss: 0.0098
-Epoch: [3/10], Loss: 0.0086
-Epoch: [4/10], Loss: 0.0076
-Epoch: [5/10], Loss: 0.0069
-Epoch: [6/10], Loss: 0.0063
-Epoch: [7/10], Loss: 0.0058
-Epoch: [8/10], Loss: 0.0054
-Epoch: [9/10], Loss: 0.0051
-Epoch: [10/10], Loss: 0.0048
-Score (accuracy) of the probe: 0.89
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0132
-Epoch: [2/10], Loss: 0.0099
-Epoch: [3/10], Loss: 0.0087
-Epoch: [4/10], Loss: 0.0078
-Epoch: [5/10], Loss: 0.0070
-Epoch: [6/10], Loss: 0.0064
-Epoch: [7/10], Loss: 0.0059
-Epoch: [8/10], Loss: 0.0055
-Epoch: [9/10], Loss: 0.0052
-Epoch: [10/10], Loss: 0.0049
-Score (accuracy) of the probe: 0.91
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0137
 Epoch: [2/10], Loss: 0.0106
 Epoch: [3/10], Loss: 0.0095
-Epoch: [4/10], Loss: 0.0087
-Epoch: [5/10], Loss: 0.0080
-Epoch: [6/10], Loss: 0.0075
-Epoch: [7/10], Loss: 0.0070
+Epoch: [4/10], Loss: 0.0088
+Epoch: [5/10], Loss: 0.0081
+Epoch: [6/10], Loss: 0.0076
+Epoch: [7/10], Loss: 0.0071
 Epoch: [8/10], Loss: 0.0067
 Epoch: [9/10], Loss: 0.0063
+Epoch: [10/10], Loss: 0.0060
+Score (accuracy) of the probe: 0.85
+Training classification probe
+Creating model...
+Number of training instances: 842
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0127
+Epoch: [2/10], Loss: 0.0106
+Epoch: [3/10], Loss: 0.0096
+Epoch: [4/10], Loss: 0.0089
+Epoch: [5/10], Loss: 0.0082
+Epoch: [6/10], Loss: 0.0077
+Epoch: [7/10], Loss: 0.0072
+Epoch: [8/10], Loss: 0.0068
+Epoch: [9/10], Loss: 0.0064
 Epoch: [10/10], Loss: 0.0061
-Score (accuracy) of the probe: 0.87
+Score (accuracy) of the probe: 0.82
+Training classification probe
+Creating model...
+Number of training instances: 842
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0136
+Epoch: [2/10], Loss: 0.0114
+Epoch: [3/10], Loss: 0.0103
+Epoch: [4/10], Loss: 0.0096
+Epoch: [5/10], Loss: 0.0090
+Epoch: [6/10], Loss: 0.0084
+Epoch: [7/10], Loss: 0.0080
+Epoch: [8/10], Loss: 0.0076
+Epoch: [9/10], Loss: 0.0072
+Epoch: [10/10], Loss: 0.0069
+Score (accuracy) of the probe: 0.85
 The best l1=0, the best l2=0 for pretrained_BERT_layer_4
 Accuracy on the test set of probing pretrained_BERT_layer_4 of all layers:
-Score (accuracy) of the probe: 0.74
-{'__OVERALL__': 0.7373068432671082, 'NAME': 0.7075, 'STRING': 1.0, 'NUMBER': 0.9629629629629629, 'KEYWORD': 0.9545454545454546}
+Score (accuracy) of the probe: 0.61
+{'__OVERALL__': 0.6070640176600441, 'NAME': 0.59, 'STRING': 1.0, 'NUMBER': 0.9259259259259259, 'KEYWORD': 0.45454545454545453}
 Accuracy on the test set of pretrained_BERT_layer_4 model using the intercept:
 Score (accuracy) of the probe: 0.88
 pretrained_BERT Layer 5
 Training classification probe
 Creating model...
-Number of training instances: 908
+Number of training instances: 842
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0128
-Epoch: [2/10], Loss: 0.0098
-Epoch: [3/10], Loss: 0.0085
-Epoch: [4/10], Loss: 0.0076
-Epoch: [5/10], Loss: 0.0069
-Epoch: [6/10], Loss: 0.0063
-Epoch: [7/10], Loss: 0.0058
-Epoch: [8/10], Loss: 0.0054
-Epoch: [9/10], Loss: 0.0051
-Epoch: [10/10], Loss: 0.0047
-Score (accuracy) of the probe: 0.89
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0132
-Epoch: [2/10], Loss: 0.0100
-Epoch: [3/10], Loss: 0.0088
-Epoch: [4/10], Loss: 0.0078
-Epoch: [5/10], Loss: 0.0071
-Epoch: [6/10], Loss: 0.0065
-Epoch: [7/10], Loss: 0.0059
-Epoch: [8/10], Loss: 0.0055
-Epoch: [9/10], Loss: 0.0052
-Epoch: [10/10], Loss: 0.0048
-Score (accuracy) of the probe: 0.88
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0128
-Epoch: [2/10], Loss: 0.0097
-Epoch: [3/10], Loss: 0.0085
-Epoch: [4/10], Loss: 0.0077
-Epoch: [5/10], Loss: 0.0069
-Epoch: [6/10], Loss: 0.0064
-Epoch: [7/10], Loss: 0.0059
-Epoch: [8/10], Loss: 0.0055
-Epoch: [9/10], Loss: 0.0052
-Epoch: [10/10], Loss: 0.0049
-Score (accuracy) of the probe: 0.84
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0141
-Epoch: [2/10], Loss: 0.0109
-Epoch: [3/10], Loss: 0.0097
+Epoch: [1/10], Loss: 0.0129
+Epoch: [2/10], Loss: 0.0106
+Epoch: [3/10], Loss: 0.0095
 Epoch: [4/10], Loss: 0.0088
 Epoch: [5/10], Loss: 0.0081
 Epoch: [6/10], Loss: 0.0075
-Epoch: [7/10], Loss: 0.0070
+Epoch: [7/10], Loss: 0.0071
 Epoch: [8/10], Loss: 0.0066
 Epoch: [9/10], Loss: 0.0063
-Epoch: [10/10], Loss: 0.0060
-Score (accuracy) of the probe: 0.90
-The best l1=0, the best l2=0.1 for pretrained_BERT_layer_5
+Epoch: [10/10], Loss: 0.0059
+Score (accuracy) of the probe: 0.81
+Training classification probe
+Creating model...
+Number of training instances: 842
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0130
+Epoch: [2/10], Loss: 0.0106
+Epoch: [3/10], Loss: 0.0095
+Epoch: [4/10], Loss: 0.0087
+Epoch: [5/10], Loss: 0.0081
+Epoch: [6/10], Loss: 0.0075
+Epoch: [7/10], Loss: 0.0071
+Epoch: [8/10], Loss: 0.0066
+Epoch: [9/10], Loss: 0.0063
+Epoch: [10/10], Loss: 0.0059
+Score (accuracy) of the probe: 0.85
+Training classification probe
+Creating model...
+Number of training instances: 842
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0133
+Epoch: [2/10], Loss: 0.0110
+Epoch: [3/10], Loss: 0.0099
+Epoch: [4/10], Loss: 0.0091
+Epoch: [5/10], Loss: 0.0084
+Epoch: [6/10], Loss: 0.0079
+Epoch: [7/10], Loss: 0.0074
+Epoch: [8/10], Loss: 0.0070
+Epoch: [9/10], Loss: 0.0066
+Epoch: [10/10], Loss: 0.0062
+Score (accuracy) of the probe: 0.81
+Training classification probe
+Creating model...
+Number of training instances: 842
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0134
+Epoch: [2/10], Loss: 0.0113
+Epoch: [3/10], Loss: 0.0103
+Epoch: [4/10], Loss: 0.0096
+Epoch: [5/10], Loss: 0.0089
+Epoch: [6/10], Loss: 0.0084
+Epoch: [7/10], Loss: 0.0080
+Epoch: [8/10], Loss: 0.0076
+Epoch: [9/10], Loss: 0.0072
+Epoch: [10/10], Loss: 0.0069
+Score (accuracy) of the probe: 0.80
+The best l1=0, the best l2=0.001 for pretrained_BERT_layer_5
 Accuracy on the test set of probing pretrained_BERT_layer_5 of all layers:
-Score (accuracy) of the probe: 0.76
-{'__OVERALL__': 0.7593818984547461, 'NAME': 0.73, 'STRING': 1.0, 'NUMBER': 0.9629629629629629, 'KEYWORD': 1.0}
+Score (accuracy) of the probe: 0.63
+{'__OVERALL__': 0.6291390728476821, 'NAME': 0.635, 'STRING': 1.0, 'NUMBER': 0.7777777777777778, 'KEYWORD': 0.2727272727272727}
 Accuracy on the test set of pretrained_BERT_layer_5 model using the intercept:
 Score (accuracy) of the probe: 0.88
 pretrained_BERT Layer 6
 Training classification probe
 Creating model...
-Number of training instances: 908
+Number of training instances: 842
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0134
-Epoch: [2/10], Loss: 0.0101
-Epoch: [3/10], Loss: 0.0087
-Epoch: [4/10], Loss: 0.0077
-Epoch: [5/10], Loss: 0.0070
-Epoch: [6/10], Loss: 0.0064
-Epoch: [7/10], Loss: 0.0059
-Epoch: [8/10], Loss: 0.0055
-Epoch: [9/10], Loss: 0.0051
-Epoch: [10/10], Loss: 0.0048
-Score (accuracy) of the probe: 0.88
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0127
-Epoch: [2/10], Loss: 0.0097
-Epoch: [3/10], Loss: 0.0085
-Epoch: [4/10], Loss: 0.0076
-Epoch: [5/10], Loss: 0.0068
-Epoch: [6/10], Loss: 0.0063
-Epoch: [7/10], Loss: 0.0058
-Epoch: [8/10], Loss: 0.0054
-Epoch: [9/10], Loss: 0.0051
-Epoch: [10/10], Loss: 0.0048
-Score (accuracy) of the probe: 0.87
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0134
-Epoch: [2/10], Loss: 0.0101
-Epoch: [3/10], Loss: 0.0089
-Epoch: [4/10], Loss: 0.0079
-Epoch: [5/10], Loss: 0.0072
-Epoch: [6/10], Loss: 0.0066
-Epoch: [7/10], Loss: 0.0061
-Epoch: [8/10], Loss: 0.0057
-Epoch: [9/10], Loss: 0.0054
-Epoch: [10/10], Loss: 0.0050
-Score (accuracy) of the probe: 0.91
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0137
-Epoch: [2/10], Loss: 0.0106
-Epoch: [3/10], Loss: 0.0094
+Epoch: [1/10], Loss: 0.0122
+Epoch: [2/10], Loss: 0.0103
+Epoch: [3/10], Loss: 0.0093
 Epoch: [4/10], Loss: 0.0085
-Epoch: [5/10], Loss: 0.0078
-Epoch: [6/10], Loss: 0.0073
-Epoch: [7/10], Loss: 0.0068
+Epoch: [5/10], Loss: 0.0079
+Epoch: [6/10], Loss: 0.0074
+Epoch: [7/10], Loss: 0.0069
 Epoch: [8/10], Loss: 0.0065
-Epoch: [9/10], Loss: 0.0062
-Epoch: [10/10], Loss: 0.0059
-Score (accuracy) of the probe: 0.88
-The best l1=0, the best l2=0.01 for pretrained_BERT_layer_6
+Epoch: [9/10], Loss: 0.0061
+Epoch: [10/10], Loss: 0.0058
+Score (accuracy) of the probe: 0.85
+Training classification probe
+Creating model...
+Number of training instances: 842
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0132
+Epoch: [2/10], Loss: 0.0110
+Epoch: [3/10], Loss: 0.0099
+Epoch: [4/10], Loss: 0.0091
+Epoch: [5/10], Loss: 0.0085
+Epoch: [6/10], Loss: 0.0079
+Epoch: [7/10], Loss: 0.0074
+Epoch: [8/10], Loss: 0.0070
+Epoch: [9/10], Loss: 0.0066
+Epoch: [10/10], Loss: 0.0062
+Score (accuracy) of the probe: 0.83
+Training classification probe
+Creating model...
+Number of training instances: 842
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0131
+Epoch: [2/10], Loss: 0.0109
+Epoch: [3/10], Loss: 0.0098
+Epoch: [4/10], Loss: 0.0090
+Epoch: [5/10], Loss: 0.0083
+Epoch: [6/10], Loss: 0.0078
+Epoch: [7/10], Loss: 0.0073
+Epoch: [8/10], Loss: 0.0069
+Epoch: [9/10], Loss: 0.0065
+Epoch: [10/10], Loss: 0.0062
+Score (accuracy) of the probe: 0.82
+Training classification probe
+Creating model...
+Number of training instances: 842
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0131
+Epoch: [2/10], Loss: 0.0111
+Epoch: [3/10], Loss: 0.0101
+Epoch: [4/10], Loss: 0.0093
+Epoch: [5/10], Loss: 0.0087
+Epoch: [6/10], Loss: 0.0082
+Epoch: [7/10], Loss: 0.0078
+Epoch: [8/10], Loss: 0.0074
+Epoch: [9/10], Loss: 0.0071
+Epoch: [10/10], Loss: 0.0068
+Score (accuracy) of the probe: 0.83
+The best l1=0, the best l2=0 for pretrained_BERT_layer_6
 Accuracy on the test set of probing pretrained_BERT_layer_6 of all layers:
-Score (accuracy) of the probe: 0.73
-{'__OVERALL__': 0.7262693156732892, 'NAME': 0.6975, 'STRING': 1.0, 'NUMBER': 0.9259259259259259, 'KEYWORD': 0.9545454545454546}
+Score (accuracy) of the probe: 0.62
+{'__OVERALL__': 0.6225165562913907, 'NAME': 0.66, 'STRING': 1.0, 'NUMBER': 0.37037037037037035, 'KEYWORD': 0.18181818181818182}
 Accuracy on the test set of pretrained_BERT_layer_6 model using the intercept:
 Score (accuracy) of the probe: 0.88
 pretrained_BERT Layer 7
 Training classification probe
 Creating model...
-Number of training instances: 908
+Number of training instances: 842
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0139
-Epoch: [2/10], Loss: 0.0102
-Epoch: [3/10], Loss: 0.0089
-Epoch: [4/10], Loss: 0.0079
-Epoch: [5/10], Loss: 0.0072
-Epoch: [6/10], Loss: 0.0066
-Epoch: [7/10], Loss: 0.0061
-Epoch: [8/10], Loss: 0.0057
-Epoch: [9/10], Loss: 0.0053
-Epoch: [10/10], Loss: 0.0050
+Epoch: [1/10], Loss: 0.0127
+Epoch: [2/10], Loss: 0.0105
+Epoch: [3/10], Loss: 0.0094
+Epoch: [4/10], Loss: 0.0086
+Epoch: [5/10], Loss: 0.0080
+Epoch: [6/10], Loss: 0.0075
+Epoch: [7/10], Loss: 0.0070
+Epoch: [8/10], Loss: 0.0066
+Epoch: [9/10], Loss: 0.0062
+Epoch: [10/10], Loss: 0.0059
 Score (accuracy) of the probe: 0.87
 Training classification probe
 Creating model...
-Number of training instances: 908
+Number of training instances: 842
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0128
-Epoch: [2/10], Loss: 0.0095
-Epoch: [3/10], Loss: 0.0083
-Epoch: [4/10], Loss: 0.0075
-Epoch: [5/10], Loss: 0.0068
-Epoch: [6/10], Loss: 0.0062
-Epoch: [7/10], Loss: 0.0058
-Epoch: [8/10], Loss: 0.0054
-Epoch: [9/10], Loss: 0.0051
-Epoch: [10/10], Loss: 0.0048
-Score (accuracy) of the probe: 0.89
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0129
-Epoch: [2/10], Loss: 0.0098
-Epoch: [3/10], Loss: 0.0086
-Epoch: [4/10], Loss: 0.0077
-Epoch: [5/10], Loss: 0.0070
-Epoch: [6/10], Loss: 0.0065
-Epoch: [7/10], Loss: 0.0060
-Epoch: [8/10], Loss: 0.0056
-Epoch: [9/10], Loss: 0.0053
-Epoch: [10/10], Loss: 0.0050
+Epoch: [1/10], Loss: 0.0122
+Epoch: [2/10], Loss: 0.0102
+Epoch: [3/10], Loss: 0.0092
+Epoch: [4/10], Loss: 0.0085
+Epoch: [5/10], Loss: 0.0078
+Epoch: [6/10], Loss: 0.0073
+Epoch: [7/10], Loss: 0.0069
+Epoch: [8/10], Loss: 0.0064
+Epoch: [9/10], Loss: 0.0061
+Epoch: [10/10], Loss: 0.0058
 Score (accuracy) of the probe: 0.86
 Training classification probe
 Creating model...
-Number of training instances: 908
+Number of training instances: 842
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0139
-Epoch: [2/10], Loss: 0.0106
-Epoch: [3/10], Loss: 0.0094
-Epoch: [4/10], Loss: 0.0086
+Epoch: [1/10], Loss: 0.0122
+Epoch: [2/10], Loss: 0.0101
+Epoch: [3/10], Loss: 0.0092
+Epoch: [4/10], Loss: 0.0085
 Epoch: [5/10], Loss: 0.0079
 Epoch: [6/10], Loss: 0.0074
-Epoch: [7/10], Loss: 0.0070
-Epoch: [8/10], Loss: 0.0066
-Epoch: [9/10], Loss: 0.0063
-Epoch: [10/10], Loss: 0.0060
-Score (accuracy) of the probe: 0.93
+Epoch: [7/10], Loss: 0.0069
+Epoch: [8/10], Loss: 0.0065
+Epoch: [9/10], Loss: 0.0062
+Epoch: [10/10], Loss: 0.0059
+Score (accuracy) of the probe: 0.85
+Training classification probe
+Creating model...
+Number of training instances: 842
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0133
+Epoch: [2/10], Loss: 0.0111
+Epoch: [3/10], Loss: 0.0101
+Epoch: [4/10], Loss: 0.0094
+Epoch: [5/10], Loss: 0.0088
+Epoch: [6/10], Loss: 0.0083
+Epoch: [7/10], Loss: 0.0079
+Epoch: [8/10], Loss: 0.0075
+Epoch: [9/10], Loss: 0.0072
+Epoch: [10/10], Loss: 0.0069
+Score (accuracy) of the probe: 0.89
 The best l1=0, the best l2=0.1 for pretrained_BERT_layer_7
 Accuracy on the test set of probing pretrained_BERT_layer_7 of all layers:
-Score (accuracy) of the probe: 0.75
-{'__OVERALL__': 0.7549668874172185, 'NAME': 0.725, 'STRING': 1.0, 'NUMBER': 0.9629629629629629, 'KEYWORD': 1.0}
+Score (accuracy) of the probe: 0.65
+{'__OVERALL__': 0.6512141280353201, 'NAME': 0.6725, 'STRING': 1.0, 'NUMBER': 0.6666666666666666, 'KEYWORD': 0.18181818181818182}
 Accuracy on the test set of pretrained_BERT_layer_7 model using the intercept:
 Score (accuracy) of the probe: 0.88
 pretrained_BERT Layer 8
 Training classification probe
 Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0135
-Epoch: [2/10], Loss: 0.0098
-Epoch: [3/10], Loss: 0.0084
-Epoch: [4/10], Loss: 0.0075
-Epoch: [5/10], Loss: 0.0068
-Epoch: [6/10], Loss: 0.0062
-Epoch: [7/10], Loss: 0.0057
-Epoch: [8/10], Loss: 0.0053
-Epoch: [9/10], Loss: 0.0050
-Epoch: [10/10], Loss: 0.0046
-Score (accuracy) of the probe: 0.88
-Training classification probe
-Creating model...
-Number of training instances: 908
+Number of training instances: 842
 Number of classes: 4
 Epoch: [1/10], Loss: 0.0128
-Epoch: [2/10], Loss: 0.0094
-Epoch: [3/10], Loss: 0.0082
-Epoch: [4/10], Loss: 0.0074
-Epoch: [5/10], Loss: 0.0067
-Epoch: [6/10], Loss: 0.0061
-Epoch: [7/10], Loss: 0.0057
-Epoch: [8/10], Loss: 0.0053
-Epoch: [9/10], Loss: 0.0049
-Epoch: [10/10], Loss: 0.0046
-Score (accuracy) of the probe: 0.87
+Epoch: [2/10], Loss: 0.0106
+Epoch: [3/10], Loss: 0.0096
+Epoch: [4/10], Loss: 0.0087
+Epoch: [5/10], Loss: 0.0081
+Epoch: [6/10], Loss: 0.0075
+Epoch: [7/10], Loss: 0.0070
+Epoch: [8/10], Loss: 0.0065
+Epoch: [9/10], Loss: 0.0061
+Epoch: [10/10], Loss: 0.0058
+Score (accuracy) of the probe: 0.90
 Training classification probe
 Creating model...
-Number of training instances: 908
+Number of training instances: 842
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0132
-Epoch: [2/10], Loss: 0.0096
-Epoch: [3/10], Loss: 0.0082
-Epoch: [4/10], Loss: 0.0074
-Epoch: [5/10], Loss: 0.0066
-Epoch: [6/10], Loss: 0.0061
-Epoch: [7/10], Loss: 0.0056
-Epoch: [8/10], Loss: 0.0053
-Epoch: [9/10], Loss: 0.0049
-Epoch: [10/10], Loss: 0.0046
+Epoch: [1/10], Loss: 0.0124
+Epoch: [2/10], Loss: 0.0102
+Epoch: [3/10], Loss: 0.0092
+Epoch: [4/10], Loss: 0.0084
+Epoch: [5/10], Loss: 0.0078
+Epoch: [6/10], Loss: 0.0073
+Epoch: [7/10], Loss: 0.0068
+Epoch: [8/10], Loss: 0.0064
+Epoch: [9/10], Loss: 0.0060
+Epoch: [10/10], Loss: 0.0056
 Score (accuracy) of the probe: 0.88
 Training classification probe
 Creating model...
-Number of training instances: 908
+Number of training instances: 842
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0139
-Epoch: [2/10], Loss: 0.0106
-Epoch: [3/10], Loss: 0.0093
+Epoch: [1/10], Loss: 0.0124
+Epoch: [2/10], Loss: 0.0102
+Epoch: [3/10], Loss: 0.0092
 Epoch: [4/10], Loss: 0.0084
 Epoch: [5/10], Loss: 0.0078
 Epoch: [6/10], Loss: 0.0072
 Epoch: [7/10], Loss: 0.0068
 Epoch: [8/10], Loss: 0.0064
-Epoch: [9/10], Loss: 0.0061
-Epoch: [10/10], Loss: 0.0058
-Score (accuracy) of the probe: 0.89
-The best l1=0, the best l2=0.1 for pretrained_BERT_layer_8
+Epoch: [9/10], Loss: 0.0060
+Epoch: [10/10], Loss: 0.0057
+Score (accuracy) of the probe: 0.83
+Training classification probe
+Creating model...
+Number of training instances: 842
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0132
+Epoch: [2/10], Loss: 0.0110
+Epoch: [3/10], Loss: 0.0100
+Epoch: [4/10], Loss: 0.0093
+Epoch: [5/10], Loss: 0.0086
+Epoch: [6/10], Loss: 0.0081
+Epoch: [7/10], Loss: 0.0077
+Epoch: [8/10], Loss: 0.0073
+Epoch: [9/10], Loss: 0.0069
+Epoch: [10/10], Loss: 0.0066
+Score (accuracy) of the probe: 0.82
+The best l1=0, the best l2=0 for pretrained_BERT_layer_8
 Accuracy on the test set of probing pretrained_BERT_layer_8 of all layers:
-Score (accuracy) of the probe: 0.75
-{'__OVERALL__': 0.7483443708609272, 'NAME': 0.735, 'STRING': 1.0, 'NUMBER': 0.7777777777777778, 'KEYWORD': 0.9090909090909091}
+Score (accuracy) of the probe: 0.66
+{'__OVERALL__': 0.6622516556291391, 'NAME': 0.6875, 'STRING': 1.0, 'NUMBER': 0.5185185185185185, 'KEYWORD': 0.3181818181818182}
 Accuracy on the test set of pretrained_BERT_layer_8 model using the intercept:
 Score (accuracy) of the probe: 0.88
 pretrained_BERT Layer 9
 Training classification probe
 Creating model...
-Number of training instances: 908
+Number of training instances: 842
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0126
-Epoch: [2/10], Loss: 0.0092
-Epoch: [3/10], Loss: 0.0080
-Epoch: [4/10], Loss: 0.0071
-Epoch: [5/10], Loss: 0.0064
-Epoch: [6/10], Loss: 0.0058
-Epoch: [7/10], Loss: 0.0053
-Epoch: [8/10], Loss: 0.0049
-Epoch: [9/10], Loss: 0.0045
-Epoch: [10/10], Loss: 0.0042
-Score (accuracy) of the probe: 0.90
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0130
-Epoch: [2/10], Loss: 0.0094
-Epoch: [3/10], Loss: 0.0081
-Epoch: [4/10], Loss: 0.0071
-Epoch: [5/10], Loss: 0.0064
-Epoch: [6/10], Loss: 0.0058
-Epoch: [7/10], Loss: 0.0053
-Epoch: [8/10], Loss: 0.0049
-Epoch: [9/10], Loss: 0.0045
-Epoch: [10/10], Loss: 0.0042
+Epoch: [1/10], Loss: 0.0124
+Epoch: [2/10], Loss: 0.0100
+Epoch: [3/10], Loss: 0.0088
+Epoch: [4/10], Loss: 0.0080
+Epoch: [5/10], Loss: 0.0074
+Epoch: [6/10], Loss: 0.0068
+Epoch: [7/10], Loss: 0.0063
+Epoch: [8/10], Loss: 0.0059
+Epoch: [9/10], Loss: 0.0055
+Epoch: [10/10], Loss: 0.0052
 Score (accuracy) of the probe: 0.88
 Training classification probe
 Creating model...
-Number of training instances: 908
+Number of training instances: 842
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0130
-Epoch: [2/10], Loss: 0.0094
-Epoch: [3/10], Loss: 0.0081
-Epoch: [4/10], Loss: 0.0071
-Epoch: [5/10], Loss: 0.0063
-Epoch: [6/10], Loss: 0.0057
-Epoch: [7/10], Loss: 0.0053
-Epoch: [8/10], Loss: 0.0049
-Epoch: [9/10], Loss: 0.0045
-Epoch: [10/10], Loss: 0.0042
-Score (accuracy) of the probe: 0.91
+Epoch: [1/10], Loss: 0.0127
+Epoch: [2/10], Loss: 0.0102
+Epoch: [3/10], Loss: 0.0090
+Epoch: [4/10], Loss: 0.0082
+Epoch: [5/10], Loss: 0.0076
+Epoch: [6/10], Loss: 0.0070
+Epoch: [7/10], Loss: 0.0065
+Epoch: [8/10], Loss: 0.0060
+Epoch: [9/10], Loss: 0.0056
+Epoch: [10/10], Loss: 0.0053
+Score (accuracy) of the probe: 0.90
 Training classification probe
 Creating model...
-Number of training instances: 908
+Number of training instances: 842
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0136
-Epoch: [2/10], Loss: 0.0103
-Epoch: [3/10], Loss: 0.0090
-Epoch: [4/10], Loss: 0.0080
-Epoch: [5/10], Loss: 0.0073
-Epoch: [6/10], Loss: 0.0068
+Epoch: [1/10], Loss: 0.0124
+Epoch: [2/10], Loss: 0.0100
+Epoch: [3/10], Loss: 0.0089
+Epoch: [4/10], Loss: 0.0081
+Epoch: [5/10], Loss: 0.0074
+Epoch: [6/10], Loss: 0.0069
 Epoch: [7/10], Loss: 0.0064
 Epoch: [8/10], Loss: 0.0060
-Epoch: [9/10], Loss: 0.0057
-Epoch: [10/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0056
+Epoch: [10/10], Loss: 0.0052
+Score (accuracy) of the probe: 0.88
+Training classification probe
+Creating model...
+Number of training instances: 842
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0133
+Epoch: [2/10], Loss: 0.0109
+Epoch: [3/10], Loss: 0.0098
+Epoch: [4/10], Loss: 0.0089
+Epoch: [5/10], Loss: 0.0083
+Epoch: [6/10], Loss: 0.0077
+Epoch: [7/10], Loss: 0.0072
+Epoch: [8/10], Loss: 0.0068
+Epoch: [9/10], Loss: 0.0065
+Epoch: [10/10], Loss: 0.0062
 Score (accuracy) of the probe: 0.90
-The best l1=0, the best l2=0.01 for pretrained_BERT_layer_9
+The best l1=0, the best l2=0.001 for pretrained_BERT_layer_9
 Accuracy on the test set of probing pretrained_BERT_layer_9 of all layers:
-Score (accuracy) of the probe: 0.80
-{'__OVERALL__': 0.7991169977924945, 'NAME': 0.7775, 'STRING': 1.0, 'NUMBER': 0.9629629629629629, 'KEYWORD': 0.9545454545454546}
+Score (accuracy) of the probe: 0.69
+{'__OVERALL__': 0.6931567328918322, 'NAME': 0.7225, 'STRING': 1.0, 'NUMBER': 0.5185185185185185, 'KEYWORD': 0.3181818181818182}
 Accuracy on the test set of pretrained_BERT_layer_9 model using the intercept:
 Score (accuracy) of the probe: 0.88
 pretrained_BERT Layer 10
 Training classification probe
 Creating model...
-Number of training instances: 908
+Number of training instances: 842
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0140
-Epoch: [2/10], Loss: 0.0102
-Epoch: [3/10], Loss: 0.0086
-Epoch: [4/10], Loss: 0.0076
-Epoch: [5/10], Loss: 0.0068
-Epoch: [6/10], Loss: 0.0062
-Epoch: [7/10], Loss: 0.0057
-Epoch: [8/10], Loss: 0.0053
-Epoch: [9/10], Loss: 0.0049
-Epoch: [10/10], Loss: 0.0046
+Epoch: [1/10], Loss: 0.0125
+Epoch: [2/10], Loss: 0.0101
+Epoch: [3/10], Loss: 0.0090
+Epoch: [4/10], Loss: 0.0082
+Epoch: [5/10], Loss: 0.0076
+Epoch: [6/10], Loss: 0.0070
+Epoch: [7/10], Loss: 0.0066
+Epoch: [8/10], Loss: 0.0061
+Epoch: [9/10], Loss: 0.0058
+Epoch: [10/10], Loss: 0.0054
 Score (accuracy) of the probe: 0.86
 Training classification probe
 Creating model...
-Number of training instances: 908
+Number of training instances: 842
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0131
-Epoch: [2/10], Loss: 0.0095
-Epoch: [3/10], Loss: 0.0082
-Epoch: [4/10], Loss: 0.0073
-Epoch: [5/10], Loss: 0.0066
-Epoch: [6/10], Loss: 0.0060
-Epoch: [7/10], Loss: 0.0056
-Epoch: [8/10], Loss: 0.0051
-Epoch: [9/10], Loss: 0.0048
-Epoch: [10/10], Loss: 0.0045
-Score (accuracy) of the probe: 0.88
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0131
-Epoch: [2/10], Loss: 0.0096
-Epoch: [3/10], Loss: 0.0082
-Epoch: [4/10], Loss: 0.0073
-Epoch: [5/10], Loss: 0.0066
-Epoch: [6/10], Loss: 0.0061
-Epoch: [7/10], Loss: 0.0056
-Epoch: [8/10], Loss: 0.0052
-Epoch: [9/10], Loss: 0.0049
-Epoch: [10/10], Loss: 0.0045
+Epoch: [1/10], Loss: 0.0122
+Epoch: [2/10], Loss: 0.0100
+Epoch: [3/10], Loss: 0.0089
+Epoch: [4/10], Loss: 0.0082
+Epoch: [5/10], Loss: 0.0076
+Epoch: [6/10], Loss: 0.0070
+Epoch: [7/10], Loss: 0.0066
+Epoch: [8/10], Loss: 0.0061
+Epoch: [9/10], Loss: 0.0058
+Epoch: [10/10], Loss: 0.0054
 Score (accuracy) of the probe: 0.87
 Training classification probe
 Creating model...
-Number of training instances: 908
+Number of training instances: 842
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0146
-Epoch: [2/10], Loss: 0.0108
-Epoch: [3/10], Loss: 0.0094
-Epoch: [4/10], Loss: 0.0085
-Epoch: [5/10], Loss: 0.0078
-Epoch: [6/10], Loss: 0.0073
-Epoch: [7/10], Loss: 0.0068
-Epoch: [8/10], Loss: 0.0064
+Epoch: [1/10], Loss: 0.0130
+Epoch: [2/10], Loss: 0.0106
+Epoch: [3/10], Loss: 0.0095
+Epoch: [4/10], Loss: 0.0086
+Epoch: [5/10], Loss: 0.0080
+Epoch: [6/10], Loss: 0.0074
+Epoch: [7/10], Loss: 0.0069
+Epoch: [8/10], Loss: 0.0065
 Epoch: [9/10], Loss: 0.0061
-Epoch: [10/10], Loss: 0.0058
-Score (accuracy) of the probe: 0.84
-The best l1=0, the best l2=0.001 for pretrained_BERT_layer_10
+Epoch: [10/10], Loss: 0.0057
+Score (accuracy) of the probe: 0.87
+Training classification probe
+Creating model...
+Number of training instances: 842
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0137
+Epoch: [2/10], Loss: 0.0113
+Epoch: [3/10], Loss: 0.0103
+Epoch: [4/10], Loss: 0.0095
+Epoch: [5/10], Loss: 0.0088
+Epoch: [6/10], Loss: 0.0082
+Epoch: [7/10], Loss: 0.0078
+Epoch: [8/10], Loss: 0.0074
+Epoch: [9/10], Loss: 0.0070
+Epoch: [10/10], Loss: 0.0067
+Score (accuracy) of the probe: 0.88
+The best l1=0, the best l2=0.1 for pretrained_BERT_layer_10
 Accuracy on the test set of probing pretrained_BERT_layer_10 of all layers:
-Score (accuracy) of the probe: 0.79
-{'__OVERALL__': 0.7880794701986755, 'NAME': 0.7625, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 0.9545454545454546}
+Score (accuracy) of the probe: 0.70
+{'__OVERALL__': 0.6975717439293598, 'NAME': 0.7175, 'STRING': 1.0, 'NUMBER': 0.6296296296296297, 'KEYWORD': 0.36363636363636365}
 Accuracy on the test set of pretrained_BERT_layer_10 model using the intercept:
 Score (accuracy) of the probe: 0.88
 pretrained_BERT Layer 11
 Training classification probe
 Creating model...
-Number of training instances: 908
+Number of training instances: 842
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0130
-Epoch: [2/10], Loss: 0.0096
-Epoch: [3/10], Loss: 0.0083
-Epoch: [4/10], Loss: 0.0074
-Epoch: [5/10], Loss: 0.0067
-Epoch: [6/10], Loss: 0.0062
-Epoch: [7/10], Loss: 0.0057
-Epoch: [8/10], Loss: 0.0053
-Epoch: [9/10], Loss: 0.0050
-Epoch: [10/10], Loss: 0.0047
-Score (accuracy) of the probe: 0.87
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0132
-Epoch: [2/10], Loss: 0.0096
-Epoch: [3/10], Loss: 0.0082
-Epoch: [4/10], Loss: 0.0073
-Epoch: [5/10], Loss: 0.0066
-Epoch: [6/10], Loss: 0.0061
-Epoch: [7/10], Loss: 0.0056
-Epoch: [8/10], Loss: 0.0052
-Epoch: [9/10], Loss: 0.0049
-Epoch: [10/10], Loss: 0.0046
-Score (accuracy) of the probe: 0.87
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0133
-Epoch: [2/10], Loss: 0.0097
-Epoch: [3/10], Loss: 0.0084
-Epoch: [4/10], Loss: 0.0075
-Epoch: [5/10], Loss: 0.0068
-Epoch: [6/10], Loss: 0.0062
-Epoch: [7/10], Loss: 0.0057
-Epoch: [8/10], Loss: 0.0054
-Epoch: [9/10], Loss: 0.0050
-Epoch: [10/10], Loss: 0.0047
+Epoch: [1/10], Loss: 0.0129
+Epoch: [2/10], Loss: 0.0105
+Epoch: [3/10], Loss: 0.0094
+Epoch: [4/10], Loss: 0.0086
+Epoch: [5/10], Loss: 0.0080
+Epoch: [6/10], Loss: 0.0074
+Epoch: [7/10], Loss: 0.0069
+Epoch: [8/10], Loss: 0.0065
+Epoch: [9/10], Loss: 0.0061
+Epoch: [10/10], Loss: 0.0058
 Score (accuracy) of the probe: 0.86
 Training classification probe
 Creating model...
-Number of training instances: 908
+Number of training instances: 842
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0138
+Epoch: [1/10], Loss: 0.0120
+Epoch: [2/10], Loss: 0.0098
+Epoch: [3/10], Loss: 0.0088
+Epoch: [4/10], Loss: 0.0080
+Epoch: [5/10], Loss: 0.0074
+Epoch: [6/10], Loss: 0.0069
+Epoch: [7/10], Loss: 0.0064
+Epoch: [8/10], Loss: 0.0060
+Epoch: [9/10], Loss: 0.0057
+Epoch: [10/10], Loss: 0.0053
+Score (accuracy) of the probe: 0.89
+Training classification probe
+Creating model...
+Number of training instances: 842
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0127
 Epoch: [2/10], Loss: 0.0103
-Epoch: [3/10], Loss: 0.0090
-Epoch: [4/10], Loss: 0.0081
-Epoch: [5/10], Loss: 0.0075
-Epoch: [6/10], Loss: 0.0070
-Epoch: [7/10], Loss: 0.0066
-Epoch: [8/10], Loss: 0.0062
-Epoch: [9/10], Loss: 0.0059
-Epoch: [10/10], Loss: 0.0057
-Score (accuracy) of the probe: 0.87
-The best l1=0, the best l2=0 for pretrained_BERT_layer_11
+Epoch: [3/10], Loss: 0.0092
+Epoch: [4/10], Loss: 0.0085
+Epoch: [5/10], Loss: 0.0078
+Epoch: [6/10], Loss: 0.0073
+Epoch: [7/10], Loss: 0.0069
+Epoch: [8/10], Loss: 0.0064
+Epoch: [9/10], Loss: 0.0061
+Epoch: [10/10], Loss: 0.0058
+Score (accuracy) of the probe: 0.86
+Training classification probe
+Creating model...
+Number of training instances: 842
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0140
+Epoch: [2/10], Loss: 0.0115
+Epoch: [3/10], Loss: 0.0104
+Epoch: [4/10], Loss: 0.0096
+Epoch: [5/10], Loss: 0.0089
+Epoch: [6/10], Loss: 0.0084
+Epoch: [7/10], Loss: 0.0079
+Epoch: [8/10], Loss: 0.0075
+Epoch: [9/10], Loss: 0.0072
+Epoch: [10/10], Loss: 0.0068
+Score (accuracy) of the probe: 0.89
+The best l1=0, the best l2=0.001 for pretrained_BERT_layer_11
 Accuracy on the test set of probing pretrained_BERT_layer_11 of all layers:
-Score (accuracy) of the probe: 0.75
-{'__OVERALL__': 0.7505518763796909, 'NAME': 0.7225, 'STRING': 1.0, 'NUMBER': 0.9629629629629629, 'KEYWORD': 0.9545454545454546}
+Score (accuracy) of the probe: 0.70
+{'__OVERALL__': 0.7019867549668874, 'NAME': 0.7225, 'STRING': 1.0, 'NUMBER': 0.5185185185185185, 'KEYWORD': 0.5}
 Accuracy on the test set of pretrained_BERT_layer_11 model using the intercept:
 Score (accuracy) of the probe: 0.88
 pretrained_BERT Layer 12
 Training classification probe
 Creating model...
-Number of training instances: 908
+Number of training instances: 842
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0136
-Epoch: [2/10], Loss: 0.0101
-Epoch: [3/10], Loss: 0.0087
-Epoch: [4/10], Loss: 0.0079
-Epoch: [5/10], Loss: 0.0072
-Epoch: [6/10], Loss: 0.0067
-Epoch: [7/10], Loss: 0.0063
-Epoch: [8/10], Loss: 0.0060
-Epoch: [9/10], Loss: 0.0057
-Epoch: [10/10], Loss: 0.0054
-Score (accuracy) of the probe: 0.79
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0130
-Epoch: [2/10], Loss: 0.0098
-Epoch: [3/10], Loss: 0.0085
-Epoch: [4/10], Loss: 0.0077
-Epoch: [5/10], Loss: 0.0071
-Epoch: [6/10], Loss: 0.0066
-Epoch: [7/10], Loss: 0.0062
-Epoch: [8/10], Loss: 0.0058
-Epoch: [9/10], Loss: 0.0055
-Epoch: [10/10], Loss: 0.0053
-Score (accuracy) of the probe: 0.81
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0137
-Epoch: [2/10], Loss: 0.0103
-Epoch: [3/10], Loss: 0.0088
-Epoch: [4/10], Loss: 0.0080
-Epoch: [5/10], Loss: 0.0073
-Epoch: [6/10], Loss: 0.0068
-Epoch: [7/10], Loss: 0.0064
-Epoch: [8/10], Loss: 0.0061
-Epoch: [9/10], Loss: 0.0058
-Epoch: [10/10], Loss: 0.0055
-Score (accuracy) of the probe: 0.81
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0143
-Epoch: [2/10], Loss: 0.0108
+Epoch: [1/10], Loss: 0.0127
+Epoch: [2/10], Loss: 0.0106
 Epoch: [3/10], Loss: 0.0096
-Epoch: [4/10], Loss: 0.0088
-Epoch: [5/10], Loss: 0.0082
-Epoch: [6/10], Loss: 0.0078
-Epoch: [7/10], Loss: 0.0074
+Epoch: [4/10], Loss: 0.0089
+Epoch: [5/10], Loss: 0.0084
+Epoch: [6/10], Loss: 0.0079
+Epoch: [7/10], Loss: 0.0075
 Epoch: [8/10], Loss: 0.0071
 Epoch: [9/10], Loss: 0.0068
+Epoch: [10/10], Loss: 0.0065
+Score (accuracy) of the probe: 0.80
+Training classification probe
+Creating model...
+Number of training instances: 842
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0133
+Epoch: [2/10], Loss: 0.0109
+Epoch: [3/10], Loss: 0.0098
+Epoch: [4/10], Loss: 0.0091
+Epoch: [5/10], Loss: 0.0085
+Epoch: [6/10], Loss: 0.0080
+Epoch: [7/10], Loss: 0.0076
+Epoch: [8/10], Loss: 0.0072
+Epoch: [9/10], Loss: 0.0069
 Epoch: [10/10], Loss: 0.0066
 Score (accuracy) of the probe: 0.82
-The best l1=0, the best l2=0.1 for pretrained_BERT_layer_12
+Training classification probe
+Creating model...
+Number of training instances: 842
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0128
+Epoch: [2/10], Loss: 0.0106
+Epoch: [3/10], Loss: 0.0097
+Epoch: [4/10], Loss: 0.0090
+Epoch: [5/10], Loss: 0.0084
+Epoch: [6/10], Loss: 0.0079
+Epoch: [7/10], Loss: 0.0075
+Epoch: [8/10], Loss: 0.0072
+Epoch: [9/10], Loss: 0.0068
+Epoch: [10/10], Loss: 0.0066
+Score (accuracy) of the probe: 0.77
+Training classification probe
+Creating model...
+Number of training instances: 842
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0137
+Epoch: [2/10], Loss: 0.0115
+Epoch: [3/10], Loss: 0.0105
+Epoch: [4/10], Loss: 0.0098
+Epoch: [5/10], Loss: 0.0092
+Epoch: [6/10], Loss: 0.0088
+Epoch: [7/10], Loss: 0.0084
+Epoch: [8/10], Loss: 0.0081
+Epoch: [9/10], Loss: 0.0078
+Epoch: [10/10], Loss: 0.0075
+Score (accuracy) of the probe: 0.80
+The best l1=0, the best l2=0.001 for pretrained_BERT_layer_12
 Accuracy on the test set of probing pretrained_BERT_layer_12 of all layers:
-Score (accuracy) of the probe: 0.72
-{'__OVERALL__': 0.717439293598234, 'NAME': 0.6875, 'STRING': 1.0, 'NUMBER': 0.8888888888888888, 'KEYWORD': 1.0}
+Score (accuracy) of the probe: 0.59
+{'__OVERALL__': 0.5938189845474614, 'NAME': 0.5975, 'STRING': 1.0, 'NUMBER': 0.6296296296296297, 'KEYWORD': 0.4090909090909091}
 Accuracy on the test set of pretrained_BERT_layer_12 model using the intercept:
 Score (accuracy) of the probe: 0.88
 pretrained_BERT top neurons
-array([8200,   12,   13,   15, 8208,   16, 2070, 4121, 4136, 6189,   48,
-         50, 4148,   63, 4160, 2114, 8262,   73, 4171, 2127, 2136,   94,
-       2144, 6240, 6243, 4195, 2154,  106, 6250, 4220, 8317, 8320, 8322,
-       8331, 8333, 4256, 6305, 8357, 2214, 4262, 4272,  176, 2237, 4293,
-        199, 4299,  203, 8399,  211, 2262, 4314, 4327, 8424, 2286, 6382,
-       8435,  246, 4343, 8442, 6395,  252, 8451,  260, 4357,  262, 8459,
-        267,  269,  275, 2325, 6423, 6428, 2333, 2335, 6434,  293, 2344,
-        298, 4394, 2349, 2359, 8510, 4419,  327, 6471,  335, 6480, 6484,
-       2397, 2400,  357, 6504, 2410, 4458, 8558, 4472, 8572, 4477, 4478,
-        383,  384, 4480, 8575, 2428, 6524, 6534, 4487,  395, 4498, 2450,
-       4501, 2469, 4518,  425, 6569,  433, 4530,  436, 8633,  442, 8636,
-        447, 6597, 4550,  455, 2507, 4566,  471, 6616, 6618, 2523, 2526,
-       8673, 6634,  490,  499,  500, 8700, 2557, 8702, 4606, 4608, 2568,
-        521, 4619, 6668, 8718, 4622, 6672,  534,  539, 2588,  541, 4648,
-       8749, 2607, 2612, 4661, 6710,  582,  595,  598,  600, 8793,  608,
-       4704, 2658,  611, 2659, 4709, 8812, 6765, 4718,  633, 4730, 8828,
-       6781, 6784, 8834, 8837, 8838, 6795,  653,  654, 8847, 4751, 6807,
-        672, 4773,  678, 6821, 2728, 6822, 6835, 8889,  709, 4811, 2764,
-        715, 8915,  726,  730,  736, 6885, 6893, 6896, 6905, 2813, 6915,
-       8968, 6923, 8976, 2836, 2838,  799, 4898,  808, 6952, 4915, 9013,
-       4920, 9020, 6976, 2882, 9033,  841, 6989, 4945, 9045, 9052,  861,
-       2912, 2915, 7013, 4967, 4968,  874, 2922, 9067, 7018, 7022, 2935,
-       4988, 9088, 5005, 7058, 9111, 9125, 2982, 5029, 2994, 9140, 7093,
-       7100,  962, 5061, 5067,  971, 9167,  981, 3030, 5082, 7134,  990,
-       9197, 5111, 3065, 7163, 1030, 5129, 5136, 5148, 7197, 9254, 3112,
-       3117, 9265, 1073, 1075, 1076, 1083, 9280, 5187, 1096, 1101, 3149,
-       1104, 7252, 5208, 1122, 1123, 1125, 5240, 7292, 9340, 5245, 1148,
-       1152, 9346, 1154, 7302, 1168, 1177, 1183, 1189, 5286, 5285, 7337,
-       1197, 1200, 5299, 1204, 9404, 3261, 5318, 9415, 3275, 5334, 5348,
-       3301, 7399, 7402, 3309, 1266, 9468, 9477, 7432, 5387, 3339, 7440,
-       7443, 1302, 3351, 7447, 3353, 1307, 5404, 1309, 9507, 9517, 3380,
-       1336, 3409, 1363, 7508, 9559, 1368, 3420, 5472, 1376, 7523, 3430,
-       5484, 1389, 5486, 9596, 7549, 1405, 3452, 9600, 3457, 5506, 7552,
-       9605, 9606, 7563, 9616, 1425, 5522, 1438, 9631, 3488, 1444, 7589,
-       5541, 3494, 9654, 9658, 1469, 7622, 7634, 1494, 7639, 5591, 3547,
-       1505, 7653, 3559, 7656, 9711, 3586, 1542, 9736, 7691, 1548, 9749,
-       3606, 5660, 1566, 5665, 5690, 9796, 5703, 5707, 1613, 3670, 3671,
-       3679, 3680, 5736, 1642, 3690, 1646, 1648, 3704, 5756, 7810, 9859,
-       1666, 3719, 5769, 1680, 3730, 7826, 9879, 7841, 1701, 3750, 1704,
-       5808, 3762, 7860, 7868, 5826, 7875, 9924, 5829, 1733, 5835, 1739,
-       3791, 3798, 3799, 1758, 7905, 9955, 5866, 3822, 5879, 7927, 7934,
-       1798, 5900, 3855, 1809, 7959, 7964, 5916, 7971, 3880, 5931, 3885,
-       7981, 1843, 1844, 8000, 1884, 1893, 8057, 1916, 6013, 8060, 8064,
-       1920, 8070, 8079, 1937, 3987, 8087, 1945, 1951, 4005, 6066, 8133,
-       6086, 4043, 8142, 8147, 4078, 4079, 6131, 2036, 2039])
+array([6145,    2, 8197, 2056, 4104, 4108,   12,   13, 6159,   15, 4121,
+       4122, 8218, 4124, 8222,   30,   31, 4132, 4133,   40, 8237, 2096,
+       4147, 4154, 8250, 4155, 2116,   73, 8286,   94, 2144,  101, 4197,
+       6250, 2155, 2157, 2167,  121, 8320, 8322, 2182,  139, 8331, 4237,
+       8341, 6294, 6295,  149, 2208, 6305,  165, 4264, 2237,  190,  189,
+        195,  199,  203, 4306,  213, 6359, 4314,  231, 2280,  232, 4327,
+       6382, 2286, 2288, 4343,  252,  258,  262, 2315,  269, 6423,  282,
+       6428, 6429, 6434, 6440, 6443,  307, 6459, 6464, 2375,  330, 2380,
+       8525, 2381,  335,  336, 4440,  346,  351, 8547, 6501,  357,  363,
+       4470, 4472,  380, 8572, 4477,  383,  384, 8575, 6534, 6537, 4498,
+       4501,  405, 4503, 2457, 6568,  425, 4525, 4528, 8624, 4530,  436,
+       4541, 4550, 8647,  455, 2507,  464, 6609, 6611,  475, 2523, 4574,
+       8673, 2531, 4582, 4590, 8687, 2543, 8696,  505, 8698, 8700, 6661,
+       8709, 2568,  521, 8712, 4619,  522, 6672,  534, 8727, 2585,  538,
+        539, 4636, 8733,  541, 8739, 4644, 2597,  550, 8744, 6698, 8749,
+        560, 4657, 2612,  565, 2624, 8768, 4679,  593, 6740,  598,  599,
+        607,  608, 2659, 2661, 2663, 4716, 2669, 4718, 6774, 8825,  635,
+       6784,  646, 8838, 8841, 6797,  654,  656,  663,  669, 4773, 8869,
+       6822,  690, 6843,  701, 6845, 4804,  709, 6854, 2757, 8912, 8913,
+       8915, 8917,  726,  736,  737, 4843, 8939, 4845,  750, 6893,  752,
+       6896, 4851, 2804,  759, 8952, 2818, 6915, 8965, 2821, 4872, 2829,
+       2843, 6940, 8990,  808, 9003, 9005, 6957, 4920, 4922, 4923, 4928,
+       9028, 9033, 6989, 2903, 9054, 2912, 7011, 7013, 7020,  878, 7022,
+        880,  885,  886, 2935, 4988,  893, 9088,  913, 7058, 7060, 9111,
+        921, 2976, 9129, 9131, 5046, 7100, 3004, 7105,  963, 9156, 7108,
+       3014,  978,  981, 9176, 5088, 3048, 1000, 7150, 1008, 9203, 7157,
+       5111, 1016, 9220, 1030, 5128, 5129, 7181, 7182, 1043, 3093, 7191,
+       7197, 7202, 1063, 1071, 1072, 1073, 1075, 1076, 1083, 9281, 5187,
+       7239, 1096, 7243, 1101, 1104, 1105, 7252, 5208, 5213, 1125, 3181,
+       5240, 5245, 7298, 5254, 7305, 1165, 3215, 7312, 9361, 5267, 9365,
+       3225, 9374, 7333, 1193, 7340, 1197, 1199, 5296, 7346, 7355, 9404,
+       5307, 3267, 7366, 9418, 3275, 1239, 7386, 7392, 9441, 3299, 7403,
+       3309, 7420, 9468, 7429, 7432, 9480, 5387, 7436, 5390, 1308, 3356,
+       1309, 3365, 3369, 7469, 5421, 9517, 3386, 1339, 1343, 3392, 9536,
+       1359, 9556, 3416, 1368, 5467, 9565, 5472, 1376, 5477, 1387, 5484,
+       3437, 1401, 7550, 7552, 1414, 9609, 5527, 7579, 1437, 1440, 3488,
+       5538, 7589, 3496, 3510, 9654, 9658, 1469, 7616, 1477, 1485, 9680,
+       9681, 7636, 1494, 9690, 3546, 1507, 3559, 9709, 1518, 1525, 9720,
+       1531, 3580, 9733, 5644, 3606, 5660, 1566, 9771, 7725, 9781, 5688,
+       5690, 9788, 5696, 3650, 9796, 7757, 5712, 3671, 7779, 5732, 7790,
+       7799, 7810, 5766, 3719, 5769, 3730, 7826, 5780, 3735, 7838, 3755,
+       9909, 5826, 1731, 7876, 5829, 3782, 1739, 1742, 3791, 3806, 7905,
+       9955, 1765, 7930, 1788, 1789, 3861, 7959, 5911, 7964, 7971, 5931,
+       3889, 1843, 1844, 7995, 1851, 1869, 1884, 8030, 1893, 1895, 8039,
+       3964, 8064, 8066, 6034, 8087, 3993, 4005, 6054, 1972, 4020, 8118,
+       8123, 1985, 8135, 4046, 8145, 8147, 6102, 8154, 8160, 4077, 2036,
+       2039, 4095])
 pretrained_BERT top neurons per class
-{'NAME': array([2262, 3030, 5129, 4550, 7302, 3885, 6923,  246, 9658, 2144, 7656,
-       5387, 4121, 3606,  262, 8435, 7691, 6672, 5829, 1916, 4043, 1469,
-       6784, 8208, 8200, 5472,  653,   94, 8322, 5187, 3704,  499, 8702,
-       8070, 8320, 7134, 8133, 5736, 6434, 4256, 5484, 1030, 4915, 9736,
-       7549, 7905, 2039, 7252, 9879, 1083, 2588, 5148, 3791, 7589, 6240,
-       5808,  436, 8459, 3750,   63, 3762, 1302, 4498,  384, 3380, 5318,
-       4920, 5826, 8331,  534, 4314, 7875, 5286, 4773, 3409, 8633,  981,
-         15, 1798, 6989,   13, 6423, 7981, 2136, 7639, 9167, 6634, 4472,
-       5665, 8828, 8889, 9280,  357, 4718,   50, 6086, 3679, 3420, 2469,
-       3547, 4299, 7622, 3730, 6243, 9033, 1336, 6781, 8147, 7292, 5082,
-       9013, 1548, 8572, 3309, 8057, 1200, 4480, 2568, 1425,  874, 6131,
-       1809, 1843, 5931,  199, 5240, 8718, 1076, 4898, 8064, 9517, 4160,
-       8399, 8812, 5541,  600, 9340, 2349, 6668, 2523, 7964, 1104, 1075,
-       7934, 2154, 3798, 6807, 3261,  500, 1189, 8510,  808]), 'STRING': array([2912, 5769, 7058,  203, 9125, 8208,  262,  709, 2935, 4121, 8060,
-       5404, 5129, 3762, 1376,  199, 7337, 2882,   48, 3112, 9711,  521,
-       6504, 5067,  582, 6189, 7826, 6795,  595, 8424, 2507,  534,  425,
-       1183, 2136, 9749,  298, 8331, 5736, 6305, 2922, 3680, 2344, 5005,
-       8000, 3586, 1368,  678,  611, 2144, 6240, 1469, 3799, 5245, 1197,
-        736, 4550, 8915, 7093, 7563, 9924, 2070,  799, 3719, 9507, 9052,
-       1438,  433,  269, 3559, 1030, 5835, 6597, 8079, 1096, 2557, 1542,
-        335, 7013, 9346, 1363, 7868, 1733, 9658,  608, 3822, 4487, 9559,
-       5111,  971, 9404, 2036, 2127, 2286, 7959, 3275, 4619, 9600, 4968,
-       1101, 1505, 1884, 6896, 8333, 1425, 7810,  539,  252, 1920, 6569,
-       1302, 1945, 9468, 4945,   12, 2836, 5472, 2114, 9415, 3855, 9088,
-       1798, 4478, 2658, 6821, 1307, 8847, 7440, 9596, 4136, 1893, 3351,
-       9067, 9265, 4709, 7197, 3149, 5506, 2728, 6976,   63, 1937, 6395,
-       2607, 2325, 7399, 4608,  471, 2335, 5703,  267, 9197, 6066, 8976]), 'NUMBER': array([ 262, 2912, 4619, 9088, 7432, 9045, 4566,  608, 3117, 1494, 1123,
-       7302, 4550, 6240, 3798, 4988, 7691, 5472, 8838, 5067, 4501, 5808,
-       5136, 6013, 4220, 8812, 4256, 6923,  211, 3679, 6189, 1152, 4327,
-       7549, 6822, 9616, 4195, 1204, 3704, 3680, 7905, 1642, 7022, 2982,
-        653, 4272, 4394, 4730, 8317,  293, 4811, 3030, 1177, 3690, 2214,
-       8976, 4078, 5029, 5660, 5879, 4606, 9796,  841,   94, 5208, 3457,
-       3065,  808, 9052,   12, 7292,  611, 6905, 6534, 8834, 4079, 9140,
-       4530, 1739, 9111,  633, 8558,  176, 5756, 1368, 2526, 3559, 2410,
-       5061,  447, 2659, 4608, 1197, 3301, 8837, 2813, 1505, 1302, 6131,
-       5522, 7860, 6710, 7971, 1916, 2400, 1444, 6428, 6915, 4704, 7447,
-       4314, 2450, 1125, 9631,  962, 6480, 1951, 5866, 1309,  383, 5690,
-       4967, 6893, 1646, 8636, 1758, 8064, 8442, 7552, 7018, 1122, 1336,
-       8087, 7523, 1148, 6821, 2359,  990, 7402, 5486, 3670, 2397,  598,
-       4458, 1680, 9020, 8749, 2935, 8070, 1266, 4518,  861, 1566]), 'KEYWORD': array([7432, 5245,   13, 1494, 2237,  106, 3987, 1844, 4171, 4419, 7549,
-       7868, 1368, 5829,  499,  653, 8673, 8133,  726, 9859, 7634, 8142,
-       8968, 5334,  730, 2136,  521, 5148, 9167,  298, 1951,  395,  455,
-       9955, 4648, 4477, 7841, 9658, 8451, 3671, 6765,   73, 1739, 6821,
-       8575, 2428, 7302, 3117, 4622,  541, 1076, 2333, 4262, 3880, 5187,
-       8793, 5591, 1073, 1916, 4293,  262, 8636, 3488, 9254, 5285, 1666,
-       7443, 3719, 8357, 8838, 1704, 1613, 1405, 3339,  275,  611, 5061,
-       7508,  654,  327, 5208, 2838, 6952, 7927, 4005, 6131, 1148, 1648,
-       5111, 8322, 1154, 1389, 2612, 3430, 6835, 4148, 4704, 5348,  442,
-       6471, 1168, 6524, 5299, 3494, 2764, 6597, 4920, 3353,  490, 7163,
-       6382, 9606, 6616, 5916, 6013,  678, 1893, 7653, 2912, 8070, 9605,
-       6885,  260, 7100, 4357, 9477, 4751, 4343,  715, 6484, 8700, 6618,
-       5900, 4661, 2915, 6923, 1701,  672,   16, 2400, 5707, 6240, 6428,
-       3452, 8262, 9654, 6250, 2994, 1376])}
-The shape of selected features (908, 493)
-The shape of the training set: (908, 9984)
-The shape of the validation set: (101, 9984)
+{'NAME': array([4314,  307, 7552, 7905, 7181, 1075, 4147, 2144, 6672, 4530, 2612,
+       5472, 1844,  199, 6423, 7432, 9111, 7058,  701, 3048, 6464, 1076,
+       3369, 9088, 7959, 1469, 6784, 1101, 1083, 1972, 1731, 7429, 3267,
+       8320, 8687,  436, 8727, 3730, 7386,  752, 4501, 3650, 2912, 9796,
+        203, 1742, 1008, 1518,  880, 2818, 8322, 3791, 1239, 8952, 6250,
+       1494, 3861, 4154, 3889,   73, 8123, 6294, 8700, 3735, 7020, 6854,
+       6034, 4343, 1376, 8547, 6382, 3782, 8917,  963, 8030, 7589, 8733,
+       7420, 3392, 5660, 4132, 4440, 6501, 2237, 9955,  195, 8087,  380,
+       6428, 9028,  190, 5911, 1401, 2568,  808, 4472, 4108, 5245,   12,
+       4922, 1566, 5128, 6359, 6459, 7876,  663, 9203, 5187,  384,  383,
+       3510, 7469,  690, 5690, 3416, 8237, 7826, 6434, 3014,  330, 7333,
+       2507, 9709, 5111, 2624, 5484, 4528,  981, 5644, 7011, 1739, 6843,
+       1308, 2056, 2286, 4237, 4005,  608, 7995, 7182, 8064, 1843, 5267,
+       9609, 4988, 6915, 8066, 4550]), 'STRING': array([1376,  701, 7305,  521,  538, 2096, 3861, 4077, 2829, 2912, 6845,
+       9733, 5088, 9658, 6661,  565, 3225, 1043, 5046, 9680, 8913, 9796,
+        752, 2457, 6428, 7392, 9203,  534, 2531, 1105,  560,  425, 1193,
+       5538, 9404, 8673, 7905,  539, 9176, 7105, 4679,  505, 9156, 8647,
+       4528, 1765,  351,  252,  269, 5477, 1972, 6611, 5826, 4636, 1437,
+       9771, 8841, 6609,  893, 1788, 8965, 9281, 9681, 5527, 3309,  963,
+       5129, 6537, 8222, 7202, 1308, 4264, 5307, 9374,  750, 3048,  669,
+       8912, 9131, 7355, 8525, 8696, 9361, 2286, 6774,  726, 1096, 8145,
+       8250,  405, 6443,  921, 9565, 1063, 7550, 8990, 8147,  475, 2375,
+       8160, 7060, 9720,  101, 8749, 9033,  737, 2843, 1507,  593, 4237,
+        885, 9468, 1789, 9480,  464,  213, 6940, 4095, 5467, 4590, 2380,
+       4470, 1531, 3093, 4845, 7838, 1165, 1884, 9690,  262, 9003, 7100,
+       7108, 9536, 2036,  656, 4503, 9418,  383, 2208, 3546, 4804, 6159,
+       4872, 7799, 9088, 1030, 9781, 3993, 1359, 5421, 3004, 1869, 9788,
+       4525, 7964, 9517, 6305, 8709, 4773]), 'NUMBER': array([ 599,  635, 2280, 2144, 3365, 9203, 7252, 2912,   30,   40,  598,
+       1075, 4928,  808, 6464, 7191, 7757, 4197, 2116,  978,   15, 7157,
+       1199,  384, 4582, 6428,  262, 2531, 1893, 6459, 1101, 5296, 1368,
+       1731, 1387, 6940, 7298,  363, 6423, 9365, 8712, 9955, 5484, 8768,
+       1477, 6443, 8066,  646, 4923, 1414,  709, 2661, 2663, 8917, 6797,
+        886, 7436, 4843, 4657,  607, 8673,  654,   13, 5688, 8825, 8915,
+       6382,  139, 5769, 5254, 1016, 3299, 3437,  521, 6102, 3386, 8739,
+       1895, 8135, 7725,  759, 5712, 1440, 7312, 1518, 3755, 1000, 7346,
+       1485, 4920, 2804, 8341, 1104, 7150,  307, 6568, 5780, 8118,  199,
+       6534, 6295, 1985,  231, 9005, 7905, 2568,  232, 2976,  878, 2669,
+       3964, 7058, 3488, 8939, 4644, 2167, 4851, 6989, 8039,  346, 8286,
+       9054, 1343, 3225, 8572, 1125, 7366, 3392, 8952, 7930, 6893, 5931,
+       7403, 4133, 2039, 7790, 5208, 4104, 4122,  550, 7013, 4155,  357,
+        282, 6698, 2315, 5240,  189, 4477, 6896, 2757, 1072, 9129, 8838,
+       9909, 2288, 2935, 2182, 5732, 9654, 8218]), 'KEYWORD': array([ 599, 7959, 5129, 2144, 4619, 8575, 8673,  383, 1083, 8320, 9088,
+       1893,  752, 5527, 3730, 4046, 3671, 3559, 1368, 2829, 3606, 9033,
+       2507, 6464, 3181,  262, 7011, 6440, 1071, 5390, 7013, 2821, 2531,
+       1525,    2, 2935, 7340, 9796, 1339, 3309, 4124, 1851, 3369, 1075,
+       3275, 6429, 1376, 7429, 2597, 1742, 8222,  336, 6740, 8869, 4121,
+       8624, 8838, 9203, 3806, 3356, 1197,  335, 3889,  121, 7810, 4498,
+       2903, 3719, 4574, 6797, 4541, 2543, 8965, 2237, 6822, 4327, 3735,
+       8197,   40, 7636, 3580, 6501, 7579, 2659, 5829, 3510, 8744, 5766,
+       3215, 8331,   94, 4314, 8739, 1073, 9654,  282,  258, 7202, 6054,
+       5421,   31,  165, 4590,  405, 7022, 1309, 4872,  455, 3496,  737,
+       8087, 7355, 5696, 4306, 8915, 6957, 4716,   73, 7197, 1843, 7239,
+       2585, 2568, 8154, 2157,  541, 9220, 4477, 7191, 7616, 8712, 7779,
+       1469, 2523,  913, 4528, 2155, 7971, 6145,  736, 9556, 7386, 2381,
+       9418, 8698,  149, 7243,  522, 4020, 7366, 4718, 9441, 5387, 1076,
+       5213, 4503])}
+The shape of selected features (842, 508)
+The shape of the training set: (842, 9984)
+The shape of the validation set: (94, 9984)
 The shape of the testing set: (453, 9984)
 Training classification probe
 Creating model...
-Number of training instances: 908
+Number of training instances: 842
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0117
-Epoch: [2/10], Loss: 0.0087
-Epoch: [3/10], Loss: 0.0070
-Epoch: [4/10], Loss: 0.0058
-Epoch: [5/10], Loss: 0.0050
-Epoch: [6/10], Loss: 0.0044
-Epoch: [7/10], Loss: 0.0039
-Epoch: [8/10], Loss: 0.0035
-Epoch: [9/10], Loss: 0.0032
-Epoch: [10/10], Loss: 0.0029
-Score (accuracy) of the probe: 0.88
+Epoch: [1/10], Loss: 0.0116
+Epoch: [2/10], Loss: 0.0096
+Epoch: [3/10], Loss: 0.0083
+Epoch: [4/10], Loss: 0.0072
+Epoch: [5/10], Loss: 0.0064
+Epoch: [6/10], Loss: 0.0057
+Epoch: [7/10], Loss: 0.0051
+Epoch: [8/10], Loss: 0.0046
+Epoch: [9/10], Loss: 0.0042
+Epoch: [10/10], Loss: 0.0038
+Score (accuracy) of the probe: 0.93
 Training classification probe
 Creating model...
-Number of training instances: 908
+Number of training instances: 842
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0115
-Epoch: [2/10], Loss: 0.0086
-Epoch: [3/10], Loss: 0.0069
-Epoch: [4/10], Loss: 0.0058
-Epoch: [5/10], Loss: 0.0050
-Epoch: [6/10], Loss: 0.0044
-Epoch: [7/10], Loss: 0.0039
-Epoch: [8/10], Loss: 0.0035
-Epoch: [9/10], Loss: 0.0032
-Epoch: [10/10], Loss: 0.0029
+Epoch: [1/10], Loss: 0.0134
+Epoch: [2/10], Loss: 0.0108
+Epoch: [3/10], Loss: 0.0093
+Epoch: [4/10], Loss: 0.0081
+Epoch: [5/10], Loss: 0.0072
+Epoch: [6/10], Loss: 0.0064
+Epoch: [7/10], Loss: 0.0057
+Epoch: [8/10], Loss: 0.0052
+Epoch: [9/10], Loss: 0.0047
+Epoch: [10/10], Loss: 0.0043
 Score (accuracy) of the probe: 0.90
 Training classification probe
 Creating model...
-Number of training instances: 908
+Number of training instances: 842
 Number of classes: 4
 Epoch: [1/10], Loss: 0.0120
-Epoch: [2/10], Loss: 0.0087
-Epoch: [3/10], Loss: 0.0070
-Epoch: [4/10], Loss: 0.0059
-Epoch: [5/10], Loss: 0.0051
-Epoch: [6/10], Loss: 0.0045
-Epoch: [7/10], Loss: 0.0040
-Epoch: [8/10], Loss: 0.0036
-Epoch: [9/10], Loss: 0.0033
-Epoch: [10/10], Loss: 0.0030
-Score (accuracy) of the probe: 0.88
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0132
-Epoch: [2/10], Loss: 0.0102
-Epoch: [3/10], Loss: 0.0084
-Epoch: [4/10], Loss: 0.0072
-Epoch: [5/10], Loss: 0.0064
+Epoch: [2/10], Loss: 0.0098
+Epoch: [3/10], Loss: 0.0085
+Epoch: [4/10], Loss: 0.0074
+Epoch: [5/10], Loss: 0.0065
 Epoch: [6/10], Loss: 0.0058
 Epoch: [7/10], Loss: 0.0053
-Epoch: [8/10], Loss: 0.0049
-Epoch: [9/10], Loss: 0.0046
-Epoch: [10/10], Loss: 0.0044
-Score (accuracy) of the probe: 0.89
-The best l1=0, the best l2=0.001 for pretrained_BERT_top5%_neurons
+Epoch: [8/10], Loss: 0.0048
+Epoch: [9/10], Loss: 0.0043
+Epoch: [10/10], Loss: 0.0040
+Score (accuracy) of the probe: 0.90
+Training classification probe
+Creating model...
+Number of training instances: 842
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0132
+Epoch: [2/10], Loss: 0.0111
+Epoch: [3/10], Loss: 0.0097
+Epoch: [4/10], Loss: 0.0086
+Epoch: [5/10], Loss: 0.0077
+Epoch: [6/10], Loss: 0.0070
+Epoch: [7/10], Loss: 0.0064
+Epoch: [8/10], Loss: 0.0059
+Epoch: [9/10], Loss: 0.0055
+Epoch: [10/10], Loss: 0.0052
+Score (accuracy) of the probe: 0.90
+The best l1=0, the best l2=0 for pretrained_BERT_top5%_neurons
 Accuracy on the test set of probing pretrained_BERT_top5%_neurons of all layers:
-Score (accuracy) of the probe: 0.80
-{'__OVERALL__': 0.8035320088300221, 'NAME': 0.7825, 'STRING': 1.0, 'NUMBER': 0.9629629629629629, 'KEYWORD': 0.9545454545454546}
+Score (accuracy) of the probe: 0.76
+{'__OVERALL__': 0.7593818984547461, 'NAME': 0.775, 'STRING': 1.0, 'NUMBER': 0.7777777777777778, 'KEYWORD': 0.4090909090909091}
 Accuracy on the test set of pretrained_BERT_top5%_neurons model using the intercept:
 Score (accuracy) of the probe: 0.88
 Training classification probe
 Creating model...
-Number of training instances: 908
+Number of training instances: 842
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0123
+Epoch: [2/10], Loss: 0.0112
+Epoch: [3/10], Loss: 0.0104
+Epoch: [4/10], Loss: 0.0098
+Epoch: [5/10], Loss: 0.0092
+Epoch: [6/10], Loss: 0.0087
+Epoch: [7/10], Loss: 0.0083
+Epoch: [8/10], Loss: 0.0079
+Epoch: [9/10], Loss: 0.0075
+Epoch: [10/10], Loss: 0.0072
+Score (accuracy) of the probe: 0.78
+Training classification probe
+Creating model...
+Number of training instances: 842
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0126
+Epoch: [2/10], Loss: 0.0115
+Epoch: [3/10], Loss: 0.0106
+Epoch: [4/10], Loss: 0.0099
+Epoch: [5/10], Loss: 0.0094
+Epoch: [6/10], Loss: 0.0089
+Epoch: [7/10], Loss: 0.0084
+Epoch: [8/10], Loss: 0.0080
+Epoch: [9/10], Loss: 0.0076
+Epoch: [10/10], Loss: 0.0073
+Score (accuracy) of the probe: 0.73
+Training classification probe
+Creating model...
+Number of training instances: 842
 Number of classes: 4
 Epoch: [1/10], Loss: 0.0125
-Epoch: [2/10], Loss: 0.0109
-Epoch: [3/10], Loss: 0.0097
-Epoch: [4/10], Loss: 0.0088
-Epoch: [5/10], Loss: 0.0080
-Epoch: [6/10], Loss: 0.0074
-Epoch: [7/10], Loss: 0.0069
-Epoch: [8/10], Loss: 0.0064
-Epoch: [9/10], Loss: 0.0060
-Epoch: [10/10], Loss: 0.0057
+Epoch: [2/10], Loss: 0.0115
+Epoch: [3/10], Loss: 0.0107
+Epoch: [4/10], Loss: 0.0101
+Epoch: [5/10], Loss: 0.0095
+Epoch: [6/10], Loss: 0.0090
+Epoch: [7/10], Loss: 0.0086
+Epoch: [8/10], Loss: 0.0081
+Epoch: [9/10], Loss: 0.0078
+Epoch: [10/10], Loss: 0.0074
 Score (accuracy) of the probe: 0.84
 Training classification probe
 Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0133
-Epoch: [2/10], Loss: 0.0115
-Epoch: [3/10], Loss: 0.0102
-Epoch: [4/10], Loss: 0.0092
-Epoch: [5/10], Loss: 0.0083
-Epoch: [6/10], Loss: 0.0077
-Epoch: [7/10], Loss: 0.0071
-Epoch: [8/10], Loss: 0.0066
-Epoch: [9/10], Loss: 0.0062
-Epoch: [10/10], Loss: 0.0059
-Score (accuracy) of the probe: 0.88
-Training classification probe
-Creating model...
-Number of training instances: 908
+Number of training instances: 842
 Number of classes: 4
 Epoch: [1/10], Loss: 0.0130
-Epoch: [2/10], Loss: 0.0110
-Epoch: [3/10], Loss: 0.0097
-Epoch: [4/10], Loss: 0.0087
-Epoch: [5/10], Loss: 0.0079
-Epoch: [6/10], Loss: 0.0073
-Epoch: [7/10], Loss: 0.0067
-Epoch: [8/10], Loss: 0.0063
-Epoch: [9/10], Loss: 0.0059
-Epoch: [10/10], Loss: 0.0055
-Score (accuracy) of the probe: 0.90
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0137
 Epoch: [2/10], Loss: 0.0120
-Epoch: [3/10], Loss: 0.0108
-Epoch: [4/10], Loss: 0.0099
-Epoch: [5/10], Loss: 0.0091
-Epoch: [6/10], Loss: 0.0085
-Epoch: [7/10], Loss: 0.0080
-Epoch: [8/10], Loss: 0.0075
-Epoch: [9/10], Loss: 0.0072
-Epoch: [10/10], Loss: 0.0069
-Score (accuracy) of the probe: 0.81
+Epoch: [3/10], Loss: 0.0112
+Epoch: [4/10], Loss: 0.0106
+Epoch: [5/10], Loss: 0.0101
+Epoch: [6/10], Loss: 0.0096
+Epoch: [7/10], Loss: 0.0092
+Epoch: [8/10], Loss: 0.0088
+Epoch: [9/10], Loss: 0.0085
+Epoch: [10/10], Loss: 0.0082
+Score (accuracy) of the probe: 0.83
 The best l1=0, the best l2=0.01 for pretrained_BERT_top200_neurons
 Accuracy on the test set of probing pretrained_BERT_top200_neurons of all layers:
-Score (accuracy) of the probe: 0.78
-{'__OVERALL__': 0.7792494481236203, 'NAME': 0.7575, 'STRING': 1.0, 'NUMBER': 0.9629629629629629, 'KEYWORD': 0.9090909090909091}
+Score (accuracy) of the probe: 0.70
+{'__OVERALL__': 0.6975717439293598, 'NAME': 0.7275, 'STRING': 1.0, 'NUMBER': 0.6296296296296297, 'KEYWORD': 0.18181818181818182}
 Accuracy on the test set of pretrained_BERT_top200_neurons model using the intercept:
 Score (accuracy) of the probe: 0.88
-pretrained_BERT top words
-Top words for pretrained_BERT neuron indx 8200 [('pop', 1.0), ('%', 0.9031061936058932), ('60', 0.8784760597915617), ('profile', 0.8767476716866222), ('con', 0.8739006095994921)]
-Top words for pretrained_BERT neuron indx 12 [('unicode', 1.0), ('sanetime', 0.7329581365294794), ('probe', 0.7320452054796022), ('self', 0.7235652340343062), ('con', 0.7138648623213866)]
-Top words for pretrained_BERT neuron indx 13 [('field', 1.0), ('item', 0.9138925015932882), ('year', 0.844846793182526), ('%', 0.8352088485369955), ('#', 0.7940873304085055)]
-Top words for pretrained_BERT neuron indx 15 [('break', 1.0), ('slug', 0.8746318008688365), ('format', 0.8435737788426704), ('put', 0.7575288997258649), ('META', 0.7511148396135463)]
-Top words for pretrained_BERT neuron indx 8208 [('400', 1.0), ('128', 0.9945355031121634), ('os', 0.9944701355984183), ('else', 0.8811453536675541), ('self', 0.8232870900535882)]
-Top words for pretrained_BERT neuron indx 16 [('Board', 1.0), ('len', 0.8339475647962161), ('board', 0.7794373091915237), ('patch', 0.6343627314638288), ('stanza', 0.5873548773795247)]
-Top words for pretrained_BERT neuron indx 2070 [('print', 1.0), ('k', 0.9625482320258741), ('clone', 0.9274452558072674), ('domain', 0.9262064098724179), ('open', 0.9059795666208101)]
-Top words for pretrained_BERT neuron indx 4121 [('bare', 1.0), ('send', 0.9801815109412116), ('log', 0.9504996773309788), ('result', 0.9304188933697873), ('path', 0.9241924700825378)]
-Top words for pretrained_BERT neuron indx 4136 [('error', 1.0), ('delete', 0.9269765392926665), ('item', 0.9018563634415387), ('###########################################################################', 0.8886407404320675), ('task', 0.8886085199097528)]
-Top words for pretrained_BERT neuron indx 6189 [('calendar', 1.0), ('items', 0.9849279966544582), ('description', 0.9835136283615613), ('item', 0.9502489595769509), (';', 0.8885867783645967)]
-Top words for pretrained_BERT neuron indx 48 [('break', 1.0), ('register', 0.9630702991017648), ('list', 0.9608663732337926), ('Register', 0.9098903375661462), ('connection', 0.8921136757859062)]
-Top words for pretrained_BERT neuron indx 50 [('ms', 1.0), ('unicode', 0.8350858218846907), ('GET', 0.822218153779219), ('e', 0.7868155254427166), ('get', 0.7224188921759364)]
-Top words for pretrained_BERT neuron indx 4148 [('in', 1.0), ('with', 0.9583585951109441), ('and', 0.9559329438672629), ('is', 0.8690275873708708), ('as', 0.7928416061295042)]
-Top words for pretrained_BERT neuron indx 63 [('push', 1.0), ('False', 0.8238982115891701), ('line', 0.7282114217370587), ('patch', 0.7216002613765076), ('[', 0.6447933989761245)]
-Top words for pretrained_BERT neuron indx 4160 [('find', 1.0), ('8', 0.9294224940333128), ('close', 0.8910652109832911), ('True', 0.7940745915608921), ('print', 0.7877490920623343)]
-Top words for pretrained_BERT neuron indx 2114 [('upper', 1.0), ('wait', 0.8465147254480345), ('stanza', 0.8306966541992785), ('name', 0.7898543847444639), ('help', 0.7837431711708178)]
-Top words for pretrained_BERT neuron indx 8262 [('>', 1.0), ('and', 0.9802303515191056), ('oslo', 0.8371255160978586), ('}', 0.7972591089080043), ('find', 0.7645904472193148)]
-Top words for pretrained_BERT neuron indx 73 [('future', 1.0), ('utc', 0.9763505802342232), ('match', 0.9575582273399521), ('Unauthorized', 0.8487049916068184), ('False', 0.8058019766645106)]
-Top words for pretrained_BERT neuron indx 4171 [('REQUEST', 1.0), ('identity', 0.9374770327507362), (',', 0.9059900122153273), ('Exception', 0.872342622795469), ('type', 0.8640193507420061)]
-Top words for pretrained_BERT neuron indx 2127 [('affinity', 1.0), ('request', 0.7618266273717559), ('state', 0.7068635750188409), ('REQUEST', 0.6999492560749933), ('push', 0.6856284843265379)]
-Top words for pretrained_BERT neuron indx 2136 [('created', 1.0), ('calendar', 0.9911007637435565), ('Register', 0.8742333890036289), ('task', 0.8529191554900092), ('register', 0.8426359185560616)]
-Top words for pretrained_BERT neuron indx 94 [('affinity', 1.0), ('identity', 0.9726455539077926), ('authentication', 0.8384853462896658), ('os', 0.8145422815052724), ('key', 0.7921201997525624)]
-Top words for pretrained_BERT neuron indx 2144 [('\\n', 1.0), ('Log', 0.9918643469922668), ('{', 0.9648844754922791), ('body', 0.942437095325093), ('common', 0.8615035322154272)]
-Top words for pretrained_BERT neuron indx 6240 [('tz', 1.0), ('features', 0.8186983647194007), ('and', 0.8037473617632116), ('models', 0.7942985635887522), (';', 0.7747801931069991)]
-Top words for pretrained_BERT neuron indx 6243 [('contents', 1.0), ('host', 0.8975680284398065), ('count', 0.8617203340787912), ('policy', 0.8482463827997473), ('title', 0.8473694352368759)]
-Top words for pretrained_BERT neuron indx 4195 [('other', 1.0), ('sans', 0.83395275281701), ('proxy', 0.8189313101510872), ('alt', 0.7485294414737682), ('else', 0.7484121440872697)]
-Top words for pretrained_BERT neuron indx 2154 [('600', 1.0), ('try', 0.9031771477210299), ('6', 0.829274024812785), ('300', 0.8060275117805571), ('24', 0.7505318345933503)]
-Top words for pretrained_BERT neuron indx 106 [('get', 1.0), ('default', 0.8942171231889752), ('add', 0.8899536195514475), ('GET', 0.8421002622334602), ('authorized', 0.8288357556555075)]
-Top words for pretrained_BERT neuron indx 6250 [('is', 1.0), (',', 0.9768950853248866), ('E', 0.918469289505192), ('17', 0.8804238515634931), ('15', 0.8791776223101389)]
-Top words for pretrained_BERT neuron indx 4220 [('hour', 1.0), ('600', 0.9933409059941134), ('400', 0.9695373120557452), ('routes', 0.9232518365942823), ('60', 0.908340029170427)]
-Top words for pretrained_BERT neuron indx 8317 [('30', 1.0), ('META', 0.9476140349003467), ('300', 0.9375101295379329), ('17', 0.8830884443833298), ('end', 0.8807369230502224)]
-Top words for pretrained_BERT neuron indx 8320 [(',', 1.0), ('30', 0.9284022876530182), ('/', 0.9048893608585649), ('20', 0.8420097133759156), ('40', 0.8386886142565341)]
-Top words for pretrained_BERT neuron indx 8322 [('end', 1.0), ('unicode', 0.8717718175527067), ('On', 0.8283278748055828), ('@', 0.8211956459676554), ('child', 0.7858286684618143)]
-Top words for pretrained_BERT neuron indx 8331 [('uss', 1.0), ('reactor', 0.9892494479655263), ('False', 0.9413254953896674), ('utc', 0.9321914921544032), ('24', 0.8656156321069304)]
-Top words for pretrained_BERT neuron indx 8333 [('9', 1.0), ('child', 0.8310531591205869), ('types', 0.7591458043091696), ('for', 0.7445937300508647), ('eg', 0.7349575628934588)]
-Top words for pretrained_BERT neuron indx 4256 [('80', 1.0), ('60', 0.9441465047732497), ('32', 0.8967353734329739), ('40', 0.8659664862432802), (']', 0.8379240799861988)]
-Top words for pretrained_BERT neuron indx 6305 [('False', 1.0), (']', 0.8344253831328695), ('True', 0.808153659298898), ('3', 0.7812898139031587), ('}', 0.7562516528991198)]
-Top words for pretrained_BERT neuron indx 8357 [('if', 1.0), ('META', 0.9471137650611352), ('5', 0.8733135303995255), ('###########################################################################', 0.7922455185079468), ('0', 0.7589968227874704)]
-Top words for pretrained_BERT neuron indx 2214 [('baseline', 1.0), ('servers', 0.9897467580457767), ('store', 0.9287156449398626), ('val', 0.8527466034299198), ('4', 0.8521947169843425)]
-Top words for pretrained_BERT neuron indx 4262 [('14', 1.0), ('reactor', 0.9952105435646897), ('12', 0.9663233719206), ('bare', 0.927764497983481), ('force', 0.9252015959332937)]
-Top words for pretrained_BERT neuron indx 4272 [('86400', 1.0), ('8', 0.9452199000114997), ('24', 0.9120378021498594), ('find', 0.774290602100541), ('send', 0.7335534684770663)]
-Top words for pretrained_BERT neuron indx 176 [('delete', 1.0), ('Post', 0.971932820171514), ('post', 0.8434884966320547), ('proxy', 0.8422617672772938), ('iq', 0.8307129459012925)]
-Top words for pretrained_BERT neuron indx 2237 [('enabled', 1.0), ('Node', 0.9082131682403394), ('other', 0.8607536371850026), ('sts', 0.8047903574832688), ('None', 0.7980813525036922)]
-Top words for pretrained_BERT neuron indx 4293 [(';', 1.0), ('direct', 0.9941240186363236), ('filters', 0.8945264197330551), ('strip', 0.8704977059524813), ('seek', 0.8617693324322073)]
-Top words for pretrained_BERT neuron indx 199 [('presence', 1.0), ('tag', 0.8358316411923213), ('slug', 0.8186477772464135), ('60', 0.8017178114533632), ('80', 0.7683123914413428)]
-Top words for pretrained_BERT neuron indx 4299 [('types', 1.0), ('Library', 0.8608427022452358), ('all', 0.8542413899231143), ('send', 0.8151758873442528), ('.', 0.8144976770669117)]
-Top words for pretrained_BERT neuron indx 203 [('loads', 1.0), ('operand', 0.9642849450268245), ('startswith', 0.9197952199936249), ('format', 0.8786555932349419), ('probe', 0.8556730791765179)]
-Top words for pretrained_BERT neuron indx 8399 [('1000', 1.0), ('blocking', 0.8914164437048889), ('us', 0.842791654603744), ('oslo', 0.7798185786701632), ('###########################################################################', 0.7251223724786057)]
-Top words for pretrained_BERT neuron indx 211 [('activity', 1.0), ('Billboard', 0.9285425914814336), ('try', 0.9006986894582448), ('ping', 0.875002153669658), ('core', 0.8436076233002143)]
-Top words for pretrained_BERT neuron indx 2262 [('count', 1.0), ('seek', 0.9851043385785772), ('close', 0.9668139531919108), ('while', 0.8499596359414423), ('default', 0.8313819339642531)]
-Top words for pretrained_BERT neuron indx 4314 [('Tab', 1.0), ('tag', 0.9075107069022432), ('Profile', 0.7762538720874825), ('import', 0.7651469611026213), (']', 0.7078166374815682)]
-Top words for pretrained_BERT neuron indx 4327 [('store', 1.0), ('Unauthorized', 0.9998846812557877), ('self', 0.9790424198886394), ('1800', 0.9326938946106453), ('oslo', 0.9298050765038198)]
-Top words for pretrained_BERT neuron indx 8424 [('e', 1.0), ('(', 0.9991362897786403), ('-', 0.9779112952737425), ('%', 0.9211263483078113), ('600', 0.9136426924530594)]
-Top words for pretrained_BERT neuron indx 2286 [('Component', 1.0), ('24', 0.9659835107312953), ('count', 0.9295984532358189), ('List', 0.9232991228753847), ('Board', 0.9180673662879977)]
-Top words for pretrained_BERT neuron indx 6382 [('link', 1.0), ('60', 0.8750969667704296), ('range', 0.8365497434201205), ('len', 0.8154168516755527), ('close', 0.7851694981516487)]
-Top words for pretrained_BERT neuron indx 8435 [('-', 1.0), (']', 0.6568137071266263), ('7', 0.6537222008134153), ('400', 0.6440145675368787), ('seconds', 0.6410014308840912)]
-Top words for pretrained_BERT neuron indx 246 [('register', 1.0), ('Register', 0.8682662077142285), ('pass', 0.8210195614348914), ('replace', 0.7115421275732556), ('result', 0.694250993285433)]
-Top words for pretrained_BERT neuron indx 4343 [('1800', 1.0), ('60', 0.7941090836908796), ('300', 0.7550380574826759), ('80', 0.6955740216613758), ('15', 0.6955191490812042)]
-Top words for pretrained_BERT neuron indx 8442 [('###########################################################################', 1.0), ('~~', 0.9598644844038557), ('==', 0.8497752843982602), ('add', 0.8475092569156002), ('for', 0.8081604702716356)]
-Top words for pretrained_BERT neuron indx 6395 [('partition', 1.0), ('state', 0.7215222876161584), ('unicode', 0.7135831703051333), ('as', 0.6994273336215889), ('session', 0.6978163509569384)]
-Top words for pretrained_BERT neuron indx 252 [('Profile', 1.0), ('profile', 0.9955288376199598), ('sts', 0.9208245445387295), ('ms', 0.9103908910051154), ('%', 0.8208471360632194)]
-Top words for pretrained_BERT neuron indx 8451 [('{', 1.0), ('==', 0.9581309584913054), ('#', 0.9475982500785742), (';', 0.9398363859002505), ('80', 0.9303003376080516)]
-Top words for pretrained_BERT neuron indx 260 [('utc', 1.0), ('servers', 0.7524425025732878), ('*', 0.6842637154892924), ('**', 0.666669241771332), ('format', 0.6562731966771103)]
-Top words for pretrained_BERT neuron indx 4357 [('sanetime', 1.0), ('Exception', 0.9217150513104208), ('oslo', 0.8906529399165972), ('tastypie', 0.8810726028772395), ('resource', 0.8676814836370911)]
-Top words for pretrained_BERT neuron indx 262 [('identity', 1.0), ('stanza', 0.9691840809878333), ('2', 0.9228098995844191), ('ping', 0.8656515575800584), ('1', 0.8583674947245459)]
-Top words for pretrained_BERT neuron indx 8459 [('14', 1.0), ('9', 0.9001774094030189), ('17', 0.8091162357534983), ('10', 0.78973289105823), ('import', 0.7831075081940488)]
-Top words for pretrained_BERT neuron indx 267 [('common', 1.0), ('uss', 0.9681507603576415), ('root', 0.9568314527998788), ('choices', 0.9337308026195469), ('help', 0.9146647046906156)]
-Top words for pretrained_BERT neuron indx 269 [('bind', 1.0), ('identity', 0.9617456076099933), ('write', 0.9243625210710273), ('save', 0.9186609792008851), ('path', 0.8512918310145801)]
-Top words for pretrained_BERT neuron indx 275 [('+', 1.0), ('egroup', 0.8563753054940895), ('self', 0.8558387064349886), ('False', 0.846644377451447), ('key', 0.818881249697318)]
-Top words for pretrained_BERT neuron indx 2325 [('+', 1.0), ('==', 0.9243082953719691), ('>=', 0.8842472322123603), ('<=', 0.8699078586030148), ('start', 0.800689403675512)]
-Top words for pretrained_BERT neuron indx 6423 [('replace', 1.0), ('/', 0.9688460857303213), ('all', 0.9524928428329645), ('session', 0.9232809959856302), ('Session', 0.8986227678401788)]
-Top words for pretrained_BERT neuron indx 6428 [('View', 1.0), ('if', 0.9485477696881165), ('url', 0.8884145176039265), ('Plugin', 0.8583822087490238), ('None', 0.7676894333264753)]
-Top words for pretrained_BERT neuron indx 2333 [('refresh', 1.0), ('sans', 0.9996967958939299), ('Profile', 0.9840007226003321), ('profile', 0.9324344220623528), ('session', 0.8944012176822315)]
-Top words for pretrained_BERT neuron indx 2335 [('local', 1.0), ('upper', 0.776059262408774), ('month', 0.7446132892915275), ('authenticator', 0.7421760473731543), ('Profile', 0.7387503730585074)]
-Top words for pretrained_BERT neuron indx 6434 [(']', 1.0), ('route', 0.9766773250529861), ('modes', 0.9579735062968631), ('routes', 0.8686786661448136), ('List', 0.8542399392053602)]
-Top words for pretrained_BERT neuron indx 293 [('clone', 1.0), ('def', 0.9477320182429112), ('repr', 0.9050860397090158), ('material', 0.8258275671510519), ('Tab', 0.8256883434339958)]
-Top words for pretrained_BERT neuron indx 2344 [('upper', 1.0), ('body', 0.94592447376839), ('try', 0.9404886651336768), ('second', 0.8621423776496008), ('name', 0.8328232297686646)]
-Top words for pretrained_BERT neuron indx 298 [('Exception', 1.0), ('board', 0.9707288939959767), ('while', 0.9212233243798233), ('cmp', 0.9204384391549586), ('def', 0.913013416436592)]
-Top words for pretrained_BERT neuron indx 4394 [('pop', 1.0), ('digest', 0.9138546474060355), ('sorted', 0.8685768087898128), ('Digest', 0.8596440840992955), ('strip', 0.7535663810629002)]
-Top words for pretrained_BERT neuron indx 2349 [('try', 1.0), ('calendar', 0.9585648646824468), ('%', 0.9005225173290236), ('state', 0.8543941336967567), ('k', 0.8543479044756358)]
-Top words for pretrained_BERT neuron indx 2359 [('end', 1.0), ('minute', 0.9826323961657909), ('@', 0.9377185443547245), ('route', 0.8512127049749296), ('second', 0.8490383468006105)]
-Top words for pretrained_BERT neuron indx 8510 [('mins', 1.0), ('kls', 0.8523323346647568), ('ms', 0.8329969736239585), ('millis', 0.8238756077970288), ('us', 0.8054396163234301)]
-Top words for pretrained_BERT neuron indx 4419 [('local', 1.0), ('id', 0.9234136568993997), ('or', 0.8687173917658195), ('target', 0.8682723615176013), ('}', 0.8241845604999116)]
-Top words for pretrained_BERT neuron indx 327 [('getpid', 1.0), ('info', 0.9186424416139041), ('force', 0.823066225996381), ('GET', 0.8005594258717308), ('Log', 0.7937265793500656)]
-Top words for pretrained_BERT neuron indx 6471 [('+', 1.0), ('IsSysop', 0.8087414970593428), ('log', 0.8001917616251085), ('Billboard', 0.7970576900093196), ('line', 0.7677521364344164)]
-Top words for pretrained_BERT neuron indx 335 [('title', 1.0), ('seek', 0.985631974886465), ('seconds', 0.9617659663224831), ('field', 0.7839862763330172), ('request', 0.7566730832262689)]
-Top words for pretrained_BERT neuron indx 6480 [('<=', 1.0), ('[', 0.9165236118873774), ('>=', 0.8759646265485381), ('>', 0.7168225153041805), ('!=', 0.6968109959868435)]
-Top words for pretrained_BERT neuron indx 6484 [('and', 1.0), ('+', 0.6547027382897608), ('for', 0.6167905595167281), ('".."', 0.610789449245302), ('""', 0.5996684807544322)]
-Top words for pretrained_BERT neuron indx 2397 [('List', 1.0), ('8', 0.860599962441231), ('django', 0.8187488262884713), ('unicode', 0.8183532368880448), ('Exception', 0.8005534917987428)]
-Top words for pretrained_BERT neuron indx 2400 [('sorted', 1.0), ('7', 0.9521148328608706), ('strftime', 0.9452808942439171), ('name', 0.9292527935956806), ('/', 0.8989961380325803)]
-Top words for pretrained_BERT neuron indx 357 [('boot', 1.0), ('contents', 0.8717446740703236), ('Stretch', 0.7723382174166703), ('link', 0.7612525219295427), ('items', 0.7145327908668241)]
-Top words for pretrained_BERT neuron indx 6504 [('put', 1.0), ('upper', 0.9219615853396185), ('80', 0.9163696353782309), ('host', 0.8077015415932615), ('.', 0.7982598352637986)]
-Top words for pretrained_BERT neuron indx 2410 [('17', 1.0), ('15', 0.9877567113433986), ('16', 0.9812635938315885), ('1800', 0.970321412956437), ('24', 0.9647577630883275)]
-Top words for pretrained_BERT neuron indx 4458 [('except', 1.0), ('try', 0.9836346761193057), ('12', 0.9800130200748948), ('range', 0.9623070496028385), ('all', 0.9576556687288901)]
-Top words for pretrained_BERT neuron indx 8558 [('80', 1.0), ('17', 0.9436024021828537), ('}', 0.9346628283685375), ('read', 0.8956861835344518), ('800', 0.7602150739457604)]
-Top words for pretrained_BERT neuron indx 4472 [('(', 1.0), ('id', 0.9915036578200058), ('state', 0.9835677959793281), ('Unauthorized', 0.9721496324758032), ('<', 0.9647449820791368)]
-Top words for pretrained_BERT neuron indx 8572 [(',', 1.0), ('unicode', 0.9226085110366359), ('+', 0.8614354352163727), ('with', 0.7605288995916605), ('"happy_birthday"', 0.6964662651862321)]
-Top words for pretrained_BERT neuron indx 4477 [('300', 1.0), ('17', 0.959233062096319), ('30', 0.8831848907452557), ('reactor', 0.8217003175735411), ('12', 0.8020403026332802)]
-Top words for pretrained_BERT neuron indx 4478 [('year', 1.0), ('local', 0.9040206457738087), ('re', 0.8745583994944374), ('enum', 0.8647173803645211), ('setup', 0.8453329682880775)]
-Top words for pretrained_BERT neuron indx 383 [('child', 1.0), ('[', 0.9285884759242145), ('minute', 0.921867179022105), ('{', 0.8930518169238729), ('presence', 0.878029163793148)]
-Top words for pretrained_BERT neuron indx 384 [('Profile', 1.0), ('strip', 0.9950930886654054), ('wait', 0.9738356521875524), ('profile', 0.9509642951492965), ('probe', 0.8238205164718703)]
-Top words for pretrained_BERT neuron indx 4480 [('/', 1.0), ('ignore', 0.8562002357131161), ('affinity', 0.7991942701092943), ('local', 0.7679732169915109), ('push', 0.7330598273801754)]
-Top words for pretrained_BERT neuron indx 8575 [('part', 1.0), ('day', 0.9859997042241836), ('calendar', 0.9731621681088743), ('child', 0.9563699650479554), ('ms', 0.9147251629472256)]
-Top words for pretrained_BERT neuron indx 2428 [('state', 1.0), ('minute', 0.7717751267222301), ('second', 0.7114128050199354), ('error', 0.6982535180989127), ('join', 0.6470177802574718)]
-Top words for pretrained_BERT neuron indx 6524 [('1000', 1.0), ('600', 0.9430564671690175), ('put', 0.9392741040949517), ('800', 0.9133317091486501), ('9', 0.8971612500107483)]
-Top words for pretrained_BERT neuron indx 6534 [(')', 1.0), ('not', 0.9852960113905418), ('"purpose"', 0.9118944017198083), ('"r"', 0.8714824870532171), (']', 0.8330981822354208)]
-Top words for pretrained_BERT neuron indx 4487 [('day', 1.0), ('broadcast', 0.8981234648792078), ('month', 0.8847976934497146), ('filter', 0.8723574161240909), ('v', 0.7803531279897876)]
-Top words for pretrained_BERT neuron indx 395 [('enclosuregroup', 1.0), ('enclosure', 0.9092731334309749), ('child', 0.8561779590834243), ('unpack', 0.8396624664584381), ('tag', 0.835746227090517)]
-Top words for pretrained_BERT neuron indx 4498 [('text', 1.0), ('put', 0.9565780669441105), ('replace', 0.7588527072022715), ('tag', 0.7389583727932677), ('strip', 0.7255454985582004)]
-Top words for pretrained_BERT neuron indx 2450 [('Post', 1.0), ('server', 0.917527345617668), ('servers', 0.9173864034647602), ('path', 0.902176734888757), ('dt', 0.8786053709930469)]
-Top words for pretrained_BERT neuron indx 4501 [('#', 1.0), ('os', 0.9913981893198751), ('boot', 0.8751883614402217), ('bare', 0.8635901059508231), ('get', 0.8179150574321904)]
-Top words for pretrained_BERT neuron indx 2469 [('/', 1.0), ('close', 0.9791747854685636), ('group', 0.9016970397663039), ('len', 0.8994684920037264), ('False', 0.891388754561095)]
-Top words for pretrained_BERT neuron indx 4518 [('baseline', 1.0), ('boot', 0.8628756318173735), ('alt', 0.8513020335703371), ('astimezone', 0.8267893580403941), ('link', 0.8234040526732995)]
-Top words for pretrained_BERT neuron indx 425 [('Simple', 1.0), ('ref', 0.8204471417633491), ('core', 0.7732083090753782), ('super', 0.6935984604722191), ('class', 0.6773916608536681)]
-Top words for pretrained_BERT neuron indx 6569 [('as', 1.0), (':', 0.8444598199284512), ('Node', 0.7708406094905108), ('continue', 0.769247012061192), ('=', 0.7325369471778298)]
-Top words for pretrained_BERT neuron indx 433 [('bind', 1.0), ('bare', 0.9545852718060996), ('parts', 0.9252541995836846), ('unpack', 0.879357865691427), ('boot', 0.8105656728072583)]
-Top words for pretrained_BERT neuron indx 4530 [('value', 1.0), ('<', 0.9873570241819954), ('30', 0.9700583040927306), ('Mesh', 0.9647058943741558), ('choices', 0.9544745104370389)]
-Top words for pretrained_BERT neuron indx 436 [('strip', 1.0), ('unicode', 0.9357397114079168), ('exceptions', 0.9222421307824242), ('Exception', 0.8040742647577167), ('purpose', 0.7911987755957061)]
-Top words for pretrained_BERT neuron indx 8633 [('###########################################################################', 1.0), ('-', 0.8652077812497581), ('bind', 0.8434260618712053), ('year', 0.8286576853904172), ('-=', 0.7404100663919473)]
-Top words for pretrained_BERT neuron indx 442 [('servers', 1.0), ('settings', 0.8730386805748365), ('authorized', 0.7182884408837981), ('stat', 0.669377108103931), ('zone', 0.6390332581939947)]
-Top words for pretrained_BERT neuron indx 8636 [('message', 1.0), ('True', 0.9900620259766049), ('{', 0.9631727317724611), ('2', 0.9551492683817776), ('route', 0.9542481933701533)]
-Top words for pretrained_BERT neuron indx 447 [('int', 1.0), ('minutes', 0.8548367798550172), ('vCard', 0.8520269210225105), ('vcard', 0.8395118809614651), ('range', 0.8281696451735978)]
-Top words for pretrained_BERT neuron indx 6597 [('bind', 1.0), ('30', 0.9080139421511761), ('300', 0.8940955843308288), ('20', 0.8904477103867692), ('32', 0.8904473327144543)]
-Top words for pretrained_BERT neuron indx 4550 [('80', 1.0), ('}', 0.9701619675275763), ('40', 0.9612054892217283), ('5', 0.9171253230047113), ('20', 0.8670715583602644)]
-Top words for pretrained_BERT neuron indx 455 [('error', 1.0), ('len', 0.7195166800903681), ('errors', 0.7117857008573012), ('dt', 0.6798462834296254), ('write', 0.6765722056785329)]
-Top words for pretrained_BERT neuron indx 2507 [('400', 1.0), ('board', 0.9523097504359234), ('Log', 0.9187004448572509), ('Post', 0.9039219979399895), ('refresh', 0.8815037719704503)]
-Top words for pretrained_BERT neuron indx 4566 [('17', 1.0), ('value', 0.9356370788032493), ('close', 0.8583162183962608), ('except', 0.8427442968777606), ('count', 0.8283143618545331)]
-Top words for pretrained_BERT neuron indx 471 [('stat', 1.0), ('reactor', 0.6433833599304574), ('host', 0.5750578557102803), ('META', 0.5527782528539936), ('repr', 0.5294323646493573)]
-Top words for pretrained_BERT neuron indx 6616 [('except', 1.0), ('1', 0.9998797306176465), ('%', 0.883100951191799), ('if', 0.8398708483762212), ('@', 0.8019016885210457)]
-Top words for pretrained_BERT neuron indx 6618 [('20', 1.0), ('30', 0.9727147046701305), ('parts', 0.9408053163438094), ('32', 0.8900016190723884), ('wait', 0.8880390733663581)]
-Top words for pretrained_BERT neuron indx 2523 [('0', 1.0), ('128', 0.9743223565285108), ('32', 0.9436881240876108), ('minute', 0.9308088971968627), ('uss', 0.9004686754392439)]
-Top words for pretrained_BERT neuron indx 2526 [('m', 1.0), ('read', 0.9632370388401106), ('False', 0.9517924270229845), ('core', 0.8986577079186575), ('ndt', 0.888444784771555)]
-Top words for pretrained_BERT neuron indx 8673 [(')', 1.0), ('>', 0.430146273536724), ('blocking', 0.4294822417092292), ('presence', 0.38642403163526917), ('=', 0.38573600322837776)]
-Top words for pretrained_BERT neuron indx 6634 [(':', 1.0), ('300', 0.8409043071730312), ('oslo', 0.8024014402666695), ('Session', 0.8005152569733436), ('800', 0.7894854243755176)]
-Top words for pretrained_BERT neuron indx 490 [('exit', 1.0), ('break', 0.74967547092095), ('material', 0.7386493106755464), ('st', 0.7334728033892739), ('parent', 0.7179877430681151)]
-Top words for pretrained_BERT neuron indx 499 [('except', 1.0), ('slug', 0.8618916362299511), ('print', 0.8168942754205835), ('NoPerm', 0.7858747679402409), ('False', 0.7660893953930011)]
-Top words for pretrained_BERT neuron indx 500 [(']', 1.0), ('authorization', 0.9669521296571362), ('object', 0.952598663744542), ('get', 0.8984474578076218), (')', 0.8559166718046736)]
-Top words for pretrained_BERT neuron indx 8700 [('800', 1.0), ('enclosure', 0.9727891398232775), ('9', 0.9451041985246114), ('"view"', 0.9239689386110642), ('entity', 0.9194499998952833)]
-Top words for pretrained_BERT neuron indx 2557 [('range', 1.0), ('freshtime', 0.8792179468117175), ('message', 0.8705440739918231), ('View', 0.8659464953180209), ('help', 0.8642218596735486)]
-Top words for pretrained_BERT neuron indx 8702 [('E', 1.0), ('slug', 0.9286521660823444), ('objects', 0.9254732569461076), ('enabled', 0.923113045274841), ('purpose', 0.8941352282586932)]
-Top words for pretrained_BERT neuron indx 4606 [('9', 1.0), ('14', 0.9464106193648214), ('in', 0.9210959074901879), ('object', 0.8724055402604354), ('con', 0.871177997038119)]
-Top words for pretrained_BERT neuron indx 4608 [('600', 1.0), ('domain', 0.9478192570862461), ('Profile', 0.9473594732845557), ('all', 0.9445070928208846), ('else', 0.9023472219822455)]
-Top words for pretrained_BERT neuron indx 2568 [('contents', 1.0), ('Distance', 0.8714071420833474), ('items', 0.8615410483535456), ('sans', 0.7516336452045492), ('set', 0.7114769964053043)]
-Top words for pretrained_BERT neuron indx 521 [('class', 1.0), ('raise', 0.9411932349245077), ('save', 0.9247705733047061), ('us', 0.9243978528492348), ('profile', 0.910205233295046)]
-Top words for pretrained_BERT neuron indx 4619 [('14', 1.0), ('Off', 0.9627724189810601), ('Exception', 0.9012785886749415), ('division', 0.8588040985695046), ('16', 0.8546330943107778)]
-Top words for pretrained_BERT neuron indx 6668 [('task', 1.0), ('end', 0.9634002369234513), ('v', 0.8380369893170961), ('On', 0.8108706245819486), ('tastypie', 0.738441554705935)]
-Top words for pretrained_BERT neuron indx 8718 [('2', 1.0), ('6', 0.9864333241704633), ('all', 0.9384839545518322), ('find', 0.8762061780339837), ('16', 0.8461242181135237)]
-Top words for pretrained_BERT neuron indx 4622 [('key', 1.0), ('force', 0.9670700235194665), ('choices', 0.8462398811281064), ('[', 0.8024264594542482), ('enclosure', 0.7656333098392855)]
-Top words for pretrained_BERT neuron indx 6672 [('os', 1.0), ('self', 0.996839411944071), ('128', 0.8338564502661153), ('pop', 0.830109339479265), ('400', 0.8040681771226457)]
-Top words for pretrained_BERT neuron indx 534 [('domain', 1.0), ('ms', 0.9528732459511458), ('render', 0.9350725421434191), ('clone', 0.9259660506224874), ('write', 0.9198811745965811)]
-Top words for pretrained_BERT neuron indx 539 [('purpose', 1.0), ('broadcast', 0.8951965511235668), ('hpov', 0.8331222464358744), ('join', 0.8259391092167924), ('Profile', 0.8001485949101869)]
-Top words for pretrained_BERT neuron indx 2588 [('sorted', 1.0), ('View', 0.8472283378420963), ('v', 0.720458846109641), ('project', 0.6947125578491345), ('setup', 0.6880514918651727)]
-Top words for pretrained_BERT neuron indx 541 [('32', 1.0), ('17', 0.8738424561274794), ('utc', 0.84396390490792), ('1024', 0.8422571912755795), ('unicode', 0.8344015578515005)]
-Top words for pretrained_BERT neuron indx 4648 [('name', 1.0), ('server', 0.84755576830427), ('presence', 0.7350699921491598), ('to', 0.6799250610993446), ('tag', 0.6780751101542004)]
-Top words for pretrained_BERT neuron indx 8749 [('alt', 1.0), ('~~~', 0.7744634723214536), ('match', 0.7715929644327444), ('~~', 0.7558127471087666), ('year', 0.7266200013299129)]
-Top words for pretrained_BERT neuron indx 2607 [('REQUEST', 1.0), ('k', 0.9863074548339127), ('request', 0.9071032910110786), ('route', 0.8725386346891822), ('required', 0.8654355131780563)]
-Top words for pretrained_BERT neuron indx 2612 [(',', 1.0), ('and', 0.9929808362966944), ('in', 0.9812982379912414), ('.', 0.9317840958032709), ('is', 0.9084931261458011)]
-Top words for pretrained_BERT neuron indx 4661 [('read', 1.0), ('in', 0.8691027335751365), ('i', 0.8037576372514952), ('hpov', 0.8033291638375069), ('put', 0.7931092027067586)]
-Top words for pretrained_BERT neuron indx 6710 [('7', 1.0), ('set', 0.8343578418095722), ('logging', 0.8028702633129455), ('from', 0.7831497637633373), ('as', 0.7215238821639156)]
-Top words for pretrained_BERT neuron indx 582 [('feature', 1.0), ('ms', 0.8641844744262753), ('group', 0.8430864542161333), ('profile', 0.8414958804909243), ('ref', 0.8414169426908129)]
-Top words for pretrained_BERT neuron indx 595 [('feature', 1.0), ('1000', 0.9369387300786084), ('==', 0.908385581904164), ('break', 0.8339946952702988), ('=', 0.832620600138697)]
-Top words for pretrained_BERT neuron indx 598 [('super', 1.0), ('Unauthorized', 0.7859550215110728), ('domain', 0.7062020993430055), ('minute', 0.7001740015035404), ('unicode', 0.6772550832507025)]
-Top words for pretrained_BERT neuron indx 600 [(')', 1.0), ('connection', 0.9496346188481534), (']', 0.9474748501503321), ('oslo', 0.9463027961293579), ('future', 0.9418826855539871)]
-Top words for pretrained_BERT neuron indx 8793 [('7', 1.0), ('partition', 0.9472837052134697), ('CONF', 0.9227265868883806), ('desc', 0.8582807042084011), ('all', 0.8577529277816811)]
-Top words for pretrained_BERT neuron indx 608 [('Log', 1.0), ('log', 0.971058104579569), ('uss', 0.9378740285050156), ('sts', 0.8265803955559522), ('login', 0.8077419605755015)]
-Top words for pretrained_BERT neuron indx 4704 [('models', 1.0), ('400', 0.9822713461353764), ('300', 0.9683064709023806), ('60', 0.9536658088062119), ('1800', 0.904137366969946)]
-Top words for pretrained_BERT neuron indx 2658 [('~~~', 1.0), ('collectorBody', 0.9822920885268096), ('~~', 0.9715417165271988), ('UCache', 0.8668678847617824), ('format', 0.8402259356265528)]
-Top words for pretrained_BERT neuron indx 611 [('token', 1.0), ('description', 0.9684253410106879), ('join', 0.8995778607501501), ('context', 0.8558380218667392), ('save', 0.8211531492625284)]
-Top words for pretrained_BERT neuron indx 2659 [('400', 1.0), ('proxy', 0.9121190931544366), ('Stretch', 0.8711331379138039), ('domain', 0.8301662618869061), ('40', 0.8087206989219308)]
-Top words for pretrained_BERT neuron indx 4709 [('add', 1.0), ('patch', 0.9390408927967788), ('ping', 0.9112710127476378), ('route', 0.875873217058437), ('send', 0.8588606298774828)]
-Top words for pretrained_BERT neuron indx 8812 [('6', 1.0), ('8', 0.9074010443169842), (';', 0.860227667043761), ('created', 0.7940515894508243), ('7', 0.769902621715838)]
-Top words for pretrained_BERT neuron indx 6765 [('uri', 1.0), (';', 0.9535411001380477), ('contents', 0.9075000197867473), ('url', 0.8868242730029874), ('core', 0.8701626828072059)]
-Top words for pretrained_BERT neuron indx 4718 [('Session', 1.0), ('slug', 0.8469263162735329), ('stanza', 0.844561038980195), ('affinity', 0.7988653154700859), ('utc', 0.7333184422325069)]
-Top words for pretrained_BERT neuron indx 633 [('common', 1.0), ('child', 0.8533102701757506), ('title', 0.8326088673601841), ('line', 0.7082179885674431), ('enclosure', 0.6925320277016209)]
-Top words for pretrained_BERT neuron indx 4730 [(',', 1.0), (')', 0.9289562607613192), ('ignore', 0.9053389236857045), ('5', 0.8847998343968783), ('from', 0.8829369239781286)]
-Top words for pretrained_BERT neuron indx 8828 [('9', 1.0), ('1000', 0.9924540154391885), ('600', 0.9337035817123518), ('14', 0.8973876351601069), ('close', 0.8329686875690587)]
-Top words for pretrained_BERT neuron indx 6781 [('300', 1.0), ('30', 0.9056335041197314), ('Distance', 0.9010202904495174), ('continue', 0.8937850375267862), ('time', 0.882390085144613)]
-Top words for pretrained_BERT neuron indx 6784 [('/', 1.0), ('300', 0.9673241496721461), ('oslo', 0.9285421538010079), ('unicode', 0.9195470423082248), ('ignore', 0.8882806076706508)]
-Top words for pretrained_BERT neuron indx 8834 [('20', 1.0), (']', 0.9546863791245978), ('Off', 0.691105558159779), ('60', 0.6796881541288389), ('40', 0.6500769566264538)]
-Top words for pretrained_BERT neuron indx 8837 [('strip', 1.0), ('set', 0.9298419092675432), ('patch', 0.8659130346727881), ('Tab', 0.8400980334032921), ('{', 0.7763106672714417)]
-Top words for pretrained_BERT neuron indx 8838 [('1', 1.0), ('"Name"', 0.9882465678817223), ('"r"', 0.9271279468719713), ('not', 0.8933541073512599), ('7', 0.8547826616413771)]
-Top words for pretrained_BERT neuron indx 6795 [('>', 1.0), ('reactor', 0.9932885156734689), ('utc', 0.8885449131078551), ('uss', 0.8803772054450131), ('>=', 0.8245745062549675)]
-Top words for pretrained_BERT neuron indx 653 [('META', 1.0), ('{', 0.8517460785156558), ('###########################################################################', 0.8204542868343786), ('#', 0.8173352087159871), ('12', 0.779207283409772)]
-Top words for pretrained_BERT neuron indx 654 [('unicode', 1.0), ('GetMirror', 0.8487579520444153), ('with', 0.7695275407663458), ('utcnow', 0.7587568931782902), ('GetMsgCount', 0.7456107788954921)]
-Top words for pretrained_BERT neuron indx 8847 [('#', 1.0), ('horizon', 0.7987558445943466), ('v', 0.7978056339602763), ('baseline', 0.7560850689494156), ('VerticalBillboard', 0.7278550783391612)]
-Top words for pretrained_BERT neuron indx 4751 [('patch', 1.0), ('long', 0.9784930304963495), ('Unauthorized', 0.9525252284750737), ('authentication', 0.9206352501405534), ('local', 0.9079278464651218)]
-Top words for pretrained_BERT neuron indx 6807 [('Board', 1.0), ('40', 0.8834427902923626), ('pop', 0.8658161461753437), ('32', 0.8295357099606436), ('field', 0.8154023966513726)]
-Top words for pretrained_BERT neuron indx 672 [('seek', 1.0), ('bind', 0.9142651980989593), ('horizon', 0.9043264972912084), ('purpose', 0.8894054739050226), ('proxy', 0.8431863716097284)]
-Top words for pretrained_BERT neuron indx 4773 [('False', 1.0), ('/', 0.9923877539553638), ('###########################################################################', 0.9016715717187994), ('wait', 0.8911192017932835), ('group', 0.879235243244135)]
-Top words for pretrained_BERT neuron indx 678 [('baseline', 1.0), ('store', 0.8786251802896252), ('Billboard', 0.6805831500640444), ('choices', 0.6458886009026608), ('scope', 0.6351777243983939)]
-Top words for pretrained_BERT neuron indx 6821 [('if', 1.0), ('5', 0.8859087775307909), ('2', 0.8649007267145081), ('META', 0.8629965730918061), (';', 0.7544421467961653)]
-Top words for pretrained_BERT neuron indx 2728 [('object', 1.0), ('host', 0.9514538284894964), ('port', 0.9036090600326235), ('connection', 0.8466980317853874), ('field', 0.8081425546990813)]
-Top words for pretrained_BERT neuron indx 6822 [('store', 1.0), ('print', 0.8804684566068707), ('match', 0.872574510314788), ('False', 0.8411198598721671), ('4', 0.8402551777109037)]
-Top words for pretrained_BERT neuron indx 6835 [('choices', 1.0), ('128', 0.9597304182656206), ('Billboard', 0.9148193613469418), ('filters', 0.8362575799351447), ('identity', 0.8113587751276496)]
-Top words for pretrained_BERT neuron indx 8889 [('=', 1.0), ('2', 0.9285820407830366), ('9', 0.8831801208090266), ('and', 0.8740554729136693), ('from_', 0.8267760941329224)]
-Top words for pretrained_BERT neuron indx 709 [('authorized', 1.0), ('authentication', 0.9663988479321538), ('Unauthorized', 0.9610498109113584), ('match', 0.9054755219067259), ('print', 0.8732900233077453)]
-Top words for pretrained_BERT neuron indx 4811 [('Tab', 1.0), ('elem', 0.8857020130514612), ('7', 0.8414838194686439), ('while', 0.8356867185671261), ('Log', 0.8305851765454674)]
-Top words for pretrained_BERT neuron indx 2764 [('1', 1.0), ('15', 0.9574914677501829), ('continue', 0.9405829290366794), ('16', 0.9076777455640809), ('40', 0.9046137990158303)]
-Top words for pretrained_BERT neuron indx 715 [('settings', 1.0), ('0', 0.7311378599182858), ('minute', 0.6834543864510649), ('message', 0.650369493781364), ('authorized', 0.6465869975110734)]
-Top words for pretrained_BERT neuron indx 8915 [('import', 1.0), ('link', 0.9679423109304761), ('oslo', 0.9019894950251632), ('field', 0.8685686855923845), ('>', 0.8613484612639599)]
-Top words for pretrained_BERT neuron indx 726 [('close', 1.0), ('count', 0.8798734194851042), ('Exception', 0.7833761127103512), ('def', 0.7361269427552991), ('reactor', 0.708262992963105)]
-Top words for pretrained_BERT neuron indx 730 [('stat', 1.0), ('%', 0.9903396796674957), ('wait', 0.989714319219986), ('digest', 0.9762193547512349), ('Digest', 0.9751301476423923)]
-Top words for pretrained_BERT neuron indx 736 [('alt', 1.0), ('calendar', 0.9856955028900334), ('proxy', 0.9449572310659614), ('Mesh', 0.9420829574678952), ('mesh', 0.9420829574678952)]
-Top words for pretrained_BERT neuron indx 6885 [('month', 1.0), ('10', 0.938132146721966), ('12', 0.9068401364569232), ('day', 0.8996704057064958), ('>', 0.8959262475266152)]
-Top words for pretrained_BERT neuron indx 6893 [('raise', 1.0), ('Distance', 0.7899116758597172), ('repr', 0.729671885476406), ('128', 0.725364428800775), ('save', 0.7248974001155836)]
-Top words for pretrained_BERT neuron indx 6896 [('error', 1.0), ('and', 0.9426655786921231), ('alt', 0.8822230517558955), ('print', 0.8586949143835954), ('pop', 0.8436130778671576)]
-Top words for pretrained_BERT neuron indx 6905 [('0', 1.0), ('20', 0.8298052446962154), ('task', 0.8293446901702742), ('400', 0.8249182424883476), ('project', 0.8145374111285434)]
-Top words for pretrained_BERT neuron indx 2813 [('@', 1.0), ('raise', 0.8328681222082299), ('us', 0.7745680235666211), ('blocking', 0.7530643205919392), ('else', 0.7436413628199422)]
-Top words for pretrained_BERT neuron indx 6915 [('enclosure', 1.0), ('{', 0.9528878969834661), ('for', 0.8832806909737968), ('24', 0.875019847084136), ('20', 0.8663088573984916)]
-Top words for pretrained_BERT neuron indx 8968 [('pop', 1.0), ('80', 0.9129673491063253), ('con', 0.8637063683549348), ('400', 0.8623068822007559), ('%', 0.8474064286281774)]
-Top words for pretrained_BERT neuron indx 6923 [('17', 1.0), ('14', 0.9097783178252581), ('9', 0.9072993314030404), ('7', 0.8883386988912733), ('4', 0.8016131923224137)]
-Top words for pretrained_BERT neuron indx 8976 [('400', 1.0), ('128', 0.9356984270130975), ('os', 0.8419230147106072), ('or', 0.8054764273543287), ('32', 0.7434368401110553)]
-Top words for pretrained_BERT neuron indx 2836 [('local', 1.0), ('e', 0.781819291717231), ('""', 0.711952338217649), ('"oslo"', 0.7096639313181573), ('128', 0.6996743620665242)]
-Top words for pretrained_BERT neuron indx 2838 [('k', 1.0), ('print', 0.9660839498090613), ('clone', 0.9441708111585625), ('open', 0.8853681179011156), ('ref', 0.8317154505730282)]
-Top words for pretrained_BERT neuron indx 799 [('Component', 1.0), ('local', 0.9392198311959067), ('objects', 0.9273183654050912), ('Node', 0.8971561519135761), ('i', 0.8873839627232831)]
-Top words for pretrained_BERT neuron indx 4898 [(']', 1.0), ('%', 0.9847626045287572), ('object', 0.9265605992806099), ('link', 0.9152514133478585), ('objects', 0.9123086787404884)]
-Top words for pretrained_BERT neuron indx 808 [('upper', 1.0), ('body', 0.7901960012856177), (']', 0.7402120160923872), ('materials', 0.7401036252202728), ('if', 0.7367588026022676)]
-Top words for pretrained_BERT neuron indx 6952 [('name', 1.0), ('blocking', 0.8876503163833618), ('/', 0.8487687348825319), ('for', 0.8334446546945795), ('raise', 0.81318925315628)]
-Top words for pretrained_BERT neuron indx 4915 [('loads', 1.0), ('name', 0.7978763643182808), ('""', 0.7608772113822417), ('"Host"', 0.7451875442749668), ('"r"', 0.7267939195840594)]
-Top words for pretrained_BERT neuron indx 9013 [('v', 1.0), ('stat', 0.9839437855180121), ('us', 0.938028647002654), ('import', 0.8434142297861866), ('read', 0.8339403044464366)]
-Top words for pretrained_BERT neuron indx 4920 [('Simple', 1.0), ('Register', 0.7780287165525747), ('sans', 0.7767198201356387), ('year', 0.7000226524680523), ('child', 0.6675070530122135)]
-Top words for pretrained_BERT neuron indx 9020 [('split', 1.0), ('sts', 0.957858384673375), ('30', 0.8848712471705387), ('15', 0.8595774735876485), ('16', 0.8204235233796934)]
-Top words for pretrained_BERT neuron indx 6976 [('###########################################################################', 1.0), ('Tab', 0.8789508431409742), ('~~', 0.8337742270107995), ('800', 0.8173754690910482), ('15', 0.8055206082162593)]
-Top words for pretrained_BERT neuron indx 2882 [('name', 1.0), ('settings', 0.967440949423229), ('stanza', 0.9639726235163619), ('startswith', 0.9200185324646379), ('help', 0.9136763722963309)]
-Top words for pretrained_BERT neuron indx 9033 [('.', 1.0), ('put', 0.9740732142829499), ('part', 0.9269139378575333), ('bare', 0.9076450764589761), ('oslo', 0.8780247911060932)]
-Top words for pretrained_BERT neuron indx 841 [('match', 1.0), ('GET', 0.8892555713570932), ('400', 0.8630682623469061), ('40', 0.8145706210214719), ('###########################################################################', 0.804557904723336)]
-Top words for pretrained_BERT neuron indx 6989 [('".."', 1.0), ('postinfo', 0.9218026989292594), ('.', 0.8874345870637211), (')', 0.879057159880185), ('+', 0.8565230082685067)]
-Top words for pretrained_BERT neuron indx 4945 [('port', 1.0), ('{', 0.9572025162423378), ('choices', 0.8712700297796501), ('@', 0.7609262112909226), ('iq', 0.74421501256659)]
-Top words for pretrained_BERT neuron indx 9045 [('end', 1.0), ('link', 0.8905895708034559), ('~~', 0.8368038855862189), ('connection', 0.7850993505153399), ('token', 0.7800167686589218)]
-Top words for pretrained_BERT neuron indx 9052 [('stat', 1.0), (';', 0.9949293501313548), ('ms', 0.9282629658911765), ('7', 0.8954441253613514), ('utc', 0.7699290456402971)]
-Top words for pretrained_BERT neuron indx 861 [('Exception', 1.0), ('except', 0.9889138474630458), ('django', 0.986251697508446), ('second', 0.893230943975964), ('start', 0.8873187894413491)]
-Top words for pretrained_BERT neuron indx 2912 [('Log', 1.0), ('\\n', 0.9941259750223103), ('{', 0.9143826625374725), ('line', 0.904137198118018), ('return', 0.9027529688311822)]
-Top words for pretrained_BERT neuron indx 2915 [('context', 1.0), ('join', 0.962428641090801), ('30', 0.9437904771188224), ('name', 0.9403095051882042), ('replace', 0.8851432838920074)]
-Top words for pretrained_BERT neuron indx 7013 [('patch', 1.0), ('alt', 0.8805675036306011), ('replace', 0.8345962416167436), ('add', 0.8001244663961737), ('parent', 0.7830151345732583)]
-Top words for pretrained_BERT neuron indx 4967 [('<=', 1.0), ('property', 0.9856063221815542), ('1', 0.8804924277988058), ('errors', 0.8230456475539115), ('field', 0.8130960880185917)]
-Top words for pretrained_BERT neuron indx 4968 [('put', 1.0), ('common', 0.8735295951069618), ('IntEnum', 0.8079632875466606), ('###########################################################################', 0.8002729355050835), ('closing', 0.7778639282667312)]
-Top words for pretrained_BERT neuron indx 874 [('1800', 1.0), ('store', 0.9411235328702506), ('add', 0.9196615889648811), ('15', 0.9043888688477613), ('600', 0.8866990657583667)]
-Top words for pretrained_BERT neuron indx 2922 [('600', 1.0), ('try', 0.9615721419059703), ('6', 0.894072057027962), ('12', 0.8861827404656848), ('16', 0.8678005530273785)]
-Top words for pretrained_BERT neuron indx 9067 [('[', 1.0), ('-', 0.9809778030884962), ('stanza', 0.9664614070405001), ('not', 0.8962086456705427), ('32', 0.8618132996053294)]
-Top words for pretrained_BERT neuron indx 7018 [(',', 1.0), ('15', 0.9212171379928523), ('17', 0.910025493837988), ('7', 0.8466543242210683), ('rosters', 0.8362539152187356)]
-Top words for pretrained_BERT neuron indx 7022 [('80', 1.0), ('17', 0.9760174447078183), ('128', 0.9171922444022176), ('xmpp_read', 0.8429339016004859), (';', 0.7507451466295767)]
-Top words for pretrained_BERT neuron indx 2935 [('ref', 1.0), ('force', 0.9128435839128248), ('blocking', 0.8483239924411099), ('parts', 0.7708511951241818), ('Log', 0.7191339460642066)]
-Top words for pretrained_BERT neuron indx 4988 [('400', 1.0), ('600', 0.9513004268031438), ('3600', 0.9205398413705506), ('300', 0.8843653679288815), ('1800', 0.8825253974237068)]
-Top words for pretrained_BERT neuron indx 9088 [(',', 1.0), (']', 0.792056316778393), ('None_', 0.7245882267985027), ('/', 0.7175150282528212), ('local', 0.7148905367235484)]
-Top words for pretrained_BERT neuron indx 5005 [('for', 1.0), ('k', 0.7751327768222294), ('end', 0.7713192073135512), ('3600', 0.7695584450617263), ('sent_close', 0.7650661222486529)]
-Top words for pretrained_BERT neuron indx 7058 [('post', 1.0), ('server', 0.8262569662388903), ('servers', 0.8176236363996459), ('route', 0.709056243397259), ('iq', 0.7027933066140203)]
-Top words for pretrained_BERT neuron indx 9111 [('40', 1.0), ('20', 0.8783683873906621), ('pop', 0.7907428760738229), ('32', 0.7891754972829463), ('5', 0.7650584592165867)]
-Top words for pretrained_BERT neuron indx 9125 [('META', 1.0), ('if', 0.9033334220791522), ('5', 0.8497853222244883), ('400', 0.8252945505496697), ('with', 0.7874828674966922)]
-Top words for pretrained_BERT neuron indx 2982 [('baseline', 1.0), ('servers', 0.9675901642362441), ('store', 0.9295506742400906), ('alt', 0.9094144756782898), ('choices', 0.8272147402761164)]
-Top words for pretrained_BERT neuron indx 5029 [('log', 1.0), ('calendar', 0.9450173018171945), ('List', 0.9074160859561705), ('logging', 0.9013463274837183), ('-=', 0.8903539225331035)]
-Top words for pretrained_BERT neuron indx 2994 [('30', 1.0), ('<', 0.9609887456514142), ('if', 0.9295014814055509), ('value', 0.8460378034874845), ('context', 0.8172097418577826)]
-Top words for pretrained_BERT neuron indx 9140 [('400', 1.0), ('<', 0.8262407301380192), ('+', 0.825191079609434), ('millis', 0.7849775949035154), ('600', 0.7776767704721834)]
-Top words for pretrained_BERT neuron indx 7093 [('contents', 1.0), ('open', 0.9572566177978551), ('settings', 0.8970724717478318), ('###########################################################################', 0.873303737956827), ('8', 0.8381037506443647)]
-Top words for pretrained_BERT neuron indx 7100 [('connection', 1.0), ('View', 0.98432333995586), ('1000', 0.982278866847956), ('description', 0.9472349274351242), ('{', 0.9067520636394646)]
-Top words for pretrained_BERT neuron indx 962 [('text', 1.0), ('field', 0.9472949630761567), ('message', 0.9262023170434766), ('1', 0.8925834768614956), ('find', 0.8874923482400017)]
-Top words for pretrained_BERT neuron indx 5061 [('bind', 1.0), (';', 0.949862301378173), ('direct', 0.9493655872535387), ('strip', 0.9197159145715184), ('objects', 0.9127274869963568)]
-Top words for pretrained_BERT neuron indx 5067 [('all', 1.0), ('types', 0.9837139775472432), ('server', 0.8061201631904156), ('route', 0.7780923435217874), ('models', 0.7520514309448679)]
-Top words for pretrained_BERT neuron indx 971 [('400', 1.0), ('hour', 0.9256778825331435), ('v', 0.8556992922842585), ('repr', 0.8181819263814765), ('Post', 0.8167570735555058)]
-Top words for pretrained_BERT neuron indx 9167 [('9', 1.0), ('not', 0.9472634684246192), ('1000', 0.9193330627379892), ('oslo', 0.9114973711547656), ('blocking', 0.9015650852031357)]
-Top words for pretrained_BERT neuron indx 981 [('line', 1.0), ('purpose', 0.9793134831984961), ('st', 0.9566212980882584), ('replace', 0.9515353827341455), ('val', 0.9038017100455848)]
-Top words for pretrained_BERT neuron indx 3030 [('count', 1.0), ('close', 0.9331073184308996), ('seek', 0.8840524383422276), ('value', 0.8212700985482515), ('project', 0.8017130206526006)]
-Top words for pretrained_BERT neuron indx 5082 [('Tab', 1.0), ('import', 0.9386768938319306), ('tag', 0.9386765334215458), ('is', 0.8398404126843071), ('parts', 0.8339021109776859)]
-Top words for pretrained_BERT neuron indx 7134 [('{', 1.0), ('128', 0.9108314714355498), ('k', 0.8940779274311973), ('local', 0.7421599496062611), ('re', 0.7318198499604215)]
-Top words for pretrained_BERT neuron indx 990 [('description', 1.0), ('routes', 0.9330083840327458), ('core', 0.8850315423891593), ('probe', 0.8338831305259577), ('ndt', 0.826934036357924)]
-Top words for pretrained_BERT neuron indx 9197 [('raise', 1.0), ('[', 0.9695395730976204), ('17', 0.9021330030175609), ('requests', 0.8840398555453799), ('1800', 0.8714037149575)]
-Top words for pretrained_BERT neuron indx 5111 [('1800', 1.0), ('80', 0.9870411822663828), ('300', 0.9757920849711371), ('60', 0.8846149453518553), ('800', 0.8288457273236938)]
-Top words for pretrained_BERT neuron indx 3065 [('task', 1.0), ('dt', 0.9877530795809216), ('super', 0.9396314775364121), ('boot', 0.9212792177370036), ('raise', 0.9056513826072681)]
-Top words for pretrained_BERT neuron indx 7163 [('partition', 1.0), ('state', 0.829803627082656), ('as', 0.719497207504889), ('request', 0.7055575853666539), ('unicode', 0.6935467916256227)]
-Top words for pretrained_BERT neuron indx 1030 [('2', 1.0), ('child', 0.8507474211590316), ('Post', 0.8013226763530352), ('identity', 0.7755277320292516), ('1', 0.7675021057875341)]
-Top words for pretrained_BERT neuron indx 5129 [('or', 1.0), ('shortcuts', 0.8176458341053602), ('utc', 0.7712232713988032), ('re', 0.7503284834392632), ('def', 0.7340554308900675)]
-Top words for pretrained_BERT neuron indx 5136 [('types', 1.0), ('pop', 0.9073181407105092), ('Exception', 0.8903759604087438), ('400', 0.8603717622437622), ('log', 0.8570960220333611)]
-Top words for pretrained_BERT neuron indx 5148 [('80', 1.0), ('60', 0.9262123875865874), ('local', 0.8747969153548557), ('error', 0.8286216529370749), ('40', 0.7679849706155284)]
-Top words for pretrained_BERT neuron indx 7197 [('7', 1.0), ('1024', 0.8734491682584962), ('""', 0.8243883309701219), ('400', 0.7787920754204489), ('Session', 0.7759119150815529)]
-Top words for pretrained_BERT neuron indx 9254 [('self', 1.0), ('identity', 0.9822256033799919), ('f', 0.8714232613982743), ('1', 0.8542068485536111), ('error', 0.8495947877174145)]
-Top words for pretrained_BERT neuron indx 3112 [('name', 1.0), ('upper', 0.9938797705654246), ('to', 0.8793174180321419), ('server', 0.8775097831222823), ('raise', 0.8642578158015888)]
-Top words for pretrained_BERT neuron indx 3117 [('calendar', 1.0), ('state', 0.9027395269066345), ('.', 0.8306969492888682), ('digest', 0.8240780825198147), ('==', 0.7533005461453809)]
-Top words for pretrained_BERT neuron indx 9265 [('authorization', 1.0), ('###', 0.99241705974054), ('Distance', 0.991895073865212), ('msgbox', 0.9824688668715618), ('seek', 0.9525106013989143)]
-Top words for pretrained_BERT neuron indx 1073 [('self', 1.0), ('identity', 0.9952087102896227), ('replace', 0.8912883384246763), ('error', 0.8433342827397238), ('domain', 0.7983717075686209)]
-Top words for pretrained_BERT neuron indx 1075 [('loads', 1.0), ('close', 0.868935447628492), ('k', 0.7386644741368129), ('push', 0.6955800961172198), ('find', 0.671593450879055)]
-Top words for pretrained_BERT neuron indx 1076 [('.', 1.0), ('and', 0.9868665847485129), (',', 0.979192941824405), ('in', 0.9011102853041879), ('".."', 0.8490101592817194)]
-Top words for pretrained_BERT neuron indx 1083 [('session', 1.0), ('routes', 0.9554943821899207), ('Session', 0.8834423659254829), ('types', 0.7978008264496074), (':', 0.7963826539786444)]
-Top words for pretrained_BERT neuron indx 9280 [('Tab', 1.0), ('~~', 0.7232150140063021), ('utc', 0.6243804268909243), ('Distance', 0.595201059511352), ('write', 0.5809431161156248)]
-Top words for pretrained_BERT neuron indx 5187 [('or', 1.0), ('local', 0.9977183271714694), ('}', 0.9847495665265414), ('id', 0.862809128706354), ('all', 0.8541609493908342)]
-Top words for pretrained_BERT neuron indx 1096 [('part', 1.0), ('feature', 0.8824672487826476), ('required', 0.8763485066351778), ('long', 0.8748286318860029), ('Stretch', 0.8467151437446799)]
-Top words for pretrained_BERT neuron indx 1101 [('other', 1.0), ('parent', 0.9589838829446808), ('day', 0.8910462578441856), ('horizon', 0.865490974172008), ('GET', 0.864253773088961)]
-Top words for pretrained_BERT neuron indx 3149 [('st', 1.0), ('10', 0.9812640877825383), ('wait', 0.9364320957700873), ('12', 0.8966025942763353), ('alt', 0.8894740784801295)]
-Top words for pretrained_BERT neuron indx 1104 [('except', 1.0), ('enclosure', 0.9719550385105393), ('exceptions', 0.794093746671228), ('domain', 0.702738644031541), ('unicode', 0.6962433192934784)]
-Top words for pretrained_BERT neuron indx 7252 [('and', 1.0), ('or', 0.832688490544857), ('""', 0.7349180866511256), ('"view"', 0.6723778124512518), ('"Port"', 0.6545011247618173)]
-Top words for pretrained_BERT neuron indx 5208 [('1800', 1.0), ('800', 0.9747334629366414), ('20000', 0.7955296371190816), ('600', 0.7949820189178107), ('300', 0.7934711373966957)]
-Top words for pretrained_BERT neuron indx 1122 [('~~', 1.0), ('~~~', 0.9713713382515683), ('template', 0.760531737722381), ('collectorBody', 0.7195896113801428), ('servers', 0.7099617457675537)]
-Top words for pretrained_BERT neuron indx 1123 [('Stretch', 1.0), ('materials', 0.9736898405816709), ('domain', 0.7579469528456921), ('12', 0.7517761389532988), ('80', 0.7314489648453272)]
-Top words for pretrained_BERT neuron indx 1125 [('boot', 1.0), ('all', 0.8986149772534835), ('contents', 0.8331423856576782), ('part', 0.8171164916814587), ('v', 0.7702517120638356)]
-Top words for pretrained_BERT neuron indx 5240 [('(', 1.0), ('<', 0.8806505699183855), (';', 0.8383558432912112), ('Unauthorized', 0.8243883507767178), ('/', 0.776400896619359)]
-Top words for pretrained_BERT neuron indx 7292 [('9', 1.0), ('1000', 0.8050373028736769), ('put', 0.7995978372364664), ('1800', 0.7740205334248949), ('14', 0.767181125247208)]
-Top words for pretrained_BERT neuron indx 9340 [('>', 1.0), ('"happy_birthday"', 0.9732849668674605), ('unicode', 0.960103362685628), (',', 0.9368502031355794), ('<', 0.9331044054409823)]
-Top words for pretrained_BERT neuron indx 5245 [('300', 1.0), ('30', 0.9843808600898146), ('17', 0.836833580541371), ('32', 0.7788605900913927), ('400', 0.7409373921689542)]
-Top words for pretrained_BERT neuron indx 1148 [('slug', 1.0), ('read', 0.8880285069960464), ('10', 0.8252512106125894), ('80', 0.8210845756418776), ('loads', 0.7710960207630404)]
-Top words for pretrained_BERT neuron indx 1152 [('profile', 1.0), ('Profile', 0.8984253573915102), ('probe', 0.8404440609545551), ('body', 0.7165665991032824), ('List', 0.715990414983857)]
-Top words for pretrained_BERT neuron indx 9346 [('8000', 1.0), ('800', 0.89542423704486), ('1800', 0.8126360351710236), ('profile', 0.7514391696017534), ('Tab', 0.7508392721777558)]
-Top words for pretrained_BERT neuron indx 1154 [('dict', 1.0), ('import', 0.9408987458725183), ('16', 0.940350982204842), ('connection', 0.9097167518668419), ('value', 0.8606184000490744)]
-Top words for pretrained_BERT neuron indx 7302 [('"purpose"', 1.0), ('not', 0.9886459502004679), ('"r"', 0.9580459456984454), ('7', 0.9097356622091527), ('1', 0.8694770286855578)]
-Top words for pretrained_BERT neuron indx 1168 [('purpose', 1.0), ('models', 0.9355122145581788), ('target', 0.9343098951744225), ('Simple', 0.9100254007198602), ('close', 0.8719994284371939)]
-Top words for pretrained_BERT neuron indx 1177 [('9', 1.0), ('if', 0.8527951656166768), ('part', 0.8281415577479496), ('con', 0.7785059557496091), ('type', 0.7721353991678724)]
-Top words for pretrained_BERT neuron indx 1183 [('local', 1.0), ('tag', 0.990406644620715), ('month', 0.8329706647460803), ('exceptions', 0.8020361892954576), ('action', 0.7848408843659976)]
-Top words for pretrained_BERT neuron indx 1189 [('filter', 1.0), ('affinity', 0.8874387828511231), ('s', 0.8436905068930619), ('task', 0.841820201779913), ('wait', 0.7889994103460232)]
-Top words for pretrained_BERT neuron indx 5286 [('store', 1.0), ('baseline', 0.9782035595765852), ('boot', 0.928315829643298), ('link', 0.9126540913961433), ('print', 0.8706919284317755)]
-Top words for pretrained_BERT neuron indx 5285 [('if', 1.0), ('META', 0.8301301160625056), ('description', 0.6978970147548151), ('iq', 0.693522046694717), ('{', 0.6456032773178432)]
-Top words for pretrained_BERT neuron indx 7337 [('as', 1.0), ('Node', 0.7118082354626), ('created', 0.7069421579424735), (':', 0.7020854270932213), ('continue', 0.6818191515292843)]
-Top words for pretrained_BERT neuron indx 1197 [('open', 1.0), ('14', 0.9682490230505937), ('20', 0.963337909555562), ('128', 0.9469797741582276), ('tz', 0.8956819201587924)]
-Top words for pretrained_BERT neuron indx 1200 [('Billboard', 1.0), ('read', 0.9917044105261991), ('loads', 0.9077006421773021), ('find', 0.8864301010934181), ('86400', 0.8645541995571313)]
-Top words for pretrained_BERT neuron indx 5299 [('128', 1.0), ('24', 0.9142158094105732), ('Billboard', 0.8997845248051138), ('identity', 0.8854411751079031), ('choices', 0.8661623132163268)]
-Top words for pretrained_BERT neuron indx 1204 [('exceptions', 1.0), ('core', 0.9499954640865139), ('strip', 0.9288972099439736), ('Exception', 0.8637800298617201), ('unicode', 0.8531966372371038)]
-Top words for pretrained_BERT neuron indx 9404 [('{', 1.0), ('vsn', 0.8687349359102298), ('MSG', 0.8539789213590944), ('svc', 0.8079671644010865), ('True', 0.7966204884538564)]
-Top words for pretrained_BERT neuron indx 3261 [('choices', 1.0), ('board', 0.7797227033355485), ('time', 0.7476125235170645), ('print', 0.6678017843660687), ('identity', 0.6498613368982131)]
-Top words for pretrained_BERT neuron indx 5318 [('scope', 1.0), ('domain', 0.9532727963463956), ('body', 0.9393445449617599), ('parser', 0.9384039521468183), ('board', 0.930901232089489)]
-Top words for pretrained_BERT neuron indx 9415 [('component', 1.0), ('oslo', 0.6827351281966819), ('Component', 0.66714363865562), ('exceptions', 0.6564155543961472), ('i', 0.5954717015215287)]
-Top words for pretrained_BERT neuron indx 3275 [('400', 1.0), ('600', 0.9388922263283829), ('Log', 0.9179941314431347), ('300', 0.9062084379554926), ('board', 0.8747828347369828)]
-Top words for pretrained_BERT neuron indx 5334 [('close', 1.0), ('value', 0.8536982655425113), ('.', 0.8494051010982109), ('count', 0.8466755063451649), ('blocking', 0.8009610494959215)]
-Top words for pretrained_BERT neuron indx 5348 [('7', 1.0), ('default', 0.9332648951049296), ('View', 0.9152737733677893), ('format', 0.8425760196863308), ('Digest', 0.8217936123648629)]
-Top words for pretrained_BERT neuron indx 3301 [('not', 1.0), ('strip', 0.9150099987611527), ('force', 0.9139272178997724), ('None', 0.8996099107309565), ('value', 0.896339483834106)]
-Top words for pretrained_BERT neuron indx 7399 [('k', 1.0), ('LoadUser', 0.9906916765158633), ('st', 0.9532190680068661), ('1800', 0.950308033358623), ('set', 0.9012304751694655)]
-Top words for pretrained_BERT neuron indx 7402 [(':', 1.0), ('}', 0.8897370978983005), ('[', 0.8804489381802663), ('300', 0.8753526073267226), ('1800', 0.8172999308511422)]
-Top words for pretrained_BERT neuron indx 3309 [('e', 1.0), ('unicode', 0.8939306770201176), ('title', 0.8334646764692107), ('child', 0.7902272669540803), ('E', 0.7554848576016816)]
-Top words for pretrained_BERT neuron indx 1266 [('long', 1.0), ('e', 0.9030386580991205), ('passwd', 0.8944901368511861), ('settings', 0.8877734025936154), ('#', 0.8862568908847293)]
-Top words for pretrained_BERT neuron indx 9468 [('enclosure', 1.0), ('entity', 0.8578596834361856), ('<', 0.782034815867077), ('task', 0.7501989362919032), ('-', 0.7065984129100071)]
-Top words for pretrained_BERT neuron indx 9477 [('i', 1.0), ('oslo', 0.9954444625084774), ('80', 0.9308076640779169), ('os', 0.8886465285198959), ('other', 0.8337248542425271)]
-Top words for pretrained_BERT neuron indx 7432 [('pop', 1.0), ('con', 0.8797416162301176), ('"oslo"', 0.8757143100450406), ('profile', 0.85891304785395), ('40', 0.8508491455591838)]
-Top words for pretrained_BERT neuron indx 5387 [('7', 1.0), ('4', 0.9308688162917258), ('8', 0.9233196794668104), ('5', 0.8894261806312521), ('6', 0.8637916830908586)]
-Top words for pretrained_BERT neuron indx 3339 [('domain', 1.0), ('common', 0.9450535254404746), ('us', 0.9449143850968793), ('True', 0.8700046289789161), (')', 0.7986262807008573)]
-Top words for pretrained_BERT neuron indx 7440 [('400', 1.0), ('os', 0.9989273884444625), ('self', 0.9818756768491869), ('128', 0.9733375695258215), ('1', 0.9513067236119275)]
-Top words for pretrained_BERT neuron indx 7443 [('k', 1.0), ('}', 0.9420077922321501), ('False', 0.7921369894898884), ('**', 0.7889512419215645), ('{', 0.7791979069707607)]
-Top words for pretrained_BERT neuron indx 1302 [('k', 1.0), ('domain', 0.979921303732343), ('clone', 0.9334536364015702), ('raise', 0.8517692024560509), ('ref', 0.8280926244358263)]
-Top words for pretrained_BERT neuron indx 3351 [('second', 1.0), ('Session', 0.9549373994548538), ('all', 0.868414612143179), ('session', 0.8490410376818199), ('minute', 0.8293225686245651)]
-Top words for pretrained_BERT neuron indx 7447 [('6', 1.0), ('128', 0.897348587143302), ('400', 0.8848769504745723), ('4', 0.8666740227925376), (',', 0.8580918025287454)]
-Top words for pretrained_BERT neuron indx 3353 [('send', 1.0), ('alt', 0.892251286454713), ('log', 0.8251999139866629), ('bare', 0.8179417220217009), ('all', 0.8107544944390395)]
-Top words for pretrained_BERT neuron indx 1307 [('join', 1.0), ('purpose', 0.9864516043433066), ('broadcast', 0.9864409088115206), ('enclosure', 0.9660435142972182), ('Authorization', 0.955593979742392)]
-Top words for pretrained_BERT neuron indx 5404 [('requests', 1.0), ('loads', 0.964244280769249), ('objects', 0.9293070562009389), ('host', 0.9175263324895213), ('View', 0.8924001935737909)]
-Top words for pretrained_BERT neuron indx 1309 [('slug', 1.0), ('600', 0.8687369603364644), ('partition', 0.7153386951539417), ('message', 0.7140335974360746), ('profile', 0.6859215674241252)]
-Top words for pretrained_BERT neuron indx 9507 [('7', 1.0), ('wait', 0.9958074267123596), ('2', 0.973593691596517), ('pop', 0.9520043736325617), ('4', 0.882911883401625)]
-Top words for pretrained_BERT neuron indx 9517 [('alt', 1.0), ('match', 0.9871650413845995), ('k', 0.942484978650807), ('~~~', 0.8950962643044278), ('refresh', 0.8806932211610853)]
-Top words for pretrained_BERT neuron indx 3380 [('and', 1.0), ('in', 0.985979048675195), ('is', 0.8662169788902531), ('with', 0.8393674997029585), (',', 0.8362715355063567)]
-Top words for pretrained_BERT neuron indx 1336 [('Component', 1.0), ('component', 0.9960782684707166), ('task', 0.960844187766629), ('modes', 0.7945681262934544), ('policy', 0.7779009764880797)]
-Top words for pretrained_BERT neuron indx 3409 [('{', 1.0), ('iq', 0.8720031429036024), ('choices', 0.8580531742638094), ('}', 0.8312699335198025), ('port', 0.8307830759846202)]
-Top words for pretrained_BERT neuron indx 1363 [('feature', 1.0), ('1000', 0.8679222219320778), ('get', 0.8017159115933266), ('alt', 0.8003612229023709), ('core', 0.773455843029239)]
-Top words for pretrained_BERT neuron indx 7508 [(',', 1.0), ('in', 0.9198615545981844), ('not', 0.872626038518614), ('is', 0.7674137485828116), ('token', 0.7286072315348915)]
-Top words for pretrained_BERT neuron indx 9559 [('profile', 1.0), ('if', 0.9346182202318157), ('re', 0.9002196338701438), ('set', 0.8992066982791375), ('".."', 0.8872432891086831)]
-Top words for pretrained_BERT neuron indx 1368 [('connection', 1.0), ('calendar', 0.9964935637802121), ('future', 0.9754368266723297), (']', 0.9460904787897266), ('Component', 0.9212564724433026)]
-Top words for pretrained_BERT neuron indx 3420 [('st', 1.0), ('else', 0.9288494742684387), ('except', 0.8819642740303566), ('loads', 0.8442787698248703), ('Log', 0.7986256036808683)]
-Top words for pretrained_BERT neuron indx 5472 [('tz', 1.0), ('long', 0.9346657679905898), ('and', 0.8883005788761196), (';', 0.8511248639429082), ('features', 0.7764137230363342)]
-Top words for pretrained_BERT neuron indx 1376 [('Log', 1.0), ('{', 0.8834044842820867), ('line', 0.8459680788594989), ('start', 0.8123113911088891), ('uss', 0.7863872848934934)]
-Top words for pretrained_BERT neuron indx 7523 [('domain', 1.0), ('loads', 0.8639123554550837), ('join', 0.8609067235156985), ('List', 0.8164161434985435), ('types', 0.8036277394395525)]
-Top words for pretrained_BERT neuron indx 3430 [('division', 1.0), ('Authorization', 0.9791680358002498), ('types', 0.9519473536946267), ('try', 0.9437797973620076), ('Util', 0.937703515471601)]
-Top words for pretrained_BERT neuron indx 5484 [('exceptions', 1.0), ('authentication', 0.9419791161070864), ('iq', 0.9285712068684031), ('k', 0.9006299351524563), ('hour', 0.8502896816071613)]
-Top words for pretrained_BERT neuron indx 1389 [('core', 1.0), ('raise', 0.7861455864457335), ('time', 0.7824990057850741), ('parts', 0.7672436805632894), ('slug', 0.7268030508663504)]
-Top words for pretrained_BERT neuron indx 5486 [('affinity', 1.0), ('stanza', 0.9277328976218192), ('slug', 0.9130089923937486), ('Session', 0.8911976456618187), ('utc', 0.8792186762223999)]
-Top words for pretrained_BERT neuron indx 9596 [('9', 1.0), ('1000', 0.99624644150602), ('14', 0.8960314679684306), ('10', 0.8723812070528691), ('META', 0.8528766465201661)]
-Top words for pretrained_BERT neuron indx 7549 [('30', 1.0), ('300', 0.9727984337445511), ('32', 0.8674089377816343), ('17', 0.844793461872884), ('time', 0.8341004392948999)]
-Top words for pretrained_BERT neuron indx 1405 [('class', 1.0), ('6', 0.9282280898739276), ('match', 0.8696385027521144), ('reactor', 0.8571042386223562), ('loads', 0.8283500128147235)]
-Top words for pretrained_BERT neuron indx 3452 [('400', 1.0), ('600', 0.9689454926971367), ('14', 0.9403747856188381), ('40', 0.9283562131831826), ('Billboard', 0.9275137497050145)]
-Top words for pretrained_BERT neuron indx 9600 [('7', 1.0), ('9', 0.9230376202831193), (']', 0.7749721872722736), ('features', 0.7139864183159074), ('except', 0.6439643423271477)]
-Top words for pretrained_BERT neuron indx 3457 [(':', 1.0), ('seek', 0.9638727939238807), ('proxy', 0.8159870208027193), ('filters', 0.7874026283476497), ('long', 0.7094770511378742)]
-Top words for pretrained_BERT neuron indx 5506 [('close', 1.0), ('state', 0.9559290306326002), ('main', 0.9327086095725262), ('>', 0.880965602223418), ('read', 0.8458133875309253)]
-Top words for pretrained_BERT neuron indx 7552 [(',', 1.0), ('/', 0.9112709029297467), (']', 0.8769987304848624), ('**', 0.8769500052909981), ('300', 0.8693746325740832)]
-Top words for pretrained_BERT neuron indx 9605 [('"list"', 1.0), ('Tab', 0.9696793408391262), ('set', 0.8663940411702357), ('"Path"', 0.8404467605350564), ('SaneDelta', 0.8382603062016059)]
-Top words for pretrained_BERT neuron indx 9606 [('1', 1.0), ('4', 0.9504836369418399), ('0', 0.9290121698044426), ('"Name"', 0.8621522117631075), ('400', 0.8311946325158004)]
-Top words for pretrained_BERT neuron indx 7563 [('>', 1.0), ('utc', 0.9870484864694435), ('reactor', 0.940743325213505), ('False', 0.9330629640462246), ('uss', 0.9186342669183549)]
-Top words for pretrained_BERT neuron indx 9616 [('seek', 1.0), ('f', 0.9774204671707505), ('result', 0.8069907867701506), ('or', 0.8063561309555265), ('.', 0.750338485203199)]
-Top words for pretrained_BERT neuron indx 1425 [('affinity', 1.0), ('month', 0.9401868140513847), ('host', 0.907473240730244), ('method', 0.8940178204935173), ('iq', 0.8907375586959488)]
-Top words for pretrained_BERT neuron indx 5522 [('server', 1.0), ('post', 0.9010084202686288), ('servers', 0.8888491424772436), ('sorted', 0.8795420255299012), ('iq', 0.8214307583490376)]
-Top words for pretrained_BERT neuron indx 1438 [('sconff', 1.0), ('%', 0.9034221444648552), ('replace', 0.8944940587499867), ('sconf', 0.84423161549349), ('default', 0.8258577339707193)]
-Top words for pretrained_BERT neuron indx 9631 [('8', 1.0), ('7', 0.9329803290508473), ('bind', 0.8952488290646485), (')', 0.8717155886246635), ('10', 0.8099923560747577)]
-Top words for pretrained_BERT neuron indx 3488 [('80', 1.0), ('32', 0.8040208055215775), ('40', 0.8026245490902039), ('60', 0.7880160130929345), (']', 0.7415414302540886)]
-Top words for pretrained_BERT neuron indx 1444 [('object', 1.0), ('ping', 0.8182468434900826), ('help', 0.8094525054036461), ('push', 0.8035213380359528), ('self', 0.8005415210627108)]
-Top words for pretrained_BERT neuron indx 7589 [('META', 1.0), ('if', 0.9810858083107492), ('5', 0.9255394623449243), ('4', 0.8984108318377089), ('2', 0.826843142241946)]
-Top words for pretrained_BERT neuron indx 5541 [('/', 1.0), ('0', 0.9999022504421483), ('10', 0.9954340465947896), ('False', 0.96752616572253), ('child', 0.9094698757330087)]
-Top words for pretrained_BERT neuron indx 3494 [('reactor', 1.0), ('force', 0.884017576150713), ('14', 0.8677510985094196), ('12', 0.8518524142757707), ('required', 0.7904796709858277)]
-Top words for pretrained_BERT neuron indx 9654 [('/', 1.0), ('Simple', 0.9871617228776332), ('PYTHON_VERSION', 0.8059416614302091), ('32', 0.7782833331498873), ('ignore', 0.7698952514717836)]
-Top words for pretrained_BERT neuron indx 9658 [('~~', 1.0), ('###########################################################################', 0.9733747448685626), ('###', 0.964297508010519), ('~~~', 0.9561965704339673), ('purpose', 0.904925256040537)]
-Top words for pretrained_BERT neuron indx 1469 [('enabled', 1.0), ('description', 0.9864447663133424), ('sts', 0.9509825577831608), ('board', 0.8787956061868449), ('META', 0.8447563810635144)]
-Top words for pretrained_BERT neuron indx 7622 [('400', 1.0), ('60', 0.9823605092316743), ('20', 0.9782285524172014), ('600', 0.9234056173899554), ('40', 0.9066350998974789)]
-Top words for pretrained_BERT neuron indx 7634 [('%', 1.0), ('###########################################################################', 0.798288152675819), ('@', 0.7951066883797289), ('9', 0.726684887961363), ('try', 0.7187598193720244)]
-Top words for pretrained_BERT neuron indx 1494 [('count', 1.0), ('close', 0.9887290220818911), ('wait', 0.7050979060673845), ('def', 0.6956581721148513), ('seek', 0.6679733571678327)]
-Top words for pretrained_BERT neuron indx 7639 [('to', 1.0), ('upper', 0.7565199969237565), ('15', 0.6837015670069595), ('future', 0.6504385593456771), ('REQUEST', 0.6301613046802069)]
-Top words for pretrained_BERT neuron indx 5591 [('On', 1.0), ('to', 0.8407122187069095), ('"Host"', 0.7647718221776454), ('return', 0.7368233834474875), ('"purpose"', 0.7310308270976165)]
-Top words for pretrained_BERT neuron indx 3547 [('print', 1.0), ('state', 0.8481502692609717), ('common', 0.7882599791389787), ('settings', 0.716359527871113), ('tout', 0.714068398327317)]
-Top words for pretrained_BERT neuron indx 1505 [('con', 1.0), ('proxy', 0.8232694514840927), ('+', 0.7935039503077578), ('material', 0.7662641694886224), ('CONF', 0.764537537068428)]
-Top words for pretrained_BERT neuron indx 7653 [('for', 1.0), ('day', 0.8619232010949072), ('month', 0.8612514935354537), ('contents', 0.8130820073934407), ('raise', 0.7973853729289017)]
-Top words for pretrained_BERT neuron indx 3559 [('store', 1.0), ('1800', 0.9553616074749688), ('300', 0.9258245530009747), ('}', 0.9141651860690319), ('Unauthorized', 0.8784187785628408)]
-Top words for pretrained_BERT neuron indx 7656 [('or', 1.0), ('+', 0.9748386676913532), ('e', 0.8952137678099474), ('-', 0.8797406404515136), ('raise', 0.8778739538752083)]
-Top words for pretrained_BERT neuron indx 9711 [('month', 1.0), ('set', 0.926786510147431), ('all', 0.9155813653961254), ('Node', 0.8960621930854091), ('int', 0.87968882155887)]
-Top words for pretrained_BERT neuron indx 3586 [('zone', 1.0), ('self', 0.905332439572572), ('main', 0.8696125547099878), ('state', 0.7470289026457947), ('context', 0.7325367296242262)]
-Top words for pretrained_BERT neuron indx 1542 [('format', 1.0), ('ignore', 0.9088071788212438), ('authentication', 0.9073990192736092), ('20000', 0.865825734045779), ('800', 0.8444523630457911)]
-Top words for pretrained_BERT neuron indx 9736 [('pop', 1.0), ('%', 0.9662579118917036), ('12', 0.8107668049432342), ('profile', 0.7993474177166584), ('is', 0.7456576079386531)]
-Top words for pretrained_BERT neuron indx 7691 [('17', 1.0), ('9', 0.9879262555158669), ('14', 0.9754896092464951), ('7', 0.9590863231990346), ('16', 0.7738243872924623)]
-Top words for pretrained_BERT neuron indx 1548 [('600', 1.0), ('put', 0.9219752007442484), ('60', 0.8745920025734994), ('root', 0.8355646915229061), ('SaneTime', 0.8209698401813679)]
-Top words for pretrained_BERT neuron indx 9749 [('False', 1.0), ('exit', 0.8518876648667364), ('refresh', 0.807847288167674), ('contents', 0.8018348650077184), ('0', 0.7911291762811873)]
-Top words for pretrained_BERT neuron indx 3606 [('k', 1.0), ('clone', 0.9621024639153505), ('print', 0.9426492935516038), ('ref', 0.859680370020541), ('open', 0.8281287799129954)]
-Top words for pretrained_BERT neuron indx 5660 [('if', 1.0), ('View', 0.9995850770172965), ('url', 0.9377533525355285), ('Plugin', 0.8645770807883865), ('sorted', 0.8551024398221103)]
-Top words for pretrained_BERT neuron indx 1566 [('+', 1.0), ('message', 0.9120808046816685), ('future', 0.8175010701259742), ('boot', 0.7636957883909904), ('Util', 0.7546622890259908)]
-Top words for pretrained_BERT neuron indx 5665 [('8', 1.0), ('text', 0.9959741030410925), ('loads', 0.9655981534384511), ('bare', 0.9432919396594311), ('v', 0.9058512434165026)]
-Top words for pretrained_BERT neuron indx 5690 [('time', 1.0), ('st', 0.969609888828015), ('field', 0.9291681630277786), ('horizon', 0.8573555541866218), ('scope', 0.7760981215316097)]
-Top words for pretrained_BERT neuron indx 9796 [('if', 1.0), ('*', 0.9954345553766467), ('unicode', 0.9642433855562554), ('f', 0.95703262817048), ('strftime', 0.9382578334060343)]
-Top words for pretrained_BERT neuron indx 5703 [(';', 1.0), ('+', 0.8876244926811194), ('log', 0.886603612144578), ('line', 0.8858219312863574), ('component', 0.8040585937299911)]
-Top words for pretrained_BERT neuron indx 5707 [('[', 1.0), ('if', 0.9625978085233521), ('**', 0.8821214681974239), ('choices', 0.8811999731280695), ('domain', 0.8716492647344806)]
-Top words for pretrained_BERT neuron indx 1613 [('ref', 1.0), ('wait', 0.9853893944929739), ('alt', 0.9368479618733939), ('View', 0.8729907924257556), ('read', 0.8369649351465388)]
-Top words for pretrained_BERT neuron indx 3670 [('filter', 1.0), ('blocking', 0.8004173969706165), ('put', 0.7566587738448667), ('future', 0.6541991500960087), ('digest', 0.6471172676089745)]
-Top words for pretrained_BERT neuron indx 3671 [('On', 1.0), ('pop', 0.8251779431870218), ('stat', 0.775798190298559), ('host', 0.7502117743355622), ('types', 0.7331396545100534)]
-Top words for pretrained_BERT neuron indx 3679 [('settings', 1.0), (',', 0.9939323398030275), ('ret', 0.9706701936892117), ('us', 0.9019173510030855), ('dict', 0.8764984658280262)]
-Top words for pretrained_BERT neuron indx 3680 [('{', 1.0), ('Log', 0.8710094564843294), ('\\n', 0.8363744680386126), ('common', 0.7999043971832679), ('return', 0.7832661200006555)]
-Top words for pretrained_BERT neuron indx 5736 [('put', 1.0), ('IntEnum', 0.8533679340840046), ('division', 0.822848983306466), ('common', 0.7979452424382903), ('80', 0.7892279903185259)]
-Top words for pretrained_BERT neuron indx 1642 [('1000', 1.0), ('17', 0.9838589658438265), ('15', 0.9797077266451467), ('1800', 0.930290095687619), ('add', 0.8928459376461747)]
-Top words for pretrained_BERT neuron indx 3690 [('try', 1.0), ('6', 0.8843176177459356), ('range', 0.828528583440052), ('12', 0.8251851060478396), ('2', 0.8231976998933301)]
-Top words for pretrained_BERT neuron indx 1646 [('exceptions', 1.0), ('utc', 0.9843517928147253), ('Session', 0.9251706832932075), ('setup', 0.8637792037864334), ('14', 0.8557291396819302)]
-Top words for pretrained_BERT neuron indx 1648 [('###########################################################################', 1.0), ('setup', 0.9225132150246298), ('start', 0.8453476519915706), ('division', 0.8445314323020917), ('Authorization', 0.751268130033012)]
-Top words for pretrained_BERT neuron indx 3704 [('id', 1.0), ('Unauthorized', 0.7474651708374617), ('<', 0.6705591293150978), ('utmpent', 0.641607798315407), ('Profile', 0.6215915619501172)]
-Top words for pretrained_BERT neuron indx 5756 [('600', 1.0), ('int', 0.9043110807907316), ('800', 0.877396423480668), ('3600', 0.8644018813740414), ('1800', 0.8433782782190914)]
-Top words for pretrained_BERT neuron indx 7810 [('Exception', 1.0), ('state', 0.9776830585097247), ('Tab', 0.9485867913033559), ('1800', 0.9096390130544325), ('800', 0.8882637626538663)]
-Top words for pretrained_BERT neuron indx 9859 [('bool', 1.0), ('affinity', 0.9170669764133056), ('7', 0.8804858491468976), ('naive_dt', 0.8771047930948587), ('for', 0.8616914238357195)]
-Top words for pretrained_BERT neuron indx 1666 [('close', 1.0), ('link', 0.8388758413401748), ('key', 0.8081498156689669), ('format', 0.7886679383351655), ('state', 0.7546725178907195)]
-Top words for pretrained_BERT neuron indx 3719 [('day', 1.0), ('month', 0.9412941611879964), ('filter', 0.9213762932132877), ('broadcast', 0.9044580553822672), ('=', 0.8214521977330865)]
-Top words for pretrained_BERT neuron indx 5769 [('user', 1.0), ('contents', 0.8878714860123043), ('1800', 0.8163073110311437), ('server', 0.7803032613747545), ('all', 0.7181636666091475)]
-Top words for pretrained_BERT neuron indx 1680 [('blocking', 1.0), ('Distance', 0.8886751368812223), ('render', 0.8086151343303934), ('closing', 0.797208939343396), ('pass', 0.7312803892229414)]
-Top words for pretrained_BERT neuron indx 3730 [('put', 1.0), ('push', 0.9700035276680284), ('text', 0.9572262522353938), ('render', 0.9048255230283657), ('as', 0.8528751693245951)]
-Top words for pretrained_BERT neuron indx 7826 [('post', 1.0), ('server', 0.8892965182850822), ('iq', 0.8199805957573998), ('servers', 0.7971380540333832), ('route', 0.7455056761205741)]
-Top words for pretrained_BERT neuron indx 9879 [('pop', 1.0), ('32', 0.983978486934816), ('5', 0.9792686944246076), ('}', 0.9712470089951066), ('3', 0.9405672846905826)]
-Top words for pretrained_BERT neuron indx 7841 [(']', 1.0), ('False', 0.9553035209363347), ('}', 0.858456072588641), ('True', 0.8478745063444956), ('3', 0.6433234657871281)]
-Top words for pretrained_BERT neuron indx 1701 [('/', 1.0), ('###', 0.9880077083271502), ('close', 0.9665847081233396), ('len', 0.9235673720134697), ('#', 0.9191971676734016)]
-Top words for pretrained_BERT neuron indx 3750 [('baseline', 1.0), ('alt', 0.8961097458344119), ('servers', 0.8584875573052015), ('boot', 0.8376865115518097), ('store', 0.8244720525431687)]
-Top words for pretrained_BERT neuron indx 1704 [('k', 1.0), ('9', 0.9455470227285637), ('1800', 0.9391480639655263), ('7', 0.9371519008850365), ('prange', 0.8830239380814261)]
-Top words for pretrained_BERT neuron indx 5808 [('24', 1.0), ('86400', 0.9604989851370918), ('find', 0.898586705929423), ('8', 0.8829225353777383), ('%', 0.8723168255816937)]
-Top words for pretrained_BERT neuron indx 3762 [('<', 1.0), ('value', 0.9128884878007544), ('int', 0.8959000631823599), ('Mesh', 0.8574079227959015), ('if', 0.8297485776344937)]
-Top words for pretrained_BERT neuron indx 7860 [(')', 1.0), (']', 0.1641466392938022), ('###########################################################################', 0.15361251876056503), ('ms', 0.12446430592580801), ('count', 0.11840245794458744)]
-Top words for pretrained_BERT neuron indx 7868 [('True', 1.0), ('1000', 0.9684838925915253), ('message', 0.8688497009917414), ('description', 0.8498201780068524), ('connection', 0.8340307325089883)]
-Top words for pretrained_BERT neuron indx 5826 [('ignore', 1.0), (')', 0.9954838351555129), ('text', 0.9837571663958434), ('/', 0.9325867218077061), ('>', 0.9210824747937566)]
-Top words for pretrained_BERT neuron indx 7875 [('1', 1.0), ('component', 0.983470369474402), ('if', 0.9382109003068286), ('24', 0.9094024840987885), ('django', 0.904658682559125)]
-Top words for pretrained_BERT neuron indx 9924 [('re', 1.0), ('None', 0.8710208707227829), ('super', 0.7241715903706394), ('os', 0.7162052753885884), ('2', 0.7091137790374539)]
-Top words for pretrained_BERT neuron indx 5829 [(';', 1.0), ('help', 0.9211895414427128), ('20', 0.9098599366652437), ('uss', 0.8439628709121749), ('300', 0.8382819025334501)]
-Top words for pretrained_BERT neuron indx 1733 [('post', 1.0), ('Distance', 0.718498442986268), ('purpose', 0.6944297357900467), ('%', 0.646127113388586), ('join', 0.6440576577462063)]
-Top words for pretrained_BERT neuron indx 5835 [('types', 1.0), ('all', 0.9032250168304206), ('route', 0.8786669788831646), ('Library', 0.8357213664617832), ('400', 0.8119836739092087)]
-Top words for pretrained_BERT neuron indx 1739 [('400', 1.0), ('300', 0.8939226865437332), ('Log', 0.7498959524758351), ('0', 0.7279833821548037), ('board', 0.7246910058085474)]
-Top words for pretrained_BERT neuron indx 3791 [('1000', 1.0), ('closing', 0.9562438081055252), ('(', 0.9242582412888909), ('blocking', 0.9156199630075686), ('if', 0.8541303822206167)]
-Top words for pretrained_BERT neuron indx 3798 [('count', 1.0), ('close', 0.9971402355973066), ('value', 0.9517524009344743), ('while', 0.918929026614633), ('17', 0.8930426233204279)]
-Top words for pretrained_BERT neuron indx 3799 [('to', 1.0), ('#', 0.9558102989580349), ('max', 0.9330760493769893), ('clone', 0.8219850985940331), ('types', 0.7884155265718473)]
-Top words for pretrained_BERT neuron indx 1758 [('m', 1.0), ('probe', 0.8898740444054819), ('super', 0.875006864198693), ('False', 0.867841008488072), ('return', 0.842889952676253)]
-Top words for pretrained_BERT neuron indx 7905 [(')', 1.0), (':', 0.3519765803167885), ('blocking', 0.29944135425273705), ('result', 0.2961302691642929), ('(', 0.2796467327340431)]
-Top words for pretrained_BERT neuron indx 9955 [('enclosure', 1.0), ('15', 0.8898027723366423), ('20000', 0.8875116423250441), ('1800', 0.8564150560621636), ('10', 0.8366362588173387)]
-Top words for pretrained_BERT neuron indx 5866 [(':', 1.0), ('Session', 0.8900237253202159), ('oslo', 0.79896333783266), ('tag', 0.7955922167622519), ('300', 0.7828238571580098)]
-Top words for pretrained_BERT neuron indx 3822 [('count', 1.0), ('Board', 0.9908854885360251), ('List', 0.9847960024572395), ('Component', 0.9684959373373637), ('component', 0.9410584601950458)]
-Top words for pretrained_BERT neuron indx 5879 [('replace', 1.0), ('local', 0.9902617677925049), ('.', 0.9210026130113652), ('sanetime', 0.8746658362986525), ('80', 0.8410268869877172)]
-Top words for pretrained_BERT neuron indx 7927 [('128', 1.0), ('4', 0.9919782770281231), ('800', 0.9803403991089787), (';', 0.9576607767178719), ('32', 0.9518343815437376)]
-Top words for pretrained_BERT neuron indx 7934 [('slug', 1.0), ('1024', 0.9921226446743062), ('enabled', 0.9911435528422742), ('f', 0.9827074862771726), ('9', 0.9560699980673139)]
-Top words for pretrained_BERT neuron indx 1798 [('2', 1.0), ('Post', 0.8634958813858611), ('ping', 0.8438791157475778), ('post', 0.7864140020501239), ('affinity', 0.7788594212042722)]
-Top words for pretrained_BERT neuron indx 5900 [('task', 1.0), ('v', 0.731371046243805), ('end', 0.7102891010645298), ('Digest', 0.703677586207445), ('required', 0.7008536090945022)]
-Top words for pretrained_BERT neuron indx 3855 [('break', 1.0), ('get', 0.873636240486933), ('GET', 0.7674096116327697), ('send', 0.6809383263549769), ('key', 0.6746572284408869)]
-Top words for pretrained_BERT neuron indx 1809 [('12', 1.0), ('9', 0.9876826759040009), ('logging', 0.9755402685470442), ('partition', 0.887687348216221), ('8', 0.8789362608122437)]
-Top words for pretrained_BERT neuron indx 7959 [('replace', 1.0), ('all', 0.9970968522588644), ('/', 0.9666631937381445), ('alt', 0.9360910590833343), ('session', 0.868722033967446)]
-Top words for pretrained_BERT neuron indx 7964 [('if', 1.0), ('View', 0.8870631887163383), ('True', 0.8273951874475449), ('try', 0.7860887141885053), ('and', 0.7726945428285755)]
-Top words for pretrained_BERT neuron indx 5916 [('80', 1.0), ('6', 0.9321132365471244), ('On', 0.925894969373695), ('60', 0.9007820749958995), ('32', 0.859399305463836)]
-Top words for pretrained_BERT neuron indx 7971 [('pop', 1.0), ('Tab', 0.9218282948110376), ('iq', 0.9174006174623103), ('errors', 0.8429826232533721), ('us', 0.8368574714058687)]
-Top words for pretrained_BERT neuron indx 3880 [('name', 1.0), ('upper', 0.8625058939663869), ('server', 0.8482435428813898), (']', 0.7979966799711885), ('presence', 0.7891812580470009)]
-Top words for pretrained_BERT neuron indx 5931 [(',', 1.0), ('.', 0.9758964399168101), ('group', 0.9474169277419192), ('open', 0.9185471424317535), ('patch', 0.8647136816480291)]
-Top words for pretrained_BERT neuron indx 3885 [('state', 1.0), ('calendar', 0.8386193716702594), ('digest', 0.8286872448313285), ('6', 0.6628399261991181), ('"r"', 0.6594617534228419)]
-Top words for pretrained_BERT neuron indx 7981 [('alt', 1.0), ('~~', 0.8807890047335307), ('match', 0.8594603621830516), ('~~~', 0.8357733762343452), ('stat', 0.7424798973285124)]
-Top words for pretrained_BERT neuron indx 1843 [('loads', 1.0), ('max', 0.732846844962316), ('Node', 0.724964480325414), ('close', 0.6946120899445147), ('main', 0.6509786032794084)]
-Top words for pretrained_BERT neuron indx 1844 [('.', 1.0), (',', 0.990366725682061), ('and', 0.9749440019856862), ('in', 0.9386042618631316), ('to', 0.8578897705130764)]
-Top words for pretrained_BERT neuron indx 8000 [(';', 1.0), ('filename', 0.9681119068592031), ('True', 0.897233837823382), ('==', 0.8651820371282996), ('while', 0.8645897952234295)]
-Top words for pretrained_BERT neuron indx 1884 [('Log', 1.0), ('st', 0.8768394338832911), ('loads', 0.8244416292635193), ('user', 0.7294438405643232), ('3600', 0.7081351080100445)]
-Top words for pretrained_BERT neuron indx 1893 [('contents', 1.0), ('boot', 0.9222378575598275), ('v', 0.750795706632394), ('Tab', 0.699074231072729), ('path', 0.6937440777658759)]
-Top words for pretrained_BERT neuron indx 8057 [('24', 1.0), ('info', 0.8139042507527643), ('link', 0.7137799034649235), ('child', 0.6782865830619305), ('ignore', 0.6449264693166715)]
-Top words for pretrained_BERT neuron indx 1916 [('600', 1.0), ('Billboard', 0.9447106126299124), ('slug', 0.9344521980334259), ('read', 0.9183131821532187), ('400', 0.9144270247549218)]
-Top words for pretrained_BERT neuron indx 6013 [('300', 1.0), ('continue', 0.961126577921449), ('30', 0.9216054322758038), ('time', 0.9126656794437333), ('Distance', 0.8743490148799492)]
-Top words for pretrained_BERT neuron indx 8060 [('9', 1.0), ('1800', 0.9666271510829341), ('14', 0.87201321424237), ('800', 0.8678945393845875), ('10', 0.8608752858317971)]
-Top words for pretrained_BERT neuron indx 8064 [('7', 1.0), (']', 0.9369374260752701), ('9', 0.7474130336747277), ('Off', 0.6281959071728956), ('12', 0.621095848060487)]
-Top words for pretrained_BERT neuron indx 1920 [('profile', 1.0), ('Profile', 0.9000662495382702), ('probe', 0.8616219125404398), ('128', 0.8331928605077158), ('12', 0.8326833616708398)]
-Top words for pretrained_BERT neuron indx 8070 [('1', 1.0), ('"purpose"', 0.9948846553697015), ('not', 0.9792492497935152), ('7', 0.948812894734798), ('"r"', 0.8849532583306272)]
-Top words for pretrained_BERT neuron indx 8079 [('#', 1.0), ('minutes', 0.8240383585816905), ('baseline', 0.7851698846067704), ('mins', 0.7837342490976941), ('profile', 0.7611358043509873)]
-Top words for pretrained_BERT neuron indx 1937 [('Billboard', 1.0), ('log', 0.9513398112694057), ('title', 0.9494824679794711), ('component', 0.8419734482644965), ('post', 0.8322271785629709)]
-Top words for pretrained_BERT neuron indx 3987 [('5', 1.0), ('6', 0.9894806012323247), ('16', 0.9328145738056776), ('17', 0.9117036179901644), ('15', 0.8786871960224102)]
-Top words for pretrained_BERT neuron indx 8087 [('600', 1.0), ('count', 0.8775414291029393), ('desc', 0.7944806027331142), ('method', 0.7547130632397157), ('GET', 0.750760518165455)]
-Top words for pretrained_BERT neuron indx 1945 [('part', 1.0), ('9', 0.9209002397661242), ('core', 0.9079520125134329), (']', 0.8949474510930475), ('@', 0.8851476778792525)]
-Top words for pretrained_BERT neuron indx 1951 [('tag', 1.0), ('local', 0.9040728539890437), ('day', 0.8943368380250857), ('month', 0.8862869168777603), ('format', 0.8672046209889265)]
-Top words for pretrained_BERT neuron indx 4005 [('/', 1.0), ('###########################################################################', 0.8939797698434451), ('False', 0.8375657115432347), ('0', 0.7903849117239157), ('choices', 0.7610304228712048)]
-Top words for pretrained_BERT neuron indx 6066 [('choices', 1.0), ('<', 0.9395061370158395), ('if', 0.8555624122909795), ('return', 0.8513470036188225), ('value', 0.8415994888353837)]
-Top words for pretrained_BERT neuron indx 8133 [(';', 1.0), ('4', 0.8515646186219897), ('32', 0.8477059444388023), ('20', 0.8401851469686286), ('force', 0.8392191381661843)]
-Top words for pretrained_BERT neuron indx 6086 [(']', 1.0), ('domain', 0.9692909213075026), ('scope', 0.8535096254233957), ('with', 0.7931837414007833), ('def', 0.7758795627890739)]
-Top words for pretrained_BERT neuron indx 4043 [('Tab', 1.0), ('Log', 0.9900991189759439), ('tz', 0.827325661081922), ('mins', 0.7759020340096913), ('class', 0.76221994601142)]
-Top words for pretrained_BERT neuron indx 8142 [('/', 1.0), ('features', 0.8706529841019796), ('==', 0.8306603240343876), ('!=', 0.7985322411300028), ('<=', 0.7424282018151918)]
-Top words for pretrained_BERT neuron indx 8147 [(';', 1.0), ('oslo', 0.8879759757514063), ('!=', 0.8572999902216637), ('session', 0.784368830444803), ('=', 0.7760778305159086)]
-Top words for pretrained_BERT neuron indx 4078 [('close', 1.0), ('register', 0.9463117886363414), ('Simple', 0.8460443935319506), ('Node', 0.8280218430986077), ('feature', 0.827958822583643)]
-Top words for pretrained_BERT neuron indx 4079 [('i', 1.0), ('!=', 0.9424450581669295), ('filename', 0.942412442883352), ('800', 0.9380315163567035), ('import', 0.8784047406800439)]
-Top words for pretrained_BERT neuron indx 6131 [(')', 1.0), ('-', 0.9034266035519952), ('400', 0.8182886278200309), ('600', 0.7763972689912423), ('add', 0.7639535649019518)]
-Top words for pretrained_BERT neuron indx 2036 [('}', 1.0), ('i', 0.9016503906938673), (']', 0.898292658194358), ('find', 0.8734826310051871), ('close', 0.7862615291349194)]
-Top words for pretrained_BERT neuron indx 2039 [('try', 1.0), ('local', 0.8645401070666984), ('log', 0.8350296488243987), ('openstack', 0.7671539298801657), ('end', 0.7649751509310665)]
 Creating control dataset for pretrained_BERT POS tagging task
 Training classification probe
 Creating model...
-Number of training instances: 908
+Number of training instances: 842
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0146
+Epoch: [2/10], Loss: 0.0102
+Epoch: [3/10], Loss: 0.0080
+Epoch: [4/10], Loss: 0.0068
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0044
+Epoch: [8/10], Loss: 0.0049
+Epoch: [9/10], Loss: 0.0033
+Epoch: [10/10], Loss: 0.0031
+Score (accuracy) of the probe: 0.21
+Training classification probe
+Creating model...
+Number of training instances: 842
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0144
+Epoch: [2/10], Loss: 0.0101
+Epoch: [3/10], Loss: 0.0076
+Epoch: [4/10], Loss: 0.0061
+Epoch: [5/10], Loss: 0.0049
+Epoch: [6/10], Loss: 0.0043
+Epoch: [7/10], Loss: 0.0040
+Epoch: [8/10], Loss: 0.0044
+Epoch: [9/10], Loss: 0.0038
+Epoch: [10/10], Loss: 0.0047
+Score (accuracy) of the probe: 0.16
+Training classification probe
+Creating model...
+Number of training instances: 842
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0146
+Epoch: [2/10], Loss: 0.0103
+Epoch: [3/10], Loss: 0.0079
+Epoch: [4/10], Loss: 0.0064
+Epoch: [5/10], Loss: 0.0053
+Epoch: [6/10], Loss: 0.0043
+Epoch: [7/10], Loss: 0.0038
+Epoch: [8/10], Loss: 0.0035
+Epoch: [9/10], Loss: 0.0034
+Epoch: [10/10], Loss: 0.0035
+Score (accuracy) of the probe: 0.23
+Training classification probe
+Creating model...
+Number of training instances: 842
 Number of classes: 4
 Epoch: [1/10], Loss: 0.0154
-Epoch: [2/10], Loss: 0.0116
-Epoch: [3/10], Loss: 0.0096
-Epoch: [4/10], Loss: 0.0076
-Epoch: [5/10], Loss: 0.0057
-Epoch: [6/10], Loss: 0.0059
-Epoch: [7/10], Loss: 0.0062
-Epoch: [8/10], Loss: 0.0052
-Epoch: [9/10], Loss: 0.0057
-Epoch: [10/10], Loss: 0.0066
+Epoch: [2/10], Loss: 0.0115
+Epoch: [3/10], Loss: 0.0085
+Epoch: [4/10], Loss: 0.0072
+Epoch: [5/10], Loss: 0.0063
+Epoch: [6/10], Loss: 0.0055
+Epoch: [7/10], Loss: 0.0050
+Epoch: [8/10], Loss: 0.0048
+Epoch: [9/10], Loss: 0.0045
+Epoch: [10/10], Loss: 0.0044
 Score (accuracy) of the probe: 0.19
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0153
-Epoch: [2/10], Loss: 0.0117
-Epoch: [3/10], Loss: 0.0100
-Epoch: [4/10], Loss: 0.0089
-Epoch: [5/10], Loss: 0.0087
-Epoch: [6/10], Loss: 0.0073
-Epoch: [7/10], Loss: 0.0063
-Epoch: [8/10], Loss: 0.0054
-Epoch: [9/10], Loss: 0.0052
-Epoch: [10/10], Loss: 0.0056
-Score (accuracy) of the probe: 0.17
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0156
-Epoch: [2/10], Loss: 0.0128
-Epoch: [3/10], Loss: 0.0109
-Epoch: [4/10], Loss: 0.0090
-Epoch: [5/10], Loss: 0.0094
-Epoch: [6/10], Loss: 0.0073
-Epoch: [7/10], Loss: 0.0069
-Epoch: [8/10], Loss: 0.0052
-Epoch: [9/10], Loss: 0.0043
-Epoch: [10/10], Loss: 0.0038
-Score (accuracy) of the probe: 0.19
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0163
-Epoch: [2/10], Loss: 0.0123
-Epoch: [3/10], Loss: 0.0111
-Epoch: [4/10], Loss: 0.0102
-Epoch: [5/10], Loss: 0.0097
-Epoch: [6/10], Loss: 0.0091
-Epoch: [7/10], Loss: 0.0087
-Epoch: [8/10], Loss: 0.0067
-Epoch: [9/10], Loss: 0.0061
-Epoch: [10/10], Loss: 0.0053
-Score (accuracy) of the probe: 0.16
-The best l1=0, the best l2=0 for pretrained_BERT_control_task
+The best l1=0, the best l2=0.01 for pretrained_BERT_control_task
 Accuracy on the test set of probing pretrained_BERT_control_task of all layers:
-Score (accuracy) of the probe: 0.28
-{'__OVERALL__': 0.282560706401766, 'NAME': 0.19047619047619047, 'STRING': 0.3333333333333333, 'NUMBER': 0.3364485981308411, 'KEYWORD': 0.25892857142857145}
+Score (accuracy) of the probe: 0.31
+{'__OVERALL__': 0.31346578366445915, 'NAME': 0.3333333333333333, 'STRING': 0.3877551020408163, 'NUMBER': 0.3142857142857143, 'KEYWORD': 0.23140495867768596}
 Accuracy on the test set of pretrained_BERT_control_task model using the intercept:
-Score (accuracy) of the probe: 0.23
-pretrained_BERT_control_task Selectivity (Diff. between true task and probing task performance):  0.5805739514348786
+Score (accuracy) of the probe: 0.28
+pretrained_BERT_control_task Selectivity (Diff. between true task and probing task performance):  0.509933774834437
 ----------------------------------------------------------------
