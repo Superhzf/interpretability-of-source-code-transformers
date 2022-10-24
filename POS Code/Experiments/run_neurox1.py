@@ -1,7 +1,7 @@
 import argparse
 from utils import remove_seen_tokens,Normalization, extract_activations, load_extracted_activations, load_tokens
 from utils import get_mappings,all_activations_probe,get_imp_neurons,get_top_words,layerwise_probes_inference
-from utils import control_task_probes, probeless,filter_by_frequency,preprocess
+from utils import control_task_probes, probeless,filter_by_frequency,preprocess,alignTokenAct
 from sklearn.model_selection import train_test_split
 import numpy as np
 import collections
@@ -51,6 +51,7 @@ def main():
             _,_,flat_tokens_test,X_test, y_test, _, _=preprocess(ACTIVATION_NAMES[this_model][1],
                                             './src_files/codetest2_test_unique.in','./src_files/codetest2_test_unique.label',
                                             freq_threshold,this_model)
+            # remove tokens that are shared by training and testing
             idx_selected = []
             for this_token in flat_tokens_train:
                 if this_token in flat_tokens_test:
