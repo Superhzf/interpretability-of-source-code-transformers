@@ -287,5 +287,5 @@ def preprocess(activation_file_name,IN_file,LABEL_file,freq_threshold,model_name
     tokens =  load_tokens(activations,IN_file,LABEL_file)
     tokens,activations=remove_seen_tokens(tokens,activations)
     X, y, label2idx, idx2label, _, _ = get_mappings(tokens,activations)
-    tokens,X_train, y_train, label2idx, idx2label = filter_by_frequency(tokens,X,y,label2idx,idx2label,freq_threshold,model_name)
-    return tokens,X_train,y_train,label2idx,idx2label
+    src_tokens,X_train, y_train, label2idx, idx2label = filter_by_frequency(tokens['source'],X,y,label2idx,idx2label,freq_threshold,model_name)
+    return src_tokens,X_train,y_train,label2idx,idx2label
