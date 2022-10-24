@@ -301,7 +301,7 @@ def filter_by_frequency(tokens,activations,X,y,label2idx,idx2label,threshold,mod
     flat_src_tokens = flat_src_tokens[idx_selected]
     tokens,activations=alignTokenAct(tokens,activations,idx_selected)
     assert (flat_src_tokens == np.array([l for sublist in tokens['source'] for l in sublist])).all()
-    assert len(np.array([l for sublist in activations for l in sublist])) == len(flat_src_tokens)
+    assert len([l for sublist in activations for l in sublist]) == len(flat_src_tokens)
     assert len(np.array([l for sublist in tokens['target'] for l in sublist])) == len(flat_src_tokens)
 
     label2idx = {label:idx for (label,idx) in label2idx.items() if idx <= threshold}
