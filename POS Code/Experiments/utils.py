@@ -149,6 +149,9 @@ def get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,probe,label2id
     X_selected_test = ablation.filter_activations_keep_neurons(X_test, top_neurons)
     print("The shape of selected features",X_selected_train.shape)
     this_model_name = f"{model_name}_top5%_neurons"
+    print("The shape of the training set:",X_train.shape)
+    print("The shape of the validation set:",X_valid.shape)
+    print("The shape of the testing set:",X_test.shape)
     all_activations_probe(X_selected_train,y_train,X_selected_valid,y_valid,X_selected_test,y_test,idx2label,this_model_name)
 
     ordering, cutoffs = linear_probe.get_neuron_ordering(probe, label2idx)

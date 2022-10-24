@@ -73,6 +73,9 @@ def main():
             # probeless(X_train,y_train,this_model)
 
             #All activations probes
+            print("The shape of the training set:",X_train.shape)
+            print("The shape of the validation set:",X_valid.shape)
+            print("The shape of the testing set:",X_test.shape)
             probe, scores = all_activations_probe(X_train,y_train,X_valid,y_valid,X_test, y_test,idx2label_train,this_model)
 
             #Layerwise Probes
@@ -80,7 +83,7 @@ def main():
 
             #Important neuron probes
             top_neurons = get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,probe,label2idx_train,idx2label_train,this_model)
-            # get_top_words(top_neurons,tokens,activations,this_model)
+            get_top_words(top_neurons,tokens,activations,this_model)
             del X_train, X_test, X_valid,y_train, y_test,y_valid
             #Control task probes
             selectivity = control_task_probes(tokens_train,X_train_copy,y_train_copy,
