@@ -8,7 +8,7 @@ length of source dictionary:  1042
 length of target dictionary:  34
 1042
 Total instances: 1042
-['ignore', '"m_RenderMode"', 'SEARCH_COUNT_LIMIT', 'activity', 'disable_range', '"[sysconf]\\\\n"', 'standard_library', 'update_server', 'make_firmware_dict', 'long', '"m_LightmapIndex"', '300', 'logging', 'symlink', 'writedata', 'patch', 'vcard', '1800', 'config', 'create_server_profile_template']
+['"m_VelocityScale"', 'XMPP_IDLE_TIME', 'server_hardware_type', 'get_userinfo_from_token', 'eg_uri', 'Node', '"policy_profile"', 'StreamClosed', 'Register', 'version_info', 'target', 'GetUID', 'hpOneView', 'reactor', 'get_int', 'help', 'entity', 'biosSettings', 'gbkDec', '"m_LightmapTilingOffset"']
 Number of samples:  1042
 Stats: Labels with their frequencies in the final set
 NAME 876
@@ -58,7 +58,7 @@ length of source dictionary:  482
 length of target dictionary:  33
 482
 Total instances: 482
-['h0', 'get_params', 'h_updates', 'get_output_kwargs', 'net', 'getter', 'sc', 'expected', 'x', 'sum_t', 'is', 'predicted', 'crop_u', 'test_get_output_shape_for_cropped', 'name', 'signal', 'MultiStep', 'mod_name', 'test_bad_coeffs_fails', 'params']
+['OrderedDict', 'b1', 'exclude', '"%s.%s"', 'buffer_structure', 'zip', 'handler', 'data', 'gru', 'W1', '<', 'on_rtd', 'getter', '0.97', '0.001', 'threshold', 'return', 'shape', 'TestConcatLayer', 'c']
 Number of samples:  482
 Stats: Labels with their frequencies in the final set
 NAME 400
@@ -105,9 +105,9 @@ Creating model...
 Number of training instances: 908
 Number of classes: 4
 Epoch: [1/10], Loss: 0.0150
-Epoch: [2/10], Loss: 0.0069
-Epoch: [3/10], Loss: 0.0039
-Epoch: [4/10], Loss: 0.0023
+Epoch: [2/10], Loss: 0.0068
+Epoch: [3/10], Loss: 0.0037
+Epoch: [4/10], Loss: 0.0022
 Epoch: [5/10], Loss: 0.0011
 Epoch: [6/10], Loss: 0.0006
 Epoch: [7/10], Loss: 0.0003
@@ -120,10 +120,10 @@ Creating model...
 Number of training instances: 908
 Number of classes: 4
 Epoch: [1/10], Loss: 0.0147
-Epoch: [2/10], Loss: 0.0068
+Epoch: [2/10], Loss: 0.0063
 Epoch: [3/10], Loss: 0.0037
-Epoch: [4/10], Loss: 0.0021
-Epoch: [5/10], Loss: 0.0010
+Epoch: [4/10], Loss: 0.0024
+Epoch: [5/10], Loss: 0.0011
 Epoch: [6/10], Loss: 0.0006
 Epoch: [7/10], Loss: 0.0003
 Epoch: [8/10], Loss: 0.0003
@@ -134,26 +134,26 @@ Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0146
-Epoch: [2/10], Loss: 0.0062
-Epoch: [3/10], Loss: 0.0036
-Epoch: [4/10], Loss: 0.0025
+Epoch: [1/10], Loss: 0.0148
+Epoch: [2/10], Loss: 0.0066
+Epoch: [3/10], Loss: 0.0038
+Epoch: [4/10], Loss: 0.0024
 Epoch: [5/10], Loss: 0.0012
 Epoch: [6/10], Loss: 0.0008
 Epoch: [7/10], Loss: 0.0005
 Epoch: [8/10], Loss: 0.0004
 Epoch: [9/10], Loss: 0.0003
 Epoch: [10/10], Loss: 0.0003
-Score (accuracy) of the probe: 0.98
+Score (accuracy) of the probe: 0.97
 Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0156
-Epoch: [2/10], Loss: 0.0078
+Epoch: [1/10], Loss: 0.0153
+Epoch: [2/10], Loss: 0.0075
 Epoch: [3/10], Loss: 0.0048
-Epoch: [4/10], Loss: 0.0036
-Epoch: [5/10], Loss: 0.0024
+Epoch: [4/10], Loss: 0.0037
+Epoch: [5/10], Loss: 0.0025
 Epoch: [6/10], Loss: 0.0020
 Epoch: [7/10], Loss: 0.0018
 Epoch: [8/10], Loss: 0.0017
@@ -162,8 +162,8 @@ Epoch: [10/10], Loss: 0.0016
 Score (accuracy) of the probe: 0.98
 The best l1=0, the best l2=0 for pretrained_BERT
 Accuracy on the test set of probing pretrained_BERT of all layers:
-Score (accuracy) of the probe: 0.86
-{'__OVERALL__': 0.8587196467991169, 'NAME': 0.84, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 1.0}
+Score (accuracy) of the probe: 0.87
+{'__OVERALL__': 0.8653421633554084, 'NAME': 0.8475, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 1.0}
 Accuracy on the test set of pretrained_BERT model using the intercept:
 Score (accuracy) of the probe: 0.88
 pretrained_BERT Layer 0
@@ -171,23 +171,90 @@ Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0123
-Epoch: [2/10], Loss: 0.0098
-Epoch: [3/10], Loss: 0.0088
-Epoch: [4/10], Loss: 0.0081
-Epoch: [5/10], Loss: 0.0074
-Epoch: [6/10], Loss: 0.0068
-Epoch: [7/10], Loss: 0.0063
+Epoch: [1/10], Loss: 0.0128
+Epoch: [2/10], Loss: 0.0100
+Epoch: [3/10], Loss: 0.0091
+Epoch: [4/10], Loss: 0.0083
+Epoch: [5/10], Loss: 0.0076
+Epoch: [6/10], Loss: 0.0070
+Epoch: [7/10], Loss: 0.0064
+Epoch: [8/10], Loss: 0.0060
+Epoch: [9/10], Loss: 0.0056
+Epoch: [10/10], Loss: 0.0053
+Score (accuracy) of the probe: 0.83
+Training classification probe
+Creating model...
+Number of training instances: 908
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0126
+Epoch: [2/10], Loss: 0.0100
+Epoch: [3/10], Loss: 0.0091
+Epoch: [4/10], Loss: 0.0083
+Epoch: [5/10], Loss: 0.0076
+Epoch: [6/10], Loss: 0.0070
+Epoch: [7/10], Loss: 0.0065
+Epoch: [8/10], Loss: 0.0060
+Epoch: [9/10], Loss: 0.0057
+Epoch: [10/10], Loss: 0.0053
+Score (accuracy) of the probe: 0.82
+Training classification probe
+Creating model...
+Number of training instances: 908
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0128
+Epoch: [2/10], Loss: 0.0102
+Epoch: [3/10], Loss: 0.0091
+Epoch: [4/10], Loss: 0.0083
+Epoch: [5/10], Loss: 0.0076
+Epoch: [6/10], Loss: 0.0070
+Epoch: [7/10], Loss: 0.0064
+Epoch: [8/10], Loss: 0.0060
+Epoch: [9/10], Loss: 0.0057
+Epoch: [10/10], Loss: 0.0053
+Score (accuracy) of the probe: 0.84
+Training classification probe
+Creating model...
+Number of training instances: 908
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0142
+Epoch: [2/10], Loss: 0.0115
+Epoch: [3/10], Loss: 0.0103
+Epoch: [4/10], Loss: 0.0094
+Epoch: [5/10], Loss: 0.0087
+Epoch: [6/10], Loss: 0.0081
+Epoch: [7/10], Loss: 0.0077
+Epoch: [8/10], Loss: 0.0073
+Epoch: [9/10], Loss: 0.0069
+Epoch: [10/10], Loss: 0.0066
+Score (accuracy) of the probe: 0.79
+The best l1=0, the best l2=0.01 for pretrained_BERT_layer_0
+Accuracy on the test set of probing pretrained_BERT_layer_0 of all layers:
+Score (accuracy) of the probe: 0.72
+{'__OVERALL__': 0.7152317880794702, 'NAME': 0.6775, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 1.0}
+Accuracy on the test set of pretrained_BERT_layer_0 model using the intercept:
+Score (accuracy) of the probe: 0.88
+pretrained_BERT Layer 1
+Training classification probe
+Creating model...
+Number of training instances: 908
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0132
+Epoch: [2/10], Loss: 0.0102
+Epoch: [3/10], Loss: 0.0091
+Epoch: [4/10], Loss: 0.0082
+Epoch: [5/10], Loss: 0.0075
+Epoch: [6/10], Loss: 0.0069
+Epoch: [7/10], Loss: 0.0064
 Epoch: [8/10], Loss: 0.0059
-Epoch: [9/10], Loss: 0.0055
+Epoch: [9/10], Loss: 0.0056
 Epoch: [10/10], Loss: 0.0052
 Score (accuracy) of the probe: 0.76
 Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0132
-Epoch: [2/10], Loss: 0.0103
+Epoch: [1/10], Loss: 0.0137
+Epoch: [2/10], Loss: 0.0104
 Epoch: [3/10], Loss: 0.0093
 Epoch: [4/10], Loss: 0.0085
 Epoch: [5/10], Loss: 0.0078
@@ -201,23 +268,23 @@ Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0128
-Epoch: [2/10], Loss: 0.0102
-Epoch: [3/10], Loss: 0.0092
-Epoch: [4/10], Loss: 0.0084
-Epoch: [5/10], Loss: 0.0077
-Epoch: [6/10], Loss: 0.0071
-Epoch: [7/10], Loss: 0.0066
-Epoch: [8/10], Loss: 0.0062
-Epoch: [9/10], Loss: 0.0058
-Epoch: [10/10], Loss: 0.0054
+Epoch: [1/10], Loss: 0.0126
+Epoch: [2/10], Loss: 0.0100
+Epoch: [3/10], Loss: 0.0090
+Epoch: [4/10], Loss: 0.0081
+Epoch: [5/10], Loss: 0.0074
+Epoch: [6/10], Loss: 0.0068
+Epoch: [7/10], Loss: 0.0063
+Epoch: [8/10], Loss: 0.0059
+Epoch: [9/10], Loss: 0.0056
+Epoch: [10/10], Loss: 0.0052
 Score (accuracy) of the probe: 0.80
 Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
 Epoch: [1/10], Loss: 0.0138
-Epoch: [2/10], Loss: 0.0109
+Epoch: [2/10], Loss: 0.0110
 Epoch: [3/10], Loss: 0.0100
 Epoch: [4/10], Loss: 0.0092
 Epoch: [5/10], Loss: 0.0085
@@ -226,78 +293,11 @@ Epoch: [7/10], Loss: 0.0075
 Epoch: [8/10], Loss: 0.0071
 Epoch: [9/10], Loss: 0.0068
 Epoch: [10/10], Loss: 0.0065
-Score (accuracy) of the probe: 0.82
-The best l1=0, the best l2=0.001 for pretrained_BERT_layer_0
-Accuracy on the test set of probing pretrained_BERT_layer_0 of all layers:
-Score (accuracy) of the probe: 0.72
-{'__OVERALL__': 0.7218543046357616, 'NAME': 0.685, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 1.0}
-Accuracy on the test set of pretrained_BERT_layer_0 model using the intercept:
-Score (accuracy) of the probe: 0.88
-pretrained_BERT Layer 1
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0131
-Epoch: [2/10], Loss: 0.0103
-Epoch: [3/10], Loss: 0.0092
-Epoch: [4/10], Loss: 0.0083
-Epoch: [5/10], Loss: 0.0076
-Epoch: [6/10], Loss: 0.0069
-Epoch: [7/10], Loss: 0.0064
-Epoch: [8/10], Loss: 0.0060
-Epoch: [9/10], Loss: 0.0056
-Epoch: [10/10], Loss: 0.0052
-Score (accuracy) of the probe: 0.79
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0128
-Epoch: [2/10], Loss: 0.0100
-Epoch: [3/10], Loss: 0.0090
-Epoch: [4/10], Loss: 0.0081
-Epoch: [5/10], Loss: 0.0075
-Epoch: [6/10], Loss: 0.0069
-Epoch: [7/10], Loss: 0.0064
-Epoch: [8/10], Loss: 0.0060
-Epoch: [9/10], Loss: 0.0056
-Epoch: [10/10], Loss: 0.0053
-Score (accuracy) of the probe: 0.75
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0140
-Epoch: [2/10], Loss: 0.0107
-Epoch: [3/10], Loss: 0.0095
-Epoch: [4/10], Loss: 0.0086
-Epoch: [5/10], Loss: 0.0079
-Epoch: [6/10], Loss: 0.0072
-Epoch: [7/10], Loss: 0.0067
-Epoch: [8/10], Loss: 0.0063
-Epoch: [9/10], Loss: 0.0059
-Epoch: [10/10], Loss: 0.0055
 Score (accuracy) of the probe: 0.78
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0143
-Epoch: [2/10], Loss: 0.0113
-Epoch: [3/10], Loss: 0.0102
-Epoch: [4/10], Loss: 0.0093
-Epoch: [5/10], Loss: 0.0086
-Epoch: [6/10], Loss: 0.0080
-Epoch: [7/10], Loss: 0.0075
-Epoch: [8/10], Loss: 0.0071
-Epoch: [9/10], Loss: 0.0068
-Epoch: [10/10], Loss: 0.0065
-Score (accuracy) of the probe: 0.81
-The best l1=0, the best l2=0.1 for pretrained_BERT_layer_1
+The best l1=0, the best l2=0.001 for pretrained_BERT_layer_1
 Accuracy on the test set of probing pretrained_BERT_layer_1 of all layers:
-Score (accuracy) of the probe: 0.69
-{'__OVERALL__': 0.6865342163355408, 'NAME': 0.645, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 1.0}
+Score (accuracy) of the probe: 0.68
+{'__OVERALL__': 0.6821192052980133, 'NAME': 0.6425, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 0.9545454545454546}
 Accuracy on the test set of pretrained_BERT_layer_1 model using the intercept:
 Score (accuracy) of the probe: 0.88
 pretrained_BERT Layer 2
@@ -305,39 +305,24 @@ Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0126
-Epoch: [2/10], Loss: 0.0098
-Epoch: [3/10], Loss: 0.0088
-Epoch: [4/10], Loss: 0.0079
-Epoch: [5/10], Loss: 0.0072
+Epoch: [1/10], Loss: 0.0128
+Epoch: [2/10], Loss: 0.0100
+Epoch: [3/10], Loss: 0.0089
+Epoch: [4/10], Loss: 0.0080
+Epoch: [5/10], Loss: 0.0073
 Epoch: [6/10], Loss: 0.0067
 Epoch: [7/10], Loss: 0.0062
 Epoch: [8/10], Loss: 0.0058
 Epoch: [9/10], Loss: 0.0054
 Epoch: [10/10], Loss: 0.0051
-Score (accuracy) of the probe: 0.79
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0135
-Epoch: [2/10], Loss: 0.0105
-Epoch: [3/10], Loss: 0.0093
-Epoch: [4/10], Loss: 0.0084
-Epoch: [5/10], Loss: 0.0077
-Epoch: [6/10], Loss: 0.0070
-Epoch: [7/10], Loss: 0.0065
-Epoch: [8/10], Loss: 0.0061
-Epoch: [9/10], Loss: 0.0057
-Epoch: [10/10], Loss: 0.0054
-Score (accuracy) of the probe: 0.82
+Score (accuracy) of the probe: 0.80
 Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
 Epoch: [1/10], Loss: 0.0130
-Epoch: [2/10], Loss: 0.0101
-Epoch: [3/10], Loss: 0.0090
+Epoch: [2/10], Loss: 0.0100
+Epoch: [3/10], Loss: 0.0089
 Epoch: [4/10], Loss: 0.0081
 Epoch: [5/10], Loss: 0.0074
 Epoch: [6/10], Loss: 0.0068
@@ -345,26 +330,41 @@ Epoch: [7/10], Loss: 0.0063
 Epoch: [8/10], Loss: 0.0059
 Epoch: [9/10], Loss: 0.0056
 Epoch: [10/10], Loss: 0.0053
-Score (accuracy) of the probe: 0.78
+Score (accuracy) of the probe: 0.81
 Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0135
-Epoch: [2/10], Loss: 0.0108
-Epoch: [3/10], Loss: 0.0097
-Epoch: [4/10], Loss: 0.0089
-Epoch: [5/10], Loss: 0.0082
-Epoch: [6/10], Loss: 0.0077
-Epoch: [7/10], Loss: 0.0072
-Epoch: [8/10], Loss: 0.0069
-Epoch: [9/10], Loss: 0.0066
-Epoch: [10/10], Loss: 0.0063
-Score (accuracy) of the probe: 0.79
-The best l1=0, the best l2=0.001 for pretrained_BERT_layer_2
+Epoch: [1/10], Loss: 0.0132
+Epoch: [2/10], Loss: 0.0104
+Epoch: [3/10], Loss: 0.0092
+Epoch: [4/10], Loss: 0.0083
+Epoch: [5/10], Loss: 0.0075
+Epoch: [6/10], Loss: 0.0070
+Epoch: [7/10], Loss: 0.0065
+Epoch: [8/10], Loss: 0.0061
+Epoch: [9/10], Loss: 0.0057
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the probe: 0.77
+Training classification probe
+Creating model...
+Number of training instances: 908
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0140
+Epoch: [2/10], Loss: 0.0111
+Epoch: [3/10], Loss: 0.0100
+Epoch: [4/10], Loss: 0.0091
+Epoch: [5/10], Loss: 0.0084
+Epoch: [6/10], Loss: 0.0078
+Epoch: [7/10], Loss: 0.0074
+Epoch: [8/10], Loss: 0.0070
+Epoch: [9/10], Loss: 0.0067
+Epoch: [10/10], Loss: 0.0064
+Score (accuracy) of the probe: 0.86
+The best l1=0, the best l2=0.1 for pretrained_BERT_layer_2
 Accuracy on the test set of probing pretrained_BERT_layer_2 of all layers:
 Score (accuracy) of the probe: 0.71
-{'__OVERALL__': 0.7064017660044151, 'NAME': 0.6725, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 0.9090909090909091}
+{'__OVERALL__': 0.7108167770419426, 'NAME': 0.675, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 0.9545454545454546}
 Accuracy on the test set of pretrained_BERT_layer_2 model using the intercept:
 Score (accuracy) of the probe: 0.88
 pretrained_BERT Layer 3
@@ -372,66 +372,66 @@ Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0133
-Epoch: [2/10], Loss: 0.0102
-Epoch: [3/10], Loss: 0.0090
-Epoch: [4/10], Loss: 0.0082
-Epoch: [5/10], Loss: 0.0074
-Epoch: [6/10], Loss: 0.0068
-Epoch: [7/10], Loss: 0.0063
-Epoch: [8/10], Loss: 0.0059
-Epoch: [9/10], Loss: 0.0055
-Epoch: [10/10], Loss: 0.0052
+Epoch: [1/10], Loss: 0.0132
+Epoch: [2/10], Loss: 0.0101
+Epoch: [3/10], Loss: 0.0089
+Epoch: [4/10], Loss: 0.0080
+Epoch: [5/10], Loss: 0.0072
+Epoch: [6/10], Loss: 0.0066
+Epoch: [7/10], Loss: 0.0061
+Epoch: [8/10], Loss: 0.0057
+Epoch: [9/10], Loss: 0.0053
+Epoch: [10/10], Loss: 0.0050
 Score (accuracy) of the probe: 0.79
 Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0135
-Epoch: [2/10], Loss: 0.0103
-Epoch: [3/10], Loss: 0.0091
-Epoch: [4/10], Loss: 0.0082
-Epoch: [5/10], Loss: 0.0074
-Epoch: [6/10], Loss: 0.0068
-Epoch: [7/10], Loss: 0.0063
-Epoch: [8/10], Loss: 0.0058
-Epoch: [9/10], Loss: 0.0055
-Epoch: [10/10], Loss: 0.0051
-Score (accuracy) of the probe: 0.82
+Epoch: [1/10], Loss: 0.0138
+Epoch: [2/10], Loss: 0.0106
+Epoch: [3/10], Loss: 0.0094
+Epoch: [4/10], Loss: 0.0084
+Epoch: [5/10], Loss: 0.0076
+Epoch: [6/10], Loss: 0.0070
+Epoch: [7/10], Loss: 0.0064
+Epoch: [8/10], Loss: 0.0060
+Epoch: [9/10], Loss: 0.0056
+Epoch: [10/10], Loss: 0.0052
+Score (accuracy) of the probe: 0.85
 Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
 Epoch: [1/10], Loss: 0.0132
 Epoch: [2/10], Loss: 0.0102
-Epoch: [3/10], Loss: 0.0090
+Epoch: [3/10], Loss: 0.0091
 Epoch: [4/10], Loss: 0.0082
 Epoch: [5/10], Loss: 0.0075
 Epoch: [6/10], Loss: 0.0069
 Epoch: [7/10], Loss: 0.0064
 Epoch: [8/10], Loss: 0.0059
 Epoch: [9/10], Loss: 0.0056
-Epoch: [10/10], Loss: 0.0052
-Score (accuracy) of the probe: 0.81
+Epoch: [10/10], Loss: 0.0053
+Score (accuracy) of the probe: 0.77
 Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0137
-Epoch: [2/10], Loss: 0.0108
-Epoch: [3/10], Loss: 0.0097
-Epoch: [4/10], Loss: 0.0089
-Epoch: [5/10], Loss: 0.0082
-Epoch: [6/10], Loss: 0.0076
-Epoch: [7/10], Loss: 0.0071
-Epoch: [8/10], Loss: 0.0068
+Epoch: [1/10], Loss: 0.0139
+Epoch: [2/10], Loss: 0.0109
+Epoch: [3/10], Loss: 0.0098
+Epoch: [4/10], Loss: 0.0090
+Epoch: [5/10], Loss: 0.0083
+Epoch: [6/10], Loss: 0.0077
+Epoch: [7/10], Loss: 0.0072
+Epoch: [8/10], Loss: 0.0069
 Epoch: [9/10], Loss: 0.0065
 Epoch: [10/10], Loss: 0.0062
-Score (accuracy) of the probe: 0.81
+Score (accuracy) of the probe: 0.84
 The best l1=0, the best l2=0.001 for pretrained_BERT_layer_3
 Accuracy on the test set of probing pretrained_BERT_layer_3 of all layers:
-Score (accuracy) of the probe: 0.71
-{'__OVERALL__': 0.7086092715231788, 'NAME': 0.6725, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 0.9545454545454546}
+Score (accuracy) of the probe: 0.70
+{'__OVERALL__': 0.695364238410596, 'NAME': 0.66, 'STRING': 1.0, 'NUMBER': 0.9629629629629629, 'KEYWORD': 0.9545454545454546}
 Accuracy on the test set of pretrained_BERT_layer_3 model using the intercept:
 Score (accuracy) of the probe: 0.88
 pretrained_BERT Layer 4
@@ -439,21 +439,6 @@ Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0124
-Epoch: [2/10], Loss: 0.0096
-Epoch: [3/10], Loss: 0.0084
-Epoch: [4/10], Loss: 0.0076
-Epoch: [5/10], Loss: 0.0069
-Epoch: [6/10], Loss: 0.0063
-Epoch: [7/10], Loss: 0.0058
-Epoch: [8/10], Loss: 0.0054
-Epoch: [9/10], Loss: 0.0051
-Epoch: [10/10], Loss: 0.0048
-Score (accuracy) of the probe: 0.89
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
 Epoch: [1/10], Loss: 0.0129
 Epoch: [2/10], Loss: 0.0098
 Epoch: [3/10], Loss: 0.0086
@@ -462,43 +447,58 @@ Epoch: [5/10], Loss: 0.0070
 Epoch: [6/10], Loss: 0.0064
 Epoch: [7/10], Loss: 0.0059
 Epoch: [8/10], Loss: 0.0055
-Epoch: [9/10], Loss: 0.0051
-Epoch: [10/10], Loss: 0.0048
-Score (accuracy) of the probe: 0.88
+Epoch: [9/10], Loss: 0.0052
+Epoch: [10/10], Loss: 0.0049
+Score (accuracy) of the probe: 0.86
 Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0135
-Epoch: [2/10], Loss: 0.0104
-Epoch: [3/10], Loss: 0.0092
-Epoch: [4/10], Loss: 0.0082
-Epoch: [5/10], Loss: 0.0075
-Epoch: [6/10], Loss: 0.0069
-Epoch: [7/10], Loss: 0.0064
-Epoch: [8/10], Loss: 0.0060
-Epoch: [9/10], Loss: 0.0056
-Epoch: [10/10], Loss: 0.0053
+Epoch: [1/10], Loss: 0.0132
+Epoch: [2/10], Loss: 0.0101
+Epoch: [3/10], Loss: 0.0088
+Epoch: [4/10], Loss: 0.0079
+Epoch: [5/10], Loss: 0.0072
+Epoch: [6/10], Loss: 0.0066
+Epoch: [7/10], Loss: 0.0061
+Epoch: [8/10], Loss: 0.0056
+Epoch: [9/10], Loss: 0.0053
+Epoch: [10/10], Loss: 0.0050
 Score (accuracy) of the probe: 0.87
 Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0139
-Epoch: [2/10], Loss: 0.0109
-Epoch: [3/10], Loss: 0.0097
-Epoch: [4/10], Loss: 0.0087
-Epoch: [5/10], Loss: 0.0080
-Epoch: [6/10], Loss: 0.0075
-Epoch: [7/10], Loss: 0.0070
-Epoch: [8/10], Loss: 0.0067
-Epoch: [9/10], Loss: 0.0063
-Epoch: [10/10], Loss: 0.0061
+Epoch: [1/10], Loss: 0.0129
+Epoch: [2/10], Loss: 0.0101
+Epoch: [3/10], Loss: 0.0089
+Epoch: [4/10], Loss: 0.0080
+Epoch: [5/10], Loss: 0.0072
+Epoch: [6/10], Loss: 0.0067
+Epoch: [7/10], Loss: 0.0062
+Epoch: [8/10], Loss: 0.0058
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0051
 Score (accuracy) of the probe: 0.86
-The best l1=0, the best l2=0 for pretrained_BERT_layer_4
+Training classification probe
+Creating model...
+Number of training instances: 908
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0141
+Epoch: [2/10], Loss: 0.0111
+Epoch: [3/10], Loss: 0.0099
+Epoch: [4/10], Loss: 0.0090
+Epoch: [5/10], Loss: 0.0083
+Epoch: [6/10], Loss: 0.0077
+Epoch: [7/10], Loss: 0.0073
+Epoch: [8/10], Loss: 0.0069
+Epoch: [9/10], Loss: 0.0065
+Epoch: [10/10], Loss: 0.0062
+Score (accuracy) of the probe: 0.84
+The best l1=0, the best l2=0.001 for pretrained_BERT_layer_4
 Accuracy on the test set of probing pretrained_BERT_layer_4 of all layers:
 Score (accuracy) of the probe: 0.72
-{'__OVERALL__': 0.7218543046357616, 'NAME': 0.695, 'STRING': 1.0, 'NUMBER': 0.9629629629629629, 'KEYWORD': 0.8636363636363636}
+{'__OVERALL__': 0.717439293598234, 'NAME': 0.6825, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 0.9545454545454546}
 Accuracy on the test set of pretrained_BERT_layer_4 model using the intercept:
 Score (accuracy) of the probe: 0.88
 pretrained_BERT Layer 5
@@ -506,24 +506,9 @@ Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0131
+Epoch: [1/10], Loss: 0.0133
 Epoch: [2/10], Loss: 0.0099
 Epoch: [3/10], Loss: 0.0087
-Epoch: [4/10], Loss: 0.0078
-Epoch: [5/10], Loss: 0.0071
-Epoch: [6/10], Loss: 0.0065
-Epoch: [7/10], Loss: 0.0060
-Epoch: [8/10], Loss: 0.0056
-Epoch: [9/10], Loss: 0.0052
-Epoch: [10/10], Loss: 0.0049
-Score (accuracy) of the probe: 0.83
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0129
-Epoch: [2/10], Loss: 0.0098
-Epoch: [3/10], Loss: 0.0086
 Epoch: [4/10], Loss: 0.0077
 Epoch: [5/10], Loss: 0.0070
 Epoch: [6/10], Loss: 0.0064
@@ -531,12 +516,27 @@ Epoch: [7/10], Loss: 0.0059
 Epoch: [8/10], Loss: 0.0055
 Epoch: [9/10], Loss: 0.0051
 Epoch: [10/10], Loss: 0.0048
-Score (accuracy) of the probe: 0.84
+Score (accuracy) of the probe: 0.86
 Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0132
+Epoch: [1/10], Loss: 0.0133
+Epoch: [2/10], Loss: 0.0098
+Epoch: [3/10], Loss: 0.0086
+Epoch: [4/10], Loss: 0.0078
+Epoch: [5/10], Loss: 0.0070
+Epoch: [6/10], Loss: 0.0064
+Epoch: [7/10], Loss: 0.0059
+Epoch: [8/10], Loss: 0.0055
+Epoch: [9/10], Loss: 0.0052
+Epoch: [10/10], Loss: 0.0048
+Score (accuracy) of the probe: 0.87
+Training classification probe
+Creating model...
+Number of training instances: 908
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0130
 Epoch: [2/10], Loss: 0.0099
 Epoch: [3/10], Loss: 0.0087
 Epoch: [4/10], Loss: 0.0078
@@ -546,29 +546,111 @@ Epoch: [7/10], Loss: 0.0060
 Epoch: [8/10], Loss: 0.0056
 Epoch: [9/10], Loss: 0.0052
 Epoch: [10/10], Loss: 0.0049
-Score (accuracy) of the probe: 0.83
+Score (accuracy) of the probe: 0.82
 Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
 Epoch: [1/10], Loss: 0.0141
 Epoch: [2/10], Loss: 0.0110
-Epoch: [3/10], Loss: 0.0098
+Epoch: [3/10], Loss: 0.0097
 Epoch: [4/10], Loss: 0.0088
 Epoch: [5/10], Loss: 0.0081
 Epoch: [6/10], Loss: 0.0075
-Epoch: [7/10], Loss: 0.0071
+Epoch: [7/10], Loss: 0.0070
 Epoch: [8/10], Loss: 0.0067
 Epoch: [9/10], Loss: 0.0064
 Epoch: [10/10], Loss: 0.0061
-Score (accuracy) of the probe: 0.92
-The best l1=0, the best l2=0.1 for pretrained_BERT_layer_5
+Score (accuracy) of the probe: 0.85
+The best l1=0, the best l2=0.001 for pretrained_BERT_layer_5
 Accuracy on the test set of probing pretrained_BERT_layer_5 of all layers:
-Score (accuracy) of the probe: 0.76
-{'__OVERALL__': 0.7593818984547461, 'NAME': 0.73, 'STRING': 1.0, 'NUMBER': 0.9629629629629629, 'KEYWORD': 1.0}
+Score (accuracy) of the probe: 0.74
+{'__OVERALL__': 0.7417218543046358, 'NAME': 0.7125, 'STRING': 1.0, 'NUMBER': 0.9629629629629629, 'KEYWORD': 0.9545454545454546}
 Accuracy on the test set of pretrained_BERT_layer_5 model using the intercept:
 Score (accuracy) of the probe: 0.88
 pretrained_BERT Layer 6
+Training classification probe
+Creating model...
+Number of training instances: 908
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0132
+Epoch: [2/10], Loss: 0.0098
+Epoch: [3/10], Loss: 0.0086
+Epoch: [4/10], Loss: 0.0078
+Epoch: [5/10], Loss: 0.0070
+Epoch: [6/10], Loss: 0.0065
+Epoch: [7/10], Loss: 0.0060
+Epoch: [8/10], Loss: 0.0056
+Epoch: [9/10], Loss: 0.0052
+Epoch: [10/10], Loss: 0.0049
+Score (accuracy) of the probe: 0.88
+Training classification probe
+Creating model...
+Number of training instances: 908
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0132
+Epoch: [2/10], Loss: 0.0101
+Epoch: [3/10], Loss: 0.0088
+Epoch: [4/10], Loss: 0.0078
+Epoch: [5/10], Loss: 0.0071
+Epoch: [6/10], Loss: 0.0065
+Epoch: [7/10], Loss: 0.0060
+Epoch: [8/10], Loss: 0.0056
+Epoch: [9/10], Loss: 0.0052
+Epoch: [10/10], Loss: 0.0049
+Score (accuracy) of the probe: 0.89
+Training classification probe
+Creating model...
+Number of training instances: 908
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0130
+Epoch: [2/10], Loss: 0.0098
+Epoch: [3/10], Loss: 0.0086
+Epoch: [4/10], Loss: 0.0077
+Epoch: [5/10], Loss: 0.0070
+Epoch: [6/10], Loss: 0.0064
+Epoch: [7/10], Loss: 0.0059
+Epoch: [8/10], Loss: 0.0055
+Epoch: [9/10], Loss: 0.0052
+Epoch: [10/10], Loss: 0.0049
+Score (accuracy) of the probe: 0.86
+Training classification probe
+Creating model...
+Number of training instances: 908
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0138
+Epoch: [2/10], Loss: 0.0108
+Epoch: [3/10], Loss: 0.0096
+Epoch: [4/10], Loss: 0.0087
+Epoch: [5/10], Loss: 0.0080
+Epoch: [6/10], Loss: 0.0075
+Epoch: [7/10], Loss: 0.0070
+Epoch: [8/10], Loss: 0.0067
+Epoch: [9/10], Loss: 0.0063
+Epoch: [10/10], Loss: 0.0061
+Score (accuracy) of the probe: 0.88
+The best l1=0, the best l2=0.001 for pretrained_BERT_layer_6
+Accuracy on the test set of probing pretrained_BERT_layer_6 of all layers:
+Score (accuracy) of the probe: 0.74
+{'__OVERALL__': 0.7373068432671082, 'NAME': 0.7075, 'STRING': 1.0, 'NUMBER': 0.9259259259259259, 'KEYWORD': 1.0}
+Accuracy on the test set of pretrained_BERT_layer_6 model using the intercept:
+Score (accuracy) of the probe: 0.88
+pretrained_BERT Layer 7
+Training classification probe
+Creating model...
+Number of training instances: 908
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0127
+Epoch: [2/10], Loss: 0.0097
+Epoch: [3/10], Loss: 0.0085
+Epoch: [4/10], Loss: 0.0075
+Epoch: [5/10], Loss: 0.0068
+Epoch: [6/10], Loss: 0.0062
+Epoch: [7/10], Loss: 0.0057
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0050
+Epoch: [10/10], Loss: 0.0047
+Score (accuracy) of the probe: 0.92
 Training classification probe
 Creating model...
 Number of training instances: 908
@@ -577,129 +659,47 @@ Epoch: [1/10], Loss: 0.0128
 Epoch: [2/10], Loss: 0.0097
 Epoch: [3/10], Loss: 0.0085
 Epoch: [4/10], Loss: 0.0076
-Epoch: [5/10], Loss: 0.0068
-Epoch: [6/10], Loss: 0.0063
-Epoch: [7/10], Loss: 0.0058
-Epoch: [8/10], Loss: 0.0054
-Epoch: [9/10], Loss: 0.0051
-Epoch: [10/10], Loss: 0.0047
-Score (accuracy) of the probe: 0.93
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0123
-Epoch: [2/10], Loss: 0.0095
-Epoch: [3/10], Loss: 0.0083
-Epoch: [4/10], Loss: 0.0074
-Epoch: [5/10], Loss: 0.0067
-Epoch: [6/10], Loss: 0.0062
-Epoch: [7/10], Loss: 0.0057
-Epoch: [8/10], Loss: 0.0053
-Epoch: [9/10], Loss: 0.0050
-Epoch: [10/10], Loss: 0.0047
+Epoch: [5/10], Loss: 0.0069
+Epoch: [6/10], Loss: 0.0064
+Epoch: [7/10], Loss: 0.0059
+Epoch: [8/10], Loss: 0.0055
+Epoch: [9/10], Loss: 0.0052
+Epoch: [10/10], Loss: 0.0049
 Score (accuracy) of the probe: 0.90
 Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0131
-Epoch: [2/10], Loss: 0.0099
-Epoch: [3/10], Loss: 0.0087
-Epoch: [4/10], Loss: 0.0077
+Epoch: [1/10], Loss: 0.0125
+Epoch: [2/10], Loss: 0.0096
+Epoch: [3/10], Loss: 0.0085
+Epoch: [4/10], Loss: 0.0076
 Epoch: [5/10], Loss: 0.0070
 Epoch: [6/10], Loss: 0.0064
 Epoch: [7/10], Loss: 0.0059
 Epoch: [8/10], Loss: 0.0055
 Epoch: [9/10], Loss: 0.0052
 Epoch: [10/10], Loss: 0.0049
-Score (accuracy) of the probe: 0.89
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0140
-Epoch: [2/10], Loss: 0.0108
-Epoch: [3/10], Loss: 0.0095
-Epoch: [4/10], Loss: 0.0086
-Epoch: [5/10], Loss: 0.0079
-Epoch: [6/10], Loss: 0.0073
-Epoch: [7/10], Loss: 0.0069
-Epoch: [8/10], Loss: 0.0065
-Epoch: [9/10], Loss: 0.0062
-Epoch: [10/10], Loss: 0.0060
-Score (accuracy) of the probe: 0.86
-The best l1=0, the best l2=0 for pretrained_BERT_layer_6
-Accuracy on the test set of probing pretrained_BERT_layer_6 of all layers:
-Score (accuracy) of the probe: 0.76
-{'__OVERALL__': 0.7593818984547461, 'NAME': 0.7325, 'STRING': 1.0, 'NUMBER': 0.9629629629629629, 'KEYWORD': 0.9545454545454546}
-Accuracy on the test set of pretrained_BERT_layer_6 model using the intercept:
 Score (accuracy) of the probe: 0.88
-pretrained_BERT Layer 7
 Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0125
-Epoch: [2/10], Loss: 0.0094
-Epoch: [3/10], Loss: 0.0083
-Epoch: [4/10], Loss: 0.0075
-Epoch: [5/10], Loss: 0.0068
-Epoch: [6/10], Loss: 0.0063
-Epoch: [7/10], Loss: 0.0058
-Epoch: [8/10], Loss: 0.0054
-Epoch: [9/10], Loss: 0.0051
-Epoch: [10/10], Loss: 0.0048
-Score (accuracy) of the probe: 0.89
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0127
-Epoch: [2/10], Loss: 0.0096
-Epoch: [3/10], Loss: 0.0084
-Epoch: [4/10], Loss: 0.0075
-Epoch: [5/10], Loss: 0.0068
-Epoch: [6/10], Loss: 0.0063
-Epoch: [7/10], Loss: 0.0058
-Epoch: [8/10], Loss: 0.0054
-Epoch: [9/10], Loss: 0.0051
-Epoch: [10/10], Loss: 0.0048
-Score (accuracy) of the probe: 0.90
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0129
-Epoch: [2/10], Loss: 0.0097
-Epoch: [3/10], Loss: 0.0085
-Epoch: [4/10], Loss: 0.0077
-Epoch: [5/10], Loss: 0.0070
-Epoch: [6/10], Loss: 0.0065
-Epoch: [7/10], Loss: 0.0060
-Epoch: [8/10], Loss: 0.0056
-Epoch: [9/10], Loss: 0.0053
-Epoch: [10/10], Loss: 0.0049
-Score (accuracy) of the probe: 0.87
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0139
-Epoch: [2/10], Loss: 0.0107
-Epoch: [3/10], Loss: 0.0095
+Epoch: [1/10], Loss: 0.0143
+Epoch: [2/10], Loss: 0.0108
+Epoch: [3/10], Loss: 0.0096
 Epoch: [4/10], Loss: 0.0087
 Epoch: [5/10], Loss: 0.0080
 Epoch: [6/10], Loss: 0.0075
-Epoch: [7/10], Loss: 0.0070
+Epoch: [7/10], Loss: 0.0071
 Epoch: [8/10], Loss: 0.0067
 Epoch: [9/10], Loss: 0.0064
 Epoch: [10/10], Loss: 0.0061
-Score (accuracy) of the probe: 0.92
-The best l1=0, the best l2=0.1 for pretrained_BERT_layer_7
+Score (accuracy) of the probe: 0.90
+The best l1=0, the best l2=0 for pretrained_BERT_layer_7
 Accuracy on the test set of probing pretrained_BERT_layer_7 of all layers:
-Score (accuracy) of the probe: 0.74
-{'__OVERALL__': 0.7439293598233996, 'NAME': 0.715, 'STRING': 1.0, 'NUMBER': 0.9259259259259259, 'KEYWORD': 1.0}
+Score (accuracy) of the probe: 0.77
+{'__OVERALL__': 0.7748344370860927, 'NAME': 0.75, 'STRING': 1.0, 'NUMBER': 0.9629629629629629, 'KEYWORD': 0.9545454545454546}
 Accuracy on the test set of pretrained_BERT_layer_7 model using the intercept:
 Score (accuracy) of the probe: 0.88
 pretrained_BERT Layer 8
@@ -707,9 +707,9 @@ Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0127
-Epoch: [2/10], Loss: 0.0092
-Epoch: [3/10], Loss: 0.0080
+Epoch: [1/10], Loss: 0.0128
+Epoch: [2/10], Loss: 0.0093
+Epoch: [3/10], Loss: 0.0081
 Epoch: [4/10], Loss: 0.0072
 Epoch: [5/10], Loss: 0.0065
 Epoch: [6/10], Loss: 0.0060
@@ -717,56 +717,56 @@ Epoch: [7/10], Loss: 0.0055
 Epoch: [8/10], Loss: 0.0051
 Epoch: [9/10], Loss: 0.0048
 Epoch: [10/10], Loss: 0.0045
+Score (accuracy) of the probe: 0.87
+Training classification probe
+Creating model...
+Number of training instances: 908
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0130
+Epoch: [2/10], Loss: 0.0096
+Epoch: [3/10], Loss: 0.0084
+Epoch: [4/10], Loss: 0.0075
+Epoch: [5/10], Loss: 0.0068
+Epoch: [6/10], Loss: 0.0063
+Epoch: [7/10], Loss: 0.0058
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0050
+Epoch: [10/10], Loss: 0.0047
 Score (accuracy) of the probe: 0.90
 Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0126
-Epoch: [2/10], Loss: 0.0094
-Epoch: [3/10], Loss: 0.0082
-Epoch: [4/10], Loss: 0.0073
-Epoch: [5/10], Loss: 0.0066
-Epoch: [6/10], Loss: 0.0060
-Epoch: [7/10], Loss: 0.0056
-Epoch: [8/10], Loss: 0.0052
-Epoch: [9/10], Loss: 0.0048
-Epoch: [10/10], Loss: 0.0045
-Score (accuracy) of the probe: 0.83
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0136
+Epoch: [1/10], Loss: 0.0138
 Epoch: [2/10], Loss: 0.0101
-Epoch: [3/10], Loss: 0.0087
+Epoch: [3/10], Loss: 0.0088
 Epoch: [4/10], Loss: 0.0078
-Epoch: [5/10], Loss: 0.0070
-Epoch: [6/10], Loss: 0.0064
-Epoch: [7/10], Loss: 0.0059
-Epoch: [8/10], Loss: 0.0055
-Epoch: [9/10], Loss: 0.0052
-Epoch: [10/10], Loss: 0.0048
-Score (accuracy) of the probe: 0.89
+Epoch: [5/10], Loss: 0.0071
+Epoch: [6/10], Loss: 0.0065
+Epoch: [7/10], Loss: 0.0060
+Epoch: [8/10], Loss: 0.0056
+Epoch: [9/10], Loss: 0.0053
+Epoch: [10/10], Loss: 0.0049
+Score (accuracy) of the probe: 0.86
 Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0144
-Epoch: [2/10], Loss: 0.0107
+Epoch: [1/10], Loss: 0.0145
+Epoch: [2/10], Loss: 0.0108
 Epoch: [3/10], Loss: 0.0094
 Epoch: [4/10], Loss: 0.0085
 Epoch: [5/10], Loss: 0.0078
 Epoch: [6/10], Loss: 0.0073
-Epoch: [7/10], Loss: 0.0068
+Epoch: [7/10], Loss: 0.0069
 Epoch: [8/10], Loss: 0.0065
 Epoch: [9/10], Loss: 0.0062
 Epoch: [10/10], Loss: 0.0059
-Score (accuracy) of the probe: 0.85
-The best l1=0, the best l2=0 for pretrained_BERT_layer_8
+Score (accuracy) of the probe: 0.89
+The best l1=0, the best l2=0.001 for pretrained_BERT_layer_8
 Accuracy on the test set of probing pretrained_BERT_layer_8 of all layers:
-Score (accuracy) of the probe: 0.77
-{'__OVERALL__': 0.7682119205298014, 'NAME': 0.7525, 'STRING': 1.0, 'NUMBER': 0.8148148148148148, 'KEYWORD': 0.9545454545454546}
+Score (accuracy) of the probe: 0.75
+{'__OVERALL__': 0.7483443708609272, 'NAME': 0.7325, 'STRING': 1.0, 'NUMBER': 0.8148148148148148, 'KEYWORD': 0.9090909090909091}
 Accuracy on the test set of pretrained_BERT_layer_8 model using the intercept:
 Score (accuracy) of the probe: 0.88
 pretrained_BERT Layer 9
@@ -774,66 +774,66 @@ Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0128
+Epoch: [1/10], Loss: 0.0126
 Epoch: [2/10], Loss: 0.0093
 Epoch: [3/10], Loss: 0.0080
-Epoch: [4/10], Loss: 0.0071
+Epoch: [4/10], Loss: 0.0070
 Epoch: [5/10], Loss: 0.0063
 Epoch: [6/10], Loss: 0.0057
 Epoch: [7/10], Loss: 0.0053
-Epoch: [8/10], Loss: 0.0048
+Epoch: [8/10], Loss: 0.0049
 Epoch: [9/10], Loss: 0.0045
 Epoch: [10/10], Loss: 0.0042
-Score (accuracy) of the probe: 0.90
+Score (accuracy) of the probe: 0.86
 Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0134
-Epoch: [2/10], Loss: 0.0096
+Epoch: [1/10], Loss: 0.0127
+Epoch: [2/10], Loss: 0.0095
 Epoch: [3/10], Loss: 0.0082
-Epoch: [4/10], Loss: 0.0073
-Epoch: [5/10], Loss: 0.0066
-Epoch: [6/10], Loss: 0.0060
+Epoch: [4/10], Loss: 0.0072
+Epoch: [5/10], Loss: 0.0065
+Epoch: [6/10], Loss: 0.0059
 Epoch: [7/10], Loss: 0.0054
 Epoch: [8/10], Loss: 0.0050
-Epoch: [9/10], Loss: 0.0047
+Epoch: [9/10], Loss: 0.0046
 Epoch: [10/10], Loss: 0.0043
+Score (accuracy) of the probe: 0.85
+Training classification probe
+Creating model...
+Number of training instances: 908
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0139
+Epoch: [2/10], Loss: 0.0101
+Epoch: [3/10], Loss: 0.0087
+Epoch: [4/10], Loss: 0.0076
+Epoch: [5/10], Loss: 0.0068
+Epoch: [6/10], Loss: 0.0062
+Epoch: [7/10], Loss: 0.0057
+Epoch: [8/10], Loss: 0.0053
+Epoch: [9/10], Loss: 0.0049
+Epoch: [10/10], Loss: 0.0046
 Score (accuracy) of the probe: 0.89
 Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0135
-Epoch: [2/10], Loss: 0.0097
-Epoch: [3/10], Loss: 0.0083
-Epoch: [4/10], Loss: 0.0073
-Epoch: [5/10], Loss: 0.0065
-Epoch: [6/10], Loss: 0.0059
-Epoch: [7/10], Loss: 0.0055
-Epoch: [8/10], Loss: 0.0050
-Epoch: [9/10], Loss: 0.0047
-Epoch: [10/10], Loss: 0.0044
-Score (accuracy) of the probe: 0.90
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0144
-Epoch: [2/10], Loss: 0.0107
-Epoch: [3/10], Loss: 0.0093
-Epoch: [4/10], Loss: 0.0084
-Epoch: [5/10], Loss: 0.0076
-Epoch: [6/10], Loss: 0.0070
-Epoch: [7/10], Loss: 0.0066
-Epoch: [8/10], Loss: 0.0062
+Epoch: [1/10], Loss: 0.0142
+Epoch: [2/10], Loss: 0.0104
+Epoch: [3/10], Loss: 0.0091
+Epoch: [4/10], Loss: 0.0082
+Epoch: [5/10], Loss: 0.0075
+Epoch: [6/10], Loss: 0.0069
+Epoch: [7/10], Loss: 0.0065
+Epoch: [8/10], Loss: 0.0061
 Epoch: [9/10], Loss: 0.0058
 Epoch: [10/10], Loss: 0.0055
-Score (accuracy) of the probe: 0.88
-The best l1=0, the best l2=0 for pretrained_BERT_layer_9
+Score (accuracy) of the probe: 0.86
+The best l1=0, the best l2=0.01 for pretrained_BERT_layer_9
 Accuracy on the test set of probing pretrained_BERT_layer_9 of all layers:
-Score (accuracy) of the probe: 0.79
-{'__OVERALL__': 0.7880794701986755, 'NAME': 0.7775, 'STRING': 1.0, 'NUMBER': 0.7777777777777778, 'KEYWORD': 0.9545454545454546}
+Score (accuracy) of the probe: 0.75
+{'__OVERALL__': 0.7505518763796909, 'NAME': 0.725, 'STRING': 1.0, 'NUMBER': 0.8888888888888888, 'KEYWORD': 1.0}
 Accuracy on the test set of pretrained_BERT_layer_9 model using the intercept:
 Score (accuracy) of the probe: 0.88
 pretrained_BERT Layer 10
@@ -841,29 +841,29 @@ Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0129
+Epoch: [1/10], Loss: 0.0127
 Epoch: [2/10], Loss: 0.0093
 Epoch: [3/10], Loss: 0.0080
 Epoch: [4/10], Loss: 0.0071
 Epoch: [5/10], Loss: 0.0064
-Epoch: [6/10], Loss: 0.0058
+Epoch: [6/10], Loss: 0.0059
 Epoch: [7/10], Loss: 0.0054
 Epoch: [8/10], Loss: 0.0050
 Epoch: [9/10], Loss: 0.0046
 Epoch: [10/10], Loss: 0.0043
-Score (accuracy) of the probe: 0.87
+Score (accuracy) of the probe: 0.89
 Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0126
-Epoch: [2/10], Loss: 0.0093
+Epoch: [1/10], Loss: 0.0129
+Epoch: [2/10], Loss: 0.0095
 Epoch: [3/10], Loss: 0.0081
 Epoch: [4/10], Loss: 0.0072
 Epoch: [5/10], Loss: 0.0065
-Epoch: [6/10], Loss: 0.0060
+Epoch: [6/10], Loss: 0.0059
 Epoch: [7/10], Loss: 0.0055
-Epoch: [8/10], Loss: 0.0051
+Epoch: [8/10], Loss: 0.0050
 Epoch: [9/10], Loss: 0.0047
 Epoch: [10/10], Loss: 0.0044
 Score (accuracy) of the probe: 0.88
@@ -871,36 +871,36 @@ Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0125
-Epoch: [2/10], Loss: 0.0092
-Epoch: [3/10], Loss: 0.0080
-Epoch: [4/10], Loss: 0.0071
+Epoch: [1/10], Loss: 0.0127
+Epoch: [2/10], Loss: 0.0095
+Epoch: [3/10], Loss: 0.0082
+Epoch: [4/10], Loss: 0.0072
 Epoch: [5/10], Loss: 0.0065
-Epoch: [6/10], Loss: 0.0059
+Epoch: [6/10], Loss: 0.0060
 Epoch: [7/10], Loss: 0.0055
 Epoch: [8/10], Loss: 0.0051
-Epoch: [9/10], Loss: 0.0047
+Epoch: [9/10], Loss: 0.0048
 Epoch: [10/10], Loss: 0.0044
-Score (accuracy) of the probe: 0.89
+Score (accuracy) of the probe: 0.86
 Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0131
-Epoch: [2/10], Loss: 0.0100
-Epoch: [3/10], Loss: 0.0088
-Epoch: [4/10], Loss: 0.0080
-Epoch: [5/10], Loss: 0.0074
-Epoch: [6/10], Loss: 0.0069
-Epoch: [7/10], Loss: 0.0064
-Epoch: [8/10], Loss: 0.0061
-Epoch: [9/10], Loss: 0.0058
-Epoch: [10/10], Loss: 0.0055
+Epoch: [1/10], Loss: 0.0138
+Epoch: [2/10], Loss: 0.0104
+Epoch: [3/10], Loss: 0.0091
+Epoch: [4/10], Loss: 0.0082
+Epoch: [5/10], Loss: 0.0076
+Epoch: [6/10], Loss: 0.0070
+Epoch: [7/10], Loss: 0.0066
+Epoch: [8/10], Loss: 0.0062
+Epoch: [9/10], Loss: 0.0059
+Epoch: [10/10], Loss: 0.0056
 Score (accuracy) of the probe: 0.86
-The best l1=0, the best l2=0.01 for pretrained_BERT_layer_10
+The best l1=0, the best l2=0 for pretrained_BERT_layer_10
 Accuracy on the test set of probing pretrained_BERT_layer_10 of all layers:
-Score (accuracy) of the probe: 0.77
-{'__OVERALL__': 0.7726269315673289, 'NAME': 0.7525, 'STRING': 1.0, 'NUMBER': 0.8888888888888888, 'KEYWORD': 0.9545454545454546}
+Score (accuracy) of the probe: 0.76
+{'__OVERALL__': 0.7593818984547461, 'NAME': 0.7325, 'STRING': 1.0, 'NUMBER': 0.9629629629629629, 'KEYWORD': 0.9545454545454546}
 Accuracy on the test set of pretrained_BERT_layer_10 model using the intercept:
 Score (accuracy) of the probe: 0.88
 pretrained_BERT Layer 11
@@ -908,66 +908,66 @@ Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0128
-Epoch: [2/10], Loss: 0.0094
-Epoch: [3/10], Loss: 0.0081
-Epoch: [4/10], Loss: 0.0072
+Epoch: [1/10], Loss: 0.0124
+Epoch: [2/10], Loss: 0.0092
+Epoch: [3/10], Loss: 0.0080
+Epoch: [4/10], Loss: 0.0071
 Epoch: [5/10], Loss: 0.0065
-Epoch: [6/10], Loss: 0.0060
+Epoch: [6/10], Loss: 0.0059
 Epoch: [7/10], Loss: 0.0055
 Epoch: [8/10], Loss: 0.0051
 Epoch: [9/10], Loss: 0.0048
-Epoch: [10/10], Loss: 0.0045
-Score (accuracy) of the probe: 0.90
+Epoch: [10/10], Loss: 0.0044
+Score (accuracy) of the probe: 0.83
 Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0130
-Epoch: [2/10], Loss: 0.0096
+Epoch: [1/10], Loss: 0.0132
+Epoch: [2/10], Loss: 0.0095
 Epoch: [3/10], Loss: 0.0082
 Epoch: [4/10], Loss: 0.0073
 Epoch: [5/10], Loss: 0.0066
 Epoch: [6/10], Loss: 0.0061
-Epoch: [7/10], Loss: 0.0056
-Epoch: [8/10], Loss: 0.0052
+Epoch: [7/10], Loss: 0.0057
+Epoch: [8/10], Loss: 0.0053
 Epoch: [9/10], Loss: 0.0049
 Epoch: [10/10], Loss: 0.0046
-Score (accuracy) of the probe: 0.81
+Score (accuracy) of the probe: 0.87
 Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0130
-Epoch: [2/10], Loss: 0.0096
-Epoch: [3/10], Loss: 0.0083
-Epoch: [4/10], Loss: 0.0074
+Epoch: [1/10], Loss: 0.0132
+Epoch: [2/10], Loss: 0.0097
+Epoch: [3/10], Loss: 0.0084
+Epoch: [4/10], Loss: 0.0075
 Epoch: [5/10], Loss: 0.0068
-Epoch: [6/10], Loss: 0.0062
+Epoch: [6/10], Loss: 0.0063
 Epoch: [7/10], Loss: 0.0058
 Epoch: [8/10], Loss: 0.0054
 Epoch: [9/10], Loss: 0.0051
-Epoch: [10/10], Loss: 0.0048
-Score (accuracy) of the probe: 0.84
+Epoch: [10/10], Loss: 0.0047
+Score (accuracy) of the probe: 0.85
 Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0139
-Epoch: [2/10], Loss: 0.0104
-Epoch: [3/10], Loss: 0.0091
-Epoch: [4/10], Loss: 0.0083
-Epoch: [5/10], Loss: 0.0076
-Epoch: [6/10], Loss: 0.0071
-Epoch: [7/10], Loss: 0.0067
+Epoch: [1/10], Loss: 0.0140
+Epoch: [2/10], Loss: 0.0103
+Epoch: [3/10], Loss: 0.0090
+Epoch: [4/10], Loss: 0.0082
+Epoch: [5/10], Loss: 0.0075
+Epoch: [6/10], Loss: 0.0070
+Epoch: [7/10], Loss: 0.0066
 Epoch: [8/10], Loss: 0.0063
 Epoch: [9/10], Loss: 0.0060
 Epoch: [10/10], Loss: 0.0057
-Score (accuracy) of the probe: 0.87
-The best l1=0, the best l2=0 for pretrained_BERT_layer_11
+Score (accuracy) of the probe: 0.90
+The best l1=0, the best l2=0.1 for pretrained_BERT_layer_11
 Accuracy on the test set of probing pretrained_BERT_layer_11 of all layers:
 Score (accuracy) of the probe: 0.77
-{'__OVERALL__': 0.7660044150110376, 'NAME': 0.745, 'STRING': 1.0, 'NUMBER': 0.8888888888888888, 'KEYWORD': 0.9545454545454546}
+{'__OVERALL__': 0.7682119205298014, 'NAME': 0.745, 'STRING': 1.0, 'NUMBER': 0.9629629629629629, 'KEYWORD': 0.9090909090909091}
 Accuracy on the test set of pretrained_BERT_layer_11 model using the intercept:
 Score (accuracy) of the probe: 0.88
 pretrained_BERT Layer 12
@@ -975,28 +975,43 @@ Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0128
+Epoch: [1/10], Loss: 0.0130
 Epoch: [2/10], Loss: 0.0097
 Epoch: [3/10], Loss: 0.0085
 Epoch: [4/10], Loss: 0.0077
 Epoch: [5/10], Loss: 0.0071
 Epoch: [6/10], Loss: 0.0066
 Epoch: [7/10], Loss: 0.0062
-Epoch: [8/10], Loss: 0.0059
+Epoch: [8/10], Loss: 0.0058
 Epoch: [9/10], Loss: 0.0055
-Epoch: [10/10], Loss: 0.0053
-Score (accuracy) of the probe: 0.80
+Epoch: [10/10], Loss: 0.0052
+Score (accuracy) of the probe: 0.84
 Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0130
-Epoch: [2/10], Loss: 0.0097
-Epoch: [3/10], Loss: 0.0086
-Epoch: [4/10], Loss: 0.0078
-Epoch: [5/10], Loss: 0.0072
-Epoch: [6/10], Loss: 0.0068
-Epoch: [7/10], Loss: 0.0064
+Epoch: [1/10], Loss: 0.0138
+Epoch: [2/10], Loss: 0.0103
+Epoch: [3/10], Loss: 0.0090
+Epoch: [4/10], Loss: 0.0081
+Epoch: [5/10], Loss: 0.0075
+Epoch: [6/10], Loss: 0.0070
+Epoch: [7/10], Loss: 0.0065
+Epoch: [8/10], Loss: 0.0062
+Epoch: [9/10], Loss: 0.0059
+Epoch: [10/10], Loss: 0.0056
+Score (accuracy) of the probe: 0.77
+Training classification probe
+Creating model...
+Number of training instances: 908
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0127
+Epoch: [2/10], Loss: 0.0096
+Epoch: [3/10], Loss: 0.0085
+Epoch: [4/10], Loss: 0.0077
+Epoch: [5/10], Loss: 0.0071
+Epoch: [6/10], Loss: 0.0067
+Epoch: [7/10], Loss: 0.0063
 Epoch: [8/10], Loss: 0.0060
 Epoch: [9/10], Loss: 0.0057
 Epoch: [10/10], Loss: 0.0054
@@ -1005,159 +1020,127 @@ Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0133
-Epoch: [2/10], Loss: 0.0099
-Epoch: [3/10], Loss: 0.0087
-Epoch: [4/10], Loss: 0.0079
-Epoch: [5/10], Loss: 0.0073
-Epoch: [6/10], Loss: 0.0068
-Epoch: [7/10], Loss: 0.0064
-Epoch: [8/10], Loss: 0.0060
-Epoch: [9/10], Loss: 0.0057
-Epoch: [10/10], Loss: 0.0055
-Score (accuracy) of the probe: 0.78
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0137
-Epoch: [2/10], Loss: 0.0105
-Epoch: [3/10], Loss: 0.0093
-Epoch: [4/10], Loss: 0.0086
-Epoch: [5/10], Loss: 0.0080
-Epoch: [6/10], Loss: 0.0076
-Epoch: [7/10], Loss: 0.0072
-Epoch: [8/10], Loss: 0.0069
-Epoch: [9/10], Loss: 0.0067
-Epoch: [10/10], Loss: 0.0064
-Score (accuracy) of the probe: 0.83
-The best l1=0, the best l2=0.1 for pretrained_BERT_layer_12
+Epoch: [1/10], Loss: 0.0142
+Epoch: [2/10], Loss: 0.0109
+Epoch: [3/10], Loss: 0.0096
+Epoch: [4/10], Loss: 0.0089
+Epoch: [5/10], Loss: 0.0083
+Epoch: [6/10], Loss: 0.0078
+Epoch: [7/10], Loss: 0.0074
+Epoch: [8/10], Loss: 0.0071
+Epoch: [9/10], Loss: 0.0068
+Epoch: [10/10], Loss: 0.0066
+Score (accuracy) of the probe: 0.81
+The best l1=0, the best l2=0 for pretrained_BERT_layer_12
 Accuracy on the test set of probing pretrained_BERT_layer_12 of all layers:
-Score (accuracy) of the probe: 0.72
-{'__OVERALL__': 0.7240618101545254, 'NAME': 0.69, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 0.9545454545454546}
+Score (accuracy) of the probe: 0.71
+{'__OVERALL__': 0.7064017660044151, 'NAME': 0.6825, 'STRING': 1.0, 'NUMBER': 0.8518518518518519, 'KEYWORD': 0.9090909090909091}
 Accuracy on the test set of pretrained_BERT_layer_12 model using the intercept:
 Score (accuracy) of the probe: 0.88
 pretrained_BERT top neurons
-array([4096, 4104,    8, 8200, 2058, 6155,   13, 8208, 8215, 6172, 4129,
-       4132, 8230,   38, 6184,   40, 8237, 4144,   50, 8252,   63,   73,
-       8265, 4171, 4186,   94, 4191, 6240, 4194, 6250, 2163,  117, 2167,
-       6263,  121, 4220, 8320, 8322, 4230, 8332, 4237, 6290,  159, 4256,
-       6305,  161, 6309, 8357, 8358, 4262, 6332,  190, 2238, 2239,  195,
-        199, 6347,  203, 8399, 2262,  214, 4314, 4315, 8415,  229,  230,
-       8424, 8451,  262, 2314, 8459, 6413, 6423,  281, 4379, 6433, 6434,
-        293, 2344,  298, 2349, 4404, 6459, 6464,  328, 6475,  333,  335,
-        336, 6484, 4439, 6495, 2400,  354, 8547, 8549, 2405, 6503,  357,
-        361, 6516, 4472, 6524, 4477,  380, 2428,  384,  383,  385, 6533,
-       6534, 2437,  389, 6537,  400, 4498, 2451, 2450, 4501,  409,  418,
-        425,  433, 4530,  436,  442, 8636, 4541, 4543, 4550, 2507, 2510,
-       4566,  473, 6618,  475, 2533,  490, 8687,  499, 8695, 2557, 8702,
-       4606, 6661, 8709, 6664,  521, 4619, 4622, 4623,  528,  529, 6672,
-        534, 8727,  537, 2588, 8733,  540, 8739, 4652, 2612, 4661, 2619,
-        582, 6729, 4692, 6740, 6748, 2658, 2659, 8805,  618, 8812, 4718,
-       6772, 8825, 8828, 6781, 2684, 8832,  641,  653,  654, 8847, 8852,
-       2713, 2725, 2726, 4785, 8889,  701,  708, 8901,  709,  710, 6856,
-       2757, 8906, 8912, 8917,  726, 2779,  736,  737, 6885,  747, 6893,
-       2799, 2807, 8952, 6906, 2813, 4866, 6915, 8965,  774, 8968, 6923,
-       2829, 6927, 2832, 8976, 2838, 6940, 4892,  799, 4900,  808, 9003,
-       2864, 9008, 4915, 4928, 9033, 4945, 9044, 9045, 2903, 4952, 9050,
-       7003, 9052, 2912, 7011, 7013,  870, 4967,  874,  880, 7034, 4988,
-       4992, 9090, 7042, 5001, 7058, 9113, 5024, 7073, 9125, 5030, 5040,
-       2994, 3003, 7100, 3007, 9156,  971, 9167,  978, 3030, 5082, 9183,
-       9187, 7148, 9197, 9203, 1014, 5111, 9219, 1028, 1030, 5128, 5129,
-       7178, 7181, 3087, 3089, 3093, 7191, 5148, 7196, 7202, 7203, 9254,
-       3117, 1073, 1076, 1083, 9280, 5187, 1101, 7247, 1104, 7248, 5204,
-       7252, 5215, 9317, 7276, 9340, 5245, 7292, 9343, 1152, 1154, 7298,
-       9346, 7302, 5264, 1169, 5266, 3219, 9365, 1177, 5278, 5280, 3237,
-       1189, 1190, 7337, 1197, 7346, 5299, 1205, 7353, 9404, 5309, 3275,
-       1235, 7382, 3299, 7396, 7402, 3309, 3312, 5363, 3318, 1271, 7420,
-       1276, 5374, 5379, 7432, 1289, 1290, 5387, 3339, 3341, 5390, 5391,
-       7440, 3345, 7447, 9496, 3353, 1316, 3365, 7462, 5421, 7473, 7483,
-       3392, 7497, 5460, 9559, 3416, 7516, 1376, 5472, 3427, 5482, 7530,
-       9580, 1401, 9596, 7549, 7554, 9605, 7563, 1425, 5527, 1433, 1438,
-       9631, 3488, 3493, 7589, 3494, 3496, 9650, 3512, 9657, 9658, 7611,
-       1469, 1471, 7620, 7622, 7623, 5579, 7631, 9682, 9685, 1494, 1497,
-       3556, 7656, 9709, 7667, 5626, 5627, 3586, 1542, 5640, 9736, 5643,
-       1548, 7691, 7695, 7699, 3606, 3611, 7711, 9771, 7725, 1591, 5690,
-       9788, 7742, 9796, 7753, 5707, 7757, 5720, 3680, 7779, 5732, 7781,
-       5731, 5736, 1642, 1648, 1653, 3704, 5753, 1659, 3709, 7807, 9859,
-       3719, 5769, 7817, 5775, 3735, 3750, 1702, 5800, 7849, 3762, 7860,
-       7868, 1731, 9924, 5829, 7875, 1739, 9940, 1748, 3808, 7905, 5860,
-       1765, 5863, 5866, 9965, 5879, 7927, 1789, 7934, 3840, 5900, 3855,
-       5904, 1809, 7959, 1820, 3880, 1834, 3885, 1844, 8016, 8030, 8040,
-       8044, 3950, 8052, 8070, 3987, 1945, 1954, 8101, 6053, 8114, 8133,
-       1992, 6102, 2007, 8158, 4069, 8173])
+array([6150, 4104, 8200,    8,   13,   15, 8208, 4121, 6175, 4129, 4130,
+       4132, 8230, 6184, 6189,   50, 4155,   63, 8257, 8265,   74,   73,
+       6219,   86, 2136, 8284,   94, 6240, 2144,  106, 6250, 2154, 6254,
+       2163, 2167, 2170, 4220, 8317, 2176, 8320, 8322,  128, 8327,  135,
+       8332, 6300, 6305, 2212, 4261, 8357, 4262,  182, 2237, 2239,  197,
+       2246,  199,  203, 8399,  213, 2262,  214,  229, 4327, 8424, 2280,
+       6382,  240, 8435,  246, 4343,  260,  262, 2310,  267,  270,  274,
+        298, 2349,  305, 6458, 8510, 6464,  321, 4419, 8518, 6471,  328,
+        333, 4439,  346, 4448,  354, 6499, 2404,  357, 6504, 2410, 8558,
+       6521, 8572,  380, 6524, 8575,  384,  383, 8578, 6529, 2428, 4477,
+        386, 6528, 6534, 4494, 4498,  409, 8609,  418, 2469, 6565, 4528,
+        436,  437,  442, 6587, 8636, 4543, 6597, 4550,  455, 2510, 6606,
+       2516, 4566,  472,  473, 6618, 8673, 2531, 2533, 6634, 8687, 2544,
+        499, 8700, 8702, 4606, 8709,  521, 4619, 6668, 6672,  528, 8721,
+       6682,  539, 2588,  541, 8733, 2587, 2598, 2601, 4653, 8749, 4657,
+       2612, 4661,  574, 2643, 6740, 4692,  599,  600, 4704,  608,  611,
+       2659, 2661, 8828, 2684, 6781,  641, 2690, 8834, 6795,  653,  655,
+       4755, 4759,  669, 2720, 4773, 6822, 6821, 2728,  678, 8889,  701,
+       2753,  708, 8901, 6854,  711, 6859, 4811, 6863,  720, 8915,  723,
+       8917,  726, 2779,  737, 4840,  750, 4853, 8952, 2818, 6915,  776,
+       8968, 6923, 8972, 8976,  789, 2838, 6940, 4897, 4898,  812,  816,
+       4915, 2869, 4923, 9020, 4928, 9025, 9033, 2903, 7003, 9052, 2912,
+       7008, 7011, 4963, 2917,  870, 7018, 9071, 2935, 9088, 4992, 9090,
+       5005,  913, 7058, 9111, 2969, 7068, 5024, 9125, 5033, 2987, 5040,
+       2994, 5051, 7100, 3007,  962,  965,  971, 7115, 9167, 3030, 7134,
+       9183, 9187, 5098, 1014, 9210, 1030, 5129, 1035, 3093, 7191, 3096,
+       7195, 5148, 1052, 1062, 9254, 3112, 1066, 3117, 1071, 1076, 1083,
+       9280, 5187, 1098, 9290, 3149, 7248, 7249, 5204, 7252, 5208, 1122,
+       1123, 1148, 5245, 1152, 9346, 7298, 7302, 9352, 5260, 7311, 7312,
+       1168, 1169, 3219, 1184, 5280, 3237, 7337, 1196, 1197, 7346, 1204,
+       1215, 5318, 5320, 5334, 1239, 1249, 3309, 9455, 9468, 7432, 1289,
+       3339, 7436, 5390, 7440, 3345, 1302, 3353, 1308, 9507, 3369, 5420,
+       5421, 3379, 1343, 7508, 5472, 3428, 5477, 1386, 3436, 1391, 9586,
+       7546, 3452, 7549, 9596, 7552, 1408, 7554, 7558, 7565, 1422, 1437,
+       1438, 3488, 7589, 7590, 3493, 1458, 7603, 5561, 9658, 1470, 1471,
+       3525, 7622, 7623, 5579, 9677, 7631, 3538, 7634, 1494, 7639, 3546,
+       7647, 9696, 3559, 7656, 9707, 5614, 9711, 3571, 3575, 5626, 5627,
+       1536, 3586, 7684, 9736, 7691, 7695, 9749, 3606, 1566, 9761, 5666,
+       1572, 1574, 1581, 9775, 3637, 9788, 3649, 3650, 3651, 9796, 3655,
+       7753, 9802, 5720, 5722, 3680, 7779, 5732, 7781, 5731, 3690, 3691,
+       5741, 1648, 3704, 5753, 1659, 5756, 3709, 1662, 7807, 5760, 5766,
+       3719, 5773, 7826, 9879, 5783, 3737, 7832, 5792, 7841, 9893, 3750,
+       5798, 5800, 7849, 5808, 3762, 7868, 5826, 7876, 5829, 9940, 3798,
+       9943, 1765, 3816, 5866, 1778, 7934, 5909, 3861, 7959, 1820, 3869,
+       7971, 3880, 1834, 5931, 7981, 1844, 1851, 1890, 1893, 8039, 8044,
+       5997, 8057, 8060, 6013, 1916, 8070, 1937, 6034, 6053, 1958, 1957,
+       6054, 8123, 1986, 8147, 8150, 6131, 2036, 4091])
 pretrained_BERT top neurons per class
-{'NAME': array([ 262, 1494, 6524,  229, 6534,  436, 4619, 7549, 7432, 1030, 5387,
-       1376, 8828, 5579, 5245, 6290, 5829, 8320, 1154, 5148, 3885,  199,
-         73, 4314, 5204, 8322, 3987, 6940, 8547, 4477,  808, 4550, 8215,
-       4718, 4692, 7779, 9090, 2619, 7905, 7959, 4220, 7058, 9771, 1820,
-       3219, 2994, 6305, 6740,  701, 7631,  490, 8070, 7346, 6347, 7656,
-       6434, 8901, 4606,  529, 8695, 9203, 5732, 8451, 3488, 2163, 2838,
-        354,  442, 7420, 5266, 7934, 4915, 8230, 9003, 1235, 4622, 6240,
-        293, 2262, 3392, 1945, 3606, 3237, 7447, 4661, 5753, 5030, 8687,
-        333, 2813, 9045, 7196, 9340, 6309, 3493,  726,   94, 5299, 5736,
-       7191, 2779, 5879, 1844, 7353,  336, 7927, 2799, 9365, 8016, 7034,
-        880, 4530, 3750, 9033, 8812, 5040, 7402, 7807, 9682, 1401, 4992,
-       4892,  298,  195, 8101, 4256, 3365,   63,  418, 5472,  409, 5900,
-       8968, 4928, 6464, 5863, 9685, 1702, 9052, 1014, 9924,  380, 7554,
-       7203, 3496, 1189, 4785,  190, 1548, 1438,  537,  653, 4472]), 'STRING': array([2912, 9125, 9156, 6940, 3680, 6537, 7191, 1177, 8208, 5775, 9788,
-        473, 8825,  534, 1271, 2994,  499, 9657, 9658, 5736, 4892, 1542,
-       9052, 6172, 4315, 4945, 2507, 5904, 7589,  475, 6781, 2838,   50,
-       7620, 5421, 5829,  433,  528, 4501, 8847, 8832,  335,  328, 9183,
-       2807, 3299, 9924, 8549, 2832, 8952, 8332,  230, 7292, 4623, 6664,
-       3093, 7497, 4314, 6661, 9254, 4550, 1316, 1169, 1591, 2557,  380,
-       3719, 8965,  618, 8459, 8030, 6772, 6184, 4194,  409, 6503, 1789,
-        384, 3586, 2510, 7849, 1376, 3353, 7073, 1731, 1289, 8702, 2428,
-       8733, 5643, 8320, 7781, 2405, 7042, 9631, 7611, 9343, 9940, 7447,
-       3735, 4186, 9317, 7302, 5866, 1076,  425,  641, 9596, 4104, 4566,
-       3762, 3855, 9559, 3611,  799, 7337, 4379, 5527, 1659,  195, 8852,
-       2658, 7753,  117, 1844, 3885, 1290,  361, 4498, 6927, 2344, 4619,
-       8424, 1101,   38, 4237, 4652, 3312, 6885, 3704, 7807, 8357, 1205,
-       8415,  159, 6856, 2713, 2829, 1276, 1152,  774,  747, 7868, 8912,
-       3003,  490, 2864, 3087]), 'NUMBER': array([6459,   13,  653, 8812,  203, 4129, 6618, 3089, 7302,  726,  475,
-       7497, 8739, 2659,  281, 3987, 1104, 3427, 7516, 7563, 1659, 5482,
-       3275,  808, 8016, 9580, 8636, 4988, 6413,  874, 6781, 3416, 7711,
-          8,  870, 5245, 7181, 7781, 7396,  383, 8358, 7298, 7011,  385,
-       4952,  380, 7860, 4543, 9496,   40,  582, 4477, 5904, 7589, 2451,
-       9050, 1765, 5769, 6915, 7473, 5690, 1954, 6433,  709,  710, 7276,
-       1073, 6250, 2238, 1030, 9187, 7530, 3341, 1992, 6923, 3840, 6748,
-       6102, 7725, 5800,  499, 2349,  354, 5527, 4404, 8906, 5363,  737,
-       4892, 9709, 2314, 8252, 2684, 6533, 5379, 7013, 6053, 2239, 6495,
-       7148, 8173, 3512, 5024, 9280, 8976,  978, 6893, 9197, 7742, 5278,
-       4069, 7483, 3030, 8052, 1748, 2726, 9796, 1653, 1809,  880, 2757,
-       8044, 2167, 9219, 2450, 5640, 8852, 8889, 2437, 2725, 7817, 7248,
-       7432, 6672, 5374, 2400, 6516, 1497, 4967, 8237,  214, 5215,  971,
-       5082, 3556, 2612, 4096, 7178, 5720, 7667, 7757, 5860, 9008, 8805,
-       7462, 7691, 7623, 4866]), 'KEYWORD': array([1083, 8968, 8200, 4619, 5460, 8133, 4566, 4171, 4622,  475, 9736,
-        298, 7252, 6906, 8636,  708, 5187, 5829, 1028,  262, 1834, 6781,
-       3117, 6664, 7432, 7868,  400, 1190, 4314, 6618, 4129,  654, 5391,
-       8901, 2612, 5707, 8265, 7695,  357, 1648, 9203, 2588, 7202, 1471,
-       6240, 1425, 9658, 5309, 3880, 7100, 5731,  709,  161, 9965,  354,
-       7631, 5626, 7247, 5001, 2619, 9650, 5264,  540, 7875, 1289, 3709,
-       9404, 1469, 2533, 5879, 9859, 6423, 3339, 6484, 9113, 4541,  380,
-       8040, 7302, 4191, 9605, 4230, 6475, 8114,  389, 3345, 3318, 2903,
-       4439, 4900, 1765,  736, 5245, 5627, 6434, 9044, 4945, 1197,  121,
-       6305,   94, 5280, 5111, 4498, 7440, 1433, 5866, 2058, 1739, 6263,
-       3494, 3007, 4144, 6332, 1073, 4256, 7817, 7699, 8727, 8709, 8547,
-       6534, 7622, 4262,  710, 4132,  521, 6053, 7382, 8917, 8399, 3808,
-       5129, 9596, 6155, 3950, 5040, 1642, 5390, 5128, 7003,  409, 7667,
-       9346, 4315, 8158, 3309, 2007, 6729, 9167, 7011])}
-The shape of selected features (908, 523)
-Training classification probe
-Creating model...
-Number of training instances: 908
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0114
-Epoch: [2/10], Loss: 0.0084
-Epoch: [3/10], Loss: 0.0068
-Epoch: [4/10], Loss: 0.0057
-Epoch: [5/10], Loss: 0.0049
-Epoch: [6/10], Loss: 0.0043
-Epoch: [7/10], Loss: 0.0038
-Epoch: [8/10], Loss: 0.0034
-Epoch: [9/10], Loss: 0.0031
-Epoch: [10/10], Loss: 0.0028
-Score (accuracy) of the probe: 0.91
+{'NAME': array([1494, 7302, 7691, 6923, 7622,  436,   94, 4550, 8070, 8322,  701,
+       5040,  455, 4619, 2994, 6013, 8424, 6672, 1197, 2912, 6854, 1204,
+       4419,  737, 1215, 5579,  229, 7440, 8572, 8828, 8976, 4498, 7971,
+       3112, 9167,  203, 8435,   50, 3704, 7011, 7134, 3637, 4261, 4566,
+       6597, 6618,  333, 7337, 9507, 8147, 2818, 4129, 2531, 3750, 3719,
+       5245, 3030, 1302, 2588,   13, 4606, 7603, 1820, 5826,  870, 7589,
+        541, 7552, 3606, 1071, 7018, 5204, 4898, 2176, 4915, 3651, 5931,
+       3379, 2280, 3546, 7252, 3219, 1958, 4104, 4121, 4132, 3452, 1249,
+       2469, 6240, 1765, 1066, 2163,  270, 3488, 5390,  262, 8687, 7807,
+       6175, 1014, 4327, 1076, 9696, 8673, 8265,   15, 8702, 2690, 5614,
+       9893, 4704, 5561, 6740, 4923,  346,  776, 5334,  274, 7312, 2410,
+       4155, 3353, 3149, 7934, 2935,  354, 7826, 9586,  418, 6521, 5766,
+       2612, 1834, 2779,  608, 4759, 2036, 8578, 4963, 5260, 2533, 7647,
+       9879, 2728, 6034, 4528, 7959, 5208, 7508, 6382, 8060]), 'STRING': array([ 262, 9125, 7622, 6940, 5187, 4343,  380,  499, 2144, 8435, 8952,
+       8609, 1030, 8828, 1916, 6795,  913, 3428, 2838, 7191, 8510, 3030,
+        442, 6524, 8424, 2935, 3762, 6634, 8332, 7981, 1083, 1098, 7058,
+       8060,  653,  473, 8889, 7753, 9468, 4928, 2510, 9796, 9090, 4692,
+        384, 2994, 5129, 5098, 6189, 5732, 9788, 5579, 1566, 9775, 5477,
+       4091, 7781, 6672, 4448, 7959, 2531,  199, 8636, 9711, 2428, 2533,
+       2310,  521, 1076, 1239,  528, 9802,   74, 1986, 4220, 8915, 9707,
+       9088,  203, 4657, 8721, 9940, 4130, 4653, 6587,  418, 9658, 6131,
+       1574, 5666,  383,  789, 1391, 1581,  328, 5420, 2869, 5720, 3575,
+        321, 5320, 9052, 3586, 5318, 5033, 9749, 5909, 4773, 8123, 3339,
+        539, 1289, 6240, 1148,  750, 1536, 7249, 1778, 5627, 1422, 9352,
+       7639, 7876, 8147, 8575, 7849, 7302, 1408, 3650, 7684, 9677, 3452,
+       6565,  240, 2167, 4840, 8709, 3112,  655, 9346, 6305, 3861, 8284,
+       5829, 8518, 6529, 6254, 8039, 6854, 8700, 5753, 2753, 6859, 7311]), 'NUMBER': array([5756, 1076, 8044, 2684, 6053, 7549, 8070, 5334,  106, 1916, 1458,
+       3861, 4606, 4543,   73, 4220,  384, 8917, 8320, 9033,  726, 1062,
+       8733,  436,  599, 3525, 2987, 1123, 7346, 8230, 7008, 6150, 5472,
+       5024, 7195, 8060, 2170, 7590, 6854, 1152,  971, 3649,  499, 3493,
+       4897, 9596, 1289, 5051, 5866, 2533, 7631,  608, 6672, 5783, 4448,
+        723, 6499,  246, 2818, 1302, 1471, 6250, 6682, 9183, 3690, 8558,
+       3538,  262, 8200, 9346, 9111, 7298, 4477, 1148, 4419, 2598, 9020,
+       2144, 6382, 6524, 4853,  409, 8150,  213,  574, 8972, 1957, 8257,
+       8901, 2154, 3436, 1386, 2720, 2588, 9455,  641,  380, 7589, 3559,
+       1659, 3709, 6471, 1438, 3816, 7565, 2903, 1343, 2544, 3369, 9025,
+       5741, 3606, 6668, 9761,  812, 8575, 8834, 7971,  305,  386, 2601,
+       7248, 5792, 2212, 4132,   63, 1572, 3093, 5421, 6458, 5800, 4773,
+        197, 6219, 3869, 3680, 6528, 7115, 1184, 2516, 5760, 7779, 8749,
+        455, 1470,  128, 4811, 4755,  962,  711, 8327, 3691, 6915, 6822,
+       2917, 8357]), 'KEYWORD': array([6781,  262, 7432, 1122, 1196, 7656, 8636,    8, 5148, 5829, 5722,
+       6821, 8901, 5334, 1844, 9879, 3030,  267,  541, 6504,  357, 4262,
+       4439, 9187, 3112, 7841, 8057, 9658, 6668, 2237, 8317, 3798,  298,
+       3880, 3237, 2349, 3737, 9033, 5808, 4566, 4661,  600, 6305, 7868,
+        472, 2969, 7100, 2262,  720, 3353, 6606, 9468, 6184, 3096,  229,
+       1168, 8673, 8357, 3493, 8208, 8399, 2144, 9943, 5997, 7558, 7634,
+       7003,   86, 7554, 9254, 2661, 1890, 1035,  135, 1308, 3117,  599,
+        678, 9736, 6464, 5626,  260, 2838, 4343, 1937,  726, 7623, 3007,
+       7631,  473, 2246,  669, 9167, 5798, 5005, 9210,  346, 8968,  611,
+       1169, 8435, 7695, 6534, 2587, 5773, 3571, 5731, 8265, 4992,  965,
+       2163, 3655, 1052,  214, 1648, 7436, 8424, 2239, 7068, 2643,  106,
+       5280, 3345, 2659, 1437,  182,  816, 9290, 9280, 2612, 1662, 2136,
+       4327, 7302, 6863, 7832,  437, 4755, 7546, 6300, 2404,  708, 4121,
+       1893, 9071,  354, 3309, 4494, 6054, 1851])}
+The shape of selected features (908, 514)
 Training classification probe
 Creating model...
 Number of training instances: 908
@@ -1165,9 +1148,24 @@ Number of classes: 4
 Epoch: [1/10], Loss: 0.0121
 Epoch: [2/10], Loss: 0.0089
 Epoch: [3/10], Loss: 0.0071
-Epoch: [4/10], Loss: 0.0058
+Epoch: [4/10], Loss: 0.0059
+Epoch: [5/10], Loss: 0.0051
+Epoch: [6/10], Loss: 0.0044
+Epoch: [7/10], Loss: 0.0039
+Epoch: [8/10], Loss: 0.0035
+Epoch: [9/10], Loss: 0.0032
+Epoch: [10/10], Loss: 0.0029
+Score (accuracy) of the probe: 0.93
+Training classification probe
+Creating model...
+Number of training instances: 908
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0119
+Epoch: [2/10], Loss: 0.0087
+Epoch: [3/10], Loss: 0.0070
+Epoch: [4/10], Loss: 0.0059
 Epoch: [5/10], Loss: 0.0050
-Epoch: [6/10], Loss: 0.0043
+Epoch: [6/10], Loss: 0.0044
 Epoch: [7/10], Loss: 0.0039
 Epoch: [8/10], Loss: 0.0035
 Epoch: [9/10], Loss: 0.0032
@@ -1177,102 +1175,102 @@ Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0116
-Epoch: [2/10], Loss: 0.0086
-Epoch: [3/10], Loss: 0.0068
-Epoch: [4/10], Loss: 0.0056
-Epoch: [5/10], Loss: 0.0048
-Epoch: [6/10], Loss: 0.0042
-Epoch: [7/10], Loss: 0.0038
-Epoch: [8/10], Loss: 0.0034
-Epoch: [9/10], Loss: 0.0031
-Epoch: [10/10], Loss: 0.0029
-Score (accuracy) of the probe: 0.92
+Epoch: [1/10], Loss: 0.0125
+Epoch: [2/10], Loss: 0.0090
+Epoch: [3/10], Loss: 0.0072
+Epoch: [4/10], Loss: 0.0061
+Epoch: [5/10], Loss: 0.0052
+Epoch: [6/10], Loss: 0.0046
+Epoch: [7/10], Loss: 0.0041
+Epoch: [8/10], Loss: 0.0037
+Epoch: [9/10], Loss: 0.0033
+Epoch: [10/10], Loss: 0.0031
+Score (accuracy) of the probe: 0.93
 Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0128
-Epoch: [2/10], Loss: 0.0096
-Epoch: [3/10], Loss: 0.0079
-Epoch: [4/10], Loss: 0.0068
-Epoch: [5/10], Loss: 0.0060
-Epoch: [6/10], Loss: 0.0055
-Epoch: [7/10], Loss: 0.0050
-Epoch: [8/10], Loss: 0.0047
-Epoch: [9/10], Loss: 0.0044
-Epoch: [10/10], Loss: 0.0042
-Score (accuracy) of the probe: 0.91
+Epoch: [1/10], Loss: 0.0137
+Epoch: [2/10], Loss: 0.0103
+Epoch: [3/10], Loss: 0.0085
+Epoch: [4/10], Loss: 0.0072
+Epoch: [5/10], Loss: 0.0064
+Epoch: [6/10], Loss: 0.0057
+Epoch: [7/10], Loss: 0.0053
+Epoch: [8/10], Loss: 0.0049
+Epoch: [9/10], Loss: 0.0046
+Epoch: [10/10], Loss: 0.0043
+Score (accuracy) of the probe: 0.94
 The best l1=0, the best l2=0.001 for pretrained_BERT_top5%_neurons
 Accuracy on the test set of probing pretrained_BERT_top5%_neurons of all layers:
-Score (accuracy) of the probe: 0.79
-{'__OVERALL__': 0.7924944812362031, 'NAME': 0.7775, 'STRING': 1.0, 'NUMBER': 0.9259259259259259, 'KEYWORD': 0.8636363636363636}
+Score (accuracy) of the probe: 0.80
+{'__OVERALL__': 0.8035320088300221, 'NAME': 0.7825, 'STRING': 1.0, 'NUMBER': 0.9629629629629629, 'KEYWORD': 0.9545454545454546}
 Accuracy on the test set of pretrained_BERT_top5%_neurons model using the intercept:
 Score (accuracy) of the probe: 0.88
 Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0115
-Epoch: [2/10], Loss: 0.0100
-Epoch: [3/10], Loss: 0.0089
-Epoch: [4/10], Loss: 0.0081
-Epoch: [5/10], Loss: 0.0074
-Epoch: [6/10], Loss: 0.0068
-Epoch: [7/10], Loss: 0.0064
-Epoch: [8/10], Loss: 0.0060
-Epoch: [9/10], Loss: 0.0056
-Epoch: [10/10], Loss: 0.0053
-Score (accuracy) of the probe: 0.91
+Epoch: [1/10], Loss: 0.0134
+Epoch: [2/10], Loss: 0.0116
+Epoch: [3/10], Loss: 0.0104
+Epoch: [4/10], Loss: 0.0095
+Epoch: [5/10], Loss: 0.0087
+Epoch: [6/10], Loss: 0.0080
+Epoch: [7/10], Loss: 0.0075
+Epoch: [8/10], Loss: 0.0070
+Epoch: [9/10], Loss: 0.0066
+Epoch: [10/10], Loss: 0.0062
+Score (accuracy) of the probe: 0.77
 Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0124
-Epoch: [2/10], Loss: 0.0108
+Epoch: [1/10], Loss: 0.0125
+Epoch: [2/10], Loss: 0.0109
 Epoch: [3/10], Loss: 0.0097
-Epoch: [4/10], Loss: 0.0089
+Epoch: [4/10], Loss: 0.0088
 Epoch: [5/10], Loss: 0.0081
 Epoch: [6/10], Loss: 0.0075
 Epoch: [7/10], Loss: 0.0070
 Epoch: [8/10], Loss: 0.0066
 Epoch: [9/10], Loss: 0.0062
-Epoch: [10/10], Loss: 0.0059
-Score (accuracy) of the probe: 0.79
+Epoch: [10/10], Loss: 0.0058
+Score (accuracy) of the probe: 0.83
 Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0129
+Epoch: [1/10], Loss: 0.0128
 Epoch: [2/10], Loss: 0.0112
-Epoch: [3/10], Loss: 0.0100
-Epoch: [4/10], Loss: 0.0091
-Epoch: [5/10], Loss: 0.0083
-Epoch: [6/10], Loss: 0.0077
-Epoch: [7/10], Loss: 0.0071
-Epoch: [8/10], Loss: 0.0067
-Epoch: [9/10], Loss: 0.0063
-Epoch: [10/10], Loss: 0.0060
-Score (accuracy) of the probe: 0.84
+Epoch: [3/10], Loss: 0.0101
+Epoch: [4/10], Loss: 0.0092
+Epoch: [5/10], Loss: 0.0084
+Epoch: [6/10], Loss: 0.0078
+Epoch: [7/10], Loss: 0.0073
+Epoch: [8/10], Loss: 0.0068
+Epoch: [9/10], Loss: 0.0064
+Epoch: [10/10], Loss: 0.0061
+Score (accuracy) of the probe: 0.82
 Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
 Epoch: [1/10], Loss: 0.0138
-Epoch: [2/10], Loss: 0.0120
-Epoch: [3/10], Loss: 0.0108
-Epoch: [4/10], Loss: 0.0098
-Epoch: [5/10], Loss: 0.0091
-Epoch: [6/10], Loss: 0.0085
-Epoch: [7/10], Loss: 0.0080
-Epoch: [8/10], Loss: 0.0076
-Epoch: [9/10], Loss: 0.0072
-Epoch: [10/10], Loss: 0.0069
-Score (accuracy) of the probe: 0.87
-The best l1=0, the best l2=0 for pretrained_BERT_top200_neurons
+Epoch: [2/10], Loss: 0.0121
+Epoch: [3/10], Loss: 0.0110
+Epoch: [4/10], Loss: 0.0101
+Epoch: [5/10], Loss: 0.0093
+Epoch: [6/10], Loss: 0.0087
+Epoch: [7/10], Loss: 0.0082
+Epoch: [8/10], Loss: 0.0077
+Epoch: [9/10], Loss: 0.0073
+Epoch: [10/10], Loss: 0.0070
+Score (accuracy) of the probe: 0.85
+The best l1=0, the best l2=0.1 for pretrained_BERT_top200_neurons
 Accuracy on the test set of probing pretrained_BERT_top200_neurons of all layers:
-Score (accuracy) of the probe: 0.80
-{'__OVERALL__': 0.7969094922737306, 'NAME': 0.7825, 'STRING': 1.0, 'NUMBER': 0.9629629629629629, 'KEYWORD': 0.8181818181818182}
+Score (accuracy) of the probe: 0.71
+{'__OVERALL__': 0.7064017660044151, 'NAME': 0.685, 'STRING': 1.0, 'NUMBER': 0.9629629629629629, 'KEYWORD': 0.7272727272727273}
 Accuracy on the test set of pretrained_BERT_top200_neurons model using the intercept:
 Score (accuracy) of the probe: 0.88
 Creating control dataset for pretrained_BERT POS tagging task
@@ -1280,67 +1278,67 @@ Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0145
-Epoch: [2/10], Loss: 0.0066
-Epoch: [3/10], Loss: 0.0037
-Epoch: [4/10], Loss: 0.0024
-Epoch: [5/10], Loss: 0.0011
-Epoch: [6/10], Loss: 0.0007
-Epoch: [7/10], Loss: 0.0003
-Epoch: [8/10], Loss: 0.0003
-Epoch: [9/10], Loss: 0.0002
-Epoch: [10/10], Loss: 0.0002
-Score (accuracy) of the probe: 0.97
+Epoch: [1/10], Loss: 0.0161
+Epoch: [2/10], Loss: 0.0109
+Epoch: [3/10], Loss: 0.0100
+Epoch: [4/10], Loss: 0.0081
+Epoch: [5/10], Loss: 0.0064
+Epoch: [6/10], Loss: 0.0053
+Epoch: [7/10], Loss: 0.0048
+Epoch: [8/10], Loss: 0.0044
+Epoch: [9/10], Loss: 0.0038
+Epoch: [10/10], Loss: 0.0034
+Score (accuracy) of the probe: 0.30
 Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0142
-Epoch: [2/10], Loss: 0.0060
-Epoch: [3/10], Loss: 0.0035
-Epoch: [4/10], Loss: 0.0024
-Epoch: [5/10], Loss: 0.0011
-Epoch: [6/10], Loss: 0.0006
-Epoch: [7/10], Loss: 0.0003
-Epoch: [8/10], Loss: 0.0003
-Epoch: [9/10], Loss: 0.0002
-Epoch: [10/10], Loss: 0.0002
-Score (accuracy) of the probe: 0.98
+Epoch: [1/10], Loss: 0.0159
+Epoch: [2/10], Loss: 0.0109
+Epoch: [3/10], Loss: 0.0111
+Epoch: [4/10], Loss: 0.0086
+Epoch: [5/10], Loss: 0.0065
+Epoch: [6/10], Loss: 0.0057
+Epoch: [7/10], Loss: 0.0055
+Epoch: [8/10], Loss: 0.0052
+Epoch: [9/10], Loss: 0.0046
+Epoch: [10/10], Loss: 0.0044
+Score (accuracy) of the probe: 0.28
 Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0149
-Epoch: [2/10], Loss: 0.0066
-Epoch: [3/10], Loss: 0.0037
-Epoch: [4/10], Loss: 0.0024
-Epoch: [5/10], Loss: 0.0011
-Epoch: [6/10], Loss: 0.0008
-Epoch: [7/10], Loss: 0.0005
-Epoch: [8/10], Loss: 0.0004
-Epoch: [9/10], Loss: 0.0003
-Epoch: [10/10], Loss: 0.0003
-Score (accuracy) of the probe: 0.98
+Epoch: [1/10], Loss: 0.0163
+Epoch: [2/10], Loss: 0.0109
+Epoch: [3/10], Loss: 0.0108
+Epoch: [4/10], Loss: 0.0104
+Epoch: [5/10], Loss: 0.0105
+Epoch: [6/10], Loss: 0.0101
+Epoch: [7/10], Loss: 0.0073
+Epoch: [8/10], Loss: 0.0053
+Epoch: [9/10], Loss: 0.0047
+Epoch: [10/10], Loss: 0.0043
+Score (accuracy) of the probe: 0.21
 Training classification probe
 Creating model...
 Number of training instances: 908
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0155
-Epoch: [2/10], Loss: 0.0072
-Epoch: [3/10], Loss: 0.0048
-Epoch: [4/10], Loss: 0.0037
-Epoch: [5/10], Loss: 0.0024
-Epoch: [6/10], Loss: 0.0020
-Epoch: [7/10], Loss: 0.0018
-Epoch: [8/10], Loss: 0.0017
-Epoch: [9/10], Loss: 0.0016
-Epoch: [10/10], Loss: 0.0016
-Score (accuracy) of the probe: 0.98
-The best l1=0, the best l2=0.001 for pretrained_BERT_control_task
+Epoch: [1/10], Loss: 0.0166
+Epoch: [2/10], Loss: 0.0116
+Epoch: [3/10], Loss: 0.0106
+Epoch: [4/10], Loss: 0.0101
+Epoch: [5/10], Loss: 0.0110
+Epoch: [6/10], Loss: 0.0099
+Epoch: [7/10], Loss: 0.0087
+Epoch: [8/10], Loss: 0.0073
+Epoch: [9/10], Loss: 0.0062
+Epoch: [10/10], Loss: 0.0060
+Score (accuracy) of the probe: 0.25
+The best l1=0, the best l2=0 for pretrained_BERT_control_task
 Accuracy on the test set of probing pretrained_BERT_control_task of all layers:
-Score (accuracy) of the probe: 0.87
-{'__OVERALL__': 0.8675496688741722, 'NAME': 0.85, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 1.0}
+Score (accuracy) of the probe: 0.23
+{'__OVERALL__': 0.22958057395143489, 'NAME': 0.19230769230769232, 'STRING': 0.27956989247311825, 'NUMBER': 0.2890625, 'KEYWORD': 0.1568627450980392}
 Accuracy on the test set of pretrained_BERT_control_task model using the intercept:
-Score (accuracy) of the probe: 0.88
-pretrained_BERT_control_task Selectivity (Diff. between true task and probing task performance):  -0.008830022075055233
+Score (accuracy) of the probe: 0.29
+pretrained_BERT_control_task Selectivity (Diff. between true task and probing task performance):  0.6357615894039734
 ----------------------------------------------------------------
