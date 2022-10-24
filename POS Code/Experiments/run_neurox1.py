@@ -74,7 +74,6 @@ def main():
             print("The distribution of classes in training after removing repeated tokens between training and tesing:")
             print(collections.Counter(y_train))
             print(label2idx_train)
-            exit(0)
 
             lookup_table = {1:2,2:3,3:1}
             for idx, this_y in enumerate(y_test):
