@@ -262,7 +262,7 @@ def filter_by_frequency(tokens,X,y,label2idx,idx2label,threshold,model_name):
     print(f"{model_name} distribution:")
     print(distribution)
 
-    flat_tokens = [l for sublist in tokens for l in sublist]
+    flat_tokens = np.array([l for sublist in tokens for l in sublist])
     assert len(flat_tokens) == len(y)
     idx_selected = y <= threshold
     y = y[idx_selected]
