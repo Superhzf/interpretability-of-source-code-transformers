@@ -183,6 +183,10 @@ def layerwise_probes_inference(X_train,y_train,X_valid,y_valid,X_test,y_test,idx
 
 def randomReassignment(tokens,labels,distribution):
     lookup_table={}
+    #random assign new class
+    # for this_class in label_freqs.keys():
+    #     lookup_table[this_class] = np.random.choice(list(label_freqs.keys()), p=distribution)
+
     for this_token in tokens:
             if this_token not in lookup_table:
                 lookup_table[this_token] = np.random.choice(labels, p=distribution)
@@ -207,10 +211,6 @@ def control_task_probes(tokens_train,X_train,y_train,tokens_test,X_test,y_test,i
     else:
         assert 1==0, "method is not understood"
     while True:
-        lookup_table = {}
-        #random assign new class
-        # for this_class in label_freqs.keys():
-        #     lookup_table[this_class] = np.random.choice(list(label_freqs.keys()), p=distribution)
         y_train_ct = randomReassignment(tokens_train,list(label_freqs.keys()),distribution)
         y_test_ct = randomReassignment(tokens_test,list(label_freqs.keys()),distribution)
         assert len(y_train_ct) == len(y_train)
