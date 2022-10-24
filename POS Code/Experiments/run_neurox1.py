@@ -3,6 +3,7 @@ from utils import remove_seen_tokens,Normalization, extract_activations, load_ex
 from utils import get_mappings,all_activations_probe,get_imp_neurons,get_top_words,layerwise_probes_inference
 from utils import control_task_probes, probeless,filter_by_frequency,preprocess
 from sklearn.model_selection import train_test_split
+import numpy as np
 
 MODEL_NAMES = ['pretrained_BERT',
                'pretrained_CodeBERT','pretrained_GraphCodeBERT',
