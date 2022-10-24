@@ -261,6 +261,9 @@ def probeless(X,y,model_name):
 
 
 def alignTokenAct(tokens,activations,idx_selected):
+    l1 = len([l for sublist in activations for l in sublist])
+    l2 = len(idx_selected)
+    assert l1 == l2,f"{l1}!={l2}"
     new_tokens_src = []
     new_tokens_trg = []
     new_activations = []
@@ -301,8 +304,10 @@ def filter_by_frequency(tokens,activations,X,y,label2idx,idx2label,threshold,mod
     flat_src_tokens = flat_src_tokens[idx_selected]
     tokens,activations=alignTokenAct(tokens,activations,idx_selected)
     assert (flat_src_tokens == np.array([l for sublist in tokens['source'] for l in sublist])).all()
-    assert len([l for sublist in activations for l in sublist]) == len(flat_src_tokens)
-    assert len(np.array([l for sublist in tokens['target'] for l in sublist])) == len(flat_src_tokens)
+    l1 = len([l for sublist in activations for l in sublist])
+    l2 = len(flat_src_tokens)
+    assert l1 == l2,f"{l1}!={l2}"
+    assert len(np.array([l for sublist in tokens['target'] for l in sublist])) == l2
 
     label2idx = {label:idx for (label,idx) in label2idx.items() if idx <= threshold}
     idx2label = {idx:label for (idx,label) in idx2label.items() if idx <= threshold}
