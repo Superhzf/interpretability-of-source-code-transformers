@@ -148,19 +148,15 @@ def get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,probe,label2id
     X_selected_valid = ablation.filter_activations_keep_neurons(X_valid, top_neurons)
     X_selected_test = ablation.filter_activations_keep_neurons(X_test, top_neurons)
     print("The shape of selected features",X_selected_train.shape)
-    _,_,best_probe=param_tuning(X_selected_train,y_train,X_selected_valid,y_valid,idx2label,l1,l2)
-    print(f"Accuracy on the test set of {model_name} model on top 5% neurons:")
-    linear_probe.evaluate_probe(best_probe, X_selected_test, y_test, idx_to_class=idx2label)
-    del X_selected_train,X_selected_valid,X_selected_test,best_probe
+    this_model_name = f"{model_name}_top5%_neurons"
+    all_activations_probe(X_selected_train,y_train,X_selected_valid,y_valid,X_selected_test,y_test,idx2label,this_model_name)
 
     ordering, cutoffs = linear_probe.get_neuron_ordering(probe, label2idx)
     X_selected_train = ablation.filter_activations_keep_neurons(X_train, ordering[:200])
     X_selected_valid = ablation.filter_activations_keep_neurons(X_valid, ordering[:200])
     X_selected_test = ablation.filter_activations_keep_neurons(X_test, ordering[:200])
-    _,_,best_probe=param_tuning(X_selected_train,y_train,X_selected_valid,y_valid,idx2label,l1,l2)
-    print(f"Accuracy on the test set of {model_name} model on top 200 neurons:")
-    linear_probe.evaluate_probe(best_probe, X_selected_test, y_test, idx_to_class=idx2label)
-    del X_selected_train,X_selected_valid,X_selected_test,best_probe
+    this_model_name = f"{model_name}_top200_neurons"
+    all_activations_probe(X_selected_train,y_train,X_selected_valid,y_valid,X_selected_test,y_test,idx2label,this_model_name)
     return top_neurons
 
 
