@@ -197,8 +197,11 @@ def control_task_probes(X_train,y_train,X_test,y_test,idx2label_train,original_s
     lookup_table = {}
     while True:
         #random assign new class
-        for this_class in label_freqs.keys():
-            lookup_table[this_class] = np.random.choice(list(label_freqs.keys()), p=distribution)
+        # for this_class in label_freqs.keys():
+        #     lookup_table[this_class] = np.random.choice(list(label_freqs.keys()), p=distribution)
+        for this_y in y_train:
+            if this_y not in lookup_table:
+                lookup_table[this_y] = np.random.choice(list(label_freqs.keys()), p=distribution)
 
         y_train_ct = []
         y_test_ct = []
