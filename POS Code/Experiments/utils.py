@@ -221,7 +221,7 @@ def control_task_probes(X_train,y_train,X_test,y_test,idx2label_train,original_s
 
         X_train_ct, X_valid_ct, y_train_ct, y_valid_ct = \
             train_test_split(X_train, y_train_ct, test_size=0.1, shuffle=False)
-        # class 0 must be in y_train_ct
+        # class 0,1,2 must be in y_train_ct
         if 0 in y_train_ct and 1 in y_train_ct and 2 in y_train_ct:
             break
     y_train = y_train_ct
