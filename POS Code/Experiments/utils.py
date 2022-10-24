@@ -281,7 +281,7 @@ def alignTokenAct(tokens,activations,idx_selected):
         if len(this_new_tokens_src)>0:
             this_new_tokens_src = np.array(this_new_tokens_src)
             this_new_tokens_trg = np.array(this_new_tokens_trg)
-            this_new_activations.append(this_new_activations)
+            this_new_activations = np.array(this_new_activations)
             new_tokens_src.append(this_new_tokens_src)
             new_tokens_trg.append(this_new_tokens_trg)
             new_activations.append(this_new_activations)
