@@ -200,32 +200,38 @@ def control_task_probes(X_train,y_train,X_test,y_test,idx2label_train,original_s
             distribution.append(1/len(label_freqs))
     else:
         assert 1==0, "method is not understood"
-    #random assign new class
     lookup_table = {}
-    while 0 not in list(lookup_table.values()):
+    while True:
+        #random assign new class
         for this_class in label_freqs.keys():
             lookup_table[this_class] = np.random.choice(list(label_freqs.keys()), p=distribution)
 
-    new_y_train = []
-    new_y_test = []
-    for this_y in y_train:
-        new_this_y = lookup_table[this_y]
-        new_y_train.append(new_this_y)
-    for this_y in y_test:
-        new_this_y = lookup_table[this_y]
-        new_y_test.append(this_y)
-    assert len(new_y_train) == len(y_train)
-    assert len(new_y_test) == len(y_test)
-    y_train = np.array(new_y_train)
-    y_test = np.array(new_y_test)
+        y_train_ct = []
+        y_test_ct = []
+        for this_y in y_train:
+            this_y_ct = lookup_table[this_y]
+            y_train_ct.append(this_y_ct)
+        for this_y in y_test:
+            this_y_ct = lookup_table[this_y]
+            y_test_ct.append(this_y_ct)
+        assert len(y_train_ct) == len(y_train)
+        assert len(y_test_ct) == len(y_test)
+        y_train_ct = np.array(y_train_ct)
+        y_test_ct = np.array(y_test_ct)
 
-    X_train, X_valid, y_train, y_valid = \
-        train_test_split(X_train, y_train, test_size=0.1, shuffle=False)
-    assert 0 in set(y_train)
+        X_train_ct, X_valid_ct, y_train_ct, y_valid_ct = \
+            train_test_split(X_train, y_train_ct, test_size=0.1, shuffle=False)
+        # class 0 must be in y_train_ct
+        if 0 in y_train_ct:
+            break
+    y_train = y_train_ct
+    y_valid = y_valid_ct
+    y_test = y_test_ct
+    del y_train_ct,y_valid_ct,y_test_ct
     # normalization
     ct_norm = Normalization(X_train)
-    X_train = ct_norm.norm(X_train)
-    X_valid = ct_norm.norm(X_valid)
+    X_train = ct_norm.norm(X_train_ct)
+    X_valid = ct_norm.norm(X_valid_ct)
     X_test = ct_norm.norm(X_test)
     del ct_norm
 
