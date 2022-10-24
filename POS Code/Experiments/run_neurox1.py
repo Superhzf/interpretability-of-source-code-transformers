@@ -78,8 +78,9 @@ def main():
                     this_new_activations.append(this_new_activations)
                     new_tokens_train.append(this_new_tokens)
                     new_activations_train.append(this_new_activations)
-            assert np.array([l for sublist in new_tokens_train for l in sublist]) == flat_tokens_train
+            assert len(np.array([l for sublist in new_tokens_train for l in sublist])) == len(flat_tokens_train)
             assert len(np.array([l for sublist in new_activations_train for l in sublist])) == len(flat_tokens_train)
+            assert (np.array([l for sublist in new_tokens_train for l in sublist]) == flat_tokens_train).all()
             tokens_train = new_tokens_train
             activations_train = new_activations_train
             print("The distribution of classes after removing repeated tokens between training and tesing:")
