@@ -40,6 +40,7 @@ def main():
                 extract_activations('codetest2_test_unique.in',MODEL_DESC[this_model],activation_file_name)
     else:
         print("Getting activations from json files. If you need to extract them, run with --extract=True \n" )
+    exit(0)
 
     for this_model in MODEL_NAMES:
         if this_model in ['pretrained_BERT','pretrained_CodeBERT','pretrained_GraphCodeBERT']:
@@ -115,7 +116,6 @@ def main():
             selectivity = control_task_probes(flat_tokens_train,X_train_copy,y_train_copy,
                                             flat_tokens_test,X_test_copy,y_test_copy,idx2label_train,scores,this_model,'UNIFORM')
             print("----------------------------------------------------------------")
-            break
 
 if __name__ == "__main__":
     main()
