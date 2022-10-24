@@ -194,8 +194,8 @@ def control_task_probes(X_train,y_train,X_test,y_test,idx2label_train,original_s
             distribution.append(1/len(label_freqs))
     else:
         assert 1==0, "method is not understood"
-    lookup_table = {}
     while True:
+        lookup_table = {}
         #random assign new class
         # for this_class in label_freqs.keys():
         #     lookup_table[this_class] = np.random.choice(list(label_freqs.keys()), p=distribution)
