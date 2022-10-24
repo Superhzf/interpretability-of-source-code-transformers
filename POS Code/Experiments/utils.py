@@ -235,6 +235,9 @@ def control_task_probes(X_train,y_train,X_test,y_test,idx2label_train,original_s
     X_test = ct_norm.norm(X_test)
     del ct_norm
 
+    assert X_train.shape[0] == len(y_train)
+    assert X_valid.shape[0] == len(y_valid)
+    assert X_test.shape[0] == len(y_test)
     model_name = f'{model_name}_control_task'
     _, ct_scores = all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label_train,model_name)
     
