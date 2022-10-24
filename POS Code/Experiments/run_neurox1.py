@@ -4,6 +4,7 @@ from utils import get_mappings,all_activations_probe,get_imp_neurons,get_top_wor
 from utils import control_task_probes, probeless,filter_by_frequency,preprocess
 from sklearn.model_selection import train_test_split
 import numpy as np
+import collections
 
 MODEL_NAMES = ['pretrained_BERT',
                'pretrained_CodeBERT','pretrained_GraphCodeBERT',
@@ -62,8 +63,8 @@ def main():
             X_train = X_train[idx_selected]
             y_train = y_train[idx_selected]
 
-            print("The distribution of classes after removing repeated tokens between training and tesing:")
-            print(Counter.collections(y_train))
+            print("The distribution of classes in training after removing repeated tokens between training and tesing:")
+            print(collections.Counter(y_train))
             print(label2idx_train)
             exit(0)
 
