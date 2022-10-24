@@ -43,10 +43,10 @@ def main():
         if this_model in ['pretrained_BERT','pretrained_CodeBERT','pretrained_GraphCodeBERT']:
             print(f"Anayzing {this_model}")
             freq_threshold = 3
-            tokens_train,X_train, y_train, label2idx_train, idx2label_train=preprocess(ACTIVATION_NAMES[this_model][0],
+            tokens_train,activations_train,flat_tokens_train,X_train, y_train, label2idx_train, idx2label_train=preprocess(ACTIVATION_NAMES[this_model][0],
                                                                         './src_files/codetest2_train_unique.in','./src_files/codetest2_train_unique.label',
                                                                         freq_threshold,this_model)
-            tokens_test,X_test, y_test, _, _=preprocess(ACTIVATION_NAMES[this_model][1],
+            _,_,flat_tokens_test,X_test, y_test, _, _=preprocess(ACTIVATION_NAMES[this_model][1],
                                             './src_files/codetest2_test_unique.in','./src_files/codetest2_test_unique.label',
                                             freq_threshold,this_model)
             lookup_table = {1:2,2:3,3:1}
@@ -83,11 +83,11 @@ def main():
 
             #Important neuron probes
             top_neurons = get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,probe,label2idx_train,idx2label_train,this_model)
-            get_top_words(top_neurons,tokens,activations,this_model)
+            get_top_words(top_neurons,tokens_train,activations_train,this_model)
             del X_train, X_test, X_valid,y_train, y_test,y_valid
             #Control task probes
-            selectivity = control_task_probes(tokens_train,X_train_copy,y_train_copy,
-                                            tokens_test,X_test_copy,y_test_copy,idx2label_train,scores,this_model,'UNIFORM')
+            selectivity = control_task_probes(flat_tokens_train,X_train_copy,y_train_copy,
+                                            flat_tokens_test,X_test_copy,y_test_copy,idx2label_train,scores,this_model,'UNIFORM')
             print("----------------------------------------------------------------")
             break
 
