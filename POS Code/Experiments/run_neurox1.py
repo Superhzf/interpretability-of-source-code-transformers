@@ -85,9 +85,10 @@ def main():
                     idx_selected.append(False)
                 else:
                     is_selected = True
-                    if idx2label_train[this_y_test] == "NAME":
+                    if this_y_test == label2idx_train['NAME']:
                         for this_y_train in y_train:
                             if getOverlap(this_y_test,this_y_train) >=3:
+                                print("Good")
                                 is_selected = False
                                 break
                     idx_selected.append(is_selected)
