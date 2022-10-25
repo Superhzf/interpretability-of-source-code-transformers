@@ -81,7 +81,7 @@ def main():
             # This keeps ~10 KW in the test set
             idx_selected = []
             for this_token_test,this_y_test in zip(flat_tokens_test,y_test):
-                if this_token in flat_tokens_train:
+                if this_token_test in flat_tokens_train:
                     idx_selected.append(False)
                 else:
                     is_selected = True
