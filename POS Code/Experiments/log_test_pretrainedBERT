@@ -8,7 +8,7 @@ length of source dictionary:  1042
 length of target dictionary:  35
 11684
 Total instances: 11684
-['60', 'get_profile_ports', '"happy_birthday"', 'set_roster', '.', '###', 'isinstance', 'year', 'core', '128', 'mtime', 'path', 'normal_direction', 'MAXFRIENDS', 'profileConnectionV4', 'epoch_milliseconds', 'monkey_patch', '__add__', '__name__', 'ndt']
+['Library', 'gbkDec', 'macType', 'route_array', '24', 'On', 'shts', 'MINUTE_MICROS', 'TabGroup', 'sanStorageV3', 'jid', 'disco_items', 'IsSuperBM', 'MICROS_TRANSLATIONS', 'length_scale', 'make_EnclosureGroupV200', 'get_servers', 'print_function', 'StreamClosed', '/']
 Number of samples:  11684
 Stats: Labels with their frequencies in the final set
 NAME 3656
@@ -46,13 +46,10 @@ GREATEREQUAL 3
 MINEQUAL 3
 LESSEQUAL 2
 SEMI 1
-
-pretrained_BERT distribution:
-{0: 3656, 1: 1172, 2: 905, 3: 870, 4: 866, 5: 858, 6: 597, 7: 576, 8: 447, 9: 369, 10: 293, 11: 204, 12: 204, 13: 190, 14: 117, 15: 82, 16: 48, 17: 33, 18: 25, 19: 24, 20: 24, 21: 22, 22: 22, 23: 14, 24: 12, 25: 11, 26: 10, 27: 8, 28: 7, 29: 5, 30: 4, 31: 3, 32: 3, 33: 2, 34: 1}
 pretrained_BERT distribution after trauncating:
-{0: 0.7564659631698738, 2: 0.1872542933995448, 13: 0.03931305607283261, 15: 0.01696668735774881}
-{0: 3656, 2: 905, 13: 190, 15: 82}
-{'NAME': 0, 'KEYWORD': 2, 'NUMBER': 13, 'STRING': 15}
+{0: 0.7564659631698738, 3: 0.1872542933995448, 2: 0.03931305607283261, 1: 0.01696668735774881}
+{0: 3656, 3: 905, 2: 190, 1: 82}
+{'NAME': 0, 'NEWLINE': 1, 'KEYWORD': 2, 'LPAR': 3, 'RPAR': 4, 'DOT': 5, 'EQUAL': 6, 'COMMA': 7, 'COLON': 8, 'DEDENT': 9, 'INDENT': 10, 'LSQB': 11, 'RSQB': 12, 'NUMBER': 13, 'NL': 14, 'STRING': 15, 'EQEQUAL': 16, 'PLUS': 17, 'LBRACE': 18, 'STAR': 19, 'RBRACE': 20, 'MINUS': 21, 'PERCENT': 22, 'AT': 23, 'PLUSEQUAL': 24, 'GREATER': 25, 'NOTEQUAL': 26, 'DOUBLESTAR': 27, 'LESS': 28, 'SLASH': 29, 'COMMENT': 30, 'GREATEREQUAL': 31, 'MINEQUAL': 32, 'LESSEQUAL': 33, 'SEMI': 34}
 Loading json activations from bert_activations_test.json...
 494 13.0
 Number of tokens:  6400
@@ -60,7 +57,7 @@ length of source dictionary:  482
 length of target dictionary:  34
 6400
 Total instances: 6400
-['minimum', '0.9', 'tuple', '.', 'isinstance', 'RandomStreams', 'warmup_size', 'path', 'extensions', 'result_eval', 'te_h_updates', 'axis', '__name__', 'values', 'pass', 'conv', 'MultiStep', 'modelbase', 'b', 'result_0']
+['TestConcatLayer', 'describable', 'h0', 'brainstorm', 'result_1', 'MagicMock', 'test_get_output_for', 'o_on', 'W_emb', 'output_deltas', 'print_function', 'internals', '/', 'getter', '1.5', '=', 'Variable', 'conv2d', 'T', 'test_get_output_shape_for_cropped']
 Number of samples:  6400
 Stats: Labels with their frequencies in the final set
 NAME 1721
@@ -97,14 +94,11 @@ GREATEREQUAL 1
 PLUSEQUAL 1
 LESSEQUAL 1
 AMPER 1
-
-pretrained_BERT distribution:
-{0: 1721, 1: 798, 2: 482, 3: 439, 4: 437, 5: 433, 6: 348, 7: 336, 8: 293, 9: 241, 10: 233, 11: 228, 12: 97, 13: 82, 14: 62, 15: 60, 16: 29, 17: 26, 18: 15, 19: 7, 20: 6, 21: 6, 22: 4, 23: 3, 24: 3, 25: 2, 26: 2, 27: 1, 28: 1, 29: 1, 30: 1, 31: 1, 32: 1, 33: 1}
 pretrained_BERT distribution after trauncating:
-{0: 0.6767597325992922, 2: 0.18953991348800628, 7: 0.1321274085725521, 22: 0.0015729453401494297}
-{0: 1721, 2: 482, 7: 336, 22: 4}
-{'NAME': 0, 'NUMBER': 2, 'KEYWORD': 7, 'STRING': 22}
+{0: 0.6767597325992922, 2: 0.18953991348800628, 3: 0.1321274085725521, 1: 0.0015729453401494297}
+{0: 1721, 2: 482, 3: 336, 1: 4}
+{'NAME': 0, 'COMMA': 1, 'NUMBER': 2, 'RPAR': 3, 'LPAR': 4, 'NEWLINE': 5, 'DOT': 6, 'KEYWORD': 7, 'COLON': 8, 'EQUAL': 9, 'LSQB': 10, 'RSQB': 11, 'DEDENT': 12, 'INDENT': 13, 'STAR': 14, 'NL': 15, 'EQEQUAL': 16, 'PLUS': 17, 'MINUS': 18, 'DOUBLESTAR': 19, 'SLASH': 20, 'AT': 21, 'STRING': 22, 'LBRACE': 23, 'RBRACE': 24, 'STAREQUAL': 25, 'PERCENT': 26, 'GREATER': 27, 'LESS': 28, 'COMMENT': 29, 'GREATEREQUAL': 30, 'PLUSEQUAL': 31, 'LESSEQUAL': 32, 'AMPER': 33}
 
 The distribution of classes in training after removing repeated tokens between training and tesing:
-Counter({0: 2915, 15: 82, 2: 58, 13: 42})
-{'NAME': 0, 'KEYWORD': 2, 'NUMBER': 13, 'STRING': 15}
+Counter({0: 2915, 1: 82, 3: 58, 2: 42})
+{'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
