@@ -10,6 +10,15 @@ from sklearn.model_selection import train_test_split
 import neurox.analysis.corpus as corpus
 import numpy as np
 import collections
+import difflib:
+
+
+def getOverlap(s1, s2):
+    s1 = s1.lower()
+    s2 = s2.lower()
+    s = difflib.SequenceMatcher(None, s1, s2)
+    pos_a, pos_b, size = s.find_longest_match(0, len(s1), 0, len(s2)) 
+    return len(s1[pos_a:pos_a+size])
 
 
 def remove_seen_tokens(tokens,activations):

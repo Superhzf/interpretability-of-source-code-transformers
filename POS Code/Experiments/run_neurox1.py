@@ -1,7 +1,7 @@
 import argparse
 from utils import remove_seen_tokens,Normalization, extract_activations, load_extracted_activations, load_tokens
 from utils import get_mappings,all_activations_probe,get_imp_neurons,get_top_words,layerwise_probes_inference
-from utils import control_task_probes, probeless,filter_by_frequency,preprocess,alignTokenAct
+from utils import control_task_probes, probeless,filter_by_frequency,preprocess,alignTokenAct,getOverlap
 from sklearn.model_selection import train_test_split
 import numpy as np
 import collections
@@ -80,11 +80,17 @@ def main():
 
             # This keeps ~10 KW in the test set
             idx_selected = []
-            for this_token in flat_tokens_test:
+            for this_token,this_y_test in zip(flat_tokens_test,y_test):
                 if this_token in flat_tokens_train:
                     idx_selected.append(False)
                 else:
-                    idx_selected.append(True)
+                    is_selected = True
+                    if idx2label_train[this_y_test] == "NAME":
+                        for this_y_train in y_train:
+                            if getOverlap(this_y_test,this_y_train) >=3:
+                                is_selected = False
+                                break
+                    idx_selected.append(is_selected)
             assert len(idx_selected) == len(flat_tokens_test)
             flat_tokens_test = flat_tokens_test[idx_selected]
             X_test = X_test[idx_selected]
