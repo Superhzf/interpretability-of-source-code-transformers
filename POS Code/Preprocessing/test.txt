@@ -56,4 +56,3 @@ data/QuantSoftware/QuantSoftwareToolkit/Legacy/Legacy/alphaDataModel/AlphaDataMo
 data/QuantSoftware/QuantSoftwareToolkit/Legacy/csvconverter/yahoo_csv_to_pkl.py
 data/QuantSoftware/QuantSoftwareToolkit/Legacy/quicksim/strategies/OneStock.py
 data/QuantSoftware/QuantSoftwareToolkit/QSTK/qstktest/testDataAccess.py
-
