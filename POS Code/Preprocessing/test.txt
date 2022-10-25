@@ -55,8 +55,4 @@ data/QuantEcon/QuantEcon.py/quantecon/tests/test_robustlq.py
 data/QuantSoftware/QuantSoftwareToolkit/Legacy/Legacy/alphaDataModel/AlphaDataModel.py
 data/QuantSoftware/QuantSoftwareToolkit/Legacy/csvconverter/yahoo_csv_to_pkl.py
 data/QuantSoftware/QuantSoftwareToolkit/Legacy/quicksim/strategies/OneStock.py
-<<<<<<< HEAD
 data/QuantSoftware/QuantSoftwareToolkit/QSTK/qstktest/testDataAccess.py
-=======
-data/QuantSoftware/QuantSoftwareToolkit/QSTK/qstktest/testDataAccess.py
->>>>>>> 27d870ac6bc2b9b61f542a7073673ede00c1a21c
