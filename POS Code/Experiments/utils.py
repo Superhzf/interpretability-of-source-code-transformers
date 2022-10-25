@@ -370,7 +370,7 @@ def filterByClass(tokens,activations,X,y,label2idx,idx2label,model_name):
     return tokens,activations,flat_src_tokens,X,y,label2idx,idx2label
 
 
-def preprocess(activation_file_name,IN_file,LABEL_file,freq_threshold,model_name):
+def preprocess(activation_file_name,IN_file,LABEL_file,model_name):
     activations = load_extracted_activations(activation_file_name)
     tokens =  load_tokens(activations,IN_file,LABEL_file)
     # tokens,activations=remove_seen_tokens(tokens,activations)
