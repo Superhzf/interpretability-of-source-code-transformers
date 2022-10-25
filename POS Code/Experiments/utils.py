@@ -366,7 +366,7 @@ def filterByClass(tokens,activations,X,y,label2idx,model_name):
     print(f"{model_name} distribution after trauncating:")
     print(distribution_rate)
     print(distribution)
-    print(label2idx)
+    print(new_label2idx)
     return tokens,activations,flat_src_tokens,X,y,new_label2idx,new_idx2label
 
 
