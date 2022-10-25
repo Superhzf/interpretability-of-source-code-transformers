@@ -8,7 +8,7 @@ length of source dictionary:  1042
 length of target dictionary:  35
 11684
 Total instances: 11684
-['Library', 'gbkDec', 'macType', 'route_array', '24', 'On', 'shts', 'MINUTE_MICROS', 'TabGroup', 'sanStorageV3', 'jid', 'disco_items', 'IsSuperBM', 'MICROS_TRANSLATIONS', 'length_scale', 'make_EnclosureGroupV200', 'get_servers', 'print_function', 'StreamClosed', '/']
+['names_path', 'find', '14', 'server_hardware_type', 'recv_presence', 'save', '17', 'allow_login', 'stream_closed', 'verbatim', 'ParticleSystemSortMode', '"Port"', '}', 'get_storage_vol_template_policy', 'timegm', 'render_mode', 'dest', 'timetuple', 'formatter_class', '3600']
 Number of samples:  11684
 Stats: Labels with their frequencies in the final set
 NAME 3656
@@ -49,7 +49,7 @@ SEMI 1
 pretrained_BERT distribution after trauncating:
 {0: 0.7564659631698738, 3: 0.1872542933995448, 2: 0.03931305607283261, 1: 0.01696668735774881}
 {0: 3656, 3: 905, 2: 190, 1: 82}
-{'NAME': 0, 'NEWLINE': 1, 'KEYWORD': 2, 'LPAR': 3, 'RPAR': 4, 'DOT': 5, 'EQUAL': 6, 'COMMA': 7, 'COLON': 8, 'DEDENT': 9, 'INDENT': 10, 'LSQB': 11, 'RSQB': 12, 'NUMBER': 13, 'NL': 14, 'STRING': 15, 'EQEQUAL': 16, 'PLUS': 17, 'LBRACE': 18, 'STAR': 19, 'RBRACE': 20, 'MINUS': 21, 'PERCENT': 22, 'AT': 23, 'PLUSEQUAL': 24, 'GREATER': 25, 'NOTEQUAL': 26, 'DOUBLESTAR': 27, 'LESS': 28, 'SLASH': 29, 'COMMENT': 30, 'GREATEREQUAL': 31, 'MINEQUAL': 32, 'LESSEQUAL': 33, 'SEMI': 34}
+{'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
 Loading json activations from bert_activations_test.json...
 494 13.0
 Number of tokens:  6400
@@ -57,7 +57,7 @@ length of source dictionary:  482
 length of target dictionary:  34
 6400
 Total instances: 6400
-['TestConcatLayer', 'describable', 'h0', 'brainstorm', 'result_1', 'MagicMock', 'test_get_output_for', 'o_on', 'W_emb', 'output_deltas', 'print_function', 'internals', '/', 'getter', '1.5', '=', 'Variable', 'conv2d', 'T', 'test_get_output_shape_for_cropped']
+['Exponential', '0.5', 'on_rtd', 'describable', 'f_on', '0.001', 'tuple', 'environ', 'results', '}', 'outs', 'param', 'init_scale', 'filename', 'model', 'ModelLMBase', 'conv', 'targets_name', 'get_html_theme_path', 'divide_mv']
 Number of samples:  6400
 Stats: Labels with their frequencies in the final set
 NAME 1721
@@ -97,7 +97,7 @@ AMPER 1
 pretrained_BERT distribution after trauncating:
 {0: 0.6767597325992922, 2: 0.18953991348800628, 3: 0.1321274085725521, 1: 0.0015729453401494297}
 {0: 1721, 2: 482, 3: 336, 1: 4}
-{'NAME': 0, 'COMMA': 1, 'NUMBER': 2, 'RPAR': 3, 'LPAR': 4, 'NEWLINE': 5, 'DOT': 6, 'KEYWORD': 7, 'COLON': 8, 'EQUAL': 9, 'LSQB': 10, 'RSQB': 11, 'DEDENT': 12, 'INDENT': 13, 'STAR': 14, 'NL': 15, 'EQEQUAL': 16, 'PLUS': 17, 'MINUS': 18, 'DOUBLESTAR': 19, 'SLASH': 20, 'AT': 21, 'STRING': 22, 'LBRACE': 23, 'RBRACE': 24, 'STAREQUAL': 25, 'PERCENT': 26, 'GREATER': 27, 'LESS': 28, 'COMMENT': 29, 'GREATEREQUAL': 30, 'PLUSEQUAL': 31, 'LESSEQUAL': 32, 'AMPER': 33}
+{'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
 
 The distribution of classes in training after removing repeated tokens between training and tesing:
 Counter({0: 2915, 1: 82, 3: 58, 2: 42})
