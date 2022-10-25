@@ -90,10 +90,6 @@ def main():
             X_test = X_test[idx_selected]
             y_test = y_test[idx_selected]
 
-            # lookup_table = {1:2,2:3,3:1}
-            # for idx, this_y in enumerate(y_test):
-            #     if this_y in lookup_table:
-            #         y_test[idx] = lookup_table[this_y]
             print()
             print("The distribution of classes in training after removing repeated tokens between training and tesing:")
             print(collections.Counter(y_train))

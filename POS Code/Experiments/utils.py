@@ -326,21 +326,21 @@ def filter_by_frequency(tokens,activations,X,y,label2idx,idx2label,threshold,mod
     return tokens,activations,flat_src_tokens,X,y,label2idx,idx2label
 
 
-def filterByClass(tokens,activations,X,y,label2idx,idx2label,model_name):
-    count = collections.Counter(y)
-    distribution = {k: v for k, v in sorted(count.items(), key=lambda item: item[1],reverse=True)}
-    print()
-    print(f"{model_name} distribution:")
-    print(distribution)
+def filterByClass(tokens,activations,X,y,label2idx,model_name):
+    lookup_table={}
+    new_label2idx={}
+    new_idx2label={}
 
     flat_targt_tokens = np.array([l for sublist in tokens['target'] for l in sublist])
     flat_src_tokens = np.array([l for sublist in tokens['source'] for l in sublist])
     assert len(flat_targt_tokens) == len(y)
     assert len(flat_src_tokens) == len(y)
+
     class_wanted = ['NAME','STRING','NUMBER','KEYWORD']
-    idx_wanted = []
-    for this_class in class_wanted:
-        idx_wanted.append(label2idx[this_class])
+    for idx,this_class in enumerate(class_wanted):
+        lookup_table[label2idx[this_class]] = idx
+        new_label2idx[this_class] = idx
+        new_idx2label[idx] = this_class
     idx_selected=[]
     for this_targt in flat_targt_tokens:
         if this_targt in class_wanted:
@@ -348,7 +348,10 @@ def filterByClass(tokens,activations,X,y,label2idx,idx2label,model_name):
         else:
             idx_selected.append(False)
     y = y[idx_selected]
+    y = [lookup_table[this_y] for this_y in y]
+    y = np.array(y)
     X = X[idx_selected]
+
     flat_src_tokens = flat_src_tokens[idx_selected]
     tokens,activations=alignTokenAct(tokens,activations,idx_selected)
     assert (flat_src_tokens == np.array([l for sublist in tokens['source'] for l in sublist])).all()
@@ -357,9 +360,6 @@ def filterByClass(tokens,activations,X,y,label2idx,idx2label,model_name):
     assert l1 == l2,f"{l1}!={l2}"
     assert len(np.array([l for sublist in tokens['target'] for l in sublist])) == l2
 
-    label2idx = {label:idx for (label,idx) in label2idx.items() if idx in idx_wanted}
-    idx2label = {idx:label for (idx,label) in idx2label.items() if idx in idx_wanted}
-
     count = collections.Counter(y)
     distribution_rate = {k: v/len(y) for k, v in sorted(count.items(), key=lambda item: item[1],reverse=True)}
     distribution = {k: v for k, v in sorted(count.items(), key=lambda item: item[1],reverse=True)}
@@ -367,13 +367,13 @@ def filterByClass(tokens,activations,X,y,label2idx,idx2label,model_name):
     print(distribution_rate)
     print(distribution)
     print(label2idx)
-    return tokens,activations,flat_src_tokens,X,y,label2idx,idx2label
+    return tokens,activations,flat_src_tokens,X,y,new_label2idx,new_idx2label
 
 
 def preprocess(activation_file_name,IN_file,LABEL_file,model_name):
     activations = load_extracted_activations(activation_file_name)
     tokens =  load_tokens(activations,IN_file,LABEL_file)
     # tokens,activations=remove_seen_tokens(tokens,activations)
-    X, y, label2idx, idx2label, _, _ = get_mappings(tokens,activations)
-    tokens,activations,flat_src_tokens,X_train, y_train, label2idx, idx2label = filterByClass(tokens,activations,X,y,label2idx,idx2label,model_name)
+    X, y, label2idx, _, _, _ = get_mappings(tokens,activations)
+    tokens,activations,flat_src_tokens,X_train, y_train, label2idx, idx2label = filterByClass(tokens,activations,X,y,label2idx,model_name)
     return tokens,activations,flat_src_tokens,X_train,y_train,label2idx,idx2label
