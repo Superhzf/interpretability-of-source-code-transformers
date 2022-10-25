@@ -95,7 +95,7 @@ def main():
             for idx, this_y in enumerate(y_test):
                 if this_y in lookup_table:
                     y_test[idx] = lookup_table[this_y]
-            
+            print()
             print("The distribution of classes in training after removing repeated tokens between training and tesing:")
             print(collections.Counter(y_train))
             print("The distribution of classes in testing:")
@@ -122,6 +122,7 @@ def main():
             # probeless(X_train,y_train,this_model)
 
             #All activations probes
+            print()
             print("The shape of the training set:",X_train.shape)
             print("The shape of the validation set:",X_valid.shape)
             print("The shape of the testing set:",X_test.shape)

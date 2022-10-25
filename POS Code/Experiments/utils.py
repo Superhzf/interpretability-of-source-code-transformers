@@ -121,6 +121,7 @@ def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2labe
 
     best_l1,best_l2,best_probe=param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2)
     #Get scores of probes
+    print()
     print(f"The best l1={best_l1}, the best l2={best_l2} for {model_name}")
     print(f"Accuracy on the test set of probing {model_name} of all layers:")
     scores = linear_probe.evaluate_probe(best_probe, X_test, y_test, idx_to_class=idx2label)
@@ -136,6 +137,7 @@ def get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,probe,label2id
 
     #Top neurons
     top_neurons, top_neurons_per_class = linear_probe.get_top_neurons(probe, 0.05, label2idx)
+    print()
     print(f"{model_name} top neurons")
     print(repr(top_neurons))
     print(f"{model_name} top neurons per class")
@@ -244,6 +246,7 @@ def control_task_probes(tokens_train,X_train,y_train,tokens_test,X_test,y_test,i
     _, ct_scores = all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label_train,model_name)
     
     selectivity = original_scores['__OVERALL__'] - ct_scores['__OVERALL__']
+    print()
     print(f'{model_name} Selectivity (Diff. between true task and probing task performance): ', selectivity)
     del ct_scores
     return selectivity
@@ -293,6 +296,7 @@ def alignTokenAct(tokens,activations,idx_selected):
 def filter_by_frequency(tokens,activations,X,y,label2idx,idx2label,threshold,model_name):
     count = collections.Counter(y)
     distribution = {k: v for k, v in sorted(count.items(), key=lambda item: item[1],reverse=True)}
+    print()
     print(f"{model_name} distribution:")
     print(distribution)
 
