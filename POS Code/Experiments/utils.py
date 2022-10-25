@@ -326,10 +326,54 @@ def filter_by_frequency(tokens,activations,X,y,label2idx,idx2label,threshold,mod
     return tokens,activations,flat_src_tokens,X,y,label2idx,idx2label
 
 
+def filterByClass(tokens,activations,X,y,label2idx,idx2label,model_name):
+    count = collections.Counter(y)
+    distribution = {k: v for k, v in sorted(count.items(), key=lambda item: item[1],reverse=True)}
+    print()
+    print(f"{model_name} distribution:")
+    print(distribution)
+
+    flat_targt_tokens = np.array([l for sublist in tokens['target'] for l in sublist])
+    flat_src_tokens = np.array([l for sublist in tokens['source'] for l in sublist])
+    assert len(flat_targt_tokens) == len(y)
+    assert len(flat_src_tokens) == len(y)
+    class_wanted = ['NAME','STRING','NUMBER','KEYWORD']
+    idx_wanted = []
+    for this_class in class_wanted:
+        idx_wanted.append(label2idx[this_class])
+    idx_selected=[]
+    for this_targt in flat_targt_tokens:
+        if this_targt in class_wanted:
+            idx_selected.append(True)
+        else:
+            idx_selected.append(False)
+    y = y[idx_selected]
+    X = X[idx_selected]
+    flat_src_tokens = flat_src_tokens[idx_selected]
+    tokens,activations=alignTokenAct(tokens,activations,idx_selected)
+    assert (flat_src_tokens == np.array([l for sublist in tokens['source'] for l in sublist])).all()
+    l1 = len([l for sublist in activations for l in sublist])
+    l2 = len(flat_src_tokens)
+    assert l1 == l2,f"{l1}!={l2}"
+    assert len(np.array([l for sublist in tokens['target'] for l in sublist])) == l2
+
+    label2idx = {label:idx for (label,idx) in label2idx.items() if idx in idx_wanted}
+    idx2label = {idx:label for (idx,label) in idx2label.items() if idx in idx_wanted}
+
+    count = collections.Counter(y)
+    distribution_rate = {k: v/len(y) for k, v in sorted(count.items(), key=lambda item: item[1],reverse=True)}
+    distribution = {k: v for k, v in sorted(count.items(), key=lambda item: item[1],reverse=True)}
+    print(f"{model_name} distribution after trauncating:")
+    print(distribution_rate)
+    print(distribution)
+    print(label2idx)
+    return tokens,activations,flat_src_tokens,X,y,label2idx,idx2label
+
+
 def preprocess(activation_file_name,IN_file,LABEL_file,freq_threshold,model_name):
     activations = load_extracted_activations(activation_file_name)
     tokens =  load_tokens(activations,IN_file,LABEL_file)
-    tokens,activations=remove_seen_tokens(tokens,activations)
+    # tokens,activations=remove_seen_tokens(tokens,activations)
     X, y, label2idx, idx2label, _, _ = get_mappings(tokens,activations)
-    tokens,activations,flat_src_tokens,X_train, y_train, label2idx, idx2label = filter_by_frequency(tokens,activations,X,y,label2idx,idx2label,freq_threshold,model_name)
+    tokens,activations,flat_src_tokens,X_train, y_train, label2idx, idx2label = filterByClass(tokens,activations,X,y,label2idx,idx2label,model_name)
     return tokens,activations,flat_src_tokens,X_train,y_train,label2idx,idx2label

@@ -44,13 +44,12 @@ def main():
     for this_model in MODEL_NAMES:
         if this_model in ['pretrained_BERT','pretrained_CodeBERT','pretrained_GraphCodeBERT']:
             print(f"Anayzing {this_model}")
-            freq_threshold = 3
             tokens_train,activations_train,flat_tokens_train,X_train, y_train, label2idx_train, idx2label_train=preprocess(ACTIVATION_NAMES[this_model][0],
                                                                         './src_files/codetest2_train_unique.in','./src_files/codetest2_train_unique.label',
-                                                                        freq_threshold,this_model)
+                                                                        this_model)
             _,_,flat_tokens_test,X_test, y_test, _, _=preprocess(ACTIVATION_NAMES[this_model][1],
                                             './src_files/codetest2_test_unique.in','./src_files/codetest2_test_unique.label',
-                                            freq_threshold,this_model)
+                                            this_model)
             # remove tokens that are shared by training and testing
             # At the same, make sure to keep at least 10 KW in the training set
             idx_selected = []
@@ -91,16 +90,17 @@ def main():
             X_test = X_test[idx_selected]
             y_test = y_test[idx_selected]
 
-            lookup_table = {1:2,2:3,3:1}
-            for idx, this_y in enumerate(y_test):
-                if this_y in lookup_table:
-                    y_test[idx] = lookup_table[this_y]
+            # lookup_table = {1:2,2:3,3:1}
+            # for idx, this_y in enumerate(y_test):
+            #     if this_y in lookup_table:
+            #         y_test[idx] = lookup_table[this_y]
             print()
             print("The distribution of classes in training after removing repeated tokens between training and tesing:")
             print(collections.Counter(y_train))
-            print("The distribution of classes in testing:")
-            print(collections.Counter(y_test))
+            # print("The distribution of classes in testing:")
+            # print(collections.Counter(y_test))
             print(label2idx_train)
+            exit(0)
 
             
             X_train_copy = X_train.copy()
