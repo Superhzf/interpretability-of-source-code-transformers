@@ -8,7 +8,7 @@ length of source dictionary:  1042
 length of target dictionary:  35
 11684
 Total instances: 11684
-['names_path', 'find', '14', 'server_hardware_type', 'recv_presence', 'save', '17', 'allow_login', 'stream_closed', 'verbatim', 'ParticleSystemSortMode', '"Port"', '}', 'get_storage_vol_template_policy', 'timegm', 'render_mode', 'dest', 'timetuple', 'formatter_class', '3600']
+['ny_dt', '_tzname', 'to_timezoned_datetime', 'probe', 'receive_shadows', 'MSG', 'GetMsgCount', '5', 'seek', 'ReceivedCloseStream', 'part', 'user', 'result_list', 'create_server_profile_template', '"m_ReflectionProbeUsage"', '"oslo"', 'SaneDelta', 'refresh', 'hide_flexnics', 'MICROS_TRANSLATIONS']
 Number of samples:  11684
 Stats: Labels with their frequencies in the final set
 NAME 3656
@@ -57,7 +57,7 @@ length of source dictionary:  482
 length of target dictionary:  34
 6400
 Total instances: 6400
-['Exponential', '0.5', 'on_rtd', 'describable', 'f_on', '0.001', 'tuple', 'environ', 'results', '}', 'outs', 'param', 'init_scale', 'filename', 'model', 'ModelLMBase', 'conv', 'targets_name', 'get_html_theme_path', 'divide_mv']
+['gather_losses_and_scores', 'term1', 'crop0', 'MagicMock', 'seq_size', 'mult_add_st', '_weighted_average', '5', 'StructureTemplate', 'mask', 'getcwd', 'x_hat', 'maximum', 'shared_zeros', 'cls', 'test_crop_inputs', 'or', 'mult_mv', 'numpy', 'base_layer']
 Number of samples:  6400
 Stats: Labels with their frequencies in the final set
 NAME 1721
@@ -101,4 +101,7 @@ pretrained_BERT distribution after trauncating:
 
 The distribution of classes in training after removing repeated tokens between training and tesing:
 Counter({0: 2915, 1: 82, 3: 58, 2: 42})
+{'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
+The distribution of classes in testing:
+Counter({0: 1721, 2: 482, 3: 134, 1: 4})
 {'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
