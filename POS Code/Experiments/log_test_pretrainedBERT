@@ -8,7 +8,7 @@ length of source dictionary:  1042
 length of target dictionary:  35
 11684
 Total instances: 11684
-['ny_dt', '_tzname', 'to_timezoned_datetime', 'probe', 'receive_shadows', 'MSG', 'GetMsgCount', '5', 'seek', 'ReceivedCloseStream', 'part', 'user', 'result_list', 'create_server_profile_template', '"m_ReflectionProbeUsage"', '"oslo"', 'SaneDelta', 'refresh', 'hide_flexnics', 'MICROS_TRANSLATIONS']
+['PolicyProfileTab', 'allocatorBody', 'tz', '_session', 'srv', 'steal_begin', 'msg_count', 'term_read', '__div__', 'register', 'split', '<=', 'get_members', 'materials', 'resource', 'pxe', 'closing', '"policy_profile"', 'staticmethod', '!=']
 Number of samples:  11684
 Stats: Labels with their frequencies in the final set
 NAME 3656
@@ -57,7 +57,7 @@ length of source dictionary:  482
 length of target dictionary:  34
 6400
 Total instances: 6400
-['gather_losses_and_scores', 'term1', 'crop0', 'MagicMock', 'seq_size', 'mult_add_st', '_weighted_average', '5', 'StructureTemplate', 'mask', 'getcwd', 'x_hat', 'maximum', 'shared_zeros', 'cls', 'test_crop_inputs', 'or', 'mult_mv', 'numpy', 'base_layer']
+['sigma', 'xrange', 'pyx', 'toolbox', 'StructureTemplate', '<=', 'staticmethod', 'fixture', 'Parameters', 'c', 'ones', 'downsample', 'html_static_path', 'params', 'flatten_all_but_last', 'sc', 'property', 'argmax', 'get_loss_values', 'construction']
 Number of samples:  6400
 Stats: Labels with their frequencies in the final set
 NAME 1721
@@ -100,8 +100,8 @@ pretrained_BERT distribution after trauncating:
 {'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
 
 The distribution of classes in training after removing repeated tokens between training and tesing:
-Counter({0: 2915, 1: 82, 3: 58, 2: 42})
+Counter({0: 3656, 3: 905, 2: 190, 1: 82})
 {'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
 The distribution of classes in testing:
-Counter({0: 1721, 2: 482, 3: 134, 1: 4})
+Counter({0: 1454, 2: 87, 3: 24, 1: 4})
 {'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
