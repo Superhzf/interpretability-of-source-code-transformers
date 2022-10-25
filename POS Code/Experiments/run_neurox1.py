@@ -47,7 +47,7 @@ def main():
             tokens_train,activations_train,flat_tokens_train,X_train, y_train, label2idx_train, idx2label_train=preprocess(ACTIVATION_NAMES[this_model][0],
                                                                         './src_files/codetest2_train_unique.in','./src_files/codetest2_train_unique.label',
                                                                         this_model)
-            _,_,flat_tokens_test,X_test, y_test, _, _=preprocess(ACTIVATION_NAMES[this_model][1],
+            _,_,flat_tokens_test,X_test, y_test, label2idx_test, _=preprocess(ACTIVATION_NAMES[this_model][1],
                                             './src_files/codetest2_test_unique.in','./src_files/codetest2_test_unique.label',
                                             this_model)
             # remove tokens that are shared by training and testing
@@ -93,9 +93,10 @@ def main():
             print()
             print("The distribution of classes in training after removing repeated tokens between training and tesing:")
             print(collections.Counter(y_train))
-            # print("The distribution of classes in testing:")
-            # print(collections.Counter(y_test))
             print(label2idx_train)
+            print("The distribution of classes in testing:")
+            print(collections.Counter(y_test))
+            print(label2idx_test)
             exit(0)
 
             
