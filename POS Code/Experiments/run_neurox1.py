@@ -40,7 +40,6 @@ def main():
                 extract_activations('./src_files/codetest2_test_unique.in',MODEL_DESC[this_model],activation_file_name)
     else:
         print("Getting activations from json files. If you need to extract them, run with --extract=True \n" )
-    exit(0)
 
     for this_model in MODEL_NAMES:
         if this_model in ['pretrained_BERT','pretrained_CodeBERT','pretrained_GraphCodeBERT']:
@@ -53,10 +52,18 @@ def main():
                                             './src_files/codetest2_test_unique.in','./src_files/codetest2_test_unique.label',
                                             freq_threshold,this_model)
             # remove tokens that are shared by training and testing
+            # At the same, make sure to keep at least 10 KW in the training set
             idx_selected = []
-            for this_token in flat_tokens_train:
+            count_kw = 0
+            for this_token,this_y in zip(flat_tokens_train,y_train):
                 if this_token in flat_tokens_test:
-                    idx_selected.append(False)
+                    if this_y!= label2idx_train['KEYWORD']:
+                        idx_selected.append(False)
+                    elif this_y == label2idx_train['KEYWORD'] and count_kw<=9:
+                        idx_selected.append(True)
+                        count_kw+=1
+                    elif this_y == label2idx_train['KEYWORD'] and count_kw>9:
+                        idx_selected.append(False)
                 else:
                     idx_selected.append(True)
             assert len(idx_selected) == len(flat_tokens_train)
@@ -72,14 +79,29 @@ def main():
             assert l1 == l2,f"{l1}!={l2}"
             assert len(np.array([l for sublist in tokens_train['target'] for l in sublist])) == l2
 
-            print("The distribution of classes in training after removing repeated tokens between training and tesing:")
-            print(collections.Counter(y_train))
-            print(label2idx_train)
+            # This keeps ~10 KW in the test set
+            idx_selected = []
+            for this_token in flat_tokens_test:
+                if this_token in flat_tokens_train:
+                    idx_selected.append(False)
+                else:
+                    idx_selected.append(True)
+            assert len(idx_selected) == len(flat_tokens_test)
+            flat_tokens_test = flat_tokens_test[idx_selected]
+            X_test = X_test[idx_selected]
+            y_test = y_test[idx_selected]
 
             lookup_table = {1:2,2:3,3:1}
             for idx, this_y in enumerate(y_test):
                 if this_y in lookup_table:
                     y_test[idx] = lookup_table[this_y]
+            
+            print("The distribution of classes in training after removing repeated tokens between training and tesing:")
+            print(collections.Counter(y_train))
+            print("The distribution of classes in testing:")
+            print(collections.Counter(y_test))
+            print(label2idx_train)
+
             
             X_train_copy = X_train.copy()
             y_train_copy = y_train.copy()
@@ -116,6 +138,6 @@ def main():
             selectivity = control_task_probes(flat_tokens_train,X_train_copy,y_train_copy,
                                             flat_tokens_test,X_test_copy,y_test_copy,idx2label_train,scores,this_model,'UNIFORM')
             print("----------------------------------------------------------------")
-
+            break
 if __name__ == "__main__":
     main()
