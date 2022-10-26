@@ -58,10 +58,10 @@ def main():
                 if this_token in flat_tokens_test:
                     if this_y!= label2idx_train['KEYWORD']:
                         idx_selected.append(False)
-                    elif this_y == label2idx_train['KEYWORD'] and count_kw<=1500:
+                    elif this_y == label2idx_train['KEYWORD'] and count_kw<=1000:
                         idx_selected.append(True)
                         count_kw+=1
-                    elif this_y == label2idx_train['KEYWORD'] and count_kw>1500:
+                    elif this_y == label2idx_train['KEYWORD'] and count_kw>1000:
                         idx_selected.append(False)
                 else:
                     idx_selected.append(True)
@@ -85,9 +85,14 @@ def main():
                     idx_selected.append(False)
                 else:
                     is_selected = True
-                    if this_y_test in [label2idx_train['NAME'], label2idx_train['STRING'],label2idx_train['NUMBER']] :
+                    if this_y_test in [label2idx_train['STRING'],label2idx_train['NUMBER']] :
                         for this_token_train in flat_tokens_train:
                             if getOverlap(this_token_test,this_token_train) >= 3:
+                                is_selected = False
+                                break
+                    elif this_y_test == label2idx_train['NAME']:
+                        for this_token_train in flat_tokens_train:
+                            if getOverlap(this_token_test,this_token_train) >= 2:
                                 is_selected = False
                                 break
                     idx_selected.append(is_selected)
