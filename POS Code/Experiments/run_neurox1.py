@@ -40,7 +40,6 @@ def main():
                 extract_activations('./src_files/codetest2_test_unique.in',MODEL_DESC[this_model],activation_file_name)
     else:
         print("Getting activations from json files. If you need to extract them, run with --extract=True \n" )
-    exit(0)
 
     for this_model in MODEL_NAMES:
         if this_model in ['pretrained_BERT','pretrained_CodeBERT','pretrained_GraphCodeBERT']:
@@ -86,9 +85,9 @@ def main():
                     idx_selected.append(False)
                 else:
                     is_selected = True
-                    if this_y_test == label2idx_train['NAME']:
+                    if this_y_test in [label2idx_train['NAME'], label2idx_train['STRING'],label2idx_train['NUMBER']] :
                         for this_token_train in flat_tokens_train:
-                            if getOverlap(this_token_test,this_token_train) >=3:
+                            if getOverlap(this_token_test,this_token_train) >= 3:
                                 is_selected = False
                                 break
                     idx_selected.append(is_selected)

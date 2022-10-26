@@ -18,7 +18,7 @@ def getOverlap(s1, s2):
         s1 = s1.lower()
         s2 = s2.lower()
     except:
-        return 0
+        pass
     s = difflib.SequenceMatcher(None, s1, s2)
     pos_a, pos_b, size = s.find_longest_match(0, len(s1), 0, len(s2)) 
     return len(s1[pos_a:pos_a+size])
