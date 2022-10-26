@@ -58,10 +58,10 @@ def main():
                 if this_token in flat_tokens_test:
                     if this_y!= label2idx_train['KEYWORD']:
                         idx_selected.append(False)
-                    elif this_y == label2idx_train['KEYWORD'] and count_kw<=1000:
+                    elif this_y == label2idx_train['KEYWORD'] and count_kw<=2000:
                         idx_selected.append(True)
                         count_kw+=1
-                    elif this_y == label2idx_train['KEYWORD'] and count_kw>1000:
+                    elif this_y == label2idx_train['KEYWORD'] and count_kw>2000:
                         idx_selected.append(False)
                 else:
                     idx_selected.append(True)
