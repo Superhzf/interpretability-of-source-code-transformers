@@ -52,31 +52,31 @@ def main():
                                             this_model)
             # remove tokens that are shared by training and testing
             # At the same, make sure to keep at least 10 KW in the training set
-            # idx_selected = []
-            # count_kw = 0
-            # for this_token,this_y in zip(flat_tokens_train,y_train):
-            #     if this_token in flat_tokens_test:
-            #         if this_y!= label2idx_train['KEYWORD']:
-            #             idx_selected.append(False)
-            #         elif this_y == label2idx_train['KEYWORD'] and count_kw<=9:
-            #             idx_selected.append(True)
-            #             count_kw+=1
-            #         elif this_y == label2idx_train['KEYWORD'] and count_kw>9:
-            #             idx_selected.append(False)
-            #     else:
-            #         idx_selected.append(True)
-            # assert len(idx_selected) == len(flat_tokens_train)
+            idx_selected = []
+            count_kw = 0
+            for this_token,this_y in zip(flat_tokens_train,y_train):
+                if this_token in flat_tokens_test:
+                    if this_y!= label2idx_train['KEYWORD']:
+                        idx_selected.append(False)
+                    elif this_y == label2idx_train['KEYWORD'] and count_kw<=1000:
+                        idx_selected.append(True)
+                        count_kw+=1
+                    elif this_y == label2idx_train['KEYWORD'] and count_kw>1000:
+                        idx_selected.append(False)
+                else:
+                    idx_selected.append(True)
+            assert len(idx_selected) == len(flat_tokens_train)
 
-            # flat_tokens_train = flat_tokens_train[idx_selected]
-            # X_train = X_train[idx_selected]
-            # y_train = y_train[idx_selected]
-            # tokens_train,activations_train=alignTokenAct(tokens_train,activations_train,idx_selected)
+            flat_tokens_train = flat_tokens_train[idx_selected]
+            X_train = X_train[idx_selected]
+            y_train = y_train[idx_selected]
+            tokens_train,activations_train=alignTokenAct(tokens_train,activations_train,idx_selected)
 
-            # assert (flat_tokens_train == np.array([l for sublist in tokens_train['source'] for l in sublist])).all()
-            # l1 = len([l for sublist in activations_train for l in sublist])
-            # l2 = len(flat_tokens_train)
-            # assert l1 == l2,f"{l1}!={l2}"
-            # assert len(np.array([l for sublist in tokens_train['target'] for l in sublist])) == l2
+            assert (flat_tokens_train == np.array([l for sublist in tokens_train['source'] for l in sublist])).all()
+            l1 = len([l for sublist in activations_train for l in sublist])
+            l2 = len(flat_tokens_train)
+            assert l1 == l2,f"{l1}!={l2}"
+            assert len(np.array([l for sublist in tokens_train['target'] for l in sublist])) == l2
 
             # This keeps ~10 KW in the test set
             idx_selected = []
