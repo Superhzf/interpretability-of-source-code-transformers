@@ -13,6 +13,9 @@ import collections
 import difflib
 import torch
 
+l1 = [0,0.001,0.01,0.1]
+l2 = [0,0.001,0.01,0.1,1,10]
+
 def getOverlap(s1, s2):
     try:
         s1 = s1.lower()
@@ -129,8 +132,6 @@ def get_mappings(tokens,activations):
 
 def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,src_tokens_test,weighted,model_name):
     #Train the linear probes (logistic regression) - POS(code) tagging
-    l1 = [0,0.001,0.01,0.1]
-    l2 = [0,0.001,0.01,0.1]
     if weighted:
         classes = sorted(list(set(y_train)))
         count_classes = collections.Counter(y_train)
@@ -199,8 +200,6 @@ def get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,probe,label2id
     print(top_neurons_per_class)
 
     #Train probes on top neurons
-    l1 = [0,0.001,0.01,0.1]
-    l2 = [0,0.001,0.01,0.1,1,10]
     X_selected_train = ablation.filter_activations_keep_neurons(X_train, top_neurons)
     X_selected_valid = ablation.filter_activations_keep_neurons(X_valid, top_neurons)
     X_selected_test = ablation.filter_activations_keep_neurons(X_test, top_neurons)
@@ -232,8 +231,6 @@ def get_top_words(top_neurons,tokens,activations,model_name):
 
 def layerwise_probes_inference(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,src_tokens_test,weighted,model_name):
     ''' Returns models and accuracy(score) of the probes trained on activations from different layers '''
-    l1 = [0,0.001,0.01,0.1]
-    l2 = [0,0.001,0.01,0.1]
     for i in range(13):
         print(f"{model_name} Layer", i)
         this_model_name = f"{model_name}_layer_{i}"
