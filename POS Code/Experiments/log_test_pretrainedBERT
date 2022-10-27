@@ -8,7 +8,7 @@ length of source dictionary:  5099
 length of target dictionary:  42
 72951
 Total instances: 72951
-['reservation', 'get_image_url', 'day', 'tries', 'getter', 'SELF_INTRO_MAX_LEN', 'DEFAULT', 'version__lte', '"Echo_reply"', 'p', 'open', 'radix', 'random', 'FULLNAME_REGEX', 'pre_data', 'Delay', 'zmq_opts', 'etree', 'OptsSetup', 'create_server_profile_template']
+['getDomain', 'set_roster', 'RegisterFileDescriptor', 'CONFIG_SIX', 'make_jid', 'mocker', 'tearDown', 'RegisterMessage', 'ref', 'MAXFRIENDS', 'P2PServiceBaseType', 'omit', 'pyverilog', 'slurp', 'NoPerm', '"dest_unreachable_payload"', 'NameError', 'NewTemplateRequested', 'veriloggen', 'host']
 Number of samples:  72951
 Stats: Labels with their frequencies in the final set
 NAME 23204
@@ -64,7 +64,7 @@ length of source dictionary:  3727
 length of target dictionary:  42
 64699
 Total instances: 64699
-['pylab', '8.31447', 'padded_shape', 'getter', '"sum"', 'models', 'n_eval', 'category', 'add_option', 'left_index', 'linestyle', 'functools', 'segments', 'to_abs_uname', 'BaseTestIO', 'full_line_comment_char', 'test_get_output_shape_for', 'LabelDictionary', 'end', 'trains1']
+['sout', 'testmod', 'econ', 'attrs', 'ndim', 'all_genes', 'res4', 'glob', 'filter', 'test__fake_neo__cascade', 'con', 'edge_idx', 'ns_GetSegmentData', 'System', 'oldpath', '"FAILURE"', '_check_list_structure', 'updat_direct', 'outdeltas', 'tearDown']
 Number of samples:  64699
 Stats: Labels with their frequencies in the final set
 NAME 20893
@@ -128,42 +128,42 @@ Training classification probe
 Creating model...
 Number of training instances: 13636
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0102
-Epoch: [2/10], Loss: 0.0040
-Epoch: [3/10], Loss: 0.0011
-Epoch: [4/10], Loss: 0.0007
-Epoch: [5/10], Loss: 0.0003
-Epoch: [6/10], Loss: 0.0002
-Epoch: [7/10], Loss: 0.0002
-Epoch: [8/10], Loss: 0.0001
-Epoch: [9/10], Loss: 0.0001
-Epoch: [10/10], Loss: 0.0001
-Score (accuracy) of the probe: 0.97
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0101
-Epoch: [2/10], Loss: 0.0039
-Epoch: [3/10], Loss: 0.0011
-Epoch: [4/10], Loss: 0.0007
-Epoch: [5/10], Loss: 0.0003
-Epoch: [6/10], Loss: 0.0002
-Epoch: [7/10], Loss: 0.0002
-Epoch: [8/10], Loss: 0.0001
-Epoch: [9/10], Loss: 0.0001
-Epoch: [10/10], Loss: 0.0001
-Score (accuracy) of the probe: 0.97
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0100
+Epoch: [1/10], Loss: 0.0112
 Epoch: [2/10], Loss: 0.0043
 Epoch: [3/10], Loss: 0.0013
-Epoch: [4/10], Loss: 0.0009
-Epoch: [5/10], Loss: 0.0005
-Epoch: [6/10], Loss: 0.0004
+Epoch: [4/10], Loss: 0.0008
+Epoch: [5/10], Loss: 0.0004
+Epoch: [6/10], Loss: 0.0003
+Epoch: [7/10], Loss: 0.0002
+Epoch: [8/10], Loss: 0.0001
+Epoch: [9/10], Loss: 0.0001
+Epoch: [10/10], Loss: 0.0001
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0111
+Epoch: [2/10], Loss: 0.0041
+Epoch: [3/10], Loss: 0.0012
+Epoch: [4/10], Loss: 0.0008
+Epoch: [5/10], Loss: 0.0004
+Epoch: [6/10], Loss: 0.0003
+Epoch: [7/10], Loss: 0.0002
+Epoch: [8/10], Loss: 0.0002
+Epoch: [9/10], Loss: 0.0001
+Epoch: [10/10], Loss: 0.0001
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0110
+Epoch: [2/10], Loss: 0.0044
+Epoch: [3/10], Loss: 0.0015
+Epoch: [4/10], Loss: 0.0011
+Epoch: [5/10], Loss: 0.0006
+Epoch: [6/10], Loss: 0.0005
 Epoch: [7/10], Loss: 0.0004
 Epoch: [8/10], Loss: 0.0004
 Epoch: [9/10], Loss: 0.0003
@@ -173,29 +173,29 @@ Training classification probe
 Creating model...
 Number of training instances: 13636
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0111
-Epoch: [2/10], Loss: 0.0058
-Epoch: [3/10], Loss: 0.0029
-Epoch: [4/10], Loss: 0.0026
-Epoch: [5/10], Loss: 0.0021
-Epoch: [6/10], Loss: 0.0019
-Epoch: [7/10], Loss: 0.0018
+Epoch: [1/10], Loss: 0.0123
+Epoch: [2/10], Loss: 0.0060
+Epoch: [3/10], Loss: 0.0032
+Epoch: [4/10], Loss: 0.0028
+Epoch: [5/10], Loss: 0.0022
+Epoch: [6/10], Loss: 0.0020
+Epoch: [7/10], Loss: 0.0019
 Epoch: [8/10], Loss: 0.0020
-Epoch: [9/10], Loss: 0.0027
-Epoch: [10/10], Loss: 0.0036
-Score (accuracy) of the probe: 0.94
+Epoch: [9/10], Loss: 0.0021
+Epoch: [10/10], Loss: 0.0025
+Score (accuracy) of the probe: 0.89
 
 The best l1=0, the best l2=0 for pretrained_BERT
 Accuracy on the test set of probing pretrained_BERT of all layers:
-Score (accuracy) of the probe: 0.83
-{'__OVERALL__': 0.8306010928961749, 'NAME': 0.6397449521785334, 'STRING': 1.0, 'NUMBER': 0.9985286905345758, 'KEYWORD': 0.9852941176470589}
+Score (accuracy) of the probe: 0.71
+{'__OVERALL__': 0.7143566815697964, 'NAME': 0.6455897980871413, 'STRING': 1.0, 'NUMBER': 0.7645904855321236, 'KEYWORD': 0.9558823529411765}
 Confusion matrix between NAME and KEYWORD:
-NAME_NAME:1204,KW_NAME:1
-NAME_KW:97,KW_KW:67
-NAME_STRING:320,KW_other:0
-NAME_NUMBER:261
-NAME_STRING_list:['m', 'm', 'm', 'm', 'a', 'a', 'T', 'T', 'U', 'T', 'T', 'U', 'T', 'p', 't', 'T', 'p', 't', 'p', 'p', 'p', 'p', 'd', 'a', 'a', 'T', 'a', 'a', 'i', 'i', 'i', 'i', 'i', 't', 'i', 'i', 'i', 'i', 'm', 'm', 'm', 'm', 'm', 't', 't', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 't', 'm', 'm', 'x', 'x', 'i', 'a', 'f', 'm', 'm', 'm', 'j', 'i', 'i', 'i', 'f', 't', 't', 'i', 'i', 'i', 'i', 'i', 'i', 'x', 'I', 'I', 'T', 'I', 'P', 'p', 'P', 'I', 'p', 'P', 'I', 'E', 'T', 'U', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T', 'P', 'I', 'p', 'p', 't', 'T', 't', 't', 'P', 'P', 'I', 'p', 'p', 'I', 'I', 'I', 'I', 'i', 'u', 'j', 'T', 'T', 'T', 'T', 'p', 'p', 'T', 'T', 'T', 'i', 'p', 't', 't', 't', 't', 'i', 'u', 'i', 'u', 'i', 'u', 'i', 'i', 'i', 'i', 'i', 'u', 'u', 'i', 'i', 'i', 'i', 'm', 'm', 'm', 't', 'i', 't', 't', 'u', 'p', 'p', 'i', 'i', 'i', 'i', 'i', 'J', 'i', 'i', 'i', 'J', 'i', 'J', 'J', 'p', 'p', 'p', 'm', 'm', 'm', 'd', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'T', 'T', 'T', 'T', 'i', 'i', 'i', 'T', 'i', 'i', 'i', 'i', 'T', 'T', 'T', 'T', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'j1', 'i', 'i', 'i', 'i', 'T', 'P', 'T', 'T', 'P', 'a', 'T', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'p', 'p', 'p', 'i', 'i', 'i', 'i', 'T', 'T', 'R', 'A', 'R', 'A', 't', 't', 't', 't', 't', 't', 't', 't']
-NAME_NUMBER_list:['x', 'X', 'W', 'U', 'X', 'W', 'W', 'T', 'T', 'd', 's', 's', 'T', 'T', 't', 'f', 't0', 't0', 'h', 'x', 'y', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'f', 'i', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'v', 'xx', 'x', 'd', 'd', 'g', 't', 'z', 'z', 'x', 'd', 'x', 'i', 'S', 'f1', 'f1', 'S', 'q', 'q', 'K', 'F', 'I', 'q', 'S', 'q', 'Q', 'q', 'Q', 'F', 'K', 'N', 'I', 'q', 'S', 'q', 'Q', 'T0', 'I', 'T0', 't0', 't0', 't0', 'T0', 'I', 'T0', 't0', 't0', 't0', 'T0', 'I', 'T0', 't0', 't0', 't0', 'T0', 't0', 't0', 'T0', 't0', 't0', 'x', 'p0', 'p0', 'p0', 'Q', 'D', 'D', 'K', 'D', 'D', 'N', 'c', 'k', 'K', 'x', 'I', 'c', 'n', 'N', 'n', 'n', 'D', 't', 'D', 't', 't', 'K', 'N', 'p0', 'q0', 'x', 'k', 'K', 'k', 'n', 'D', 'D', 'N', 'D', 'D', 'N', 'K', 'D', 'D', 'K', 'D', 'D', 'K', 'x', 'Q', 'n', 'n', 'k', 'K', 'n', 'n', 'D', 't', 't', 't', 't', 'X', 'N', 'S', 'K', 'K', 'Q', 'N', 'q', 'X', 'N', 'q', 'Q', 'n', 'K', 'x', 'x', 't', 'T', 'T', 'T', 'T', 'X', 'T', 'T', 'X', 'X', 'x', 'x', 't', 't', 't', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'v', 'v', 'f', 'k', 'k', 'k', 'v', 'n', 'n', 's', 'p', 'd', 'n', 's', 'v', 'n', 'n', 's', 'p', 'p', 'x', 'x', 'X', 'k', 'k', 'D', 'k', 'D', 'X', 'X', 'G', 'T', 'G', 'i', 'i', 'i', 'f0', 'X', 'T', 'X', 'i', 'i', 'g', 'G', 'T', 'X', 'i', 'i', 'X', 'X', 'X', 'X', 'x', 'X', 'j1', 'T', 'a3', 'a0', 'a0', 'f', 'i', 'g', 'n', 'Q']
+NAME_NAME:1215,KW_NAME:0
+NAME_KW:137,KW_KW:65
+NAME_STRING:391,KW_other:3
+NAME_NUMBER:139
+NAME_STRING_list:['a', 'a', 'h', 'W', 'U', 'T', 'h', 'W', 'U', 'T', 'h', 'W', 'U', 'T', 'T', 'p', 't', 'T', 'p', 'T', 't', 'p', 'p', 'p', 'p', 'p', 's', 'a', 'a', 'a', 'b', 'T', 'a', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 't0', 'h', 'h', 'm', 'h', 'x', 'x', 'i', 'i', 'a', 'a', 'k', 'f', 'k', 'm', 'm', 'j', 'v', 'i', 'i', 'i', 'g', 't', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'x', 'x', 'i', 'S', 'S', 'I', 'I', 'K', 'I', 'I', 'P', 'S', 'p', 'P', 'p', 'I', 'p', 'I', 'I', 'P', 'I', 'S', 'p', 'p', 'U', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'p', 'P', 'P', 'I', 'p', 'p', 'P', 'D', 'D', 'c', 'k', 'I', 'c', 't', 't', 'T', 'K', 'N', 'P', 'k', 'I', 'D', 'D', 'D', 'D', 'U', 'D', 'P', 'k', 'c', 'K', 'P', 'I', 'p', 'I', 'p', 'p', 'P', 'p', 'I', 'I', 'I', 'I', 'I', 'i', 'u', 'u', 'j', 'T', 'T', 'p', 'p', 'p', 'p', 'T', 'T', 'T', 'T', 'X', 'i', 'p', 'p', 'p', 'p', 'n', 'n', 'n', 'n', 'i', 'u', 'i', 'u', 'i', 'u', 'i', 'i', 'i', 'i', 'i', 'u', 'u', 'i', 'i', 'v', 'i', 'i', 'm', 'm', 's', 't', 'i', 's', 't', 't', 'u', 'p', 'p', 'p', 'u', 'p', 'p', 'p', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'c', 'p', 'p', 'p', 'p', 'p', 'k', 'k', 'k', 'i', 'i', 'i', 'i', 'T', 'p', 'i', 'i', 'i', 'i', 'i', 'i', 'T', 'f', 'T', 'T', 'T', 'i', 'i', 'i', 'i', 'i', 'i', 'T', 'i', 'i', 'i', 'i', 'i', 'T', 'T', 'T', 'g', 'i', 'G', 'T', 'G', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'x', 'i', 'i', 'j1', 'i', 'i', 'j1', 'i', 'i', 'P', 'T', 'P', 'a', 'C', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'p', 'p', 'i', 'i', 'i', 'i', 'i', 'g', 'i', 'A', 'B', 'A', 'B', 't', 't', 't', 't']
+NAME_NUMBER_list:['x', 'X', 't0', 'x', 'y', 'y', 'y', 'X', 'X', 'X', 'X', 'e', 'xx', 'i', 'x', 'f1', 'q', 'q', 'T', 'q', 'q', 'Q', 'q', 'E', 'T', 'q', 'q', 'T0', 'T0', 't0', 't0', 't0', 'T', 'T0', 'T0', 't0', 't0', 'T', 'T0', 'T0', 't0', 't0', 'T', 'T', 'T0', 't0', 't0', 'T0', 't0', 'T', 'x', 'p0', 'p0', 'Q', 'D', 'D', 'x', 'n', 'n', 'n', 'p0', 'x', 'n', 'D', 'N', 'D', 'N', 'x', 'E', 'n', 'n', 'n', 'n', 'P', 'X', 'N', 'X', 'N', 'n', 'x', 'x', 'T', 'T', 'T', 'T', 'X', 'x', 'n', 'n', 'v', 'v', 'n', 'n', 'n', 'v', 'n', 's', 'J', 'J', 'J', 'J', 'J', 'x', 'x', 'X', 'X', 'X', 'p', 'F', 'p', 'p', 'G', 'p', 'G', 'i', 'f0', 'X', 'X', 'T', 'q', 'T', 'p', 'X', 'X', 'X', 'X', 'X', 'X', 'T', 'a3', 'a0', 'a0', 'T', 'p', 'n', 'T', 'T', 'Q', 'Q']
 Accuracy on the test set of pretrained_BERT model using the intercept:
 Score (accuracy) of the probe: 0.47
 pretrained_BERT Layer 0
@@ -203,179 +203,44 @@ Training classification probe
 Creating model...
 Number of training instances: 13636
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0091
-Epoch: [2/10], Loss: 0.0053
-Epoch: [3/10], Loss: 0.0037
-Epoch: [4/10], Loss: 0.0029
-Epoch: [5/10], Loss: 0.0024
-Epoch: [6/10], Loss: 0.0020
-Epoch: [7/10], Loss: 0.0017
-Epoch: [8/10], Loss: 0.0015
-Epoch: [9/10], Loss: 0.0013
-Epoch: [10/10], Loss: 0.0011
-Score (accuracy) of the probe: 0.93
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0090
-Epoch: [2/10], Loss: 0.0052
-Epoch: [3/10], Loss: 0.0037
-Epoch: [4/10], Loss: 0.0029
-Epoch: [5/10], Loss: 0.0023
-Epoch: [6/10], Loss: 0.0019
-Epoch: [7/10], Loss: 0.0017
-Epoch: [8/10], Loss: 0.0014
-Epoch: [9/10], Loss: 0.0013
-Epoch: [10/10], Loss: 0.0011
-Score (accuracy) of the probe: 0.93
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0087
-Epoch: [2/10], Loss: 0.0052
-Epoch: [3/10], Loss: 0.0037
-Epoch: [4/10], Loss: 0.0030
-Epoch: [5/10], Loss: 0.0024
-Epoch: [6/10], Loss: 0.0021
-Epoch: [7/10], Loss: 0.0018
-Epoch: [8/10], Loss: 0.0016
-Epoch: [9/10], Loss: 0.0015
-Epoch: [10/10], Loss: 0.0013
-Score (accuracy) of the probe: 0.93
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0099
-Epoch: [2/10], Loss: 0.0065
-Epoch: [3/10], Loss: 0.0051
-Epoch: [4/10], Loss: 0.0044
-Epoch: [5/10], Loss: 0.0040
-Epoch: [6/10], Loss: 0.0037
-Epoch: [7/10], Loss: 0.0034
-Epoch: [8/10], Loss: 0.0032
-Epoch: [9/10], Loss: 0.0030
-Epoch: [10/10], Loss: 0.0029
-Score (accuracy) of the probe: 0.94
-
-The best l1=0, the best l2=0.1 for pretrained_BERT_layer_0
-Accuracy on the test set of probing pretrained_BERT_layer_0 of all layers:
-Score (accuracy) of the probe: 0.85
-{'__OVERALL__': 0.8519622454048683, 'NAME': 0.7295430393198725, 'STRING': 1.0, 'NUMBER': 0.9901912702305051, 'KEYWORD': 0.014705882352941176}
-Confusion matrix between NAME and KEYWORD:
-NAME_NAME:1373,KW_NAME:67
-NAME_KW:173,KW_KW:1
-NAME_STRING:277,KW_other:0
-NAME_NUMBER:59
-NAME_STRING_list:['a', 'a', 'a', 'a', 'T', 'T', 't', 'd', 'a', 'a', 'a', 'a', 'a', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'd', 'd', 'i', 'd', 'd', 'i', 'd', 'a', 'a', 'i', 'i', 'i', 'i', 'd', 'd', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'd', 'i', 'i', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'D', 'I', 'D', 'D', 'D', 'D', 'I', 'D', 'I', 'D', 'D', 'D', 'D', 'D', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'd', 'd', 'D', 'D', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'T', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'a', 'a', 'a', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'a', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'A', 'A', 'A']
-NAME_NUMBER_list:['d', 't0', 't0', 'xx', 'xx', 'Y1', 'Y1', 'Y1', 'Y1', 'Y1', 'Y1', 'Y1', 'Y1', 'Y1', 'T0', 'T0', 'T0', 't0', 't0', 't0', 'T0', 'T0', 'T0', 't0', 't0', 't0', 'T0', 'T0', 'T0', 't0', 't0', 't0', 'T0', 't0', 't0', 'T0', 't0', 't0', 'p0', 'p0', 'p0', 'p0', 'D', 'D', 'D', 'p0', 'q0', 'p0', 'q0', 'D', 'D', 'd', 'd', 'f0', 'f0', 'a3', 'a0', 'a0', 'a3']
-Accuracy on the test set of pretrained_BERT_layer_0 model using the intercept:
-Score (accuracy) of the probe: 0.47
-pretrained_BERT Layer 1
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0092
-Epoch: [2/10], Loss: 0.0055
-Epoch: [3/10], Loss: 0.0039
-Epoch: [4/10], Loss: 0.0031
-Epoch: [5/10], Loss: 0.0025
+Epoch: [1/10], Loss: 0.0100
+Epoch: [2/10], Loss: 0.0059
+Epoch: [3/10], Loss: 0.0041
+Epoch: [4/10], Loss: 0.0032
+Epoch: [5/10], Loss: 0.0026
 Epoch: [6/10], Loss: 0.0022
 Epoch: [7/10], Loss: 0.0018
 Epoch: [8/10], Loss: 0.0016
 Epoch: [9/10], Loss: 0.0014
-Epoch: [10/10], Loss: 0.0013
+Epoch: [10/10], Loss: 0.0012
 Score (accuracy) of the probe: 0.94
 Training classification probe
 Creating model...
 Number of training instances: 13636
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0095
-Epoch: [2/10], Loss: 0.0057
-Epoch: [3/10], Loss: 0.0041
-Epoch: [4/10], Loss: 0.0032
-Epoch: [5/10], Loss: 0.0026
+Epoch: [1/10], Loss: 0.0102
+Epoch: [2/10], Loss: 0.0060
+Epoch: [3/10], Loss: 0.0043
+Epoch: [4/10], Loss: 0.0033
+Epoch: [5/10], Loss: 0.0027
 Epoch: [6/10], Loss: 0.0022
 Epoch: [7/10], Loss: 0.0019
 Epoch: [8/10], Loss: 0.0017
 Epoch: [9/10], Loss: 0.0015
 Epoch: [10/10], Loss: 0.0013
-Score (accuracy) of the probe: 0.95
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0097
-Epoch: [2/10], Loss: 0.0058
-Epoch: [3/10], Loss: 0.0043
-Epoch: [4/10], Loss: 0.0034
-Epoch: [5/10], Loss: 0.0028
-Epoch: [6/10], Loss: 0.0024
-Epoch: [7/10], Loss: 0.0021
-Epoch: [8/10], Loss: 0.0019
-Epoch: [9/10], Loss: 0.0017
-Epoch: [10/10], Loss: 0.0016
 Score (accuracy) of the probe: 0.94
 Training classification probe
 Creating model...
 Number of training instances: 13636
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0104
-Epoch: [2/10], Loss: 0.0068
-Epoch: [3/10], Loss: 0.0054
-Epoch: [4/10], Loss: 0.0047
-Epoch: [5/10], Loss: 0.0042
-Epoch: [6/10], Loss: 0.0039
-Epoch: [7/10], Loss: 0.0036
-Epoch: [8/10], Loss: 0.0034
-Epoch: [9/10], Loss: 0.0032
-Epoch: [10/10], Loss: 0.0030
-Score (accuracy) of the probe: 0.96
-
-The best l1=0, the best l2=0.1 for pretrained_BERT_layer_1
-Accuracy on the test set of probing pretrained_BERT_layer_1 of all layers:
-Score (accuracy) of the probe: 0.84
-{'__OVERALL__': 0.8395429706905116, 'NAME': 0.6923485653560042, 'STRING': 1.0, 'NUMBER': 0.9970573810691515, 'KEYWORD': 0.10294117647058823}
-Confusion matrix between NAME and KEYWORD:
-NAME_NAME:1303,KW_NAME:61
-NAME_KW:40,KW_KW:7
-NAME_STRING:464,KW_other:0
-NAME_NUMBER:75
-NAME_STRING_list:['a', 'a', 'a', 'a', 'T', 'b1', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 't', 'T', 'T', 'T', 'T', 't', 't', 'p', 'p', 'b1', 'p', 'p', 'p', 'd', 'T', 'a', 'a', 'a', 'T', 'T', 'a', 'T', 'a', 'i', 'i', 'i', 'i', 'i', 't', 't', 't', 'i', 'i', 'i', 'i', 'm', 'm', 't', 'm', 'y', 'y', 'i', 'd', 'd', 'i', 'd', 'a', 'a', 'f', 'f', 'j', 'i', 'i', 'i', 'i', 'd', 'd', 't', 't', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'd', 'iw', 'ih', 'd', 'd', 'i', 'i', 'I', 'I', 'T', 'I', 'I', 'I', 'T', 'I', 'I', 'I', 'T', 'T', 'I', 'I', 'I', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'Iw', 'T', 'Iw', 'I', 'T', 'I', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T', 'F', 'T', 'I', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T', 'T', 'I', 'I', 'I', 'I', 'I', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'T', 'D', 'I', 'p', 'p', 'D', 'D', 'D', 'D', 'I', 's', 't', 's', 't', 's', 't', 'T', 's', 't', 'I', 'D', 'D', 'D', 'Iw', 's', 'D', 's', 't', 's', 't', 'T', 's', 't', 's', 't', 's', 't', 'T', 's', 't', 'I', 'I', 'I', 'I', 'I', 'F', 'F', 'I', 'I', 'i', 'i', 'i', 'i', 'T', 'T', 'T', 'T', 'T', 'p', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'i', 't', 's', 't', 's', 't', 't', 't', 't', 't', 't', 'i', 'i', 'i', 't', 's', 't', 'i', 'i', 'i', 'i', 'i', 'i', 's', 'i', 'i', 'i', 'i', 's', 'd', 'd', 't', 'i', 's', 't', 't', 'J', 'J', 'J', 'J', 'i', 'i', 'J', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 's', 's', 's', 'd', 'd', 'D', 'D', 'D', 'D', 'i', 'i', 'i', 'D', 'i', 'T', 'T', 'p', 'p', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'T', 'T', 'T', 'T', 'i', 'i', 'i', 'i', 'i', 'i', 'T', 'i', 'T', 'i', 'i', 'i', 'i', 'T', 'T', 'T', 'T', 'T', 'i', 'T', 'i', 'i', 'i', 'i', 'T', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'T', 'T', 'a', 'T', 'a', 'P', 'a', 'T', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'a', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'd', 't', 'T', 'T', 'A', 'A', 'A', 't', 't', 't', 't', 't', 't', 't', 't']
-NAME_NUMBER_list:['h0', 'h0', 'd', 'd', 'b', 'b', 'i', 't0', 't0', 'Y1', 'Y1', 'Y1', 'Y1', 'Y1', 'Y1', 'Y1', 'f', 'f', 'f1', 'T0', 'T0', 'T0', 't0', 't0', 't0', 't3', 'T0', 'T0', 'T0', 't0', 't0', 't0', 'T0', 'T0', 'T0', 't0', 't0', 't3', 't0', 't3', 'T0', 't0', 't0', 't3', 't3', 'T0', 't0', 't0', 'p0', 'p0', 'p0', 'p0', 'D', 'p0', 'q0', 'B', 'p0', 'q0', 'f', 'J', 'J', 'f0', 'f0', 'j1', 'j1', 'j1', 'j1', 'j1', 'j1', 'a3', 'b', 'a0', 'a0', 'a3', 'g1']
-Accuracy on the test set of pretrained_BERT_layer_1 model using the intercept:
-Score (accuracy) of the probe: 0.47
-pretrained_BERT Layer 2
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0093
+Epoch: [1/10], Loss: 0.0099
 Epoch: [2/10], Loss: 0.0059
-Epoch: [3/10], Loss: 0.0043
-Epoch: [4/10], Loss: 0.0034
-Epoch: [5/10], Loss: 0.0028
-Epoch: [6/10], Loss: 0.0024
+Epoch: [3/10], Loss: 0.0042
+Epoch: [4/10], Loss: 0.0033
+Epoch: [5/10], Loss: 0.0027
+Epoch: [6/10], Loss: 0.0023
 Epoch: [7/10], Loss: 0.0020
 Epoch: [8/10], Loss: 0.0018
-Epoch: [9/10], Loss: 0.0016
-Epoch: [10/10], Loss: 0.0014
-Score (accuracy) of the probe: 0.94
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0096
-Epoch: [2/10], Loss: 0.0061
-Epoch: [3/10], Loss: 0.0045
-Epoch: [4/10], Loss: 0.0036
-Epoch: [5/10], Loss: 0.0029
-Epoch: [6/10], Loss: 0.0025
-Epoch: [7/10], Loss: 0.0021
-Epoch: [8/10], Loss: 0.0019
 Epoch: [9/10], Loss: 0.0016
 Epoch: [10/10], Loss: 0.0015
 Score (accuracy) of the probe: 0.94
@@ -383,8 +248,68 @@ Training classification probe
 Creating model...
 Number of training instances: 13636
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0097
-Epoch: [2/10], Loss: 0.0061
+Epoch: [1/10], Loss: 0.0108
+Epoch: [2/10], Loss: 0.0070
+Epoch: [3/10], Loss: 0.0055
+Epoch: [4/10], Loss: 0.0047
+Epoch: [5/10], Loss: 0.0042
+Epoch: [6/10], Loss: 0.0039
+Epoch: [7/10], Loss: 0.0036
+Epoch: [8/10], Loss: 0.0034
+Epoch: [9/10], Loss: 0.0032
+Epoch: [10/10], Loss: 0.0030
+Score (accuracy) of the probe: 0.95
+
+The best l1=0, the best l2=0.1 for pretrained_BERT_layer_0
+Accuracy on the test set of probing pretrained_BERT_layer_0 of all layers:
+Score (accuracy) of the probe: 0.37
+{'__OVERALL__': 0.3720814704421262, 'NAME': 0.7481402763018066, 'STRING': 1.0, 'NUMBER': 0.02550269740068661, 'KEYWORD': 0.014705882352941176}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1408,KW_NAME:67
+NAME_KW:190,KW_KW:1
+NAME_STRING:257,KW_other:0
+NAME_NUMBER:27
+NAME_STRING_list:['a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 't0', 'i', 'i', 'a', 'a', 'i', 'i', 'i', 'i', 'xx', 'xx', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T0', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T0', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T0', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 't0', 'I', 'I', 'I', 'I', 'I', 'I', 'D', 'D', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'f0', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'a', 'a', 'a', 'a0', 'a0', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'a', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'A', 'A', 'A']
+NAME_NUMBER_list:['t0', 'T0', 'T0', 't0', 't0', 't0', 'T0', 'T0', 't0', 't0', 't0', 'T0', 'T0', 't0', 't0', 't0', 'T0', 't0', 't0', 'T0', 't0', 'p0', 'p0', 'p0', 'p0', 'p0', 'f0']
+Accuracy on the test set of pretrained_BERT_layer_0 model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_BERT Layer 1
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0103
+Epoch: [2/10], Loss: 0.0062
+Epoch: [3/10], Loss: 0.0045
+Epoch: [4/10], Loss: 0.0035
+Epoch: [5/10], Loss: 0.0029
+Epoch: [6/10], Loss: 0.0024
+Epoch: [7/10], Loss: 0.0021
+Epoch: [8/10], Loss: 0.0018
+Epoch: [9/10], Loss: 0.0016
+Epoch: [10/10], Loss: 0.0014
+Score (accuracy) of the probe: 0.95
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0104
+Epoch: [2/10], Loss: 0.0063
+Epoch: [3/10], Loss: 0.0045
+Epoch: [4/10], Loss: 0.0035
+Epoch: [5/10], Loss: 0.0029
+Epoch: [6/10], Loss: 0.0024
+Epoch: [7/10], Loss: 0.0021
+Epoch: [8/10], Loss: 0.0018
+Epoch: [9/10], Loss: 0.0016
+Epoch: [10/10], Loss: 0.0015
+Score (accuracy) of the probe: 0.95
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0103
+Epoch: [2/10], Loss: 0.0064
 Epoch: [3/10], Loss: 0.0046
 Epoch: [4/10], Loss: 0.0037
 Epoch: [5/10], Loss: 0.0031
@@ -393,34 +318,109 @@ Epoch: [7/10], Loss: 0.0023
 Epoch: [8/10], Loss: 0.0020
 Epoch: [9/10], Loss: 0.0018
 Epoch: [10/10], Loss: 0.0017
+Score (accuracy) of the probe: 0.95
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0113
+Epoch: [2/10], Loss: 0.0075
+Epoch: [3/10], Loss: 0.0059
+Epoch: [4/10], Loss: 0.0051
+Epoch: [5/10], Loss: 0.0045
+Epoch: [6/10], Loss: 0.0041
+Epoch: [7/10], Loss: 0.0038
+Epoch: [8/10], Loss: 0.0035
+Epoch: [9/10], Loss: 0.0033
+Epoch: [10/10], Loss: 0.0031
+Score (accuracy) of the probe: 0.96
+
+The best l1=0, the best l2=0.1 for pretrained_BERT_layer_1
+Accuracy on the test set of probing pretrained_BERT_layer_1 of all layers:
+Score (accuracy) of the probe: 0.42
+{'__OVERALL__': 0.42374565325385, 'NAME': 0.7300743889479278, 'STRING': 1.0, 'NUMBER': 0.1407552721922511, 'KEYWORD': 0.11764705882352941}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1374,KW_NAME:60
+NAME_KW:84,KW_KW:8
+NAME_STRING:411,KW_other:0
+NAME_NUMBER:13
+NAME_STRING_list:['a', 'a', 'a', 'a', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 't', 't', 'd', 'd', 'T', 'a', 'a', 'b', 'a', 'a', 'b', 'T', 'a', 'i', 'i', 'i', 'i', 'i', 'i', 't', 't', 't', 'i', 'i', 'i', 'i', 't', 't0', 'y', 'i', 'i', 'a', 'a', 'f', 'f', 'i', 'i', 'i', 'i', 'd', 'd', 'f', 't', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'f', 'i', 'i', 'i', 'd', 'i', 'i', 'I', 'I', 'I', 'I', 'I', 'T', 'I', 'I', 'I', 'T', 'I', 'I', 'I', 'T0', 'T', 't0', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 't0', 't0', 'I', 'I', 'I', 'T', 'I', 'T', 'I', 'T0', 'T', 't0', 'I', 'I', 'I', 'I', 'I', 't0', 'I', 't0', 'I', 'I', 'I', 'I', 'T', 'F', 'T', 'I', 'T0', 'T', 't0', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 't0', 'I', 'I', 'T', 'T', 'I', 'I', 'I', 'I', 't0', 't0', 'I', 'T', 'I', 't0', 'I', 'I', 'I', 'I', 't0', 'I', 'T', 'I', 'p', 'D', 'I', 's', 't', 's', 't', 'T', 'B', 'I', 't', 's', 't', 'T', 't', 't', 't', 'T', 't', 'I', 'I', 'I', 'I', 'I', 'F', 'F', 'I', 'I', 'i', 'i', 'i', 'i', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 'i', 't', 't', 't', 't', 't', 't', 'i', 'i', 'i', 't', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 't', 't', 'i', 't', 't', 'J', 'J', 'J', 'J', 'J', 'i', 'i', 'J', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'p', 's', 'd', 'D', 'D', 'D', 'i', 'i', 'i', 'i', 'T', 'T', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'T', 'T', 'i', 'i', 'i', 'i', 'i', 'i', 'T', 'i', 'i', 'i', 'i', 'i', 'T', 'T', 'T', 'i', 'T', 'i', 'i', 'i', 'i', 'T', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'j1', 'i', 'i', 'j1', 'i', 'i', 'i', 'i', 'T', 'T', 'a', 'T', 'a', 'P', 'a', 'a0', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'a', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 't', 'T', 'A', 'A', 'A', 't', 't', 't', 't', 't', 't']
+NAME_NUMBER_list:['Y1', 'T0', 'T0', 'T0', 'T0', 'T0', 'T0', 't0', 'T0', 'T0', 'p0', 'p0', 'a0']
+Accuracy on the test set of pretrained_BERT_layer_1 model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_BERT Layer 2
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0102
+Epoch: [2/10], Loss: 0.0066
+Epoch: [3/10], Loss: 0.0048
+Epoch: [4/10], Loss: 0.0038
+Epoch: [5/10], Loss: 0.0031
+Epoch: [6/10], Loss: 0.0027
+Epoch: [7/10], Loss: 0.0023
+Epoch: [8/10], Loss: 0.0020
+Epoch: [9/10], Loss: 0.0018
+Epoch: [10/10], Loss: 0.0016
 Score (accuracy) of the probe: 0.94
 Training classification probe
 Creating model...
 Number of training instances: 13636
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0104
-Epoch: [2/10], Loss: 0.0071
-Epoch: [3/10], Loss: 0.0057
-Epoch: [4/10], Loss: 0.0049
-Epoch: [5/10], Loss: 0.0044
-Epoch: [6/10], Loss: 0.0040
-Epoch: [7/10], Loss: 0.0037
-Epoch: [8/10], Loss: 0.0035
-Epoch: [9/10], Loss: 0.0032
-Epoch: [10/10], Loss: 0.0030
+Epoch: [1/10], Loss: 0.0102
+Epoch: [2/10], Loss: 0.0066
+Epoch: [3/10], Loss: 0.0048
+Epoch: [4/10], Loss: 0.0038
+Epoch: [5/10], Loss: 0.0031
+Epoch: [6/10], Loss: 0.0027
+Epoch: [7/10], Loss: 0.0023
+Epoch: [8/10], Loss: 0.0020
+Epoch: [9/10], Loss: 0.0018
+Epoch: [10/10], Loss: 0.0016
 Score (accuracy) of the probe: 0.95
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0107
+Epoch: [2/10], Loss: 0.0068
+Epoch: [3/10], Loss: 0.0051
+Epoch: [4/10], Loss: 0.0040
+Epoch: [5/10], Loss: 0.0033
+Epoch: [6/10], Loss: 0.0029
+Epoch: [7/10], Loss: 0.0025
+Epoch: [8/10], Loss: 0.0022
+Epoch: [9/10], Loss: 0.0020
+Epoch: [10/10], Loss: 0.0018
+Score (accuracy) of the probe: 0.95
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0110
+Epoch: [2/10], Loss: 0.0075
+Epoch: [3/10], Loss: 0.0060
+Epoch: [4/10], Loss: 0.0052
+Epoch: [5/10], Loss: 0.0046
+Epoch: [6/10], Loss: 0.0042
+Epoch: [7/10], Loss: 0.0038
+Epoch: [8/10], Loss: 0.0035
+Epoch: [9/10], Loss: 0.0033
+Epoch: [10/10], Loss: 0.0031
+Score (accuracy) of the probe: 0.96
 
 The best l1=0, the best l2=0.1 for pretrained_BERT_layer_2
 Accuracy on the test set of probing pretrained_BERT_layer_2 of all layers:
-Score (accuracy) of the probe: 0.67
-{'__OVERALL__': 0.6696472925981123, 'NAME': 0.3331562167906483, 'STRING': 1.0, 'NUMBER': 0.9941147621383031, 'KEYWORD': 0.07352941176470588}
+Score (accuracy) of the probe: 0.32
+{'__OVERALL__': 0.31693989071038253, 'NAME': 0.4957492029755579, 'STRING': 1.0, 'NUMBER': 0.14811181951937225, 'KEYWORD': 0.058823529411764705}
 Confusion matrix between NAME and KEYWORD:
-NAME_NAME:627,KW_NAME:61
-NAME_KW:149,KW_KW:5
-NAME_STRING:433,KW_other:2
-NAME_NUMBER:673
-NAME_STRING_list:['m', 'm', 'm', 'm', 'm', 'a', 'a', 'a', 'a', 'W', 'W', 'T', 'T', 'W', 'W', 'W', 'T', 'W', 'T', 'W', 'W', 'T', 'W', 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'd', 'd', 's', 'a', 'a', 'a', 'a', 'a', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'y', 'i', 'i', 's', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'y', 'y', 'y', 'y', 'y', 'y', 'y', 'y', 'y', 'y', 'y', 'd', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'd', 'i', 'd', 'd', 'i', 'd', 'a', 'a', 'f', 'm', 'i', 'i', 'i', 'i', 'Y', 'x', 'Y', 'x', 'd', 'd', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'x', 'x', 'x', 'Y', 'Y', 'Y', 'x', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'd', 'ih', 'i', 'i', 's', 's', 's', 'I', 'I', 'I', 'I', 'P', 'I', 'I', 'I', 'I', 'T', 'I', 'I', 'I', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'D', 'P', 'y', 'Y', 'D', 'I', 's', 't', 'I', 's', 't', 'T', 't', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'i', 'i', 'i', 'i', 's', 's', 'X', 'i', 'p', 's', 't', 's', 't', 'i', 'i', 'i', 's', 'i', 'i', 'i', 'i', 'i', 'i', 'v', 'v', 'u', 's', 'i', 'i', 's', 's', 's', 's', 'i', 'i', 's', 'm', 's', 's', 's', 's', 's', 's', 'm', 'i', 'c', 's', 's', 's', 's', 's', 's', 't', 't', 's', 's', 's', 'J', 'J', 'J', 'p', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'J', 'i', 'i', 'i', 'i', 'c', 'p', 'p', 's', 's', 's', 's', 's', 'm', 'm', 'm', 'm', 'd', 'd', 'D', 'D', 'D', 'D', 'D', 'i', 'y', 'i', 'i', 'D', 'D', 'y', 'i', 'y', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'T', 'i', 'i', 'i', 'i', 'i', 'T', 'i', 'T', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'y', 'i', 'y', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'Y', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'V', 'a', 'a', 'a', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'p', 'p', 'a', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'd', 'A', 'A', 'A', 't', 't']
-NAME_NUMBER_list:['x', 'x', 'T', 'W1', 'b1', 'X', 'T', 'X', 'b', 'T', 'T', 'T', 'T', 'c', 'X', 'T', 'T', 'X', 'T', 'b', 'T', 'T', 'X', 'T', 'T', 'X', 'X', 'b', 'T', 'T', 'X', 'b', 'T', 'T', 'X', 'T', 'x', 'p', 'x', 'h0', 'h0', 't', 'T', 'T', 'x', 't', 'h0', 'b1', 'T', 'x', 'x', 'b', 'T', 'T', 'b', 'T', 'b', 'j', 'x', 'j', 'j', 'j', 'j', 'j', 'x', 'x', 't', 'x', 't', 't', 'm', 't', 't0', 't', 't0', 'm', 'm', 'x', 'x', 'x', 'x', 'y', 'x', 'x', 'y', 'x', 'y', 'x', 'y', 'x', 'x', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'x', 'f', 'f', 'x', 'x', 'x', 'x', 'f', 'm', 'm', 'j', 'j', 'v', 'x', 'x', 'x', 'Y', 'Y', 'xx', 'xx', 'x', 'X', 'X', 'X', 'Y', 'Y', 'Y', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'Y1', 'Y1', 'Y1', 'Y1', 'Y1', 'Y1', 'Y1', 'Y1', 'Y', 'Y', 'Y', 'x', 'Y', 'f', 'f', 't', 'p', 'p', 't', 'f', 'f', 'x', 'x', 'f', 'x', 'x', 'x', 'x', 'R', 'f', 'x', 'x', 'x', 'x', 'x', 'x', 'z', 'z', 'x', 'x', 'x', 'd', 'd', 'x', 'y', 'x', 'y', 'X', 'f', 'X', 'f1', 'f2', 'q', 'f1', 'X', 'X', 'f2', 'f1', 'f1', 'x', 'x', 'q', 'q', 'F', 'F', 'T', 'Y', 'X', 'F', 'P', 'Q', 'X', 'q', 'p', 'q', 'K', 'N', 'T', 'Y', 'X', 'P', 'Q', 'E', 'x', 'X', 'q', 'p', 'q', 'T', 'K', 'T0', 'T0', 'T0', 't0', 't3', 't0', 't0', 't3', 't3', 'T', 'T', 'T0', 'T0', 'T0', 't0', 't0', 't0', 'T', 'T', 'T0', 'T0', 'T0', 't0', 't0', 't0', 'T', 'T', 'T0', 't0', 't0', 't3', 't3', 'T', 'T0', 't0', 't0', 'T', 'x', 'X', 'x', 'D', 'X', 'X', 'p', 'P', 'p0', 'p0', 'B', 'P', 'p0', 'p0', 'p', 'B', 'Q', 'B', 'D', 'x', 'X', 'D', 'x', 'D', 't', 'D', 't', 'T', 'p0', 'P', 'B', 'q0', 'q1', 'x', 'Q', 'B', 'x', 'p0', 'q0', 'q1', 'D', 'y', 'P', 'x', 'Q', 'B', 'B', 'D', 't', 't', 't', 't', 'Y', 'Q', 'X', 'P', 'Q', 'Y', 'X', 'N', 'R', 'P', 'Q', 'N', 'p', 'q', 'Y', 'X', 'p', 'N', 'p', 'q', 'P', 'Q', 'p', 'q', 'F', 'F', 'f', 'x', 'x', 'x', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'T', 'X', 'X', 'X', 'T', 'X', 'X', 'T', 'X', 'X', 'T', 'p', 'p', 'T', 'p', 'X', 'p', 'p', 'X', 'p', 'X', 'X', 'X', 'X', 'T', 'X', 'T', 'T', 'T', 'T', 'X', 'X', 'T', 'T', 'T', 'Y', 'X', 'Y', 'X', 'x', 'x', 'x', 'p', 'p', 't', 'n', 't', 'n', 'n', 'n', 'n', 't', 'v', 'u', 'f', 'f', 'f', 'v', 'v', 'v', 'n', 'p', 'd', 'd', 'c', 'c', 't', 't', 'v', 'v', 'n', 'x', 'x', 'J', 'J', 'j', 'u', 'p', 'p', 'J', 'j', 'J', 'p', 'J', 'p', 'J', 'J', 'J', 'p', 'p', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'c', 'p', 'm', 'x', 'y', 'x', 'y', 'x', 'x', 'x', 'x', 'd', 'd', 'd', 'X', 'Y', 'X', 'X', 'X', 'D', 'D', 'Y', 'X', 'X', 'Y', 'D', 'R', 'R', 'X', 'y', 'X', 'y', 'X', 'y', 'p', 'X', 'F', 'X', 'F', 'X', 'q', 'p', 'q', 'p', 'q', 'X', 'y', 'q', 'F', 'C', 'y', 'Q', 'T', 'T', 'p', 'q', 'p', 'q', 'q', 'C', 'G', 'x', 'x', 'X', 'X', 'X', 'X', 'X', 'f0', 'X', 'X', 'Y', 'X', 'F', 'F', 'T', 'T', 'T', 'T', 'T', 'F', 'X', 'X', 'Y', 'X', 'f0', 'T', 'T', 'T', 'T', 'T', 'T', 'p', 'X', 'y', 'X', 'X', 'X', 'X', 'y', 'y', 'y', 'X', 'y', 'X', 'X', 'X', 'Y', 'X', 'X', 'Y', 'X', 'Y', 'X', 'Y', 'X', 'X', 'X', 'Y', 'x', 'x', 'X', 'y', 'Y', 'X', 'Y', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j1', 'j2', 'j1', 'j1', 'j2', 'j2', 'j1', 'j1', 'j1', 'j2', 'j2', 'j1', 'j2', 'j1', 'V', 'T', 'P', 'T', 'a2', 'T', 'P', 'a3', 'b', 'a0', 'a0', 'a2', 'T', 'f', 'j', 'j', 'f', 'f', 'p', 'd', 't', 'T', 'T', 'v', 'R', 'R', 'Q', 'Q', 'Q', 'x', 'x', 't', 't', 't', 't', 'x', 'x']
+NAME_NAME:933,KW_NAME:64
+NAME_KW:208,KW_KW:4
+NAME_STRING:705,KW_other:0
+NAME_NUMBER:36
+NAME_STRING_list:['m', 'm', 'm', 'm', 'a', 'a', 'a', 'a', 'b1', 'X', 'W', 'T', 'W', 'T', 'c', 'W', 'T', 'X', 'W', 'X', 'W', 'T', 'X', 'W', 'X', 'W', 'T', 'X', 'W', 'X', 'W', 'p', 'x', 'p', 'x', 'h0', 'p', 'p', 'p', 'b1', 'p', 'p', 'p', 'd', 'd', 'a', 'a', 'a', 'a', 'a', 'i', 'i', 'i', 'i', 'i', 'j', 'i', 'j', 'j', 'j', 'j', 'i', 'i', 'i', 'i', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'y', 'y', 'y', 'x', 'x', 'y', 'x', 'y', 'x', 'y', 'y', 'y', 'y', 'y', 'x', 'd', 'X', 'X', 'X', 'X', 'X', 'f', 'd', 'x', 'x', 'i', 'd', 'd', 'i', 'd', 'a', 'a', 'e', 'f', 'f', 'm', 'm', 'm', 'j', 'j', 'v', 'i', 'i', 'x', 'i', 'i', 'Y', 'd', 'd', 'x', 'x', 'x', 'Y', 'Y', 'Y', 'Y', 'x', 'Y', 'Y', 'Y', 'Y', 'Y', 'f', 'f', 't', 'p', 't', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'f', 'x', 'x', 'i', 'i', 'i', 'f', 'f', 'z', 'x', 'd', 'd', 'iw', 'ih', 'd', 'd', 'y', 'x', 'X', 'i', 'i', 'f', 'f1', 'f1', 'q', 'q', 'I', 'F', 'I', 'I', 'Y', 'I', 'C', 'F', 'P', 'X', 'P', 'p', 'I', 'T', 'I', 'Y', 'I', 'P', 'I', 'T', 'X', 'p', 'E', 'p', 'T', 'I', 'I', 'T0', 'I', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 't0', 'I', 'I', 'I', 'I', 'T', 'I', 'T0', 'T', 'I', 'I', 'I', 'I', 'I', 't0', 'I', 't0', 'I', 'I', 'I', 'I', 'T', 'T', 'I', 'T0', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 't0', 'I', 'I', 'T', 'I', 'I', 'I', 'I', 't0', 'I', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'D', 'D', 'p', 'P', 'p0', 'P', 'p0', 'p0', 'I', 'D', 'P', 'B', 'D', 'D', 'D', 'y', 'Y', 'D', 'D', 'I', 'D', 't', 'T', 'P', 'x', 'B', 'p0', 'I', 'P', 'x', 'B', 'B', 't', 'T', 't', 'T', 't', 'Y', 'X', 'P', 'Y', 'X', 'P', 'I', 'p', 'Y', 'X', 'I', 'p', 'p', 'P', 'E', 'p', 'I', 'I', 'I', 'F', 'F', 'I', 'I', 'f', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'i', 'i', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'i', 'i', 'j', 'j', 'X', 'p', 'p', 'p', 'X', 'T', 'X', 'X', 'X', 'Y', 'i', 'x', 'x', 'p', 'p', 'p', 't', 't', 'n', 'n', 'i', 'i', 'i', 's', 'i', 'i', 'i', 'i', 'v', 'v', 'i', 'i', 'v', 'v', 'u', 'f', 'f', 'v', 'v', 'v', 'i', 'i', 'i', 'i', 's', 'p', 'd', 'd', 'c', 'c', 'i', 'c', 'v', 'x', 'x', 's', 'J', 'J', 'j', 'J', 'J', 'J', 'p', 'p', 'J', 'j', 'J', 'p', 'J', 'p', 'J', 'J', 'J', 'p', 'p', 'J', 'i', 'i', 'J', 'J', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'J', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'c', 'c', 'p', 'p', 'p', 'm', 'm', 'm', 'm', 'x', 'x', 'd', 'd', 'd', 'd', 'd', 'd', 'X', 'X', 'D', 'D', 'D', 'Y', 'X', 'D', 'D', 'D', 'D', 'R', 'X', 'D', 'p', 'i', 'i', 'i', 'D', 'X', 'D', 'X', 'F', 'X', 'p', 'i', 'p', 'y', 'p', 'F', 'y', 'T', 'p', 'p', 'C', 'x', 'x', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'f0', 'X', 'X', 'Y', 'F', 'F', 'T', 'T', 'T', 'T', 'T', 'i', 'i', 'i', 'X', 'X', 'Y', 'i', 'i', 'i', 'T', 'i', 'f0', 'T', 'i', 'i', 'i', 'i', 'f', 'T', 'T', 'T', 'T', 'T', 'i', 'T', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'p', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'y', 'y', 'y', 'y', 'i', 'i', 'i', 'X', 'i', 'i', 'i', 'i', 'y', 'i', 'y', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'Y', 'Y', 'y', 'y', 'Y', 'X', 'j', 'j', 'j', 'j', 'j', 'j', 'i', 'j', 'j1', 'i', 'i', 'j1', 'j1', 'j1', 'i', 'i', 'j1', 'i', 'i', 'V', 'V', 'P', 'P', 'T', 'a', 'a2', 'P', 'a', 'a', 'a0', 'a0', 'a2', 'f', 'i', 'i', 'i', 'i', 'i', 'i', 'f', 'i', 'i', 'p', 'p', 'p', 'a', 'i', 'i', 'i', 'i', 'i', 'i', 'd', 'i', 'd', 'T', 'T', 'R', 'A', 'A', 'A', 'x', 'x', 't', 't', 't', 't', 'x', 'x']
+NAME_NUMBER_list:['T', 'T', 'T', 't', 'T', 't', 't', 't', 't0', 't0', 'X', 'f1', 'T0', 'T0', 't0', 't0', 'T0', 'T0', 't0', 'T0', 'T0', 't0', 't0', 'T', 'T0', 't0', 'T0', 't0', 't0', 'p0', 'p0', 'T', 't', 'T', 'T', 'T']
 Accuracy on the test set of pretrained_BERT_layer_2 model using the intercept:
 Score (accuracy) of the probe: 0.47
 pretrained_BERT Layer 3
@@ -428,74 +428,74 @@ Training classification probe
 Creating model...
 Number of training instances: 13636
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0090
-Epoch: [2/10], Loss: 0.0056
-Epoch: [3/10], Loss: 0.0041
-Epoch: [4/10], Loss: 0.0033
-Epoch: [5/10], Loss: 0.0027
-Epoch: [6/10], Loss: 0.0022
-Epoch: [7/10], Loss: 0.0019
-Epoch: [8/10], Loss: 0.0017
-Epoch: [9/10], Loss: 0.0015
-Epoch: [10/10], Loss: 0.0013
+Epoch: [1/10], Loss: 0.0100
+Epoch: [2/10], Loss: 0.0064
+Epoch: [3/10], Loss: 0.0047
+Epoch: [4/10], Loss: 0.0037
+Epoch: [5/10], Loss: 0.0030
+Epoch: [6/10], Loss: 0.0025
+Epoch: [7/10], Loss: 0.0022
+Epoch: [8/10], Loss: 0.0019
+Epoch: [9/10], Loss: 0.0017
+Epoch: [10/10], Loss: 0.0015
+Score (accuracy) of the probe: 0.95
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0101
+Epoch: [2/10], Loss: 0.0064
+Epoch: [3/10], Loss: 0.0046
+Epoch: [4/10], Loss: 0.0036
+Epoch: [5/10], Loss: 0.0030
+Epoch: [6/10], Loss: 0.0025
+Epoch: [7/10], Loss: 0.0022
+Epoch: [8/10], Loss: 0.0019
+Epoch: [9/10], Loss: 0.0017
+Epoch: [10/10], Loss: 0.0015
+Score (accuracy) of the probe: 0.95
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0099
+Epoch: [2/10], Loss: 0.0063
+Epoch: [3/10], Loss: 0.0047
+Epoch: [4/10], Loss: 0.0037
+Epoch: [5/10], Loss: 0.0031
+Epoch: [6/10], Loss: 0.0027
+Epoch: [7/10], Loss: 0.0023
+Epoch: [8/10], Loss: 0.0021
+Epoch: [9/10], Loss: 0.0019
+Epoch: [10/10], Loss: 0.0017
 Score (accuracy) of the probe: 0.96
 Training classification probe
 Creating model...
 Number of training instances: 13636
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0093
-Epoch: [2/10], Loss: 0.0058
-Epoch: [3/10], Loss: 0.0042
-Epoch: [4/10], Loss: 0.0034
-Epoch: [5/10], Loss: 0.0028
-Epoch: [6/10], Loss: 0.0023
-Epoch: [7/10], Loss: 0.0020
-Epoch: [8/10], Loss: 0.0017
-Epoch: [9/10], Loss: 0.0015
-Epoch: [10/10], Loss: 0.0014
-Score (accuracy) of the probe: 0.95
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0092
-Epoch: [2/10], Loss: 0.0058
-Epoch: [3/10], Loss: 0.0043
-Epoch: [4/10], Loss: 0.0035
-Epoch: [5/10], Loss: 0.0029
-Epoch: [6/10], Loss: 0.0025
-Epoch: [7/10], Loss: 0.0022
-Epoch: [8/10], Loss: 0.0019
-Epoch: [9/10], Loss: 0.0017
-Epoch: [10/10], Loss: 0.0016
-Score (accuracy) of the probe: 0.95
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0100
-Epoch: [2/10], Loss: 0.0068
-Epoch: [3/10], Loss: 0.0055
-Epoch: [4/10], Loss: 0.0047
-Epoch: [5/10], Loss: 0.0042
-Epoch: [6/10], Loss: 0.0039
-Epoch: [7/10], Loss: 0.0036
-Epoch: [8/10], Loss: 0.0034
-Epoch: [9/10], Loss: 0.0031
-Epoch: [10/10], Loss: 0.0030
-Score (accuracy) of the probe: 0.97
+Epoch: [1/10], Loss: 0.0112
+Epoch: [2/10], Loss: 0.0077
+Epoch: [3/10], Loss: 0.0061
+Epoch: [4/10], Loss: 0.0052
+Epoch: [5/10], Loss: 0.0047
+Epoch: [6/10], Loss: 0.0042
+Epoch: [7/10], Loss: 0.0039
+Epoch: [8/10], Loss: 0.0036
+Epoch: [9/10], Loss: 0.0034
+Epoch: [10/10], Loss: 0.0032
+Score (accuracy) of the probe: 0.96
 
 The best l1=0, the best l2=0.1 for pretrained_BERT_layer_3
 Accuracy on the test set of probing pretrained_BERT_layer_3 of all layers:
-Score (accuracy) of the probe: 0.71
-{'__OVERALL__': 0.7071535022354695, 'NAME': 0.38257173219978746, 'STRING': 1.0, 'NUMBER': 0.9936243256498284, 'KEYWORD': 0.9411764705882353}
+Score (accuracy) of the probe: 0.26
+{'__OVERALL__': 0.26130153999006456, 'NAME': 0.43251859723698194, 'STRING': 1.0, 'NUMBER': 0.06817067189798921, 'KEYWORD': 0.9117647058823529}
 Confusion matrix between NAME and KEYWORD:
-NAME_NAME:720,KW_NAME:4
-NAME_KW:83,KW_KW:64
-NAME_STRING:409,KW_other:0
-NAME_NUMBER:670
-NAME_STRING_list:['m', 'm', 'm', 'a', 'a', 'a', 'a', 'x', 'x', 'c', 'c', 'W', 'T', 'W', 'p', 'p', 'p', 'p', 'p', 's', 'a', 'a', 'a', 'a', 'i', 'i', 'i', 'i', 'i', 'x', 'i', 'i', 'i', 'i', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'X', 'X', 'X', 'X', 'X', 'X', 'x', 'x', 'x', 'x', 'i', 'd', 'i', 'd', 'a', 'a', 'c', 'x', 'i', 'i', 'x', 'i', 'i', 'x', 'x', 'x', 'x', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'x', 'x', 'x', 'x', 'x', 'ih', 'iw', 'ih', 'i', 'i', 's', 's', 's', 'I', 'C', 'I', 'I', 'O', 'I', 'C', 'P', 'I', 'I', 'I', 'I', 'E', 'T', 'Iw', 'I', 'I', 'I', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'Iw', 'Iw', 'I', 'I', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'C', 'C', 'c', 'C', 'c', 'I', 'C', 'Iw', 's', 't', 'Iw', 't', 'I', 'C', 'C', 'Iw', 's', 'Iw', 't', 'T', 't', 'Iw', 't', 'T', 't', 'C', 'C', 'C', 'I', 'I', 'I', 'I', 'I', 'E', 'I', 'I', 'x', 'j', 'j', 'i', 'i', 'j', 'i', 'i', 'X', 'i', 't', 't', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'v', 's', 'i', 'i', 's', 's', 's', 's', 'i', 'i', 'm', 's', 's', 's', 's', 's', 'c', 'c', 'c', 'i', 'c', 'c', 's', 's', 't', 's', 'J', 'J', 'J', 'i', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'c', 'c', 's', 'm', 'm', 'm', 'm', 'd', 'k', 'i', 'i', 'i', 'i', 'C', 'C', 'C', 'C', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'C', 'C', 'T', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'T', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'a', 'a', 'a', 'C', 'C', 'l', 'l', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'A', 'A', 'C', 'A', 'x', 't', 't', 'x']
-NAME_NUMBER_list:['m', 'T', 'W1', 'b1', 'W2', 'X', 'W', 'b', 'T', 'X', 'W', 'T', 'b', 'T', 'T', 'h', 'c', 'X', 'W', 'T', 'T', 'X', 'W', 'T', 'T', 'T', 'X', 'W', 'T', 'b', 'T', 'T', 'X', 'h', 'X', 'h', 'W', 'b', 'T', 'T', 'X', 'W', 'T', 'b', 'T', 'T', 'X', 'T', 'b', 'x', 'p', 'x', 'h0', 'h0', 'T', 'p', 'T', 'T', 'x', 'h0', 'p', 'b1', 'W2', 'd', 'T', 'x', 'x', 'e', 'b', 'b', 'b', 'T', 'T', 'b', 'T', 'b', 'j', 'x', 'j', 'x', 'j', 'j', 'j', 'x', 't', 'x', 't', 'x', 't', 't', 'm', 't', 't0', 't0', 'm', 'm', 'm', 'h', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'y', 'x', 'x', 'd', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'l', 'x', 'l', 'x', 'f', 'f', 'l', 'd', 'e', 'k', 'm', 'm', 'm', 'j', 'w', 'j', 'v', 'w', 'Y', 'Y', 'xx', 'xx', 'X', 'X', 'Y', 'x', 'x', 'x', 'x', 'x', 'Y', 'Y1', 'Y1', 'Y1', 'Y', 'Y', 'Y', 'Y', 't', 'p', 't', 'f', 'x', 'x', 'x', 'x', 'x', 'x', 'z', 'x', 'x', 'd', 'x', 'y', 'X', 'X', 'f', 'X', 'f1', 'f1', 'X', 'f2', 'f1', 'f1', 'x', 'q', 'q', 'q', 'q', 'x', 'F', 'F', 'T', 'Y', 'X', 'N', 'F', 'P', 'Q', 'N', 'O', 'p', 'p', 'Y', 'K', 'N', 'T', 'C', 'Y', 'X', 'N', 'P', 'Q', 'N', 'x', 'X', 'p', 'p', 'T', 'T0', 'T0', 'T0', 't0', 't0', 't0', 't3', 't3', 'T', 'T', 'T0', 'T0', 'T0', 't0', 't0', 't0', 'T', 'T', 'T0', 'T0', 'T0', 't0', 't0', 't3', 't0', 't3', 'T', 'T', 'T0', 't0', 't0', 't3', 't3', 'T', 'T0', 't0', 't0', 'T', 'x', 'X', 'B', 'x', 'B', 'X', 'X', 'p', 'P', 'B', 'p0', 'B', 'p0', 'B', 'P', 'p0', 'p0', 'p', 'p', 'B', 'D', 'P', 'B', 'Q', 'B', 'N', 'y', 'B', 'D', 'x', 'x', 'X', 'B', 'D', 'c', 'n', 'N', 'y', 'n', 'n', 'D', 't', 'N', 'p0', 'y', 'P', 'B', 'q0', 'x', 'B', 'y', 'x', 'n', 'p0', 'q0', 'n', 'N', 'N', 'y', 'P', 'B', 'B', 'x', 'B', 'B', 'n', 'n', 'n', 'n', 't', 'c', 'P', 'Y', 'X', 'P', 'Q', 'C', 'Y', 'X', 'N', 'P', 'Q', 'N', 'F', 'p', 'q', 'Y', 'X', 'p', 'N', 'p', 'q', 'P', 'p', 'n', 'f', 'x', 'n', 'n', 'n', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'T', 'X', 'X', 'X', 'T', 'X', 'X', 'T', 'X', 'X', 'T', 'p', 'p', 'T', 'p', 'p', 'p', 'X', 'X', 'X', 'X', 'T', 'X', 'h', 'T', 'T', 'T', 'T', 'X', 'T', 'T', 'T', 'Y', 'X', 'x', 'y', 'x', 'y', 'p', 'p', 'p', 't', 't', 't', 't', 't', 't', 'n', 'n', 't', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'u', 'u', 't', 't', 'u', 'v', 'v', 'v', 'v', 'v', 'v', 'u', 'n', 'u', 'v', 'v', 'v', 'v', 'n', 'n', 'm', 'd', 'n', 'n', 't', 't', 'v', 'v', 'v', 'n', 'n', 'n', 'x', 'x', 'J', 'J', 'j', 'u', 'p', 'p', 'J', 'j', 'p', 'j', 'J', 'J', 'J', 'J', 'p', 'J', 'J', 'J', 'J', 'p', 'm', 'x', 'y', 'x', 'x', 'x', 'x', 'f', 'x', 'd', 'd', 'd', 'X', 'Y', 'Y', 'X', 'X', 'X', 'D', 'D', 'X', 'D', 'X', 'Y', 'k', 'D', 'X', 'D', 'D', 'R', 'X', 'y', 'X', 'y', 'X', 'X', 'y', 'y', 'D', 'D', 'X', 'D', 'X', 'X', 'q', 'F', 'p', 'X', 'X', 'y', 'F', 'y', 'Q', 'T', 'T', 'G', 'x', 'x', 'X', 'X', 'X', 'f', 'X', 'f0', 'X', 'X', 'Y', 'F', 'F', 'C', 'T', 'C', 'T', 'F', 'X', 'X', 'Y', 'X', 'f0', 'C', 'T', 'T', 'T', 'T', 'T', 'T', 'X', 'y', 'X', 'X', 'X', 'X', 'X', 'X', 'y', 'X', 'X', 'Y', 'X', 'X', 'Y', 'X', 'X', 'x', 'x', 'X', 'y', 'X', 'Y', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j1', 'j2', 'j1', 'j2', 'j1', 'j2', 'j2', 'j1', 'j1', 'j2', 'j1', 'j2', 'j2', 'j1', 'j2', 'j1', 'V', 'T', 'T', 'T', 'T', 'b', 'a2', 'T', 'b', 'P', 'a3', 'a0', 'a0', 'a2', 'T', 'j', 'p', 'p', 'p', 'n', 'd', 'd', 't', 'T', 'v', 'T', 'v', 'R', 'R', 'B', 'Q', 'B', 'Q', 'B', 'C', 'h5f', 'x', 'f', 't', 't', 'x']
+NAME_NAME:814,KW_NAME:6
+NAME_KW:316,KW_KW:62
+NAME_STRING:665,KW_other:0
+NAME_NUMBER:87
+NAME_STRING_list:['m', 'm', 'a', 'a', 'a', 'a', 'x', 'x', 'b1', 'W', 'W', 'T', 'T', 'h', 'c', 'h', 'W', 'W', 'X', 'W', 'X', 'W', 'h', 'h', 'W', 'X', 'W', 'x', 'x', 'b1', 'p', 'p', 'd', 'x', 'x', 'e', 'a', 'a', 'a', 'b', 'a', 'i', 'i', 'i', 'i', 'j', 'j', 'x', 'i', 'j', 'j', 'j', 'x', 'i', 'i', 'i', 'i', 'm', 'm', 't', 'h', 'm', 'm', 'm', 'h', 'm', 'x', 'x', 'x', 'x', 'x', 'd', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'x', 'x', 'l', 'x', 'x', 'x', 'x', 'i', 'd', 'd', 'i', 'd', 'a', 'a', 'e', 'e', 'm', 'm', 'm', 'j', 'w', 'j', 'v', 'w', 'x', 'i', 'i', 'x', 'i', 'i', 'X', 'x', 'x', 'd', 'd', 'x', 'x', 'x', 'x', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'x', 'x', 'i', 'i', 'i', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'iw', 'ih', 'i', 'i', 'q', 's', 'q', 's', 'q', 's', 'q', 'I', 'x', 'O', 'I', 'O', 'I', 'O', 'X', 'I', 'P', 'Q', 'q', 'p', 'P', 'I', 'N', 'T', 'I', 'X', 'I', 'P', 'N', 'E', 'x', 'I', 'E', 'X', 'Iw', 'I', 'I', 'I', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'Iw', 'Iw', 'I', 'I', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T', 'x', 'p', 'P', 'I', 'p', 'P', 'Q', 'N', 'D', 'x', 'x', 'X', 'D', 'I', 'C', 'n', 'N', 'Iw', 's', 'T', 'Iw', 'N', 'x', 'x', 'I', 'N', 'N', 'P', 'x', 'B', 'Iw', 'n', 'n', 's', 'Iw', 'T', 'Iw', 'T', 'C', 'x', 'X', 'Q', 'C', 'X', 'N', 'C', 'P', 'Q', 'N', 'I', 'p', 'X', 'I', 'N', 'P', 'n', 'I', 'I', 'I', 'E', 'E', 'I', 'E', 'I', 'E', 'x', 'x', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'i', 'i', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'i', 'i', 'j', 'j', 'X', 'X', 'X', 'p', 'X', 'X', 'X', 'X', 'h', 'h', 'h', 'X', 'X', 'i', 'x', 'x', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'i', 'u', 'i', 'i', 'i', 'i', 'i', 'v', 'i', 'v', 'i', 'v', 'i', 'v', 'v', 'i', 'i', 's', 's', 's', 'i', 'i', 'n', 'm', 's', 's', 's', 'm', 'd', 'c', 'c', 'c', 'n', 'i', 'c', 'c', 'n', 'n', 'x', 'x', 's', 'J', 'J', 'j', 'J', 'J', 'J', 'J', 'j', 'j', 'J', 'J', 'J', 'J', 'J', 'i', 'i', 'J', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'J', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'c', 'c', 's', 'm', 'm', 'm', 'm', 'm', 'x', 'x', 'x', 'x', 'x', 'd', 'd', 'd', 'X', 'X', 'X', 'X', 'X', 'X', 'D', 'X', 'X', 'X', 'X', 'D', 'i', 'i', 'i', 'D', 'X', 'D', 'X', 'X', 'i', 'q', 'C', 'C', 'Q', 'C', 'C', 'x', 'x', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'X', 'X', 'X', 'C', 'T', 'i', 'i', 'i', 'X', 'X', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'T', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'i', 'i', 'i', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'X', 'X', 'X', 'x', 'x', 'X', 'X', 'j', 'j', 'j', 'j', 'i', 'j', 'j1', 'j1', 'i', 'i', 'j2', 'j1', 'j1', 'j2', 'j1', 'i', 'i', 'j2', 'j1', 'i', 'i', 'T', 'a', 'a2', 'T', 'a', 'a', 'a0', 'a2', 'C', 'l', 'l', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'p', 'p', 'i', 'i', 'i', 'i', 'n', 'i', 'd', 'i', 'd', 't', 'T', 'A', 'Q', 'A', 'C', 'Q', 'A', 'B', 'x', 'x', 'x', 'x']
+NAME_NUMBER_list:['X', 'T', 'X', 'h0', 'h0', 'h0', 'x', 'x', 'x', 't0', 't0', 'y', 'Y', 'xx', 'Y', 'Y', 'X', 'f1', 'f1', 'x', 'T', 'N', 'N', 'T0', 'T0', 'T0', 't0', 't0', 't0', 't3', 'T0', 'T0', 'T0', 't0', 't0', 't0', 'T0', 'T0', 'T0', 't0', 't0', 't0', 'T0', 't0', 't0', 'T', 'T0', 't0', 't0', 'x', 'X', 'n', 'n', 'q0', 'n', 'p0', 'q0', 'n', 'n', 'n', 'n', 'n', 'X', 'X', 'u', 't', 't', 'u', 'u', 'u', 'n', 'n', 'n', 'u', 'x', 'R', 'q', 'T', 'T', 'X', 'f0', 'T', 'T', 'j1', 'a0', 'R', 'R']
 Accuracy on the test set of pretrained_BERT_layer_3 model using the intercept:
 Score (accuracy) of the probe: 0.47
 pretrained_BERT Layer 4
@@ -503,628 +503,13 @@ Training classification probe
 Creating model...
 Number of training instances: 13636
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0089
-Epoch: [2/10], Loss: 0.0055
-Epoch: [3/10], Loss: 0.0040
-Epoch: [4/10], Loss: 0.0032
-Epoch: [5/10], Loss: 0.0026
-Epoch: [6/10], Loss: 0.0022
-Epoch: [7/10], Loss: 0.0019
-Epoch: [8/10], Loss: 0.0016
-Epoch: [9/10], Loss: 0.0014
-Epoch: [10/10], Loss: 0.0013
-Score (accuracy) of the probe: 0.95
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0089
-Epoch: [2/10], Loss: 0.0056
-Epoch: [3/10], Loss: 0.0041
-Epoch: [4/10], Loss: 0.0032
-Epoch: [5/10], Loss: 0.0026
-Epoch: [6/10], Loss: 0.0022
-Epoch: [7/10], Loss: 0.0019
-Epoch: [8/10], Loss: 0.0017
-Epoch: [9/10], Loss: 0.0015
-Epoch: [10/10], Loss: 0.0013
-Score (accuracy) of the probe: 0.95
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0090
-Epoch: [2/10], Loss: 0.0057
-Epoch: [3/10], Loss: 0.0042
-Epoch: [4/10], Loss: 0.0034
-Epoch: [5/10], Loss: 0.0028
-Epoch: [6/10], Loss: 0.0024
-Epoch: [7/10], Loss: 0.0021
-Epoch: [8/10], Loss: 0.0019
-Epoch: [9/10], Loss: 0.0017
-Epoch: [10/10], Loss: 0.0015
-Score (accuracy) of the probe: 0.95
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
 Epoch: [1/10], Loss: 0.0097
-Epoch: [2/10], Loss: 0.0066
-Epoch: [3/10], Loss: 0.0053
-Epoch: [4/10], Loss: 0.0046
-Epoch: [5/10], Loss: 0.0042
-Epoch: [6/10], Loss: 0.0038
-Epoch: [7/10], Loss: 0.0035
-Epoch: [8/10], Loss: 0.0033
-Epoch: [9/10], Loss: 0.0031
-Epoch: [10/10], Loss: 0.0029
-Score (accuracy) of the probe: 0.96
-
-The best l1=0, the best l2=0.1 for pretrained_BERT_layer_4
-Accuracy on the test set of probing pretrained_BERT_layer_4 of all layers:
-Score (accuracy) of the probe: 0.78
-{'__OVERALL__': 0.7791852955787382, 'NAME': 0.5483528161530287, 'STRING': 1.0, 'NUMBER': 0.980872976949485, 'KEYWORD': 1.0}
-Confusion matrix between NAME and KEYWORD:
-NAME_NAME:1032,KW_NAME:0
-NAME_KW:26,KW_KW:68
-NAME_STRING:403,KW_other:0
-NAME_NUMBER:421
-NAME_STRING_list:['m', 'm', 'm', 'm', 'm', 'a', 'a', 'a', 'x', 'x', 'T', 'T', 'W', 'p', 'p', 'x', 'p', 'p', 'p', 'p', 'p', 'p', 's', 's', 'a', 'a', 'a', 'a', 'i', 'i', 'i', 'i', 'i', 'x', 'i', 'i', 'i', 'i', 'm', 'm', 'm', 'm', 'm', 'm', 'x', 'x', 'l', 'x', 'x', 'x', 'x', 'i', 'i', 'a', 'a', 'c', 'i', 'x', 'i', 'i', 'i', 'x', 'd', 'd', 'x', 't', 't', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'x', 'x', 'x', 'x', 'x', 'i', 'i', 's', 'I', 'C', 'I', 'I', 'C', 'C', 'X', 'p', 'P', 'p', 'I', 'p', 'I', 'E', 'P', 'C', 'I', 'C', 'E', 'p', 'T', 'Iw', 'I', 'I', 'I', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'Iw', 'T', 'Iw', 'I', 'T', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T', 'T', 'I', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'O', 'I', 'I', 'I', 'I', 'I', 'p', 'P', 'p', 'P', 'I', 'p', 'p', 'P', 'c', 'C', 'c', 'I', 'C', 'P', 'I', 'C', 'P', 't', 't', 'x', 'x', 'C', 'P', 'C', 'I', 'p', 'I', 'P', 'I', 'I', 'I', 'E', 'I', 'E', 'x', 'x', 'i', 'i', 'i', 'i', 's', 'p', 'p', 'p', 'g', 'X', 'i', 'p', 'p', 'p', 'p', 'n', 'u', 'i', 'u', 'i', 'i', 'i', 'i', 'u', 's', 'i', 'i', 's', 's', 's', 'i', 'i', 'm', 'm', 's', 's', 's', 's', 'c', 'i', 't', 't', 'n', 'x', 'x', 's', 'J', 'p', 'p', 'p', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'c', 'c', 'm', 'm', 'm', 'm', 'x', 'd', 'X', 'X', 'i', 'i', 'i', 'X', 'X', 'X', 'i', 'p', 'C', 'p', 'C', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'C', 'i', 'i', 'i', 'T', 'i', 'T', 'i', 'i', 'T', 'i', 'i', 'i', 'i', 'T', 'g', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'T', 'a', 'P', 'a', 'a', 'C', 'l', 'l', 'i', 'i', 'i', 'i', 'i', 'i', 'j', 'i', 'i', 'i', 'p', 'p', 'a', 'i', 'i', 'i', 'i', 'i', 'c', 'A', 'A', 'C', 'A', 'C', 'x', 't', 't', 't', 't', 't', 't', 'x']
-NAME_NUMBER_list:['T', 'W1', 'b1', 'W2', 'X', 'T', 'b', 'h', 'X', 'T', 'W', 'T', 'b', 'T', 'W', 'T', 'b', 'T', 'T', 'b', 'h', 'X', 'h', 'T', 'W', 'T', 'b', 'T', 'T', 'T', 'b', 'x', 'h0', 'h0', 't', 'T', 'h0', 'b1', 'x', 'b', 'b', 'T', 'T', 'b', 'T', 'b', 'j', 'x', 'j', 'j', 'x', 'x', 't', 't', 'm', 't0', 't0', 'm', 'm', 'm', 'm', 'x', 'x', 'x', 'x', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'x', 'f', 'k', 'e', 'e', 'k', 'm', 'm', 'm', 'j', 'j', 'v', 'x', 'x', 'xx', 'X', 'Y', 'Y', 'x', 'x', 'x', 'x', 'Y1', 'Y1', 't', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'z', 'x', 'x', 'x', 'y', 'X', 'f1', 'f1', 'X', 'f1', 'f1', 'x', 'q', 'q', 'q', 'C', 'X', 'I', 'P', 'q', 'K', 'N', 'C', 'X', 'N', 'I', 'p', 'q', 'T0', 'T0', 'T0', 't0', 't3', 't0', 't0', 't3', 't3', 'T0', 'I', 'T0', 'T0', 't0', 't0', 't0', 'T0', 'T0', 'T0', 't0', 't0', 't3', 't0', 't3', 'T0', 't0', 't0', 't3', 't3', 'T0', 't0', 't0', 'x', 'x', 'B', 'X', 'X', 'B', 'p0', 'B', 'p0', 'B', 'p0', 'p0', 'Q', 'B', 'N', 'k', 'x', 'B', 'c', 'n', 'N', 'x', 'n', 'n', 't', 'N', 'p0', 'q0', 'q1', 'x', 'B', 'k', 'x', 'n', 'p0', 'q0', 'n', 'N', 'N', 'B', 'x', 'B', 'B', 'n', 'n', 'n', 'n', 'c', 'Q', 'C', 'X', 'N', 'P', 'Q', 'N', 'q', 'X', 'p', 'N', 'p', 'Q', 'p', 'q', 'n', 'x', 'n', 'j', 'j', 'u', 'j', 'j', 't', 'T', 'X', 'X', 'X', 'X', 'T', 'X', 'g', 'T', 'p', 'p', 'X', 'T', 'X', 'T', 'T', 'T', 'T', 'T', 'X', 'x', 'x', 'y', 't', 't', 't', 'n', 'n', 'n', 'n', 'n', 'n', 'i', 'u', 'v', 'v', 'v', 'v', 'u', 'v', 'v', 'v', 'v', 'n', 'n', 'm', 'c', 'n', 't', 'c', 'v', 'v', 'n', 'n', 'J', 'J', 'j', 'J', 'J', 'J', 'j', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'x', 'y', 'x', 'y', 'x', 'x', 'x', 'X', 'X', 'X', 'k', 'X', 'k', 'X', 'X', 'y', 'X', 'X', 'y', 'q', 'p', 'X', 'y', 'C', 'C', 'G', 'x', 'x', 'X', 'X', 'f0', 'X', 'X', 'C', 'C', 'X', 'X', 'X', 'f0', 'C', 'X', 'X', 'X', 'X', 'y', 'X', 'X', 'X', 'X', 'X', 'x', 'X', 'Y', 'j', 'j', 'j', 'j1', 'j2', 'j1', 'j2', 'j1', 'j2', 'j2', 'j1', 'j1', 'j2', 'j1', 'j2', 'j1', 'j1', 'L', 'V', 'T', 'a2', 'b', 'b', 'a3', 'b', 'a0', 'a0', 'a2', 'a3', 'T', 'j', 'p', 'g1', 'n', 'v', 'v', 'B', 'h5f', 'h5f', 'h5f', 'h5f', 'x', 'x']
-Accuracy on the test set of pretrained_BERT_layer_4 model using the intercept:
-Score (accuracy) of the probe: 0.47
-pretrained_BERT Layer 5
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0085
-Epoch: [2/10], Loss: 0.0054
-Epoch: [3/10], Loss: 0.0039
-Epoch: [4/10], Loss: 0.0031
-Epoch: [5/10], Loss: 0.0025
-Epoch: [6/10], Loss: 0.0021
-Epoch: [7/10], Loss: 0.0018
-Epoch: [8/10], Loss: 0.0016
-Epoch: [9/10], Loss: 0.0014
-Epoch: [10/10], Loss: 0.0012
-Score (accuracy) of the probe: 0.96
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0086
-Epoch: [2/10], Loss: 0.0054
-Epoch: [3/10], Loss: 0.0040
-Epoch: [4/10], Loss: 0.0031
-Epoch: [5/10], Loss: 0.0026
-Epoch: [6/10], Loss: 0.0022
-Epoch: [7/10], Loss: 0.0019
-Epoch: [8/10], Loss: 0.0016
-Epoch: [9/10], Loss: 0.0014
-Epoch: [10/10], Loss: 0.0013
-Score (accuracy) of the probe: 0.96
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0087
-Epoch: [2/10], Loss: 0.0056
-Epoch: [3/10], Loss: 0.0041
-Epoch: [4/10], Loss: 0.0033
-Epoch: [5/10], Loss: 0.0028
+Epoch: [2/10], Loss: 0.0062
+Epoch: [3/10], Loss: 0.0045
+Epoch: [4/10], Loss: 0.0035
+Epoch: [5/10], Loss: 0.0029
 Epoch: [6/10], Loss: 0.0024
 Epoch: [7/10], Loss: 0.0021
-Epoch: [8/10], Loss: 0.0018
-Epoch: [9/10], Loss: 0.0017
-Epoch: [10/10], Loss: 0.0015
-Score (accuracy) of the probe: 0.96
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0094
-Epoch: [2/10], Loss: 0.0065
-Epoch: [3/10], Loss: 0.0053
-Epoch: [4/10], Loss: 0.0046
-Epoch: [5/10], Loss: 0.0041
-Epoch: [6/10], Loss: 0.0038
-Epoch: [7/10], Loss: 0.0035
-Epoch: [8/10], Loss: 0.0033
-Epoch: [9/10], Loss: 0.0031
-Epoch: [10/10], Loss: 0.0029
-Score (accuracy) of the probe: 0.97
-
-The best l1=0, the best l2=0.1 for pretrained_BERT_layer_5
-Accuracy on the test set of probing pretrained_BERT_layer_5 of all layers:
-Score (accuracy) of the probe: 0.73
-{'__OVERALL__': 0.7257824143070045, 'NAME': 0.44580233793836344, 'STRING': 1.0, 'NUMBER': 0.9700833742030407, 'KEYWORD': 1.0}
-Confusion matrix between NAME and KEYWORD:
-NAME_NAME:839,KW_NAME:0
-NAME_KW:38,KW_KW:68
-NAME_STRING:649,KW_other:0
-NAME_NUMBER:356
-NAME_STRING_list:['m', 'm', 'm', 'm', 'm', 'a', 'a', 'a', 'x', 'x', 'X', 'h', 'T', 'T', 'h', 'X', 'X', 'X', 'T', 'X', 'x', 'p', 't', 'T', 'p', 'x', 'p', 'p', 'p', 'p', 'p', 'p', 's', 'T', 's', 'x', 'x', 'a', 'a', 'a', 'T', 'a', 'a', 'i', 'i', 'i', 'i', 'i', 'j', 'j', 'j', 'x', 'i', 'i', 'i', 'i', 'm', 'h', 'm', 'h', 'm', 'h', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'x', 'x', 'l', 'x', 'x', 'x', 'x', 'i', 'i', 'a', 'a', 'e', 'k', 'k', 'k', 'k', 'k', 'k', 'm', 'm', 'j', 'k', 'x', 'x', 'i', 'x', 'i', 'i', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 't', 't', 'i', 'i', 'i', 'i', 'x', 'i', 'i', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'S', 'i', 'i', 'S', 'S', 'S', 'S', 's', 's', 's', 'I', 'F', 'I', 'I', 'I', 'S', 'P', 'S', 'X', 'p', 'P', 'p', 'K', 'I', 'N', 'p', 'I', 'I', 'P', 'S', 'S', 'I', 'E', 'S', 'X', 'p', 'p', 'K', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'p', 'P', 'P', 'P', 'I', 'p', 'p', 'P', 'K', 'N', 'c', 'C', 'K', 'k', 'x', 'x', 'X', 'I', 'n', 'n', 's', 's', 's', 'K', 'N', 'P', 'x', 'k', 'K', 'x', 'n', 'n', 'I', 'N', 'K', 'K', 'K', 'P', 'n', 'n', 'K', 'n', 'k', 'n', 's', 's', 's', 's', 's', 's', 's', 'x', 'C', 'S', 'X', 'P', 'C', 'N', 'C', 'S', 'K', 'P', 'N', 'I', 'p', 'X', 'I', 'p', 'N', 'p', 'P', 'Q', 'p', 'n', 'I', 'I', 'I', 'I', 'E', 'I', 's', 's', 's', 's', 's', 'x', 'x', 'x', 'j', 'j', 'j', 'i', 'i', 'i', 'i', 'u', 's', 's', 'j', 'j', 'X', 'X', 'X', 'X', 'X', 'T', 'p', 'p', 'T', 'p', 'X', 'p', 'X', 'h', 'T', 'X', 'X', 'X', 'X', 'i', 'x', 'p', 'p', 'p', 'p', 'p', 'p', 's', 's', 's', 'n', 'n', 'n', 'n', 'n', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'u', 'n', 'v', 'k', 'k', 'v', 'k', 'k', 'v', 'k', 's', 'i', 's', 's', 's', 's', 's', 's', 's', 's', 'i', 'i', 's', 's', 's', 'n', 'm', 'm', 's', 's', 's', 's', 's', 's', 'm', 't', 's', 'i', 's', 's', 's', 's', 's', 's', 's', 's', 's', 't', 't', 'n', 'n', 's', 'x', 'x', 's', 's', 's', 'J', 'J', 'J', 'J', 'u', 'p', 'p', 'j', 'p', 'J', 'p', 'J', 'J', 'J', 'p', 'p', 'p', 'i', 'i', 'J', 'J', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'J', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'p', 'p', 's', 's', 's', 's', 's', 's', 'm', 'm', 'm', 'm', 'x', 'x', 'x', 'x', 'X', 'k', 'X', 'k', 'k', 'k', 'X', 'k', 'i', 'i', 'i', 'X', 'X', 'X', 'p', 'i', 'p', 'C', 'C', 'p', 'p', 'C', 'x', 'x', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'X', 'X', 'C', 'T', 'T', 'i', 'i', 'i', 'X', 'X', 'i', 'i', 'i', 'g', 'i', 'i', 'i', 'i', 'T', 'T', 'T', 'T', 'i', 'T', 'i', 'i', 'i', 'i', 'T', 'i', 'i', 'p', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'i', 'i', 'i', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'x', 'x', 'X', 'j', 'j', 'j', 'j', 'j', 'i', 'i', 'i', 'i', 'L', 'P', 'T', 'T', 'P', 'a', 'C', 'C', 'l', 'l', 'i', 'i', 'i', 'i', 'i', 'i', 'j', 'i', 'i', 'i', 'p', 'p', 'p', 'i', 'i', 'i', 'i', 'T', 'A', 'C', 'A', 'x', 'x', 't', 't', 't', 't', 't', 't', 'x', 'x']
-NAME_NUMBER_list:['T', 'b1', 'X', 'X', 'h', 'X', 'h', 'h0', 'h0', 'h0', 'b1', 'X', 'X', 'd', 'd', 'b', 'T', 'j', 'x', 'k', 'x', 'x', 'x', 't', 'f', 't0', 't0', 'f', 'f', 'f', 'x', 'x', 'y', 'x', 'y', 'y', 'X', 'X', 'X', 'l', 'f', 'd', 'd', 'k', 'k2e', 'k', 'f', 'k', 'k', 'k2e', 'e', 'k', 'j', 'v', 'Y', 'xx', 'Y', 'Y', 'k', 'X', 'd', 'd', 'g', 'g', 'g', 'Y', 'Y', 'Y1', 'Y1', 'f', 'f', 'f', 'z', 'x', 'X', 'f', 'X', 'f1', 'f2', 'f2', 'f1', 'f2', 'f1', 'x', 'x', 'q', 'q', 'q', 'q', 'K', 'Y', 'X', 'N', 'K', 'K', 'N', 'q', 'q', 'Y', 'X', 'K', 'N', 'E', 'K', 'U', 'R', 'K', 'q', 'T0', 'T0', 'T0', 't0', 't3', 't0', 't0', 't3', 't3', 'O', 'T0', 'T0', 'T0', 't0', 'O', 'O', 't0', 'O', 't0', 'O', 'O', 'F', 'T0', 'T0', 'T0', 't0', 't0', 't0', 'T0', 't0', 't0', 'T0', 't0', 'O', 'O', 't0', 'x', 'X', 'D', 'X', 'p0', 'B', 'p0', 'B', 'p0', 'p0', 'B', 'Q', 'B', 'D', 'D', 'D', 'k', 'y', 'D', 'D', 'c', 'n', 'N', 'x', 't', 'p0', 'q0', 'B', 'k', 'O', 'p0', 'q0', 'D', 'D', 'N', 'D', 'D', 'D', 'U', 'D', 'y', 'x', 'E', 'k', 'k', 'c', 'Y', 'X', 'R', 'K', 'Q', 'q', 'Y', 'q', 'q', 'E', 'q', 'K', 'F', 'f', 'f', 'n', 'n', 't', 'T', 'X', 'g', 'g', 'g', 'X', 'T', 'T', 'T', 'x', 'y', 't', 't', 't', 'n', 'n', 'n', 'n', 'n', 'u', 'u', 'u', 'v', 'v', 'v', 'v', 'u', 'f', 'k', 'v', 'n', 'd', 'n', 'v', 'n', 'J', 'j', 'u', 'J', 'u', 'J', 'u', 'J', 'x', 'y', 'x', 'X', 'Y', 'X', 'X', 'k', 'D', 'X', 'D', 'D', 'R', 'X', 'X', 'X', 'F', 'q', 'q', 'F', 'q', 'X', 'y', 'F', 'F', 'y', 'G', 'G', 'G', 'X', 'X', 'f', 'f0', 'F', 'F', 'C', 'f', 'C', 'G', 'F', 'g', 'f0', 'C', 'G', 'G', 'g', 'G', 'g', 'X', 'X', 'X', 'X', 'X', 'X', 'Y', 'X', 'X', 'X', 'j', 'j', 'j1', 'j2', 'j1', 'j2', 'j1', 'j2', 'j2', 'j1', 'j1', 'j2', 'j1', 'j2', 'j2', 'j1', 'j2', 'j1', 'L', 'V', 'a2', 'a3', 'a0', 'a0', 'a2', 'a3', 'f', 'f', 'f', 'f', 'g1', 'g1', 'g', 'n', 'T', 'v', 'R', 'Q', 'R', 'Q', 'R', 'h5f', 'h5f', 'h5f', 'h5f', 'h5f', 'f']
-Accuracy on the test set of pretrained_BERT_layer_5 model using the intercept:
-Score (accuracy) of the probe: 0.47
-pretrained_BERT Layer 6
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0085
-Epoch: [2/10], Loss: 0.0051
-Epoch: [3/10], Loss: 0.0037
-Epoch: [4/10], Loss: 0.0029
-Epoch: [5/10], Loss: 0.0023
-Epoch: [6/10], Loss: 0.0020
-Epoch: [7/10], Loss: 0.0017
-Epoch: [8/10], Loss: 0.0014
-Epoch: [9/10], Loss: 0.0013
-Epoch: [10/10], Loss: 0.0011
-Score (accuracy) of the probe: 0.96
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0082
-Epoch: [2/10], Loss: 0.0050
-Epoch: [3/10], Loss: 0.0036
-Epoch: [4/10], Loss: 0.0028
-Epoch: [5/10], Loss: 0.0023
-Epoch: [6/10], Loss: 0.0019
-Epoch: [7/10], Loss: 0.0017
-Epoch: [8/10], Loss: 0.0014
-Epoch: [9/10], Loss: 0.0013
-Epoch: [10/10], Loss: 0.0011
-Score (accuracy) of the probe: 0.97
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0082
-Epoch: [2/10], Loss: 0.0051
-Epoch: [3/10], Loss: 0.0037
-Epoch: [4/10], Loss: 0.0030
-Epoch: [5/10], Loss: 0.0024
-Epoch: [6/10], Loss: 0.0021
-Epoch: [7/10], Loss: 0.0018
-Epoch: [8/10], Loss: 0.0016
-Epoch: [9/10], Loss: 0.0015
-Epoch: [10/10], Loss: 0.0013
-Score (accuracy) of the probe: 0.96
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0095
-Epoch: [2/10], Loss: 0.0064
-Epoch: [3/10], Loss: 0.0051
-Epoch: [4/10], Loss: 0.0044
-Epoch: [5/10], Loss: 0.0040
-Epoch: [6/10], Loss: 0.0036
-Epoch: [7/10], Loss: 0.0034
-Epoch: [8/10], Loss: 0.0032
-Epoch: [9/10], Loss: 0.0030
-Epoch: [10/10], Loss: 0.0028
-Score (accuracy) of the probe: 0.97
-
-The best l1=0, the best l2=0.1 for pretrained_BERT_layer_6
-Accuracy on the test set of probing pretrained_BERT_layer_6 of all layers:
-Score (accuracy) of the probe: 0.75
-{'__OVERALL__': 0.7511177347242921, 'NAME': 0.4904357066950053, 'STRING': 1.0, 'NUMBER': 0.9789112309955861, 'KEYWORD': 1.0}
-Confusion matrix between NAME and KEYWORD:
-NAME_NAME:923,KW_NAME:0
-NAME_KW:10,KW_KW:68
-NAME_STRING:657,KW_other:0
-NAME_NUMBER:292
-NAME_STRING_list:['m', 'a', 'a', 'a', 'a', 'x', 'x', 'T', 'X', 'h', 'c', 'X', 'c', 'X', 'h', 'X', 'X', 'X', 'h', 'X', 'h', 'X', 'X', 'x', 'p', 'p', 'x', 'p', 'p', 'p', 'p', 'p', 'p', 'X', 'X', 's', 'x', 'x', 'a', 'a', 'a', 'a', 'a', 'i', 'i', 'i', 'i', 'i', 'x', 'i', 'j', 'x', 'x', 'x', 'i', 'i', 'i', 'i', 'm', 'm', 'm', 'm', 'h', 'h', 'm', 'h', 'm', 'm', 'm', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'x', 'x', 'l', 'x', 'x', 'x', 'x', 'i', 'd', 'i', 'd', 'a', 'a', 'e', 'e', 'j', 'k', 'c', 'x', 'i', 'x', 'i', 'x', 'i', 'i', 'x', 'x', 'X', 'X', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 't', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'x', 'x', 'i', 'i', 'i', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'd', 'd', 'x', 'x', 'X', 'X', 'i', 'S', 'X', 'S', 'X', 'X', 'x', 'S', 'x', 'S', 's', 's', 's', 'I', 'x', 'x', 'C', 'I', 'I', 'X', 'I', 'C', 'S', 'P', 'S', 'X', 'Q', 'p', 'P', 'p', 'I', 'p', 'I', 'E', 'X', 'I', 'P', 'E', 'C', 'S', 'x', 'x', 'S', 'I', 'E', 'S', 'X', 'Q', 'p', 'E', 'p', 'U', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'x', 'X', 'X', 'p', 'P', 'I', 'P', 'C', 'N', 'c', 'c', 'c', 'x', 'x', 'X', 'I', 'x', 'c', 's', 's', 's', 's', 't', 'C', 'K', 'N', 'P', 'x', 'x', 'O', 'I', 'E', 'C', 'K', 'C', 'K', 'C', 'K', 'P', 'x', 'E', 'c', 'c', 's', 's', 's', 's', 's', 's', 's', 'x', 'x', 'C', 'X', 'X', 'P', 'C', 'X', 'C', 'S', 'P', 'I', 'p', 'X', 'I', 'p', 'p', 'P', 'Q', 'p', 'I', 'E', 'I', 'I', 'I', 'E', 'I', 'E', 's', 's', 's', 's', 'x', 'x', 'j', 'j', 'i', 'i', 'i', 'i', 'u', 's', 's', 'j', 'T', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'p', 'p', 'p', 'g', 'X', 'X', 'X', 'X', 'X', 'X', 'h', 'X', 'X', 'X', 'X', 'i', 'x', 'x', 'x', 'p', 'p', 'p', 'p', 'p', 'n', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 's', 'i', 's', 's', 's', 's', 'i', 'i', 's', 's', 'm', 'm', 's', 's', 's', 'i', 's', 's', 's', 's', 's', 's', 's', 'x', 'x', 's', 'J', 'j', 'J', 'J', 'J', 'u', 'p', 'p', 'j', 'p', 'J', 'p', 'J', 'J', 'J', 'p', 'i', 'i', 'i', 'i', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'J', 'J', 'J', 'i', 'J', 'J', 'J', 'c', 'p', 's', 's', 'm', 'm', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'd', 'X', 'X', 'X', 'X', 'X', 'X', 'i', 'i', 'i', 'X', 'D', 'X', 'X', 'p', 'i', 'C', 'C', 'p', 'C', 'p', 'C', 'C', 'x', 'x', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'C', 'C', 'i', 'i', 'i', 'X', 'X', 'X', 'i', 'i', 'i', 'g', 'i', 'T', 'i', 'i', 'i', 'i', 'T', 'i', 'T', 'G', 'i', 'i', 'i', 'i', 'g', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'X', 'X', 'X', 'X', 'i', 'i', 'i', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'x', 'x', 'X', 'X', 'j', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'T', 'T', 'a', 'P', 'a', 'C', 'C', 'l', 'l', 'i', 'i', 'i', 'i', 'i', 'i', 'j', 'i', 'i', 'i', 'p', 'p', 'p', 'a', 'i', 'i', 'i', 'i', 'i', 'A', 'A', 'C', 'A', 'C', 'x', 'x', 'x', 'x']
-NAME_NUMBER_list:['m', 'm', 'm', 'm', 'b1', 'h', 'h', 'h', 'x', 'h0', 'h0', 'h0', 'b1', 'd', 'd', 's', 'b', 'k', 'x', 'x', 't', 'm', 't0', 't0', 'm', 'f', 'm', 'f', 'x', 'X', 'X', 'X', 'X', 'X', 'X', 'l', 'd', 'k', 'k2e', 'k', 'k', 'k', 'k', 'k', 'm', 'm', 'm', 'j', 'k', 'd', 'd', 'd', 'x', 'g', 'g', 'g', 'z', 'z', 'd', 'f2', 'f2', 'f1', 'f2', 'f1', 'q', 'q', 'q', 'q', 'K', 'N', 'F', 'K', 'N', 'q', 'q', 'F', 'K', 'N', 'q', 'N', 'K', 'N', 'U', 'K', 'q', 'q', 'T0', 'T0', 't0', 't0', 'T0', 'T0', 't0', 't0', 'T0', 'T0', 't0', 'T0', 't0', 'T0', 'D', 'p0', 'p0', 'B', 'P', 'p0', 'p0', 'p', 'B', 'B', 'Q', 'D', 'D', 'K', 'k', 'K', 'D', 'B', 'D', 'c', 'n', 'N', 'n', 'n', 'D', 't', 'D', 'p0', 'q0', 'k', 'K', 'k', 'n', 'p0', 'n', 'D', 'D', 'N', 'D', 'D', 'N', 'D', 'D', 'U', 'D', 'D', 'B', 'n', 'n', 'k', 'K', 'n', 'k', 'n', 'D', 'c', 'N', 'N', 'K', 'K', 'Q', 'N', 'E', 'q', 'q', 'N', 'q', 'n', 'k', 'pq', 'x', 'n', 'n', 't', 'g', 'g', 'X', 'X', 'y', 'p', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'u', 'v', 'n', 'f', 'k', 'k', 'k', 'n', 'n', 'd', 'n', 'n', 'n', 'n', 'n', 'J', 'u', 'u', 'p', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'm', 'm', 'y', 'd', 'X', 'X', 'k', 'k', 'D', 'X', 'k', 'D', 'D', 'D', 'R', 'y', 'X', 'X', 'y', 'X', 'X', 'q', 'G', 'G', 'X', 'f0', 'F', 'C', 'f0', 'C', 'G', 'g', 'y', 'y', 'X', 'X', 'j1', 'j2', 'j2', 'j1', 'j2', 'j2', 'j1', 'j2', 'j1', 'j2', 'j2', 'j1', 'j2', 'j1', 'L', 'V', 'L', 'P', 'b', 'b', 'a2', 'b', 'b', 'a3', 'a0', 'a0', 'a2', 'a3', 'f', 'g1', 'g', 'n', 'v', 'LQ', 'B', 'Q', 'B', 'Q', 'B', 'h5f', 'h5f']
-Accuracy on the test set of pretrained_BERT_layer_6 model using the intercept:
-Score (accuracy) of the probe: 0.47
-pretrained_BERT Layer 7
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0082
-Epoch: [2/10], Loss: 0.0049
-Epoch: [3/10], Loss: 0.0034
-Epoch: [4/10], Loss: 0.0027
-Epoch: [5/10], Loss: 0.0022
-Epoch: [6/10], Loss: 0.0018
-Epoch: [7/10], Loss: 0.0015
-Epoch: [8/10], Loss: 0.0013
-Epoch: [9/10], Loss: 0.0012
-Epoch: [10/10], Loss: 0.0010
-Score (accuracy) of the probe: 0.97
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0080
-Epoch: [2/10], Loss: 0.0047
-Epoch: [3/10], Loss: 0.0033
-Epoch: [4/10], Loss: 0.0026
-Epoch: [5/10], Loss: 0.0021
-Epoch: [6/10], Loss: 0.0018
-Epoch: [7/10], Loss: 0.0015
-Epoch: [8/10], Loss: 0.0013
-Epoch: [9/10], Loss: 0.0012
-Epoch: [10/10], Loss: 0.0010
-Score (accuracy) of the probe: 0.97
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0079
-Epoch: [2/10], Loss: 0.0047
-Epoch: [3/10], Loss: 0.0034
-Epoch: [4/10], Loss: 0.0027
-Epoch: [5/10], Loss: 0.0023
-Epoch: [6/10], Loss: 0.0019
-Epoch: [7/10], Loss: 0.0017
-Epoch: [8/10], Loss: 0.0015
-Epoch: [9/10], Loss: 0.0014
-Epoch: [10/10], Loss: 0.0012
-Score (accuracy) of the probe: 0.97
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0089
-Epoch: [2/10], Loss: 0.0059
-Epoch: [3/10], Loss: 0.0047
-Epoch: [4/10], Loss: 0.0041
-Epoch: [5/10], Loss: 0.0037
-Epoch: [6/10], Loss: 0.0034
-Epoch: [7/10], Loss: 0.0032
-Epoch: [8/10], Loss: 0.0030
-Epoch: [9/10], Loss: 0.0029
-Epoch: [10/10], Loss: 0.0027
-Score (accuracy) of the probe: 0.97
-
-The best l1=0, the best l2=0.1 for pretrained_BERT_layer_7
-Accuracy on the test set of probing pretrained_BERT_layer_7 of all layers:
-Score (accuracy) of the probe: 0.76
-{'__OVERALL__': 0.7588176850471933, 'NAME': 0.5727948990435706, 'STRING': 1.0, 'NUMBER': 0.918097106424718, 'KEYWORD': 1.0}
-Confusion matrix between NAME and KEYWORD:
-NAME_NAME:1078,KW_NAME:0
-NAME_KW:16,KW_KW:68
-NAME_STRING:616,KW_other:0
-NAME_NUMBER:172
-NAME_STRING_list:['m', 'm', 'm', 'a', 'a', 'a', 'x', 'x', 'X', 'c', 'c', 'h', 'U', 'h', 'U', 'p', 'p', 'X', 'X', 's', 'e', 'e', 'a', 'a', 'a', 'a', 'i', 'i', 'i', 'i', 'j', 'i', 'j', 'j', 'j', 'x', 't', 't', 'i', 'i', 'i', 'i', 'm', 'm', 'm', 'm', 'm', 'f', 'h', 'm', 'h', 'm', 'm', 'm', 'f', 'm', 'm', 'x', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'x', 'f', 'f', 'l', 'x', 'x', 'x', 'x', 'i', 'd', 'i', 'd', 'a', 'a', 'e', 'k', 'k', 'k', 'e', 'j', 'j', 'v', 'i', 'x', 'i', 'i', 'i', 'x', 'k', 'x', 'd', 'd', 'x', 'x', 'x', 'g', 'g', 'x', 'f', 't', 't', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'x', 'i', 'i', 'i', 'x', 'x', 'x', 'x', 'f', 'x', 'x', 'x', 'x', 'd', 'f', 'i', 'X', 'S', 'Q', 'I', 'x', 'C', 'I', 'K', 'I', 'F', 'X', 'I', 'C', 'S', 'K', 'P', 'Q', 'X', 'q', 'p', 'P', 'p', 'q', 'K', 'I', 'N', 'p', 'I', 'E', 'X', 'I', 'K', 'P', 'E', 'C', 'S', 'x', 'S', 'I', 'E', 'X', 'q', 'p', 'E', 'p', 'U', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'F', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'F', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'x', 'X', 'p', 'P', 'I', 'p', 'p', 'P', 'C', 'K', 'Iw', 'C', 'N', 'c', 'C', 'x', 'x', 'D', 'I', 'c', 'n', 'n', 's', 't', 'C', 'K', 'N', 'x', 'K', 'k', 'x', 'n', 'O', 'n', 'I', 'E', 'C', 'D', 'N', 'K', 'C', 'K', 'D', 'C', 'K', 'E', 'n', 'c', 'c', 'n', 'n', 'k', 'n', 's', 'c', 'x', 'C', 'P', 'C', 'N', 'C', 'S', 'K', 'P', 'N', 'I', 'E', 'p', 'X', 'I', 'p', 'p', 'P', 'Q', 'p', 'n', 'I', 'F', 'E', 'I', 'I', 'E', 'E', 'I', 'E', 'I', 'E', 'x', 'x', 'x', 'j', 'j', 'j', 'j', 'i', 'i', 'i', 'i', 'u', 'u', 's', 's', 'j', 'j', 'T', 'X', 'X', 'X', 'p', 'p', 'p', 'g', 'X', 'X', 'X', 'i', 'x', 'x', 'p', 'p', 'p', 'p', 'p', 'n', 'n', 'n', 'n', 'n', 'i', 'i', 'i', 'i', 'u', 'i', 'v', 'i', 'i', 'v', 'i', 'u', 'n', 's', 'i', 'i', 'i', 'i', 's', 'm', 'm', 's', 'p', 't', 'i', 's', 's', 's', 's', 's', 'n', 's', 'x', 'x', 'J', 'J', 'j', 'j', 'J', 'J', 'u', 'p', 'p', 'J', 'j', 'p', 'j', 'J', 'p', 'J', 'J', 'p', 'p', 'p', 'J', 'i', 'i', 'J', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'p', 'p', 'p', 'p', 's', 'm', 'm', 'm', 'x', 'x', 'x', 'f', 'x', 'f', 'd', 'X', 'D', 'D', 'X', 'i', 'i', 'i', 'X', 'D', 'X', 'X', 'q', 'p', 'i', 'p', 'p', 'C', 'F', 'C', 'p', 'C', 'p', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'C', 'C', 'f', 'C', 'G', 'i', 'i', 'i', 'X', 'i', 'i', 'i', 'f', 'g', 'i', 'C', 'i', 'i', 'i', 'i', 'G', 'g', 'i', 'T', 'G', 'i', 'i', 'i', 'i', 'g', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'X', 'x', 'x', 'X', 'X', 'j', 'j', 'j', 'j', 'j', 'i', 'j', 'i', 'i', 'i', 'i', 'i', 'i', 'L', 'L', 'P', 'T', 'P', 'T', 'P', 'C', 'C', 'f', 'l', 'i', 'i', 'i', 'i', 'i', 'j', 'i', 'f', 'i', 'i', 'p', 'p', 'a', 'i', 'i', 'i', 'i', 'g', 'c', 'c', 'Q', 'A', 'C', 'Q', 'A', 'C', 'A', 'C', 'x', 'f', 'f', 't', 'x']
-NAME_NUMBER_list:['b1', 'h0', 'h0', 'h0', 'b1', 'd', 'd', 'b', 'x', 't0', 't0', 'f', 'x', 'x', 'x', 'X', 'k', 'k2e', 'k', 'k', 'k', 'k', 'm', 'k', 'd', 'g', 'Y1', 'f', 'f', 'z', 'd', 'x', 'f', 'f1', 'f2', 'f1', 'f2', 'f1', 'q', 'q', 'q', 'F', 'N', 'F', 'N', 'Q', 'Q', 'F', 'N', 'U', 'Q', 'q', 'T0', 'T0', 't0', 't0', 'T0', 'T0', 'F', 'T0', 'T0', 'T0', 't0', 'T0', 'D', 'p0', 'p0', 'p0', 'D', 'Q', 'D', 'k', 'K', 'n', 'N', 'D', 'D', 'p0', 'k', 'p0', 'N', 'U', 'k', 'K', 'D', 'Q', 'X', 'K', 'Q', 'F', 'q', 'q', 'N', 'q', 'q', 'pq', 'g', 'X', 'X', 'n', 'n', 'n', 'n', 'v', 'v', 'f', 'k', 'k', 'k', 'n', 'n', 'p', 'd', 'n', 'n', 'm', 'd', 'k', 'D', 'k', 'D', 'X', 'X', 'X', 'X', 'F', 'F', 'q', 'G', 'G', 'x', 'f', 'f0', 'F', 'F', 'G', 'F', 'g', 'X', 'j1', 'j2', 'j2', 'j1', 'j2', 'j2', 'j1', 'j1', 'j2', 'j1', 'j2', 'j2', 'j1', 'j2', 'j1', 'V', 'b', 'a2', 'a3', 'a0', 'a0', 'a2', 'a3', 'f', 'f', 'g1', 'g1', 'n', 'd', 'B', 'h5f', 'h5f', 'f']
-Accuracy on the test set of pretrained_BERT_layer_7 model using the intercept:
-Score (accuracy) of the probe: 0.47
-pretrained_BERT Layer 8
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0077
-Epoch: [2/10], Loss: 0.0045
-Epoch: [3/10], Loss: 0.0032
-Epoch: [4/10], Loss: 0.0024
-Epoch: [5/10], Loss: 0.0020
-Epoch: [6/10], Loss: 0.0016
-Epoch: [7/10], Loss: 0.0014
-Epoch: [8/10], Loss: 0.0012
-Epoch: [9/10], Loss: 0.0011
-Epoch: [10/10], Loss: 0.0009
-Score (accuracy) of the probe: 0.96
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0082
-Epoch: [2/10], Loss: 0.0047
-Epoch: [3/10], Loss: 0.0033
-Epoch: [4/10], Loss: 0.0026
-Epoch: [5/10], Loss: 0.0021
-Epoch: [6/10], Loss: 0.0017
-Epoch: [7/10], Loss: 0.0015
-Epoch: [8/10], Loss: 0.0013
-Epoch: [9/10], Loss: 0.0011
-Epoch: [10/10], Loss: 0.0010
-Score (accuracy) of the probe: 0.96
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0079
-Epoch: [2/10], Loss: 0.0047
-Epoch: [3/10], Loss: 0.0034
-Epoch: [4/10], Loss: 0.0027
-Epoch: [5/10], Loss: 0.0022
-Epoch: [6/10], Loss: 0.0019
-Epoch: [7/10], Loss: 0.0016
-Epoch: [8/10], Loss: 0.0015
-Epoch: [9/10], Loss: 0.0013
-Epoch: [10/10], Loss: 0.0012
-Score (accuracy) of the probe: 0.96
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0088
-Epoch: [2/10], Loss: 0.0058
-Epoch: [3/10], Loss: 0.0047
-Epoch: [4/10], Loss: 0.0041
-Epoch: [5/10], Loss: 0.0037
-Epoch: [6/10], Loss: 0.0034
-Epoch: [7/10], Loss: 0.0032
-Epoch: [8/10], Loss: 0.0030
-Epoch: [9/10], Loss: 0.0028
-Epoch: [10/10], Loss: 0.0027
-Score (accuracy) of the probe: 0.97
-
-The best l1=0, the best l2=0.1 for pretrained_BERT_layer_8
-Accuracy on the test set of probing pretrained_BERT_layer_8 of all layers:
-Score (accuracy) of the probe: 0.87
-{'__OVERALL__': 0.8693492300049677, 'NAME': 0.7683315621679064, 'STRING': 1.0, 'NUMBER': 0.9592937714565963, 'KEYWORD': 0.8970588235294118}
-Confusion matrix between NAME and KEYWORD:
-NAME_NAME:1446,KW_NAME:7
-NAME_KW:20,KW_KW:61
-NAME_STRING:260,KW_other:0
-NAME_NUMBER:156
-NAME_STRING_list:['a', 'X', 'h', 'W', 'U', 'X', 'h', 'W', 'U', 'X', 'h', 'W', 'U', 'p', 's', 'a', 'a', 'a', 'i', 'i', 'j', 'j', 'i', 'i', 'm', 'm', 'm', 'm', 'f', 'm', 'm', 'h', 'h', 'm', 'm', 'm', 'f', 'f', 'd', 'a', 'a', 'j', 'r', 'f', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'x', 'R', 'f', 'S', 'F', 'R', 'S', 'P', 'p', 'P', 'p', 'F', 'p', 'I', 'P', 'C', 'R', 'S', 'E', 'p', 'E', 'p', 'U', 'I', 'I', 'I', 'p', 'P', 'P', 'N', 'C', 'I', 'c', 'n', 'n', 'O', 'I', 'E', 'N', 'P', 'E', 'n', 'n', 'n', 'n', 'c', 'C', 'N', 'C', 'S', 'P', 'N', 'p', 'I', 'p', 'p', 'P', 'p', 'F', 'I', 'E', 'I', 'E', 'f', 'f', 'j', 'j', 'u', 'j', 'j', 'p', 'p', 'X', 'x', 'p', 'p', 'p', 'p', 'n', 'n', 'n', 'n', 'n', 'i', 'i', 'u', 'i', 'i', 'u', 'n', 'f', 'i', 's', 'i', 's', 's', 'J', 'j', 'J', 'J', 'J', 'p', 'j', 'J', 'J', 'J', 'J', 'p', 'p', 'i', 'J', 'J', 'i', 'J', 'i', 'J', 'J', 'J', 'i', 'J', 'J', 'J', 'J', 'J', 'J', 'p', 'p', 'm', 'm', 'm', 'x', 'f', 'f', 'X', 'X', 'F', 'X', 'F', 'i', 'p', 'F', 'p', 'p', 'p', 'i', 'i', 'i', 'i', 'f', 'i', 'i', 'i', 'f', 'i', 'i', 'g', 'i', 'i', 'i', 'i', 'i', 'g', 'i', 'i', 'p', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'y', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'i', 'V', 'P', 'T', 'P', 'P', 'a', 'C', 'i', 'p', 'Q', 'R', 'A', 'A', 'f', 'f']
-NAME_NUMBER_list:['m', 'b1', 'h0', 'h0', 'd', 'b', 'x', 'm', 'f', 'f', 't0', 't0', 'm', 'm', 'f', 'X', 'X', 'X', 'X', 'k', 'k', 'd', 'g', 'Y1', 'Y1', 'f', 'f', 'f', 'f', 'd', 'x', 'f1', 'f2', 'f1', 'f2', 'f1', 'f2', 'f1', 'q', 'q', 'q', 'K', 'F', 'Q', 'Q', 'q', 'Q', 'N', 'K', 'Q', 'T0', 'T0', 'T0', 'x', 'p0', 'p0', 'p0', 'B', 'D', 'Q', 'D', 'k', 'K', 'x', 'n', 'N', 't', 'p0', 'q0', 'x', 'k', 'K', 'p0', 'N', 'D', 'D', 'x', 'k', 'K', 'X', 'K', 'Q', 'N', 'Q', 'q', 'F', 'F', 'pq', 'x', 'T', 'X', 'g', 'x', 'n', 'n', 'n', 'n', 'k', 'k', 'v', 'n', 'p', 'n', 'n', 'p', 'p', 'x', 'd', 'k', 'k', 'k', 'D', 'X', 'X', 'q', 'F', 'G', 'f', 'f0', 'X', 'F', 'X', 'f0', 'X', 'X', 'X', 'X', 'X', 'X', 'j1', 'j1', 'j1', 'j2', 'j1', 'j1', 'j2', 'j1', 'j2', 'j1', 'j2', 'j1', 'T', 'b', 'a3', 'a0', 'a0', 'a3', 'f', 'f', 'g1', 'g', 'n', 'd', 'Q', 'Q', 'h5f']
-Accuracy on the test set of pretrained_BERT_layer_8 model using the intercept:
-Score (accuracy) of the probe: 0.47
-pretrained_BERT Layer 9
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0078
-Epoch: [2/10], Loss: 0.0046
-Epoch: [3/10], Loss: 0.0032
-Epoch: [4/10], Loss: 0.0024
-Epoch: [5/10], Loss: 0.0019
-Epoch: [6/10], Loss: 0.0016
-Epoch: [7/10], Loss: 0.0014
-Epoch: [8/10], Loss: 0.0012
-Epoch: [9/10], Loss: 0.0010
-Epoch: [10/10], Loss: 0.0009
-Score (accuracy) of the probe: 0.97
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0077
-Epoch: [2/10], Loss: 0.0045
-Epoch: [3/10], Loss: 0.0031
-Epoch: [4/10], Loss: 0.0024
-Epoch: [5/10], Loss: 0.0019
-Epoch: [6/10], Loss: 0.0016
-Epoch: [7/10], Loss: 0.0014
-Epoch: [8/10], Loss: 0.0012
-Epoch: [9/10], Loss: 0.0010
-Epoch: [10/10], Loss: 0.0009
-Score (accuracy) of the probe: 0.96
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0080
-Epoch: [2/10], Loss: 0.0047
-Epoch: [3/10], Loss: 0.0033
-Epoch: [4/10], Loss: 0.0026
-Epoch: [5/10], Loss: 0.0021
-Epoch: [6/10], Loss: 0.0018
-Epoch: [7/10], Loss: 0.0016
-Epoch: [8/10], Loss: 0.0014
-Epoch: [9/10], Loss: 0.0013
-Epoch: [10/10], Loss: 0.0012
-Score (accuracy) of the probe: 0.97
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0087
-Epoch: [2/10], Loss: 0.0057
-Epoch: [3/10], Loss: 0.0045
-Epoch: [4/10], Loss: 0.0039
-Epoch: [5/10], Loss: 0.0035
-Epoch: [6/10], Loss: 0.0033
-Epoch: [7/10], Loss: 0.0031
-Epoch: [8/10], Loss: 0.0029
-Epoch: [9/10], Loss: 0.0027
-Epoch: [10/10], Loss: 0.0026
-Score (accuracy) of the probe: 0.98
-
-The best l1=0, the best l2=0.1 for pretrained_BERT_layer_9
-Accuracy on the test set of probing pretrained_BERT_layer_9 of all layers:
-Score (accuracy) of the probe: 0.85
-{'__OVERALL__': 0.8519622454048683, 'NAME': 0.6934112646121148, 'STRING': 1.0, 'NUMBER': 0.9950956351152526, 'KEYWORD': 0.8676470588235294}
-Confusion matrix between NAME and KEYWORD:
-NAME_NAME:1305,KW_NAME:9
-NAME_KW:78,KW_KW:59
-NAME_STRING:209,KW_other:0
-NAME_NUMBER:290
-NAME_STRING_list:['a', 'a', 'a', 'X', 'h', 'X', 'X', 'h', 'W', 'h', 'W', 't', 'T', 'p', 'p', 'p', 's', 'a', 'a', 'a', 'i', 'i', 'i', 'm', 'h', 'm', 'h', 'm', 'x', 'x', 'a', 'a', 't', 'i', 'i', 'i', 'x', 'x', 'R', 'S', 'S', 'I', 'C', 'I', 'F', 'R', 'S', 'P', 'p', 'F', 'p', 'I', 'I', 'P', 'R', 'S', 'I', 'E', 'p', 'E', 'p', 'I', 'p', 'I', 'p', 'N', 'I', 'n', 'n', 'K', 'O', 'I', 'E', 'E', 'n', 'n', 'n', 'n', 's', 's', 'N', 'S', 'N', 'I', 'p', 'P', 'p', 'n', 'I', 'I', 'E', 'I', 'E', 'I', 'E', 'f', 's', 'j', 'p', 'X', 'i', 'p', 's', 'n', 'n', 'i', 'i', 'i', 'u', 'n', 'v', 'v', 'v', 'i', 'i', 'i', 'm', 's', 'm', 't', 'i', 's', 's', 'i', 'i', 'i', 'i', 'i', 'i', 'J', 'J', 'p', 'm', 'm', 'x', 'x', 'X', 'i', 'X', 'F', 'i', 'i', 'i', 'X', 'f', 'i', 'i', 'X', 'i', 'i', 'i', 'g', 'i', 'i', 'i', 'i', 'i', 'g', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'x', 'i', 'P', 'a', 'C', 'C', 'f', 'l', 'i', 'i', 'i', 'i', 'Q', 'R', 'A', 'R', 'A', 'f', 'f']
-NAME_NUMBER_list:['x', 'b1', 'U', 'W', 'X', 'W', 'h0', 'h0', 'b1', 'd', 'k', 'x', 'm', 'f', 't0', 't0', 'm', 'h', 'm', 'x', 'y', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'x', 'f', 'x', 'x', 'k', 'e', 'k', 'k', 'j', 'k', 'v', 'k', 'x', 'd', 'd', 'd', 'g', 'g', 'Y1', 'Y1', 't', 'i', 'f', 'f', 'x', 'x', 'x', 'f', 'x', 'x', 'x', 'z', 'x', 'd', 'd', 'x', 'f1', 'f2', 'f1', 'f2', 'f1', 'x', 'Q', 'q', 'q', 'x', 'F', 'K', 'C', 'X', 'I', 'C', 'F', 'K', 'Q', 'q', 'q', 'Q', 'p', 'P', 'q', 'Q', 'K', 'N', 'q', 'X', 'K', 'Q', 'E', 'C', 'q', 'q', 'Q', 'q', 'T0', 'T0', 'I', 'T0', 'I', 't0', 'T0', 'x', 'X', 'D', 'P', 'p0', 'p0', 'p0', 'p', 'P', 'Q', 'D', 'D', 'K', 'D', 'D', 'c', 'k', 'K', 'D', 'x', 'x', 'n', 'N', 'D', 't', 'D', 'p0', 'P', 'q0', 'x', 'Q', 'k', 'K', 'k', 'D', 'D', 'N', 'D', 'D', 'N', 'D', 'D', 'D', 'D', 'P', 'x', 'Q', 'k', 'K', 'D', 'C', 'C', 'X', 'C', 'R', 'K', 'K', 'P', 'Q', 'p', 'q', 'X', 'q', 'N', 'p', 'q', 'Q', 'q', 'K', 'pq', 'x', 'x', 'x', 'u', 't', 'X', 'p', 'g', 'g', 'p', 'T', 'T', 'x', 'x', 'p', 'p', 'n', 'n', 'n', 'n', 'n', 'n', 'i', 'i', 'f', 'k', 'k', 'k', 'k', 'k', 'k', 'i', 'n', 'n', 'p', 'd', 'n', 'v', 'n', 'n', 'p', 'p', 'p', 'p', 'p', 'm', 'd', 'd', 'X', 'k', 'k', 'k', 'D', 'X', 'X', 'X', 'X', 'F', 'G', 'i', 'i', 'i', 'i', 'f0', 'C', 'F', 'C', 'X', 'i', 'i', 'X', 'X', 'i', 'i', 'X', 'X', 'X', 'x', 'X', 'X', 'j1', 'j1', 'j1', 'i', 'j1', 'j2', 'j1', 'j1', 'V', 'L', 'P', 'a3', 'a0', 'a0', 'a2', 'a3', 'f', 'i', 'i', 'i', 'f', 'p', 'i', 'g1', 'g', 'n', 'Q', 'h5f', 'h5f']
-Accuracy on the test set of pretrained_BERT_layer_9 model using the intercept:
-Score (accuracy) of the probe: 0.47
-pretrained_BERT Layer 10
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0082
-Epoch: [2/10], Loss: 0.0050
-Epoch: [3/10], Loss: 0.0035
-Epoch: [4/10], Loss: 0.0027
-Epoch: [5/10], Loss: 0.0021
-Epoch: [6/10], Loss: 0.0018
-Epoch: [7/10], Loss: 0.0015
-Epoch: [8/10], Loss: 0.0013
-Epoch: [9/10], Loss: 0.0011
-Epoch: [10/10], Loss: 0.0010
-Score (accuracy) of the probe: 0.97
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0081
-Epoch: [2/10], Loss: 0.0050
-Epoch: [3/10], Loss: 0.0035
-Epoch: [4/10], Loss: 0.0027
-Epoch: [5/10], Loss: 0.0022
-Epoch: [6/10], Loss: 0.0018
-Epoch: [7/10], Loss: 0.0015
-Epoch: [8/10], Loss: 0.0013
-Epoch: [9/10], Loss: 0.0012
-Epoch: [10/10], Loss: 0.0010
-Score (accuracy) of the probe: 0.96
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0081
-Epoch: [2/10], Loss: 0.0050
-Epoch: [3/10], Loss: 0.0035
-Epoch: [4/10], Loss: 0.0028
-Epoch: [5/10], Loss: 0.0023
-Epoch: [6/10], Loss: 0.0019
-Epoch: [7/10], Loss: 0.0017
-Epoch: [8/10], Loss: 0.0015
-Epoch: [9/10], Loss: 0.0013
-Epoch: [10/10], Loss: 0.0012
-Score (accuracy) of the probe: 0.97
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0091
-Epoch: [2/10], Loss: 0.0061
-Epoch: [3/10], Loss: 0.0048
-Epoch: [4/10], Loss: 0.0042
-Epoch: [5/10], Loss: 0.0037
-Epoch: [6/10], Loss: 0.0034
-Epoch: [7/10], Loss: 0.0032
-Epoch: [8/10], Loss: 0.0030
-Epoch: [9/10], Loss: 0.0028
-Epoch: [10/10], Loss: 0.0027
-Score (accuracy) of the probe: 0.97
-
-The best l1=0, the best l2=0.1 for pretrained_BERT_layer_10
-Accuracy on the test set of probing pretrained_BERT_layer_10 of all layers:
-Score (accuracy) of the probe: 0.85
-{'__OVERALL__': 0.8472429210134128, 'NAME': 0.6928799149840595, 'STRING': 1.0, 'NUMBER': 0.988719960765081, 'KEYWORD': 0.7941176470588235}
-Confusion matrix between NAME and KEYWORD:
-NAME_NAME:1304,KW_NAME:13
-NAME_KW:80,KW_KW:54
-NAME_STRING:229,KW_other:1
-NAME_NUMBER:269
-NAME_STRING_list:['m', 'a', 'a', 'a', 'X', 'h', 'X', 'h', 'X', 'h', 'p', 'x', 'a', 'a', 'i', 'i', 'x', 't', 'i', 'm', 'm', 'f', 'm', 'm', 'm', 'm', 'm', 'h', 'm', 'm', 'm', 'm', 'x', 'x', 'x', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'x', 'x', 'x', 'x', 'a', 'f', 'k', 'x', 'x', 'i', 'i', 'x', 'i', 'x', 'x', 'x', 'x', 'x', 'd', 'x', 'S', 'I', 'x', 'C', 'I', 'C', 'S', 'p', 'p', 'R', 'S', 'I', 'C', 'E', 'p', 'I', 'x', 'p', 'I', 'C', 'C', 'x', 'C', 'n', 'c', 'C', 'C', 'C', 'x', 'c', 'c', 'C', 'x', 'N', 'C', 'S', 'N', 'P', 'Q', 'p', 'I', 'I', 'f', 'x', 'x', 'p', 'X', 'X', 'X', 'X', 'p', 'n', 'n', 'n', 'i', 'i', 'i', 'v', 'i', 'u', 'i', 'v', 's', 'i', 's', 'c', 'c', 't', 'c', 'c', 'i', 'i', 'i', 'i', 'i', 'i', 'J', 'J', 'J', 'c', 'c', 'p', 'm', 'x', 'x', 'X', 'X', 'D', 'i', 'X', 'D', 'i', 'C', 'q', 'q', 'i', 'i', 'X', 'X', 'C', 'i', 'X', 'i', 'i', 'g', 'i', 'i', 'i', 'G', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'x', 'i', 'V', 'a', 'b', 'C', 'C', 'i', 'i', 'i', 'i', 'i', 'c', 'R', 'A', 'R', 'A']
-NAME_NUMBER_list:['x', 'b1', 'x', 'h0', 't', 'h0', 'b1', 'd', 'x', 'x', 'k', 'x', 't', 'm', 't0', 'm', 'h', 'm', 'x', 'X', 'x', 'f', 'k', 'e', 'k', 'k', 'k', 'k', 'm', 'm', 'k', 'v', 'c', 'k', 'x', 'd', 'd', 'd', 'g', 'g', 'x', 'x', 'Y1', 't', 't', 'f', 'x', 'x', 'f', 'x', 'x', 'x', 'x', 'd', 'f1', 'f2', 'f1', 'X', 'f2', 'f1', 'q', 'q', 'q', 'C', 'I', 'C', 'R', 'F', 'K', 'P', 'Q', 'q', 'q', 'Q', 'p', 'P', 'q', 'Q', 'K', 'N', 'C', 'X', 'I', 'K', 'P', 'Q', 'C', 'x', 'q', 'q', 'Q', 'E', 'p', 'q', 'T0', 'I', 'T0', 'T0', 'I', 'T0', 'T0', 'I', 'T0', 'T0', 't0', 't0', 'T0', 'D', 'X', 'P', 'p0', 'p0', 'p0', 'p', 'P', 'Q', 'D', 'D', 'D', 'D', 'C', 'c', 'k', 'K', 'D', 'x', 'n', 'N', 'D', 't', 'D', 'p0', 'P', 'q0', 'x', 'Q', 'k', 'K', 'k', 'D', 'D', 'N', 'D', 'D', 'N', 'D', 'D', 'U', 'D', 'D', 'P', 'Q', 'k', 'K', 'D', 'C', 'C', 'X', 'R', 'K', 'K', 'P', 'Q', 'p', 'q', 'X', 'p', 'q', 'N', 'p', 'q', 'K', 'E', 'pq', 'x', 'u', 't', 'T', 'g', 'T', 'g', 'T', 'T', 'T', 'i', 'x', 'p', 'p', 't', 'n', 'n', 'n', 'i', 'f', 'k', 'k', 'k', 'k', 'k', 'k', 'i', 'n', 'n', 'm', 's', 'm', 'p', 'd', 'n', 'i', 'n', 'n', 'p', 'p', 'p', 'm', 'm', 'd', 'd', 'X', 'k', 'D', 'k', 'X', 'X', 'X', 'X', 'q', 'C', 'Q', 'q', 'C', 'C', 'G', 'i', 'i', 'f0', 'C', 'i', 'X', 'C', 'X', 'i', 'i', 'X', 'X', 'X', 'X', 'X', 'x', 'X', 'j1', 'j1', 'a3', 'a0', 'a0', 'a3', 'i', 'i', 'i', 'p', 'i', 'g1', 'g', 'n', 'Q', 'h5f', 'h5f', 'f']
-Accuracy on the test set of pretrained_BERT_layer_10 model using the intercept:
-Score (accuracy) of the probe: 0.47
-pretrained_BERT Layer 11
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0082
-Epoch: [2/10], Loss: 0.0051
-Epoch: [3/10], Loss: 0.0037
-Epoch: [4/10], Loss: 0.0028
-Epoch: [5/10], Loss: 0.0023
-Epoch: [6/10], Loss: 0.0019
-Epoch: [7/10], Loss: 0.0016
-Epoch: [8/10], Loss: 0.0014
-Epoch: [9/10], Loss: 0.0012
-Epoch: [10/10], Loss: 0.0011
-Score (accuracy) of the probe: 0.97
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0084
-Epoch: [2/10], Loss: 0.0052
-Epoch: [3/10], Loss: 0.0037
-Epoch: [4/10], Loss: 0.0029
-Epoch: [5/10], Loss: 0.0024
-Epoch: [6/10], Loss: 0.0020
-Epoch: [7/10], Loss: 0.0017
-Epoch: [8/10], Loss: 0.0015
-Epoch: [9/10], Loss: 0.0013
-Epoch: [10/10], Loss: 0.0011
-Score (accuracy) of the probe: 0.96
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0083
-Epoch: [2/10], Loss: 0.0052
-Epoch: [3/10], Loss: 0.0038
-Epoch: [4/10], Loss: 0.0030
-Epoch: [5/10], Loss: 0.0025
-Epoch: [6/10], Loss: 0.0021
-Epoch: [7/10], Loss: 0.0018
-Epoch: [8/10], Loss: 0.0016
-Epoch: [9/10], Loss: 0.0015
-Epoch: [10/10], Loss: 0.0013
-Score (accuracy) of the probe: 0.97
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0092
-Epoch: [2/10], Loss: 0.0064
-Epoch: [3/10], Loss: 0.0051
-Epoch: [4/10], Loss: 0.0044
-Epoch: [5/10], Loss: 0.0039
-Epoch: [6/10], Loss: 0.0036
-Epoch: [7/10], Loss: 0.0033
-Epoch: [8/10], Loss: 0.0031
-Epoch: [9/10], Loss: 0.0030
-Epoch: [10/10], Loss: 0.0028
-Score (accuracy) of the probe: 0.97
-
-The best l1=0, the best l2=0.1 for pretrained_BERT_layer_11
-Accuracy on the test set of probing pretrained_BERT_layer_11 of all layers:
-Score (accuracy) of the probe: 0.81
-{'__OVERALL__': 0.8099850968703428, 'NAME': 0.6333687566418703, 'STRING': 1.0, 'NUMBER': 0.9691025012260912, 'KEYWORD': 0.8235294117647058}
-Confusion matrix between NAME and KEYWORD:
-NAME_NAME:1192,KW_NAME:8
-NAME_KW:136,KW_KW:56
-NAME_STRING:243,KW_other:4
-NAME_NUMBER:311
-NAME_STRING_list:['m', 'm', 'a', 'a', 'a', 'x', 'X', 'h', 'U', 'X', 'W', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'a', 'a', 'a', 'a', 'i', 'x', 'i', 'i', 'm', 'm', 'f', 'm', 'm', 'm', 'f', 'm', 'm', 'm', 'f', 'm', 'm', 'x', 'x', 'X', 'X', 'X', 'x', 'x', 'a', 'a', 'f', 'f', 'k', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'f', 'i', 'i', 'i', 'x', 'i', 'x', 'x', 'x', 'x', 'x', 'x', 'C', 'F', 'C', 'I', 'F', 'C', 'C', 'C', 'X', 'C', 'I', 'C', 'E', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'x', 'B', 'C', 'C', 'C', 'x', 'C', 'c', 'c', 'x', 'C', 'C', 'C', 'x', 'c', 'C', 'C', 'C', 'N', 'X', 'P', 'I', 'E', 'f', 's', 's', 's', 's', 'x', 'x', 'X', 'p', 'X', 'X', 'X', 'X', 'n', 'i', 'i', 'i', 'i', 'u', 'f', 'i', 'i', 'v', 's', 'i', 'c', 'c', 't', 'c', 'c', 's', 'u', 'i', 'i', 'i', 'i', 'J', 'c', 'c', 'p', 'm', 'x', 'x', 'X', 'X', 'i', 'p', 'C', 'C', 'C', 'X', 'X', 'C', 'C', 'C', 'f', 'C', 'C', 'X', 'i', 'i', 'i', 'i', 'i', 'q', 'i', 'q', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'x', 'i', 'a', 'a', 'C', 'C', 'l', 'l', 'i', 'j', 'i', 'i', 'i', 'i', 'c', 'C', 'R', 'A', 'C', 'A', 'C', 'x', 'f', 'x']
-NAME_NUMBER_list:['m', 'x', 'T', 'b1', 'b', 'h', 'c', 'h', 'W', 'h', 'W', 'x', 'h0', 't', 'h0', 'd', 'd', 'x', 'x', 'b', 'b', 'x', 'x', 't', 'i', 'm', 'f', 'h', 'm', 'h', 'm', 'm', 'h', 'f', 'x', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'x', 'x', 'f', 'x', 'x', 'i', 'k', 'e', 'e', 'k', 'm', 'm', 'm', 'j', 'c', 'i', 'i', 'k', 'X', 'd', 'd', 'd', 't', 't', 'f', 'f', 'x', 'f', 'f', 'x', 'f', 'x', 'x', 'x', 'x', 'd', 'x', 'f', 'f1', 'f2', 'q', 'f2', 'f1', 'X', 'f2', 'f1', 'f2', 'x', 'q', 'q', 'Q', 's', 'q', 's', 'q', 'x', 'F', 'F', 'F', 'C', 'K', 'O', 'q', 'q', 'Q', 'p', 'q', 'N', 'K', 'x', 'U', 'q', 'X', 'q', 'Q', 'E', 'O', 'T', 'O', 'T0', 'T', 'O', 'T0', 'T', 'D', 'X', 'X', 'p0', 'B', 'p0', 'B', 'P', 'p0', 'p', 'p', 'B', 'P', 'Q', 'B', 'N', 'c', 'k', 'K', 'x', 'n', 'N', 'D', 't', 'D', 'p0', 'q0', 'k', 'k', 'n', 'E', 'U', 'D', 'D', 'k', 'K', 'x', 'C', 'Q', 'X', 'N', 'K', 'Q', 'p', 'q', 'N', 'p', 'q', 'Q', 'q', 'pq', 'x', 'u', 'j', 't', 'X', 'X', 'p', 'T', 'X', 'p', 'X', 'T', 'T', 'p', 'p', 'p', 't', 'n', 'n', 'n', 'n', 'n', 'n', 'i', 'i', 'v', 'i', 'f', 'i', 'n', 'n', 'm', 's', 's', 's', 'm', 'p', 'd', 'n', 'i', 'n', 'n', 'p', 'p', 'p', 'p', 'p', 'i', 'i', 'p', 'p', 'x', 'x', 'x', 'X', 'X', 'k', 'D', 'X', 'k', 'D', 'R', 'X', 'X', 'D', 'D', 'q', 'X', 'q', 'Q', 'Q', 'q', 'C', 'C', 'i', 'i', 'i', 'X', 'f0', 'X', 'F', 'C', 'F', 'X', 'C', 'q', 'X', 'X', 'i', 'X', 'X', 'X', 'X', 'X', 'X', 'x', 'X', 'j1', 'j1', 'i', 'j1', 'j2', 'j1', 'i', 'j1', 'V', 'T', 'b', 'b', 'a3', 'b', 'a0', 'a0', 'T', 'f', 'i', 'i', 'i', 'f', 'p', 'i', 'i', 'i', 'n', 'c', 'R', 'Q', 'Q', 'R', 'h5f', 'h5f', 'f']
-Accuracy on the test set of pretrained_BERT_layer_11 model using the intercept:
-Score (accuracy) of the probe: 0.47
-pretrained_BERT Layer 12
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0088
-Epoch: [2/10], Loss: 0.0056
-Epoch: [3/10], Loss: 0.0042
-Epoch: [4/10], Loss: 0.0033
-Epoch: [5/10], Loss: 0.0027
-Epoch: [6/10], Loss: 0.0023
-Epoch: [7/10], Loss: 0.0020
-Epoch: [8/10], Loss: 0.0017
-Epoch: [9/10], Loss: 0.0015
-Epoch: [10/10], Loss: 0.0013
-Score (accuracy) of the probe: 0.96
-Training classification probe
-Creating model...
-Number of training instances: 13636
-Number of classes: 4
-Epoch: [1/10], Loss: 0.0090
-Epoch: [2/10], Loss: 0.0058
-Epoch: [3/10], Loss: 0.0043
-Epoch: [4/10], Loss: 0.0034
-Epoch: [5/10], Loss: 0.0028
-Epoch: [6/10], Loss: 0.0024
-Epoch: [7/10], Loss: 0.0020
 Epoch: [8/10], Loss: 0.0018
 Epoch: [9/10], Loss: 0.0016
 Epoch: [10/10], Loss: 0.0014
@@ -1133,23 +518,188 @@ Training classification probe
 Creating model...
 Number of training instances: 13636
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0088
-Epoch: [2/10], Loss: 0.0056
-Epoch: [3/10], Loss: 0.0042
-Epoch: [4/10], Loss: 0.0034
+Epoch: [1/10], Loss: 0.0098
+Epoch: [2/10], Loss: 0.0063
+Epoch: [3/10], Loss: 0.0046
+Epoch: [4/10], Loss: 0.0036
 Epoch: [5/10], Loss: 0.0029
-Epoch: [6/10], Loss: 0.0024
+Epoch: [6/10], Loss: 0.0025
 Epoch: [7/10], Loss: 0.0021
-Epoch: [8/10], Loss: 0.0019
-Epoch: [9/10], Loss: 0.0017
-Epoch: [10/10], Loss: 0.0015
+Epoch: [8/10], Loss: 0.0018
+Epoch: [9/10], Loss: 0.0016
+Epoch: [10/10], Loss: 0.0014
+Score (accuracy) of the probe: 0.95
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0098
+Epoch: [2/10], Loss: 0.0063
+Epoch: [3/10], Loss: 0.0047
+Epoch: [4/10], Loss: 0.0037
+Epoch: [5/10], Loss: 0.0031
+Epoch: [6/10], Loss: 0.0026
+Epoch: [7/10], Loss: 0.0023
+Epoch: [8/10], Loss: 0.0020
+Epoch: [9/10], Loss: 0.0018
+Epoch: [10/10], Loss: 0.0016
 Score (accuracy) of the probe: 0.96
 Training classification probe
 Creating model...
 Number of training instances: 13636
 Number of classes: 4
-Epoch: [1/10], Loss: 0.0095
-Epoch: [2/10], Loss: 0.0066
+Epoch: [1/10], Loss: 0.0103
+Epoch: [2/10], Loss: 0.0071
+Epoch: [3/10], Loss: 0.0057
+Epoch: [4/10], Loss: 0.0049
+Epoch: [5/10], Loss: 0.0044
+Epoch: [6/10], Loss: 0.0040
+Epoch: [7/10], Loss: 0.0037
+Epoch: [8/10], Loss: 0.0034
+Epoch: [9/10], Loss: 0.0032
+Epoch: [10/10], Loss: 0.0030
+Score (accuracy) of the probe: 0.97
+
+The best l1=0, the best l2=0.1 for pretrained_BERT_layer_4
+Accuracy on the test set of probing pretrained_BERT_layer_4 of all layers:
+Score (accuracy) of the probe: 0.50
+{'__OVERALL__': 0.4980129160457029, 'NAME': 0.6275239107332625, 'STRING': 1.0, 'NUMBER': 0.3526238352133399, 'KEYWORD': 1.0}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1181,KW_NAME:0
+NAME_KW:94,KW_KW:68
+NAME_STRING:489,KW_other:0
+NAME_NUMBER:118
+NAME_STRING_list:['m', 'm', 'm', 'm', 'm', 'a', 'a', 'x', 'T', 'h', 'W', 'h', 'W', 'p', 'x', 'x', 's', 'x', 'a', 'a', 'T', 'a', 'T', 'a', 'i', 'i', 'i', 'i', 'i', 'j', 't', 'i', 'i', 'i', 'i', 'm', 'm', 'm', 'm', 't0', 'h', 'm', 'm', 'm', 'm', 'm', 'm', 'x', 'X', 'X', 'X', 'X', 'X', 'X', 'x', 'x', 'l', 'x', 'x', 'x', 'x', 'i', 'i', 'a', 'a', 'k', 'k', 'm', 'm', 'm', 'v', 'w', 'c', 'x', 'i', 'i', 'x', 'i', 'i', 'x', 'd', 'd', 't', 't', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'x', 'x', 'i', 'i', 'i', 'x', 'x', 'x', 'x', 'i', 'i', 'I', 'C', 'I', 'I', 'C', 'I', 'C', 'P', 'p', 'P', 'p', 'q', 'K', 'I', 'N', 'p', 'I', 'I', 'P', 'C', 'I', 'C', 'E', 'p', 'p', 'T', 'I', 'I', 'I', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 't3', 't3', 'I', 'I', 'I', 'T', 'I', 'I', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T', 'I', 'T0', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 't3', 'I', 'I', 'I', 'I', 'I', 't3', 't3', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'x', 'p', 'P', 'P', 'I', 'p', 'p', 'P', 'N', 'c', 'C', 'c', 'I', 'C', 'N', 'n', 'C', 'N', 'P', 'x', 'k', 'x', 'n', 'I', 'N', 'N', 'P', 'n', 'n', 'n', 'n', 'x', 'C', 'P', 'C', 'N', 'C', 'P', 'N', 'I', 'p', 'X', 'I', 'p', 'p', 'P', 'Q', 'p', 'n', 'I', 'I', 'I', 'E', 'I', 'j', 'i', 'u', 'j', 'j', 'T', 'T', 'T', 'p', 'T', 'p', 'p', 'T', 'T', 'T', 'X', 'i', 'x', 'x', 'p', 'p', 'p', 'n', 'n', 'n', 'i', 'u', 'i', 'i', 'i', 'i', 'i', 'v', 'u', 's', 'i', 'i', 's', 's', 'i', 'i', 'n', 'm', 'm', 's', 's', 'm', 'i', 't', 't', 'v', 'n', 'n', 'x', 'J', 'j', 'J', 'J', 'J', 'J', 'j', 'p', 'J', 'p', 'J', 'J', 'J', 'J', 'i', 'J', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'J', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'c', 'c', 'p', 'm', 'm', 'm', 'm', 'x', 'x', 'd', 'X', 'X', 'X', 'k', 'X', 'X', 'k', 'X', 'i', 'i', 'X', 'X', 'X', 'i', 'C', 'C', 'C', 'C', 'x', 'x', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'C', 'i', 'i', 'T', 'C', 'i', 'i', 'i', 'T', 'i', 'i', 'i', 'i', 'T', 'g', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'i', 'i', 'i', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'x', 'j', 'i', 'j2', 'i', 'i', 'j1', 'j2', 'j1', 'i', 'i', 'j1', 'i', 'i', 'P', 'T', 'a', 'a', 'P', 'a0', 'a2', 'a3', 'C', 'C', 'l', 'l', 'i', 'i', 'i', 'i', 'i', 'i', 'j', 'i', 'i', 'i', 'p', 'p', 'a', 'i', 'i', 'i', 'i', 'n', 'T', 'A', 'A', 'C', 'A', 'C', 'x', 't', 't']
+NAME_NUMBER_list:['T', 'T', 'c', 'T', 'b', 'T', 'T', 'h', 'b', 'T', 'h0', 'h0', 't', 'h0', 'b1', 'b', 'T', 'b', 'j', 'j', 'x', 't', 't0', 'x', 'X', 'e', 'e', 'j', 'j', 'xx', 'Y', 'f1', 'q', 'q', 'C', 'C', 'T0', 'T0', 'T0', 't0', 't0', 't0', 'T0', 'T0', 'T0', 't0', 't0', 't0', 'T0', 'T0', 't0', 't0', 't0', 'T0', 't0', 't0', 'T0', 't0', 't0', 'B', 'p0', 'B', 'Q', 'B', 'c', 'n', 'n', 'q0', 'p0', 'c', 'q', 'X', 'X', 'g', 'T', 't', 't', 'n', 'n', 'n', 'n', 'u', 'v', 'u', 'v', 'n', 'c', 'n', 't', 'c', 'v', 'n', 'J', 'J', 'J', 'x', 'x', 'x', 'p', 'f0', 'C', 'C', 'j', 'j1', 'j2', 'j1', 'j2', 'j2', 'j1', 'j1', 'L', 'T', 'a2', 'a3', 'b', 'a0', 'j', 'B']
+Accuracy on the test set of pretrained_BERT_layer_4 model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_BERT Layer 5
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0094
+Epoch: [2/10], Loss: 0.0060
+Epoch: [3/10], Loss: 0.0044
+Epoch: [4/10], Loss: 0.0034
+Epoch: [5/10], Loss: 0.0028
+Epoch: [6/10], Loss: 0.0024
+Epoch: [7/10], Loss: 0.0020
+Epoch: [8/10], Loss: 0.0018
+Epoch: [9/10], Loss: 0.0015
+Epoch: [10/10], Loss: 0.0014
+Score (accuracy) of the probe: 0.96
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0093
+Epoch: [2/10], Loss: 0.0060
+Epoch: [3/10], Loss: 0.0043
+Epoch: [4/10], Loss: 0.0034
+Epoch: [5/10], Loss: 0.0028
+Epoch: [6/10], Loss: 0.0023
+Epoch: [7/10], Loss: 0.0020
+Epoch: [8/10], Loss: 0.0018
+Epoch: [9/10], Loss: 0.0015
+Epoch: [10/10], Loss: 0.0014
+Score (accuracy) of the probe: 0.96
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0094
+Epoch: [2/10], Loss: 0.0061
+Epoch: [3/10], Loss: 0.0045
+Epoch: [4/10], Loss: 0.0036
+Epoch: [5/10], Loss: 0.0030
+Epoch: [6/10], Loss: 0.0025
+Epoch: [7/10], Loss: 0.0022
+Epoch: [8/10], Loss: 0.0020
+Epoch: [9/10], Loss: 0.0018
+Epoch: [10/10], Loss: 0.0016
+Score (accuracy) of the probe: 0.96
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0105
+Epoch: [2/10], Loss: 0.0073
+Epoch: [3/10], Loss: 0.0058
+Epoch: [4/10], Loss: 0.0050
+Epoch: [5/10], Loss: 0.0044
+Epoch: [6/10], Loss: 0.0040
+Epoch: [7/10], Loss: 0.0037
+Epoch: [8/10], Loss: 0.0035
+Epoch: [9/10], Loss: 0.0032
+Epoch: [10/10], Loss: 0.0030
+Score (accuracy) of the probe: 0.97
+
+The best l1=0, the best l2=0.1 for pretrained_BERT_layer_5
+Accuracy on the test set of probing pretrained_BERT_layer_5 of all layers:
+Score (accuracy) of the probe: 0.31
+{'__OVERALL__': 0.30625931445603577, 'NAME': 0.4920297555791711, 'STRING': 0.9459459459459459, 'NUMBER': 0.10004904364884748, 'KEYWORD': 1.0}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:926,KW_NAME:0
+NAME_KW:97,KW_KW:68
+NAME_STRING:761,KW_other:0
+NAME_NUMBER:98
+NAME_STRING_list:['m', 'm', 'm', 'm', 'a', 'a', 'a', 'x', 'x', 'T', 'X', 'h', 'X', 'T', 'T', 'T', 'h', 'X', 'h', 'X', 'X', 'h', 'X', 'X', 'h', 'T', 'X', 'x', 'p', 't', 'p', 'x', 'p', 'p', 'p', 'p', 'p', 'p', 'X', 'X', 's', 's', 'x', 'x', 'a', 'a', 'a', 'T', 'T', 'a', 'T', 'a', 'i', 'i', 'i', 'i', 'x', 'i', 'j', 'j', 'j', 'k', 'x', 'x', 'x', 't', 'i', 'i', 'i', 'i', 'm', 'h', 'm', 'h', 'm', 'h', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'l', 'x', 'x', 'l', 'x', 'x', 'x', 'x', 'i', 'i', 'a', 'k', 'k2e', 'e', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'm', 'm', 'j', 'j', 'k', 'v', 'w', 'c', 'x', 'x', 'i', 'x', 'i', 'i', 'k', 'X', 'x', 'x', 'x', 'd', 'd', 'x', 'x', 'x', 'Y1', 't', 't', 'i', 'i', 'i', 'i', 'x', 'i', 'i', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'S', 'i', 'S', 'X', 'S', 'x', 'S', 'x', 'S', 's', 's', 'q', 's', 'q', 'I', 'I', 'K', 'I', 'X', 'N', 'I', 'S', 'K', 'P', 'N', 'S', 'X', 'p', 'P', 'p', 'q', 'K', 'I', 'N', 'p', 'q', 'T', 'I', 'X', 'I', 'K', 'P', 'N', 'S', 'K', 'S', 'I', 'K', 'S', 'X', 'p', 'E', 'p', 'K', 'I', 'I', 'T0', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T0', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T0', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'x', 'X', 'p', 'P', 'P', 'P', 'I', 'p', 'p', 'P', 'Q', 'K', 'N', 'C', 'k', 'K', 'k', 'x', 'x', 'X', 'I', 'n', 'N', 'x', 'n', 'n', 's', 't', 's', 's', 's', 'K', 'N', 'P', 'x', 'k', 'K', 'k', 'x', 'n', 'p0', 'n', 'I', 'N', 'D', 'N', 'K', 'K', 'K', 'P', 'x', 'n', 'n', 'k', 'K', 'n', 'k', 'k', 'n', 's', 's', 's', 's', 's', 's', 'x', 'C', 'S', 'X', 'P', 'C', 'X', 'N', 'C', 'R', 'S', 'K', 'K', 'P', 'Q', 'N', 'I', 'p', 'q', 'Y', 'X', 'I', 'p', 'q', 'N', 'p', 'P', 'Q', 'p', 'n', 'K', 'I', 'I', 'I', 'E', 'F', 'I', 'E', 'I', 's', 's', 's', 'x', 'x', 'x', 'n', 'n', 'n', 'j', 'j', 'i', 'i', 'i', 'u', 's', 's', 'j', 'j', 't', 'T', 'X', 'X', 'X', 'X', 'X', 'T', 'p', 'p', 'T', 'p', 'g', 'X', 'p', 'X', 'X', 'h', 'h', 'T', 'h', 'T', 'T', 'X', 'X', 'T', 'X', 'i', 'x', 'x', 'y', 'p', 'p', 'p', 'p', 'p', 'p', 's', 't', 's', 't', 's', 't', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'i', 'u', 'u', 'i', 'i', 'v', 'v', 'i', 'i', 'v', 'u', 'n', 'u', 'k', 'k', 'v', 'k', 'k', 'k', 'k', 's', 'i', 's', 's', 's', 's', 's', 's', 's', 's', 'i', 'i', 's', 's', 's', 'n', 'n', 'm', 'm', 's', 's', 's', 's', 's', 'm', 'n', 't', 's', 'i', 's', 's', 's', 's', 's', 's', 's', 's', 't', 't', 'v', 'n', 'n', 'n', 's', 'x', 'x', 's', 's', 's', 'J', 'J', 'j', 'J', 'J', 'J', 'u', 'u', 'p', 'p', 'J', 'j', 'p', 'J', 'p', 'J', 'u', 'J', 'J', 'J', 'u', 'p', 'p', 'J', 'i', 'i', 'J', 'J', 'i', 'i', 'J', 'i', 'J', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'J', 'p', 'p', 'p', 's', 's', 's', 's', 's', 'm', 'm', 'm', 'm', 'x', 'x', 'x', 'x', 'x', 'X', 'X', 'X', 'k', 'k', 'X', 'k', 'k', 'X', 'k', 'X', 'k', 'X', 'X', 'i', 'i', 'X', 'X', 'X', 'q', 'i', 'X', 'C', 'C', 'p', 'p', 'x', 'x', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'X', 'C', 'C', 'T', 'f', 'C', 'G', 'T', 'i', 'i', 'i', 'X', 'X', 'i', 'i', 'i', 'g', 'C', 'i', 'i', 'i', 'T', 'T', 'G', 'T', 'T', 'i', 'T', 'i', 'i', 'i', 'i', 'T', 'g', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'X', 'X', 'i', 'i', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'X', 'Y', 'X', 'X', 'x', 'x', 'X', 'X', 'j', 'j', 'j', 'j', 'i', 'j', 'j1', 'j1', 'j2', 'i', 'j2', 'j1', 'j1', 'j2', 'j1', 'i', 'j1', 'V', 'L', 'T', 'T', 'P', 'a', 'a0', 'a0', 'a3', 'C', 'C', 'l', 'l', 'i', 'i', 'i', 'i', 'i', 'i', 'j', 'i', 'f', 'i', 'i', 'p', 'p', 'p', 'i', 'i', 'i', 'i', 'g1', 'n', 'T', 'T', 'v', 'R', 'Q', 'A', 'C', 'Q', 'A', 'C', 'x', 'x', 'f', 't', 't', 't', 't', 'x', 'x']
+NAME_NUMBER_list:['h0', 'h0', 'h0', 'b1', 'b', 't0', 't0', 'd', 'k2e', 'g', 'g', 'g', 'f', 'f', 'f', 'f2', 'f2', 'f1', 'f2', 'T0', 't0', 't0', 't0', 't3', 't3', 'O', 'T0', 'T0', 't0', 't0', 'O', 'O', 'T0', 'T0', 't0', 't0', 'T0', 't0', 't0', 'T0', 'O', 'O', 't0', 'p0', 'B', 'p0', 'D', 'D', 'D', 'D', 'D', 'p0', 'q0', 'O', 'D', 'D', 'D', 'D', 'D', 'E', 'E', 'E', 'g', 'g', 'D', 'D', 'F', 'F', 'G', 'C', 'G', 'G', 'F', 'F', 'g', 'f0', 'g', 'G', 'j2', 'j1', 'j2', 'j1', 'j2', 'j2', 'j2', 'L', 'a2', 'a3', 'a2', 'f', 'f', 'g', 'h5f', 'h5f', 'h5f', 'h5f', 't', 't']
+Accuracy on the test set of pretrained_BERT_layer_5 model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_BERT Layer 6
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0093
+Epoch: [2/10], Loss: 0.0057
+Epoch: [3/10], Loss: 0.0040
+Epoch: [4/10], Loss: 0.0031
+Epoch: [5/10], Loss: 0.0025
+Epoch: [6/10], Loss: 0.0021
+Epoch: [7/10], Loss: 0.0018
+Epoch: [8/10], Loss: 0.0016
+Epoch: [9/10], Loss: 0.0014
+Epoch: [10/10], Loss: 0.0012
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0092
+Epoch: [2/10], Loss: 0.0056
+Epoch: [3/10], Loss: 0.0040
+Epoch: [4/10], Loss: 0.0031
+Epoch: [5/10], Loss: 0.0026
+Epoch: [6/10], Loss: 0.0021
+Epoch: [7/10], Loss: 0.0018
+Epoch: [8/10], Loss: 0.0016
+Epoch: [9/10], Loss: 0.0014
+Epoch: [10/10], Loss: 0.0013
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0092
+Epoch: [2/10], Loss: 0.0057
+Epoch: [3/10], Loss: 0.0041
+Epoch: [4/10], Loss: 0.0032
+Epoch: [5/10], Loss: 0.0027
+Epoch: [6/10], Loss: 0.0023
+Epoch: [7/10], Loss: 0.0020
+Epoch: [8/10], Loss: 0.0018
+Epoch: [9/10], Loss: 0.0016
+Epoch: [10/10], Loss: 0.0014
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0100
+Epoch: [2/10], Loss: 0.0068
 Epoch: [3/10], Loss: 0.0054
 Epoch: [4/10], Loss: 0.0047
 Epoch: [5/10], Loss: 0.0042
@@ -1160,16 +710,466 @@ Epoch: [9/10], Loss: 0.0031
 Epoch: [10/10], Loss: 0.0029
 Score (accuracy) of the probe: 0.97
 
+The best l1=0, the best l2=0.1 for pretrained_BERT_layer_6
+Accuracy on the test set of probing pretrained_BERT_layer_6 of all layers:
+Score (accuracy) of the probe: 0.33
+{'__OVERALL__': 0.33383010432190763, 'NAME': 0.5834218916046758, 'STRING': 0.9459459459459459, 'NUMBER': 0.07013241785188817, 'KEYWORD': 1.0}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1098,KW_NAME:0
+NAME_KW:50,KW_KW:68
+NAME_STRING:695,KW_other:0
+NAME_NUMBER:39
+NAME_STRING_list:['a', 'a', 'a', 'a', 'x', 'x', 'X', 'c', 'X', 'c', 'X', 'h', 'X', 'X', 'h', 'h', 'X', 'h', 'X', 'h', 'h', 'x', 'p', 'p', 'x', 'p', 'p', 'p', 'p', 'p', 'X', 'X', 'x', 'a', 'a', 'a', 'a', 'a', 'i', 'i', 'i', 'i', 'i', 'i', 'x', 'x', 'x', 'x', 'i', 'i', 'i', 'i', 'm', 'm', 'm', 'h', 'h', 'm', 'h', 'm', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'x', 'x', 'l', 'x', 'x', 'x', 'x', 'i', 'i', 'a', 'a', 'k', 'e', 'k', 'k', 'e', 'j', 'k', 'c', 'x', 'i', 'x', 'i', 'x', 'i', 'i', 'x', 'k', 'X', 'X', 'x', 'x', 'x', 'd', 'd', 'd', 'x', 'x', 'x', 'x', 'x', 'g', 'g', 'x', 'x', 'x', 'x', 'x', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'x', 'x', 'i', 'i', 'i', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'd', 'd', 'x', 'x', 'X', 'i', 'S', 'X', 'X', 'x', 'S', 'S', 's', 'q', 'q', 'I', 'x', 'x', 'I', 'K', 'I', 'X', 'I', 'S', 'P', 'X', 'q', 'Q', 'p', 'p', 'q', 'F', 'K', 'I', 'N', 'p', 'I', 'E', 'X', 'I', 'P', 'E', 'U', 'x', 'x', 'S', 'I', 'E', 'X', 'q', 'Q', 'p', 'E', 'p', 'q', 'U', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'x', 'X', 'X', 'p', 'P', 'P', 'I', 'p', 'P', 'D', 'D', 'C', 'K', 'N', 'c', 'c', 'x', 'x', 'X', 'I', 'N', 'x', 'n', 'n', 's', 'D', 't', 'D', 's', 't', 'C', 'K', 'N', 'P', 'x', 'k', 'K', 'x', 'n', 'O', 'n', 'I', 'D', 'D', 'N', 'C', 'D', 'D', 'N', 'K', 'C', 'K', 'D', 'C', 'K', 'P', 'x', 'E', 'n', 'c', 'n', 'k', 'n', 'n', 's', 'D', 's', 's', 's', 'x', 'x', 'C', 'X', 'P', 'C', 'X', 'N', 'C', 'S', 'K', 'K', 'P', 'Q', 'N', 'I', 'E', 'p', 'X', 'I', 'p', 'N', 'p', 'P', 'Q', 'p', 'n', 'I', 'E', 'I', 'I', 'I', 'E', 'I', 'E', 'pq', 's', 's', 's', 'x', 'x', 'x', 'i', 'i', 'i', 'i', 'u', 's', 's', 'j', 'T', 'X', 'X', 'X', 'X', 'X', 'g', 'p', 'p', 'g', 'X', 'X', 'X', 'X', 'X', 'X', 'h', 'X', 'X', 'X', 'X', 'i', 'x', 'y', 'x', 'x', 'p', 'p', 'p', 'p', 'p', 'n', 'n', 'n', 'n', 'n', 'n', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'n', 's', 'i', 's', 'i', 'i', 's', 's', 'n', 'n', 'm', 'm', 'd', 'i', 's', 's', 's', 's', 's', 'n', 'n', 's', 'x', 'x', 's', 'J', 'J', 'J', 'J', 'u', 'J', 'J', 'p', 'i', 'i', 'J', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'J', 'J', 'J', 'J', 'J', 'p', 's', 'm', 'm', 'x', 'x', 'x', 'x', 'x', 'x', 'd', 'd', 'X', 'X', 'X', 'X', 'k', 'X', 'k', 'X', 'X', 'D', 'D', 'R', 'X', 'X', 'X', 'X', 'i', 'i', 'i', 'X', 'X', 'X', 'i', 'X', 'C', 'C', 'G', 'p', 'C', 'p', 'G', 'x', 'x', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'X', 'C', 'C', 'C', 'i', 'i', 'i', 'X', 'X', 'i', 'i', 'i', 'g', 'i', 'C', 'i', 'i', 'i', 'i', 'T', 'G', 'g', 'i', 'T', 'G', 'i', 'i', 'i', 'i', 'g', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'X', 'X', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'x', 'x', 'X', 'X', 'i', 'i', 'i', 'j2', 'j2', 'j1', 'j2', 'j2', 'j1', 'i', 'i', 'j1', 'i', 'i', 'V', 'L', 'P', 'T', 'a', 'P', 'a', 'a3', 'a0', 'a0', 'a3', 'C', 'C', 'l', 'l', 'i', 'i', 'i', 'i', 'i', 'i', 'j', 'i', 'i', 'i', 'p', 'p', 'a', 'i', 'i', 'i', 'i', 'g1', 'g', 'n', 'i', 'R', 'A', 'A', 'B', 'C', 'A', 'B', 'C', 'x', 'x', 'x', 'x']
+NAME_NUMBER_list:['m', 'm', 'b1', 'h0', 'h0', 'h0', 'b1', 'b', 'l', 'm', 'm', 'g', 'f1', 'N', 'N', 'N', 'D', 'p0', 'B', 'p0', 'B', 'n', 'p0', 'p0', 'n', 'g', 'n', 'n', 'f', 'n', 'n', 'p', 'J', 'f0', 'j2', 'L', 'b', 'a2', 'a2']
+Accuracy on the test set of pretrained_BERT_layer_6 model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_BERT Layer 7
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0088
+Epoch: [2/10], Loss: 0.0053
+Epoch: [3/10], Loss: 0.0038
+Epoch: [4/10], Loss: 0.0029
+Epoch: [5/10], Loss: 0.0023
+Epoch: [6/10], Loss: 0.0019
+Epoch: [7/10], Loss: 0.0017
+Epoch: [8/10], Loss: 0.0014
+Epoch: [9/10], Loss: 0.0013
+Epoch: [10/10], Loss: 0.0011
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0087
+Epoch: [2/10], Loss: 0.0052
+Epoch: [3/10], Loss: 0.0037
+Epoch: [4/10], Loss: 0.0029
+Epoch: [5/10], Loss: 0.0023
+Epoch: [6/10], Loss: 0.0019
+Epoch: [7/10], Loss: 0.0017
+Epoch: [8/10], Loss: 0.0014
+Epoch: [9/10], Loss: 0.0013
+Epoch: [10/10], Loss: 0.0011
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0087
+Epoch: [2/10], Loss: 0.0053
+Epoch: [3/10], Loss: 0.0039
+Epoch: [4/10], Loss: 0.0031
+Epoch: [5/10], Loss: 0.0025
+Epoch: [6/10], Loss: 0.0021
+Epoch: [7/10], Loss: 0.0019
+Epoch: [8/10], Loss: 0.0017
+Epoch: [9/10], Loss: 0.0015
+Epoch: [10/10], Loss: 0.0014
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0095
+Epoch: [2/10], Loss: 0.0063
+Epoch: [3/10], Loss: 0.0050
+Epoch: [4/10], Loss: 0.0043
+Epoch: [5/10], Loss: 0.0039
+Epoch: [6/10], Loss: 0.0036
+Epoch: [7/10], Loss: 0.0033
+Epoch: [8/10], Loss: 0.0031
+Epoch: [9/10], Loss: 0.0029
+Epoch: [10/10], Loss: 0.0027
+Score (accuracy) of the probe: 0.98
+
+The best l1=0, the best l2=0.1 for pretrained_BERT_layer_7
+Accuracy on the test set of probing pretrained_BERT_layer_7 of all layers:
+Score (accuracy) of the probe: 0.35
+{'__OVERALL__': 0.3479880774962742, 'NAME': 0.6594048884165781, 'STRING': 0.9459459459459459, 'NUMBER': 0.027954879843060325, 'KEYWORD': 1.0}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1241,KW_NAME:0
+NAME_KW:40,KW_KW:68
+NAME_STRING:590,KW_other:0
+NAME_NUMBER:11
+NAME_STRING_list:['m', 'a', 'a', 'a', 'c', 'W', 'c', 'h', 'p', 'p', 'p', 'b1', 'p', 'X', 'd', 'd', 's', 'e', 'e', 'b', 'a', 'a', 'a', 'i', 'i', 'i', 'i', 'i', 'j', 'j', 'x', 't', 'i', 'i', 'i', 'm', 'm', 'm', 't0', 'h', 'm', 'm', 'f', 'm', 'x', 'x', 'X', 'X', 'X', 'X', 'X', 'X', 'x', 'f', 'f', 'l', 'x', 'x', 'i', 'i', 'd', 'a', 'a', 'k', 'e', 'k', 'k', 'k', 'k', 'e', 'k', 'j', 'k', 'v', 'i', 'i', 'i', 'i', 'k', 'd', 'd', 'd', 'g', 'g', 't', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'f', 'f', 'i', 'i', 'i', 'x', 'f', 'x', 'd', 'd', 'f', 'i', 'X', 'f2', 'f2', 'Q', 'q', 'q', 'I', 'F', 'C', 'I', 'K', 'I', 'F', 'N', 'I', 'C', 'F', 'K', 'P', 'Q', 'N', 'X', 'q', 'Q', 'p', 'P', 'p', 'q', 'Q', 'F', 'K', 'I', 'N', 'p', 'I', 'E', 'N', 'I', 'P', 'N', 'E', 'C', 'U', 'S', 'I', 'q', 'Q', 'p', 'E', 'p', 'q', 'U', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'x', 'D', 'p', 'P', 'I', 'p', 'p', 'P', 'Q', 'C', 'K', 'Iw', 'C', 'N', 'c', 'C', 'k', 'K', 'x', 'D', 'I', 'c', 'n', 'N', 'n', 'c', 'n', 'D', 't', 'D', 'C', 'N', 'x', 'k', 'K', 'n', 'O', 'n', 'I', 'E', 'N', 'C', 'D', 'N', 'K', 'C', 'K', 'U', 'D', 'C', 'K', 'n', 'c', 'n', 'k', 'K', 'n', 'k', 'n', 'D', 'c', 'x', 'C', 'C', 'X', 'N', 'C', 'K', 'K', 'P', 'Q', 'N', 'I', 'F', 'E', 'p', 'q', 'X', 'I', 'p', 'q', 'N', 'p', 'q', 'P', 'Q', 'p', 'q', 'n', 'I', 'F', 'E', 'I', 'I', 'E', 'E', 'I', 'E', 'I', 'E', 'Uw', 'x', 'x', 'j', 'j', 'i', 'i', 'i', 'i', 'u', 'j', 'j', 'T', 'X', 'p', 'g', 'p', 'p', 'g', 'X', 'i', 'x', 'p', 'p', 'p', 'p', 'p', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'i', 'i', 'i', 'i', 'i', 'v', 'i', 'v', 'i', 'v', 'i', 'v', 'u', 'n', 'k', 'k', 's', 'i', 'i', 'i', 'i', 'n', 'n', 'm', 'd', 'n', 'i', 'n', 'n', 's', 'x', 'x', 'J', 'j', 'u', 'p', 'p', 'J', 'p', 'p', 'J', 'J', 'p', 'p', 'p', 'i', 'i', 'J', 'J', 'i', 'i', 'J', 'i', 'J', 'i', 'i', 'i', 'p', 'p', 'p', 'p', 'm', 'm', 'x', 'x', 'f', 'f', 'd', 'd', 'X', 'D', 'k', 'D', 'k', 'D', 'D', 'X', 'X', 'i', 'i', 'i', 'X', 'D', 'X', 'q', 'i', 'F', 'q', 'C', 'F', 'C', 'G', 'p', 'C', 'G', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'f', 'f0', 'X', 'F', 'C', 'F', 'C', 'C', 'i', 'i', 'F', 'i', 'g', 'X', 'i', 'i', 'i', 'f', 'g', 'i', 'C', 'i', 'i', 'i', 'G', 'g', 'i', 'G', 'i', 'i', 'i', 'i', 'g', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'x', 'X', 'j', 'j', 'j', 'i', 'j', 'j1', 'j1', 'i', 'j2', 'j1', 'j2', 'j1', 'j2', 'j2', 'j1', 'i', 'i', 'j2', 'j1', 'i', 'i', 'L', 'V', 'P', 'T', 'P', 'T', 'b', 'a2', 'P', 'a3', 'P', 'a0', 'a0', 'a3', 'C', 'C', 'f', 'f', 'i', 'i', 'i', 'i', 'i', 'j', 'i', 'f', 'i', 'i', 'f', 'p', 'a', 'i', 'i', 'i', 'i', 'g1', 'g', 'n', 'd', 'c', 'Q', 'A', 'B', 'Q', 'A', 'C', 'A', 'C', 'x', 'f', 'f', 'f', 'x']
+NAME_NUMBER_list:['h0', 'p', 'f1', 'T0', 'T0', 'T0', 'p0', 'p0', 'p0', 'p0', 'Q']
+Accuracy on the test set of pretrained_BERT_layer_7 model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_BERT Layer 8
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0090
+Epoch: [2/10], Loss: 0.0053
+Epoch: [3/10], Loss: 0.0037
+Epoch: [4/10], Loss: 0.0028
+Epoch: [5/10], Loss: 0.0023
+Epoch: [6/10], Loss: 0.0019
+Epoch: [7/10], Loss: 0.0016
+Epoch: [8/10], Loss: 0.0014
+Epoch: [9/10], Loss: 0.0012
+Epoch: [10/10], Loss: 0.0011
+Score (accuracy) of the probe: 0.96
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0088
+Epoch: [2/10], Loss: 0.0053
+Epoch: [3/10], Loss: 0.0037
+Epoch: [4/10], Loss: 0.0028
+Epoch: [5/10], Loss: 0.0023
+Epoch: [6/10], Loss: 0.0019
+Epoch: [7/10], Loss: 0.0016
+Epoch: [8/10], Loss: 0.0014
+Epoch: [9/10], Loss: 0.0012
+Epoch: [10/10], Loss: 0.0011
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0086
+Epoch: [2/10], Loss: 0.0052
+Epoch: [3/10], Loss: 0.0037
+Epoch: [4/10], Loss: 0.0029
+Epoch: [5/10], Loss: 0.0024
+Epoch: [6/10], Loss: 0.0020
+Epoch: [7/10], Loss: 0.0018
+Epoch: [8/10], Loss: 0.0016
+Epoch: [9/10], Loss: 0.0014
+Epoch: [10/10], Loss: 0.0013
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0096
+Epoch: [2/10], Loss: 0.0063
+Epoch: [3/10], Loss: 0.0050
+Epoch: [4/10], Loss: 0.0043
+Epoch: [5/10], Loss: 0.0039
+Epoch: [6/10], Loss: 0.0036
+Epoch: [7/10], Loss: 0.0033
+Epoch: [8/10], Loss: 0.0031
+Epoch: [9/10], Loss: 0.0029
+Epoch: [10/10], Loss: 0.0028
+Score (accuracy) of the probe: 0.97
+
+The best l1=0, the best l2=0.1 for pretrained_BERT_layer_8
+Accuracy on the test set of probing pretrained_BERT_layer_8 of all layers:
+Score (accuracy) of the probe: 0.42
+{'__OVERALL__': 0.41703924490809735, 'NAME': 0.8177470775770457, 'STRING': 1.0, 'NUMBER': 0.020598332515939184, 'KEYWORD': 0.8970588235294118}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1539,KW_NAME:7
+NAME_KW:49,KW_KW:61
+NAME_STRING:286,KW_other:0
+NAME_NUMBER:8
+NAME_STRING_list:['a', 'X', 'h', 'h', 'U', 'h', 'U', 'h0', 's', 'a', 'a', 'a', 'i', 'i', 'i', 'i', 'm', 'm', 'm', 'm', 'm', 'f', 'm', 'm', 'm', 'm', 'h', 'm', 'f', 'm', 'm', 'f', 'f', 'd', 'a', 'a', 'k', 'r', 'Y1', 'f', 'i', 'i', 'i', 'i', 'i', 'i', 'f', 'f', 'f', 'R', 'x', 'f', 'f1', 'f2', 'f1', 'f2', 'f1', 'K', 'F', 'P', 'p', 'P', 'p', 'q', 'F', 'I', 'N', 'p', 'I', 'P', 'C', 'E', 'K', 'p', 'E', 'p', 'I', 'I', 'I', 'x', 'p', 'P', 'p0', 'P', 'Q', 'N', 'c', 'k', 'x', 'I', 'c', 'n', 'N', 'n', 'n', 't', 'p0', 'k', 'K', 'O', 'I', 'E', 'N', 'N', 'D', 'P', 'n', 'n', 'k', 'n', 'n', 'c', 'C', 'N', 'C', 'K', 'P', 'Q', 'N', 'p', 'I', 'p', 'N', 'p', 'P', 'Q', 'p', 'F', 'I', 'E', 'I', 'E', 'pq', 'f', 'f', 'x', 'j', 'j', 'j', 'p', 'p', 'g', 'X', 'x', 'p', 'p', 'p', 'p', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'i', 'i', 'i', 'i', 'f', 'i', 'n', 'i', 'n', 'j', 'J', 'J', 'p', 'p', 'j', 'p', 'J', 'J', 'p', 'p', 'i', 'J', 'i', 'J', 'i', 'p', 'p', 'm', 'm', 'm', 'x', 'x', 'f', 'f', 'd', 'X', 'k', 'k', 'D', 'X', 'X', 'i', 'X', 'F', 'F', 'i', 'F', 'F', 'G', 'p', 'p', 'i', 'i', 'i', 'i', 'f', 'f0', 'X', 'F', 'f', 'X', 'i', 'i', 'i', 'f', 'i', 'i', 'i', 'i', 'i', 'i', 'g', 'i', 'i', 'p', 'i', 'i', 'X', 'i', 'i', 'i', 'i', 'y', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'X', 'X', 'i', 'j1', 'j1', 'j1', 'j1', 'P', 'P', 'P', 'a3', 'a0', 'a0', 'C', 'f', 'i', 'p', 'n', 'Q', 'R', 'A', 'Q', 'A', 'f', 'f']
+NAME_NUMBER_list:['k', 'd', 'd', 'q', 'p0', 'K', 'K', 'p']
+Accuracy on the test set of pretrained_BERT_layer_8 model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_BERT Layer 9
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0085
+Epoch: [2/10], Loss: 0.0049
+Epoch: [3/10], Loss: 0.0034
+Epoch: [4/10], Loss: 0.0026
+Epoch: [5/10], Loss: 0.0021
+Epoch: [6/10], Loss: 0.0017
+Epoch: [7/10], Loss: 0.0014
+Epoch: [8/10], Loss: 0.0012
+Epoch: [9/10], Loss: 0.0011
+Epoch: [10/10], Loss: 0.0010
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0085
+Epoch: [2/10], Loss: 0.0049
+Epoch: [3/10], Loss: 0.0034
+Epoch: [4/10], Loss: 0.0026
+Epoch: [5/10], Loss: 0.0021
+Epoch: [6/10], Loss: 0.0017
+Epoch: [7/10], Loss: 0.0015
+Epoch: [8/10], Loss: 0.0013
+Epoch: [9/10], Loss: 0.0011
+Epoch: [10/10], Loss: 0.0010
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0085
+Epoch: [2/10], Loss: 0.0050
+Epoch: [3/10], Loss: 0.0035
+Epoch: [4/10], Loss: 0.0027
+Epoch: [5/10], Loss: 0.0023
+Epoch: [6/10], Loss: 0.0019
+Epoch: [7/10], Loss: 0.0017
+Epoch: [8/10], Loss: 0.0015
+Epoch: [9/10], Loss: 0.0013
+Epoch: [10/10], Loss: 0.0012
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0094
+Epoch: [2/10], Loss: 0.0061
+Epoch: [3/10], Loss: 0.0048
+Epoch: [4/10], Loss: 0.0041
+Epoch: [5/10], Loss: 0.0037
+Epoch: [6/10], Loss: 0.0034
+Epoch: [7/10], Loss: 0.0032
+Epoch: [8/10], Loss: 0.0030
+Epoch: [9/10], Loss: 0.0028
+Epoch: [10/10], Loss: 0.0027
+Score (accuracy) of the probe: 0.98
+
+The best l1=0, the best l2=0.1 for pretrained_BERT_layer_9
+Accuracy on the test set of probing pretrained_BERT_layer_9 of all layers:
+Score (accuracy) of the probe: 0.39
+{'__OVERALL__': 0.3949329359165425, 'NAME': 0.7300743889479278, 'STRING': 0.918918918918919, 'NUMBER': 0.06081412457086807, 'KEYWORD': 0.8529411764705882}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1374,KW_NAME:10
+NAME_KW:154,KW_KW:58
+NAME_STRING:330,KW_other:0
+NAME_NUMBER:24
+NAME_STRING_list:['a', 'a', 'a', 'x', 'X', 'h', 'X', 'h', 'X', 'h', 'X', 'h', 't', 'T', 'p', 'p', 's', 'a', 'a', 'a', 'i', 'i', 'm', 'h', 'm', 'h', 'm', 'h', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'x', 'f', 'x', 'x', 'x', 'x', 'a', 'a', 'e', 'k', 'j', 'k', 'v', 'k', 'x', 'g', 'Y1', 't', 'i', 'i', 'i', 'f', 'f', 'x', 'x', 'x', 'f', 'x', 'x', 'x', 'x', 'x', 'x', 'I', 'x', 'F', 'C', 'I', 'K', 'F', 'X', 'I', 'S', 'K', 'q', 'Q', 'p', 'q', 'Q', 'N', 'I', 'X', 'I', 'K', 'E', 'S', 'I', 'C', 'q', 'Q', 'p', 'E', 'I', 'I', 'I', 'x', 'X', 'p', 'I', 'p', 'p', 'P', 'Q', 'D', 'D', 'N', 'c', 'k', 'x', 'x', 'I', 'n', 'N', 'n', 'n', 'D', 't', 'D', 'K', 'x', 'Q', 'k', 'O', 'I', 'E', 'D', 'N', 'D', 'D', 'N', 'D', 'D', 'D', 'x', 'n', 'n', 'k', 'n', 'n', 'D', 'X', 'N', 'R', 'S', 'N', 'p', 'q', 'X', 'I', 'N', 'p', 'q', 'P', 'n', 'I', 'I', 'I', 'E', 'I', 'E', 'f', 'x', 'u', 'j', 't', 'p', 'p', 'g', 'T', 'T', 'X', 'i', 'x', 'x', 'p', 'p', 'p', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'i', 'i', 'i', 'i', 'u', 'f', 'v', 'k', 'k', 'v', 'k', 'k', 'v', 'k', 'k', 'i', 'i', 'i', 'i', 'n', 'n', 'm', 's', 't', 'i', 's', 'p', 'p', 'p', 'i', 'i', 'i', 'i', 'i', 'p', 'm', 'm', 'm', 'x', 'x', 'd', 'd', 'X', 'k', 'k', 'D', 'X', 'X', 'i', 'X', 'i', 'F', 'i', 'i', 'i', 'X', 'C', 'F', 'f', 'i', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'g', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'X', 'X', 'x', 'x', 'X', 'X', 'i', 'j1', 'j1', 'j1', 'j1', 'P', 'a', 'a0', 'a0', 'a3', 'C', 'C', 'f', 'f', 'l', 'i', 'i', 'i', 'i', 'i', 'f', 'i', 'i', 'p', 'i', 'n', 'A', 'A', 'f', 'f']
+NAME_NUMBER_list:['h0', 'k', 'k', 'd', 'd', 'd', 'd', 'f1', 'D', 'p0', 'p0', 'p0', 'p0', 'pq', 'g', 'p', 'd', 'n', 'n', 'p', 'p', 'p', 'f0', 'h5f']
+Accuracy on the test set of pretrained_BERT_layer_9 model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_BERT Layer 10
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0088
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0038
+Epoch: [4/10], Loss: 0.0028
+Epoch: [5/10], Loss: 0.0023
+Epoch: [6/10], Loss: 0.0019
+Epoch: [7/10], Loss: 0.0016
+Epoch: [8/10], Loss: 0.0014
+Epoch: [9/10], Loss: 0.0012
+Epoch: [10/10], Loss: 0.0011
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0090
+Epoch: [2/10], Loss: 0.0056
+Epoch: [3/10], Loss: 0.0039
+Epoch: [4/10], Loss: 0.0030
+Epoch: [5/10], Loss: 0.0024
+Epoch: [6/10], Loss: 0.0020
+Epoch: [7/10], Loss: 0.0017
+Epoch: [8/10], Loss: 0.0014
+Epoch: [9/10], Loss: 0.0013
+Epoch: [10/10], Loss: 0.0011
+Score (accuracy) of the probe: 0.96
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0090
+Epoch: [2/10], Loss: 0.0056
+Epoch: [3/10], Loss: 0.0040
+Epoch: [4/10], Loss: 0.0031
+Epoch: [5/10], Loss: 0.0025
+Epoch: [6/10], Loss: 0.0021
+Epoch: [7/10], Loss: 0.0018
+Epoch: [8/10], Loss: 0.0016
+Epoch: [9/10], Loss: 0.0015
+Epoch: [10/10], Loss: 0.0013
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0096
+Epoch: [2/10], Loss: 0.0065
+Epoch: [3/10], Loss: 0.0051
+Epoch: [4/10], Loss: 0.0044
+Epoch: [5/10], Loss: 0.0039
+Epoch: [6/10], Loss: 0.0036
+Epoch: [7/10], Loss: 0.0033
+Epoch: [8/10], Loss: 0.0031
+Epoch: [9/10], Loss: 0.0029
+Epoch: [10/10], Loss: 0.0028
+Score (accuracy) of the probe: 0.97
+
+The best l1=0, the best l2=0.1 for pretrained_BERT_layer_10
+Accuracy on the test set of probing pretrained_BERT_layer_10 of all layers:
+Score (accuracy) of the probe: 0.38
+{'__OVERALL__': 0.3840039741679086, 'NAME': 0.7173219978746015, 'STRING': 0.972972972972973, 'NUMBER': 0.051495831289847964, 'KEYWORD': 0.8088235294117647}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1350,KW_NAME:13
+NAME_KW:245,KW_KW:55
+NAME_STRING:233,KW_other:0
+NAME_NUMBER:54
+NAME_STRING_list:['a', 'a', 'a', 'x', 'X', 'h', 'X', 'h', 'X', 'x', 'p', 'x', 'x', 'a', 'a', 'a', 'x', 'x', 't', 'm', 'm', 'm', 'h', 'h', 'm', 'x', 'x', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'x', 'f', 'x', 'x', 'x', 'x', 'a', 'f', 'k', 'x', 'x', 'd', 'd', 'x', 't', 'x', 'x', 'i', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'X', 'x', 'x', 'C', 'I', 'C', 'R', 'q', 'q', 'Q', 'P', 'p', 'q', 'Q', 'N', 'R', 'x', 'C', 'q', 'q', 'Q', 'p', 'I', 'x', 'D', 'X', 'p', 'P', 'p', 'p', 'P', 'Q', 'D', 'D', 'c', 'C', 'K', 'x', 'x', 'C', 'n', 'N', 'n', 'D', 'D', 'p0', 'P', 'x', 'K', 'D', 'N', 'D', 'D', 'N', 'D', 'P', 'x', 'c', 'K', 'D', 'C', 'x', 'N', 'N', 'p', 'N', 'p', 'P', 'p', 'pq', 'f', 'x', 'x', 'x', 'T', 'p', 'g', 'X', 'X', 'i', 'x', 'p', 'p', 'p', 'n', 'n', 'n', 'n', 'n', 'n', 'i', 'i', 'u', 'k', 'k', 'i', 'i', 'v', 's', 'i', 'n', 'c', 't', 'c', 'c', 'i', 'i', 'i', 'i', 'm', 'x', 'x', 'd', 'X', 'X', 'X', 'D', 'X', 'X', 'i', 'q', 'q', 'q', 'X', 'X', 'C', 'C', 'i', 'C', 'X', 'X', 'C', 'i', 'i', 'i', 'X', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'X', 'X', 'X', 'x', 'x', 'X', 'i', 'a', 'a0', 'a0', 'a3', 'C', 'C', 'i', 'i', 'i', 'i', 'i', 'i', 'p', 'c', 'R', 'A', 'f']
+NAME_NUMBER_list:['b1', 't', 't', 'm', 'm', 'm', 'k', 'k', 'k', 'k', 'd', 'g', 'g', 't', 'f', 'f', 'f', 'f1', 'f2', 'q', 'q', 'p', 'p0', 'p0', 'k', 't', 'k', 'U', 'k', 't', 'g', 'T', 'T', 'T', 'f', 'k', 'd', 'n', 'n', 'p', 'p', 'm', 'd', 'k', 'D', 'k', 'q', 'G', 'f0', 'g', 'g', 'n', 'h5f', 'f']
+Accuracy on the test set of pretrained_BERT_layer_10 model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_BERT Layer 11
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0090
+Epoch: [2/10], Loss: 0.0057
+Epoch: [3/10], Loss: 0.0041
+Epoch: [4/10], Loss: 0.0031
+Epoch: [5/10], Loss: 0.0025
+Epoch: [6/10], Loss: 0.0021
+Epoch: [7/10], Loss: 0.0018
+Epoch: [8/10], Loss: 0.0016
+Epoch: [9/10], Loss: 0.0014
+Epoch: [10/10], Loss: 0.0012
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0088
+Epoch: [2/10], Loss: 0.0055
+Epoch: [3/10], Loss: 0.0039
+Epoch: [4/10], Loss: 0.0030
+Epoch: [5/10], Loss: 0.0025
+Epoch: [6/10], Loss: 0.0021
+Epoch: [7/10], Loss: 0.0018
+Epoch: [8/10], Loss: 0.0015
+Epoch: [9/10], Loss: 0.0013
+Epoch: [10/10], Loss: 0.0012
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0091
+Epoch: [2/10], Loss: 0.0058
+Epoch: [3/10], Loss: 0.0042
+Epoch: [4/10], Loss: 0.0033
+Epoch: [5/10], Loss: 0.0027
+Epoch: [6/10], Loss: 0.0023
+Epoch: [7/10], Loss: 0.0020
+Epoch: [8/10], Loss: 0.0018
+Epoch: [9/10], Loss: 0.0016
+Epoch: [10/10], Loss: 0.0014
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0099
+Epoch: [2/10], Loss: 0.0068
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0046
+Epoch: [5/10], Loss: 0.0041
+Epoch: [6/10], Loss: 0.0037
+Epoch: [7/10], Loss: 0.0034
+Epoch: [8/10], Loss: 0.0032
+Epoch: [9/10], Loss: 0.0030
+Epoch: [10/10], Loss: 0.0028
+Score (accuracy) of the probe: 0.97
+
+The best l1=0, the best l2=0.1 for pretrained_BERT_layer_11
+Accuracy on the test set of probing pretrained_BERT_layer_11 of all layers:
+Score (accuracy) of the probe: 0.36
+{'__OVERALL__': 0.3589170392449081, 'NAME': 0.6785334750265675, 'STRING': 0.9459459459459459, 'NUMBER': 0.03678273663560569, 'KEYWORD': 0.8529411764705882}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1277,KW_NAME:9
+NAME_KW:340,KW_KW:58
+NAME_STRING:246,KW_other:1
+NAME_NUMBER:19
+NAME_STRING_list:['m', 'm', 'm', 'a', 'a', 'a', 'x', 'X', 'X', 'X', 'X', 'x', 'h0', 'X', 'x', 'x', 'a', 'a', 'a', 'm', 'm', 'f', 'm', 'm', 'h', 'm', 'f', 'm', 'h', 'f', 'f', 'm', 'm', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'x', 'x', 'x', 'a', 'e', 'f', 'f', 'm', 'm', 'm', 'j', 'x', 'i', 'i', 'x', 'k', 'X', 'x', 'x', 'x', 'x', 'f', 't', 'i', 'x', 'x', 'f', 'f', 'x', 'x', 'x', 'f', 'x', 'x', 'x', 'x', 'f2', 'X', 'f2', 'q', 'Q', 's', 's', 'x', 'x', 'C', 'I', 'C', 'q', 'X', 'q', 'Q', 'p', 'q', 'x', 'C', 'q', 'X', 'q', 'Q', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T', 'I', 'I', 'I', 'I', 'x', 'D', 'X', 'p0', 'P', 'p0', 'p', 'p', 'P', 'C', 'x', 'C', 'n', 'N', 'p0', 'c', 'C', 'x', 'C', 'N', 'p', 'N', 'p', 'P', 'Q', 'pq', 'f', 's', 's', 'u', 'j', 't', 'X', 'X', 'T', 'p', 'X', 'X', 'X', 'X', 'x', 'p', 'p', 'p', 'n', 'n', 'n', 'n', 'v', 'i', 'i', 's', 'i', 'n', 's', 'c', 't', 'c', 's', 'u', 'p', 'p', 'i', 'i', 'i', 'p', 'p', 'p', 'x', 'x', 'X', 'X', 'k', 'X', 'R', 'i', 'X', 'q', 'C', 'C', 'Q', 'Q', 'C', 'X', 'X', 'F', 'C', 'C', 'C', 'C', 'C', 'C', 'X', 'C', 'q', 'i', 'i', 'i', 'X', 'i', 'i', 'X', 'X', 'x', 'X', 'j1', 'j1', 'a', 'a', 'a0', 'a0', 'T', 'C', 'C', 'f', 'l', 'j', 'p', 'i', 'n', 'i', 'c', 'R', 'C', 'R', 'R', 'A', 'h5f', 'x', 'f', 'x']
+NAME_NUMBER_list:['f', 'm', 'd', 'f', 'd', 'f1', 'q', 'F', 'O', 'U', 'p', 'n', 's', 'd', 'n', 'n', 'p', 'D', 'f0']
+Accuracy on the test set of pretrained_BERT_layer_11 model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_BERT Layer 12
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0095
+Epoch: [2/10], Loss: 0.0061
+Epoch: [3/10], Loss: 0.0045
+Epoch: [4/10], Loss: 0.0036
+Epoch: [5/10], Loss: 0.0029
+Epoch: [6/10], Loss: 0.0025
+Epoch: [7/10], Loss: 0.0021
+Epoch: [8/10], Loss: 0.0018
+Epoch: [9/10], Loss: 0.0016
+Epoch: [10/10], Loss: 0.0014
+Score (accuracy) of the probe: 0.96
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0095
+Epoch: [2/10], Loss: 0.0061
+Epoch: [3/10], Loss: 0.0046
+Epoch: [4/10], Loss: 0.0036
+Epoch: [5/10], Loss: 0.0030
+Epoch: [6/10], Loss: 0.0025
+Epoch: [7/10], Loss: 0.0021
+Epoch: [8/10], Loss: 0.0019
+Epoch: [9/10], Loss: 0.0016
+Epoch: [10/10], Loss: 0.0015
+Score (accuracy) of the probe: 0.96
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0094
+Epoch: [2/10], Loss: 0.0061
+Epoch: [3/10], Loss: 0.0046
+Epoch: [4/10], Loss: 0.0037
+Epoch: [5/10], Loss: 0.0031
+Epoch: [6/10], Loss: 0.0026
+Epoch: [7/10], Loss: 0.0023
+Epoch: [8/10], Loss: 0.0020
+Epoch: [9/10], Loss: 0.0018
+Epoch: [10/10], Loss: 0.0016
+Score (accuracy) of the probe: 0.96
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0105
+Epoch: [2/10], Loss: 0.0073
+Epoch: [3/10], Loss: 0.0059
+Epoch: [4/10], Loss: 0.0050
+Epoch: [5/10], Loss: 0.0045
+Epoch: [6/10], Loss: 0.0041
+Epoch: [7/10], Loss: 0.0037
+Epoch: [8/10], Loss: 0.0035
+Epoch: [9/10], Loss: 0.0032
+Epoch: [10/10], Loss: 0.0030
+Score (accuracy) of the probe: 0.97
+
 The best l1=0, the best l2=0.1 for pretrained_BERT_layer_12
 Accuracy on the test set of probing pretrained_BERT_layer_12 of all layers:
-Score (accuracy) of the probe: 0.81
-{'__OVERALL__': 0.8139592647789369, 'NAME': 0.6514346439957492, 'STRING': 0.972972972972973, 'NUMBER': 0.9597842079450711, 'KEYWORD': 0.8529411764705882}
+Score (accuracy) of the probe: 0.36
+{'__OVERALL__': 0.3631395926477894, 'NAME': 0.7066950053134963, 'STRING': 0.9459459459459459, 'NUMBER': 0.01716527709661599, 'KEYWORD': 0.9117647058823529}
 Confusion matrix between NAME and KEYWORD:
-NAME_NAME:1226,KW_NAME:3
-NAME_KW:85,KW_KW:58
-NAME_STRING:299,KW_other:7
-NAME_NUMBER:272
-NAME_STRING_list:['m', 'm', 'a', 'a', 'a', 'X', 'h', 'c', 'X', 'X', 'X', 'X', 'X', 'a', 'a', 'a', 'a', 'i', 'i', 'j', 'x', 'j', 'j', 'j', 'x', 'i', 'i', 'i', 'i', 'm', 'm', 'm', 'm', 'm', 'h', 'm', 'm', 'm', 'm', 'x', 'x', 'x', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'x', 'x', 'a', 'f', 'f', 'k', 'k', 'k', 'm', 'r', 'j', 'c', 'i', 'x', 'x', 'x', 'x', 'x', 'x', 'i', 'i', 'i', 'i', 'x', 'x', 'i', 'f', 'x', 'x', 'x', 'z', 'x', 'x', 'i', 'q', 'x', 'C', 'C', 'I', 'F', 'C', 'X', 'I', 'E', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'x', 'B', 'C', 'c', 'x', 'B', 'c', 'C', 'c', 'x', 'n', 'c', 'x', 'x', 'B', 'c', 'C', 'c', 'c', 'x', 'x', 'C', 'X', 'x', 'x', 'u', 'X', 'X', 'X', 'X', 'n', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 's', 'v', 'i', 'c', 'c', 't', 'c', 'c', 's', 'J', 'J', 'j', 'J', 'J', 'u', 'J', 'j', 'u', 'J', 'J', 'J', 'J', 'J', 'i', 'J', 'i', 'i', 'i', 'i', 'i', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'c', 'c', 'm', 'm', 'x', 'x', 'x', 'X', 'X', 'i', 'i', 'C', 'C', 'i', 'i', 'i', 'i', 'X', 'C', 'C', 'C', 'C', 'i', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'X', 'X', 'x', 'x', 'j', 'j', 'j', 'V', 'a', 'a', 'i', 'i', 'i', 'j', 'i', 'i', 'i', 'f', 'i', 'i', 'v', 'C', 'R', 'A', 'A']
-NAME_NUMBER_list:['W', 'U', 'W', 'h', 'b', 'h', 'c', 'h', 'W', 'U', 'h', 'W', 'U', 'x', 'h0', 'h0', 'b1', 'd', 'd', 'b', 'b', 'b', 'j', 'k', 'o', 't', 'm', 'm', 'h', 'm', 'h', 'm', 'X', 'x', 'x', 'x', 'i', 'k', 'e', 'k', 'k', 'e', 'k', 'j', 'k', 'c', 'k', 'X', 'X', 'Y', 'd', 'd', 'x', 'g', 'Y1', 't', 'f', 'x', 'd', 'R', 'f', 'f1', 'q', 'f1', 'X', 'f1', 'f2', 'q', 'q', 'q', 'Q', 's', 'q', 's', 'q', 'X', 'q', 'p', 'q', 'K', 'N', 'X', 'E', 'U', 'U', 'q', 'X', 'E', 'O', 'T0', 'T', 'O', 'T0', 'T', 'O', 'T0', 'T', 'B', 'D', 'X', 'p0', 'B', 'p0', 'B', 'P', 'p0', 'p0', 'p', 'B', 'D', 'K', 'D', 'D', 'C', 'N', 'c', 'k', 'K', 'y', 'Y', 'D', 'x', 'n', 'N', 'D', 't', 'N', 'p0', 'B', 'q0', 'k', 'K', 'k', 'x', 'k', 'p0', 'n', 'E', 'C', 'D', 'N', 'K', 'K', 'U', 'D', 'D', 'K', 'P', 'B', 'B', 'E', 'k', 'K', 'k', 'C', 'Y', 'X', 'N', 'R', 'K', 'K', 'N', 'p', 'Y', 'N', 'p', 'P', 'Q', 'E', 'n', 'K', 'E', 'E', 'E', 'pq', 's', 'x', 'i', 'j', 'X', 'p', 'T', 'p', 'p', 'T', 'T', 'X', 'x', 'p', 'p', 't', 'n', 'n', 'n', 'n', 'f', 'k', 'k', 'k', 'i', 's', 'n', 's', 's', 'p', 'd', 'n', 'c', 'n', 'n', 'p', 'i', 'i', 'i', 'J', 'd', 'k', 'D', 'k', 'k', 'D', 'k', 'D', 'k', 'D', 'R', 'X', 'X', 'D', 'F', 'q', 'C', 'C', 'G', 'i', 'i', 'f0', 'C', 'C', 'X', 'X', 'j', 'j1', 'j1', 'j2', 'i', 'j1', 'j2', 'j2', 'j1', 'j2', 'j1', 'b', 'b', 'b', 'a0', 'a0', 'T', 'C', 'i', 'j', 'p', 'i', 'i', 'n', 'c', 'c', 'Q', 'Q', 'R', 'h5f', 'h5f']
+NAME_NAME:1330,KW_NAME:3
+NAME_KW:275,KW_KW:62
+NAME_STRING:267,KW_other:3
+NAME_NUMBER:10
+NAME_STRING_list:['m', 'a', 'a', 'X', 'h', 'U', 'X', 'h', 'c', 'X', 'h', 'X', 'X', 'X', 'a', 'b', 'a', 'a', 'i', 'j', 'x', 'j', 'j', 'j', 'k', 'i', 'i', 'm', 'm', 'm', 'm', 'm', 'h', 'm', 'm', 'm', 'h', 'm', 'm', 'm', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'a', 'e', 'f', 'm', 'r', 'j', 'j', 'c', 'i', 'x', 'X', 'x', 'x', 'x', 'g', 'x', 'x', 'x', 'i', 'i', 'f', 'f', 'x', 'x', 'x', 'x', 'R', 'x', 'i', 'q', 'q', 'Q', 's', 's', 'x', 'C', 'I', 'I', 'F', 'N', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'p0', 'p0', 'B', 'C', 'N', 'c', 'C', 'c', 'x', 'x', 'C', 'n', 'N', 'c', 'n', 'c', 'N', 'q0', 'x', 'x', 'k', 'n', 'E', 'x', 'B', 'c', 'k', 'C', 'c', 'c', 'x', 'C', 'C', 'N', 'K', 'N', 'N', 'P', 'Q', 'E', 'E', 'E', 'x', 'x', 'x', 'i', 'u', 'X', 'p', 'X', 'T', 'X', 'X', 'p', 'n', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 's', 'v', 's', 'i', 'c', 'c', 't', 'c', 'c', 'n', 's', 'J', 'j', 'J', 'u', 'J', 'j', 'u', 'J', 'J', 'i', 'i', 'i', 'i', 'J', 'c', 'c', 'x', 'd', 'X', 'X', 'i', 'i', 'F', 'C', 'C', 'C', 'C', 'G', 'i', 'i', 'i', 'i', 'X', 'C', 'C', 'C', 'C', 'i', 'X', 'i', 'i', 'i', 'C', 'i', 'i', 'i', 'i', 'X', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'X', 'X', 'x', 'X', 'j', 'j', 'j1', 'j1', 'j1', 'j1', 'j1', 'V', 'a', 'b', 'a', 'a0', 'a0', 'T', 'C', 'i', 'j', 'j', 'i', 'i', 'i', 'n', 'i', 'c', 'c', 'C', 'Q', 'R', 'A', 'R', 'A', 'h5f', 'f']
+NAME_NUMBER_list:['f', 'q', 'q', 'O', 'O', 'O', 'B', 'n', 'j2', 'b']
 Accuracy on the test set of pretrained_BERT_layer_12 model using the intercept:
 Score (accuracy) of the probe: 0.47
