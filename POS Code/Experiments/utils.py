@@ -24,7 +24,7 @@ def getOverlap(s1, s2):
     return len(s1[pos_a:pos_a+size])
 
 
-def remove_seen_tokens(tokens,activations):
+def removeSeenTokens(tokens,activations):
     seen_before = []
     new_source_tokens = []
     new_target_tokens = []
@@ -413,10 +413,11 @@ def filterByClass(tokens,activations,X,y,label2idx,model_name):
     return tokens,activations,flat_src_tokens,X,y,new_label2idx,new_idx2label
 
 
-def preprocess(activation_file_name,IN_file,LABEL_file,model_name):
+def preprocess(activation_file_name,IN_file,LABEL_file,remove_seen_tokens,model_name):
     activations = load_extracted_activations(activation_file_name)
     tokens =  load_tokens(activations,IN_file,LABEL_file)
-    # tokens,activations=remove_seen_tokens(tokens,activations)
+    if remove_seen_tokens:
+        tokens,activations=removeSeenTokens(tokens,activations)
     X, y, label2idx, _, _, _ = get_mappings(tokens,activations)
     tokens,activations,flat_src_tokens,X_train, y_train, label2idx, idx2label = filterByClass(tokens,activations,X,y,label2idx,model_name)
     return tokens,activations,flat_src_tokens,X_train,y_train,label2idx,idx2label
