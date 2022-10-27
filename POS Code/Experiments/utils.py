@@ -149,44 +149,45 @@ def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2labe
     print(f"Accuracy on the test set of probing {model_name} of all layers:")
     scores,predictions = linear_probe.evaluate_probe(best_probe, X_test, y_test,idx_to_class=idx2label,
                                                     return_predictions=True,source_tokens=src_tokens_test)
-    NAME_NAME, NAME_KW, NAME_STRING,NAME_NUMBER, KW_NAME, KW_KW, KW_other= 0, 0, 0, 0, 0, 0, 0
-    NAME_STRING_list,NAME_NUMBER_list = [], []
-    for idx,this_y_test in enumerate(y_test):
-        predicted_class = predictions[idx][1]
-        source_token = predictions[idx][0]
-        if idx2label[this_y_test] == "NAME":
-            if predicted_class == 'NAME':
-                NAME_NAME += 1
-            elif predicted_class == 'KEYWORD':
-                NAME_KW += 1
-            elif predicted_class == 'STRING':
-                NAME_STRING += 1
-                NAME_STRING_list.append(source_token)
-            elif predicted_class == 'NUMBER':
-                NAME_NUMBER += 1
-                NAME_NUMBER_list.append(source_token)
-        elif idx2label[this_y_test] == "KEYWORD":
-            if predicted_class == 'KEYWORD':
-                KW_KW += 1
-            elif predicted_class == 'NAME':
-                KW_NAME += 1
-            else:
-                KW_other += 1
-    print(scores)
-    print(f"Confusion matrix between NAME and KEYWORD:")
-    print(f"NAME_NAME:{NAME_NAME},KW_NAME:{KW_NAME}")
-    print(f"NAME_KW:{NAME_KW},KW_KW:{KW_KW}")
-    print(f"NAME_STRING:{NAME_STRING},KW_other:{KW_other}")
-    print(f"NAME_NUMBER:{NAME_NUMBER}")
-    print(f"NAME_STRING_list:{NAME_STRING_list}")
-    print(f"NAME_NUMBER_list:{NAME_NUMBER_list}")
+    if src_tokens_test is not None:
+        NAME_NAME, NAME_KW, NAME_STRING,NAME_NUMBER, KW_NAME, KW_KW, KW_other= 0, 0, 0, 0, 0, 0, 0
+        NAME_STRING_list,NAME_NUMBER_list = [], []
+        for idx,this_y_test in enumerate(y_test):
+            predicted_class = predictions[idx][1]
+            source_token = predictions[idx][0]
+            if idx2label[this_y_test] == "NAME":
+                if predicted_class == 'NAME':
+                    NAME_NAME += 1
+                elif predicted_class == 'KEYWORD':
+                    NAME_KW += 1
+                elif predicted_class == 'STRING':
+                    NAME_STRING += 1
+                    NAME_STRING_list.append(source_token)
+                elif predicted_class == 'NUMBER':
+                    NAME_NUMBER += 1
+                    NAME_NUMBER_list.append(source_token)
+            elif idx2label[this_y_test] == "KEYWORD":
+                if predicted_class == 'KEYWORD':
+                    KW_KW += 1
+                elif predicted_class == 'NAME':
+                    KW_NAME += 1
+                else:
+                    KW_other += 1
+        print(scores)
+        print(f"Confusion matrix between NAME and KEYWORD:")
+        print(f"NAME_NAME:{NAME_NAME},KW_NAME:{KW_NAME}")
+        print(f"NAME_KW:{NAME_KW},KW_KW:{KW_KW}")
+        print(f"NAME_STRING:{NAME_STRING},KW_other:{KW_other}")
+        print(f"NAME_NUMBER:{NAME_NUMBER}")
+        print(f"NAME_STRING_list:{NAME_STRING_list}")
+        print(f"NAME_NUMBER_list:{NAME_NUMBER_list}")
     X_test_baseline = np.zeros_like(X_test)
     print(f"Accuracy on the test set of {model_name} model using the intercept:")
     linear_probe.evaluate_probe(best_probe, X_test_baseline, y_test, idx_to_class=idx2label)
     return best_probe, scores
 
 
-def get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,probe,label2idx,idx2label,weighted,model_name):
+def get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,probe,label2idx,idx2label,src_tokens_test,weighted,model_name):
     ''' Returns top 2% neurons for each model'''
 
     #Top neurons
@@ -209,7 +210,7 @@ def get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,probe,label2id
     print("The shape of the validation set:",X_selected_valid.shape)
     print("The shape of the testing set:",X_selected_test.shape)
     all_activations_probe(X_selected_train,y_train,X_selected_valid,y_valid,X_selected_test,y_test,idx2label,
-                        weighted,this_model_name)
+                        src_tokens_test,weighted,this_model_name)
 
     ordering, cutoffs = linear_probe.get_neuron_ordering(probe, label2idx)
     X_selected_train = ablation.filter_activations_keep_neurons(X_train, ordering[:200])
@@ -217,7 +218,7 @@ def get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,probe,label2id
     X_selected_test = ablation.filter_activations_keep_neurons(X_test, ordering[:200])
     this_model_name = f"{model_name}_top200_neurons"
     all_activations_probe(X_selected_train,y_train,X_selected_valid,y_valid,X_selected_test,y_test,idx2label,
-                        weighted,this_model_name)
+                        src_tokens_test,weighted,this_model_name)
     return top_neurons
 
 
@@ -300,7 +301,7 @@ def control_task_probes(tokens_train,X_train,y_train,tokens_test,X_test,y_test,i
     assert X_valid.shape[0] == len(y_valid)
     assert X_test.shape[0] == len(y_test)
     model_name = f'{model_name}_control_task'
-    _, ct_scores = all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label_train,False,model_name)
+    _, ct_scores = all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label_train,None,False,model_name)
     
     selectivity = original_scores['__OVERALL__'] - ct_scores['__OVERALL__']
     print()
