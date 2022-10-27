@@ -126,7 +126,7 @@ def get_mappings(tokens,activations):
     return X, y, label2idx, idx2label, src2idx, idx2src
 
 
-def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,model_name):
+def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,src_tokens_test,model_name):
     #Train the linear probes (logistic regression) - POS(code) tagging
     l1 = [0,0.001,0.01,0.1]
     l2 = [0,0.001,0.01,0.1]
@@ -136,7 +136,8 @@ def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2labe
     print()
     print(f"The best l1={best_l1}, the best l2={best_l2} for {model_name}")
     print(f"Accuracy on the test set of probing {model_name} of all layers:")
-    scores,predictions = linear_probe.evaluate_probe(best_probe, X_test, y_test, idx_to_class=idx2label,return_predictions=True)
+    scores,predictions = linear_probe.evaluate_probe(best_probe, X_test, y_test,idx_to_class=idx2label,
+                                                    return_predictions=True,source_tokens=src_tokens_test)
     NAME_NAME, NAME_KW, NAME_STRING,NAME_NUMBER, KW_NAME, KW_KW, KW_other= 0, 0, 0, 0, 0, 0, 0
     NAME_STRING_list,NAME_NUMBER_list = [], []
     for idx,this_y_test in enumerate(y_test):
@@ -215,7 +216,7 @@ def get_top_words(top_neurons,tokens,activations,model_name):
         print(f"Top words for {model_name} neuron indx {neuron}",top_words)
 
 
-def layerwise_probes_inference(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,model_name):
+def layerwise_probes_inference(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,src_tokens_test,model_name):
     ''' Returns models and accuracy(score) of the probes trained on activations from different layers '''
     l1 = [0,0.001,0.01,0.1]
     l2 = [0,0.001,0.01,0.1]
@@ -225,7 +226,7 @@ def layerwise_probes_inference(X_train,y_train,X_valid,y_valid,X_test,y_test,idx
         layer_train = ablation.filter_activations_by_layers(X_train, [i], 13)
         layer_valid = ablation.filter_activations_by_layers(X_valid, [i], 13)
         layer_test = ablation.filter_activations_by_layers(X_test, [i], 13)
-        _,_ = all_activations_probe(layer_train,y_train,layer_valid,y_valid,layer_test,y_test,idx2label,this_model_name)
+        _,_ = all_activations_probe(layer_train,y_train,layer_valid,y_valid,layer_test,y_test,idx2label,src_tokens_test,this_model_name)
 
 
 def randomReassignment(tokens,labels,distribution):

@@ -47,7 +47,7 @@ def main():
             tokens_train,activations_train,flat_tokens_train,X_train, y_train, label2idx_train, idx2label_train=preprocess(ACTIVATION_NAMES[this_model][0],
                                                                         './src_files/codetest2_train_unique.in','./src_files/codetest2_train_unique.label',
                                                                         this_model)
-            _,_,flat_tokens_test,X_test, y_test, label2idx_test, _=preprocess(ACTIVATION_NAMES[this_model][1],
+            tokens_test,activations_test,flat_tokens_test,X_test, y_test, label2idx_test, _=preprocess(ACTIVATION_NAMES[this_model][1],
                                             './src_files/codetest2_test_unique.in','./src_files/codetest2_test_unique.label',
                                             this_model)
             # remove tokens that are shared by training and testing
@@ -100,6 +100,7 @@ def main():
             flat_tokens_test = flat_tokens_test[idx_selected]
             X_test = X_test[idx_selected]
             y_test = y_test[idx_selected]
+            tokens_test,_=alignTokenAct(tokens_test,activations_test,idx_selected)
 
             print()
             print("The distribution of classes in training after removing repeated tokens between training and tesing:")
@@ -132,10 +133,12 @@ def main():
             print("The shape of the training set:",X_train.shape)
             print("The shape of the validation set:",X_valid.shape)
             print("The shape of the testing set:",X_test.shape)
-            probe, scores = all_activations_probe(X_train,y_train,X_valid,y_valid,X_test, y_test,idx2label_train,this_model)
+            probe, scores = all_activations_probe(X_train,y_train,X_valid,y_valid,X_test, y_test,
+                                                    idx2label_train,tokens_test['source'],this_model)
 
             #Layerwise Probes
-            layerwise_probes_inference(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label_train,this_model)
+            layerwise_probes_inference(X_train,y_train,X_valid,y_valid,X_test,y_test,
+                                                    idx2label_train,tokens_test['source'],this_model)
             exit(0)
 
             #Important neuron probes
