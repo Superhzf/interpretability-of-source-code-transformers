@@ -49,7 +49,7 @@ def main():
                                                                         False,this_model)
             tokens_test,activations_test,flat_tokens_test,X_test, y_test, label2idx_test, _=preprocess(ACTIVATION_NAMES[this_model][1],
                                             './src_files/codetest2_test_unique.in','./src_files/codetest2_test_unique.label',
-                                            True,this_model)
+                                            False,this_model)
             # remove tokens that are shared by training and testing
             # At the same, make sure to keep at least 10 KW in the training set
             idx_selected = []
