@@ -136,6 +136,7 @@ def main():
 
             #Layerwise Probes
             layerwise_probes_inference(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label_train,this_model)
+            exit(0)
 
             #Important neuron probes
             top_neurons = get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,probe,label2idx_train,idx2label_train,this_model)

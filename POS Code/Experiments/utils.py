@@ -138,8 +138,10 @@ def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2labe
     print(f"Accuracy on the test set of probing {model_name} of all layers:")
     scores,predictions = linear_probe.evaluate_probe(best_probe, X_test, y_test, idx_to_class=idx2label,return_predictions=True)
     NAME_NAME, NAME_KW, NAME_STRING,NAME_NUMBER, KW_NAME, KW_KW, KW_other= 0, 0, 0, 0, 0, 0, 0
+    NAME_STRING_list,NAME_NUMBER_list = [], []
     for idx,this_y_test in enumerate(y_test):
         predicted_class = predictions[idx][1]
+        source_token = predictions[idx][0]
         if idx2label[this_y_test] == "NAME":
             if predicted_class == 'NAME':
                 NAME_NAME += 1
@@ -147,8 +149,10 @@ def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2labe
                 NAME_KW += 1
             elif predicted_class == 'STRING':
                 NAME_STRING += 1
+                NAME_STRING_list.append(source_token)
             elif predicted_class == 'NUMBER':
                 NAME_NUMBER += 1
+                NAME_NUMBER_list.append(source_token)
         elif idx2label[this_y_test] == "KEYWORD":
             if predicted_class == 'KEYWORD':
                 KW_KW += 1
@@ -162,6 +166,8 @@ def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2labe
     print(f"NAME_KW:{NAME_KW},KW_KW:{KW_KW}")
     print(f"NAME_STRING:{NAME_STRING},KW_other:{KW_other}")
     print(f"NAME_NUMBER:{NAME_NUMBER}")
+    print(f"NAME_STRING_list:{NAME_STRING_list}")
+    print(f"NAME_NUMBER_list:{NAME_NUMBER_list}")
     X_test_baseline = np.zeros_like(X_test)
     print(f"Accuracy on the test set of {model_name} model using the intercept:")
     linear_probe.evaluate_probe(best_probe, X_test_baseline, y_test, idx_to_class=idx2label)
