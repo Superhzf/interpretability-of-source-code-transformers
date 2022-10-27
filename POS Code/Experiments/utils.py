@@ -138,7 +138,7 @@ def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2labe
     for this_class in classes:
         this_weight =  count_classes[this_class]/total
         weight.append(this_weight)
-    weight = torch.as_tensor(weight)
+    weight = torch.as_tensor(weight,device=torch.device('cuda'))
     best_l1,best_l2,best_probe=param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2,weight)
     #Get scores of probes
     print()
