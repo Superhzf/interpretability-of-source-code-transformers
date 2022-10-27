@@ -200,7 +200,7 @@ def get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,probe,label2id
 
     #Train probes on top neurons
     l1 = [0,0.001,0.01,0.1]
-    l2 = [0,0.001,0.01,0.1]
+    l2 = [0,0.001,0.01,0.1,1,10]
     X_selected_train = ablation.filter_activations_keep_neurons(X_train, top_neurons)
     X_selected_valid = ablation.filter_activations_keep_neurons(X_valid, top_neurons)
     X_selected_test = ablation.filter_activations_keep_neurons(X_test, top_neurons)
