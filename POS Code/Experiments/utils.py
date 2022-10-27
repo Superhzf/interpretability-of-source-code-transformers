@@ -91,7 +91,7 @@ def load_tokens(activations,FILES_IN,FILES_LABEL):
     return tokens
 
 
-def param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2):
+def param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2,weight=None):
     best_l1 = None
     best_l2 = None
     best_score = -float('inf')
@@ -102,7 +102,8 @@ def param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2):
                                                                     lambda_l1=this_l1,
                                                                     lambda_l2=this_l2,
                                                                     num_epochs=10,
-                                                                    batch_size=128)
+                                                                    batch_size=128,
+                                                                    weight=weight)
             this_score = linear_probe.evaluate_probe(this_probe, X_valid, y_valid, idx_to_class=idx2label)
             this_weights = list(this_probe.parameters())[0].data.cpu().numpy()
             this_weights_mean = np.mean(np.abs(this_weights))
@@ -130,8 +131,14 @@ def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2labe
     #Train the linear probes (logistic regression) - POS(code) tagging
     l1 = [0,0.001,0.01,0.1]
     l2 = [0,0.001,0.01,0.1]
-
-    best_l1,best_l2,best_probe=param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2)
+    classes = sorted(list(set(y_train)))
+    count_classes = collections.Counter(y_train)
+    total = sum(count_classes.values())
+    weight = []
+    for this_class in classes:
+        this_weight =  count_classes[this_class]/total
+        weight.append(this_weight)
+    best_l1,best_l2,best_probe=param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2,weight)
     #Get scores of probes
     print()
     print(f"The best l1={best_l1}, the best l2={best_l2} for {model_name}")
