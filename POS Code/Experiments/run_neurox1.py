@@ -6,6 +6,7 @@ from sklearn.model_selection import train_test_split
 import numpy as np
 import collections
 
+weighted = False
 MODEL_NAMES = ['pretrained_BERT',
                'pretrained_CodeBERT','pretrained_GraphCodeBERT',
                'finetuned_defdet_CodeBERT','finetuned_defdet_GraphCodeBERT',
@@ -134,15 +135,15 @@ def main():
             print("The shape of the validation set:",X_valid.shape)
             print("The shape of the testing set:",X_test.shape)
             probe, scores = all_activations_probe(X_train,y_train,X_valid,y_valid,X_test, y_test,
-                                                    idx2label_train,tokens_test['source'],this_model)
+                                                    idx2label_train,tokens_test['source'],weighted,this_model)
 
             #Layerwise Probes
             layerwise_probes_inference(X_train,y_train,X_valid,y_valid,X_test,y_test,
-                                                    idx2label_train,tokens_test['source'],this_model)
-            exit(0)
+                                                    idx2label_train,tokens_test['source'],weighted,this_model)
 
             #Important neuron probes
-            top_neurons = get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,probe,label2idx_train,idx2label_train,this_model)
+            top_neurons = get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
+                                            probe,label2idx_train,idx2label_train,weighted,this_model)
             get_top_words(top_neurons,tokens_train,activations_train,this_model)
             del X_train, X_test, X_valid,y_train, y_test,y_valid
             #Control task probes

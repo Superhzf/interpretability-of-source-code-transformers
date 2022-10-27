@@ -127,18 +127,21 @@ def get_mappings(tokens,activations):
     return X, y, label2idx, idx2label, src2idx, idx2src
 
 
-def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,src_tokens_test,model_name):
+def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,src_tokens_test,weighted,model_name):
     #Train the linear probes (logistic regression) - POS(code) tagging
     l1 = [0,0.001,0.01,0.1]
     l2 = [0,0.001,0.01,0.1]
-    classes = sorted(list(set(y_train)))
-    count_classes = collections.Counter(y_train)
-    total = sum(count_classes.values())
-    weight = []
-    for this_class in classes:
-        this_weight =  count_classes[this_class]/total
-        weight.append(this_weight)
-    weight = torch.as_tensor(weight,device=torch.device('cuda'))
+    if weighted:
+        classes = sorted(list(set(y_train)))
+        count_classes = collections.Counter(y_train)
+        total = sum(count_classes.values())
+        weight = []
+        for this_class in classes:
+            this_weight =  count_classes[this_class]/total
+            weight.append(this_weight)
+        weight = torch.as_tensor(weight,device=torch.device('cuda'))
+    else:
+        weight = None
     best_l1,best_l2,best_probe=param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2,weight)
     #Get scores of probes
     print()
@@ -183,7 +186,7 @@ def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2labe
     return best_probe, scores
 
 
-def get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,probe,label2idx,idx2label,model_name):
+def get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,probe,label2idx,idx2label,weighted,model_name):
     ''' Returns top 2% neurons for each model'''
 
     #Top neurons
@@ -205,14 +208,16 @@ def get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,probe,label2id
     print("The shape of the training set:",X_selected_train.shape)
     print("The shape of the validation set:",X_selected_valid.shape)
     print("The shape of the testing set:",X_selected_test.shape)
-    all_activations_probe(X_selected_train,y_train,X_selected_valid,y_valid,X_selected_test,y_test,idx2label,this_model_name)
+    all_activations_probe(X_selected_train,y_train,X_selected_valid,y_valid,X_selected_test,y_test,idx2label,
+                        weighted,this_model_name)
 
     ordering, cutoffs = linear_probe.get_neuron_ordering(probe, label2idx)
     X_selected_train = ablation.filter_activations_keep_neurons(X_train, ordering[:200])
     X_selected_valid = ablation.filter_activations_keep_neurons(X_valid, ordering[:200])
     X_selected_test = ablation.filter_activations_keep_neurons(X_test, ordering[:200])
     this_model_name = f"{model_name}_top200_neurons"
-    all_activations_probe(X_selected_train,y_train,X_selected_valid,y_valid,X_selected_test,y_test,idx2label,this_model_name)
+    all_activations_probe(X_selected_train,y_train,X_selected_valid,y_valid,X_selected_test,y_test,idx2label,
+                        weighted,this_model_name)
     return top_neurons
 
 
@@ -224,7 +229,7 @@ def get_top_words(top_neurons,tokens,activations,model_name):
         print(f"Top words for {model_name} neuron indx {neuron}",top_words)
 
 
-def layerwise_probes_inference(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,src_tokens_test,model_name):
+def layerwise_probes_inference(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,src_tokens_test,weighted,model_name):
     ''' Returns models and accuracy(score) of the probes trained on activations from different layers '''
     l1 = [0,0.001,0.01,0.1]
     l2 = [0,0.001,0.01,0.1]
@@ -234,7 +239,8 @@ def layerwise_probes_inference(X_train,y_train,X_valid,y_valid,X_test,y_test,idx
         layer_train = ablation.filter_activations_by_layers(X_train, [i], 13)
         layer_valid = ablation.filter_activations_by_layers(X_valid, [i], 13)
         layer_test = ablation.filter_activations_by_layers(X_test, [i], 13)
-        _,_ = all_activations_probe(layer_train,y_train,layer_valid,y_valid,layer_test,y_test,idx2label,src_tokens_test,this_model_name)
+        _,_ = all_activations_probe(layer_train,y_train,layer_valid,y_valid,layer_test,y_test,
+                                    idx2label,src_tokens_test,weighted,this_model_name)
 
 
 def randomReassignment(tokens,labels,distribution):
@@ -294,7 +300,7 @@ def control_task_probes(tokens_train,X_train,y_train,tokens_test,X_test,y_test,i
     assert X_valid.shape[0] == len(y_valid)
     assert X_test.shape[0] == len(y_test)
     model_name = f'{model_name}_control_task'
-    _, ct_scores = all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label_train,model_name)
+    _, ct_scores = all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label_train,False,model_name)
     
     selectivity = original_scores['__OVERALL__'] - ct_scores['__OVERALL__']
     print()
