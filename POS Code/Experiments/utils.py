@@ -96,6 +96,7 @@ def param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2):
     best_l2 = None
     best_score = -float('inf')
     best_probe = None
+    best_predictions = None
     for this_l1 in l1:
         for this_l2 in l2:
             this_probe = linear_probe.train_logistic_regression_probe(X_train, y_train,
@@ -103,7 +104,8 @@ def param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2):
                                                                     lambda_l2=this_l2,
                                                                     num_epochs=10,
                                                                     batch_size=128)
-            this_score = linear_probe.evaluate_probe(this_probe, X_valid, y_valid, idx_to_class=idx2label)
+            this_score,this_predictions = linear_probe.evaluate_probe(this_probe, X_valid, y_valid, idx_to_class=idx2label,
+                                                                    return_predictions=True)
             this_weights = list(this_probe.parameters())[0].data.cpu().numpy()
             this_weights_mean = np.mean(np.abs(this_weights))
             # print(f"l1={this_l1},l2={this_l2}")
@@ -115,7 +117,8 @@ def param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2):
                 best_l1 = this_l1
                 best_l2 = this_l2
                 best_probe = this_probe
-        return best_l1,best_l2,best_probe
+                best_predictions = this_predictions
+        return best_l1,best_l2,best_probe,this_predictions
 
 
 def get_mappings(tokens,activations):
@@ -131,7 +134,24 @@ def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2labe
     l1 = [0,0.001,0.01,0.1]
     l2 = [0,0.001,0.01,0.1]
 
-    best_l1,best_l2,best_probe=param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2)
+    best_l1,best_l2,best_probe,best_predictions=param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2)
+    NAME_NAME, NAME_KW, NAME_other, KW_NAME, KW_KW, KW_other= 0, 0, 0, 0, 0, 0
+    for idx,this_y_test in enumerate(y_test):
+        predicted_class = best_predictions[idx][1]
+        if idx2label[this_y_test] == "NAME":
+            if predicted_class == 'NAME':
+                NAME_NAME += 1
+            elif predicted_class == 'KEYWORD':
+                NAME_KW += 1
+            else:
+                NAME_other += 1
+        elif idx2label[this_y_test] == "KEYWORD":
+            if predicted_class == 'KEYWORD':
+                KW_KW += 1
+            elif predicted_class == 'NAME':
+                KW_NAME += 1
+            else:
+                KW_other += 1
     #Get scores of probes
     print()
     print(f"The best l1={best_l1}, the best l2={best_l2} for {model_name}")
@@ -141,6 +161,10 @@ def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2labe
     X_test_baseline = np.zeros_like(X_test)
     print(f"Accuracy on the test set of {model_name} model using the intercept:")
     linear_probe.evaluate_probe(best_probe, X_test_baseline, y_test, idx_to_class=idx2label)
+    print(f"Confusion matrix between NAME and KEYWORD:")
+    print(f"NAME_NAME:{NAME_NAME},KW_NAME:{KW_NAME}")
+    print(f"NAME_KW:{KW_NAME},KW_KW:{KW_KW}")
+    print(f"NAME_other:{NAME_other},KW_other:{KW_other}")
     return best_probe, scores
 
 
