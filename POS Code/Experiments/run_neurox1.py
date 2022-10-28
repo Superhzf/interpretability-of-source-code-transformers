@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 import numpy as np
 import collections
 
-weighted = False
+weighted = True
 MODEL_NAMES = ['pretrained_BERT',
                'pretrained_CodeBERT','pretrained_GraphCodeBERT',
                'finetuned_defdet_CodeBERT','finetuned_defdet_GraphCodeBERT',
