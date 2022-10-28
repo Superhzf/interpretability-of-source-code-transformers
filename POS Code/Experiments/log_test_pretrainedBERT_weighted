@@ -1,0 +1,1777 @@
+Getting activations from json files. If you need to extract them, run with --extract=True 
+
+Anayzing pretrained_BERT
+Loading json activations from bert_activations_train.json...
+7656 13.0
+Number of tokens:  72951
+length of source dictionary:  5099
+length of target dictionary:  42
+72951
+Total instances: 72951
+['_reflection', 'response_values', 'extent', 'init', 'first_branch', 'SCPreferencesCommitChanges', 'api_key', 'MOBILE_NUMBER_LEN', 'nsa', 'realpath', 'symlink', 'diverge_commits', 'deleteplan', 'plural', '302', '"anonymous"', '_session', 'STORAGE_RESOURCE', 'proc', 'mode']
+Number of samples:  72951
+Stats: Labels with their frequencies in the final set
+NAME 23204
+NEWLINE 6586
+DOT 5889
+LPAR 5444
+RPAR 5263
+KEYWORD 5018
+COMMA 4364
+EQUAL 3897
+COLON 2622
+DEDENT 1878
+INDENT 1593
+NUMBER 1356
+LSQB 1291
+RSQB 1267
+NL 1069
+STRING 550
+LBRACE 293
+EQEQUAL 226
+RBRACE 211
+PLUS 200
+PERCENT 109
+STAR 94
+MINUS 83
+AT 61
+DOUBLESTAR 60
+GREATER 59
+PLUSEQUAL 52
+NOTEQUAL 44
+LEFTSHIFT 31
+LESS 29
+LESSEQUAL 18
+COMMENT 15
+GREATEREQUAL 15
+SEMI 13
+VBAR 12
+SLASH 11
+TILDE 7
+ELLIPSIS 6
+AMPER 5
+MINEQUAL 3
+ERRORTOKEN 2
+RIGHTSHIFT 1
+pretrained_BERT distribution after trauncating:
+{0: 0.7701805629314923, 3: 0.16655602761550717, 2: 0.045007966011683484, 1: 0.01825544344131705}
+{0: 23204, 3: 5018, 2: 1356, 1: 550}
+{'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
+Loading json activations from bert_activations_test.json...
+5985 13.0
+Number of tokens:  64699
+length of source dictionary:  3727
+length of target dictionary:  42
+64699
+Total instances: 64699
+['_v_attrs', 'time_filters', 'api', 'Xw', 'P', 'visited', 'Quantity', '_g_settitle', 'jmax', 'costfunc', 'openmdao', 'tooltip_i', 'CrossEntropyMulti', '_container_child_objects', 'qstkutil', '"best"', 'hotshot', 'init', 'filtered_names', 'datadir']
+Number of samples:  64699
+Stats: Labels with their frequencies in the final set
+NAME 20893
+NEWLINE 5444
+DOT 5083
+COMMA 4481
+RPAR 4279
+LPAR 4277
+KEYWORD 3639
+EQUAL 3459
+NUMBER 2218
+COLON 1972
+LSQB 1939
+RSQB 1927
+DEDENT 1387
+INDENT 1203
+NL 540
+STRING 324
+MINUS 262
+PLUS 248
+STAR 236
+EQEQUAL 141
+LBRACE 128
+RBRACE 126
+SLASH 122
+PERCENT 69
+DOUBLESTAR 55
+PLUSEQUAL 50
+GREATER 47
+NOTEQUAL 32
+COMMENT 22
+LESS 20
+STAREQUAL 16
+GREATEREQUAL 16
+AT 10
+MINEQUAL 7
+SEMI 7
+VBAR 6
+LESSEQUAL 5
+AMPER 3
+SLASHEQUAL 2
+DOUBLESLASH 2
+TILDE 1
+LEFTSHIFT 1
+pretrained_BERT distribution after trauncating:
+{0: 0.7716997857723277, 3: 0.134409396468937, 2: 0.08192361675408141, 1: 0.011967201004653911}
+{0: 20893, 3: 3639, 2: 2218, 1: 324}
+{'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
+
+The distribution of classes in training after removing repeated tokens between training and tesing:
+Counter({0: 13506, 3: 1019, 1: 491, 2: 136})
+{'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
+The distribution of classes in testing:
+Counter({2: 2039, 0: 1882, 3: 68, 1: 37})
+{'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
+
+The shape of the training set: (13636, 9984)
+The shape of the validation set: (1516, 9984)
+The shape of the testing set: (4026, 9984)
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0112
+Epoch: [2/10], Loss: 0.0041
+Epoch: [3/10], Loss: 0.0012
+Epoch: [4/10], Loss: 0.0007
+Epoch: [5/10], Loss: 0.0004
+Epoch: [6/10], Loss: 0.0002
+Epoch: [7/10], Loss: 0.0002
+Epoch: [8/10], Loss: 0.0001
+Epoch: [9/10], Loss: 0.0001
+Epoch: [10/10], Loss: 0.0001
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0113
+Epoch: [2/10], Loss: 0.0042
+Epoch: [3/10], Loss: 0.0012
+Epoch: [4/10], Loss: 0.0008
+Epoch: [5/10], Loss: 0.0004
+Epoch: [6/10], Loss: 0.0003
+Epoch: [7/10], Loss: 0.0002
+Epoch: [8/10], Loss: 0.0002
+Epoch: [9/10], Loss: 0.0001
+Epoch: [10/10], Loss: 0.0001
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0111
+Epoch: [2/10], Loss: 0.0043
+Epoch: [3/10], Loss: 0.0014
+Epoch: [4/10], Loss: 0.0010
+Epoch: [5/10], Loss: 0.0006
+Epoch: [6/10], Loss: 0.0005
+Epoch: [7/10], Loss: 0.0004
+Epoch: [8/10], Loss: 0.0004
+Epoch: [9/10], Loss: 0.0003
+Epoch: [10/10], Loss: 0.0003
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0123
+Epoch: [2/10], Loss: 0.0059
+Epoch: [3/10], Loss: 0.0031
+Epoch: [4/10], Loss: 0.0028
+Epoch: [5/10], Loss: 0.0022
+Epoch: [6/10], Loss: 0.0020
+Epoch: [7/10], Loss: 0.0019
+Epoch: [8/10], Loss: 0.0020
+Epoch: [9/10], Loss: 0.0020
+Epoch: [10/10], Loss: 0.0021
+Score (accuracy) of the probe: 0.92
+
+The best l1=0, the best l2=0 for pretrained_BERT
+Accuracy on the test set of probing pretrained_BERT of all layers:
+Score (accuracy) of the probe: 0.81
+{'__OVERALL__': 0.8099850968703428, 'NAME': 0.6509032943676939, 'STRING': 1.0, 'NUMBER': 0.9470328592447278, 'KEYWORD': 1.0}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1225,KW_NAME:0
+NAME_KW:183,KW_KW:68
+NAME_STRING:327,KW_other:0
+NAME_NUMBER:147
+NAME_STRING_list:['a', 'a', 'x', 'X', 'W', 'U', 'X', 'W', 'U', 'W', 'U', 'p', 'd', 's', 'a', 'a', 'a', 'a', 'a', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'm', 'm', 'm', 'm', 'm', 'h', 'm', 'm', 'm', 'm', 'm', 'm', 'X', 'X', 'X', 'X', 'X', 'X', 'x', 'x', 'i', 'a', 'a', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'j', 'k', 'v', 'i', 'i', 'i', 'x', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'x', 'x', 'x', 'z', 'x', 'x', 'i', 'S', 'I', 'I', 'K', 'I', 'I', 'q', 'S', 'q', 'Q', 'q', 'K', 'I', 'K', 'q', 'q', 'Q', 'U', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'x', 'I', 'K', 'N', 'k', 'K', 'x', 'K', 'N', 'x', 'k', 'K', 'k', 'n', 'N', 'D', 'N', 'K', 'K', 'K', 'x', 'n', 'k', 'K', 'X', 'N', 'K', 'K', 'Q', 'N', 'I', 'q', 'X', 'q', 'Q', 'n', 'K', 'I', 'I', 'I', 'x', 'x', 'i', 'u', 'j', 'g', 'X', 'X', 'X', 'i', 'x', 'n', 'n', 'n', 'n', 'i', 'u', 'i', 'u', 'i', 'u', 'i', 'i', 'i', 'v', 'i', 'i', 'v', 'u', 'u', 'k', 'k', 'k', 'k', 'i', 'i', 'v', 'i', 'n', 'n', 'm', 'm', 'm', 'i', 'v', 'n', 'u', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'J', 'J', 'i', 'J', 'J', 'p', 'm', 'x', 'x', 'X', 'k', 'k', 'k', 'X', 'X', 'i', 'i', 'i', 'i', 'q', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'i', 'i', 'i', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'g', 'g', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'X', 'x', 'X', 'i', 'i', 'j1', 'i', 'i', 'j1', 'i', 'i', 'P', 'a', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'Q', 'A', 'Q', 'A']
+NAME_NUMBER_list:['m', 'T', 'T', 'h', 'h0', 'T', 'p', 'T', 'h0', 't', 'p', 'p', 'T', 'T', 'T', 'f', 't', 't0', 't', 't0', 'h', 'm', 'h', 't', 'f', 'k', 'f', 'm', 'm', 'm', 'xx', 'g', 't', 'f', 'f1', 'q', 'q', 'T', 'P', 'Q', 'T0', 'T0', 't0', 't0', 't0', 'T', 'T0', 'T0', 't0', 't0', 't0', 'T', 'T0', 'T0', 't0', 't0', 'T0', 't0', 't0', 'T0', 't0', 'p0', 'p0', 'p', 'p', 'c', 'C', 'c', 'n', 'N', 't', 't', 't', 't', 'p0', 'U', 't', 't', 't', 't', 't', 't', 'c', 'C', 'N', 't', 'T', 'T', 'T', 'T', 'p', 'p', 'T', 'p', 'T', 'T', 'T', 'T', 'T', 'T', 'T', 't', 't', 't', 't', 't', 't', 'n', 'f', 's', 'n', 't', 't', 'n', 's', 'p', 'p', 'p', 'p', 'f', 'T', 'f0', 'F', 'f', 'T', 'T', 'T', 'T', 'T', 'P', 'T', 'T', 'b', 'a3', 'a0', 'a0', 'C', 'f', 'f', 'p', 'p', 'n', 'T', 'T', 'R', 't', 't']
+Accuracy on the test set of pretrained_BERT model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_BERT Layer 0
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0098
+Epoch: [2/10], Loss: 0.0058
+Epoch: [3/10], Loss: 0.0041
+Epoch: [4/10], Loss: 0.0032
+Epoch: [5/10], Loss: 0.0025
+Epoch: [6/10], Loss: 0.0021
+Epoch: [7/10], Loss: 0.0018
+Epoch: [8/10], Loss: 0.0016
+Epoch: [9/10], Loss: 0.0014
+Epoch: [10/10], Loss: 0.0012
+Score (accuracy) of the probe: 0.94
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0098
+Epoch: [2/10], Loss: 0.0058
+Epoch: [3/10], Loss: 0.0041
+Epoch: [4/10], Loss: 0.0032
+Epoch: [5/10], Loss: 0.0026
+Epoch: [6/10], Loss: 0.0022
+Epoch: [7/10], Loss: 0.0019
+Epoch: [8/10], Loss: 0.0016
+Epoch: [9/10], Loss: 0.0014
+Epoch: [10/10], Loss: 0.0013
+Score (accuracy) of the probe: 0.94
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0103
+Epoch: [2/10], Loss: 0.0061
+Epoch: [3/10], Loss: 0.0044
+Epoch: [4/10], Loss: 0.0034
+Epoch: [5/10], Loss: 0.0028
+Epoch: [6/10], Loss: 0.0024
+Epoch: [7/10], Loss: 0.0021
+Epoch: [8/10], Loss: 0.0019
+Epoch: [9/10], Loss: 0.0017
+Epoch: [10/10], Loss: 0.0015
+Score (accuracy) of the probe: 0.94
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0106
+Epoch: [2/10], Loss: 0.0069
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0047
+Epoch: [5/10], Loss: 0.0042
+Epoch: [6/10], Loss: 0.0038
+Epoch: [7/10], Loss: 0.0035
+Epoch: [8/10], Loss: 0.0033
+Epoch: [9/10], Loss: 0.0031
+Epoch: [10/10], Loss: 0.0029
+Score (accuracy) of the probe: 0.95
+
+The best l1=0, the best l2=0.1 for pretrained_BERT_layer_0
+Accuracy on the test set of probing pretrained_BERT_layer_0 of all layers:
+Score (accuracy) of the probe: 0.37
+{'__OVERALL__': 0.36587183308494786, 'NAME': 0.7608926673751328, 'STRING': 1.0, 'NUMBER': 0.00196174595389897, 'KEYWORD': 0.0}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1432,KW_NAME:67
+NAME_KW:163,KW_KW:0
+NAME_STRING:273,KW_other:1
+NAME_NUMBER:14
+NAME_STRING_list:['a', 'a', 'a', 'a', 't', 'a', 'a', 'a', 'a', 'a', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 't0', 'i', 'i', 'a', 'a', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T0', 'I', 'T0', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 't0', 't0', 'I', 'I', 'I', 'I', 'I', 'T0', 'T0', 'I', 'I', 'I', 'I', 'I', 't0', 'I', 't0', 'I', 'I', 'I', 'I', 'I', 'T0', 'T0', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 't0', 'I', 't0', 'I', 'I', 'I', 'I', 'I', 't0', 't0', 'I', 'I', 't0', 'I', 'I', 'I', 'I', 't0', 'I', 'p0', 'I', 'D', 'D', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'f0', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'f0', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'a', 'a', 'a', 'a0', 'a0', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'a', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'A', 'A', 'A']
+NAME_NUMBER_list:['t0', 'T0', 't0', 'T0', 't0', 'T0', 't0', 'T0', 'T0', 'p0', 'p0', 'p0', 'p0', 'p0']
+Accuracy on the test set of pretrained_BERT_layer_0 model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_BERT Layer 1
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0104
+Epoch: [2/10], Loss: 0.0063
+Epoch: [3/10], Loss: 0.0045
+Epoch: [4/10], Loss: 0.0035
+Epoch: [5/10], Loss: 0.0029
+Epoch: [6/10], Loss: 0.0024
+Epoch: [7/10], Loss: 0.0021
+Epoch: [8/10], Loss: 0.0018
+Epoch: [9/10], Loss: 0.0016
+Epoch: [10/10], Loss: 0.0014
+Score (accuracy) of the probe: 0.95
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0105
+Epoch: [2/10], Loss: 0.0064
+Epoch: [3/10], Loss: 0.0046
+Epoch: [4/10], Loss: 0.0036
+Epoch: [5/10], Loss: 0.0029
+Epoch: [6/10], Loss: 0.0025
+Epoch: [7/10], Loss: 0.0021
+Epoch: [8/10], Loss: 0.0019
+Epoch: [9/10], Loss: 0.0016
+Epoch: [10/10], Loss: 0.0015
+Score (accuracy) of the probe: 0.95
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0106
+Epoch: [2/10], Loss: 0.0065
+Epoch: [3/10], Loss: 0.0047
+Epoch: [4/10], Loss: 0.0038
+Epoch: [5/10], Loss: 0.0031
+Epoch: [6/10], Loss: 0.0027
+Epoch: [7/10], Loss: 0.0023
+Epoch: [8/10], Loss: 0.0021
+Epoch: [9/10], Loss: 0.0019
+Epoch: [10/10], Loss: 0.0017
+Score (accuracy) of the probe: 0.95
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0112
+Epoch: [2/10], Loss: 0.0073
+Epoch: [3/10], Loss: 0.0058
+Epoch: [4/10], Loss: 0.0050
+Epoch: [5/10], Loss: 0.0044
+Epoch: [6/10], Loss: 0.0041
+Epoch: [7/10], Loss: 0.0037
+Epoch: [8/10], Loss: 0.0035
+Epoch: [9/10], Loss: 0.0033
+Epoch: [10/10], Loss: 0.0031
+Score (accuracy) of the probe: 0.96
+
+The best l1=0, the best l2=0.1 for pretrained_BERT_layer_1
+Accuracy on the test set of probing pretrained_BERT_layer_1 of all layers:
+Score (accuracy) of the probe: 0.51
+{'__OVERALL__': 0.5059612518628912, 'NAME': 0.7502656748140276, 'STRING': 1.0, 'NUMBER': 0.2849435998038254, 'KEYWORD': 0.10294117647058823}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1412,KW_NAME:61
+NAME_KW:126,KW_KW:7
+NAME_STRING:312,KW_other:0
+NAME_NUMBER:32
+NAME_STRING_list:['a', 'a', 'a', 'a', 'T', 'T', 'p', 'd', 'a', 'a', 'b', 'a', 'a', 'T', 'a', 'i', 'i', 'i', 't', 'i', 'i', 'i', 't', 'i', 'i', 'a', 'a', 'f', 'f', 'j', 'j', 'i', 'i', 'i', 'i', 'd', 'd', 'f', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'f', 'i', 'i', 'i', 'd', 'i', 'i', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T', 'F', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'p', 'D', 'I', 't', 'B', 's', 't', 't', 't', 't', 'I', 'I', 'F', 'F', 'I', 'I', 'i', 'i', 'i', 'i', 'j', 'j', 'T', 'T', 'T', 'T', 'i', 't', 't', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 't', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'i', 'i', 'J', 'J', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'p', 'D', 'D', 'i', 'i', 'i', 'i', 'p', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'T', 'i', 'i', 'i', 'i', 'i', 'i', 'T', 'i', 'i', 'i', 'i', 'i', 'i', 'T', 'i', 'i', 'i', 'i', 'T', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'j1', 'i', 'i', 'j1', 'i', 'i', 'i', 'i', 'T', 'a', 'b', 'a', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'a', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'T', 'A', 'A', 'A']
+NAME_NUMBER_list:['b', 't0', 'Y1', 'T0', 'T0', 'T0', 't0', 't0', 't0', 'T0', 'T0', 'T0', 't0', 't0', 't0', 'T0', 'T0', 'T0', 't0', 't0', 't0', 'T0', 't0', 't0', 'T0', 't0', 't0', 'p0', 'p0', 'p0', 'a0', 'a0']
+Accuracy on the test set of pretrained_BERT_layer_1 model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_BERT Layer 2
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0103
+Epoch: [2/10], Loss: 0.0065
+Epoch: [3/10], Loss: 0.0048
+Epoch: [4/10], Loss: 0.0038
+Epoch: [5/10], Loss: 0.0031
+Epoch: [6/10], Loss: 0.0026
+Epoch: [7/10], Loss: 0.0022
+Epoch: [8/10], Loss: 0.0019
+Epoch: [9/10], Loss: 0.0017
+Epoch: [10/10], Loss: 0.0015
+Score (accuracy) of the probe: 0.94
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0104
+Epoch: [2/10], Loss: 0.0067
+Epoch: [3/10], Loss: 0.0049
+Epoch: [4/10], Loss: 0.0039
+Epoch: [5/10], Loss: 0.0032
+Epoch: [6/10], Loss: 0.0027
+Epoch: [7/10], Loss: 0.0023
+Epoch: [8/10], Loss: 0.0020
+Epoch: [9/10], Loss: 0.0018
+Epoch: [10/10], Loss: 0.0016
+Score (accuracy) of the probe: 0.94
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0102
+Epoch: [2/10], Loss: 0.0066
+Epoch: [3/10], Loss: 0.0049
+Epoch: [4/10], Loss: 0.0039
+Epoch: [5/10], Loss: 0.0033
+Epoch: [6/10], Loss: 0.0028
+Epoch: [7/10], Loss: 0.0024
+Epoch: [8/10], Loss: 0.0022
+Epoch: [9/10], Loss: 0.0019
+Epoch: [10/10], Loss: 0.0018
+Score (accuracy) of the probe: 0.95
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0109
+Epoch: [2/10], Loss: 0.0075
+Epoch: [3/10], Loss: 0.0060
+Epoch: [4/10], Loss: 0.0052
+Epoch: [5/10], Loss: 0.0046
+Epoch: [6/10], Loss: 0.0042
+Epoch: [7/10], Loss: 0.0038
+Epoch: [8/10], Loss: 0.0036
+Epoch: [9/10], Loss: 0.0033
+Epoch: [10/10], Loss: 0.0031
+Score (accuracy) of the probe: 0.96
+
+The best l1=0, the best l2=0.1 for pretrained_BERT_layer_2
+Accuracy on the test set of probing pretrained_BERT_layer_2 of all layers:
+Score (accuracy) of the probe: 0.28
+{'__OVERALL__': 0.28042722305017387, 'NAME': 0.4383634431455898, 'STRING': 1.0, 'NUMBER': 0.1280039234919078, 'KEYWORD': 0.08823529411764706}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:825,KW_NAME:61
+NAME_KW:325,KW_KW:6
+NAME_STRING:560,KW_other:1
+NAME_NUMBER:172
+NAME_STRING_list:['m', 'm', 'm', 'm', 'm', 'a', 'a', 'a', 'a', 'x', 'W', 'W', 'W', 'X', 'W', 'X', 'W', 'X', 'W', 'W', 'X', 'W', 'X', 'W', 'd', 'a', 'a', 'a', 'a', 'T', 'a', 'b', 'i', 'i', 'i', 'j', 'i', 'j', 'j', 'j', 'j', 'i', 'i', 'i', 'i', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'h', 'm', 'm', 'm', 'm', 'x', 'x', 'y', 'y', 'x', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'x', 'f', 'x', 'x', 'x', 'x', 'i', 'd', 'd', 'i', 'd', 'a', 'a', 'f', 'm', 'm', 'm', 'j', 'x', 'i', 'i', 'x', 'i', 'i', 'x', 'X', 'x', 'x', 'd', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'f', 't', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'f', 'x', 'i', 'i', 'x', 'x', 'x', 'x', 'x', 'x', 'd', 'ih', 'd', 'x', 'i', 'i', 'X', 's', 's', 'I', 'I', 'I', 'I', 'P', 'X', 'P', 'I', 'T', 'I', 'I', 'P', 'I', 'X', 'p', 'I', 'I', 'I', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'x', 'D', 'p', 'P', 'P', 'I', 'p', 'D', 'P', 'B', 'D', 'x', 'X', 'D', 'I', 's', 'x', 'I', 'U', 'x', 's', 't', 'T', 't', 'T', 't', 'X', 'X', 'P', 'I', 'p', 'X', 'I', 'p', 'P', 'p', 'I', 'I', 'I', 'F', 'F', 'I', 'I', 'f', 'x', 'x', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'i', 'i', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'i', 'i', 's', 'j', 'X', 'T', 'p', 'p', 'X', 'X', 'X', 'T', 'X', 'X', 'X', 'X', 'i', 'x', 'x', 'p', 's', 'n', 'i', 'i', 'i', 's', 'i', 'i', 'i', 'i', 'v', 'i', 'i', 'v', 'u', 's', 'i', 'i', 's', 's', 'i', 'i', 's', 'm', 's', 's', 's', 'd', 'c', 's', 'n', 'x', 'x', 's', 'J', 'j', 'J', 'J', 'J', 'u', 'p', 'j', 'J', 'J', 'p', 'J', 'J', 'p', 'J', 'i', 'i', 'J', 'J', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'J', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'c', 's', 'm', 'm', 'm', 'm', 'm', 'x', 'd', 'd', 'd', 'X', 'X', 'D', 'D', 'X', 'D', 'D', 'D', 'R', 'D', 'i', 'y', 'i', 'i', 'D', 'X', 'D', 'i', 'T', 'p', 'p', 'C', 'x', 'x', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'X', 'X', 'X', 'X', 'T', 'T', 'T', 'T', 'i', 'i', 'i', 'X', 'X', 'X', 'i', 'i', 'i', 'i', 'T', 'i', 'i', 'i', 'i', 'T', 'T', 'T', 'T', 'i', 'T', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'i', 'i', 'i', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'x', 'X', 'j', 'j', 'j', 'j', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'V', 'P', 'a', 'P', 'a', 'a', 'a0', 'a2', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'p', 'a', 'i', 'i', 'i', 'i', 'i', 'i', 'd', 'i', 'd', 'v', 'R', 'A', 'A', 'A', 'x', 'x']
+NAME_NUMBER_list:['b1', 'X', 'c', 'X', 'X', 'x', 'x', 'h0', 'b1', 'x', 'b', 'x', 'x', 't0', 't0', 'y', 'y', 'y', 'x', 'x', 'x', 'x', 'y', 'x', 'y', 'y', 'x', 'y', 'y', 'y', 'y', 'y', 'X', 'X', 'X', 'X', 'X', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'f', 'x', 'f', 'f', 'x', 'x', 'x', 'x', 'y', 'x', 'y', 'X', 'X', 'f1', 'f1', 'f1', 'f1', 'x', 'X', 'Y', 'X', 'x', 'T0', 'T0', 'T0', 't0', 't0', 't0', 'T0', 'T0', 'T0', 't0', 't0', 't0', 'T0', 'T0', 'T0', 't0', 't0', 't0', 'T0', 't0', 't0', 'T0', 't0', 't0', 'x', 'X', 'X', 'p0', 'p0', 'p0', 'y', 'p0', 'x', 'p0', 'Y', 'Y', 'Y', 'x', 'X', 'X', 'X', 'X', 'X', 'Y', 'Y', 'x', 'n', 'c', 'c', 'J', 'J', 'x', 'x', 'y', 'x', 'x', 'X', 'Y', 'Y', 'X', 'X', 'y', 'X', 'X', 'X', 'y', 'q', 'X', 'f0', 'Y', 'Y', 'X', 'y', 'X', 'y', 'y', 'y', 'y', 'Y', 'X', 'X', 'Y', 'Y', 'Y', 'X', 'Y', 'Y', 'x', 'Y', 'y', 'Y', 'Y', 'j', 'j', 'j', 'j1', 'j1', 'j1', 'a0', 'f', 'f', 'x', 'x']
+Accuracy on the test set of pretrained_BERT_layer_2 model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_BERT Layer 3
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0101
+Epoch: [2/10], Loss: 0.0063
+Epoch: [3/10], Loss: 0.0046
+Epoch: [4/10], Loss: 0.0036
+Epoch: [5/10], Loss: 0.0030
+Epoch: [6/10], Loss: 0.0025
+Epoch: [7/10], Loss: 0.0021
+Epoch: [8/10], Loss: 0.0019
+Epoch: [9/10], Loss: 0.0016
+Epoch: [10/10], Loss: 0.0015
+Score (accuracy) of the probe: 0.96
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0099
+Epoch: [2/10], Loss: 0.0063
+Epoch: [3/10], Loss: 0.0046
+Epoch: [4/10], Loss: 0.0037
+Epoch: [5/10], Loss: 0.0030
+Epoch: [6/10], Loss: 0.0025
+Epoch: [7/10], Loss: 0.0022
+Epoch: [8/10], Loss: 0.0019
+Epoch: [9/10], Loss: 0.0017
+Epoch: [10/10], Loss: 0.0015
+Score (accuracy) of the probe: 0.96
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0098
+Epoch: [2/10], Loss: 0.0063
+Epoch: [3/10], Loss: 0.0047
+Epoch: [4/10], Loss: 0.0037
+Epoch: [5/10], Loss: 0.0031
+Epoch: [6/10], Loss: 0.0026
+Epoch: [7/10], Loss: 0.0023
+Epoch: [8/10], Loss: 0.0020
+Epoch: [9/10], Loss: 0.0018
+Epoch: [10/10], Loss: 0.0017
+Score (accuracy) of the probe: 0.96
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0108
+Epoch: [2/10], Loss: 0.0074
+Epoch: [3/10], Loss: 0.0059
+Epoch: [4/10], Loss: 0.0051
+Epoch: [5/10], Loss: 0.0045
+Epoch: [6/10], Loss: 0.0041
+Epoch: [7/10], Loss: 0.0038
+Epoch: [8/10], Loss: 0.0035
+Epoch: [9/10], Loss: 0.0033
+Epoch: [10/10], Loss: 0.0031
+Score (accuracy) of the probe: 0.97
+
+The best l1=0, the best l2=0.1 for pretrained_BERT_layer_3
+Accuracy on the test set of probing pretrained_BERT_layer_3 of all layers:
+Score (accuracy) of the probe: 0.28
+{'__OVERALL__': 0.27744659711872827, 'NAME': 0.46546227417640806, 'STRING': 1.0, 'NUMBER': 0.06866110838646396, 'KEYWORD': 0.9411764705882353}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:876,KW_NAME:4
+NAME_KW:273,KW_KW:64
+NAME_STRING:587,KW_other:0
+NAME_NUMBER:146
+NAME_STRING_list:['m', 'm', 'm', 'a', 'a', 'a', 'a', 'x', 'x', 'W', 'W', 'T', 'h', 'W', 'X', 'h', 'X', 'W', 'T', 'X', 'p', 'x', 'x', 'p', 'p', 'p', 'x', 'x', 'a', 'a', 'a', 'a', 'i', 'i', 'i', 'i', 'x', 'x', 'i', 'j', 'x', 'x', 'x', 'i', 'i', 'i', 'i', 'm', 'm', 'm', 't', 'm', 'm', 'm', 'm', 'm', 'h', 'm', 'm', 'm', 'x', 'x', 'x', 'x', 'x', 'x', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'l', 'x', 'l', 'x', 'l', 'x', 'x', 'x', 'x', 'i', 'd', 'i', 'd', 'a', 'a', 'e', 'e', 'm', 'm', 'm', 'w', 'c', 'x', 'i', 'i', 'x', 'i', 'i', 'X', 'x', 'x', 'd', 'd', 'x', 'x', 'x', 'x', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'x', 'x', 'i', 'i', 'i', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'iw', 'ih', 'X', 'i', 'i', 's', 'q', 's', 'q', 'I', 'x', 'O', 'I', 'T', 'I', 'O', 'X', 'I', 'C', 'P', 'p', 'P', 'p', 'K', 'I', 'N', 'T', 'I', 'X', 'I', 'P', 'x', 'I', 'T', 'p', 'p', 'T', 'Iw', 'I', 'I', 'I', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T', 'I', 'I', 'I', 'I', 'I', 'I', 'T', 'x', 'x', 'X', 'p', 'P', 'I', 'p', 'P', 'Q', 'C', 'N', 'y', 'D', 'x', 'x', 'X', 'D', 'I', 'C', 'Iw', 's', 'Iw', 'P', 'x', 'I', 'N', 'C', 'N', 'P', 'x', 'Iw', 'n', 'n', 's', 'Iw', 'T', 'Iw', 'T', 't', 'C', 'C', 'X', 'P', 'Q', 'C', 'X', 'N', 'C', 'P', 'Q', 'N', 'I', 'p', 'X', 'I', 'P', 'I', 'I', 'I', 'E', 'I', 'I', 'x', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'i', 'i', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'j', 'i', 'i', 'j', 'X', 'X', 'X', 'X', 'p', 'p', 'X', 'X', 'X', 'X', 'i', 'x', 'x', 'n', 'n', 'i', 'i', 'i', 't', 'i', 'i', 'i', 'i', 'i', 'i', 'v', 'i', 'i', 's', 's', 's', 'i', 'i', 'm', 'm', 's', 's', 'm', 'c', 'c', 'c', 'n', 'i', 'c', 'n', 'x', 'x', 'j', 'J', 'J', 'j', 'J', 'J', 'i', 'i', 'J', 'i', 'i', 'i', 'J', 'i', 'i', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'i', 'i', 'i', 'J', 'c', 'm', 'm', 'm', 'm', 'm', 'x', 'x', 'x', 'd', 'X', 'X', 'X', 'k', 'X', 'k', 'X', 'X', 'X', 'X', 'X', 'X', 'i', 'i', 'i', 'D', 'X', 'D', 'X', 'X', 'i', 'X', 'C', 'C', 'T', 'C', 'C', 'x', 'x', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'X', 'X', 'X', 'C', 'C', 'T', 'C', 'T', 'T', 'i', 'i', 'i', 'X', 'X', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'T', 'T', 'i', 'T', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'x', 'x', 'X', 'X', 'j', 'j', 'i', 'i', 'i', 'j2', 'j1', 'j1', 'i', 'i', 'i', 'i', 'T', 'a', 'P', 'a', 'a', 'a0', 'a2', 'l', 'l', 'i', 'i', 'i', 'i', 'i', 'i', 'j', 'i', 'i', 'i', 'p', 'p', 'i', 'i', 'i', 'i', 'i', 'i', 't', 'T', 'R', 'R', 'A', 'A', 'C', 'A', 'C', 'x', 'x']
+NAME_NUMBER_list:['T', 'c', 'T', 'h0', 'h0', 'h0', 'b1', 'd', 'T', 'j', 't', 't', 't0', 't0', 'd', 'd', 'd', 'w', 'xx', 'd', 'd', 'f', 'f1', 'f1', 'T0', 'T0', 'T0', 't0', 't0', 't0', 'T0', 'T0', 'T0', 't0', 't0', 't0', 'T0', 'T0', 'T0', 't0', 't0', 't0', 'T', 'T', 'T0', 't0', 't0', 'T0', 't0', 't0', 'D', 'p0', 'p0', 'D', 'k', 'c', 'n', 'N', 'n', 'n', 'N', 'n', 'p0', 'n', 'B', 'n', 'n', 'c', 'q', 'N', 'p', 'n', 'n', 'j', 'j', 'j', 'j', 'j', 'j', 'T', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 't', 'v', 'v', 'v', 'v', 'v', 'v', 'n', 'n', 'd', 'n', 'c', 'v', 'n', 'n', 'J', 'j', 'J', 'c', 'd', 'd', 'D', 'D', 'k', 'D', 'D', 'D', 'q', 'F', 'T', 'f', 'f0', 'F', 'j', 'j', 'j', 'j', 'j', 'j1', 'j1', 'j1', 'j1', 'j2', 'j2', 'j2', 'j1', 'V', 'T', 'T', 'a2', 'a0', 'C', 'n', 'd', 'd', 'v', 't', 't']
+Accuracy on the test set of pretrained_BERT_layer_3 model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_BERT Layer 4
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0098
+Epoch: [2/10], Loss: 0.0062
+Epoch: [3/10], Loss: 0.0045
+Epoch: [4/10], Loss: 0.0036
+Epoch: [5/10], Loss: 0.0029
+Epoch: [6/10], Loss: 0.0024
+Epoch: [7/10], Loss: 0.0021
+Epoch: [8/10], Loss: 0.0018
+Epoch: [9/10], Loss: 0.0016
+Epoch: [10/10], Loss: 0.0014
+Score (accuracy) of the probe: 0.96
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0097
+Epoch: [2/10], Loss: 0.0061
+Epoch: [3/10], Loss: 0.0044
+Epoch: [4/10], Loss: 0.0035
+Epoch: [5/10], Loss: 0.0029
+Epoch: [6/10], Loss: 0.0024
+Epoch: [7/10], Loss: 0.0021
+Epoch: [8/10], Loss: 0.0018
+Epoch: [9/10], Loss: 0.0016
+Epoch: [10/10], Loss: 0.0014
+Score (accuracy) of the probe: 0.95
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0098
+Epoch: [2/10], Loss: 0.0063
+Epoch: [3/10], Loss: 0.0046
+Epoch: [4/10], Loss: 0.0037
+Epoch: [5/10], Loss: 0.0030
+Epoch: [6/10], Loss: 0.0026
+Epoch: [7/10], Loss: 0.0023
+Epoch: [8/10], Loss: 0.0020
+Epoch: [9/10], Loss: 0.0018
+Epoch: [10/10], Loss: 0.0016
+Score (accuracy) of the probe: 0.96
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0106
+Epoch: [2/10], Loss: 0.0072
+Epoch: [3/10], Loss: 0.0058
+Epoch: [4/10], Loss: 0.0050
+Epoch: [5/10], Loss: 0.0044
+Epoch: [6/10], Loss: 0.0040
+Epoch: [7/10], Loss: 0.0037
+Epoch: [8/10], Loss: 0.0034
+Epoch: [9/10], Loss: 0.0032
+Epoch: [10/10], Loss: 0.0030
+Score (accuracy) of the probe: 0.96
+
+The best l1=0, the best l2=0.1 for pretrained_BERT_layer_4
+Accuracy on the test set of probing pretrained_BERT_layer_4 of all layers:
+Score (accuracy) of the probe: 0.53
+{'__OVERALL__': 0.531544957774466, 'NAME': 0.6604675876726886, 'STRING': 1.0, 'NUMBER': 0.3884256988719961, 'KEYWORD': 1.0}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1243,KW_NAME:0
+NAME_KW:91,KW_KW:68
+NAME_STRING:433,KW_other:0
+NAME_NUMBER:115
+NAME_STRING_list:['m', 'm', 'm', 'm', 'm', 'a', 'a', 'a', 'x', 'T', 'h', 'T', 'T', 'p', 't', 'x', 'x', 'a', 'a', 'T', 'T', 'a', 'i', 'i', 'i', 'i', 'i', 'x', 't', 'i', 'i', 'i', 'i', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'x', 'X', 'X', 'x', 'x', 'x', 'x', 'x', 'x', 'i', 'i', 'a', 'a', 'k', 'e', 'e', 'k', 'm', 'm', 'm', 'c', 'x', 'i', 'i', 'x', 'i', 'i', 'x', 'd', 'd', 't', 'i', 'i', 'i', 'i', 'i', 'i', 'x', 'x', 'i', 'i', 'i', 'x', 'x', 'x', 'i', 'i', 'I', 'C', 'I', 'I', 'I', 'C', 'P', 'p', 'P', 'p', 'K', 'I', 'N', 'p', 'I', 'E', 'C', 'I', 'P', 'C', 'I', 'E', 'p', 'p', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'p', 'P', 'P', 'I', 'p', 'p', 'P', 'N', 'c', 'C', 'I', 'c', 'N', 'n', 'n', 'C', 'N', 'P', 'x', 'x', 'n', 'I', 'N', 'N', 'P', 'n', 'n', 'n', 'n', 'c', 'C', 'P', 'N', 'C', 'P', 'N', 'I', 'p', 'X', 'I', 'p', 'p', 'P', 'Q', 'p', 'n', 'I', 'I', 'I', 'E', 'I', 'E', 'x', 'x', 'j', 'i', 'j', 'j', 'X', 'X', 'T', 'p', 'T', 'p', 'p', 'T', 'X', 'i', 'x', 'x', 'p', 'p', 'n', 'n', 'n', 'n', 'n', 'i', 'u', 'i', 'i', 'i', 'i', 'v', 'i', 'u', 'u', 's', 'i', 'i', 's', 's', 'i', 'i', 'n', 'n', 'm', 'm', 's', 's', 'm', 'c', 't', 'i', 't', 't', 'v', 'n', 'x', 's', 'j', 'j', 'p', 'p', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'i', 'J', 'i', 'J', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'J', 'c', 'c', 'm', 'm', 'm', 'm', 'x', 'x', 'x', 'X', 'X', 'X', 'k', 'X', 'k', 'X', 'i', 'i', 'X', 'X', 'X', 'i', 'C', 'C', 'C', 'C', 'x', 'x', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'C', 'C', 'C', 'i', 'i', 'i', 'T', 'C', 'i', 'i', 'i', 'T', 'i', 'i', 'i', 'i', 'T', 'g', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'i', 'i', 'i', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'j2', 'i', 'j2', 'j1', 'i', 'i', 'j1', 'i', 'i', 'T', 'P', 'a', 'a0', 'a3', 'C', 'l', 'l', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'p', 'p', 'i', 'i', 'i', 'i', 'A', 'A', 'C', 'A', 'x', 't', 't']
+NAME_NUMBER_list:['T', 'b1', 'T', 'T', 'T', 'T', 'h0', 'h0', 'h0', 'b1', 'b', 'T', 'j', 't', 't0', 't0', 'x', 'X', 'l', 'j', 'j', 'v', 'xx', 'f1', 'f1', 'q', 'q', 'q', 'T0', 'T0', 'T0', 't0', 't0', 't0', 't3', 't3', 'T', 'T0', 'T0', 'T0', 't0', 't0', 't0', 'T', 'T0', 'T0', 'T0', 't0', 't0', 't3', 't0', 'T0', 't0', 't0', 't3', 't3', 'T0', 't0', 't0', 'B', 'p0', 'B', 'B', 'Q', 'B', 'n', 'q0', 'p0', 'n', 'Q', 'Q', 'q', 'T', 'g', 'p', 't', 'n', 'n', 'n', 'v', 'n', 'n', 'n', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'd', 'q', 'p', 'f0', 'j', 'j2', 'j1', 'j2', 'j1', 'L', 'T', 'a2', 'a3', 'a0', 'a2', 'j', 'n', 'B']
+Accuracy on the test set of pretrained_BERT_layer_4 model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_BERT Layer 5
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0096
+Epoch: [2/10], Loss: 0.0061
+Epoch: [3/10], Loss: 0.0045
+Epoch: [4/10], Loss: 0.0035
+Epoch: [5/10], Loss: 0.0029
+Epoch: [6/10], Loss: 0.0024
+Epoch: [7/10], Loss: 0.0021
+Epoch: [8/10], Loss: 0.0018
+Epoch: [9/10], Loss: 0.0016
+Epoch: [10/10], Loss: 0.0014
+Score (accuracy) of the probe: 0.96
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0092
+Epoch: [2/10], Loss: 0.0059
+Epoch: [3/10], Loss: 0.0043
+Epoch: [4/10], Loss: 0.0034
+Epoch: [5/10], Loss: 0.0028
+Epoch: [6/10], Loss: 0.0023
+Epoch: [7/10], Loss: 0.0020
+Epoch: [8/10], Loss: 0.0017
+Epoch: [9/10], Loss: 0.0015
+Epoch: [10/10], Loss: 0.0014
+Score (accuracy) of the probe: 0.96
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0095
+Epoch: [2/10], Loss: 0.0062
+Epoch: [3/10], Loss: 0.0045
+Epoch: [4/10], Loss: 0.0036
+Epoch: [5/10], Loss: 0.0030
+Epoch: [6/10], Loss: 0.0026
+Epoch: [7/10], Loss: 0.0022
+Epoch: [8/10], Loss: 0.0020
+Epoch: [9/10], Loss: 0.0018
+Epoch: [10/10], Loss: 0.0016
+Score (accuracy) of the probe: 0.96
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0101
+Epoch: [2/10], Loss: 0.0070
+Epoch: [3/10], Loss: 0.0056
+Epoch: [4/10], Loss: 0.0048
+Epoch: [5/10], Loss: 0.0043
+Epoch: [6/10], Loss: 0.0039
+Epoch: [7/10], Loss: 0.0036
+Epoch: [8/10], Loss: 0.0034
+Epoch: [9/10], Loss: 0.0032
+Epoch: [10/10], Loss: 0.0030
+Score (accuracy) of the probe: 0.97
+
+The best l1=0, the best l2=0.1 for pretrained_BERT_layer_5
+Accuracy on the test set of probing pretrained_BERT_layer_5 of all layers:
+Score (accuracy) of the probe: 0.29
+{'__OVERALL__': 0.28688524590163933, 'NAME': 0.4851222104144527, 'STRING': 1.0, 'NUMBER': 0.06718979892103973, 'KEYWORD': 1.0}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:913,KW_NAME:0
+NAME_KW:84,KW_KW:68
+NAME_STRING:841,KW_other:0
+NAME_NUMBER:44
+NAME_STRING_list:['m', 'm', 'm', 'm', 'm', 'a', 'a', 'a', 'x', 'x', 'T', 'X', 'h', 'X', 'T', 'T', 'T', 'h', 'X', 'h', 'X', 'X', 'X', 'X', 'h', 'T', 'X', 'x', 'p', 'h0', 't', 'T', 'p', 'x', 'h0', 'p', 'p', 'p', 'p', 'p', 'p', 'X', 'X', 's', 'T', 's', 'x', 'x', 'a', 'a', 'a', 'T', 'T', 'a', 'T', 'a', 'i', 'i', 'i', 'i', 'x', 'i', 'j', 'j', 'j', 'k', 'x', 'x', 'x', 't', 'i', 'i', 'i', 'i', 'm', 't0', 't0', 'h', 'm', 'h', 'm', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'l', 'x', 'x', 'f', 'l', 'x', 'x', 'x', 'x', 'i', 'i', 'a', 'k', 'k2e', 'e', 'k', 'f', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k', 'k2e', 'k', 'k', 'm', 'm', 'j', 'j', 'k', 'v', 'w', 'x', 'x', 'i', 'x', 'i', 'i', 'Y', 'k', 'X', 'x', 'x', 'x', 'x', 'g', 'g', 'g', 'Y', 'x', 'x', 'Y1', 'f', 't', 't', 'i', 'i', 'i', 'i', 'f', 'f', 'x', 'i', 'i', 'f', 'x', 'x', 'x', 'x', 'f', 'x', 'x', 'x', 'x', 'x', 'x', 'z', 'z', 'x', 'x', 'x', 'x', 'S', 'X', 'i', 'S', 'X', 'S', 'x', 'S', 'x', 'S', 's', 's', 'q', 's', 'q', 'I', 'x', 'F', 'I', 'K', 'I', 'X', 'I', 'S', 'K', 'P', 'N', 'S', 'X', 'p', 'P', 'p', 'q', 'K', 'I', 'N', 'p', 'q', 'T', 'I', 'X', 'I', 'K', 'P', 'N', 'E', 'S', 'K', 'S', 'I', 'K', 'S', 'X', 'p', 'p', 'K', 'I', 'I', 'T0', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T0', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T', 'F', 'I', 'T0', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'x', 'X', 'p', 'P', 'P', 'P', 'p0', 'I', 'p', 'p', 'P', 'Q', 'D', 'K', 'N', 'c', 'C', 'k', 'K', 'k', 'D', 'x', 'x', 'X', 'D', 'I', 'c', 'n', 'N', 'x', 'n', 'n', 's', 't', 's', 's', 's', 'K', 'N', 'p0', 'P', 'q0', 'x', 'k', 'K', 'k', 'x', 'n', 'p0', 'n', 'I', 'D', 'N', 'D', 'N', 'K', 'K', 'K', 'P', 'x', 'n', 'n', 'k', 'K', 'n', 'k', 'k', 'n', 's', 's', 's', 's', 's', 's', 'c', 'x', 'S', 'X', 'P', 'C', 'Y', 'X', 'N', 'C', 'R', 'S', 'K', 'K', 'P', 'Q', 'N', 'I', 'p', 'q', 'Y', 'X', 'I', 'p', 'q', 'N', 'p', 'P', 'Q', 'p', 'n', 'K', 'I', 'I', 'I', 'F', 'I', 'E', 'I', 'f', 's', 's', 's', 'x', 'x', 'x', 'n', 'n', 'n', 'j', 'j', 'j', 'i', 'i', 'i', 'i', 'u', 's', 's', 'j', 'j', 't', 'T', 'X', 'X', 'X', 'X', 'X', 'T', 'p', 'g', 'p', 'T', 'p', 'p', 'g', 'X', 'p', 'X', 'X', 'T', 'X', 'T', 'T', 'X', 'X', 'T', 'X', 'X', 'i', 'y', 'x', 'x', 'y', 'p', 'p', 'p', 'p', 'p', 'p', 's', 't', 's', 't', 's', 't', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'i', 'u', 'u', 'i', 'u', 'i', 'i', 'v', 'v', 'i', 'i', 'v', 'u', 'n', 'u', 'k', 'k', 'k', 'k', 'k', 'k', 's', 'i', 's', 's', 's', 's', 'v', 's', 's', 's', 's', 'i', 'i', 's', 's', 's', 'n', 'n', 'm', 'm', 's', 's', 's', 's', 's', 's', 's', 'm', 'n', 't', 's', 'i', 's', 's', 's', 's', 's', 's', 's', 's', 't', 't', 'v', 'n', 'n', 'n', 's', 'x', 'x', 's', 's', 's', 'J', 'J', 'j', 'J', 'J', 'J', 'u', 'u', 'p', 'p', 'J', 'j', 'p', 'J', 'p', 'J', 'u', 'J', 'J', 'J', 'u', 'p', 'p', 'J', 'i', 'i', 'J', 'J', 'i', 'i', 'J', 'i', 'J', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'J', 'p', 'p', 'p', 's', 's', 's', 's', 's', 's', 'm', 'm', 'm', 'm', 'x', 'x', 'x', 'x', 'x', 'X', 'X', 'X', 'k', 'k', 'X', 'k', 'k', 'X', 'k', 'X', 'k', 'X', 'X', 'X', 'i', 'i', 'i', 'X', 'X', 'X', 'q', 'F', 'p', 'i', 'p', 'X', 'F', 'C', 'F', 'C', 'p', 'p', 'C', 'G', 'x', 'x', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'X', 'X', 'F', 'C', 'F', 'C', 'T', 'f', 'C', 'G', 'i', 'i', 'F', 'i', 'X', 'X', 'i', 'i', 'i', 'g', 'i', 'C', 'i', 'i', 'i', 'T', 'T', 'T', 'G', 'T', 'T', 'g', 'i', 'T', 'i', 'i', 'i', 'i', 'g', 'i', 'i', 'p', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'X', 'X', 'i', 'i', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'X', 'X', 'Y', 'X', 'X', 'x', 'x', 'X', 'X', 'j', 'j', 'j', 'j', 'i', 'j', 'j1', 'j2', 'j1', 'j1', 'j2', 'i', 'j2', 'j1', 'j2', 'j1', 'j2', 'j2', 'j1', 'i', 'j2', 'j1', 'L', 'V', 'L', 'P', 'T', 'T', 'P', 'a', 'a3', 'a0', 'a0', 'a3', 'C', 'C', 'f', 'f', 'l', 'l', 'i', 'i', 'i', 'i', 'i', 'i', 'j', 'j', 'i', 'f', 'i', 'i', 'p', 'p', 'p', 'i', 'i', 'i', 'i', 'g1', 'g', 'n', 'T', 'T', 'v', 'R', 'R', 'A', 'C', 'R', 'A', 'C', 'h5f', 'h5f', 'x', 'x', 'f', 't', 't', 't', 't', 't', 't', 'x', 'x']
+NAME_NUMBER_list:['b1', 'h0', 'b1', 'b', 'f', 'xx', 'f2', 'f2', 'f1', 'f2', 'T0', 't0', 't0', 't0', 't3', 't3', 'O', 'T0', 't0', 'O', 'O', 't0', 'O', 'O', 'T0', 't0', 't0', 'T0', 't0', 't0', 'T0', 'O', 'O', 't0', 'p0', 'B', 'E', 'G', 'G', 'f0', 'j2', 'j1', 'a2', 'a2']
+Accuracy on the test set of pretrained_BERT_layer_5 model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_BERT Layer 6
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0090
+Epoch: [2/10], Loss: 0.0055
+Epoch: [3/10], Loss: 0.0039
+Epoch: [4/10], Loss: 0.0031
+Epoch: [5/10], Loss: 0.0025
+Epoch: [6/10], Loss: 0.0021
+Epoch: [7/10], Loss: 0.0018
+Epoch: [8/10], Loss: 0.0015
+Epoch: [9/10], Loss: 0.0014
+Epoch: [10/10], Loss: 0.0012
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0091
+Epoch: [2/10], Loss: 0.0056
+Epoch: [3/10], Loss: 0.0040
+Epoch: [4/10], Loss: 0.0031
+Epoch: [5/10], Loss: 0.0025
+Epoch: [6/10], Loss: 0.0021
+Epoch: [7/10], Loss: 0.0018
+Epoch: [8/10], Loss: 0.0016
+Epoch: [9/10], Loss: 0.0014
+Epoch: [10/10], Loss: 0.0012
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0090
+Epoch: [2/10], Loss: 0.0056
+Epoch: [3/10], Loss: 0.0041
+Epoch: [4/10], Loss: 0.0032
+Epoch: [5/10], Loss: 0.0027
+Epoch: [6/10], Loss: 0.0023
+Epoch: [7/10], Loss: 0.0020
+Epoch: [8/10], Loss: 0.0018
+Epoch: [9/10], Loss: 0.0016
+Epoch: [10/10], Loss: 0.0014
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0099
+Epoch: [2/10], Loss: 0.0067
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0046
+Epoch: [5/10], Loss: 0.0041
+Epoch: [6/10], Loss: 0.0038
+Epoch: [7/10], Loss: 0.0035
+Epoch: [8/10], Loss: 0.0033
+Epoch: [9/10], Loss: 0.0031
+Epoch: [10/10], Loss: 0.0029
+Score (accuracy) of the probe: 0.97
+
+The best l1=0, the best l2=0.1 for pretrained_BERT_layer_6
+Accuracy on the test set of probing pretrained_BERT_layer_6 of all layers:
+Score (accuracy) of the probe: 0.34
+{'__OVERALL__': 0.3392945851962245, 'NAME': 0.6025504782146652, 'STRING': 0.9459459459459459, 'NUMBER': 0.06375674350171653, 'KEYWORD': 0.9852941176470589}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1134,KW_NAME:1
+NAME_KW:38,KW_KW:67
+NAME_STRING:662,KW_other:0
+NAME_NUMBER:48
+NAME_STRING_list:['m', 'm', 'm', 'm', 'a', 'a', 'a', 'a', 'x', 'x', 'X', 'c', 'X', 'c', 'X', 'h', 'X', 'X', 'h', 'h', 'X', 'h', 'h', 'h', 'x', 'p', 'p', 'x', 'p', 'p', 'p', 'p', 'p', 'X', 'X', 's', 'x', 'a', 'a', 'a', 'a', 'a', 'i', 'i', 'i', 'i', 'i', 'i', 'x', 'x', 'x', 'i', 'i', 'i', 'i', 'm', 'm', 'm', 'm', 'h', 'h', 'h', 'm', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'l', 'x', 'x', 'l', 'x', 'x', 'x', 'x', 'i', 'd', 'i', 'd', 'a', 'a', 'k', 'e', 'k', 'k', 'e', 'k', 'm', 'm', 'j', 'j', 'k', 'c', 'x', 'i', 'x', 'i', 'x', 'i', 'i', 'x', 'k', 'X', 'X', 'x', 'x', 'x', 'd', 'x', 'x', 'x', 'x', 'g', 'g', 'x', 'x', 'x', 'x', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'x', 'x', 'i', 'i', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'd', 'd', 'x', 'X', 'i', 'X', 'f2', 'X', 'f2', 'x', 'S', 'S', 's', 'q', 'q', 'I', 'x', 'x', 'I', 'K', 'I', 'X', 'I', 'F', 'K', 'P', 'X', 'q', 'Q', 'p', 'p', 'q', 'F', 'K', 'I', 'N', 'p', 'I', 'E', 'X', 'I', 'K', 'P', 'E', 'U', 'x', 'x', 'S', 'I', 'E', 'K', 'X', 'q', 'Q', 'p', 'E', 'p', 'q', 'U', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'x', 'X', 'D', 'X', 'p', 'P', 'I', 'p', 'P', 'D', 'D', 'C', 'K', 'N', 'c', 'x', 'x', 'X', 'I', 'N', 'x', 'c', 'n', 's', 't', 'D', 't', 'C', 'K', 'N', 'P', 'x', 'k', 'K', 'k', 'x', 'n', 'O', 'n', 'I', 'N', 'C', 'D', 'D', 'N', 'K', 'C', 'K', 'D', 'C', 'K', 'P', 'x', 'n', 'c', 'n', 'k', 'n', 'n', 'x', 'C', 'X', 'P', 'C', 'X', 'N', 'C', 'S', 'K', 'K', 'P', 'Q', 'N', 'I', 'p', 'q', 'X', 'I', 'p', 'N', 'p', 'P', 'Q', 'p', 'n', 'I', 'E', 'I', 'I', 'I', 'E', 'I', 'E', 'pq', 'x', 'x', 'x', 'i', 'i', 'i', 'i', 'u', 's', 'j', 'T', 'X', 'X', 'X', 'X', 'X', 'g', 'p', 'p', 'g', 'X', 'X', 'X', 'X', 'h', 'X', 'X', 'X', 'X', 'i', 'x', 'y', 'x', 'x', 'p', 'p', 'p', 'p', 'n', 'n', 'n', 'n', 'n', 'n', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'n', 'k', 'k', 'k', 's', 'i', 's', 'i', 'i', 's', 's', 'n', 'n', 'm', 'm', 'd', 'i', 's', 's', 'n', 'n', 's', 'x', 'x', 'J', 'J', 'J', 'J', 'J', 'u', 'p', 'J', 'J', 'J', 'J', 'i', 'i', 'J', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'i', 'J', 'J', 'J', 'p', 's', 'm', 'm', 'm', 'x', 'x', 'x', 'x', 'x', 'x', 'd', 'd', 'X', 'X', 'X', 'X', 'k', 'X', 'k', 'X', 'k', 'X', 'D', 'R', 'X', 'X', 'X', 'X', 'i', 'i', 'i', 'X', 'D', 'X', 'X', 'i', 'X', 'C', 'C', 'G', 'p', 'C', 'p', 'G', 'x', 'x', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'f0', 'X', 'X', 'C', 'C', 'C', 'i', 'i', 'i', 'X', 'i', 'i', 'i', 'g', 'i', 'C', 'i', 'i', 'i', 'i', 'T', 'g', 'i', 'T', 'G', 'i', 'i', 'i', 'i', 'g', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'X', 'X', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'X', 'X', 'X', 'X', 'x', 'x', 'X', 'X', 'j', 'i', 'j1', 'j1', 'i', 'i', 'j1', 'j2', 'j1', 'i', 'i', 'j1', 'i', 'i', 'L', 'P', 'a3', 'a0', 'a0', 'a3', 'C', 'C', 'l', 'l', 'i', 'i', 'i', 'i', 'i', 'i', 'j', 'i', 'i', 'i', 'a', 'i', 'i', 'i', 'i', 'g1', 'g', 'i', 'A', 'A', 'B', 'C', 'A', 'C', 'x', 'x', 'x', 'x']
+NAME_NUMBER_list:['b1', 'h0', 'h0', 'b1', 'b', 'd', 'g', 'f1', 'N', 'N', 'N', 'p0', 'B', 'p0', 'B', 'n', 'n', 'p0', 'p0', 'E', 'n', 'g', 'n', 'n', 'n', 'f', 'n', 'v', 'n', 'J', 'J', 'J', 'J', 'J', 'J', 'j2', 'j2', 'j2', 'j2', 'j2', 'j2', 'L', 'V', 'b', 'a2', 'a2', 'n', 'B']
+Accuracy on the test set of pretrained_BERT_layer_6 model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_BERT Layer 7
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0091
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0038
+Epoch: [4/10], Loss: 0.0030
+Epoch: [5/10], Loss: 0.0024
+Epoch: [6/10], Loss: 0.0020
+Epoch: [7/10], Loss: 0.0017
+Epoch: [8/10], Loss: 0.0015
+Epoch: [9/10], Loss: 0.0013
+Epoch: [10/10], Loss: 0.0011
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0087
+Epoch: [2/10], Loss: 0.0053
+Epoch: [3/10], Loss: 0.0037
+Epoch: [4/10], Loss: 0.0029
+Epoch: [5/10], Loss: 0.0023
+Epoch: [6/10], Loss: 0.0019
+Epoch: [7/10], Loss: 0.0017
+Epoch: [8/10], Loss: 0.0014
+Epoch: [9/10], Loss: 0.0013
+Epoch: [10/10], Loss: 0.0011
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0086
+Epoch: [2/10], Loss: 0.0053
+Epoch: [3/10], Loss: 0.0038
+Epoch: [4/10], Loss: 0.0030
+Epoch: [5/10], Loss: 0.0025
+Epoch: [6/10], Loss: 0.0021
+Epoch: [7/10], Loss: 0.0018
+Epoch: [8/10], Loss: 0.0016
+Epoch: [9/10], Loss: 0.0015
+Epoch: [10/10], Loss: 0.0013
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0097
+Epoch: [2/10], Loss: 0.0064
+Epoch: [3/10], Loss: 0.0051
+Epoch: [4/10], Loss: 0.0044
+Epoch: [5/10], Loss: 0.0039
+Epoch: [6/10], Loss: 0.0036
+Epoch: [7/10], Loss: 0.0033
+Epoch: [8/10], Loss: 0.0031
+Epoch: [9/10], Loss: 0.0029
+Epoch: [10/10], Loss: 0.0028
+Score (accuracy) of the probe: 0.97
+
+The best l1=0, the best l2=0.1 for pretrained_BERT_layer_7
+Accuracy on the test set of probing pretrained_BERT_layer_7 of all layers:
+Score (accuracy) of the probe: 0.34
+{'__OVERALL__': 0.34177844013909586, 'NAME': 0.6323060573857598, 'STRING': 0.9459459459459459, 'NUMBER': 0.04119666503187837, 'KEYWORD': 0.9852941176470589}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1190,KW_NAME:1
+NAME_KW:44,KW_KW:67
+NAME_STRING:614,KW_other:0
+NAME_NUMBER:34
+NAME_STRING_list:['m', 'm', 'a', 'a', 'a', 'c', 'c', 'h', 'U', 'h', 'U', 'p', 'p', 'p', 'p', 'p', 'X', 'X', 's', 'e', 'e', 'a', 'a', 'a', 'i', 'i', 'i', 'i', 'i', 'j', 'j', 'x', 'x', 'i', 'i', 'i', 'i', 'm', 'm', 'm', 'm', 'm', 'f', 'h', 'm', 'h', 'm', 'f', 'f', 'm', 'x', 'x', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'x', 'f', 'f', 'l', 'x', 'x', 'x', 'x', 'i', 'i', 'a', 'a', 'k', 'e', 'k', 'k', 'k', 'k', 'e', 'k', 'j', 'k', 'v', 'i', 'i', 'i', 'i', 'k', 'x', 'd', 'd', 'x', 'x', 'x', 'g', 'g', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'f', 'f', 'i', 'i', 'i', 'x', 'x', 'f', 'x', 'x', 'd', 'd', 'x', 'f', 'i', 'f', 'X', 'f2', 'f2', 'Q', 'q', 'q', 'I', 'x', 'F', 'C', 'I', 'K', 'I', 'F', 'X', 'I', 'C', 'F', 'K', 'P', 'Q', 'X', 'q', 'Q', 'p', 'P', 'p', 'q', 'Q', 'K', 'I', 'N', 'p', 'I', 'E', 'X', 'I', 'P', 'E', 'C', 'U', 'x', 'S', 'I', 'X', 'q', 'Q', 'p', 'E', 'p', 'q', 'U', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'x', 'p', 'P', 'I', 'p', 'p', 'D', 'P', 'Q', 'C', 'K', 'Iw', 'C', 'N', 'c', 'C', 'k', 'K', 'c', 'x', 'I', 'c', 'n', 'N', 'n', 'c', 'n', 's', 'D', 't', 'D', 'C', 'N', 'x', 'k', 'K', 'x', 'n', 'n', 'I', 'E', 'N', 'C', 'D', 'N', 'K', 'C', 'K', 'U', 'D', 'C', 'K', 'n', 'c', 'n', 'k', 'K', 'n', 'n', 's', 'D', 'c', 'x', 'C', 'P', 'C', 'X', 'N', 'C', 'K', 'K', 'P', 'Q', 'N', 'I', 'F', 'E', 'p', 'q', 'X', 'I', 'p', 'q', 'N', 'p', 'q', 'P', 'Q', 'p', 'q', 'n', 'I', 'F', 'E', 'I', 'I', 'E', 'I', 'E', 'I', 'E', 'Uw', 'x', 'x', 'j', 'j', 'i', 'i', 'i', 'i', 'u', 'u', 'j', 'j', 'T', 'X', 'X', 'p', 'g', 'p', 'p', 'g', 'X', 'X', 'i', 'x', 'x', 'p', 'p', 'p', 'p', 'p', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'i', 'i', 'i', 'i', 'u', 'i', 'v', 'i', 'v', 'i', 'v', 'i', 'v', 'u', 'n', 'k', 'k', 's', 'i', 'i', 'i', 'i', 'n', 'n', 'm', 'n', 't', 'i', 'n', 'n', 's', 'x', 'x', 'J', 'j', 'j', 'u', 'p', 'p', 'J', 'p', 'j', 'J', 'p', 'p', 'p', 'J', 'i', 'i', 'J', 'i', 'i', 'i', 'J', 'i', 'i', 'i', 'J', 'p', 'p', 'p', 'p', 'm', 'm', 'm', 'x', 'x', 'x', 'f', 'x', 'f', 'd', 'd', 'X', 'k', 'k', 'D', 'X', 'X', 'X', 'i', 'i', 'i', 'X', 'X', 'q', 'i', 'p', 'q', 'C', 'F', 'C', 'G', 'p', 'C', 'p', 'G', 'x', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'f', 'f0', 'X', 'F', 'C', 'F', 'C', 'f', 'C', 'i', 'i', 'F', 'i', 'g', 'X', 'i', 'i', 'i', 'f', 'g', 'i', 'C', 'i', 'i', 'i', 'i', 'G', 'g', 'i', 'G', 'i', 'i', 'i', 'i', 'g', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'x', 'X', 'X', 'j', 'j', 'j', 'j', 'i', 'j', 'j1', 'j1', 'i', 'j2', 'j1', 'j2', 'j1', 'j2', 'j2', 'j1', 'i', 'i', 'j2', 'j1', 'i', 'i', 'V', 'P', 'T', 'P', 'T', 'P', 'a3', 'P', 'a0', 'a0', 'a3', 'C', 'C', 'f', 'f', 'l', 'i', 'i', 'i', 'i', 'i', 'j', 'i', 'f', 'i', 'i', 'f', 'p', 'p', 'a', 'i', 'i', 'i', 'i', 'g', 'n', 'c', 'c', 'Q', 'A', 'Q', 'A', 'C', 'A', 'C', 'x', 'f', 'x']
+NAME_NUMBER_list:['b1', 'h0', 'b1', 'd', 'b', 'd', 'd', 'd', 'f1', 'N', 'N', 'N', 'N', 'D', 'p0', 'p0', 'p0', 'O', 'p0', 'Q', 'd', 'D', 'D', 'D', 'D', 'F', 'p', 'C', 'L', 'b', 'a2', 'd', 'B', 'f']
+Accuracy on the test set of pretrained_BERT_layer_7 model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_BERT Layer 8
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0090
+Epoch: [2/10], Loss: 0.0053
+Epoch: [3/10], Loss: 0.0037
+Epoch: [4/10], Loss: 0.0028
+Epoch: [5/10], Loss: 0.0022
+Epoch: [6/10], Loss: 0.0019
+Epoch: [7/10], Loss: 0.0016
+Epoch: [8/10], Loss: 0.0014
+Epoch: [9/10], Loss: 0.0012
+Epoch: [10/10], Loss: 0.0010
+Score (accuracy) of the probe: 0.96
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0085
+Epoch: [2/10], Loss: 0.0051
+Epoch: [3/10], Loss: 0.0035
+Epoch: [4/10], Loss: 0.0027
+Epoch: [5/10], Loss: 0.0022
+Epoch: [6/10], Loss: 0.0018
+Epoch: [7/10], Loss: 0.0015
+Epoch: [8/10], Loss: 0.0013
+Epoch: [9/10], Loss: 0.0012
+Epoch: [10/10], Loss: 0.0010
+Score (accuracy) of the probe: 0.96
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0086
+Epoch: [2/10], Loss: 0.0052
+Epoch: [3/10], Loss: 0.0037
+Epoch: [4/10], Loss: 0.0029
+Epoch: [5/10], Loss: 0.0024
+Epoch: [6/10], Loss: 0.0020
+Epoch: [7/10], Loss: 0.0018
+Epoch: [8/10], Loss: 0.0016
+Epoch: [9/10], Loss: 0.0014
+Epoch: [10/10], Loss: 0.0013
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0096
+Epoch: [2/10], Loss: 0.0064
+Epoch: [3/10], Loss: 0.0051
+Epoch: [4/10], Loss: 0.0044
+Epoch: [5/10], Loss: 0.0039
+Epoch: [6/10], Loss: 0.0036
+Epoch: [7/10], Loss: 0.0033
+Epoch: [8/10], Loss: 0.0031
+Epoch: [9/10], Loss: 0.0030
+Epoch: [10/10], Loss: 0.0028
+Score (accuracy) of the probe: 0.97
+
+The best l1=0, the best l2=0.1 for pretrained_BERT_layer_8
+Accuracy on the test set of probing pretrained_BERT_layer_8 of all layers:
+Score (accuracy) of the probe: 0.41
+{'__OVERALL__': 0.41008445106805763, 'NAME': 0.798087141339001, 'STRING': 0.9459459459459459, 'NUMBER': 0.02550269740068661, 'KEYWORD': 0.9117647058823529}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1502,KW_NAME:6
+NAME_KW:54,KW_KW:62
+NAME_STRING:320,KW_other:0
+NAME_NUMBER:6
+NAME_STRING_list:['a', 'X', 'h', 'h', 'U', 'X', 'h', 'U', 'h0', 's', 'a', 'a', 'a', 'i', 'i', 'x', 'i', 'i', 'm', 'm', 'f', 'm', 'h', 'm', 'h', 'f', 'X', 'X', 'f', 'f', 'd', 'a', 'a', 'k', 'k', 'Y1', 'f', 'i', 'i', 'i', 'i', 'i', 'i', 'f', 'f', 'f', 'x', 'R', 'x', 'f', 'f2', 'f1', 'f2', 'f1', 'q', 'K', 'F', 'C', 'P', 'p', 'P', 'p', 'q', 'I', 'N', 'p', 'I', 'P', 'C', 'R', 'E', 'K', 'p', 'E', 'p', 'U', 'I', 'I', 'I', 'x', 'p', 'P', 'p0', 'p', 'D', 'P', 'Q', 'N', 'C', 'k', 'K', 'x', 'I', 'c', 'n', 'N', 'n', 'n', 'p0', 'x', 'k', 'K', 'O', 'I', 'E', 'N', 'N', 'D', 'P', 'n', 'n', 'k', 'n', 'n', 'c', 'C', 'N', 'C', 'K', 'P', 'N', 'F', 'p', 'I', 'p', 'N', 'p', 'P', 'Q', 'p', 'F', 'I', 'E', 'I', 'E', 'pq', 'f', 'f', 'x', 'j', 'j', 'j', 'j', 'X', 'p', 'p', 'g', 'X', 'x', 'x', 'p', 'p', 'p', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'i', 'i', 'i', 'i', 'u', 'f', 'i', 'i', 'n', 's', 'p', 'n', 'i', 'n', 'J', 'j', 'J', 'J', 'J', 'p', 'p', 'j', 'J', 'p', 'J', 'J', 'p', 'p', 'i', 'J', 'J', 'i', 'J', 'i', 'J', 'i', 'J', 'i', 'p', 'p', 'm', 'm', 'm', 'x', 'x', 'f', 'd', 'X', 'k', 'k', 'D', 'X', 'X', 'X', 'F', 'X', 'F', 'i', 'p', 'F', 'p', 'F', 'G', 'p', 'p', 'i', 'i', 'i', 'i', 'f', 'f0', 'X', 'F', 'F', 'f', 'F', 'X', 'i', 'i', 'i', 'f', 'i', 'i', 'i', 'g', 'i', 'i', 'i', 'i', 'i', 'g', 'i', 'i', 'i', 'p', 'i', 'i', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'X', 'X', 'X', 'X', 'i', 'j1', 'j1', 'j2', 'j1', 'j1', 'V', 'P', 'P', 'P', 'a3', 'a0', 'a0', 'C', 'f', 'i', 'f', 'p', 'g', 'n', 'Q', 'Q', 'R', 'A', 'Q', 'A', 'f', 'f']
+NAME_NUMBER_list:['b1', 'd', 'd', 'f1', 'q', 'p0']
+Accuracy on the test set of pretrained_BERT_layer_8 model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_BERT Layer 9
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0083
+Epoch: [2/10], Loss: 0.0048
+Epoch: [3/10], Loss: 0.0033
+Epoch: [4/10], Loss: 0.0025
+Epoch: [5/10], Loss: 0.0020
+Epoch: [6/10], Loss: 0.0017
+Epoch: [7/10], Loss: 0.0014
+Epoch: [8/10], Loss: 0.0012
+Epoch: [9/10], Loss: 0.0011
+Epoch: [10/10], Loss: 0.0009
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0085
+Epoch: [2/10], Loss: 0.0049
+Epoch: [3/10], Loss: 0.0034
+Epoch: [4/10], Loss: 0.0026
+Epoch: [5/10], Loss: 0.0021
+Epoch: [6/10], Loss: 0.0017
+Epoch: [7/10], Loss: 0.0015
+Epoch: [8/10], Loss: 0.0013
+Epoch: [9/10], Loss: 0.0011
+Epoch: [10/10], Loss: 0.0010
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0084
+Epoch: [2/10], Loss: 0.0050
+Epoch: [3/10], Loss: 0.0035
+Epoch: [4/10], Loss: 0.0027
+Epoch: [5/10], Loss: 0.0022
+Epoch: [6/10], Loss: 0.0019
+Epoch: [7/10], Loss: 0.0017
+Epoch: [8/10], Loss: 0.0015
+Epoch: [9/10], Loss: 0.0013
+Epoch: [10/10], Loss: 0.0012
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0094
+Epoch: [2/10], Loss: 0.0062
+Epoch: [3/10], Loss: 0.0048
+Epoch: [4/10], Loss: 0.0042
+Epoch: [5/10], Loss: 0.0038
+Epoch: [6/10], Loss: 0.0035
+Epoch: [7/10], Loss: 0.0032
+Epoch: [8/10], Loss: 0.0030
+Epoch: [9/10], Loss: 0.0029
+Epoch: [10/10], Loss: 0.0027
+Score (accuracy) of the probe: 0.98
+
+The best l1=0, the best l2=0.1 for pretrained_BERT_layer_9
+Accuracy on the test set of probing pretrained_BERT_layer_9 of all layers:
+Score (accuracy) of the probe: 0.37
+{'__OVERALL__': 0.37332339791356184, 'NAME': 0.7114771519659936, 'STRING': 0.918918918918919, 'NUMBER': 0.03531142717018146, 'KEYWORD': 0.8529411764705882}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1339,KW_NAME:10
+NAME_KW:166,KW_KW:58
+NAME_STRING:367,KW_other:0
+NAME_NUMBER:10
+NAME_STRING_list:['a', 'a', 'a', 'x', 'X', 'h', 'U', 'X', 'h', 'X', 'h', 'X', 'h', 'p', 'h0', 't', 'T', 'p', 'p', 'p', 's', 's', 'a', 'a', 'a', 'i', 'i', 'm', 'm', 'm', 'h', 'm', 'm', 'h', 'm', 'm', 'h', 'm', 'm', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'x', 'f', 'x', 'x', 'x', 'x', 'a', 'a', 'k', 'e', 'k', 'j', 'k', 'v', 'k', 'x', 'd', 'g', 'x', 'Y1', 't', 't', 'i', 'i', 'i', 'i', 'f', 'f', 'x', 'x', 'x', 'f', 'x', 'x', 'x', 'x', 'x', 'd', 'x', 'x', 'S', 'I', 'x', 'F', 'C', 'I', 'K', 'X', 'I', 'S', 'q', 'q', 'Q', 'p', 'p', 'q', 'Q', 'N', 'I', 'X', 'I', 'S', 'I', 'E', 'q', 'q', 'Q', 'p', 'E', 'I', 'I', 'I', 'x', 'p', 'I', 'p', 'p', 'P', 'Q', 'D', 'D', 'D', 'D', 'N', 'c', 'k', 'x', 'x', 'I', 'n', 'N', 'n', 'n', 'D', 't', 'D', 'K', 'x', 'Q', 'k', 'I', 'E', 'D', 'D', 'N', 'D', 'D', 'N', 'D', 'D', 'D', 'D', 'x', 'Q', 'n', 'n', 'k', 'n', 'n', 'D', 'N', 'S', 'N', 'p', 'q', 'X', 'I', 'N', 'p', 'q', 'P', 'Q', 'n', 'I', 'I', 'E', 'I', 'E', 'I', 'E', 'pq', 'f', 'x', 'u', 'j', 't', 'T', 'p', 'g', 'p', 'g', 'T', 'T', 'X', 'i', 'x', 'x', 'p', 'p', 'p', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'i', 'i', 'i', 'i', 'i', 'i', 'u', 'n', 'f', 'v', 'k', 'k', 'v', 'k', 'k', 'v', 'k', 'k', 'i', 'i', 'i', 'i', 'n', 'n', 'm', 's', 's', 'm', 'd', 'n', 't', 'i', 's', 'n', 'p', 'p', 'p', 'p', 'i', 'i', 'i', 'i', 'i', 'i', 'p', 'p', 'm', 'm', 'm', 'x', 'x', 'd', 'd', 'X', 'k', 'k', 'D', 'X', 'X', 'i', 'F', 'i', 'F', 'p', 'i', 'i', 'i', 'f0', 'X', 'F', 'i', 'i', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'g', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'X', 'X', 'x', 'x', 'X', 'X', 'i', 'j1', 'j1', 'j1', 'j1', 'L', 'P', 'a', 'a0', 'a0', 'a2', 'a3', 'C', 'f', 'f', 'l', 'i', 'i', 'i', 'i', 'i', 'f', 'i', 'i', 'p', 'i', 'n', 'A', 'Q', 'A', 'f', 'f']
+NAME_NUMBER_list:['k', 'f1', 'p0', 'p0', 'p0', 'p0', 'p', 'p', 'p', 'h5f']
+Accuracy on the test set of pretrained_BERT_layer_9 model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_BERT Layer 10
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0092
+Epoch: [2/10], Loss: 0.0056
+Epoch: [3/10], Loss: 0.0039
+Epoch: [4/10], Loss: 0.0029
+Epoch: [5/10], Loss: 0.0024
+Epoch: [6/10], Loss: 0.0019
+Epoch: [7/10], Loss: 0.0016
+Epoch: [8/10], Loss: 0.0014
+Epoch: [9/10], Loss: 0.0012
+Epoch: [10/10], Loss: 0.0011
+Score (accuracy) of the probe: 0.96
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0087
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0038
+Epoch: [4/10], Loss: 0.0029
+Epoch: [5/10], Loss: 0.0023
+Epoch: [6/10], Loss: 0.0019
+Epoch: [7/10], Loss: 0.0016
+Epoch: [8/10], Loss: 0.0014
+Epoch: [9/10], Loss: 0.0012
+Epoch: [10/10], Loss: 0.0011
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0092
+Epoch: [2/10], Loss: 0.0057
+Epoch: [3/10], Loss: 0.0040
+Epoch: [4/10], Loss: 0.0031
+Epoch: [5/10], Loss: 0.0025
+Epoch: [6/10], Loss: 0.0022
+Epoch: [7/10], Loss: 0.0019
+Epoch: [8/10], Loss: 0.0017
+Epoch: [9/10], Loss: 0.0015
+Epoch: [10/10], Loss: 0.0013
+Score (accuracy) of the probe: 0.96
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0095
+Epoch: [2/10], Loss: 0.0064
+Epoch: [3/10], Loss: 0.0050
+Epoch: [4/10], Loss: 0.0043
+Epoch: [5/10], Loss: 0.0038
+Epoch: [6/10], Loss: 0.0035
+Epoch: [7/10], Loss: 0.0033
+Epoch: [8/10], Loss: 0.0031
+Epoch: [9/10], Loss: 0.0029
+Epoch: [10/10], Loss: 0.0027
+Score (accuracy) of the probe: 0.97
+
+The best l1=0, the best l2=0.1 for pretrained_BERT_layer_10
+Accuracy on the test set of probing pretrained_BERT_layer_10 of all layers:
+Score (accuracy) of the probe: 0.39
+{'__OVERALL__': 0.3857426726279185, 'NAME': 0.7470775770456961, 'STRING': 0.972972972972973, 'NUMBER': 0.027954879843060325, 'KEYWORD': 0.7941176470588235}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1406,KW_NAME:13
+NAME_KW:165,KW_KW:54
+NAME_STRING:309,KW_other:1
+NAME_NUMBER:2
+NAME_STRING_list:['a', 'a', 'a', 'x', 'X', 'h', 'X', 'h', 'X', 'h', 'x', 'p', 'x', 'x', 'a', 'a', 'x', 'm', 'm', 'm', 'f', 'm', 'm', 'm', 'm', 'h', 'm', 'h', 'm', 'm', 'x', 'x', 'X', 'X', 'X', 'X', 'x', 'f', 'x', 'x', 'x', 'x', 'a', 'k', 'k', 'f', 'k', 'm', 'm', 'k', 'k', 'x', 'x', 'd', 'd', 'd', 'g', 'g', 't', 't', 'i', 'f', 'x', 'x', 'i', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'd', 'd', 'f1', 'X', 'f2', 'f1', 'x', 'q', 'q', 'I', 'x', 'C', 'I', 'C', 'C', 'R', 'F', 'K', 'q', 'q', 'Q', 'p', 'P', 'q', 'Q', 'K', 'N', 'K', 'C', 'x', 'C', 'q', 'q', 'Q', 'p', 'I', 'I', 'x', 'D', 'X', 'p', 'P', 'p0', 'p0', 'I', 'p', 'p', 'P', 'D', 'D', 'D', 'c', 'C', 'k', 'K', 'x', 'x', 'C', 'n', 'N', 'n', 'D', 't', 'D', 'p0', 'P', 'x', 'k', 'K', 'D', 'D', 'N', 'D', 'D', 'N', 'D', 'D', 'D', 'D', 'P', 'x', 'c', 'k', 'K', 'D', 'C', 'x', 'N', 'K', 'N', 'p', 'q', 'X', 'N', 'p', 'q', 'P', 'Q', 'p', 'K', 'I', 'I', 'pq', 'f', 'x', 'x', 'x', 't', 'T', 'T', 'p', 'g', 'T', 'T', 'X', 'X', 'x', 'p', 'p', 'p', 'n', 'n', 'n', 'n', 'n', 'n', 'i', 'i', 'v', 'i', 'u', 'f', 'k', 'k', 'k', 'k', 'k', 'k', 'i', 'i', 'v', 's', 'i', 'n', 'm', 's', 'm', 'd', 'c', 'n', 't', 'i', 'c', 'c', 'p', 'p', 'i', 'i', 'i', 'i', 'c', 'm', 'x', 'd', 'd', 'X', 'X', 'X', 'k', 'D', 'k', 'D', 'X', 'X', 'D', 'i', 'p', 'q', 'C', 'q', 'q', 'q', 'G', 'f0', 'X', 'C', 'C', 'i', 'C', 'i', 'X', 'C', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'X', 'X', 'X', 'X', 'x', 'x', 'i', 'V', 'a', 'b', 'a0', 'a0', 'C', 'C', 'i', 'i', 'i', 'i', 'p', 'n', 'c', 'A', 'f', 'f']
+NAME_NUMBER_list:['n', 'h5f']
+Accuracy on the test set of pretrained_BERT_layer_10 model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_BERT Layer 11
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0091
+Epoch: [2/10], Loss: 0.0057
+Epoch: [3/10], Loss: 0.0040
+Epoch: [4/10], Loss: 0.0031
+Epoch: [5/10], Loss: 0.0025
+Epoch: [6/10], Loss: 0.0021
+Epoch: [7/10], Loss: 0.0018
+Epoch: [8/10], Loss: 0.0015
+Epoch: [9/10], Loss: 0.0013
+Epoch: [10/10], Loss: 0.0012
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0089
+Epoch: [2/10], Loss: 0.0057
+Epoch: [3/10], Loss: 0.0040
+Epoch: [4/10], Loss: 0.0031
+Epoch: [5/10], Loss: 0.0025
+Epoch: [6/10], Loss: 0.0021
+Epoch: [7/10], Loss: 0.0018
+Epoch: [8/10], Loss: 0.0016
+Epoch: [9/10], Loss: 0.0014
+Epoch: [10/10], Loss: 0.0012
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0091
+Epoch: [2/10], Loss: 0.0058
+Epoch: [3/10], Loss: 0.0042
+Epoch: [4/10], Loss: 0.0033
+Epoch: [5/10], Loss: 0.0027
+Epoch: [6/10], Loss: 0.0023
+Epoch: [7/10], Loss: 0.0020
+Epoch: [8/10], Loss: 0.0018
+Epoch: [9/10], Loss: 0.0016
+Epoch: [10/10], Loss: 0.0014
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0098
+Epoch: [2/10], Loss: 0.0066
+Epoch: [3/10], Loss: 0.0053
+Epoch: [4/10], Loss: 0.0045
+Epoch: [5/10], Loss: 0.0041
+Epoch: [6/10], Loss: 0.0037
+Epoch: [7/10], Loss: 0.0034
+Epoch: [8/10], Loss: 0.0032
+Epoch: [9/10], Loss: 0.0030
+Epoch: [10/10], Loss: 0.0028
+Score (accuracy) of the probe: 0.97
+
+The best l1=0, the best l2=0.1 for pretrained_BERT_layer_11
+Accuracy on the test set of probing pretrained_BERT_layer_11 of all layers:
+Score (accuracy) of the probe: 0.37
+{'__OVERALL__': 0.36959761549925485, 'NAME': 0.6934112646121148, 'STRING': 0.9459459459459459, 'NUMBER': 0.04413928396272683, 'KEYWORD': 0.8529411764705882}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1305,KW_NAME:8
+NAME_KW:240,KW_KW:58
+NAME_STRING:295,KW_other:2
+NAME_NUMBER:42
+NAME_STRING_list:['m', 'm', 'm', 'a', 'a', 'a', 'x', 'x', 'X', 'X', 'h', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'x', 'X', 'x', 'x', 'a', 'a', 'i', 'i', 'i', 'x', 'm', 'm', 'f', 'm', 'm', 'm', 'm', 'h', 'm', 'f', 'm', 'm', 'x', 'x', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'x', 'x', 'f', 'x', 'x', 'x', 'x', 'a', 'a', 'e', 'f', 'f', 'e', 'k', 'm', 'm', 'm', 'j', 'x', 'i', 'x', 'd', 'd', 'x', 'x', 'x', 'x', 'f', 't', 'i', 'f', 'x', 'x', 'f', 'f', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'X', 'x', 'q', 'Q', 's', 's', 'x', 'C', 'F', 'F', 'C', 'I', 'C', 'C', 'K', 'q', 'q', 'Q', 'q', 'C', 'x', 'C', 'q', 'q', 'Q', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T', 'I', 'I', 'I', 'I', 'x', 'D', 'X', 'p0', 'P', 'p0', 'p', 'p', 'P', 'Q', 'C', 'x', 'x', 'C', 'n', 'N', 'c', 'c', 'x', 'D', 'D', 'x', 'c', 'C', 'x', 'C', 'C', 'N', 'p', 'N', 'p', 'P', 'Q', 'I', 'E', 'pq', 'f', 's', 's', 's', 'x', 'x', 'u', 'X', 'p', 'X', 'X', 'X', 'p', 'p', 'p', 'n', 'n', 'i', 'i', 'i', 'v', 'i', 'u', 'i', 'i', 'v', 's', 'i', 'n', 's', 'c', 'c', 't', 'c', 'c', 'n', 's', 'u', 'p', 'i', 'i', 'i', 'i', 'c', 'p', 'p', 'p', 'x', 'x', 'x', 'x', 'x', 'X', 'X', 'R', 'X', 'i', 'C', 'C', 'C', 'Q', 'C', 'X', 'X', 'C', 'C', 'C', 'C', 'C', 'C', 'X', 'X', 'C', 'q', 'i', 'i', 'i', 'i', 'X', 'i', 'i', 'i', 'i', 'X', 'X', 'X', 'X', 'x', 'x', 'X', 'j1', 'j1', 'T', 'a', 'b', 'a', 'a0', 'a0', 'T', 'C', 'C', 'f', 'l', 'l', 'j', 'i', 'i', 'p', 'i', 'i', 'i', 'c', 'R', 'C', 'R', 'A', 'R', 'A', 'x', 'f', 'x']
+NAME_NUMBER_list:['t', 'd', 'f', 'm', 'f', 'k', 'd', 'f', 'f', 'd', 'f2', 'f1', 'f2', 'q', 'p', 't', 'k', 'U', 'k', 'q', 't', 'T', 'p', 'T', 'n', 's', 'd', 'n', 'n', 'p', 'p', 'p', 'k', 'D', 'k', 'q', 'f0', 'F', 'F', 'i', 'n', 'h5f']
+Accuracy on the test set of pretrained_BERT_layer_11 model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_BERT Layer 12
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0095
+Epoch: [2/10], Loss: 0.0061
+Epoch: [3/10], Loss: 0.0046
+Epoch: [4/10], Loss: 0.0036
+Epoch: [5/10], Loss: 0.0030
+Epoch: [6/10], Loss: 0.0025
+Epoch: [7/10], Loss: 0.0021
+Epoch: [8/10], Loss: 0.0019
+Epoch: [9/10], Loss: 0.0016
+Epoch: [10/10], Loss: 0.0015
+Score (accuracy) of the probe: 0.96
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0094
+Epoch: [2/10], Loss: 0.0061
+Epoch: [3/10], Loss: 0.0045
+Epoch: [4/10], Loss: 0.0036
+Epoch: [5/10], Loss: 0.0029
+Epoch: [6/10], Loss: 0.0025
+Epoch: [7/10], Loss: 0.0021
+Epoch: [8/10], Loss: 0.0018
+Epoch: [9/10], Loss: 0.0016
+Epoch: [10/10], Loss: 0.0015
+Score (accuracy) of the probe: 0.96
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0095
+Epoch: [2/10], Loss: 0.0062
+Epoch: [3/10], Loss: 0.0047
+Epoch: [4/10], Loss: 0.0038
+Epoch: [5/10], Loss: 0.0031
+Epoch: [6/10], Loss: 0.0027
+Epoch: [7/10], Loss: 0.0023
+Epoch: [8/10], Loss: 0.0021
+Epoch: [9/10], Loss: 0.0019
+Epoch: [10/10], Loss: 0.0017
+Score (accuracy) of the probe: 0.96
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0102
+Epoch: [2/10], Loss: 0.0071
+Epoch: [3/10], Loss: 0.0058
+Epoch: [4/10], Loss: 0.0050
+Epoch: [5/10], Loss: 0.0044
+Epoch: [6/10], Loss: 0.0040
+Epoch: [7/10], Loss: 0.0037
+Epoch: [8/10], Loss: 0.0034
+Epoch: [9/10], Loss: 0.0032
+Epoch: [10/10], Loss: 0.0030
+Score (accuracy) of the probe: 0.97
+
+The best l1=0, the best l2=0.1 for pretrained_BERT_layer_12
+Accuracy on the test set of probing pretrained_BERT_layer_12 of all layers:
+Score (accuracy) of the probe: 0.37
+{'__OVERALL__': 0.366120218579235, 'NAME': 0.7146652497343252, 'STRING': 0.9459459459459459, 'NUMBER': 0.01765571358509073, 'KEYWORD': 0.8529411764705882}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1345,KW_NAME:5
+NAME_KW:289,KW_KW:58
+NAME_STRING:225,KW_other:5
+NAME_NUMBER:23
+NAME_STRING_list:['m', 'a', 'a', 'X', 'X', 'h', 'h', 'c', 'X', 'X', 'X', 'X', 'a', 'b', 'a', 'a', 'a', 'x', 'j', 'j', 'k', 'x', 'm', 'm', 'm', 'm', 'm', 'm', 'h', 'm', 'm', 'm', 'm', 'm', 'x', 'x', 'X', 'x', 'x', 'x', 'x', 'x', 'a', 'e', 'f', 'k', 'e', 'm', 'r', 'j', 'c', 'i', 'x', 'X', 'x', 'x', 'x', 'x', 'x', 'i', 'x', 'x', 'f', 'x', 'x', 'x', 'x', 'R', 'x', 'i', 'f', 'x', 'q', 'q', 'Q', 's', 's', 'C', 'I', 'I', 'F', 'N', 'K', 'I', 'O', 'I', 'x', 'B', 'D', 'p0', 'P', 'p0', 'B', 'D', 'C', 'N', 'c', 'C', 'c', 'x', 'x', 'C', 'n', 'N', 'c', 'c', 'N', 'p0', 'q0', 'x', 'x', 'k', 'n', 'E', 'P', 'x', 'c', 'k', 'C', 'c', 'x', 'C', 'C', 'N', 'N', 'X', 'N', 'P', 'Q', 'E', 'K', 'E', 'E', 'E', 'x', 'x', 'x', 'i', 'X', 'p', 'X', 'T', 'X', 'X', 'x', 'p', 'f', 'i', 's', 'v', 's', 'i', 'c', 'c', 'c', 'c', 's', 'J', 'j', 'u', 'J', 'J', 'i', 'i', 'c', 'c', 'x', 'X', 'X', 'C', 'C', 'C', 'C', 'X', 'C', 'C', 'C', 'C', 'C', 'X', 'C', 'i', 'i', 'i', 'X', 'X', 'X', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'X', 'X', 'x', 'X', 'j', 'j', 'j1', 'j1', 'j1', 'j1', 'V', 'a', 'b', 'a', 'a0', 'T', 'C', 'i', 'i', 'j', 'j', 'i', 'i', 'n', 'i', 'c', 'c', 'C', 'R', 'R', 'A']
+NAME_NUMBER_list:['b', 'k', 'k', 'd', 'g', 'q', 'q', 'B', 'B', 'p0', 'k', 'n', 'n', 'c', 'n', 'D', 'F', 'G', 'j2', 'b', 'a0', 'h5f', 'f']
+Accuracy on the test set of pretrained_BERT_layer_12 model using the intercept:
+Score (accuracy) of the probe: 0.47
+
+pretrained_BERT top neurons
+array([3587,    4, 8709, 6663, 9736, 9737, 8713, 6664,   11, 8200, 2576,
+        529, 7698, 2067, 4627, 9234,  534, 7191, 5139, 6162,  538, 7706,
+       7708, 2588, 8222,  540,   35, 5669, 2086,   40, 6184,   43, 9772,
+        562, 2612, 7733, 1076, 4148, 5691, 1085, 8767, 5188, 2116, 4679,
+       9799, 6729, 4171, 2124, 6732, 8268, 1101, 6739,  596, 4692, 4184,
+       8793, 5720, 7256, 8798, 7262, 4704, 3168, 7776, 6240, 9314, 3175,
+       9832, 9324, 6765,  628,  118, 5239, 6265,  122,  635, 9340,  124,
+       7292,  127, 3199,  641, 1666, 4739,  642, 7298,  646, 4230, 9352,
+       7817, 8841, 8838, 8332, 8845, 6286, 4231,  656, 2705, 7317,  663,
+       7832, 9881, 5788,  159, 3744,  672, 6818, 9377, 6820, 5795, 7331,
+       1190, 7850, 6826,  172, 5802, 9394, 1204, 2740, 9398,  183, 7862,
+       3771, 4284, 5309, 5820, 6845,  193, 1219, 8903, 3791, 5327, 7379,
+       8915, 6870,  727, 8410,  734, 2270,  225, 4834, 3299, 4840, 5353,
+        240, 6899, 8436, 8952, 7929, 8442, 3833, 9468,  765, 4350, 8960,
+       9477,  262, 7431, 8968, 7432, 8969, 1802,  268,  269, 7945, 1808,
+       5905, 6930, 8466, 1299, 3344, 1302, 9495, 3864, 4737, 8476, 7965,
+       7454, 6437, 6952, 6953,  808, 8491, 9004, 9517,  302, 7468, 5417,
+        308, 3380, 1844, 6967, 6459, 2875, 9533, 7999, 3911,  839, 9033,
+       7497, 4939, 1356,  333, 9036, 6475, 7507, 6489, 4953, 7008, 5472,
+       6498, 3428,  357, 7015, 9064, 5482, 4976, 1395, 9590, 7031, 7546,
+       1403, 8572,  381, 8571, 9090, 3971, 9609, 7049,  395, 7564,  397,
+       6030, 9100, 5005, 1937, 7054, 7568, 8322, 1431, 8600, 9113, 7579,
+       6556, 4510, 8834, 2976, 1440, 6050,  419, 6563, 3488,  422, 5544,
+        425,  426, 6570, 6058,  429,  940, 6578, 9658, 7611, 6075, 6077,
+       3005, 3003, 6081, 6594, 7617, 8142, 4559, 9167, 8147, 7636, 5591,
+       7642, 3038,  478, 5601, 2531, 4067,  995,  998, 5606, 8163, 6121,
+       8167, 2534,  491, 4590, 8176, 1008, 3058, 7667, 7668, 9721, 7674,
+       6654, 5631])
+pretrained_BERT top neurons per class
+{'NAME': array([4704, 8793, 2531,  308, 5472, 7668, 3299, 3791, 8147, 6030, 2612,
+       7191, 9609, 2976, 7929, 4067,  765, 5591, 7733, 9881,  734, 9533,
+       7999, 8968, 8332,  302, 6459, 7667,  998, 5691, 3744, 2124, 2270,
+       3911,  672,  538, 7706, 6952, 4739, 1440, 7432, 9772, 3038, 4939,
+       3168, 7776, 7832, 6240,  429, 7008, 6050,  124, 7708, 5606, 3771,
+       6930, 3380, 1356,  426, 7317, 9737, 9658,  381, 8969, 9004,  646,
+       9064,  995, 9340,    4, 6570, 8600, 7642, 8466, 7379, 7636,  596,
+       7564, 8436, 8713, 3587,  172, 1076, 4284, 5309, 9736, 1302, 6818,
+        268, 1219, 1666, 6077, 9468, 9398, 6820, 6081, 8222, 9832, 1403,
+       8903, 7431, 9517,  397, 6489, 5188, 8572, 7015, 3005, 8163, 1431,
+        656, 7817, 9590, 7468,  183, 6121, 8167,  663, 6729, 5905, 6265,
+       5239, 9394, 9100, 1802,  419,  357,  333, 5601, 2588, 9377, 4510,
+       6594, 5482, 6058, 6739, 5820, 6664, 6899, 7698]), 'STRING': array([3299, 7929, 4704, 5472, 6030, 2612, 8793, 5591, 8332, 3791, 7668,
+       7832, 9036,  538, 9477, 7432, 4148, 6459, 1844, 5795, 3771, 2531,
+       7431, 9609, 3380,  672, 6967,  425, 8442, 9881,  596,  998, 4679,
+       7776, 6489,  308,  268, 9495,  765, 2124, 6286, 7317, 7611,   11,
+       5239, 6930,  381, 7564, 4284, 1431, 4350, 8147, 3038, 6664, 7579,
+       6081, 6663, 4559, 7331,  262,  302,  540, 6570, 9772, 4739, 3428,
+       8915, 9398, 6578, 6654,    4,  641, 8466, 8410, 5669,  183, 8841,
+       9352,   40,  269, 6556, 6050,  193, 7617, 8952, 6845, 8960, 7817,
+       2534, 6953, 7379,  727, 9033,  808, 9064, 1440, 7733, 1076, 2067,
+         43, 5606, 3911,  395, 8845, 4834, 5005,  628, 4590,  734, 1937,
+         35,  124, 7546, 3175, 1219, 6818,  642, 9314, 7049,  940, 9377,
+       5905,  839, 7054,  478, 9832, 7862, 9004, 7191, 1204,  429, 3833,
+       7468, 1299, 7298, 8476, 4230, 8571,  491, 9736]), 'NUMBER': array([4704,  308, 5472, 3791, 2531, 5591, 7564, 8147, 3299, 9340, 7668,
+       9772, 2124, 6729, 4067, 7379,  596, 3771, 6240, 1403, 6030, 8798,
+       4840, 7432, 1440, 8222, 9004, 9064,  538, 7431, 9100,  734, 8915,
+       7733,  642, 9533, 6489, 8793, 6459, 8838, 9495,  183, 7667, 9517,
+       8969, 5631,  426,  641,  765, 4231, 9033, 7706, 2705, 3744,  429,
+       9881, 1844, 7832, 7708, 7262, 6475,  127, 5188, 7674, 5795, 6870,
+       6563, 6081, 3199, 8600,  302, 8176, 9477,  159, 1076, 9832, 7817,
+       5691, 9167, 8968, 3488, 7698, 7945, 3038, 1395, 6818, 7008, 6899,
+       6286, 9324, 6654,   40, 6437, 2576,  940, 4692, 5353, 7617, 4679,
+       4953, 9113,  534, 8834, 2116, 8491, 7850, 8572,  478, 3864, 2875,
+       7611, 7497, 8142, 7965, 8332, 3380, 1190, 6498, 2612,  269, 8476,
+       4834,  529, 6826, 4627,  425, 6765, 6732, 6570,  998,  540, 3058,
+       5802, 6578, 1802,  225, 4350, 2740, 7454]), 'KEYWORD': array([4704, 5472, 3791, 5591, 3299, 2976, 9477,  302, 6459, 7008,  538,
+       7379,  308, 3744, 3771, 6967, 7832, 9609, 6475, 8793, 8767,  734,
+        596,  425, 7191, 7432, 6489, 6240, 9468, 5239, 9590, 6930, 3380,
+       6030,  765, 7698,  122, 3971, 6081,  998, 8713, 6075,  269,  172,
+       4171, 7667, 7015, 7929, 2531, 2116,  118, 8147, 1076, 6952, 8969,
+       7776, 8163,    4, 8466, 5417, 9533, 9033, 5309, 9090, 8332,  422,
+       4067, 7031,  641, 3168, 7431, 4840, 5327,  635, 4976, 7054, 6050,
+        240, 6820, 7331, 5691, 9881, 2270, 2086, 1808, 9167, 8200, 6556,
+       4184, 3587, 5720, 4679,  429, 7706, 4953, 6498, 7568, 7292, 9340,
+       5631, 9772, 7507, 1085, 7668,  124, 8915, 9036, 5788, 9234, 7611,
+       1403, 1008,  940, 8268, 5139,   43, 6162, 4939, 8322, 8709, 3344,
+       5544, 1219, 9721, 8968, 3003, 1101, 4739,  262, 7564, 4284, 7817,
+       2612,  562, 9799, 7256, 4737, 6184, 1204])}
+The shape of selected features (13636, 299)
+The shape of the training set: (13636, 299)
+The shape of the validation set: (1516, 299)
+The shape of the testing set: (4026, 299)
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0081
+Epoch: [2/10], Loss: 0.0046
+Epoch: [3/10], Loss: 0.0033
+Epoch: [4/10], Loss: 0.0025
+Epoch: [5/10], Loss: 0.0021
+Epoch: [6/10], Loss: 0.0017
+Epoch: [7/10], Loss: 0.0015
+Epoch: [8/10], Loss: 0.0013
+Epoch: [9/10], Loss: 0.0012
+Epoch: [10/10], Loss: 0.0010
+Score (accuracy) of the probe: 0.95
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0082
+Epoch: [2/10], Loss: 0.0046
+Epoch: [3/10], Loss: 0.0033
+Epoch: [4/10], Loss: 0.0025
+Epoch: [5/10], Loss: 0.0021
+Epoch: [6/10], Loss: 0.0018
+Epoch: [7/10], Loss: 0.0015
+Epoch: [8/10], Loss: 0.0013
+Epoch: [9/10], Loss: 0.0012
+Epoch: [10/10], Loss: 0.0011
+Score (accuracy) of the probe: 0.94
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0087
+Epoch: [2/10], Loss: 0.0050
+Epoch: [3/10], Loss: 0.0036
+Epoch: [4/10], Loss: 0.0028
+Epoch: [5/10], Loss: 0.0024
+Epoch: [6/10], Loss: 0.0020
+Epoch: [7/10], Loss: 0.0018
+Epoch: [8/10], Loss: 0.0016
+Epoch: [9/10], Loss: 0.0015
+Epoch: [10/10], Loss: 0.0013
+Score (accuracy) of the probe: 0.94
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0089
+Epoch: [2/10], Loss: 0.0057
+Epoch: [3/10], Loss: 0.0046
+Epoch: [4/10], Loss: 0.0040
+Epoch: [5/10], Loss: 0.0036
+Epoch: [6/10], Loss: 0.0034
+Epoch: [7/10], Loss: 0.0031
+Epoch: [8/10], Loss: 0.0029
+Epoch: [9/10], Loss: 0.0028
+Epoch: [10/10], Loss: 0.0026
+Score (accuracy) of the probe: 0.96
+
+The best l1=0, the best l2=0.1 for pretrained_BERT_top5%_neurons
+Accuracy on the test set of probing pretrained_BERT_top5%_neurons of all layers:
+Score (accuracy) of the probe: 0.36
+{'__OVERALL__': 0.35767511177347244, 'NAME': 0.7167906482465463, 'STRING': 0.8648648648648649, 'NUMBER': 0.0024521824423737125, 'KEYWORD': 0.7941176470588235}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1349,KW_NAME:14
+NAME_KW:144,KW_KW:54
+NAME_STRING:376,KW_other:0
+NAME_NUMBER:13
+NAME_STRING_list:['a', 'a', 'a', 'a', 'x', 'U', 'W', 'W', 'h0', 'W2', 'p', 'a', 'a', 'a', 'a', 'i', 'i', 'i', 'i', 'i', 'i', 'm', 'f', 'm', 'm', 't0', 'h', 'm', 'm', 'm', 'x', 'X', 'X', 'X', 'X', 'x', 'x', 'x', 'x', 'x', 'i', 'i', 'a', 'a', 'f', 'k', 'k', 'i', 'i', 'i', 'i', 'x', 'x', 'x', 'x', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'x', 'x', 'x', 'x', 'x', 'x', 'i', 'x', 'P', 'q', 'p', 'P', 'p', 'p', 'I', 'P', 'x', 'x', 'q', 'p', 'p', 'T0', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'T0', 'I', 'I', 'I', 'I', 't0', 'T0', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 't0', 't0', 'I', 'I', 'I', 'I', 't0', 'I', 'I', 'I', 'I', 't0', 'p', 'P', 'p0', 'p0', 'p', 'p', 'P', 'D', 'D', 'D', 'D', 'k', 'K', 'c', 'y', 'x', 'x', 'c', 'c', 't', 'p0', 'P', 'K', 'k', 'p0', 'I', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'P', 'Q', 'c', 'k', 'K', 'x', 'K', 'P', 'I', 'p', 'X', 'p', 'p', 'P', 'Q', 'p', 'I', 'I', 'I', 'x', 'x', 'j', 'j', 'i', 'i', 'i', 'i', 'j', 'T', 'p', 'p', 'p', 'h', 'X', 'i', 'p', 'p', 'p', 'p', 't', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'u', 'v', 'k', 'k', 'v', 'k', 'k', 'v', 'k', 'k', 'i', 'i', 'v', 'i', 'i', 'n', 'm', 'p', 'p', 'c', 's', 'u', 'x', 'u', 'p', 'j', 'p', 'p', 'u', 'u', 'p', 'p', 'i', 'i', 'i', 'i', 'i', 'i', 'c', 'p', 'p', 'p', 'm', 'm', 'x', 'k', 'X', 'i', 'i', 'i', 'C', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'C', 'T', 'i', 'i', 'i', 'i', 'i', 'i', 'f0', 'C', 'i', 'i', 'i', 'i', 'q', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'x', 'x', 'y', 'i', 'j1', 'j1', 'i', 'i', 'j2', 'j2', 'j1', 'j2', 'j2', 'j1', 'i', 'i', 'j2', 'j1', 'i', 'i', 'P', 'T', 'P', 'a', 'a', 'a', 'a0', 'a3', 'C', 'C', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'p', 'p', 'a', 'i', 'i', 'i', 'i', 'A', 'Q', 'A', 'A', 'B', 'x', 't', 't', 't', 't', 'x']
+NAME_NUMBER_list:['t0', 'T0', 't0', 't0', 'T0', 't0', 'T0', 'T0', 't0', 'T0', 'n', 'f0', 'q']
+Accuracy on the test set of pretrained_BERT_top5%_neurons model using the intercept:
+Score (accuracy) of the probe: 0.47
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0090
+Epoch: [2/10], Loss: 0.0058
+Epoch: [3/10], Loss: 0.0044
+Epoch: [4/10], Loss: 0.0036
+Epoch: [5/10], Loss: 0.0030
+Epoch: [6/10], Loss: 0.0026
+Epoch: [7/10], Loss: 0.0023
+Epoch: [8/10], Loss: 0.0020
+Epoch: [9/10], Loss: 0.0018
+Epoch: [10/10], Loss: 0.0017
+Score (accuracy) of the probe: 0.94
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0097
+Epoch: [2/10], Loss: 0.0063
+Epoch: [3/10], Loss: 0.0048
+Epoch: [4/10], Loss: 0.0039
+Epoch: [5/10], Loss: 0.0033
+Epoch: [6/10], Loss: 0.0028
+Epoch: [7/10], Loss: 0.0025
+Epoch: [8/10], Loss: 0.0022
+Epoch: [9/10], Loss: 0.0020
+Epoch: [10/10], Loss: 0.0018
+Score (accuracy) of the probe: 0.94
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0093
+Epoch: [2/10], Loss: 0.0061
+Epoch: [3/10], Loss: 0.0047
+Epoch: [4/10], Loss: 0.0039
+Epoch: [5/10], Loss: 0.0033
+Epoch: [6/10], Loss: 0.0029
+Epoch: [7/10], Loss: 0.0025
+Epoch: [8/10], Loss: 0.0023
+Epoch: [9/10], Loss: 0.0021
+Epoch: [10/10], Loss: 0.0019
+Score (accuracy) of the probe: 0.94
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0093
+Epoch: [2/10], Loss: 0.0064
+Epoch: [3/10], Loss: 0.0053
+Epoch: [4/10], Loss: 0.0047
+Epoch: [5/10], Loss: 0.0042
+Epoch: [6/10], Loss: 0.0039
+Epoch: [7/10], Loss: 0.0036
+Epoch: [8/10], Loss: 0.0033
+Epoch: [9/10], Loss: 0.0031
+Epoch: [10/10], Loss: 0.0029
+Score (accuracy) of the probe: 0.97
+
+The best l1=0, the best l2=0.1 for pretrained_BERT_top200_neurons
+Accuracy on the test set of probing pretrained_BERT_top200_neurons of all layers:
+Score (accuracy) of the probe: 0.42
+{'__OVERALL__': 0.4157973174366617, 'NAME': 0.8459086078639745, 'STRING': 0.8108108108108109, 'NUMBER': 0.0, 'KEYWORD': 0.7647058823529411}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1592,KW_NAME:16
+NAME_KW:98,KW_KW:52
+NAME_STRING:192,KW_other:0
+NAME_NUMBER:0
+NAME_STRING_list:['a', 'a', 'a', 'a', 'x', 'W', 'W', 'W1', 'W2', 'p', 'a', 'a', 'a', 'a', 'i', 'i', 'i', 'i', 'i', 'm', 'm', 'h', 'm', 'm', 'm', 'x', 'x', 'a', 'a', 'k', 'i', 'i', 'i', 'x', 'x', 'i', 'i', 'i', 'i', 'i', 'i', 'p', 'P', 'p', 'Q', 'p', 'I', 'x', 'p', 'p', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'I', 'p', 'P', 'p', 'P', 'Q', 'K', 'x', 'P', 'K', 'I', 'P', 'x', 'Q', 'k', 'K', 'P', 'p', 'p', 'p', 'P', 'p', 'I', 'x', 'i', 'i', 'p', 'p', 'p', 'i', 'i', 'v', 'i', 'v', 'i', 'i', 'v', 'v', 'i', 'v', 'i', 'i', 'p', 'i', 'p', 'k', 'k', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'x', 'i', 'j1', 'j1', 'i', 'j2', 'i', 'i', 'a', 'a', 'a', 'a0', 'a2', 'i', 'i', 'i', 'i', 'i', 'i', 'p', 'a', 'i', 'v', 'v', 'A', 'A', 'A']
+NAME_NUMBER_list:[]
+Accuracy on the test set of pretrained_BERT_top200_neurons model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_BERT top words
+Top words for pretrained_BERT neuron indx 3587 [('topology', 1.0), ('decimal', 0.923616095164236), ('80', 0.9024566511324816), ('OK', 0.8979496006961684), ('direct', 0.8877929059564015)]
+Top words for pretrained_BERT neuron indx 4 [('genie', 1.0), ('locals', 0.9741528747135267), ('entry', 0.9678435504799228), ('tornado', 0.9234733291412645), ('Mesh', 0.9192834698092651)]
+Top words for pretrained_BERT neuron indx 8709 [('81.4471435546875', 1.0), ('74.616338', 0.9310541993409623), ('"--version"', 0.8645688350745692), ('23.61432859499169', 0.816873354432727), ('33', 0.8107445657671736)]
+Top words for pretrained_BERT neuron indx 6663 [('sets', 1.0), ('ur', 0.948373402748555), ('up', 0.9246648027975943), ('google', 0.8974218336569894), ('117', 0.884660872744991)]
+Top words for pretrained_BERT neuron indx 9736 [('window', 1.0), ('genericbackend', 0.9904492216589531), ('33', 0.9609360088921741), ('24', 0.9562956583536975), ('Repository', 0.9202009427249108)]
+Top words for pretrained_BERT neuron indx 9737 [('"oslo"', 1.0), ('18', 0.9348480127216564), ('AFI', 0.83776581822248), ('humanize', 0.8282138911816957), ('class', 0.8140219243687802)]
+Top words for pretrained_BERT neuron indx 8713 [('in', 1.0), ('openwatch', 0.9283006004055956), ('WAY', 0.8899832098882792), ('1800', 0.8841954646311337), ('setupDatabase', 0.8475114283019025)]
+Top words for pretrained_BERT neuron indx 6664 [('window', 1.0), ('1970', 0.9066668356894491), ('62', 0.8997335417672816), ('75', 0.8312204454904618), ('File', 0.8042507168524166)]
+Top words for pretrained_BERT neuron indx 11 [('tenant', 1.0), ('nh', 0.9629773713982432), ('bus', 0.956237511050425), ('CREATING', 0.9440037807241514), ('quota', 0.9433848384531471)]
+Top words for pretrained_BERT neuron indx 8200 [('75', 1.0), ('33', 0.9953339889923178), ('1970', 0.9356236551156872), ('window', 0.8984197679183682), ('80', 0.881875923576941)]
+Top words for pretrained_BERT neuron indx 2576 [('license', 1.0), ('web', 0.8901794276205518), ('uri', 0.860883588684797), ('transaction', 0.7612481130200275), ('prop', 0.7485276184029569)]
+Top words for pretrained_BERT neuron indx 529 [('utc', 1.0), ('sts', 0.9523839654225702), ('unicode', 0.940819994850057), ('utcnow', 0.9395310258357078), ('On', 0.8666155726607462)]
+Top words for pretrained_BERT neuron indx 7698 [('ax', 1.0), ('plural', 0.9750192485525411), ('each', 0.9629485897820853), ('LOGGING', 0.8815137968329463), ('Simple', 0.8382073846587046)]
+Top words for pretrained_BERT neuron indx 2067 [('REFERENCES', 1.0), ('RELATIONS', 0.9646138606351125), ('25', 0.8063256742024467), ('User', 0.7878016112874006), ('success', 0.7682449581251247)]
+Top words for pretrained_BERT neuron indx 4627 [('__description__', 1.0), ('USAGE', 0.9689384920909021), ('forwards', 0.9526008643621251), ('__title__', 0.9094076245346943), ('__email__', 0.9082814174394267)]
+Top words for pretrained_BERT neuron indx 9234 [('purpose', 1.0), ('realm', 0.8950962386710135), ('audit', 0.8803465972515171), ('Module', 0.855574035728814), ('upstream', 0.8255286153549956)]
+Top words for pretrained_BERT neuron indx 534 [('tenant', 1.0), ('processes', 0.9753540913347645), ('reference', 0.9525623877739766), ('aspect', 0.9237231017861309), ('edit', 0.8917763996469169)]
+Top words for pretrained_BERT neuron indx 7191 [('communities', 1.0), ('RELEASE', 0.9188041510471655), ('Event', 0.8535971962044518), ('rest', 0.8185595464611432), ('restart', 0.7737664869594426)]
+Top words for pretrained_BERT neuron indx 5139 [('management', 1.0), ('ur', 0.9885867611673897), ('cm', 0.9587341596598256), ('calculators', 0.9433666139814776), ('negotiate', 0.942752405765764)]
+Top words for pretrained_BERT neuron indx 6162 [('plural', 1.0), ('LOGGING', 0.9837425550749147), ('synchronized', 0.9524878543437731), ('512', 0.9418001455881385), ('each', 0.9374110696447991)]
+Top words for pretrained_BERT neuron indx 538 [('minutes', 1.0), ('targets', 0.9729973686334764), ('def', 0.9632968399607558), ('Subject', 0.8787259210738282), ('PORT', 0.8546998341686667)]
+Top words for pretrained_BERT neuron indx 7706 [('communities', 1.0), ('"0301000000001122aabbccdd0102030405060708"', 0.9773882750193297), ('"0000385c02001b006162636465666768696a6b6c6d6e6f70717273747576776162"', 0.9139415432603387), ('"0800305c02001b006162636465666768696a6b6c6d6e6f70717273747576776162"', 0.9073810621994631), ('"63646566676869"', 0.893448575923547)]
+Top words for pretrained_BERT neuron indx 7708 [('75', 1.0), ('P2PServiceBaseType', 0.8799159083610466), ('venue', 0.8432412872300663), ('MultiPolygon', 0.8244705812029908), ('requires', 0.8136986246726836)]
+Top words for pretrained_BERT neuron indx 2588 [('View', 1.0), ('69', 0.9918721145234044), ('lat', 0.9678461611976945), ('topology', 0.9122547179879028), ('42', 0.8687550021881364)]
+Top words for pretrained_BERT neuron indx 8222 [('span', 1.0), ('Output', 0.997077930776905), ('ref', 0.9803646171144687), ('region', 0.9633358581294003), ('set_up', 0.9493534874244538)]
+Top words for pretrained_BERT neuron indx 540 [('OK', 1.0), ('choice', 0.9913551379429083), ('sha', 0.9548797747606115), ('TAG', 0.9135649724746077), ('Tag', 0.9013837011826632)]
+Top words for pretrained_BERT neuron indx 35 [('el', 1.0), ('composite', 0.9531620920607614), ('visitor', 0.9453895240983518), ('reservations', 0.9379546548952434), ('WAYS', 0.9121127146178446)]
+Top words for pretrained_BERT neuron indx 5669 [('omit', 1.0), ('deferred', 0.984570129549396), ('Region', 0.8971146891403031), ('agency', 0.8506521747500511), ('Subject', 0.7993236237748691)]
+Top words for pretrained_BERT neuron indx 2086 [('security', 1.0), ('button', 0.9690540042143766), ('exists', 0.9658683620572951), ('GENERATOR', 0.9595643949734065), ('feed', 0.9425174195259616)]
+Top words for pretrained_BERT neuron indx 40 [('Int', 1.0), ('Asset', 0.9907582356174528), ('asset', 0.9647122760451564), ('socket', 0.9097881242821482), ('vol', 0.9080814013948583)]
+Top words for pretrained_BERT neuron indx 6184 [('discovery', 1.0), ('reservations', 0.9487025524280375), ('terms', 0.9200556227540588), ('management', 0.9154599634839226), ('last', 0.9076189862474888)]
+Top words for pretrained_BERT neuron indx 43 [('decimal', 1.0), ('afi', 0.8960777054676461), ('AFI', 0.8892298663943853), ('patch', 0.8500807032198956), ('selection', 0.8348617891099713)]
+Top words for pretrained_BERT neuron indx 9772 [('bk', 1.0), ('1800', 0.970736780822791), ('libraries', 0.942598561586561), ('by', 0.8709985214050406), ('MEMBERS', 0.8056665741216844)]
+Top words for pretrained_BERT neuron indx 562 [('flags', 1.0), ('password', 0.8592044887707917), ('realm', 0.7744265726204911), ('Card', 0.7187433548754323), ('API', 0.7100946179297802)]
+Top words for pretrained_BERT neuron indx 2612 [('and', 1.0), ('in', 0.9248110907160317), ('is', 0.9078516486382139), ('with', 0.8005722119590688), ('as', 0.8000503080771721)]
+Top words for pretrained_BERT neuron indx 7733 [('VALUE', 1.0), ('MultiPolygon', 0.8845812662083172), ('with', 0.8676951165871728), ('compute', 0.8541494961880668), ('DFConstant', 0.8410808805552513)]
+Top words for pretrained_BERT neuron indx 1076 [('and', 1.0), ('in', 0.8906884490921863), ('".."', 0.8685345141037353), ('to', 0.8322022686215242), ('is', 0.7514481175687243)]
+Top words for pretrained_BERT neuron indx 4148 [('with', 1.0), ('and', 0.9893247005012202), ('is', 0.968348274416457), ('in', 0.9356868258143566), ('as', 0.852632882407507)]
+Top words for pretrained_BERT neuron indx 5691 [('with', 1.0), ('quota', 0.956277640550526), ('BOUNDS', 0.9519390459541421), ('ajax', 0.9026765380737611), ('randomize', 0.8895204620654217)]
+Top words for pretrained_BERT neuron indx 1085 [('baseline', 1.0), ('else', 0.8405136032921473), ('Else', 0.8008848941493497), ('bk', 0.7905766304643127), ('1800', 0.7145185735343113)]
+Top words for pretrained_BERT neuron indx 8767 [('Else', 1.0), ('is', 0.8178607393924123), ('If', 0.8127052036231951), ('for', 0.7165972096789494), ('74.616338', 0.6740056796726646)]
+Top words for pretrained_BERT neuron indx 5188 [('http', 1.0), ('within', 0.9046460769271553), ('permission', 0.8983112953336954), ('300', 0.8441430411731452), ('LongType', 0.8374340093401303)]
+Top words for pretrained_BERT neuron indx 2116 [('permission', 1.0), ('upgrade', 0.963560241153038), ('timezone', 0.9086293604277462), ('TIMEOUT', 0.8998141867451828), ('pyramid', 0.8929032625910086)]
+Top words for pretrained_BERT neuron indx 4679 [('WAYS', 1.0), ('cipher', 0.8937264908105234), ('worker', 0.8767233453844506), ('Site', 0.8753136802247494), ('PROVISION', 0.8702399363931009)]
+Top words for pretrained_BERT neuron indx 9799 [('five', 1.0), ('fifteen', 0.8420656946447654), ('55', 0.8338224772659435), ('SECONDS', 0.7987140533039858), ('25', 0.7516094982899615)]
+Top words for pretrained_BERT neuron indx 6729 [('fragment', 1.0), ('criterion', 0.9820494365735064), ('pattern', 0.9718965702073195), ('ur', 0.9501406896835506), ('2.1', 0.9422853036265831)]
+Top words for pretrained_BERT neuron indx 4171 [('chunks', 1.0), ('Manager', 0.9922243162315485), ('Address', 0.7623960975269368), ('FILES', 0.7539669909348592), ('Basic', 0.7487106273568156)]
+Top words for pretrained_BERT neuron indx 2124 [('alt', 1.0), ('advance', 0.9930889214305912), ('select', 0.9895843366500282), ('visit', 0.9475161594340604), ('Integer', 0.9179423031468805)]
+Top words for pretrained_BERT neuron indx 6732 [('CREATING', 1.0), ('utc', 0.9861617608758872), ('completed', 0.9269659171067276), ('rd', 0.9247750845386202), ('fabric', 0.924091518982444)]
+Top words for pretrained_BERT neuron indx 8268 [('one', 1.0), ('instanceId', 0.9968044894056458), ('CREATING', 0.9423907606934284), ('REFERENCES', 0.9392191334616184), ('utc', 0.9325014418290751)]
+Top words for pretrained_BERT neuron indx 1101 [('subscribers', 1.0), ('sr', 0.9760520922014662), ('transfer', 0.9521668807123297), ('ah', 0.9073732265611227), ('Migration', 0.8753374111828228)]
+Top words for pretrained_BERT neuron indx 6739 [('button', 1.0), ('buttons', 0.972211789879023), ('NODES', 0.9606320716522763), ('authorization', 0.9507955438877033), ('SECONDS', 0.914106976024575)]
+Top words for pretrained_BERT neuron indx 596 [('submit', 1.0), ('signed', 0.857590088762827), ('800', 0.8534953502885662), ('ns', 0.814805084420327), ('secret', 0.7993442776572333)]
+Top words for pretrained_BERT neuron indx 4692 [('62', 1.0), ('FSM', 0.9207570790124554), ('frame', 0.8865153009755238), ('sdi', 0.871646278408648), ('gf', 0.8613807578895218)]
+Top words for pretrained_BERT neuron indx 4184 [('listen', 1.0), ('ip', 0.9897641184398247), ('False', 0.9870292099472402), ('ALPHABET', 0.8949228288237825), ('42', 0.8809237150682714)]
+Top words for pretrained_BERT neuron indx 8793 [('ay', 1.0), ('ax', 0.7578768570782722), ('communities', 0.7568724323424824), ('construct', 0.7520932125752775), ('BBOX', 0.7428286258220828)]
+Top words for pretrained_BERT neuron indx 5720 [('42', 1.0), ('ll', 0.9050385470327197), ('decimal', 0.8956886086329995), ('variables', 0.8640426918931684), ('40', 0.7981139328884491)]
+Top words for pretrained_BERT neuron indx 7256 [('ll', 1.0), ('other', 0.9644272443825267), ('to_fixed', 0.9435462662623838), ('StringIO', 0.9362250673860002), ('variables', 0.9250656112958023)]
+Top words for pretrained_BERT neuron indx 8798 [('dom', 1.0), ('afi', 0.9200422834931179), ('timezone', 0.9128419462057477), ('DeReference', 0.8768554232952074), ('pushkin', 0.8609225454657803)]
+Top words for pretrained_BERT neuron indx 7262 [('timezone', 1.0), ('afi', 0.8397630637972049), ('secret', 0.7957734023374485), ('lat', 0.7949242060787911), ('GENERATOR', 0.7604591444693399)]
+Top words for pretrained_BERT neuron indx 4704 [('300', 1.0), ('69', 0.9377285482313947), ('1800', 0.9338789039515457), ('milliseconds', 0.9152723082592018), ('95', 0.9129744415244763)]
+Top words for pretrained_BERT neuron indx 3168 [('75', 1.0), ('36', 0.9860748905794043), ('95', 0.8633988848859518), ('69', 0.8310839641932026), ('96', 0.7847939467812568)]
+Top words for pretrained_BERT neuron indx 7776 [('bson', 1.0), ('oslo', 0.9988325135734218), ('tls', 0.9234589460990287), ('pisa', 0.9160298018702464), ('zone', 0.913564919667739)]
+Top words for pretrained_BERT neuron indx 6240 [('95', 1.0), ('31', 0.9432868069718745), ('decimal', 0.9347812348818824), ('tls', 0.9042190383220738), ('bson', 0.8820856603321471)]
+Top words for pretrained_BERT neuron indx 9314 [('If', 1.0), ('Else', 0.7990779079792419), ('Iq', 0.7496890939115991), ('while', 0.7256038649978118), ('RELATIONS', 0.6895762518108214)]
+Top words for pretrained_BERT neuron indx 3175 [('WITHDRAW', 1.0), ('zone', 0.9689257438951135), ('closing', 0.9350202745587837), ('pb', 0.8772922539611543), ('blocking', 0.8550468663292514)]
+Top words for pretrained_BERT neuron indx 9832 [('microseconds', 1.0), ('milliseconds', 0.7588425953684557), ('CommandMock', 0.7278240890199774), ('trello', 0.6777778204412898), ('AFI', 0.6649208675539824)]
+Top words for pretrained_BERT neuron indx 9324 [('69', 1.0), ('89.999999999999992', 0.8869787460545872), ('listen', 0.882324594243306), ('"1.2.3"', 0.7934538475625293), ('33', 0.7578806669026316)]
+Top words for pretrained_BERT neuron indx 6765 [('qdict', 1.0), ('"http://"', 0.682727374309148), ('blend', 0.6810229350142678), ('Cat', 0.6237653465086687), ('tell', 0.6135296710385115)]
+Top words for pretrained_BERT neuron indx 628 [('CANCEL', 1.0), ('cancel', 0.960529097062075), ('reservation', 0.9143322104532363), ('REQUEST', 0.8612492037165037), ('probe', 0.8061991389451973)]
+Top words for pretrained_BERT neuron indx 118 [('day', 1.0), ('messages', 0.9123712601696897), ('reason', 0.8644790980730467), ('lb', 0.828107609064741), ('changed', 0.8093945812260122)]
+Top words for pretrained_BERT neuron indx 5239 [('branches', 1.0), ('partial', 0.9943239820646341), ('chunks', 0.9840255938742359), ('implementation', 0.9604710734651557), ('sets', 0.9489787656314891)]
+Top words for pretrained_BERT neuron indx 6265 [('MAXLAT', 1.0), ('LON', 0.9884749845284813), ('62', 0.9270716726007528), ('is', 0.905409737423325), ('as', 0.9024817602450007)]
+Top words for pretrained_BERT neuron indx 122 [('convert', 1.0), ('CardOperation', 0.9153978095540222), ('Card', 0.7647284680034137), ('fin', 0.7212521961799996), ('Signature', 0.7063876837514039)]
+Top words for pretrained_BERT neuron indx 635 [('apache', 1.0), ('pisa', 0.9050956487756435), ('def', 0.8898512560032386), ('signals', 0.885818307274476), ('manager', 0.8545509461173391)]
+Top words for pretrained_BERT neuron indx 9340 [('scheme', 1.0), ('"happy_birthday"', 0.9256195268570926), ('createreport', 0.9034947260742613), ('Assign', 0.9007973791666631), ('openwatch', 0.8220884600134168)]
+Top words for pretrained_BERT neuron indx 124 [('PROVISION', 1.0), ('provision', 0.974599288627187), ('300', 0.9525646223094292), ('restart', 0.9159985484420428), ('oslo', 0.8883939872038146)]
+Top words for pretrained_BERT neuron indx 7292 [('42', 1.0), ('23', 0.871177808347522), ('36', 0.803462399134628), ('40', 0.75564155626956), ('443', 0.73957537889994)]
+Top words for pretrained_BERT neuron indx 127 [('unicode', 1.0), ('apache', 0.7839912240538219), ('http', 0.7661978146275599), ('HorizontalBillboard', 0.6704742835679675), ('flags', 0.666359038549871)]
+Top words for pretrained_BERT neuron indx 3199 [('ps', 1.0), ('setLevel', 0.9410896860378882), ('rules', 0.8980847441683764), ('import', 0.8886842237817283), ('other', 0.8497693494804386)]
+Top words for pretrained_BERT neuron indx 641 [('flat', 1.0), ('direct', 0.8159929011870916), ('genie', 0.7778990757828457), ('demo', 0.7676436761646953), ('Card', 0.7606033291405424)]
+Top words for pretrained_BERT neuron indx 1666 [('tenant', 1.0), ('south', 0.9161336211309394), ('available', 0.8904402060783762), ('return', 0.8097217858571524), ('regions', 0.8035477278560537)]
+Top words for pretrained_BERT neuron indx 4739 [('vol', 1.0), ('space', 0.890703701313829), ('old', 0.7832161646083258), ('ref', 0.7805851667315848), ('application', 0.7631905787157127)]
+Top words for pretrained_BERT neuron indx 642 [('Wire', 1.0), ('intersects', 0.8347691300191407), ('class', 0.7584801402037008), ('Command', 0.7407923173936951), ('WAY', 0.7118890664347177)]
+Top words for pretrained_BERT neuron indx 7298 [('STATUS', 1.0), ('REFERENCES', 0.9525838870516236), ('libraries', 0.9130234963386223), ('SECONDS', 0.9092672448341642), ('PRIORITY', 0.9010574460465954)]
+Top words for pretrained_BERT neuron indx 646 [('strategy', 1.0), ('BOUNDS', 0.9283976018618464), ('unicode', 0.9056822552400263), ('Stream', 0.7929165497706288), ('ORIGIN', 0.7853457438505793)]
+Top words for pretrained_BERT neuron indx 4230 [('tenant', 1.0), ('current', 0.9745777615711376), ('district', 0.9173160817879153), ('CANCEL', 0.9127339033427602), ('cancel', 0.8777213597994962)]
+Top words for pretrained_BERT neuron indx 9352 [('MultiPolygon', 1.0), ('Int', 0.9229017053240259), ('512', 0.8583413835923193), ('If', 0.8473056681690697), ('horizon', 0.8360911955796514)]
+Top words for pretrained_BERT neuron indx 7817 [('flat', 1.0), ('within', 0.8936015427416452), ('frame', 0.8596508321559224), ('created', 0.7871686119138795), ('millis', 0.7636361860628649)]
+Top words for pretrained_BERT neuron indx 8841 [('o2', 1.0), ('ax', 0.8793073663610356), ('pb', 0.7981164409657256), ('Authorization', 0.7902890472077262), ('owner', 0.7779752489788717)]
+Top words for pretrained_BERT neuron indx 8838 [('"0"', 1.0), ('"r"', 0.9467652215199722), ('75', 0.9301044810381974), ('42', 0.8665511499372749), ('"100"', 0.836677444952002)]
+Top words for pretrained_BERT neuron indx 8332 [('tries', 1.0), ('intersects', 0.9633272430719912), ('forwards', 0.8656993019285882), ('999999', 0.8479510372306823), ('compute', 0.843553911608762)]
+Top words for pretrained_BERT neuron indx 8845 [('Action', 1.0), ('Clock', 0.9413525711351646), ('"1.2.3"', 0.8277642569669448), ('21', 0.797999879956641), ('"0.0.0.0/0"', 0.7969361595691713)]
+Top words for pretrained_BERT neuron indx 6286 [('ORIGIN', 1.0), ('origin', 0.9375439230934067), ('Origin', 0.9216199335042834), ('1970', 0.9021706387584439), ('MINIMUM', 0.873923899977184)]
+Top words for pretrained_BERT neuron indx 4231 [('failure', 1.0), ('fail', 0.9666610758896661), ('ahead', 0.9374184087541304), ('services', 0.9291352134819292), ('initial', 0.8404725124857311)]
+Top words for pretrained_BERT neuron indx 656 [('cb', 1.0), ('Register', 0.8718616043749688), ('valid', 0.7781027435531744), ('validators', 0.7769679236580769), ('restart', 0.7704897943821666)]
+Top words for pretrained_BERT neuron indx 2705 [('ts', 1.0), ('bk', 0.9474359282259259), ('Iq', 0.8746956793966105), ('nh', 0.8594709353765967), ('ep', 0.8064328974353578)]
+Top words for pretrained_BERT neuron indx 7317 [('if', 1.0), ('while', 0.9531818385658943), ('secret', 0.9431056342789187), ('If', 0.9162422974115538), ('or', 0.8812446153996519)]
+Top words for pretrained_BERT neuron indx 663 [('blank', 1.0), ('sid', 0.9490992822784223), ('secret', 0.8581742107760059), ('principal', 0.829064245298571), ('doc', 0.8157148769980179)]
+Top words for pretrained_BERT neuron indx 7832 [('buttons', 1.0), ('Always', 0.9897892349858849), ('2014', 0.8876921214886788), ('except', 0.8678310729399641), ('processors', 0.7986592259626862)]
+Top words for pretrained_BERT neuron indx 9881 [('187', 1.0), ('TERMINATE', 0.8669780413248906), ('Job', 0.8410784885570978), ('terminate', 0.8249488852959562), ('Auditor', 0.7850937197476765)]
+Top words for pretrained_BERT neuron indx 5788 [('inc', 1.0), ('Simple', 0.8939858056190028), ('204', 0.875565728733617), ('On', 0.7939268532639798), ('ON', 0.7939268532639798)]
+Top words for pretrained_BERT neuron indx 159 [('187', 1.0), ('boot', 0.9628123814539742), ('75', 0.9562802094620051), ('119', 0.9060050447671979), ('512', 0.8457867626944235)]
+Top words for pretrained_BERT neuron indx 3744 [('purpose', 1.0), ('protocol', 0.7990529752594534), ('CONNECTED', 0.7688050876117605), ('composite', 0.7486223693573728), ('Point', 0.7398238554165227)]
+Top words for pretrained_BERT neuron indx 672 [('Column', 1.0), ('space', 0.7806373225420592), ('cover', 0.7567172878452265), ('ADVERTISE', 0.7395457036783806), ('horizon', 0.7303808793182603)]
+Top words for pretrained_BERT neuron indx 6818 [('implementation', 1.0), ('decimal', 0.9655131650569551), ('scenario', 0.8637038567532368), ('enclosure', 0.855395689512951), ('Stretch', 0.8435559760723416)]
+Top words for pretrained_BERT neuron indx 9377 [('variables', 1.0), ('exists', 0.9878720409105743), ('microseconds', 0.9754485986312296), ('False', 0.9403014494332109), ('milliseconds', 0.9016298478559739)]
+Top words for pretrained_BERT neuron indx 6820 [('get_or_create', 1.0), ('sts', 0.9853617058059192), ('RELATIONS', 0.9191777689789591), ('disconnections', 0.9153188673317829), ('RELATION', 0.892102533502122)]
+Top words for pretrained_BERT neuron indx 5795 [('except', 1.0), ('with', 0.8782073449985162), ('if', 0.8671585030178021), ('bagpipe', 0.8096615020359326), ('oslo', 0.803476701023588)]
+Top words for pretrained_BERT neuron indx 7331 [('if', 1.0), ('with', 0.8948112583942679), ('except', 0.8503235989158273), ('If', 0.8068617120393887), ('while', 0.7865709050281077)]
+Top words for pretrained_BERT neuron indx 1190 [('3785', 1.0), ('subscribers', 0.9838397795362457), ('def', 0.9502458152749942), ('reactor', 0.9313538375065886), ('119', 0.9130963392055548)]
+Top words for pretrained_BERT neuron indx 7850 [('score', 1.0), ('missing', 0.9888751479068059), ('minutes', 0.9706657024954717), ('blank', 0.9480470755617074), ('upstream', 0.9246269060155876)]
+Top words for pretrained_BERT neuron indx 6826 [('Watcher', 1.0), ('sender', 0.9981589392183834), ('Adapter', 0.9962604967780148), ('NODES', 0.9304095252315817), ('exists', 0.8594547147146548)]
+Top words for pretrained_BERT neuron indx 172 [('protocols', 1.0), ('enclosure', 0.9614477039407892), ('package', 0.9442921607240531), ('sock', 0.8244374654167406), ('chunk', 0.8212176946491159)]
+Top words for pretrained_BERT neuron indx 5802 [('pattern', 1.0), ('capacity', 0.9986691176816159), ('composite', 0.969295450261072), ('width', 0.9133826127721882), ('moderate', 0.9026512032183996)]
+Top words for pretrained_BERT neuron indx 9394 [('revision', 1.0), ('packet', 0.9656363301705498), ('Delay', 0.909817211424425), ('Timestamp_reply', 0.9018341390624234), ('Label', 0.8750895675642625)]
+Top words for pretrained_BERT neuron indx 1204 [('choice', 1.0), ('props', 0.9913512194970785), ('Manager', 0.9571163192479818), ('ct', 0.9277598923592342), ('Output', 0.9257074127701415)]
+Top words for pretrained_BERT neuron indx 2740 [('Basic', 1.0), ('imports', 0.9558325235635686), ('props', 0.9392538010410983), ('choice', 0.9387076885876862), ('selection', 0.932760220056984)]
+Top words for pretrained_BERT neuron indx 9398 [('secret', 1.0), ('1970', 0.991144597262614), ('400', 0.9455316625935258), ('Asset', 0.8960108506640735), ('newRoute', 0.8572176747717483)]
+Top words for pretrained_BERT neuron indx 183 [('reverse', 1.0), ('discovery', 0.9309110642646541), ('Update', 0.8899821743232981), ('Dummy', 0.8868382350466454), ('regions', 0.8364135656617235)]
+Top words for pretrained_BERT neuron indx 7862 [('secret', 1.0), ('ah', 0.9901081597296665), ('Asset', 0.9795759104144427), ('REFERENCES', 0.9775386693992881), ('1970', 0.9162023161285264)]
+Top words for pretrained_BERT neuron indx 3771 [('getType', 1.0), ('Off', 0.9941243873908187), ('quota', 0.9930996174349207), ('loading', 0.9373059321606532), ('enabled', 0.8784748419098882)]
+Top words for pretrained_BERT neuron indx 4284 [('flash', 1.0), ('other', 0.9892324615231805), ('sr', 0.9868168573220165), ('do', 0.947608020016102), ('href', 0.9431781490767938)]
+Top words for pretrained_BERT neuron indx 5309 [('None', 1.0), ('communities', 0.9073889602342783), ('Proto', 0.9005300563682685), ('recordings', 0.8558003086989237), ('choice', 0.833449658532069)]
+Top words for pretrained_BERT neuron indx 5820 [('PRIORITY', 1.0), ('sr', 0.9685866250725994), ('trial', 0.9460816745643528), ('INCOMPLETE', 0.9304834784175239), ('MEMBERS', 0.9286583128235755)]
+Top words for pretrained_BERT neuron indx 6845 [('communities', 1.0), ('districts', 0.9340276105140509), ('PROVISION', 0.906046330363256), ('nsa', 0.8760721330690106), ('resources', 0.8612245370707248)]
+Top words for pretrained_BERT neuron indx 193 [('moderate', 1.0), ('PATHS', 0.9728359291344647), ('File', 0.9163400105729167), ('ERROR', 0.9004312132643035), ('Error', 0.874815623282057)]
+Top words for pretrained_BERT neuron indx 1219 [('fifteen', 1.0), ('render', 0.9718583243266657), ('framing', 0.9501321001615118), ('functional', 0.9373982019704188), ('medium', 0.9166767975923518)]
+Top words for pretrained_BERT neuron indx 8903 [('Region', 1.0), ('organization', 0.8599523296525053), ('region', 0.800173566641349), ('Subject', 0.783043554442868), ('Event', 0.7764879804085151)]
+Top words for pretrained_BERT neuron indx 3791 [('cancel', 1.0), ('python', 0.975089145553206), ('closing', 0.9670471941198826), ('ah', 0.9667155210237252), ('CANCEL', 0.9652390712290023)]
+Top words for pretrained_BERT neuron indx 5327 [('closing', 1.0), ('ah', 0.9968841495435435), ('blocking', 0.9554411432554072), ('rd', 0.9000640283973763), ('python', 0.8713978217909651)]
+Top words for pretrained_BERT neuron indx 7379 [('Provider', 1.0), ('oslo', 0.9718815631908551), ('broker', 0.8320661056711464), ('2.1', 0.8157582827051038), ('0.04', 0.79885917354924)]
+Top words for pretrained_BERT neuron indx 8915 [('five', 1.0), ('Provider', 0.9373184437457038), ('oslo', 0.9011270421993884), ('import', 0.8199700689918898), ('edited', 0.8182352889953802)]
+Top words for pretrained_BERT neuron indx 6870 [('fail', 1.0), ('while', 0.924638527124924), ('requires', 0.8795990775203599), ('inc', 0.8664866224907695), ('tornado', 0.8243934896533506)]
+Top words for pretrained_BERT neuron indx 727 [('Else', 1.0), ('types', 0.9236747486366866), ('else', 0.8445255935565179), ('False', 0.825291881447564), ('seek', 0.7531567183746659)]
+Top words for pretrained_BERT neuron indx 8410 [('with', 1.0), ('Criteria', 0.9812684368632256), ('criteria', 0.9144876037763077), ('False', 0.8935852593436806), ('initial', 0.8836313832052295)]
+Top words for pretrained_BERT neuron indx 734 [('reference', 1.0), ('Authenticated', 0.999913748215915), ('Migration', 0.9565679638846529), ('entries', 0.9506694863480676), ('horizon', 0.8925199931635509)]
+Top words for pretrained_BERT neuron indx 2270 [('bus', 1.0), ('zone', 0.9536025154470711), ('horizon', 0.9506061295437345), ('Recording', 0.9278084564332308), ('Stream', 0.924590490140708)]
+Top words for pretrained_BERT neuron indx 225 [('MULTILINE', 1.0), ('jtype', 0.9413895757718741), ('trello', 0.8609852579603845), ('intersects', 0.8395544904834551), ('62', 0.7990675251701411)]
+Top words for pretrained_BERT neuron indx 4834 [('exists', 1.0), ('23', 0.9343864805671582), ('DISCONNECTED', 0.9318487128140404), ('Stretch', 0.9136603608280665), ('TAGS', 0.9009926074116884)]
+Top words for pretrained_BERT neuron indx 3299 [('WAY', 1.0), ('WAYS', 0.8847650464039614), ('Geo', 0.7853465476784809), ('simplify', 0.7803779028965253), ('celery', 0.7405020467721987)]
+Top words for pretrained_BERT neuron indx 4840 [('kw', 1.0), ('ADVERTISE', 0.9077923272605392), ('chunk', 0.8904617827528585), ('chunks', 0.8791184105643368), ('multiple', 0.8528090722577842)]
+Top words for pretrained_BERT neuron indx 5353 [('simulation', 1.0), ('one', 0.9281953098133119), ('plural', 0.8827327116958245), ('topology', 0.8539390574468553), ('length', 0.8313739500128279)]
+Top words for pretrained_BERT neuron indx 240 [('ax', 1.0), ('cancel', 0.9079454033032668), ('utc', 0.8971622902552507), ('lb', 0.8823985406568513), ('boot', 0.8745882035732349)]
+Top words for pretrained_BERT neuron indx 6899 [('Int', 1.0), ('DBPORT', 0.9798910436423319), ('within', 0.9154025426032549), ('Always', 0.865666799247519), ('1023', 0.8652944984044318)]
+Top words for pretrained_BERT neuron indx 8436 [('"FAILED"', 1.0), ('17', 0.9524328240805952), ('"SUCCEEDED"', 0.885672784414824), ('Watcher', 0.8749639845526049), ('descriptor', 0.8708612054459011)]
+Top words for pretrained_BERT neuron indx 8952 [('IntType', 1.0), ('materials', 0.9956305137607617), ('Card', 0.959898864443215), ('site', 0.8794560053336808), ('do', 0.865627305006082)]
+Top words for pretrained_BERT neuron indx 7929 [('15596', 1.0), ('15598', 0.9555752509395558), ('detect', 0.9223451608727874), ('15597', 0.9013039235114012), ('89.999999999999992', 0.8497055046911923)]
+Top words for pretrained_BERT neuron indx 8442 [('Prefix', 1.0), ('omit', 0.932591787988164), ('IFile', 0.9204034590373671), ('walk', 0.9203730877835206), ('five', 0.9036135809092484)]
+Top words for pretrained_BERT neuron indx 3833 [('criterion', 1.0), ('Task', 0.9795798905394509), ('exception', 0.9524385419656537), ('ROLE', 0.8579044260405807), ('exists', 0.7992564540379307)]
+Top words for pretrained_BERT neuron indx 9468 [('sender', 1.0), ('Renderer', 0.8657341279657285), ('ADVERTISE', 0.857006381980713), ('actions', 0.8560926879682517), ('renderers', 0.828629743263046)]
+Top words for pretrained_BERT neuron indx 765 [('lb', 1.0), ('Geo', 0.9627356466223846), ('encoding', 0.8327923227400418), ('File', 0.8022557503823464), ('python', 0.7580089025414154)]
+Top words for pretrained_BERT neuron indx 4350 [('TRANSITIVE', 1.0), ('unquote', 0.947613434211109), ('RELATIONS', 0.8876174231793452), ('"key"', 0.8514252453286104), ('single', 0.8228122914030364)]
+Top words for pretrained_BERT neuron indx 8960 [('Descriptor', 1.0), ('img', 0.9345221152051024), ('completed', 0.9223068670250094), ('recordings', 0.8828373616493358), ('score', 0.8680426903662274)]
+Top words for pretrained_BERT neuron indx 9477 [('oslo', 1.0), ('81.4471435546875', 0.9403538113948214), ('Int', 0.9348950955594979), ('"error"', 0.8547428780758688), ('ContextTask', 0.8470240136809256)]
+Top words for pretrained_BERT neuron indx 262 [('select', 1.0), ('reflection', 0.9511019708652132), ('signed', 0.8939978355594392), ('brightness', 0.8664602314488009), ('abstract', 0.8557553330187698)]
+Top words for pretrained_BERT neuron indx 7431 [('ur', 1.0), ('up', 0.9223284171214018), ('117', 0.9158290069006647), ('avail', 0.8777651400890437), ('identical', 0.8763503037967928)]
+Top words for pretrained_BERT neuron indx 8968 [('33', 1.0), ('62', 0.9011983997203464), ('window', 0.9009785877980675), ('75', 0.888174251834394), ('80', 0.8306231154417348)]
+Top words for pretrained_BERT neuron indx 7432 [('62', 1.0), ('75', 0.996771975359936), ('window', 0.9901362193138847), ('"oslo"', 0.9766714120425566), ('33', 0.9718939200456467)]
+Top words for pretrained_BERT neuron indx 8969 [('"oslo"', 1.0), ('functional', 0.8844063800043791), ('SSLContext', 0.8393122799925892), ('location__exact', 0.8232736284650791), ('inc', 0.8218079598470686)]
+Top words for pretrained_BERT neuron indx 1802 [('ELEMENT', 1.0), ('Prefix', 0.9105467337900879), ('element', 0.8638384006961066), ('digest', 0.7974091411570153), ('Digest', 0.7836151087963992)]
+Top words for pretrained_BERT neuron indx 268 [('twisted', 1.0), ('ax', 0.997966509468365), ('else', 0.9600751253765222), ('Else', 0.920361175759377), ('backwards', 0.8980773438488079)]
+Top words for pretrained_BERT neuron indx 269 [('no', 1.0), ('dom', 0.9750247195595797), ('composite', 0.9288448781492661), ('space', 0.9187360414169342), ('texture', 0.9149708312534913)]
+Top words for pretrained_BERT neuron indx 7945 [('in', 1.0), ('1800', 0.9167788927457055), ('utc', 0.9155293489391567), ('90.0', 0.8803807864786278), ('milliseconds', 0.8456917981814758)]
+Top words for pretrained_BERT neuron indx 1808 [('web', 1.0), ('license', 0.9620459368307988), ('repository', 0.7952074893339809), ('transaction', 0.7779817325068292), ('broker', 0.7715977556039618)]
+Top words for pretrained_BERT neuron indx 5905 [('decimal', 1.0), ('excepts', 0.9025966043647206), ('has', 0.784874335949904), ('old', 0.7586780550343113), ('If', 0.739682556610609)]
+Top words for pretrained_BERT neuron indx 6930 [('each', 1.0), ('plural', 0.9227354073011901), ('ax', 0.8830573964301685), ('synchronized', 0.848064803930663), ('Simple', 0.8338384014592437)]
+Top words for pretrained_BERT neuron indx 8466 [('ax', 1.0), ('each', 0.9843622415055625), ('plural', 0.9134653279716123), ('realm', 0.9055760127282984), ('audit', 0.8959898852700405)]
+Top words for pretrained_BERT neuron indx 1299 [('ssl', 1.0), ('RELATIONS', 0.9890584042302112), ('Billboard', 0.9818226438594396), ('contents', 0.9129647735661993), ('RELEASE', 0.9123256994097358)]
+Top words for pretrained_BERT neuron indx 3344 [('web', 1.0), ('ep', 0.9273082272381242), ('alt', 0.8795347711035476), ('urandom', 0.8672104677862451), ('license', 0.8540810451193702)]
+Top words for pretrained_BERT neuron indx 1302 [('tenant', 1.0), ('aspect', 0.8666686230291117), ('translation', 0.8574751380581886), ('clone', 0.8560818686785479), ('raise', 0.8538254002544534)]
+Top words for pretrained_BERT neuron indx 9495 [('If', 1.0), ('google', 0.7424077061747996), ('REF', 0.685098777439186), ('if', 0.650305882573201), ('On', 0.6269361375127596)]
+Top words for pretrained_BERT neuron indx 3864 [('750', 1.0), ('trello', 0.925004758777543), ('Integer', 0.910997129550373), ('identical', 0.9019172601587834), ('decimal', 0.8891691410279228)]
+Top words for pretrained_BERT neuron indx 4737 [('abstract', 1.0), ('Card', 0.8188434627053289), ('other', 0.8044432305199105), ('ns', 0.7936835689352427), ('nsi2', 0.756813378064267)]
+Top words for pretrained_BERT neuron indx 8476 [('75', 1.0), ('P2PServiceBaseType', 0.9260902286662201), ('polygon', 0.9064089840901459), ('0x00000001', 0.8586057550907038), ('MultiPolygon', 0.8536991104100818)]
+Top words for pretrained_BERT neuron indx 7965 [('erase', 1.0), ('no', 0.9979774482488549), ('principal', 0.8941428224361357), ('zone', 0.8873951192305894), ('opacity', 0.8655491056058705)]
+Top words for pretrained_BERT neuron indx 7454 [('span', 1.0), ('ref', 0.9922157294299933), ('Output', 0.9740813951879339), ('missing', 0.959641206707252), ('functional', 0.875380281103503)]
+Top words for pretrained_BERT neuron indx 6437 [('omit', 1.0), ('deferred', 0.9990406684577249), ('Subject', 0.8586526474482252), ('Region', 0.8139712810576263), ('agency', 0.7948890514317192)]
+Top words for pretrained_BERT neuron indx 6952 [('terms', 1.0), ('discovery', 0.9929980117445786), ('Presence', 0.9874183936745734), ('last', 0.9705772968973968), ('selection', 0.9016470153049428)]
+Top words for pretrained_BERT neuron indx 6953 [('ex', 1.0), ('cb', 0.9443808156920298), ('trial', 0.9348806621168955), ('RESERVE', 0.9092597470049374), ('slug', 0.9090408458180135)]
+Top words for pretrained_BERT neuron indx 808 [('asset', 1.0), ('Asset', 0.9810862413275229), ('last', 0.9298370444310133), ('decorators', 0.9234107176102022), ('materials', 0.908324755370326)]
+Top words for pretrained_BERT neuron indx 8491 [('mins', 1.0), ('parameter', 0.9528915396118088), ('selection', 0.8793628818153936), ('minutes', 0.8590059592004209), ('lat__gt', 0.8041419781338095)]
+Top words for pretrained_BERT neuron indx 9004 [('bk', 1.0), ('by', 0.9405457518043167), ('On', 0.7358972400092328), ('ON', 0.7358972400092328), ('libraries', 0.7311013005033492)]
+Top words for pretrained_BERT neuron indx 9517 [('PIECE', 1.0), ('21', 0.9356359775385928), ('dir', 0.8434745700623417), ('bk', 0.7769693263656661), ('five', 0.7684632631357913)]
+Top words for pretrained_BERT neuron indx 302 [('resolve', 1.0), ('bodies', 0.9401348226664272), ('Int', 0.9372190693112015), ('def', 0.9351414518511032), ('chunks', 0.7910132297429854)]
+Top words for pretrained_BERT neuron indx 7468 [('bk', 1.0), ('by', 0.8944192043968239), ('On', 0.7598803028101095), ('ON', 0.7598803028101095), ('from', 0.6924457944141311)]
+Top words for pretrained_BERT neuron indx 5417 [('ex', 1.0), ('302', 0.9474250243542017), ('204', 0.9456696606051148), ('trial', 0.9338259679248366), ('framing', 0.8906406556005394)]
+Top words for pretrained_BERT neuron indx 308 [('and', 1.0), ('to', 0.867833621017307), ('in', 0.867726722143447), ('".."', 0.8665045777521424), ('with', 0.7247832718323066)]
+Top words for pretrained_BERT neuron indx 3380 [('and', 1.0), ('in', 0.937575482322325), ('is', 0.9336249551198733), ('with', 0.8418897458912594), ('as', 0.8326306242939852)]
+Top words for pretrained_BERT neuron indx 1844 [('and', 1.0), ('in', 0.907933708790136), ('to', 0.8531923830407232), ('is', 0.8480226399220433), ('".."', 0.846639740618333)]
+Top words for pretrained_BERT neuron indx 6967 [('five', 1.0), ('42', 0.927143696491439), ('1800', 0.87167965176439), ('75', 0.818357667588736), ('fifteen', 0.7227673751025762)]
+Top words for pretrained_BERT neuron indx 6459 [('with', 1.0), ('sr', 0.8415315156311381), ('WITHDRAW', 0.789518398114357), ('".js"', 0.7594899312810645), ('do', 0.7590895737376383)]
+Top words for pretrained_BERT neuron indx 2875 [('initial', 1.0), ('Basic', 0.9148517647871377), ('responses', 0.8626968279535602), ('original', 0.8184687652956265), ('part', 0.8184114942415325)]
+Top words for pretrained_BERT neuron indx 9533 [('MINIMUM', 1.0), ('python', 0.9949693443351112), ('quota', 0.9767662564168971), ('baseline', 0.8976605194264818), ('REFERENCES', 0.8486597177160393)]
+Top words for pretrained_BERT neuron indx 7999 [('750', 1.0), ('3785', 0.9496977074818447), ('74.616338', 0.9327965782586812), ('is', 0.9168091347465521), ('4095', 0.9099605163633783)]
+Top words for pretrained_BERT neuron indx 3911 [('WAYS', 1.0), ('cipher', 0.9909906553674348), ('upstream', 0.9513665903704497), ('512', 0.9207896686456147), ('variables', 0.8989098483468804)]
+Top words for pretrained_BERT neuron indx 839 [('destroy', 1.0), ('if', 0.943953488745776), ('If', 0.9273295538031013), ('District', 0.8938665544439225), ('platforms', 0.8902131583164392)]
+Top words for pretrained_BERT neuron indx 9033 [('465', 1.0), ('15597', 0.967873830656997), ('1025', 0.9545609420022181), ('south', 0.927839218283271), ('bare', 0.9255914692500818)]
+Top words for pretrained_BERT neuron indx 7497 [('"data"', 1.0), ('pattern', 0.980193932885938), ('"multiple"', 0.9349749400968211), ('ur', 0.9338854730348706), ('"sequence"', 0.910853698253388)]
+Top words for pretrained_BERT neuron indx 4939 [('NODES', 1.0), ('On', 0.9639180765487658), ('ON', 0.9639180765487658), ('MEMBERS', 0.8123136519629156), ('CACHES', 0.8064855966293861)]
+Top words for pretrained_BERT neuron indx 1356 [('alt', 1.0), ('mac', 0.9509859995728628), ('select', 0.9401305611422143), ('counts', 0.9121492893575786), ('commits', 0.9074965830572415)]
+Top words for pretrained_BERT neuron indx 333 [('ah', 1.0), ('Parent', 0.8692099808225767), ('sr', 0.8161292931718174), ('tornado', 0.8143535503363432), ('accounts', 0.8055199251749228)]
+Top words for pretrained_BERT neuron indx 9036 [('available', 1.0), ('CREATING', 0.9267415358849819), ('one', 0.8297348648499517), ('intersects', 0.8206529792740618), ('instanceId', 0.8016591501518873)]
+Top words for pretrained_BERT neuron indx 6475 [('INCOMPLETE', 1.0), ('ROLE', 0.9948198695978718), ('polygon', 0.9799250903102019), ('CACHES', 0.9635618645521642), ('"0.14.0"', 0.9533511907043788)]
+Top words for pretrained_BERT neuron indx 7507 [('buttons', 1.0), ('NODES', 0.9834762040010375), ('button', 0.9633377789013032), ('Column', 0.9447376349556439), ('Geo', 0.9440325546550881)]
+Top words for pretrained_BERT neuron indx 6489 [('BBOX', 1.0), ('IGP', 0.9982631452825668), ('IDLEN', 0.9605331279655454), ('Stretch', 0.9579587976521075), ('LAT', 0.9576628509033633)]
+Top words for pretrained_BERT neuron indx 4953 [('READY', 1.0), ('ready', 0.9902799473344668), ('IDLEN', 0.9051591495821434), ('LAT', 0.8736315577594223), ('created', 0.8536986731012681)]
+Top words for pretrained_BERT neuron indx 7008 [('"KILLED"', 1.0), ('oslo', 0.9965087539321563), ('bson', 0.974736789295125), ('95', 0.9303350739266707), ('"SUCCEEDED"', 0.9185185340815739)]
+Top words for pretrained_BERT neuron indx 5472 [('decimal', 1.0), ('geos', 0.9418303459732197), ('tls', 0.9338263956575613), ('compat', 0.929471232136902), ('bson', 0.9242329985546578)]
+Top words for pretrained_BERT neuron indx 6498 [('upstream', 1.0), ('contents', 0.9302433200431489), ('last', 0.8490567534554988), ('ready', 0.8088868585014399), ('template', 0.776060784954194)]
+Top words for pretrained_BERT neuron indx 3428 [('MEMBER', 1.0), ('TAG', 0.9998747679856506), ('store', 0.9898093971608963), ('Tag', 0.9749657475745527), ('def', 0.9545570239147356)]
+Top words for pretrained_BERT neuron indx 357 [('PROVISION', 1.0), ('tenant', 0.9542532050800744), ('provision', 0.9191556385947558), ('boot', 0.858089273814443), ('contents', 0.8097768508721965)]
+Top words for pretrained_BERT neuron indx 7015 [('functional', 1.0), ('Assign', 0.9038167213731851), ('closing', 0.8968834267213145), ('META', 0.8883917219967363), ('future', 0.887118102490383)]
+Top words for pretrained_BERT neuron indx 9064 [('microseconds', 1.0), ('Else', 0.9786298906778539), ('isalnum', 0.8713784522159042), ('OperationMock', 0.8253165729591557), ('CommandMock', 0.8090210596904498)]
+Top words for pretrained_BERT neuron indx 5482 [('oslo', 1.0), ('2014', 0.9356719126877365), ('fifteen', 0.8727325330251986), ('187', 0.8356932139436084), ('second_branch', 0.8254326597544678)]
+Top words for pretrained_BERT neuron indx 4976 [('SUCCESS', 1.0), ('RELATION', 0.9397704657511688), ('period', 0.8991164399539902), ('selection', 0.8747301413286278), ('MEMBER', 0.8155586684960832)]
+Top words for pretrained_BERT neuron indx 1395 [('spawn', 1.0), ('PIECE', 0.9081029654351345), ('credentials', 0.8948982706353722), ('interval', 0.8645882282220946), ('variable', 0.8460902715960705)]
+Top words for pretrained_BERT neuron indx 9590 [('StringType', 1.0), ('TRANSITIVE', 0.9817224071888774), ('hour', 0.9352624155627699), ('READY', 0.9261007320532911), ('Genie2', 0.9255935298721628)]
+Top words for pretrained_BERT neuron indx 7031 [('or', 1.0), ('None', 0.8917652037167513), ('return', 0.8787895310277088), ('kw', 0.8577307334336121), ('minutes', 0.8329562183014131)]
+Top words for pretrained_BERT neuron indx 7546 [('300', 1.0), ('80', 0.8919866967982535), ('800', 0.8914736138510639), ('40', 0.8555714270694394), ('42', 0.8416461254785788)]
+Top words for pretrained_BERT neuron indx 1403 [('apache', 1.0), ('Venue', 0.9985040770692502), ('signed', 0.9492769815158573), ('venue', 0.9435881906415077), ('signals', 0.8951957141195326)]
+Top words for pretrained_BERT neuron indx 8572 [('scheme', 1.0), ('for', 0.8592540687456749), ('with', 0.85723009791201), ('agency', 0.8545227918470324), ('"sequence"', 0.8536472334761454)]
+Top words for pretrained_BERT neuron indx 381 [('sim', 1.0), ('choices', 0.9081978231583605), ('WAY', 0.8285283926800391), ('TAGS', 0.817463143637824), ('serializer', 0.7888395843947688)]
+Top words for pretrained_BERT neuron indx 8571 [('75', 1.0), ('topology', 0.980384295648466), ('"y"', 0.9705588574916664), ('187', 0.9421257216338447), ('"file"', 0.9394470147524919)]
+Top words for pretrained_BERT neuron indx 9090 [('"SUCCEEDED"', 1.0), ('SON', 0.8389165418425398), ('ll', 0.8162645761941998), ('"warning"', 0.8000853417128312), ('cm', 0.7891754416671076)]
+Top words for pretrained_BERT neuron indx 3971 [('space', 1.0), ('vol', 0.992451228077872), ('if', 0.9163760097481218), ('ms', 0.8917846075749516), ('Switch', 0.8506327213002705)]
+Top words for pretrained_BERT neuron indx 9609 [('Crawler', 1.0), ('ex', 0.9429930979278868), ('unicode', 0.8589573977584735), ('Authorization', 0.8460615431656062), ('composite', 0.809415306367233)]
+Top words for pretrained_BERT neuron indx 7049 [('frame', 1.0), ('by', 0.9839263904409941), ('flat', 0.9651989670718931), ('created', 0.8614530427157958), ('within', 0.8563475484821987)]
+Top words for pretrained_BERT neuron indx 395 [('code', 1.0), ('tempstore', 0.9890850026936582), ('acquire', 0.9462056470557185), ('File', 0.9410819443356511), ('processors', 0.9321653238979447)]
+Top words for pretrained_BERT neuron indx 7564 [('999999', 1.0), ('intersects', 0.9983939947832909), ('compute', 0.9180662195195463), ('0.04', 0.8555493179179872), ('remember', 0.8408601688176326)]
+Top words for pretrained_BERT neuron indx 397 [('Clock', 1.0), ('strict', 0.9973843501701619), ('Signature', 0.9129008624856451), ('rest', 0.8864665480716147), ('clock', 0.8681871357416894)]
+Top words for pretrained_BERT neuron indx 6030 [('flat', 1.0), ('called', 0.833717186035708), ('def', 0.7530856935023537), ('95', 0.7428843009443987), ('import', 0.7041629933353475)]
+Top words for pretrained_BERT neuron indx 9100 [('999999', 1.0), ('intersects', 0.9968619810080503), ('tries', 0.9421590204777144), ('compute', 0.9013326489387519), ('89.999999999999992', 0.8911448070688183)]
+Top words for pretrained_BERT neuron indx 5005 [('81.4471435546875', 1.0), ('"63646566676869"', 0.9575659369466125), ('Action', 0.9288878932919463), ('DISCONNECTED', 0.8706987744686807), ('for', 0.8496941032252889)]
+Top words for pretrained_BERT neuron indx 1937 [('ts', 1.0), ('nh', 0.9027549433323768), ('Core', 0.8276138851646608), ('USAGE', 0.7921512084649815), ('Billboard', 0.7581468824716788)]
+Top words for pretrained_BERT neuron indx 7054 [('1970', 1.0), ('tv', 0.9464963444171395), ('yield', 0.9224124607270477), ('ORIGIN', 0.8909190764691528), ('prop', 0.8909091729966968)]
+Top words for pretrained_BERT neuron indx 7568 [('tell', 1.0), ('READY', 0.9400409643322479), ('PROVISION', 0.7653102007355076), ('RESERVE', 0.7602526219485556), ('submit', 0.7287399176087521)]
+Top words for pretrained_BERT neuron indx 8322 [('"SUCCEEDED"', 1.0), ('"warning"', 0.8097019075769509), ('On', 0.8096054700623061), ('ON', 0.8096054700623061), ('unicode', 0.769985230417717)]
+Top words for pretrained_BERT neuron indx 1431 [('blank', 1.0), ('sid', 0.9831925970113499), ('prefixLen', 0.9512239128002654), ('quote', 0.9021970513713654), ('35', 0.8503102667995664)]
+Top words for pretrained_BERT neuron indx 8600 [('28', 1.0), ('implementation', 0.990861122008479), ('2014', 0.9870692313889703), ('204', 0.9311778653471259), ('class', 0.9093020019497922)]
+Top words for pretrained_BERT neuron indx 9113 [('TERMINATE', 1.0), ('187', 0.9880918296989487), ('RELEASE', 0.955178031775375), ('agency', 0.7650571825478066), ('terminate', 0.7555391410131453)]
+Top words for pretrained_BERT neuron indx 7579 [('"warning"', 1.0), ('"x"', 0.943184935295028), ('"shared"', 0.9308279859718803), ('"display"', 0.8929278497817882), ('36', 0.853981804684291)]
+Top words for pretrained_BERT neuron indx 6556 [('inc', 1.0), ('On', 0.9012756927303186), ('ON', 0.9012756927303186), ('Simple', 0.8712910741943204), ('204', 0.8298749327291857)]
+Top words for pretrained_BERT neuron indx 4510 [('getmembers', 1.0), ('ND', 0.8771188772938032), ('lon', 0.8685177600848857), ('False', 0.8678881836225989), ('LON', 0.8061241199297966)]
+Top words for pretrained_BERT neuron indx 8834 [('WAYS', 1.0), ('"multiple"', 0.9887768518589303), ('libraries', 0.9642601109261997), ('Off', 0.9578774350595505), ('REFERENCES', 0.9444253889041326)]
+Top words for pretrained_BERT neuron indx 2976 [('purpose', 1.0), ('CONNECTED', 0.7665430764766683), ('DISCONNECTED', 0.7632609879728818), ('bodies', 0.7252918322755404), ('frame', 0.7044333451093572)]
+Top words for pretrained_BERT neuron indx 1440 [('Column', 1.0), ('ADVERTISE', 0.9464519515984214), ('purpose', 0.9065596283249048), ('closing', 0.8419542683716796), ('secret', 0.8070693973009845)]
+Top words for pretrained_BERT neuron indx 6050 [('implementation', 1.0), ('decimal', 0.9348591760768215), ('continue', 0.8564647145742543), ('Parameter', 0.7580302341490386), ('enclosure', 0.7305326824671659)]
+Top words for pretrained_BERT neuron indx 419 [('jtype', 1.0), ('ping', 0.80343705454112), ('StringType', 0.7785142804286421), ('long', 0.756525890198997), ('INCOMPLETE', 0.7395052948488768)]
+Top words for pretrained_BERT neuron indx 6563 [('except', 1.0), ('if', 0.9372716964120181), ('bagpipe', 0.8653428258248128), ('If', 0.7644344190603705), ('with', 0.7641113754097595)]
+Top words for pretrained_BERT neuron indx 3488 [('80', 1.0), ('42', 0.9575705800906592), ('Filter', 0.947357790677313), ('strings', 0.9252598896384963), ('Subject', 0.9072075276870977)]
+Top words for pretrained_BERT neuron indx 422 [('LOGGING', 1.0), ('def', 0.9917683589622631), ('Int', 0.9889759788278424), ('VALUE', 0.9564799364130293), ('listen', 0.9282747609484502)]
+Top words for pretrained_BERT neuron indx 5544 [('75', 1.0), ('five', 0.9549462870607822), ('63', 0.8257986375410296), ('Else', 0.815345968574182), ('pa', 0.7983266342957891)]
+Top words for pretrained_BERT neuron indx 425 [('Simple', 1.0), ('simple', 0.8798897637993812), ('identical', 0.7248395795650958), ('MAXIMUM', 0.7030058491391444), ('Lock', 0.6872191212837742)]
+Top words for pretrained_BERT neuron indx 426 [('digest', 1.0), ('Digest', 0.9613208051393528), ('loop', 0.7843112676502043), ('height', 0.7804139554514342), ('behind', 0.7661236362022884)]
+Top words for pretrained_BERT neuron indx 6570 [('capacity', 1.0), ('answer', 0.9593641791599588), ('width', 0.9457829618149973), ('pattern', 0.9205913970747573), ('composite', 0.9046503677662936)]
+Top words for pretrained_BERT neuron indx 6058 [('NODES', 1.0), ('sender', 0.9531021296644908), ('startTime', 0.8568699711701574), ('with', 0.8567895944996975), ('Adapter', 0.8435075480039088)]
+Top words for pretrained_BERT neuron indx 429 [('exception', 1.0), ('blend', 0.9180190848687019), ('Filter', 0.9172760905285132), ('sock', 0.8902538353113565), ('resource', 0.8435003651707077)]
+Top words for pretrained_BERT neuron indx 940 [('proxy', 1.0), ('each', 0.9352192670372464), ('length', 0.9300193399887182), ('Switch', 0.8907509276012939), ('render', 0.8859667060226625)]
+Top words for pretrained_BERT neuron indx 6578 [('activate', 1.0), ('advance', 0.9296504984630125), ('ur', 0.866012983671102), ('begin', 0.8527894093670209), ('groups', 0.8345680109611824)]
+Top words for pretrained_BERT neuron indx 9658 [('69', 1.0), ('emitter', 0.8414600432027757), ('14', 0.7973818878895803), ('purpose', 0.7382713243122156), ('depth', 0.6999134286329086)]
+Top words for pretrained_BERT neuron indx 7611 [('fifteen', 1.0), ('deploy', 0.836627314523759), ('destroy', 0.740623443070381), ('five', 0.7124171698999332), ('tell', 0.71015381506121)]
+Top words for pretrained_BERT neuron indx 6075 [('1800', 1.0), ('behind', 0.9370454845174782), ('WAYS', 0.865175732360103), ('KeyboardInterrupt', 0.8138990071270769), ('75', 0.7983979053778648)]
+Top words for pretrained_BERT neuron indx 6077 [('communities', 1.0), ('None', 0.9670537525003867), ('nsa', 0.8859581324770818), ('choice', 0.8852810439991011), ('quota', 0.878711105002015)]
+Top words for pretrained_BERT neuron indx 3005 [('None', 1.0), ('sts', 0.9626231303103042), ('nsa', 0.956809918693482), ('Proto', 0.9506497008144295), ('other', 0.8924653009002124)]
+Top words for pretrained_BERT neuron indx 3003 [('script', 1.0), ('createreport', 0.9172532419219203), ('flat', 0.8914429798819679), ('django', 0.8850485591984537), ('django_lean', 0.8834628744739937)]
+Top words for pretrained_BERT neuron indx 6081 [('services', 1.0), ('MEMBERS', 0.8965112602812704), ('synchronized', 0.8641888766306425), ('GENERATOR', 0.8423431240149185), ('continue', 0.8135303651589351)]
+Top words for pretrained_BERT neuron indx 6594 [('75', 1.0), ('ignore', 0.9823815592771502), ('quota', 0.8977098913965317), ('Instance', 0.8770667727171505), ('tell', 0.8581284412522088)]
+Top words for pretrained_BERT neuron indx 7617 [('material', 1.0), ('csrf', 0.8613559971387525), ('Util', 0.8607857727196827), ('lat__gt', 0.8419499083553874), ('23', 0.8384014999982783)]
+Top words for pretrained_BERT neuron indx 8142 [('Basic', 1.0), ('READY', 0.9241096355497842), ('parameter', 0.9154154471227411), ('exists', 0.9104039617056591), ('quality', 0.8720090304308477)]
+Top words for pretrained_BERT neuron indx 4559 [('ah', 1.0), ('closing', 0.9898972730198805), ('Failure', 0.9549874448863093), ('dr', 0.9012777923600334), ('record', 0.8488093506923838)]
+Top words for pretrained_BERT neuron indx 9167 [('oslo', 1.0), ('fifteen', 0.9713920599202491), ('15598', 0.8907166987811945), ('five', 0.8797599740740506), ('not', 0.8503516064871468)]
+Top words for pretrained_BERT neuron indx 8147 [('oslo', 1.0), ('Provider', 0.9736605971216193), ('broker', 0.9263603416447922), ('If', 0.8725670788338254), ('"{0}.{1}.{2}"', 0.8489997245527497)]
+Top words for pretrained_BERT neuron indx 7636 [('python', 1.0), ('Iq', 0.9386412968782182), ('broker', 0.898633216297995), ('Route', 0.7778171600569735), ('behind', 0.7772726425565356)]
+Top words for pretrained_BERT neuron indx 5591 [('On', 1.0), ('ON', 1.0), ('services', 0.7989089102595555), ('reservation', 0.7966479255283012), ('seen', 0.7565275492257117)]
+Top words for pretrained_BERT neuron indx 7642 [('with', 1.0), ('bk', 0.9761195274499972), ('Criteria', 0.9043855056568371), ('criteria', 0.8563437838735309), ('Label', 0.8225503303859238)]
+Top words for pretrained_BERT neuron indx 3038 [('bus', 1.0), ('Stream', 0.9147926060334339), ('district', 0.8943634211134779), ('Entity', 0.8505584831138865), ('Post', 0.8307172873426374)]
+Top words for pretrained_BERT neuron indx 478 [('forwards', 1.0), ('pisa', 0.9936601175958482), ('height', 0.9700687396772741), ('partial', 0.9485681955787156), ('audit', 0.891599829619357)]
+Top words for pretrained_BERT neuron indx 5601 [('listen', 1.0), ('WITHDRAW', 0.9471007031106423), ('Widget', 0.8997715712613504), ('Else', 0.895900133848592), ('broadcast', 0.8662867769537673)]
+Top words for pretrained_BERT neuron indx 2531 [('WAY', 1.0), ('Geo', 0.8277857059137587), ('Projector', 0.7810927404823227), ('"label"', 0.7630007545225027), ('simplify', 0.75414238671282)]
+Top words for pretrained_BERT neuron indx 4067 [('WAY', 1.0), ('WAYS', 0.9742262731088802), ('celery', 0.9494386904778749), ('simplify', 0.9017311712272357), ('files', 0.8828075850044275)]
+Top words for pretrained_BERT neuron indx 995 [('reflection', 1.0), ('WMS', 0.9918943334729039), ('WAY', 0.9437605155804786), ('simple', 0.922611688033533), ('identical', 0.8705381654603072)]
+Top words for pretrained_BERT neuron indx 998 [('Proto', 1.0), ('length', 0.9124551404244597), ('year', 0.889284345579294), ('deploy', 0.887834113913292), ('v2', 0.8728250961651141)]
+Top words for pretrained_BERT neuron indx 5606 [('2014', 1.0), ('define', 0.9427533346282266), ('BOUNDS', 0.9362981303639571), ('127', 0.9255133034833254), ('pass', 0.9253070793305889)]
+Top words for pretrained_BERT neuron indx 8163 [('False', 1.0), ('intersects', 0.9765988522282076), ('exabgp', 0.9563804094484574), ('ElasticSearchServiceItem', 0.9201056372428991), ('runner', 0.9035120204864512)]
+Top words for pretrained_BERT neuron indx 6121 [('simulation', 1.0), ('one', 0.9743611501579228), ('old', 0.8953503297133368), ('length', 0.8917869743955417), ('future', 0.8659326141890615)]
+Top words for pretrained_BERT neuron indx 8167 [('oslo', 1.0), ('999999', 0.987369968090329), ('"y"', 0.9371146600392735), ('or', 0.8980642772176277), ('ay', 0.8534421330387825)]
+Top words for pretrained_BERT neuron indx 2534 [('Proto', 1.0), ('convert', 0.9282690547936259), ('v2', 0.8776533647572012), ('2014', 0.8451805875785529), ('BOUNDS', 0.8403892933910591)]
+Top words for pretrained_BERT neuron indx 491 [('seek', 1.0), ('token', 0.9948518596242485), ('pass', 0.8939647320513212), ('Pass', 0.8934827717731821), ('host', 0.845044563769801)]
+Top words for pretrained_BERT neuron indx 4590 [('fifteen', 1.0), ('CANCEL', 0.8214219922716177), ('internet', 0.8051461967822877), ('119', 0.7777118542953189), ('GetBoard', 0.7290517169225217)]
+Top words for pretrained_BERT neuron indx 8176 [('STATUS', 1.0), ('excepts', 0.9786248429079034), ('mapByExtent', 0.9658767756545146), ('18', 0.9393253209062812), ('framing', 0.8651525183859035)]
+Top words for pretrained_BERT neuron indx 1008 [('ax', 1.0), ('200', 0.953854935845596), ('makeTree', 0.9461439578479441), ('Repository', 0.9430645807329776), ('repository', 0.9421287245682859)]
+Top words for pretrained_BERT neuron indx 3058 [('bk', 1.0), ('OK', 0.8431299160807864), ('el', 0.7214564894373021), ('sid', 0.7208740240140425), ('LOGGING', 0.7153491359495006)]
+Top words for pretrained_BERT neuron indx 7667 [('within', 1.0), ('VALUE', 0.9401756086444454), ('negotiate', 0.9114697801172582), ('DBPORT', 0.8815429682154972), ('mins', 0.8348336213455086)]
+Top words for pretrained_BERT neuron indx 7668 [('for', 1.0), ('descriptor', 0.997018044447778), ('Descriptor', 0.9717369668152918), ('17', 0.9117447483106913), ('0o555', 0.8778388253897355)]
+Top words for pretrained_BERT neuron indx 9721 [('OpenStreetMap', 1.0), ('TERMINATE', 0.9989723236024672), ('Int', 0.9379212656184249), ('identical', 0.8940205358443978), ('DistrictIndexFile', 0.8729918770272638)]
+Top words for pretrained_BERT neuron indx 7674 [('authJID', 1.0), ('getTo', 0.9475222091026841), ('upgrade', 0.9337342242485274), ('notes', 0.9206361097056602), ('google', 0.9191825371051705)]
+Top words for pretrained_BERT neuron indx 6654 [('omit', 1.0), ('unquote', 0.8816043384212027), ('"first_commits"', 0.8641067695562521), ('ts', 0.7993704112119584), ('"x"', 0.7862083340011864)]
+Top words for pretrained_BERT neuron indx 5631 [('Delay', 1.0), ('25', 0.9345416133327916), ('Billboard', 0.8809327927439004), ('no', 0.8481452958663528), ('apache', 0.8343157189315545)]
+Creating control dataset for pretrained_BERT POS tagging task
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0175
+Epoch: [2/10], Loss: 0.0123
+Epoch: [3/10], Loss: 0.0093
+Epoch: [4/10], Loss: 0.0080
+Epoch: [5/10], Loss: 0.0075
+Epoch: [6/10], Loss: 0.0072
+Epoch: [7/10], Loss: 0.0067
+Epoch: [8/10], Loss: 0.0064
+Epoch: [9/10], Loss: 0.0061
+Epoch: [10/10], Loss: 0.0059
+Score (accuracy) of the probe: 0.32
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0171
+Epoch: [2/10], Loss: 0.0122
+Epoch: [3/10], Loss: 0.0092
+Epoch: [4/10], Loss: 0.0080
+Epoch: [5/10], Loss: 0.0075
+Epoch: [6/10], Loss: 0.0072
+Epoch: [7/10], Loss: 0.0067
+Epoch: [8/10], Loss: 0.0065
+Epoch: [9/10], Loss: 0.0062
+Epoch: [10/10], Loss: 0.0060
+Score (accuracy) of the probe: 0.32
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0173
+Epoch: [2/10], Loss: 0.0122
+Epoch: [3/10], Loss: 0.0093
+Epoch: [4/10], Loss: 0.0082
+Epoch: [5/10], Loss: 0.0078
+Epoch: [6/10], Loss: 0.0076
+Epoch: [7/10], Loss: 0.0071
+Epoch: [8/10], Loss: 0.0068
+Epoch: [9/10], Loss: 0.0065
+Epoch: [10/10], Loss: 0.0063
+Score (accuracy) of the probe: 0.32
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0186
+Epoch: [2/10], Loss: 0.0134
+Epoch: [3/10], Loss: 0.0107
+Epoch: [4/10], Loss: 0.0098
+Epoch: [5/10], Loss: 0.0097
+Epoch: [6/10], Loss: 0.0096
+Epoch: [7/10], Loss: 0.0093
+Epoch: [8/10], Loss: 0.0090
+Epoch: [9/10], Loss: 0.0089
+Epoch: [10/10], Loss: 0.0089
+Score (accuracy) of the probe: 0.32
+
+The best l1=0, the best l2=0.01 for pretrained_BERT_control_task
+Accuracy on the test set of probing pretrained_BERT_control_task of all layers:
+Score (accuracy) of the probe: 0.23
+Accuracy on the test set of pretrained_BERT_control_task model using the intercept:
+Score (accuracy) of the probe: 0.19
+
+pretrained_BERT_control_task Selectivity (Diff. between true task and probing task performance):  0.5789865871833085
+----------------------------------------------------------------
