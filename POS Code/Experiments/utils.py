@@ -14,7 +14,7 @@ import difflib
 import torch
 
 l1 = [0,0.001,0.01,0.1]
-l2 = [0,0.001,0.01,0.1,1,10]
+l2 = [0]
 
 def getOverlap(s1, s2):
     try:
