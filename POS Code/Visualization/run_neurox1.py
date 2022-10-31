@@ -1,8 +1,3 @@
-"""
-Created on Tue Apr 12 14:21:21 2022
-
-@author: sharm
-"""
 import torch
 import argparse
 import pickle
@@ -18,13 +13,15 @@ MODEL_NAMES = ['pretrained_BERT',
                'pretrained_CodeBERT','pretrained_GraphCodeBERT',
                'finetuned_defdet_CodeBERT','finetuned_defdet_GraphCodeBERT',
                'finetuned_clonedet_CodeBERT','finetuned_clonedet_GraphCodeBERT']
-ACTIVATION_NAMES = ['bert_activations.json',
-                    'codebert_activations.json','graphcodebert_activations.json',
-                    'codebert_defdet_activations.json','graphcodebert_defdet_activations.json',
-                    'codebert_clonedet_activations1.json','graphcodebert_clonedet_activations1.json']
-
+ACTIVATION_NAMES = {'pretrained_BERT':'bert_activations_train.json',
+                    'pretrained_CodeBERT':'codebert_activations_train.json',
+                    'pretrained_GraphCodeBERT':'graphcodebert_activations_train.json',
+                    'finetuned_defdet_CodeBERT':'codebert_defdet_activations_train.json',
+                    'finetuned_defdet_GraphCodeBERT':'graphcodebert_defdet_activations_train.json',
+                    'finetuned_clonedet_CodeBERT':'codebert_clonedet_activations1_train.json',
+                    'finetuned_clonedet_GraphCodeBERT':'graphcodebert_clonedet_activations1_train.json'}
 # This set of idx is for pretrained, finetuned defdet, and finetuned clonedet models
-bert_idx = [734,751,790,1777]
+bert_idx = [3,4,5,6,7]
 bert_top_neurons = [5472]
 bert_class = "NAME"
 
@@ -46,34 +43,6 @@ FOLDER_NAME ="result_all"
 def mkdir_if_needed(dir_name):
     if not os.path.isdir(dir_name):
         os.makedirs(dir_name)
-#Extract activations.json files
-def extract_activations():
-    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-    #Extract representations from BERT
-    transformers_extractor.extract_representations('bert-base-uncased',
-        'codetest2_unique.in',
-        'bert_activations.json',
-        device=device,
-        aggregation="average",#last, first
-    )
-
-    #Extract representations from CodeBERT
-    transformers_extractor.extract_representations('microsoft/codebert-base',
-        'codetest2_unique.in',
-        'codebert_activations.json',
-        device=device,
-        aggregation="average", # #last, first
-    )
-
-    #Extract representations from GraphCodeBERT
-    transformers_extractor.extract_representations('microsoft/graphcodebert-base',
-        'codetest2_unique.in',
-        'graphcodebert_activations.json',
-        device=device,
-        aggregation="average",#last, first
-    )
-
-    return(load_extracted_activations())
 
 
 def load_extracted_activations(activation_file_name):
@@ -84,8 +53,8 @@ def load_extracted_activations(activation_file_name):
 
 def load_tokens(activations):
     #Load tokens and sanity checks for parallelism between tokens, labels and activations
-    tokens = data_loader.load_data('codetest2_unique.in',
-                                   'codetest2_unique.label',
+    tokens = data_loader.load_data('./src_files/codetest2_train_unique.in',
+                                   './src_files/codetest2_test_unique.label',
                                    activations,
                                    512 # max_sent_length
                                   )
@@ -105,14 +74,6 @@ def visualization(tokens, activations,top_neurons,idx,model_name):
 
 
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--extract",choices=('True','False'), default='False')
-    args = parser.parse_args()
-    if args.extract == 'True':
-        bert_activations, codebert_activations,graphcodebert_activations = extract_activations()
-    else:
-        print("Getting activations from json files. If you need to extract them, run with --extract=True \n" )
-
     mkdir_if_needed(f"./{FOLDER_NAME}/")
 
     for this_model, this_activation_name in zip(MODEL_NAMES,ACTIVATION_NAMES):
@@ -129,6 +90,7 @@ def main():
         this_top_neurons = TOP_NEURONS[this_model]
         visualization(tokens, activations,this_top_neurons,this_idx,this_model)
         print("-----------------------------------------------------------------")
+        break
 
 if __name__ == "__main__":
     main()
