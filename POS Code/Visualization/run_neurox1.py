@@ -76,8 +76,9 @@ def visualization(tokens, activations,top_neurons,idx,model_name):
 def main():
     mkdir_if_needed(f"./{FOLDER_NAME}/")
 
-    for this_model, this_activation_name in zip(MODEL_NAMES,ACTIVATION_NAMES):
+    for this_model in MODEL_NAMES:
         print(f"Generate svg files for {this_model}")
+        this_activation_name = ACTIVATION_NAMES[this_model]
         activations = load_extracted_activations(this_activation_name)
         tokens =  load_tokens(activations)
         print(f"Length of {this_model} activations:",len(activations))
