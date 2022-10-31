@@ -60,7 +60,7 @@ def load_extracted_activations(activation_file_name):
 def load_tokens(activations):
     #Load tokens and sanity checks for parallelism between tokens, labels and activations
     tokens = data_loader.load_data('./src_files/codetest2_train_unique.in',
-                                   './src_files/codetest2_test_unique.label',
+                                   './src_files/codetest2_train_unique.label',
                                    activations,
                                    512 # max_sent_length
                                   )
