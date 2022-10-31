@@ -223,6 +223,17 @@ def get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,probe,label2id
 
 def get_top_words(top_neurons,tokens,activations,model_name):
     #relate neurons to corpus elements like words and sentences
+    """
+    pretrained_BERT:
+    idx: 5472, NAME
+    [('decimal', 1.0), ('geos', 0.9418303459732197), ('tls', 0.9338263956575613), ('compat', 0.929471232136902), ('bson', 0.9242329985546578)]
+    idx: 7008, STRING
+    [('"KILLED"', 1.0), ('oslo', 0.9965087539321563), ('bson', 0.974736789295125), ('95', 0.9303350739266707), ('"SUCCEEDED"', 0.9185185340815739)]
+    idx: 4704, NUMBER
+    [('300', 1.0), ('69', 0.9377285482313947), ('1800', 0.9338789039515457), ('milliseconds', 0.9152723082592018), ('95', 0.9129744415244763)]
+    idx: 8767,KEYWORD
+    [('Else', 1.0), ('is', 0.8178607393924123), ('If', 0.8127052036231951), ('for', 0.7165972096789494), ('74.616338', 0.6740056796726646)]
+    """
     print(f"{model_name} top words")
     for neuron in top_neurons:
         top_words = corpus.get_top_words(tokens, activations, neuron, num_tokens=5)
