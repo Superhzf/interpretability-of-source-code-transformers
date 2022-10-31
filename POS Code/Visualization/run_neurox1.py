@@ -24,6 +24,12 @@ ACTIVATION_NAMES = {'pretrained_BERT':'bert_activations_train.json',
 bert_idx = [3,4,5,6,7]
 bert_top_neurons = [5472]
 bert_class = "NAME"
+codebert_idx = None
+graphcodebert_idx = None
+codebert_top_neurons = None
+graphcodebert_top_neurons = None
+codebert_class = None
+graphcodebert_class = None
 
 IDX = {"pretrained_BERT":bert_idx,
        "pretrained_CodeBERT":codebert_idx,"pretrained_GraphCodeBERT":graphcodebert_idx,
