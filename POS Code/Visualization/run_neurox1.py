@@ -25,7 +25,7 @@ ACTIVATION_NAMES = {'pretrained_BERT':'bert_activations_train.json',
 # bert_top_neurons = [9772]
 # bert_class = "STRING"
 bert_idx = [41,50,52,76,136]
-bert_top_neurons = [4704]
+bert_top_neurons = [3299,308,4559]
 bert_class = "NUMBER"
 codebert_idx = None
 graphcodebert_idx = None
@@ -47,7 +47,7 @@ CLASSES = {"pretrained_BERT":bert_class,
            "finetuned_defdet_CodeBERT":codebert_class,"finetuned_defdet_GraphCodeBERT":graphcodebert_class,
            "finetuned_clonedet_CodeBERT":codebert_class,"finetuned_clonedet_GraphCodeBERT":graphcodebert_class}
 
-FOLDER_NAME ="result_all"
+FOLDER_NAME ="resultBERTNumber"
 
 def mkdir_if_needed(dir_name):
     if not os.path.isdir(dir_name):
