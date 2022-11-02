@@ -34,9 +34,9 @@ bert_class = "STRING"
 # codebert_idx = [5,59,91,114]
 # codebert_top_neurons = [2961]
 # codebert_class = "STRING"
-codebert_idx = [167,212,256,265,307]
-codebert_top_neurons = [8411, 6638, 3133,  479]
-codebert_class = "NUMBER"
+codebert_idx = [810,811,813,815,817]
+codebert_top_neurons = [1916,  264, 6638, 3707]
+codebert_class = "KEYWORD"
 
 
 graphcodebert_idx = None
