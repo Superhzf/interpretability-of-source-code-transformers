@@ -86,21 +86,22 @@ def main():
     mkdir_if_needed(f"./{FOLDER_NAME}/")
 
     for this_model in MODEL_NAMES:
-        print(f"Generate svg files for {this_model}")
-        this_activation_name = ACTIVATION_NAMES[this_model]
-        activations = load_extracted_activations(this_activation_name)
-        tokens =  load_tokens(activations)
-        print(f"Length of {this_model} activations:",len(activations))
-        print(f"Length of {this_model} tokens source:",len(tokens["source"]))
-        _, num_neurons = activations[0].shape
-        for idx in range(len(activations)):
-            assert activations[idx].shape[1] == num_neurons
-        print(f"The number of neurons for each token in {this_model}:",num_neurons)
-        this_idx = IDX[this_model]
-        this_top_neurons = TOP_NEURONS[this_model]
-        visualization(tokens, activations,this_top_neurons,this_idx,this_model)
-        print("-----------------------------------------------------------------")
-        break
+        if this_model in ['pretrained_CodeBERT']:
+            print(f"Generate svg files for {this_model}")
+            this_activation_name = ACTIVATION_NAMES[this_model]
+            activations = load_extracted_activations(this_activation_name)
+            tokens =  load_tokens(activations)
+            print(f"Length of {this_model} activations:",len(activations))
+            print(f"Length of {this_model} tokens source:",len(tokens["source"]))
+            _, num_neurons = activations[0].shape
+            for idx in range(len(activations)):
+                assert activations[idx].shape[1] == num_neurons
+            print(f"The number of neurons for each token in {this_model}:",num_neurons)
+            this_idx = IDX[this_model]
+            this_top_neurons = TOP_NEURONS[this_model]
+            visualization(tokens, activations,this_top_neurons,this_idx,this_model)
+            print("-----------------------------------------------------------------")
+            break
 
 if __name__ == "__main__":
     main()
