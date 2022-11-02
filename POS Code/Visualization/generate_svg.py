@@ -12,15 +12,16 @@ def merge_svg(top_neurons,idx,class_name,model_name,folder_name):
             names.append(this_name)
 
 
-    os.system(f"/work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python \
-                svg_stack-main/svg_stack.py {folder_name}/{names[0]} {folder_name}/space.svg \
-                {folder_name}/{names[1]}> {folder_name}/{model_name}_{class_name}.svg")
     # os.system(f"/work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python \
     #             svg_stack-main/svg_stack.py {folder_name}/{names[0]} {folder_name}/space.svg \
-    #             {folder_name}/{names[1]} {folder_name}/space.svg {folder_name}/{names[2]} \
-    #             {folder_name}/space.svg {folder_name}/{names[3]}> {folder_name}/{model_name}_{class_name}.svg")
+    #             {folder_name}/{names[1]}> {folder_name}/{model_name}_{class_name}.svg")
+    os.system(f"/work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python \
+                svg_stack-main/svg_stack.py {folder_name}/{names[0]} {folder_name}/space.svg \
+                {folder_name}/{names[1]} {folder_name}/space.svg {folder_name}/{names[2]} \
+                {folder_name}/space.svg {folder_name}/{names[3]}> {folder_name}/{model_name}_{class_name}.svg")
 
 for this_model in MODEL_NAMES:
+    if this_model in ['pretrained_GraphCodeBERT']
     this_top_neuron = TOP_NEURONS[this_model]
     this_idx = IDX[this_model]
     this_class_name = CLASSES[this_model]

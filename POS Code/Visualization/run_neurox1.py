@@ -52,7 +52,7 @@ CLASSES = {"pretrained_BERT":bert_class,
            "finetuned_defdet_CodeBERT":codebert_class,"finetuned_defdet_GraphCodeBERT":graphcodebert_class,
            "finetuned_clonedet_CodeBERT":codebert_class,"finetuned_clonedet_GraphCodeBERT":graphcodebert_class}
 
-FOLDER_NAME ="result_GraphCodeBERT"
+FOLDER_NAME ="result_all"
 
 def mkdir_if_needed(dir_name):
     if not os.path.isdir(dir_name):
