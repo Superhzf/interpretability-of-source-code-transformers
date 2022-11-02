@@ -36,7 +36,7 @@ codebert_top_neurons = [2961]
 codebert_class = "STRING"
 
 graphcodebert_idx = [41,53,76,]
-graphcodebert_top_neurons = [6638, 9179, 8411, 1597]
+graphcodebert_top_neurons = [9277, 9947, 3803, 3384]
 graphcodebert_class = "NUMBER"
 
 IDX = {"pretrained_BERT":bert_idx,
