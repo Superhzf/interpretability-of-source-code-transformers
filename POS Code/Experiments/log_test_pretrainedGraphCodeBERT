@@ -1,0 +1,1810 @@
+Getting activations from json files. If you need to extract them, run with --extract=True 
+
+Anayzing pretrained_GraphCodeBERT
+Loading json activations from graphcodebert_activations_train.json...
+7656 13.0
+Number of tokens:  72951
+length of source dictionary:  5099
+length of target dictionary:  42
+72951
+Total instances: 72951
+['read_header', 'parser', 'Unbaser', '_compile_module', 'effective_principals', 'mpls', 'SpatialReference', 'netloc', 'fabfile', 'TAGS', 'Test_connection_opened', 'compute_resource', 'renderers', '_property', 'pywechat', 'index_file', 'JSON', 'get_profile_available_servers', '42', 'directlyProvides']
+Number of samples:  72951
+Stats: Labels with their frequencies in the final set
+NAME 23204
+NEWLINE 6586
+DOT 5889
+LPAR 5444
+RPAR 5263
+KEYWORD 5018
+COMMA 4364
+EQUAL 3897
+COLON 2622
+DEDENT 1878
+INDENT 1593
+NUMBER 1356
+LSQB 1291
+RSQB 1267
+NL 1069
+STRING 550
+LBRACE 293
+EQEQUAL 226
+RBRACE 211
+PLUS 200
+PERCENT 109
+STAR 94
+MINUS 83
+AT 61
+DOUBLESTAR 60
+GREATER 59
+PLUSEQUAL 52
+NOTEQUAL 44
+LEFTSHIFT 31
+LESS 29
+LESSEQUAL 18
+COMMENT 15
+GREATEREQUAL 15
+SEMI 13
+VBAR 12
+SLASH 11
+TILDE 7
+ELLIPSIS 6
+AMPER 5
+MINEQUAL 3
+ERRORTOKEN 2
+RIGHTSHIFT 1
+pretrained_GraphCodeBERT distribution after trauncating:
+{0: 0.7701805629314923, 3: 0.16655602761550717, 2: 0.045007966011683484, 1: 0.01825544344131705}
+{0: 23204, 3: 5018, 2: 1356, 1: 550}
+{'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
+Loading json activations from graphcodebert_activations_test.json...
+5985 13.0
+Number of tokens:  64699
+length of source dictionary:  3727
+length of target dictionary:  42
+64699
+Total instances: 64699
+['ofile', 'class_name_dict', '_g_update_node_location', 'Ow', 'dict_', '_v_objectid', 'train', 'PIPE', 'second_arg_is_evaluator', '_init_sys_data', 'parser', 'qsdateutil', 'test_multistep', 'smeta', 'pset', 'src_unit', 'item', 'op', 'xprop_winograd', 'ParallelFDGroup']
+Number of samples:  64699
+Stats: Labels with their frequencies in the final set
+NAME 20893
+NEWLINE 5444
+DOT 5083
+COMMA 4481
+RPAR 4279
+LPAR 4277
+KEYWORD 3639
+EQUAL 3459
+NUMBER 2218
+COLON 1972
+LSQB 1939
+RSQB 1927
+DEDENT 1387
+INDENT 1203
+NL 540
+STRING 324
+MINUS 262
+PLUS 248
+STAR 236
+EQEQUAL 141
+LBRACE 128
+RBRACE 126
+SLASH 122
+PERCENT 69
+DOUBLESTAR 55
+PLUSEQUAL 50
+GREATER 47
+NOTEQUAL 32
+COMMENT 22
+LESS 20
+STAREQUAL 16
+GREATEREQUAL 16
+AT 10
+MINEQUAL 7
+SEMI 7
+VBAR 6
+LESSEQUAL 5
+AMPER 3
+SLASHEQUAL 2
+DOUBLESLASH 2
+TILDE 1
+LEFTSHIFT 1
+pretrained_GraphCodeBERT distribution after trauncating:
+{0: 0.7716997857723277, 3: 0.134409396468937, 2: 0.08192361675408141, 1: 0.011967201004653911}
+{0: 20893, 3: 3639, 2: 2218, 1: 324}
+{'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
+
+The distribution of classes in training after removing repeated tokens between training and tesing:
+Counter({0: 13506, 3: 1019, 1: 491, 2: 136})
+{'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
+The distribution of classes in testing:
+Counter({2: 2039, 0: 1882, 3: 68, 1: 37})
+{'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
+
+The shape of the training set: (13636, 9984)
+The shape of the validation set: (1516, 9984)
+The shape of the testing set: (4026, 9984)
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0075
+Epoch: [2/10], Loss: 0.0015
+Epoch: [3/10], Loss: 0.0002
+Epoch: [4/10], Loss: 0.0001
+Epoch: [5/10], Loss: 0.0001
+Epoch: [6/10], Loss: 0.0001
+Epoch: [7/10], Loss: 0.0001
+Epoch: [8/10], Loss: 0.0001
+Epoch: [9/10], Loss: 0.0000
+Epoch: [10/10], Loss: 0.0000
+Score (accuracy) of the probe: 0.99
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0076
+Epoch: [2/10], Loss: 0.0016
+Epoch: [3/10], Loss: 0.0002
+Epoch: [4/10], Loss: 0.0001
+Epoch: [5/10], Loss: 0.0001
+Epoch: [6/10], Loss: 0.0001
+Epoch: [7/10], Loss: 0.0001
+Epoch: [8/10], Loss: 0.0001
+Epoch: [9/10], Loss: 0.0001
+Epoch: [10/10], Loss: 0.0001
+Score (accuracy) of the probe: 0.99
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0077
+Epoch: [2/10], Loss: 0.0017
+Epoch: [3/10], Loss: 0.0004
+Epoch: [4/10], Loss: 0.0003
+Epoch: [5/10], Loss: 0.0003
+Epoch: [6/10], Loss: 0.0003
+Epoch: [7/10], Loss: 0.0003
+Epoch: [8/10], Loss: 0.0003
+Epoch: [9/10], Loss: 0.0003
+Epoch: [10/10], Loss: 0.0002
+Score (accuracy) of the probe: 0.99
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0091
+Epoch: [2/10], Loss: 0.0034
+Epoch: [3/10], Loss: 0.0020
+Epoch: [4/10], Loss: 0.0017
+Epoch: [5/10], Loss: 0.0015
+Epoch: [6/10], Loss: 0.0014
+Epoch: [7/10], Loss: 0.0014
+Epoch: [8/10], Loss: 0.0014
+Epoch: [9/10], Loss: 0.0014
+Epoch: [10/10], Loss: 0.0014
+Score (accuracy) of the probe: 0.99
+
+The best l1=0, the best l2=0.001 for pretrained_GraphCodeBERT
+Accuracy on the test set of probing pretrained_GraphCodeBERT of all layers:
+Score (accuracy) of the probe: 0.96
+{'__OVERALL__': 0.9550422255340288, 'NAME': 0.9287991498405951, 'STRING': 1.0, 'NUMBER': 0.9769494850416871, 'KEYWORD': 1.0}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1748,KW_NAME:0
+NAME_KW:44,KW_KW:68
+NAME_STRING:49,KW_other:0
+NAME_NUMBER:41
+NAME_STRING_list:['i', 'i', 'm', 'm', 'm', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'z', 'z', 'x', 'x', 'x', 's', 't', 's', 's', 't', 's', 's', 't', 'x', 'x', 's', 'p', 'i', 'i', 'i', 's', 'x', 'x', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'x', 'x']
+NAME_NUMBER_list:['x', 'x', 'x', 'x', 'x', 'x', 'x', 'p', 'i', 'i', 'i', 'x', 'X', 'Iw', 'X', 'X', 'N', 'N', 'K', 'T', 'T', 'X', 'N', 'i', 'i', 'i', 'T', 'x', 'T', 'T', 'T', 'i', 'T', 'T', 'T', 'i', 'i', '_', 'i', 'x', 'x']
+Accuracy on the test set of pretrained_GraphCodeBERT model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_GraphCodeBERT Layer 0
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0094
+Epoch: [2/10], Loss: 0.0057
+Epoch: [3/10], Loss: 0.0040
+Epoch: [4/10], Loss: 0.0031
+Epoch: [5/10], Loss: 0.0025
+Epoch: [6/10], Loss: 0.0021
+Epoch: [7/10], Loss: 0.0018
+Epoch: [8/10], Loss: 0.0016
+Epoch: [9/10], Loss: 0.0014
+Epoch: [10/10], Loss: 0.0013
+Score (accuracy) of the probe: 0.95
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0095
+Epoch: [2/10], Loss: 0.0057
+Epoch: [3/10], Loss: 0.0040
+Epoch: [4/10], Loss: 0.0032
+Epoch: [5/10], Loss: 0.0026
+Epoch: [6/10], Loss: 0.0022
+Epoch: [7/10], Loss: 0.0019
+Epoch: [8/10], Loss: 0.0016
+Epoch: [9/10], Loss: 0.0015
+Epoch: [10/10], Loss: 0.0013
+Score (accuracy) of the probe: 0.95
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0095
+Epoch: [2/10], Loss: 0.0058
+Epoch: [3/10], Loss: 0.0042
+Epoch: [4/10], Loss: 0.0033
+Epoch: [5/10], Loss: 0.0027
+Epoch: [6/10], Loss: 0.0023
+Epoch: [7/10], Loss: 0.0021
+Epoch: [8/10], Loss: 0.0018
+Epoch: [9/10], Loss: 0.0017
+Epoch: [10/10], Loss: 0.0015
+Score (accuracy) of the probe: 0.96
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0104
+Epoch: [2/10], Loss: 0.0069
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0047
+Epoch: [5/10], Loss: 0.0042
+Epoch: [6/10], Loss: 0.0039
+Epoch: [7/10], Loss: 0.0036
+Epoch: [8/10], Loss: 0.0034
+Epoch: [9/10], Loss: 0.0032
+Epoch: [10/10], Loss: 0.0030
+Score (accuracy) of the probe: 0.96
+
+The best l1=0, the best l2=0.1 for pretrained_GraphCodeBERT_layer_0
+Accuracy on the test set of probing pretrained_GraphCodeBERT_layer_0 of all layers:
+Score (accuracy) of the probe: 0.95
+{'__OVERALL__': 0.953551912568306, 'NAME': 0.9489904357066951, 'STRING': 1.0, 'NUMBER': 0.9789112309955861, 'KEYWORD': 0.29411764705882354}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1786,KW_NAME:48
+NAME_KW:49,KW_KW:20
+NAME_STRING:0,KW_other:0
+NAME_NUMBER:47
+NAME_STRING_list:[]
+NAME_NUMBER_list:['h0', 'h0', 'h0', 't0', 't0', 'f2', 'f2', 'X', 'T0', 'T0', 'T0', 't0', 't0', 't0', 'T0', 'T0', 'T0', 't0', 't0', 't0', 'T0', 'T0', 'T0', 't0', 't0', 't0', 'T0', 't0', 't0', 'T0', 't0', 't0', 'X', 'p0', 'p0', 'p0', 'p0', 'p0', 'p0', 'X', 'X', 'X', 'f0', 'f0', 'X', 'a0', 'a0']
+Accuracy on the test set of pretrained_GraphCodeBERT_layer_0 model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_GraphCodeBERT Layer 1
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0091
+Epoch: [2/10], Loss: 0.0053
+Epoch: [3/10], Loss: 0.0037
+Epoch: [4/10], Loss: 0.0028
+Epoch: [5/10], Loss: 0.0022
+Epoch: [6/10], Loss: 0.0018
+Epoch: [7/10], Loss: 0.0016
+Epoch: [8/10], Loss: 0.0013
+Epoch: [9/10], Loss: 0.0012
+Epoch: [10/10], Loss: 0.0010
+Score (accuracy) of the probe: 0.96
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0094
+Epoch: [2/10], Loss: 0.0056
+Epoch: [3/10], Loss: 0.0038
+Epoch: [4/10], Loss: 0.0029
+Epoch: [5/10], Loss: 0.0023
+Epoch: [6/10], Loss: 0.0019
+Epoch: [7/10], Loss: 0.0016
+Epoch: [8/10], Loss: 0.0014
+Epoch: [9/10], Loss: 0.0012
+Epoch: [10/10], Loss: 0.0011
+Score (accuracy) of the probe: 0.96
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0095
+Epoch: [2/10], Loss: 0.0056
+Epoch: [3/10], Loss: 0.0039
+Epoch: [4/10], Loss: 0.0031
+Epoch: [5/10], Loss: 0.0025
+Epoch: [6/10], Loss: 0.0021
+Epoch: [7/10], Loss: 0.0018
+Epoch: [8/10], Loss: 0.0016
+Epoch: [9/10], Loss: 0.0015
+Epoch: [10/10], Loss: 0.0013
+Score (accuracy) of the probe: 0.96
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0102
+Epoch: [2/10], Loss: 0.0066
+Epoch: [3/10], Loss: 0.0052
+Epoch: [4/10], Loss: 0.0044
+Epoch: [5/10], Loss: 0.0040
+Epoch: [6/10], Loss: 0.0036
+Epoch: [7/10], Loss: 0.0034
+Epoch: [8/10], Loss: 0.0032
+Epoch: [9/10], Loss: 0.0030
+Epoch: [10/10], Loss: 0.0028
+Score (accuracy) of the probe: 0.98
+
+The best l1=0, the best l2=0.1 for pretrained_GraphCodeBERT_layer_1
+Accuracy on the test set of probing pretrained_GraphCodeBERT_layer_1 of all layers:
+Score (accuracy) of the probe: 0.94
+{'__OVERALL__': 0.9426229508196722, 'NAME': 0.9006376195536663, 'STRING': 1.0, 'NUMBER': 0.9789112309955861, 'KEYWORD': 0.9852941176470589}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1695,KW_NAME:1
+NAME_KW:96,KW_KW:67
+NAME_STRING:50,KW_other:0
+NAME_NUMBER:41
+NAME_STRING_list:['a', 'a', 'c', 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'f', 'a', 'f', 'f', 'r', 'r', 'f', 'p', 'f', 'f', 'f', 'f', 'f2', 'f', 'f', 'p', 'p', 'p', 'p', 'u', 'f', 'p', 'p', 'p', 'p', 'p', 'p', 'F', 'F', 'F', 'R', 'R', 'f', 'f', 'l', 'p', 'p', 'c', 'R', 'f']
+NAME_NUMBER_list:['x', 'h0', 'x', 't0', 'x', 'x', 'x', 'x', 'x', 'f1', 'f1', 'f2', 'T0', 't0', 't0', 'T0', 't0', 't0', 't0', 'T0', 't0', 't0', 't0', 'T0', 't0', 't0', 'T0', 't0', 't0', 'p0', 'p0', 'p0', 'p0', 'p0', 'q0', 'x', 'E', 'x', 'f0', 'f0', 'a0']
+Accuracy on the test set of pretrained_GraphCodeBERT_layer_1 model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_GraphCodeBERT Layer 2
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0091
+Epoch: [2/10], Loss: 0.0051
+Epoch: [3/10], Loss: 0.0034
+Epoch: [4/10], Loss: 0.0025
+Epoch: [5/10], Loss: 0.0019
+Epoch: [6/10], Loss: 0.0016
+Epoch: [7/10], Loss: 0.0013
+Epoch: [8/10], Loss: 0.0011
+Epoch: [9/10], Loss: 0.0010
+Epoch: [10/10], Loss: 0.0009
+Score (accuracy) of the probe: 0.98
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0094
+Epoch: [2/10], Loss: 0.0052
+Epoch: [3/10], Loss: 0.0035
+Epoch: [4/10], Loss: 0.0026
+Epoch: [5/10], Loss: 0.0020
+Epoch: [6/10], Loss: 0.0016
+Epoch: [7/10], Loss: 0.0014
+Epoch: [8/10], Loss: 0.0012
+Epoch: [9/10], Loss: 0.0010
+Epoch: [10/10], Loss: 0.0009
+Score (accuracy) of the probe: 0.98
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0095
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0037
+Epoch: [4/10], Loss: 0.0028
+Epoch: [5/10], Loss: 0.0022
+Epoch: [6/10], Loss: 0.0019
+Epoch: [7/10], Loss: 0.0016
+Epoch: [8/10], Loss: 0.0014
+Epoch: [9/10], Loss: 0.0013
+Epoch: [10/10], Loss: 0.0011
+Score (accuracy) of the probe: 0.98
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0103
+Epoch: [2/10], Loss: 0.0064
+Epoch: [3/10], Loss: 0.0050
+Epoch: [4/10], Loss: 0.0042
+Epoch: [5/10], Loss: 0.0038
+Epoch: [6/10], Loss: 0.0035
+Epoch: [7/10], Loss: 0.0032
+Epoch: [8/10], Loss: 0.0030
+Epoch: [9/10], Loss: 0.0029
+Epoch: [10/10], Loss: 0.0028
+Score (accuracy) of the probe: 0.99
+
+The best l1=0, the best l2=0.1 for pretrained_GraphCodeBERT_layer_2
+Accuracy on the test set of probing pretrained_GraphCodeBERT_layer_2 of all layers:
+Score (accuracy) of the probe: 0.90
+{'__OVERALL__': 0.8966716343765524, 'NAME': 0.79596174282678, 'STRING': 1.0, 'NUMBER': 0.9843060323688082, 'KEYWORD': 1.0}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1498,KW_NAME:0
+NAME_KW:237,KW_KW:68
+NAME_STRING:14,KW_other:0
+NAME_NUMBER:133
+NAME_STRING_list:['d', 'x', 'x', 'f1', 'f1', 's', 's', 's', 's', 's', 'd', 'a', 't', 't']
+NAME_NUMBER_list:['X', 'X', 'x', 'x', 'x', 'x', 'i', 'i', 'x', 'x', 'x', 'x', 'X', 'X', 'X', 'X', 'x', 'x', 'x', 'x', 'i', 'i', 'x', 'x', 'x', 'x', 'x', 'X', 'X', 'f1', 'X', 'x', 'X', 'X', 'X', 'E', 'X', 'E', 'T0', 'x', 'X', 'x', 'X', 'x', 'X', 'x', 'x', 'X', 'X', 'E', 'X', 'X', 'X', 'X', 'g', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'x', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'x', 'x', 'x', 'x', 'x', 'x', 'X', 'X', 'X', 'X', 'G', 'x', 'i', 'X', 'X', 'X', 'X', 'X', 'i', 'i', 'X', 'X', 'g', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'X', 'x', 'a3', 'a0', 'i', 'i', 'i', 'A']
+Accuracy on the test set of pretrained_GraphCodeBERT_layer_2 model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_GraphCodeBERT Layer 3
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0092
+Epoch: [2/10], Loss: 0.0052
+Epoch: [3/10], Loss: 0.0035
+Epoch: [4/10], Loss: 0.0026
+Epoch: [5/10], Loss: 0.0020
+Epoch: [6/10], Loss: 0.0016
+Epoch: [7/10], Loss: 0.0014
+Epoch: [8/10], Loss: 0.0012
+Epoch: [9/10], Loss: 0.0010
+Epoch: [10/10], Loss: 0.0009
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0093
+Epoch: [2/10], Loss: 0.0052
+Epoch: [3/10], Loss: 0.0036
+Epoch: [4/10], Loss: 0.0026
+Epoch: [5/10], Loss: 0.0021
+Epoch: [6/10], Loss: 0.0017
+Epoch: [7/10], Loss: 0.0014
+Epoch: [8/10], Loss: 0.0012
+Epoch: [9/10], Loss: 0.0010
+Epoch: [10/10], Loss: 0.0009
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0092
+Epoch: [2/10], Loss: 0.0052
+Epoch: [3/10], Loss: 0.0036
+Epoch: [4/10], Loss: 0.0027
+Epoch: [5/10], Loss: 0.0022
+Epoch: [6/10], Loss: 0.0018
+Epoch: [7/10], Loss: 0.0016
+Epoch: [8/10], Loss: 0.0014
+Epoch: [9/10], Loss: 0.0012
+Epoch: [10/10], Loss: 0.0011
+Score (accuracy) of the probe: 0.98
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0101
+Epoch: [2/10], Loss: 0.0064
+Epoch: [3/10], Loss: 0.0049
+Epoch: [4/10], Loss: 0.0042
+Epoch: [5/10], Loss: 0.0037
+Epoch: [6/10], Loss: 0.0034
+Epoch: [7/10], Loss: 0.0032
+Epoch: [8/10], Loss: 0.0030
+Epoch: [9/10], Loss: 0.0029
+Epoch: [10/10], Loss: 0.0027
+Score (accuracy) of the probe: 0.98
+
+The best l1=0, the best l2=0.1 for pretrained_GraphCodeBERT_layer_3
+Accuracy on the test set of probing pretrained_GraphCodeBERT_layer_3 of all layers:
+Score (accuracy) of the probe: 0.89
+{'__OVERALL__': 0.8907103825136612, 'NAME': 0.9086078639744952, 'STRING': 1.0, 'NUMBER': 0.868563021088769, 'KEYWORD': 1.0}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1710,KW_NAME:0
+NAME_KW:106,KW_KW:68
+NAME_STRING:30,KW_other:0
+NAME_NUMBER:36
+NAME_STRING_list:['p', 'p', 'x', 's', 'f', 'f', 'f', 'f', 'f', 'x', 'p', 'x', 'f', 'x', 'x', 'x', 'x', 'x', 'd', 'f1', 'X', 'D', 'x', 'x', 'u', 'D', 'R', 'X', 'X', 'i']
+NAME_NUMBER_list:['i', 'i', 'i', 'f', 'f', 'i', 'i', 'I', 'I', 'O', 'x', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i']
+Accuracy on the test set of pretrained_GraphCodeBERT_layer_3 model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_GraphCodeBERT Layer 4
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0087
+Epoch: [2/10], Loss: 0.0046
+Epoch: [3/10], Loss: 0.0031
+Epoch: [4/10], Loss: 0.0022
+Epoch: [5/10], Loss: 0.0017
+Epoch: [6/10], Loss: 0.0014
+Epoch: [7/10], Loss: 0.0012
+Epoch: [8/10], Loss: 0.0010
+Epoch: [9/10], Loss: 0.0009
+Epoch: [10/10], Loss: 0.0007
+Score (accuracy) of the probe: 0.98
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0089
+Epoch: [2/10], Loss: 0.0048
+Epoch: [3/10], Loss: 0.0032
+Epoch: [4/10], Loss: 0.0023
+Epoch: [5/10], Loss: 0.0018
+Epoch: [6/10], Loss: 0.0015
+Epoch: [7/10], Loss: 0.0012
+Epoch: [8/10], Loss: 0.0010
+Epoch: [9/10], Loss: 0.0009
+Epoch: [10/10], Loss: 0.0008
+Score (accuracy) of the probe: 0.98
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0091
+Epoch: [2/10], Loss: 0.0049
+Epoch: [3/10], Loss: 0.0033
+Epoch: [4/10], Loss: 0.0025
+Epoch: [5/10], Loss: 0.0020
+Epoch: [6/10], Loss: 0.0016
+Epoch: [7/10], Loss: 0.0014
+Epoch: [8/10], Loss: 0.0012
+Epoch: [9/10], Loss: 0.0011
+Epoch: [10/10], Loss: 0.0010
+Score (accuracy) of the probe: 0.98
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0097
+Epoch: [2/10], Loss: 0.0059
+Epoch: [3/10], Loss: 0.0046
+Epoch: [4/10], Loss: 0.0039
+Epoch: [5/10], Loss: 0.0035
+Epoch: [6/10], Loss: 0.0032
+Epoch: [7/10], Loss: 0.0030
+Epoch: [8/10], Loss: 0.0029
+Epoch: [9/10], Loss: 0.0027
+Epoch: [10/10], Loss: 0.0026
+Score (accuracy) of the probe: 0.99
+
+The best l1=0, the best l2=0.1 for pretrained_GraphCodeBERT_layer_4
+Accuracy on the test set of probing pretrained_GraphCodeBERT_layer_4 of all layers:
+Score (accuracy) of the probe: 0.89
+{'__OVERALL__': 0.8889716840536512, 'NAME': 0.9643995749202976, 'STRING': 0.8648648648648649, 'NUMBER': 0.8160863168219715, 'KEYWORD': 1.0}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1815,KW_NAME:0
+NAME_KW:39,KW_KW:68
+NAME_STRING:21,KW_other:0
+NAME_NUMBER:7
+NAME_STRING_list:['f', 'r', 'p', 's', 's', 'T', 'Iw', 'Iw', 'x', 's', 's', 'x', 'p', 't', 's', 's', 's', 'p', 'D', 'p', 'f']
+NAME_NUMBER_list:['f', 's', 'T', 'T', 'X', 'X', 'i']
+Accuracy on the test set of pretrained_GraphCodeBERT_layer_4 model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_GraphCodeBERT Layer 5
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0088
+Epoch: [2/10], Loss: 0.0049
+Epoch: [3/10], Loss: 0.0034
+Epoch: [4/10], Loss: 0.0025
+Epoch: [5/10], Loss: 0.0019
+Epoch: [6/10], Loss: 0.0016
+Epoch: [7/10], Loss: 0.0013
+Epoch: [8/10], Loss: 0.0011
+Epoch: [9/10], Loss: 0.0009
+Epoch: [10/10], Loss: 0.0008
+Score (accuracy) of the probe: 0.96
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0090
+Epoch: [2/10], Loss: 0.0051
+Epoch: [3/10], Loss: 0.0035
+Epoch: [4/10], Loss: 0.0026
+Epoch: [5/10], Loss: 0.0020
+Epoch: [6/10], Loss: 0.0016
+Epoch: [7/10], Loss: 0.0014
+Epoch: [8/10], Loss: 0.0012
+Epoch: [9/10], Loss: 0.0010
+Epoch: [10/10], Loss: 0.0009
+Score (accuracy) of the probe: 0.96
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0091
+Epoch: [2/10], Loss: 0.0051
+Epoch: [3/10], Loss: 0.0036
+Epoch: [4/10], Loss: 0.0027
+Epoch: [5/10], Loss: 0.0022
+Epoch: [6/10], Loss: 0.0018
+Epoch: [7/10], Loss: 0.0015
+Epoch: [8/10], Loss: 0.0014
+Epoch: [9/10], Loss: 0.0012
+Epoch: [10/10], Loss: 0.0011
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0099
+Epoch: [2/10], Loss: 0.0062
+Epoch: [3/10], Loss: 0.0048
+Epoch: [4/10], Loss: 0.0041
+Epoch: [5/10], Loss: 0.0037
+Epoch: [6/10], Loss: 0.0034
+Epoch: [7/10], Loss: 0.0031
+Epoch: [8/10], Loss: 0.0030
+Epoch: [9/10], Loss: 0.0028
+Epoch: [10/10], Loss: 0.0027
+Score (accuracy) of the probe: 0.98
+
+The best l1=0, the best l2=0.1 for pretrained_GraphCodeBERT_layer_5
+Accuracy on the test set of probing pretrained_GraphCodeBERT_layer_5 of all layers:
+Score (accuracy) of the probe: 0.84
+{'__OVERALL__': 0.8427719821162444, 'NAME': 0.9527098831030818, 'STRING': 0.8648648648648649, 'NUMBER': 0.7356547327121138, 'KEYWORD': 1.0}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1793,KW_NAME:0
+NAME_KW:49,KW_KW:68
+NAME_STRING:22,KW_other:0
+NAME_NUMBER:18
+NAME_STRING_list:['d', 'd', 'x', 'd', 'd', 'z', 's', 's', 's', 'Iw', 't', 't', 't', 'x', 'p', 'X', 'T', 's', 's', 'D', 'p', 'v']
+NAME_NUMBER_list:['T', 'x', 'd', 'x', 'D', 'X', 'N', 'D', 's', 's', 's', 's', 'T', 'T', 'T', 'T', 'i', 'h5f']
+Accuracy on the test set of pretrained_GraphCodeBERT_layer_5 model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_GraphCodeBERT Layer 6
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0090
+Epoch: [2/10], Loss: 0.0052
+Epoch: [3/10], Loss: 0.0036
+Epoch: [4/10], Loss: 0.0027
+Epoch: [5/10], Loss: 0.0022
+Epoch: [6/10], Loss: 0.0018
+Epoch: [7/10], Loss: 0.0015
+Epoch: [8/10], Loss: 0.0012
+Epoch: [9/10], Loss: 0.0011
+Epoch: [10/10], Loss: 0.0009
+Score (accuracy) of the probe: 0.94
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0091
+Epoch: [2/10], Loss: 0.0053
+Epoch: [3/10], Loss: 0.0037
+Epoch: [4/10], Loss: 0.0028
+Epoch: [5/10], Loss: 0.0022
+Epoch: [6/10], Loss: 0.0018
+Epoch: [7/10], Loss: 0.0015
+Epoch: [8/10], Loss: 0.0013
+Epoch: [9/10], Loss: 0.0011
+Epoch: [10/10], Loss: 0.0010
+Score (accuracy) of the probe: 0.94
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0092
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0038
+Epoch: [4/10], Loss: 0.0029
+Epoch: [5/10], Loss: 0.0024
+Epoch: [6/10], Loss: 0.0020
+Epoch: [7/10], Loss: 0.0017
+Epoch: [8/10], Loss: 0.0015
+Epoch: [9/10], Loss: 0.0013
+Epoch: [10/10], Loss: 0.0012
+Score (accuracy) of the probe: 0.94
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0100
+Epoch: [2/10], Loss: 0.0064
+Epoch: [3/10], Loss: 0.0051
+Epoch: [4/10], Loss: 0.0044
+Epoch: [5/10], Loss: 0.0039
+Epoch: [6/10], Loss: 0.0036
+Epoch: [7/10], Loss: 0.0033
+Epoch: [8/10], Loss: 0.0031
+Epoch: [9/10], Loss: 0.0029
+Epoch: [10/10], Loss: 0.0028
+Score (accuracy) of the probe: 0.96
+
+The best l1=0, the best l2=0.1 for pretrained_GraphCodeBERT_layer_6
+Accuracy on the test set of probing pretrained_GraphCodeBERT_layer_6 of all layers:
+Score (accuracy) of the probe: 0.87
+{'__OVERALL__': 0.8715846994535519, 'NAME': 0.973432518597237, 'STRING': 0.8378378378378378, 'NUMBER': 0.7739087788131437, 'KEYWORD': 1.0}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1832,KW_NAME:0
+NAME_KW:29,KW_KW:68
+NAME_STRING:16,KW_other:0
+NAME_NUMBER:5
+NAME_STRING_list:['f', 'z', 'd', 'd', 'd', 'd', 's', 's', 'F', 't', 's', 'p', 'p', 'p', 'i', 'd']
+NAME_NUMBER_list:['s', 'D', 's', 's', 'i']
+Accuracy on the test set of pretrained_GraphCodeBERT_layer_6 model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_GraphCodeBERT Layer 7
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0093
+Epoch: [2/10], Loss: 0.0053
+Epoch: [3/10], Loss: 0.0038
+Epoch: [4/10], Loss: 0.0029
+Epoch: [5/10], Loss: 0.0023
+Epoch: [6/10], Loss: 0.0019
+Epoch: [7/10], Loss: 0.0015
+Epoch: [8/10], Loss: 0.0013
+Epoch: [9/10], Loss: 0.0011
+Epoch: [10/10], Loss: 0.0010
+Score (accuracy) of the probe: 0.95
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0093
+Epoch: [2/10], Loss: 0.0053
+Epoch: [3/10], Loss: 0.0037
+Epoch: [4/10], Loss: 0.0028
+Epoch: [5/10], Loss: 0.0023
+Epoch: [6/10], Loss: 0.0018
+Epoch: [7/10], Loss: 0.0016
+Epoch: [8/10], Loss: 0.0013
+Epoch: [9/10], Loss: 0.0012
+Epoch: [10/10], Loss: 0.0010
+Score (accuracy) of the probe: 0.95
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0092
+Epoch: [2/10], Loss: 0.0053
+Epoch: [3/10], Loss: 0.0038
+Epoch: [4/10], Loss: 0.0030
+Epoch: [5/10], Loss: 0.0024
+Epoch: [6/10], Loss: 0.0020
+Epoch: [7/10], Loss: 0.0017
+Epoch: [8/10], Loss: 0.0015
+Epoch: [9/10], Loss: 0.0014
+Epoch: [10/10], Loss: 0.0012
+Score (accuracy) of the probe: 0.95
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0104
+Epoch: [2/10], Loss: 0.0066
+Epoch: [3/10], Loss: 0.0052
+Epoch: [4/10], Loss: 0.0045
+Epoch: [5/10], Loss: 0.0040
+Epoch: [6/10], Loss: 0.0036
+Epoch: [7/10], Loss: 0.0034
+Epoch: [8/10], Loss: 0.0032
+Epoch: [9/10], Loss: 0.0030
+Epoch: [10/10], Loss: 0.0029
+Score (accuracy) of the probe: 0.96
+
+The best l1=0, the best l2=0.1 for pretrained_GraphCodeBERT_layer_7
+Accuracy on the test set of probing pretrained_GraphCodeBERT_layer_7 of all layers:
+Score (accuracy) of the probe: 0.89
+{'__OVERALL__': 0.8941877794336811, 'NAME': 0.9845908607863975, 'STRING': 0.8378378378378378, 'NUMBER': 0.8082393330063756, 'KEYWORD': 1.0}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1853,KW_NAME:0
+NAME_KW:11,KW_KW:68
+NAME_STRING:13,KW_other:0
+NAME_NUMBER:5
+NAME_STRING_list:['i', 'd', 'd', 'z', 't', 'Iw', 't', 'p', 'p', 's', 's', 'i', '_']
+NAME_NUMBER_list:['r', 'D', 'D', 'D', 'h5f']
+Accuracy on the test set of pretrained_GraphCodeBERT_layer_7 model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_GraphCodeBERT Layer 8
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0090
+Epoch: [2/10], Loss: 0.0049
+Epoch: [3/10], Loss: 0.0033
+Epoch: [4/10], Loss: 0.0025
+Epoch: [5/10], Loss: 0.0019
+Epoch: [6/10], Loss: 0.0016
+Epoch: [7/10], Loss: 0.0013
+Epoch: [8/10], Loss: 0.0011
+Epoch: [9/10], Loss: 0.0009
+Epoch: [10/10], Loss: 0.0008
+Score (accuracy) of the probe: 0.98
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0091
+Epoch: [2/10], Loss: 0.0049
+Epoch: [3/10], Loss: 0.0033
+Epoch: [4/10], Loss: 0.0025
+Epoch: [5/10], Loss: 0.0019
+Epoch: [6/10], Loss: 0.0016
+Epoch: [7/10], Loss: 0.0013
+Epoch: [8/10], Loss: 0.0011
+Epoch: [9/10], Loss: 0.0010
+Epoch: [10/10], Loss: 0.0009
+Score (accuracy) of the probe: 0.98
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0093
+Epoch: [2/10], Loss: 0.0052
+Epoch: [3/10], Loss: 0.0036
+Epoch: [4/10], Loss: 0.0027
+Epoch: [5/10], Loss: 0.0022
+Epoch: [6/10], Loss: 0.0018
+Epoch: [7/10], Loss: 0.0016
+Epoch: [8/10], Loss: 0.0014
+Epoch: [9/10], Loss: 0.0012
+Epoch: [10/10], Loss: 0.0011
+Score (accuracy) of the probe: 0.98
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0098
+Epoch: [2/10], Loss: 0.0060
+Epoch: [3/10], Loss: 0.0047
+Epoch: [4/10], Loss: 0.0040
+Epoch: [5/10], Loss: 0.0036
+Epoch: [6/10], Loss: 0.0033
+Epoch: [7/10], Loss: 0.0031
+Epoch: [8/10], Loss: 0.0029
+Epoch: [9/10], Loss: 0.0028
+Epoch: [10/10], Loss: 0.0027
+Score (accuracy) of the probe: 0.99
+
+The best l1=0, the best l2=0.1 for pretrained_GraphCodeBERT_layer_8
+Accuracy on the test set of probing pretrained_GraphCodeBERT_layer_8 of all layers:
+Score (accuracy) of the probe: 0.87
+{'__OVERALL__': 0.8710879284649776, 'NAME': 0.9888416578108395, 'STRING': 1.0, 'NUMBER': 0.7557626287395782, 'KEYWORD': 1.0}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1861,KW_NAME:0
+NAME_KW:11,KW_KW:68
+NAME_STRING:10,KW_other:0
+NAME_NUMBER:0
+NAME_STRING_list:['d', 'd', 't', 't', 's', 'x', 'v', 'v', 'i', '_']
+NAME_NUMBER_list:[]
+Accuracy on the test set of pretrained_GraphCodeBERT_layer_8 model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_GraphCodeBERT Layer 9
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0090
+Epoch: [2/10], Loss: 0.0049
+Epoch: [3/10], Loss: 0.0034
+Epoch: [4/10], Loss: 0.0025
+Epoch: [5/10], Loss: 0.0020
+Epoch: [6/10], Loss: 0.0016
+Epoch: [7/10], Loss: 0.0013
+Epoch: [8/10], Loss: 0.0011
+Epoch: [9/10], Loss: 0.0010
+Epoch: [10/10], Loss: 0.0009
+Score (accuracy) of the probe: 0.98
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0089
+Epoch: [2/10], Loss: 0.0049
+Epoch: [3/10], Loss: 0.0033
+Epoch: [4/10], Loss: 0.0025
+Epoch: [5/10], Loss: 0.0020
+Epoch: [6/10], Loss: 0.0016
+Epoch: [7/10], Loss: 0.0013
+Epoch: [8/10], Loss: 0.0011
+Epoch: [9/10], Loss: 0.0010
+Epoch: [10/10], Loss: 0.0009
+Score (accuracy) of the probe: 0.98
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0092
+Epoch: [2/10], Loss: 0.0051
+Epoch: [3/10], Loss: 0.0036
+Epoch: [4/10], Loss: 0.0027
+Epoch: [5/10], Loss: 0.0022
+Epoch: [6/10], Loss: 0.0018
+Epoch: [7/10], Loss: 0.0016
+Epoch: [8/10], Loss: 0.0014
+Epoch: [9/10], Loss: 0.0012
+Epoch: [10/10], Loss: 0.0011
+Score (accuracy) of the probe: 0.97
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0099
+Epoch: [2/10], Loss: 0.0061
+Epoch: [3/10], Loss: 0.0048
+Epoch: [4/10], Loss: 0.0041
+Epoch: [5/10], Loss: 0.0037
+Epoch: [6/10], Loss: 0.0034
+Epoch: [7/10], Loss: 0.0032
+Epoch: [8/10], Loss: 0.0030
+Epoch: [9/10], Loss: 0.0028
+Epoch: [10/10], Loss: 0.0027
+Score (accuracy) of the probe: 0.98
+
+The best l1=0, the best l2=0.1 for pretrained_GraphCodeBERT_layer_9
+Accuracy on the test set of probing pretrained_GraphCodeBERT_layer_9 of all layers:
+Score (accuracy) of the probe: 0.88
+{'__OVERALL__': 0.8832588176850472, 'NAME': 0.9643995749202976, 'STRING': 0.918918918918919, 'NUMBER': 0.803825404610103, 'KEYWORD': 1.0}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1815,KW_NAME:0
+NAME_KW:20,KW_KW:68
+NAME_STRING:34,KW_other:0
+NAME_NUMBER:13
+NAME_STRING_list:['x', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'd', 'd', 'x', 'x', 'x', 'x', 'z', 'x', '_', 'c', 'c', 's', 'c', 'x', 's', 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'i', 'i']
+NAME_NUMBER_list:['d', 'X', 'D', 'K', 'D', 'D', 'D', 'K', 'D', 'K', 'D', 'K', '_']
+Accuracy on the test set of pretrained_GraphCodeBERT_layer_9 model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_GraphCodeBERT Layer 10
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0085
+Epoch: [2/10], Loss: 0.0043
+Epoch: [3/10], Loss: 0.0028
+Epoch: [4/10], Loss: 0.0021
+Epoch: [5/10], Loss: 0.0016
+Epoch: [6/10], Loss: 0.0013
+Epoch: [7/10], Loss: 0.0011
+Epoch: [8/10], Loss: 0.0009
+Epoch: [9/10], Loss: 0.0008
+Epoch: [10/10], Loss: 0.0007
+Score (accuracy) of the probe: 0.98
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0083
+Epoch: [2/10], Loss: 0.0042
+Epoch: [3/10], Loss: 0.0028
+Epoch: [4/10], Loss: 0.0020
+Epoch: [5/10], Loss: 0.0016
+Epoch: [6/10], Loss: 0.0013
+Epoch: [7/10], Loss: 0.0011
+Epoch: [8/10], Loss: 0.0009
+Epoch: [9/10], Loss: 0.0008
+Epoch: [10/10], Loss: 0.0007
+Score (accuracy) of the probe: 0.98
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0088
+Epoch: [2/10], Loss: 0.0045
+Epoch: [3/10], Loss: 0.0030
+Epoch: [4/10], Loss: 0.0023
+Epoch: [5/10], Loss: 0.0018
+Epoch: [6/10], Loss: 0.0015
+Epoch: [7/10], Loss: 0.0013
+Epoch: [8/10], Loss: 0.0012
+Epoch: [9/10], Loss: 0.0010
+Epoch: [10/10], Loss: 0.0010
+Score (accuracy) of the probe: 0.98
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0094
+Epoch: [2/10], Loss: 0.0055
+Epoch: [3/10], Loss: 0.0043
+Epoch: [4/10], Loss: 0.0037
+Epoch: [5/10], Loss: 0.0033
+Epoch: [6/10], Loss: 0.0031
+Epoch: [7/10], Loss: 0.0029
+Epoch: [8/10], Loss: 0.0028
+Epoch: [9/10], Loss: 0.0027
+Epoch: [10/10], Loss: 0.0025
+Score (accuracy) of the probe: 0.99
+
+The best l1=0, the best l2=0.1 for pretrained_GraphCodeBERT_layer_10
+Accuracy on the test set of probing pretrained_GraphCodeBERT_layer_10 of all layers:
+Score (accuracy) of the probe: 0.91
+{'__OVERALL__': 0.9061102831594635, 'NAME': 0.9442082890541976, 'STRING': 1.0, 'NUMBER': 0.8661108386463953, 'KEYWORD': 1.0}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1777,KW_NAME:0
+NAME_KW:37,KW_KW:68
+NAME_STRING:25,KW_other:0
+NAME_NUMBER:43
+NAME_STRING_list:['m', 'm', 'm', 'k', 'k', 'd', 'd', 'x', 'T', 's', 'n', 'k', 'T', 't', 'T', 't', 'v', 'v', 'i', 'i', 'p', 'T', 'T', 'i', 'd']
+NAME_NUMBER_list:['x', 't', 'm', 'm', 'm', 'm', 'm', 'm', 'x', 'x', 'N', 'N', 'K', 'N', 'N', 'N', 'K', 'D', 'K', 'D', 'k', 't', 'K', 'N', 'k', 'D', 'D', 'N', 'D', 'D', 'N', 'K', 'D', 'D', 'K', 'D', 'k', 'Q', 'N', 'R', 'P', 'N', 'h5f']
+Accuracy on the test set of pretrained_GraphCodeBERT_layer_10 model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_GraphCodeBERT Layer 11
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0085
+Epoch: [2/10], Loss: 0.0042
+Epoch: [3/10], Loss: 0.0027
+Epoch: [4/10], Loss: 0.0020
+Epoch: [5/10], Loss: 0.0015
+Epoch: [6/10], Loss: 0.0012
+Epoch: [7/10], Loss: 0.0010
+Epoch: [8/10], Loss: 0.0009
+Epoch: [9/10], Loss: 0.0007
+Epoch: [10/10], Loss: 0.0007
+Score (accuracy) of the probe: 0.99
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0085
+Epoch: [2/10], Loss: 0.0042
+Epoch: [3/10], Loss: 0.0028
+Epoch: [4/10], Loss: 0.0020
+Epoch: [5/10], Loss: 0.0016
+Epoch: [6/10], Loss: 0.0013
+Epoch: [7/10], Loss: 0.0011
+Epoch: [8/10], Loss: 0.0009
+Epoch: [9/10], Loss: 0.0008
+Epoch: [10/10], Loss: 0.0007
+Score (accuracy) of the probe: 0.99
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0085
+Epoch: [2/10], Loss: 0.0043
+Epoch: [3/10], Loss: 0.0029
+Epoch: [4/10], Loss: 0.0022
+Epoch: [5/10], Loss: 0.0017
+Epoch: [6/10], Loss: 0.0015
+Epoch: [7/10], Loss: 0.0013
+Epoch: [8/10], Loss: 0.0011
+Epoch: [9/10], Loss: 0.0010
+Epoch: [10/10], Loss: 0.0009
+Score (accuracy) of the probe: 0.99
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0094
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0042
+Epoch: [4/10], Loss: 0.0036
+Epoch: [5/10], Loss: 0.0032
+Epoch: [6/10], Loss: 0.0030
+Epoch: [7/10], Loss: 0.0028
+Epoch: [8/10], Loss: 0.0027
+Epoch: [9/10], Loss: 0.0026
+Epoch: [10/10], Loss: 0.0025
+Score (accuracy) of the probe: 0.99
+
+The best l1=0, the best l2=0.1 for pretrained_GraphCodeBERT_layer_11
+Accuracy on the test set of probing pretrained_GraphCodeBERT_layer_11 of all layers:
+Score (accuracy) of the probe: 0.93
+{'__OVERALL__': 0.9292101341281669, 'NAME': 0.9750265674814028, 'STRING': 1.0, 'NUMBER': 0.8832761157430112, 'KEYWORD': 1.0}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1835,KW_NAME:0
+NAME_KW:16,KW_KW:68
+NAME_STRING:21,KW_other:0
+NAME_NUMBER:10
+NAME_STRING_list:['x', 'a', 'm', 'x', 'x', 'x', 'x', 'z', 'z', 'x', 'F', 'f', 'x', 'x', 'T', 'T', 'T', 'T', 'T', 'i', 'x']
+NAME_NUMBER_list:['x', 't', 'm', 'm', 'm', 'm', 'x', 'x', 's', 'x']
+Accuracy on the test set of pretrained_GraphCodeBERT_layer_11 model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_GraphCodeBERT Layer 12
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0092
+Epoch: [2/10], Loss: 0.0052
+Epoch: [3/10], Loss: 0.0037
+Epoch: [4/10], Loss: 0.0028
+Epoch: [5/10], Loss: 0.0023
+Epoch: [6/10], Loss: 0.0019
+Epoch: [7/10], Loss: 0.0016
+Epoch: [8/10], Loss: 0.0014
+Epoch: [9/10], Loss: 0.0012
+Epoch: [10/10], Loss: 0.0011
+Score (accuracy) of the probe: 0.98
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0090
+Epoch: [2/10], Loss: 0.0051
+Epoch: [3/10], Loss: 0.0036
+Epoch: [4/10], Loss: 0.0028
+Epoch: [5/10], Loss: 0.0023
+Epoch: [6/10], Loss: 0.0019
+Epoch: [7/10], Loss: 0.0016
+Epoch: [8/10], Loss: 0.0014
+Epoch: [9/10], Loss: 0.0012
+Epoch: [10/10], Loss: 0.0011
+Score (accuracy) of the probe: 0.98
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0090
+Epoch: [2/10], Loss: 0.0052
+Epoch: [3/10], Loss: 0.0037
+Epoch: [4/10], Loss: 0.0029
+Epoch: [5/10], Loss: 0.0024
+Epoch: [6/10], Loss: 0.0020
+Epoch: [7/10], Loss: 0.0018
+Epoch: [8/10], Loss: 0.0016
+Epoch: [9/10], Loss: 0.0014
+Epoch: [10/10], Loss: 0.0013
+Score (accuracy) of the probe: 0.98
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0099
+Epoch: [2/10], Loss: 0.0063
+Epoch: [3/10], Loss: 0.0050
+Epoch: [4/10], Loss: 0.0043
+Epoch: [5/10], Loss: 0.0039
+Epoch: [6/10], Loss: 0.0035
+Epoch: [7/10], Loss: 0.0033
+Epoch: [8/10], Loss: 0.0031
+Epoch: [9/10], Loss: 0.0029
+Epoch: [10/10], Loss: 0.0028
+Score (accuracy) of the probe: 0.99
+
+The best l1=0, the best l2=0.1 for pretrained_GraphCodeBERT_layer_12
+Accuracy on the test set of probing pretrained_GraphCodeBERT_layer_12 of all layers:
+Score (accuracy) of the probe: 0.93
+{'__OVERALL__': 0.9282165921510184, 'NAME': 0.9287991498405951, 'STRING': 1.0, 'NUMBER': 0.9239823442864149, 'KEYWORD': 1.0}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1748,KW_NAME:0
+NAME_KW:16,KW_KW:68
+NAME_STRING:52,KW_other:0
+NAME_NUMBER:66
+NAME_STRING_list:['a', 'a', 'a', 'a', 'i', 'i', 'f', 'f', 'i', 'r', 'i', 'z', 'z', 'f2', 'p', 'T', 's', 's', 's', 's', 's', 's', 's', 's', 'P', 'p', 'p', 'i', 'p', 'i', 'i', 's', 'i', 'i', 'i', 'i', 'i', 'i', 'b', 'a', 'b', 'a', 'a2', 'a3', 'C', 'l', 'i', 'i', 'i', 'i', 'i', 'i']
+NAME_NUMBER_list:['x', 'h', 'c', 'b', 'b', 't', 'i', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'm', 'l', 'f', 'j', 'v', 'x', 'i', 'ih', 'x', 'Q', 'P', 'Q', 'Q', 'Q', 'q', 'P', 'Q', 'S', 'Q', 'p0', 'p', 't', 't', 'c', 'Q', 'X', 'R', 'K', 'Q', 'p', 'p', 'j', 'u', 'u', 'v', 'v', 'v', 'p', 's', 'c', 'p', 'p', 'p', 'p', 'Q', 'p', 'q', 'T', 'R', 'R', 'b']
+Accuracy on the test set of pretrained_GraphCodeBERT_layer_12 model using the intercept:
+Score (accuracy) of the probe: 0.47
+
+pretrained_GraphCodeBERT top neurons
+array([6144, 2049, 6160, 2068,   20, 8215, 6170, 4124, 2078,   31, 8227,
+       6187, 4155, 6205,   61, 6218, 2124,   77,   83, 8279, 4185, 6245,
+       2158, 6271, 2180, 2183, 8328, 2185,  144, 2211,  182, 2232, 4281,
+       6337, 8411, 2267, 6365,  225,  236, 6382, 6383, 4340, 6397, 4355,
+       6407,  264,  269,  271, 2334, 8478, 8509, 2365,  329,  335, 8534,
+        346, 4443, 6490,  367, 6513, 8561, 8566, 2422, 2434, 8589, 8597,
+       6559, 6575,  439, 8632, 8640, 8641, 2497,  453, 2504, 8653, 2511,
+        466, 4571,  479, 6638, 2550, 6648, 4607, 2561,  514, 2567, 6664,
+       2570, 6669, 2573, 2588, 4638,  543, 6691,  551, 6706, 8755,  567,
+       6715, 4669, 8767, 2624, 2626,  588,  593, 6739, 6758, 6770, 6774,
+       4745, 6793, 4749, 6798, 8848, 2704,  663, 8881, 8882, 8885, 4795,
+       8895, 4801, 4805, 8904, 8915, 8917,  730, 6875,  731, 2788, 2791,
+       4842, 2800, 4850, 2812, 8961, 8968, 8973, 2829, 4885, 8983, 6945,
+       8996, 6960,  821, 4922,  829, 6973, 2879,  845, 6998, 9047, 7003,
+       2930, 9078, 9088,  908, 2961, 9108, 7094, 3001, 7105,  969,  971,
+       9179, 3035, 9193, 7150, 7156, 7165, 5123, 1037, 5133, 1039, 7186,
+       3095, 3102, 5152, 7223, 3133, 9277, 7246, 7250, 3161, 1113, 9323,
+       7282, 5238, 1148, 1157, 5253, 1162, 9357, 1170, 7315, 5269, 3245,
+       3258, 3265, 9409, 3271, 3272, 9417, 7378, 9427, 5339, 1247, 5346,
+       1252, 9454, 1264, 9458, 3318, 1274, 7427, 7433, 1295, 5392, 3355,
+       3356, 9499, 1323, 9517, 1328, 9523, 3384, 5437, 3397, 1356, 3417,
+       1369, 9571, 9583, 7538, 3482, 9630, 1438, 9648, 1459, 3509, 9657,
+       9661, 5569, 7618, 1498, 7643, 1499, 3559, 7673, 9721, 9736, 1556,
+       7710, 9759, 1579, 5680, 9782, 1597, 7741, 3647, 1608, 9805, 5717,
+       5722, 7771, 5746, 1654, 9846, 3709, 9860, 3717, 7814, 1668, 1671,
+       7821, 7823, 3742, 9897, 7855, 9908, 7864, 3772, 1727, 7872, 7873,
+       1729, 3784, 7885, 5848, 3803, 9947, 9961, 3819, 1782, 5891, 1805,
+       1812, 1816, 3870, 1834, 5931, 3892, 7994, 3901, 1870, 1872, 3934,
+       8035, 8036, 8043, 8047, 1916, 1919, 1938, 1943, 1948, 6066, 1975,
+       4032, 4033, 1986, 1993, 2003, 6107, 2017, 6122, 4074, 2032, 6133,
+       2043])
+pretrained_GraphCodeBERT top neurons per class
+{'NAME': array([6638, 9179, 2365, 8411, 3035, 9947, 3133, 1597, 5339, 3803, 2267,
+       6875, 7643, 1037, 3384, 4571, 3647, 3709, 2078, 6245, 6205, 1498,
+       1499, 2561, 3717, 7741, 6998, 4355,  731, 6107, 6575, 3901, 2043,
+        551,  543, 5437, 5746, 4801, 7864, 7427, 8036, 8640, 8509, 6122,
+       8653, 9908, 4638, 1608, 8641, 9088,  829, 5891, 1459, 4669, 6960,
+       4185, 1654, 7872, 6715,  182,  969, 7873, 9523, 1986, 8917, 3559,
+       6383,  144, 2334, 6691, 9583, 4443, 4885, 1975, 3397,  567, 6382,
+       8047, 5569, 6337, 9409, 6187, 8215, 6973, 8882,  479,  593, 8848,
+       3272, 2930, 6945, 2158, 4033, 5152,  730, 6133, 6559, 1834, 9860,
+       5346, 2800, 6739, 3509, 2049, 9108,  269, 7282, 2003, 1264, 2791,
+       8983, 4281,  588, 1729, 5123, 8973, 9721, 7105, 1356, 3417,  335,
+       4124, 7315, 2829, 3001, 8597, 8632, 9277]), 'STRING': array([1597, 3901, 1037, 5437, 3803, 4571, 8640, 3133, 1247, 7872, 8917,
+       7741, 5339, 9277, 2365,  829, 2043, 1328, 1170, 2267, 6973, 6205,
+       6638, 4745, 9179, 1356, 9583, 8566, 2879, 8509,  346, 1499, 2078,
+       9661,  969, 3717, 4669, 7643, 3384, 1323,  367, 6133,  271, 1608,
+       7873, 4638,  845, 6365,  663, 9088, 9571, 1556, 1938, 9947,  543,
+       3709,  971, 6107, 8653, 5569, 8996, 9630, 8968,  567, 6691, 8641,
+       6490, 1816, 8534, 8411, 7673, 5746, 3271, 9427, 1727, 2068,  269,
+       1498, 3161, 2504, 3870, 9908, 2588, 9047, 9409, 6875, 2812, 5152,
+       3934, 6715, 3784, 9523, 1162, 7246, 2211, 2704, 1039, 2561, 3509,
+       4340, 8227, 6122, 2124, 8328, 9193, 8279, 9782, 9417, 3035, 9323,
+       2334, 7250,   61, 6271, 6774, 6160, 5392, 6218, 3102, 8881, 6575,
+        264, 6513, 8561, 7814,  439, 5722, 3356, 8961,  329, 4795, 5848,
+       8047, 8035]), 'NUMBER': array([6638, 9179, 8411, 1597, 9277, 9947, 3803, 3384, 6205, 3901, 3133,
+       4669, 2365, 7741, 3035, 5437, 4571, 6245, 2791, 8640, 8509, 2588,
+       1498, 6973, 6875, 3318, 2043, 2267, 6383, 1499, 6133, 7643, 6739,
+        829, 8653,  264, 6648, 9523, 7094, 9517, 4805, 2561, 8534, 6337,
+       8566, 7864,  971, 3647, 8968,  466, 2003, 5746, 3417, 2829, 2434,
+       8478, 3709, 2232, 2017, 7105, 3356, 7538, 5680, 5238, 3095, 3245,
+       8996,  543, 8641, 1993, 8632, 7821, 1157, 2550, 3482, 7223, 6144,
+       2961, 5133, 6758, 2624, 2567, 7885, 6218, 3934, 3265, 9583, 1872,
+       4607,  182, 8961, 4850, 3161, 2570, 6170, 3717,  236, 9088, 2879,
+       4340, 5339, 5569, 1459, 7378, 2497, 3819, 4185, 3272, 5253, 6664,
+       4922, 1916, 2078, 7618, 4885,  225, 6691, 9108, 6107, 1148, 4745,
+       2032, 6706,  479, 2511, 4074]), 'KEYWORD': array([2158,  551, 3384, 9193, 8478, 8881, 4281, 7673, 1916, 1113, 1654,
+        829, 7823, 6383, 6638,  588,  453, 1556, 1039, 4842, 9523, 1274,
+       6669, 1356,   20, 2049, 2879, 3318, 7150, 1037, 9736, 4749, 8036,
+       8885, 7855, 3772, 3355, 8640, 7427,  730, 6245, 1252, 6998, 9961,
+       7741, 2422, 9499,   77, 1597, 1668, 1671, 9357, 8227, 9454, 7771,
+        821, 3819, 2626, 2180,  908, 8904, 9648, 8589, 2812, 7165, 9657,
+       9846, 1919, 8767, 2791, 1579,  514, 7156, 2829, 5717, 2561, 2185,
+       1157, 6144, 8895, 7994, 1805,   31, 6490, 8968, 2003, 1459, 9759,
+       6397, 9047, 2043, 1498, 3161, 6793, 8755, 7710, 4340, 1870, 3258,
+       8915, 6770, 9805, 9277, 1948,  479, 2788, 9078, 6798, 6337, 1369,
+       3742, 3892,   83, 5931, 9897, 1812, 8043, 1782, 2573, 4032, 1438,
+       6407, 9458, 3001, 7821, 4074, 7186, 1295, 8566, 7433, 8411, 1943,
+        264, 7003, 4155, 2183, 5269, 6066])}
+The shape of selected features (13636, 331)
+The shape of the training set: (13636, 331)
+The shape of the validation set: (1516, 331)
+The shape of the testing set: (4026, 331)
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0074
+Epoch: [2/10], Loss: 0.0037
+Epoch: [3/10], Loss: 0.0025
+Epoch: [4/10], Loss: 0.0019
+Epoch: [5/10], Loss: 0.0015
+Epoch: [6/10], Loss: 0.0013
+Epoch: [7/10], Loss: 0.0011
+Epoch: [8/10], Loss: 0.0010
+Epoch: [9/10], Loss: 0.0009
+Epoch: [10/10], Loss: 0.0008
+Score (accuracy) of the probe: 0.96
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0073
+Epoch: [2/10], Loss: 0.0037
+Epoch: [3/10], Loss: 0.0025
+Epoch: [4/10], Loss: 0.0019
+Epoch: [5/10], Loss: 0.0015
+Epoch: [6/10], Loss: 0.0013
+Epoch: [7/10], Loss: 0.0011
+Epoch: [8/10], Loss: 0.0010
+Epoch: [9/10], Loss: 0.0009
+Epoch: [10/10], Loss: 0.0008
+Score (accuracy) of the probe: 0.96
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0071
+Epoch: [2/10], Loss: 0.0037
+Epoch: [3/10], Loss: 0.0026
+Epoch: [4/10], Loss: 0.0020
+Epoch: [5/10], Loss: 0.0017
+Epoch: [6/10], Loss: 0.0015
+Epoch: [7/10], Loss: 0.0013
+Epoch: [8/10], Loss: 0.0012
+Epoch: [9/10], Loss: 0.0011
+Epoch: [10/10], Loss: 0.0010
+Score (accuracy) of the probe: 0.96
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0076
+Epoch: [2/10], Loss: 0.0046
+Epoch: [3/10], Loss: 0.0037
+Epoch: [4/10], Loss: 0.0033
+Epoch: [5/10], Loss: 0.0031
+Epoch: [6/10], Loss: 0.0029
+Epoch: [7/10], Loss: 0.0027
+Epoch: [8/10], Loss: 0.0026
+Epoch: [9/10], Loss: 0.0025
+Epoch: [10/10], Loss: 0.0024
+Score (accuracy) of the probe: 0.98
+
+The best l1=0, the best l2=0.1 for pretrained_GraphCodeBERT_top5%_neurons
+Accuracy on the test set of probing pretrained_GraphCodeBERT_top5%_neurons of all layers:
+Score (accuracy) of the probe: 0.54
+{'__OVERALL__': 0.5384997516145057, 'NAME': 0.6987247608926673, 'STRING': 1.0, 'NUMBER': 0.3678273663560569, 'KEYWORD': 0.9705882352941176}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1315,KW_NAME:0
+NAME_KW:216,KW_KW:66
+NAME_STRING:334,KW_other:2
+NAME_NUMBER:17
+NAME_STRING_list:['a', 'a', 'h', 'h', 'h', 'h', 'h', 'h', 'h', 'h', 'h', 'x', 'x', 'x', 'X', 'X', 's', 'x', 'a', 'a', 'a', 'T', 'j', 'j', 'x', 'j', 'j', 'x', 'x', 'x', 'x', 'i', 'i', 's', 'm', 'f', 'f', 'm', 'm', 't0', 'h', 'h', 'f', 'h', 'h', 'h', 'm', 'h', 'f', 'm', 'm', 'y', 'y', 'y', 'y', 'x', 'x', 'x', 'y', 'x', 'y', 'x', 'y', 'x', 'y', 'x', 'y', 'y', 'y', 'y', 'y', 'y', 'x', 'x', 'X', 'X', 'X', 'x', 'x', 'x', 'a', 'k', 'f', 'k', 'k', 'k', 'k', 'e', 'x', 'x', 'i', 'X', 'Y', 'Y', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'Y', 'x', 'f', 'p', 'i', 'i', 'i', 'i', 'x', 'x', 'x', 'x', 'z', 'x', 'x', 'X', 'X', 'f2', 'f1', 'x', 'x', 's', 's', 'F', 'x', 'T', 'x', 'T', 'Iw', 'x', 'x', 'X', 'X', 'p', 'p', 'k', 'x', 'x', 'n', 's', 's', 't', 'x', 'y', 'x', 'x', 'n', 'k', 'n', 's', 't', 's', 't', 'k', 'k', 'X', 'X', 'N', 'F', 'E', 'f', 'x', 'x', 'j', 'j', 'j', 'j', 's', 'j', 'X', 'X', 'X', 'p', 'X', 'h', 'h', 'y', 'y', 'p', 'p', 's', 's', 's', 'n', 'n', 'i', 'i', 'i', 'v', 'i', 'v', 'f', 's', 'i', 's', 'n', 's', 's', 's', 'p', 's', 's', 's', 's', 's', 's', 'x', 's', 'j', 'p', 'i', 'p', 'p', 'p', 'p', 'p', 'p', 's', 'm', 'x', 'y', 'x', 'y', 'x', 'x', 'x', 'x', 'x', 'x', 'k', 'Y', 'Y', 'X', 'y', 'y', 'y', 'i', 'i', 'i', 'X', 'X', 'y', 'y', 'T', 'x', 'i', 'i', 'i', 'X', 'X', 'T', 'i', 'i', 'X', 'i', 'i', 'i', 'T', 'i', 'i', 'T', 'i', 'T', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'y', 'X', 'X', 'X', 'y', 'y', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'y', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'Y', 'x', 'j', 'j', 'j', 'j', 'P', 'T', 'a', 'a', 'a', 'i', 'i', 'p', 't', 'T', 'R', 'R', 'h5f', 'h5f']
+NAME_NUMBER_list:['m', 'm', 'm', 'k', 'x', 'N', 'X', 'N', 'X', 'x', 'n', 'u', 'i', 'i', 'j', 'i', 'i']
+Accuracy on the test set of pretrained_GraphCodeBERT_top5%_neurons model using the intercept:
+Score (accuracy) of the probe: 0.47
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0080
+Epoch: [2/10], Loss: 0.0050
+Epoch: [3/10], Loss: 0.0036
+Epoch: [4/10], Loss: 0.0029
+Epoch: [5/10], Loss: 0.0025
+Epoch: [6/10], Loss: 0.0021
+Epoch: [7/10], Loss: 0.0019
+Epoch: [8/10], Loss: 0.0017
+Epoch: [9/10], Loss: 0.0015
+Epoch: [10/10], Loss: 0.0014
+Score (accuracy) of the probe: 0.95
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0083
+Epoch: [2/10], Loss: 0.0052
+Epoch: [3/10], Loss: 0.0038
+Epoch: [4/10], Loss: 0.0030
+Epoch: [5/10], Loss: 0.0025
+Epoch: [6/10], Loss: 0.0022
+Epoch: [7/10], Loss: 0.0019
+Epoch: [8/10], Loss: 0.0017
+Epoch: [9/10], Loss: 0.0016
+Epoch: [10/10], Loss: 0.0014
+Score (accuracy) of the probe: 0.95
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0082
+Epoch: [2/10], Loss: 0.0050
+Epoch: [3/10], Loss: 0.0037
+Epoch: [4/10], Loss: 0.0030
+Epoch: [5/10], Loss: 0.0026
+Epoch: [6/10], Loss: 0.0023
+Epoch: [7/10], Loss: 0.0020
+Epoch: [8/10], Loss: 0.0018
+Epoch: [9/10], Loss: 0.0017
+Epoch: [10/10], Loss: 0.0016
+Score (accuracy) of the probe: 0.95
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0090
+Epoch: [2/10], Loss: 0.0059
+Epoch: [3/10], Loss: 0.0048
+Epoch: [4/10], Loss: 0.0042
+Epoch: [5/10], Loss: 0.0038
+Epoch: [6/10], Loss: 0.0035
+Epoch: [7/10], Loss: 0.0033
+Epoch: [8/10], Loss: 0.0031
+Epoch: [9/10], Loss: 0.0029
+Epoch: [10/10], Loss: 0.0028
+Score (accuracy) of the probe: 0.97
+
+The best l1=0, the best l2=0.1 for pretrained_GraphCodeBERT_top200_neurons
+Accuracy on the test set of probing pretrained_GraphCodeBERT_top200_neurons of all layers:
+Score (accuracy) of the probe: 0.46
+{'__OVERALL__': 0.45901639344262296, 'NAME': 0.7598299681190224, 'STRING': 1.0, 'NUMBER': 0.1535066208925944, 'KEYWORD': 1.0}
+Confusion matrix between NAME and KEYWORD:
+NAME_NAME:1430,KW_NAME:0
+NAME_KW:233,KW_KW:68
+NAME_STRING:178,KW_other:0
+NAME_NUMBER:41
+NAME_STRING_list:['a', 'h', 'h', 'h', 't', 'x', 'a', 'a', 'i', 'x', 'i', 'i', 's', 's', 'f', 'm', 'f', 't0', 'h', 'h', 'h', 'h', 'h', 'f', 'm', 'y', 'y', 'x', 'x', 'x', 'y', 'y', 'y', 'y', 'y', 'x', 'x', 'x', 'a', 'k', 'k', 'i', 'X', 'x', 'i', 'i', 'i', 'i', 'x', 'z', 'z', 'x', 'X', 'f2', 'f1', 's', 's', 'x', 'X', 'k', 'n', 'n', 's', 's', 'p0', 'y', 'n', 'k', 'n', 's', 's', 's', 't', 's', 's', 's', 't', 'k', 'k', 'p', 's', 's', 's', 'x', 'x', 's', 'h', 'y', 'p', 'n', 'i', 'i', 'i', 'i', 's', 's', 's', 's', 's', 'p', 'i', 'p', 'p', 'p', 'p', 'k', 'X', 'y', 'i', 'i', 'y', 'i', 'X', 'X', 'y', 'i', 'i', 'i', 'i', 'i', 'X', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'X', 'y', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'a', 'a', 'i']
+NAME_NUMBER_list:['j', 'm', 'm', 'x', 'y', 'x', 'y', 'x', 'i', 'x', 'x', 'x', 'y', 'x', 'X', 'x', 'q', 'N', 'x', 'X', 'x', 'x', 'x', 'q0', 'X', 'j', 'j', 'j', 'i', 'u', 'k', 'j', 'j', 'y', 'i', 'i', 'i', 'j', 'j', 'j', 'i']
+Accuracy on the test set of pretrained_GraphCodeBERT_top200_neurons model using the intercept:
+Score (accuracy) of the probe: 0.47
+pretrained_GraphCodeBERT top words
+Top words for pretrained_GraphCodeBERT neuron indx 6144 [('initial', 1.0), ('hidden', 0.7547753087412238), ('89.999999999999992', 0.6168616078341272), ('STATUS', 0.5989767016109767), ('ND', 0.5985008859024352)]
+Top words for pretrained_GraphCodeBERT neuron indx 2049 [('orgs', 1.0), ('refs', 0.9555560903552054), ('twisted', 0.9397384220766305), ('Prefix', 0.9121508436645898), ('Int', 0.8998091822228684)]
+Top words for pretrained_GraphCodeBERT neuron indx 6160 [('shortcuts', 1.0), ('Tab', 0.8725423584573438), ('seek', 0.8386789093516137), ('Origin', 0.8217530215516354), ('Off', 0.7902682760640767)]
+Top words for pretrained_GraphCodeBERT neuron indx 2068 [('Manager', 1.0), ('Tag', 0.9446904803000599), ('ModelBase', 0.9094026911170068), ('trial', 0.7676662217524494), ('locals', 0.7458852774351803)]
+Top words for pretrained_GraphCodeBERT neuron indx 20 [('Subject', 1.0), ('Cond', 0.9806753483973425), ('127', 0.9738960071307329), ('cond', 0.8471861022969129), ('ts', 0.7520250717742485)]
+Top words for pretrained_GraphCodeBERT neuron indx 8215 [('v2', 1.0), ('services', 0.9963287687100212), ('RELEASE', 0.88424830778608), ('Plugin', 0.8779726724497281), ('files', 0.869069939358085)]
+Top words for pretrained_GraphCodeBERT neuron indx 6170 [('Allow', 1.0), ('parameter', 0.9085465543510474), ('locals', 0.9028301716091828), ('raise', 0.829563426012031), ('disable_manage_boot', 0.826947035272049)]
+Top words for pretrained_GraphCodeBERT neuron indx 4124 [('down', 1.0), ('PROVISION', 0.9407360762292208), ('_decode', 0.9145462277939294), ('ctx', 0.9026905547018178), ('multiple', 0.8975609655842238)]
+Top words for pretrained_GraphCodeBERT neuron indx 2078 [('each', 1.0), ('reference', 0.8932226836732355), ('Distance', 0.8398850422588737), ('class', 0.7552455256405801), ('.3', 0.7386040148597108)]
+Top words for pretrained_GraphCodeBERT neuron indx 31 [('Clock', 1.0), ('Card', 0.8962925571572188), ('Commit', 0.8935381608131563), ('inverse', 0.7834111723193424), ('probe', 0.7747138391565526)]
+Top words for pretrained_GraphCodeBERT neuron indx 8227 [('purge', 1.0), ('"multiple"', 0.9183313720948463), ('probe', 0.8812281944160876), ('cmp', 0.7919007715188903), ('cb', 0.7896461961200104)]
+Top words for pretrained_GraphCodeBERT neuron indx 6187 [('Else', 1.0), ('quality', 0.9472288353872714), ('class', 0.8908116720647287), ('type_', 0.8692469863257388), ('import', 0.8477939790312238)]
+Top words for pretrained_GraphCodeBERT neuron indx 4155 [('capitalize', 1.0), ('inc', 0.8645148868738646), ('"head"', 0.8038479324007495), ('acquire', 0.7867533384979234), ('add_assets', 0.7495864915256358)]
+Top words for pretrained_GraphCodeBERT neuron indx 6205 [('District', 1.0), ('fabric', 0.9752651660457131), ('is', 0.9630007074476946), ('"store_true"', 0.9231785144825696), ('pushkin', 0.9162305723018496)]
+Top words for pretrained_GraphCodeBERT neuron indx 61 [('google', 1.0), ('as', 0.8052218140023626), ('edited', 0.7819796004250835), ('Migration', 0.7596222370158023), ('begin', 0.7360836535025239)]
+Top words for pretrained_GraphCodeBERT neuron indx 6218 [('WAY', 1.0), ('try', 0.9669961236453479), ('TAG', 0.940931186723037), ('WAYS', 0.8623666669363743), ('TYPE', 0.837219182422877)]
+Top words for pretrained_GraphCodeBERT neuron indx 2124 [('alembic', 1.0), ('symmetric', 0.9823810360818195), ('urllib', 0.9743042046490873), ('contrib', 0.9714749944874606), ('MINIMUM', 0.9685076396102927)]
+Top words for pretrained_GraphCodeBERT neuron indx 77 [('disp', 1.0), ('WAY', 0.8732207667798045), ('TAG', 0.8591166738699306), ('REF', 0.8330838903843542), ('Stretch', 0.7777159350543127)]
+Top words for pretrained_GraphCodeBERT neuron indx 83 [('communities', 1.0), ('lookup', 0.9838576066563884), ('attribute', 0.9691963924067724), ('WAYS', 0.9200230432875804), ('terminate', 0.8620434611208828)]
+Top words for pretrained_GraphCodeBERT neuron indx 8279 [('gaierror', 1.0), ('isdigit', 0.9859026486369306), ('requires', 0.9471932984089455), ('NamedTemporaryFile', 0.8989943958429875), ('current', 0.8917556166063922)]
+Top words for pretrained_GraphCodeBERT neuron indx 4185 [('"%0x"', 1.0), ('sha1', 0.9690913096961424), ('0xFF', 0.9408102907800425), ('0x00', 0.7804227648974585), ('"disk"', 0.7761260660205627)]
+Top words for pretrained_GraphCodeBERT neuron indx 6245 [('closing', 1.0), ('63', 0.9034711957953884), ('def', 0.8890668315958778), ('signed', 0.846500963221378), ('IntegrityError', 0.8404596031498599)]
+Top words for pretrained_GraphCodeBERT neuron indx 2158 [('not', 1.0), ('Command', 0.9752999757242856), ('Plan', 0.9257842959973589), ('srid', 0.9163723886020604), ('Enum', 0.8666015941952122)]
+Top words for pretrained_GraphCodeBERT neuron indx 6271 [('IntegrityError', 1.0), ('QUERY_SUMMARY_SYNC', 0.9563322592273794), ('operand', 0.918816226702873), ('progressBar', 0.9166969430989824), ('rollback', 0.9063078824550056)]
+Top words for pretrained_GraphCodeBERT neuron indx 2180 [('moderate', 1.0), ('except', 0.95354303618863), ('Stretch', 0.9446839095174326), ('443', 0.9207043113408264), ('plural', 0.9087012667980015)]
+Top words for pretrained_GraphCodeBERT neuron indx 2183 [('repeat', 1.0), ('terms', 0.9992089283961358), ('NewCard', 0.9830495721491402), ('original', 0.9584490289754295), ('Core', 0.9422226114354174)]
+Top words for pretrained_GraphCodeBERT neuron indx 8328 [('If', 1.0), ('exists', 0.9644551412323065), ('future', 0.8008175578250936), ('CommentForm', 0.7883248640407514), ('veriloggen', 0.710427321977234)]
+Top words for pretrained_GraphCodeBERT neuron indx 2185 [('COLS', 1.0), ('Util', 0.9323904005945586), ('Delay', 0.9232813466775526), ('Frame', 0.8929708093218178), ('helper', 0.8471544774842673)]
+Top words for pretrained_GraphCodeBERT neuron indx 144 [('assets', 1.0), ('subscribers', 0.8622124395550047), ('initial', 0.8585775380968229), ('splits', 0.8358521888605059), ('sock', 0.8182660685632077)]
+Top words for pretrained_GraphCodeBERT neuron indx 2211 [('Cat', 1.0), ('lock', 0.9785735873938861), ('loader', 0.8694182182877623), ('loads', 0.8359745326755976), ('selection', 0.8336918400931786)]
+Top words for pretrained_GraphCodeBERT neuron indx 182 [('reserve', 1.0), ('decimal', 0.8367852554237368), ('resource', 0.799401772235031), ('enclosure', 0.7683492390095172), ('clock', 0.7651080471865719)]
+Top words for pretrained_GraphCodeBERT neuron indx 2232 [('twisted', 1.0), ('ord', 0.930842543494216), ('rest', 0.8141392458798602), ('presence', 0.7934278284015044), ('synchronized', 0.7838472997636547)]
+Top words for pretrained_GraphCodeBERT neuron indx 4281 [('def', 1.0), ('conf', 0.9844158539852835), ('python', 0.8550363560499946), ('Connecter', 0.813246107405526), ('providers', 0.785948871582244)]
+Top words for pretrained_GraphCodeBERT neuron indx 6337 [('ll', 1.0), ('Tag', 0.9164022974056075), ('decorator', 0.8568326922301486), ('web', 0.812807544626194), ('Encoder', 0.8102880080317769)]
+Top words for pretrained_GraphCodeBERT neuron indx 8411 [('for', 1.0), ('with', 0.9374990763050366), ('return', 0.8039752393405384), ('functional', 0.7975514839272071), ('subscriptions', 0.7926394539962707)]
+Top words for pretrained_GraphCodeBERT neuron indx 2267 [('subscriptions', 1.0), ('for', 0.898238284332118), ('reservations', 0.8431464483618264), ('protocols', 0.7428271297847849), ('not', 0.7407194069075926)]
+Top words for pretrained_GraphCodeBERT neuron indx 6365 [('get_or_create', 1.0), ('sites', 0.9367436627147813), ('strict', 0.8981007011813816), ('__cmp__', 0.8791962245994205), ('bindings', 0.8563683735128793)]
+Top words for pretrained_GraphCodeBERT neuron indx 225 [('demos', 1.0), ('installed', 0.948315519771902), ('ranges', 0.9340071562723362), ('strict', 0.9229250414396034), ('point', 0.9037616673535869)]
+Top words for pretrained_GraphCodeBERT neuron indx 236 [('adapters', 1.0), ('LOG', 0.9973348612088679), ('tabs', 0.9906975191591207), ('Command', 0.9294786836953982), ('Lock', 0.8412747457787564)]
+Top words for pretrained_GraphCodeBERT neuron indx 6382 [('Label', 1.0), ('Tab', 0.9902457028156365), ('values_list', 0.9207734810729721), ('unquote', 0.9205290241535519), ('RemoteRunner', 0.8469672393077159)]
+Top words for pretrained_GraphCodeBERT neuron indx 6383 [('future', 1.0), ('class', 0.9056537349517346), ('SUCCESS', 0.7993912925877072), ('def', 0.7887809971832196), ('tornado', 0.7843347076809033)]
+Top words for pretrained_GraphCodeBERT neuron indx 4340 [('Cond', 1.0), ('Billboard', 0.9883822888910432), ('with', 0.8212128911400017), ('multiple', 0.8099132235008704), ('as', 0.7913715624102627)]
+Top words for pretrained_GraphCodeBERT neuron indx 6397 [('tries', 1.0), ('MULTIPLE', 0.9252801506637034), ('href', 0.8979555113760654), ('choices', 0.8830109165007638), ('is_extension', 0.8702801782375876)]
+Top words for pretrained_GraphCodeBERT neuron indx 4355 [('with', 1.0), ('tokens', 0.935181762408935), ('Else', 0.8725546918406499), ('Invalid', 0.851503148789197), ('except', 0.8509399255447194)]
+Top words for pretrained_GraphCodeBERT neuron indx 6407 [('millis', 1.0), ('microseconds', 0.9998219335890263), ('epoch_millis', 0.9568239446017883), ('secs', 0.929022511275835), ('with', 0.920022168181616)]
+Top words for pretrained_GraphCodeBERT neuron indx 264 [('Video', 1.0), ('deferred', 0.9774278652519871), ('Cond', 0.9095033749129003), ('sa', 0.8886242463620134), ('Provider', 0.8207756875430497)]
+Top words for pretrained_GraphCodeBERT neuron indx 269 [('scope', 1.0), ('alt', 0.8897745190278363), ('ready', 0.7703430695659983), ('75', 0.7540997509762789), ('95', 0.7396361086800859)]
+Top words for pretrained_GraphCodeBERT neuron indx 271 [('comments', 1.0), ('patterns', 0.9795309881316873), ('Adapter', 0.9642401740590738), ('Cat', 0.9134752152141217), ('translation', 0.8600131571237071)]
+Top words for pretrained_GraphCodeBERT neuron indx 2334 [('compat', 1.0), ('Manager', 0.7011849494810515), ('def', 0.6923565281619558), ('187', 0.6862884672826105), ('"{}/{}"', 0.6659927022950698)]
+Top words for pretrained_GraphCodeBERT neuron indx 8478 [('to', 1.0), ('isoformat', 0.9400609347507658), ('3600', 0.882529877483693), ('secs', 0.8615798994872527), ('mins', 0.8549671075655828)]
+Top words for pretrained_GraphCodeBERT neuron indx 8509 [('is', 1.0), ('dr', 0.9721448919865081), ('fabric', 0.9478813253558529), ('District', 0.941351936573257), ('else', 0.9080133836530373)]
+Top words for pretrained_GraphCodeBERT neuron indx 2365 [('as', 1.0), ('is', 0.88195984785933), ('fabric', 0.8314355217952442), ('dr', 0.8024441078176712), ('else', 0.7895228980944151)]
+Top words for pretrained_GraphCodeBERT neuron indx 329 [('Register', 1.0), ('lat', 0.9012351043172365), ('region', 0.7482249141883567), ('proc', 0.7452595537806599), ('plugin', 0.7379980911059979)]
+Top words for pretrained_GraphCodeBERT neuron indx 335 [('detect', 1.0), ('mins', 0.9594394613096), ('answer', 0.9416469569813054), ('Server', 0.9245626547785621), ('District', 0.9034622190030728)]
+Top words for pretrained_GraphCodeBERT neuron indx 8534 [('resource_filename', 1.0), ('or', 0.8453023039993051), ('0x01', 0.7850764302521495), ('day', 0.7824107317082268), ('blend', 0.7753955403679907)]
+Top words for pretrained_GraphCodeBERT neuron indx 346 [('interfaces', 1.0), ('Parse', 0.9883610971479927), ('execute', 0.9129324552376313), ('outgoing', 0.8986790150734429), ('presets', 0.88699551505702)]
+Top words for pretrained_GraphCodeBERT neuron indx 4443 [('exists', 1.0), ('Recording', 0.9691293065726926), ('capitalize', 0.9419129084115735), ('ord', 0.892326642138459), ('Plan', 0.8431643594258789)]
+Top words for pretrained_GraphCodeBERT neuron indx 6490 [('"card-gallery"', 1.0), ('do', 0.8591070790580123), ('as', 0.8481271212948651), ('SystemTask', 0.8157068999420656), ('tenant', 0.7873022051605233)]
+Top words for pretrained_GraphCodeBERT neuron indx 367 [('quote', 1.0), ('submit', 0.9788736342125931), ('Region', 0.9390904282930755), ('shortcuts', 0.8576062475383847), ('python', 0.829092874726669)]
+Top words for pretrained_GraphCodeBERT neuron indx 6513 [('def', 1.0), ('class', 0.9362970120982144), ('while', 0.8334292304197699), ('READY', 0.8215130545723619), ('LOG', 0.8034988388950458)]
+Top words for pretrained_GraphCodeBERT neuron indx 8561 [('to', 1.0), ('SUCCESS', 0.8798019125488604), ('each', 0.8606732723923605), ('Cat', 0.8341886924195036), ('15597', 0.8176339854436026)]
+Top words for pretrained_GraphCodeBERT neuron indx 8566 [('href', 1.0), ('"r"', 0.910422177435192), ('bare', 0.7535301222883453), ('0o444', 0.7271659448410897), ('memlevel', 0.7196230609277714)]
+Top words for pretrained_GraphCodeBERT neuron indx 2422 [('notify', 1.0), ('File', 0.9883870506409399), ('future', 0.9572347858465977), ('statvfs', 0.896001390106722), ('rjust', 0.8932377415317293)]
+Top words for pretrained_GraphCodeBERT neuron indx 2434 [('and', 1.0), ('multiple', 0.78094210332812), ('from', 0.7558840925186028), ('Job', 0.7399006167855565), ('or', 0.7283679985250674)]
+Top words for pretrained_GraphCodeBERT neuron indx 8589 [('blend', 1.0), ('visit', 0.8825363733486448), ('WireLike', 0.8479849584815776), ('SON', 0.8151720532239367), ('RegLike', 0.8113042277002158)]
+Top words for pretrained_GraphCodeBERT neuron indx 8597 [('Label', 1.0), ('with', 0.8786454994527999), ('Failure', 0.8493608028677496), ('inc', 0.8362523871408202), ('Byte', 0.818880258672065)]
+Top words for pretrained_GraphCodeBERT neuron indx 6559 [('expanduser', 1.0), ('0x00', 0.9833547600738652), ('201', 0.9747677666515449), ('400', 0.9672521605946913), ('exc_info', 0.9142110861900139)]
+Top words for pretrained_GraphCodeBERT neuron indx 6575 [('class', 1.0), ('with', 0.9253496689072203), ('Default', 0.8498376092051145), ('normpath', 0.8288885839999864), ('62', 0.8237893860338873)]
+Top words for pretrained_GraphCodeBERT neuron indx 439 [('Presence', 1.0), ('Label', 0.8936154119665051), ('Billboard', 0.7740265327677701), ('800', 0.7207455903488397), ('Tab', 0.7194508430531015)]
+Top words for pretrained_GraphCodeBERT neuron indx 8632 [('continue', 1.0), ('55', 0.7868441129083596), ('33', 0.7530341495956844), ('69', 0.7524705054512878), ('in', 0.7513867541624651)]
+Top words for pretrained_GraphCodeBERT neuron indx 8640 [('IsSuperBM', 1.0), ('CheckReadPerm', 0.7813419849236442), ('permission', 0.779514544781999), ('lastErr', 0.7440586942562191), ('"#"', 0.735837187096291)]
+Top words for pretrained_GraphCodeBERT neuron indx 8641 [('62', 1.0), ('ll', 0.9998643008533847), ('SUCCESS', 0.9918628214711286), ('yield', 0.9812391503287674), ('decorator', 0.9680631937456117)]
+Top words for pretrained_GraphCodeBERT neuron indx 2497 [('ll', 1.0), ('Tag', 0.9863425462176927), ('web', 0.9583234772969211), ('uid', 0.8476005050013808), ('within', 0.8412090792843016)]
+Top words for pretrained_GraphCodeBERT neuron indx 453 [('is', 1.0), ('.3', 0.9075170053905393), ('in', 0.900987716156428), ('to', 0.8711514239509344), ('is_', 0.8697529635863125)]
+Top words for pretrained_GraphCodeBERT neuron indx 2504 [('def', 1.0), ('LoggedIn', 0.9881498925218041), ('ping', 0.9714782760465625), ('paste_districts', 0.897719988917697), ('import', 0.8968335758941355)]
+Top words for pretrained_GraphCodeBERT neuron indx 8653 [('build_opener', 1.0), ('get_current', 0.9783757142680249), ('region', 0.8064558794458784), ('closing', 0.8021887779416178), ('opener', 0.7943078122736726)]
+Top words for pretrained_GraphCodeBERT neuron indx 2511 [('WAYS', 1.0), ('flat', 0.8028997058263393), ('try', 0.7665027398538932), ('TERMINATE', 0.7664511121047155), ('Cond', 0.7523258017335577)]
+Top words for pretrained_GraphCodeBERT neuron indx 466 [('75', 1.0), ('purpose', 0.935017952341404), ('Reg', 0.8809833320091758), ('us', 0.8683171481802484), ('variables', 0.8513567744128824)]
+Top words for pretrained_GraphCodeBERT neuron indx 4571 [('subscriptions', 1.0), ('for', 0.9507983449255951), ('synchronized', 0.9391781703217661), ('from', 0.887444285988223), ('trial', 0.8676903651736352)]
+Top words for pretrained_GraphCodeBERT neuron indx 479 [('Cat', 1.0), ('BoardOperation', 0.6296826896212232), ('tell', 0.5839815245976522), ('reserveResponse', 0.5666868893826307), ('CardOperation', 0.5661234694375336)]
+Top words for pretrained_GraphCodeBERT neuron indx 6638 [('WAY', 1.0), ('else', 0.9172237419246152), ('or', 0.9137186089590944), ('for', 0.8729917810680667), ('GetBoard', 0.867617197937286)]
+Top words for pretrained_GraphCodeBERT neuron indx 2550 [('try', 1.0), ('enabled', 0.9942066709251317), ('protobuf', 0.9865150028821639), ('topology', 0.9350374755066794), ('stat', 0.9177625816755244)]
+Top words for pretrained_GraphCodeBERT neuron indx 6648 [('break', 1.0), ('0xFF', 0.889922271928692), ('ELEMENT', 0.8878705487890509), ('465', 0.860454607780963), ('orgs', 0.8511568432745759)]
+Top words for pretrained_GraphCodeBERT neuron indx 4607 [('Padding', 1.0), ('exists', 0.9366264315320517), ('socket', 0.8720158519195527), ('makedirs', 0.8690191931932751), ('Tab', 0.8665168396210157)]
+Top words for pretrained_GraphCodeBERT neuron indx 2561 [('"type"', 1.0), ('and', 0.9923083149537162), ('within', 0.9000114136276489), ('"label"', 0.8575449253597414), ('"eng"', 0.844369783207242)]
+Top words for pretrained_GraphCodeBERT neuron indx 514 [('Column', 1.0), ('rest', 0.9505226799000253), ('conf', 0.9186796504445641), ('abstract', 0.8619339471712029), ('flat', 0.8356790654038314)]
+Top words for pretrained_GraphCodeBERT neuron indx 2567 [('Job', 1.0), ('except', 0.9389396152371068), ('notify', 0.9158996743406023), ('List', 0.9086516002278587), ('activity', 0.8933071799437611)]
+Top words for pretrained_GraphCodeBERT neuron indx 6664 [('1970', 1.0), ('2014', 0.9557534851765846), ('name__startswith', 0.9152512729024964), ('Command', 0.8962350592010797), ('Region', 0.8942138028862525)]
+Top words for pretrained_GraphCodeBERT neuron indx 2570 [('microseconds', 1.0), ('mins', 0.9092070085560278), ('compat', 0.8838701606482375), ('millis', 0.8250650523169651), ('75', 0.7573750532852225)]
+Top words for pretrained_GraphCodeBERT neuron indx 6669 [('initial', 1.0), ('for', 0.8960247778268605), ('sender', 0.8361245422798578), ('chmod', 0.8338504072607037), ('"Resource"', 0.8207586355621999)]
+Top words for pretrained_GraphCodeBERT neuron indx 2573 [('WAYS', 1.0), ('chmod', 0.86163546514556), ('RegLike', 0.7516902753019595), ('Cond', 0.7307705988645903), ('yield', 0.7196164085780589)]
+Top words for pretrained_GraphCodeBERT neuron indx 2588 [('down', 1.0), ('ctx', 0.966091078596441), ('compute', 0.9539202334975491), ('ObjectDoesNotExist', 0.9304857843938257), ('rjust', 0.9269638263120853)]
+Top words for pretrained_GraphCodeBERT neuron indx 4638 [('def', 1.0), ('OK', 0.8965813568952592), ('Unauthorized', 0.865233190210714), ('from', 0.7825836388416758), ('continue', 0.7430844632482074)]
+Top words for pretrained_GraphCodeBERT neuron indx 543 [('splits', 1.0), ('iterator', 0.9718112063179072), ('el', 0.9312030156780258), ('erase', 0.9277805505396087), ('ready', 0.9220379859223387)]
+Top words for pretrained_GraphCodeBERT neuron indx 6691 [('synchronized', 1.0), ('TextField', 0.9334284512322736), ('receiver', 0.9255592156391146), ('select', 0.8950636246296811), ('REF', 0.8947786833006233)]
+Top words for pretrained_GraphCodeBERT neuron indx 551 [('465', 1.0), ('in', 0.973973906399803), ('and', 0.9289207573316273), ('55', 0.9130290501701279), ('lb', 0.888802012896539)]
+Top words for pretrained_GraphCodeBERT neuron indx 6706 [('Z_DEFAULT_STRATEGY', 1.0), ('destroy', 0.8512351535951886), ('Column', 0.8116936970833335), ('force_escape', 0.7951718832042368), ('fixed_to_int', 0.773653987023604)]
+Top words for pretrained_GraphCodeBERT neuron indx 8755 [('On', 1.0), ('ON', 0.7772644276412258), ('STP', 0.7659319872963084), ('closing', 0.7509516253647834), ('and', 0.7484124938062395)]
+Top words for pretrained_GraphCodeBERT neuron indx 567 [('Adapter', 1.0), ('dir', 0.9856268792728496), ('sessions', 0.9624200045663928), ('board', 0.9559393917142568), ('200', 0.9460184562910311)]
+Top words for pretrained_GraphCodeBERT neuron indx 6715 [('millis', 1.0), ('maskImg', 0.9755262905477374), ('multiple', 0.9694608265012251), ('blank', 0.9516107263357267), ('null', 0.9400512728503598)]
+Top words for pretrained_GraphCodeBERT neuron indx 4669 [('is', 1.0), ('as', 0.9883531217931868), ('else', 0.9730205678198316), ('fabric', 0.9711869819838054), ('Card', 0.9500872051506286)]
+Top words for pretrained_GraphCodeBERT neuron indx 8767 [('commandArgs', 1.0), ('flat', 0.9841859343326551), ('1970', 0.9794167156373882), ('create_all', 0.9502392897682138), ('raise', 0.9458292504649369)]
+Top words for pretrained_GraphCodeBERT neuron indx 2624 [('RELEASE', 1.0), ('acquire', 0.9796380768019056), ('inc', 0.9739430591053263), ('httpRequest', 0.8152121904341781), ('TAG', 0.7621826492081487)]
+Top words for pretrained_GraphCodeBERT neuron indx 2626 [('locals', 1.0), ('as', 0.9506354884993762), ('DatastoreBase', 0.8393438023393046), ('Celery', 0.7967925271091084), ('destroy', 0.7958254622179561)]
+Top words for pretrained_GraphCodeBERT neuron indx 588 [('is_', 1.0), ('is', 0.9711910217959334), ('in', 0.9434281118205551), ('from_', 0.9198355161545259), ('and', 0.917459341232531)]
+Top words for pretrained_GraphCodeBERT neuron indx 593 [('spawn', 1.0), ('Message', 0.7799411100526803), ('800', 0.7429642612831555), ('ep', 0.7317082189360412), ('cloud', 0.6992780349266914)]
+Top words for pretrained_GraphCodeBERT neuron indx 6739 [('with', 1.0), ('blank', 0.9406087799845375), ('Tab', 0.8313933198856535), ('if', 0.8021893485403493), ('URLError', 0.781773139768376)]
+Top words for pretrained_GraphCodeBERT neuron indx 6758 [('inc', 1.0), ('with', 0.8966054039358944), ('composite', 0.8617608974820146), ('Cond', 0.8041788119805957), ('acquire', 0.79851343289621)]
+Top words for pretrained_GraphCodeBERT neuron indx 6770 [('LOG', 1.0), ('GENERATOR', 0.98251587475529), ('RELATIONS', 0.9811317469469687), ('TAG', 0.9435339425837023), ('zip_safe', 0.9328736170761999)]
+Top words for pretrained_GraphCodeBERT neuron indx 6774 [('destroy', 1.0), ('WAYS', 0.9521333837083548), ('advance', 0.8645983015201253), ('exists', 0.8611560019221394), ('implementation', 0.8407194699069421)]
+Top words for pretrained_GraphCodeBERT neuron indx 4745 [('ctx', 1.0), ('SIGINT', 0.9866981676782774), ('201', 0.9117914140904323), ('capacity', 0.7943744150498906), ('expanduser', 0.7870740096889277)]
+Top words for pretrained_GraphCodeBERT neuron indx 6793 [('IDLEN', 1.0), ('IPLEN', 0.8974857889591644), ('"!H"', 0.7400224034644821), ('intersects', 0.6891956065595423), ('serialized_start', 0.6666981355794833)]
+Top words for pretrained_GraphCodeBERT neuron indx 4749 [('sr', 1.0), ('except', 0.9552671774915791), ('nrm_map', 0.7494037676458658), ('ur', 0.7397051448113376), ('while', 0.7323508406778334)]
+Top words for pretrained_GraphCodeBERT neuron indx 6798 [('2014', 1.0), ('Test_connection_opened', 0.9652030917277259), ('omit', 0.9529623694426391), ('62', 0.9057561982780559), ('Test_connection_will_close', 0.8704348115288406)]
+Top words for pretrained_GraphCodeBERT neuron indx 8848 [('pk', 1.0), ('calculator', 0.8961572157910279), ('for', 0.894971711448491), ('with', 0.8205375755475045), ('files', 0.735250460348285)]
+Top words for pretrained_GraphCodeBERT neuron indx 2704 [('within', 1.0), ('for', 0.8485021331964475), ('pass', 0.7947625916226929), ('MSG', 0.7081571255716734), ('google', 0.6689667776237439)]
+Top words for pretrained_GraphCodeBERT neuron indx 663 [('brightness', 1.0), ('implementation', 0.9604658189396296), ('presets', 0.9085574973707066), ('enclosure', 0.8654680060159579), ('pa', 0.786901895775327)]
+Top words for pretrained_GraphCodeBERT neuron indx 8881 [('next', 1.0), ('"debug"', 0.9102927724229949), ('colander', 0.9087722506766039), ('current', 0.8777053338039622), ('chronam', 0.8714374297747883)]
+Top words for pretrained_GraphCodeBERT neuron indx 8882 [('from', 1.0), ('with', 0.7562515960240537), ('create_unassigned', 0.6915862337689223), ('actions', 0.6383282190598721), ('Instance', 0.6109232644466633)]
+Top words for pretrained_GraphCodeBERT neuron indx 8885 [('fileDependencies', 1.0), ('ADJACENCY', 0.8549494869414486), ('Descriptor', 0.8273233177483523), ('is', 0.8174329579863928), ('closing', 0.8092032358842389)]
+Top words for pretrained_GraphCodeBERT neuron indx 4795 [('Stretch', 1.0), ('composite', 0.8974484632493454), ('slot', 0.8948033595185554), ('mem2', 0.8042301100832177), ('96', 0.8014648411142115)]
+Top words for pretrained_GraphCodeBERT neuron indx 8895 [('Cond', 1.0), ('trial', 0.9331344143135981), ('_n', 0.8792941824172414), ('visit', 0.864217272434797), ('writerow', 0.8268746707359952)]
+Top words for pretrained_GraphCodeBERT neuron indx 4801 [('ll', 1.0), ('Tag', 0.9125854599494062), ('Encoder', 0.9035943919868202), ('web', 0.8938757814973303), ('decorator', 0.8616566663734195)]
+Top words for pretrained_GraphCodeBERT neuron indx 4805 [('single', 1.0), ('warn', 0.947033841853075), ('plugin', 0.877447698913863), ('advance', 0.8690998961516376), ('no', 0.8341968945436088)]
+Top words for pretrained_GraphCodeBERT neuron indx 8904 [('matterllo', 1.0), ('committed', 0.9682173123879103), ('VALUE', 0.9517607959567805), ('binascii', 0.945965689854866), ('REQUEST', 0.941631822162709)]
+Top words for pretrained_GraphCodeBERT neuron indx 8915 [('Cond', 1.0), ('for', 0.9170467921835567), ('labelStack', 0.8725029450308993), ('WAYS', 0.8660931801105343), ('Command', 0.844108642744519)]
+Top words for pretrained_GraphCodeBERT neuron indx 8917 [('or', 1.0), ('21', 0.8265309520335753), ('1800', 0.6997406990778972), ('in', 0.6952698470510172), ('and', 0.6821272514403106)]
+Top words for pretrained_GraphCodeBERT neuron indx 730 [('Command', 1.0), ('blocking', 0.9704464210588167), ('MapField', 0.8608865874197917), ('BoardOperation', 0.8536052906810268), ('BaseOperation', 0.8494747004317559)]
+Top words for pretrained_GraphCodeBERT neuron indx 6875 [('for', 1.0), ('synchronized', 0.9888185199197064), ('subscriptions', 0.9499428388114161), ('functional', 0.9227857668053558), ('with', 0.9221981880154696)]
+Top words for pretrained_GraphCodeBERT neuron indx 731 [('for', 1.0), ('reservations', 0.9615082701911879), ('displays', 0.9427880183370648), ('in', 0.9355201452730842), ('functional', 0.9339154730685657)]
+Top words for pretrained_GraphCodeBERT neuron indx 2788 [('lat', 1.0), ('continue', 0.9216400794300499), ('multiple', 0.7271656642387022), ('fstat', 0.6627146195499806), ('Assign', 0.6568549432995107)]
+Top words for pretrained_GraphCodeBERT neuron indx 2791 [('eg', 1.0), ('def', 0.8715164327506134), ('class', 0.7952844995204813), ('signed', 0.7173674642772431), ('orm', 0.6918012513597345)]
+Top words for pretrained_GraphCodeBERT neuron indx 4842 [('id__in', 1.0), ('href', 0.8937558742262719), ('"\\\'"', 0.8190106697309921), ('contrib', 0.807287032331154), ('builtins', 0.7998735349032836)]
+Top words for pretrained_GraphCodeBERT neuron indx 2800 [('for', 1.0), ('plural', 0.9857852419998785), ('from', 0.9690044822268038), ('750', 0.9391696819626956), ('location__exact', 0.8932284373553964)]
+Top words for pretrained_GraphCodeBERT neuron indx 4850 [('functional', 1.0), ('splitext', 0.9681078814720534), ('__getattribute__', 0.9303153968889966), ('tenant', 0.9166750787059144), ('signed', 0.894518368187478)]
+Top words for pretrained_GraphCodeBERT neuron indx 2812 [('reference', 1.0), ('emit', 0.9748540631812765), ('notify', 0.9279068794231078), ('simplejson', 0.9118037445381635), ('JSON', 0.8874675677506865)]
+Top words for pretrained_GraphCodeBERT neuron indx 8961 [('31', 1.0), ('62', 0.7717332735380928), ('.3', 0.7577878339619736), ('95', 0.736666163421747), ('36', 0.6538258407769911)]
+Top words for pretrained_GraphCodeBERT neuron indx 8968 [('presentation', 1.0), ('excinfo', 0.9708412831352528), ('class', 0.9283117372020736), ('raise', 0.8556445639755117), ('pymysql', 0.8500454357788733)]
+Top words for pretrained_GraphCodeBERT neuron indx 8973 [('matterllo', 1.0), ('issubclass', 0.7535922423211563), ('nsa', 0.7295250574821555), ('listen', 0.725818871556776), ('simplify', 0.718821407338804)]
+Top words for pretrained_GraphCodeBERT neuron indx 2829 [('Padding', 1.0), ('enabled', 0.95455470749821), ('DATASTORE', 0.8981404516334334), ('RELATIONS', 0.8942851477132869), ('missing', 0.8855147078608833)]
+Top words for pretrained_GraphCodeBERT neuron indx 4885 [('humanize', 1.0), ('PORT', 0.9394910362942965), ('CHANGESETS', 0.9222706593749698), ('CHANGESETS_MAX', 0.920231860681902), ('CONNECTED', 0.9131504201124766)]
+Top words for pretrained_GraphCodeBERT neuron indx 8983 [('with', 1.0), ('as', 0.8736812121593619), ('excepts', 0.778411029641592), ('deepcopy', 0.7361451713030492), ('File', 0.6845398021289157)]
+Top words for pretrained_GraphCodeBERT neuron indx 6945 [('21', 1.0), ('"-v"', 0.976652841090215), ('CommentForm', 0.93259453982722), ('token_type', 0.9301295097932252), ('auth_redir_uri', 0.9298743330797085)]
+Top words for pretrained_GraphCodeBERT neuron indx 8996 [('from', 1.0), ('astimezone', 0.8177940204105428), ('Cat', 0.7288769863615275), ('class', 0.7094427094695333), ('import', 0.709141726336557)]
+Top words for pretrained_GraphCodeBERT neuron indx 6960 [('return_value', 1.0), ('class', 0.9561413553049609), ('def', 0.8914394078984932), ('for', 0.8171933572758117), ('DataCollector', 0.8146501114750798)]
+Top words for pretrained_GraphCodeBERT neuron indx 821 [('accept', 1.0), ('restart', 0.9943858081149821), ('ms', 0.9502433912870709), ('Clock', 0.9428635267471552), ('1023', 0.9375659416856332)]
+Top words for pretrained_GraphCodeBERT neuron indx 4922 [('Parameter', 1.0), ('ds_owner_created', 0.9821678521835305), ('startTime', 0.9717118019735561), ('OutputReg', 0.959844435582623), ('TmpReg', 0.9462336762471759)]
+Top words for pretrained_GraphCodeBERT neuron indx 829 [('as', 1.0), ('google', 0.8220371155909322), ('is', 0.7557036239726902), ('Wire', 0.7525595301167417), ('fabric', 0.7353827048216006)]
+Top words for pretrained_GraphCodeBERT neuron indx 6973 [('is', 1.0), ('District', 0.9640939559589656), ('fabric', 0.9487774379816061), ('dr', 0.9469343907245004), ('"store_true"', 0.9148634943802757)]
+Top words for pretrained_GraphCodeBERT neuron indx 2879 [('pass', 1.0), ('no', 0.9705778876749861), ('else', 0.9603332840221348), ('is_', 0.9410012225613611), ('minutes', 0.8680672335114525)]
+Top words for pretrained_GraphCodeBERT neuron indx 845 [('TAG', 1.0), ('Mesh', 0.9672803668674727), ('is', 0.9114784031381663), ('remember', 0.8652237300947313), ('and', 0.8558066763505204)]
+Top words for pretrained_GraphCodeBERT neuron indx 6998 [('convert', 1.0), ('typeof', 0.8106035388942212), ('15597', 0.7782950581288683), ('format_exc', 0.7600049223416808), ('Default', 0.7535634128279466)]
+Top words for pretrained_GraphCodeBERT neuron indx 9047 [('NamedTemporaryFile', 1.0), ('isdigit', 0.9619853527761056), ('binascii', 0.9442972262260277), ('gaierror', 0.93766824141114), ('WeakMethod', 0.9151533587053372)]
+Top words for pretrained_GraphCodeBERT neuron indx 7003 [('abstract', 1.0), ('construct', 0.9508410790383217), ('authorization', 0.9500387274320579), ('decimal', 0.9126330509583761), ('initial', 0.8465855991657012)]
+Top words for pretrained_GraphCodeBERT neuron indx 2930 [('compat', 1.0), ('venue', 0.9457790373080815), ('lat', 0.94454594246415), ('make_always', 0.8297290926788763), ('Region', 0.8280798824780247)]
+Top words for pretrained_GraphCodeBERT neuron indx 9078 [('month', 1.0), ('DEFLATED', 0.8239463001802269), ('"0"', 0.8052922931481076), ('class', 0.7969376100281172), ('inet_pton', 0.7870825610915603)]
+Top words for pretrained_GraphCodeBERT neuron indx 9088 [('try', 1.0), ('blend', 0.9331395842150988), ('MEMBERS', 0.8886401786303095), ('as', 0.8882650128775045), ('inc', 0.887747284854667)]
+Top words for pretrained_GraphCodeBERT neuron indx 908 [('calendar', 1.0), ('Flag', 0.9531950890200863), ('Clock', 0.8635484495658179), ('builtins', 0.7833866444617241), ('avail', 0.7759625375322858)]
+Top words for pretrained_GraphCodeBERT neuron indx 2961 [('Module', 1.0), ('"y"', 0.8866493230472101), ('Library', 0.8783084819051166), ('"queue"', 0.8661235440464438), ('Bytes', 0.855449799593665)]
+Top words for pretrained_GraphCodeBERT neuron indx 9108 [('calculator', 1.0), ('import', 0.9470908954033683), ('for', 0.7721922012595278), ('lat', 0.6913958041739743), ('purpose', 0.6549895158878548)]
+Top words for pretrained_GraphCodeBERT neuron indx 7094 [('flat', 1.0), ('with', 0.7294884977394029), ('Geo', 0.6402976434658385), ('find_session', 0.635430809621652), ('year', 0.6329015273352462)]
+Top words for pretrained_GraphCodeBERT neuron indx 3001 [('__import__', 1.0), ('SIGINT', 0.9214676974908609), ('href', 0.873599835121829), ('Int', 0.8528711409656847), ('QUERY_RECURSIVE', 0.8434426974206135)]
+Top words for pretrained_GraphCodeBERT neuron indx 7105 [('ll', 1.0), ('decorator', 0.8753748210277829), ('Encoder', 0.8336463078919804), ('Tag', 0.8296749108387231), ('SUCCESS', 0.8054215119052739)]
+Top words for pretrained_GraphCodeBERT neuron indx 969 [('multiple', 1.0), ('strict', 0.8284926693193789), ('within', 0.722478039036236), ('relay', 0.7026540160941688), ('OK', 0.695884429122108)]
+Top words for pretrained_GraphCodeBERT neuron indx 971 [('RELEASE', 1.0), ('Seq', 0.8747531353297031), ('Cond', 0.8618472814766188), ('File', 0.8207329951633594), ('within', 0.7952889165940291)]
+Top words for pretrained_GraphCodeBERT neuron indx 9179 [('for', 1.0), ('with', 0.9633464794799594), ('return', 0.814963889604176), ('subscriptions', 0.764048359170652), ('"100"', 0.7611826793245298)]
+Top words for pretrained_GraphCodeBERT neuron indx 3035 [('subscriptions', 1.0), ('for', 0.9362793003591277), ('reservations', 0.8785458713284259), ('synchronized', 0.779875129531845), ('return', 0.7724084672791963)]
+Top words for pretrained_GraphCodeBERT neuron indx 9193 [('plugin', 1.0), ('lat', 0.8670962502590991), ('Plugin', 0.8258955599035526), ('google', 0.803360634638837), ('scheme', 0.7957981218786391)]
+Top words for pretrained_GraphCodeBERT neuron indx 7150 [('rjust', 1.0), ('django', 0.920574611286018), ('values_list', 0.8862055724480006), ('reload', 0.8453010347620965), ('resolve', 0.8412611358157351)]
+Top words for pretrained_GraphCodeBERT neuron indx 7156 [('Point2PointService', 1.0), ('dict2xml', 0.9830226737044414), ('name__startswith', 0.9567014805301999), ('Update', 0.9327897562895207), ('minutes', 0.9089781660031953)]
+Top words for pretrained_GraphCodeBERT neuron indx 7165 [('lat', 1.0), ('INCOMPLETE', 0.9488752066194405), ('choices', 0.9169752750045079), ('multiple', 0.8444120524277633), ('collect', 0.7851328672625738)]
+Top words for pretrained_GraphCodeBERT neuron indx 5123 [('with', 1.0), ('tell', 0.9294186616789081), ('ip', 0.8497205972797717), ('store', 0.7948790344892727), ('five', 0.7837226540275523)]
+Top words for pretrained_GraphCodeBERT neuron indx 1037 [('horizon', 1.0), ('WAYS', 0.9671729225278997), ('hyper', 0.9104408868432127), ('pyramid', 0.8298599115554878), ('LOG', 0.8088905754130504)]
+Top words for pretrained_GraphCodeBERT neuron indx 5133 [('with', 1.0), ('from', 0.6535125031400197), ('fpath', 0.3975641794961787), ('PRIORITY', 0.3884862683613839), ('"visit_%s"', 0.38694203962258156)]
+Top words for pretrained_GraphCodeBERT neuron indx 1039 [('flat', 1.0), ('onerror', 0.8592525315413428), ('Cat', 0.8436824448987613), ('headers', 0.778941087596989), ('pa', 0.7553839702514705)]
+Top words for pretrained_GraphCodeBERT neuron indx 7186 [('sender', 1.0), ('def', 0.9301167035401815), ('not', 0.7786827783569847), ('"ppn"', 0.7711533793272985), ('VRF', 0.7698120973644712)]
+Top words for pretrained_GraphCodeBERT neuron indx 3095 [('future', 1.0), ('On', 0.8831969876712582), ('pk', 0.8104601502011453), ('backwards', 0.7703397506544906), ('Register', 0.7605111092664002)]
+Top words for pretrained_GraphCodeBERT neuron indx 3102 [('def', 1.0), ('gf', 0.969258313856258), ('reservations', 0.8795721338217588), ('__str__', 0.861535811558912), ('scheme', 0.816616955714592)]
+Top words for pretrained_GraphCodeBERT neuron indx 5152 [('86400', 1.0), ('fifteen', 0.891690186103034), ('class', 0.7240446927719044), ('If', 0.7183877239384259), ('400', 0.7068682502852263)]
+Top words for pretrained_GraphCodeBERT neuron indx 7223 [('strict', 1.0), ('listen', 0.9680517321630427), ('convert', 0.9062208258527827), ('token_type', 0.8737923177516235), ('exists', 0.8342587938027795)]
+Top words for pretrained_GraphCodeBERT neuron indx 3133 [('as', 1.0), ('is', 0.8875679610339802), ('fabric', 0.8462957729763082), ('else', 0.8089331959584051), ('dr', 0.7651654404179571)]
+Top words for pretrained_GraphCodeBERT neuron indx 9277 [('District', 1.0), ('dr', 0.8346449737608503), ('Basic', 0.8321255771089973), ('is', 0.8312065831491506), ('Wire', 0.8123930687503048)]
+Top words for pretrained_GraphCodeBERT neuron indx 7246 [('with', 1.0), ('intersects', 0.9360930682579228), ('class', 0.7223504133130341), ('google', 0.7009672452185942), ('within', 0.6673073376615747)]
+Top words for pretrained_GraphCodeBERT neuron indx 7250 [('with', 1.0), ('.3', 0.8140085093726583), ('POST', 0.7686209573453643), ('75', 0.72988783260622), ('VALUE', 0.7198996322460345)]
+Top words for pretrained_GraphCodeBERT neuron indx 3161 [('protobuf', 1.0), ('flat', 0.8048883633786313), ('listen', 0.7896017420814676), ('bindings', 0.7563445213307941), ('eg', 0.7387548217935449)]
+Top words for pretrained_GraphCodeBERT neuron indx 1113 [('discovery', 1.0), ('management', 0.8533308876871474), ('GET', 0.7637340672203028), ('partial', 0.7550518060072892), ('False', 0.7476330438699457)]
+Top words for pretrained_GraphCodeBERT neuron indx 9323 [('Point2PointService', 1.0), ('Wire', 0.9065814512703301), ('WireLike', 0.8614339883538986), ('Default', 0.855620926155349), ('Cat', 0.8076663270781506)]
+Top words for pretrained_GraphCodeBERT neuron indx 7282 [('current', 1.0), ('Manager', 0.9965371052584832), ('Int', 0.9619654655217745), ('safe_dump', 0.9220646881179335), ('parameter', 0.914954111999486)]
+Top words for pretrained_GraphCodeBERT neuron indx 5238 [('exc_info', 1.0), ('button', 0.8989129250935407), ('displays', 0.8843830678213651), ('omit', 0.8204477816631475), ('simplejson', 0.8086147347292435)]
+Top words for pretrained_GraphCodeBERT neuron indx 1148 [('defer', 1.0), ('Geo', 0.8896921397838528), ('512', 0.8844255077643023), ('Auditor', 0.8053753097911793), ('Iq', 0.7910153435149271)]
+Top words for pretrained_GraphCodeBERT neuron indx 1157 [('failure', 1.0), ('GET', 0.9950695255523297), ('ord', 0.9619884510808796), ('convert', 0.9357189855176989), ('github', 0.9170892485084291)]
+Top words for pretrained_GraphCodeBERT neuron indx 5253 [('initial', 1.0), ('accept', 0.9928195909630247), ('wait', 0.9267003102609378), ('hidden', 0.9258499697820477), ('Post', 0.9169541415079984)]
+Top words for pretrained_GraphCodeBERT neuron indx 1162 [('Subject', 1.0), ('SpatialReference', 0.9480560860191135), ('IntType', 0.9160184859095504), ('microseconds', 0.9017129804742697), ('DummyObjectMap', 0.8900680400695139)]
+Top words for pretrained_GraphCodeBERT neuron indx 9357 [('blend', 1.0), ('Default', 0.6561135898811172), ('month', 0.6288871622492568), ('ORIGIN', 0.6174699256761934), ('minute', 0.606645543804782)]
+Top words for pretrained_GraphCodeBERT neuron indx 1170 [('Parent', 1.0), ('Label', 0.8754400087337691), ('delete', 0.8652976993736824), ('False', 0.8426716290367559), ('enclosure', 0.7958750305236686)]
+Top words for pretrained_GraphCodeBERT neuron indx 7315 [('href', 1.0), ('alt', 0.8862574764804766), ('protobuf', 0.8734543345621326), ('submit', 0.8355893391640127), ('digest', 0.7905056816493462)]
+Top words for pretrained_GraphCodeBERT neuron indx 5269 [('basicConfig', 1.0), ('inc', 0.9988674135798384), ('long', 0.9379095524076767), ('sqlalchemy', 0.9305386804203315), ('Invalid', 0.9287422697958552)]
+Top words for pretrained_GraphCodeBERT neuron indx 3245 [('destroy', 1.0), ('has', 0.9454887449854237), ('millis', 0.8804688216600859), ('is_', 0.8529885294779012), ('purge', 0.8404497036119675)]
+Top words for pretrained_GraphCodeBERT neuron indx 3258 [('manager', 1.0), ('authorization', 0.8267806689724567), ('Card', 0.8267192096960957), ('success', 0.744843741842143), ('"eu-west-1"', 0.6639771939566103)]
+Top words for pretrained_GraphCodeBERT neuron indx 3265 [('ll', 1.0), ('web', 0.9860842158217107), ('Tag', 0.8713562867221619), ('reload', 0.8671942825656888), ('Widget', 0.8616638103561469)]
+Top words for pretrained_GraphCodeBERT neuron indx 9409 [('Tag', 1.0), ('62', 0.9680482655887266), ('StreamClosed', 0.939484341054706), ('File', 0.9258943757889667), ('year', 0.8966542349995418)]
+Top words for pretrained_GraphCodeBERT neuron indx 3271 [('wait', 1.0), ('warn', 0.9615930999667583), ('as', 0.9179296992154847), ('manager', 0.8713628514532836), ('recordings', 0.8626985972303413)]
+Top words for pretrained_GraphCodeBERT neuron indx 3272 [('import', 1.0), ('def', 0.7850586045961626), ('1800', 0.7307327678964859), ('Geolevel', 0.7157323295430703), ('WAYS', 0.6944935321801081)]
+Top words for pretrained_GraphCodeBERT neuron indx 9417 [('Cond', 1.0), ('".."', 0.8800436171283273), ('sender', 0.8797920478346544), ('assertEquals', 0.8350499912692514), ('".json"', 0.8323955722289216)]
+Top words for pretrained_GraphCodeBERT neuron indx 7378 [('flat', 1.0), ('96', 0.8175999720729077), ('closing', 0.8040535359355935), ('class', 0.766721207282952), ('broadcast', 0.7653468434395839)]
+Top words for pretrained_GraphCodeBERT neuron indx 9427 [('fab', 1.0), ('Response', 0.9064332165291475), ('INFO', 0.844586257222376), ('five', 0.8034328792698066), ('alt', 0.7757417832722073)]
+Top words for pretrained_GraphCodeBERT neuron indx 5339 [('subscriptions', 1.0), ('for', 0.9855344382139842), ('synchronized', 0.9808069186210873), ('with', 0.9149894879192711), ('from', 0.8688783244247505)]
+Top words for pretrained_GraphCodeBERT neuron indx 1247 [('tell', 1.0), ('button', 0.8482874678722456), ('continue', 0.8359610626848918), ('has', 0.8191386592901128), ('Cat', 0.7920379885580671)]
+Top words for pretrained_GraphCodeBERT neuron indx 5346 [('omit', 1.0), ('chunks', 0.9112686471451504), ('required', 0.8956274136097517), ('rest', 0.8040051025694495), ('number', 0.7907555244802214)]
+Top words for pretrained_GraphCodeBERT neuron indx 1252 [('compute', 1.0), ('begin', 0.9738430652014239), ('capacity', 0.8744854922791777), ('187', 0.8710523654002271), ('venue', 0.8693997531264482)]
+Top words for pretrained_GraphCodeBERT neuron indx 9454 [('blend', 1.0), ('tls', 0.8074838536832539), ('trial', 0.7971061079682835), ('to', 0.7340079109361112), ('ON', 0.6876775506316004)]
+Top words for pretrained_GraphCodeBERT neuron indx 1264 [('fps', 1.0), ('for', 0.9586013493070873), ('aspect', 0.9153184883008963), ('in', 0.8833869617267902), ('plural', 0.8775180463910582)]
+Top words for pretrained_GraphCodeBERT neuron indx 9458 [('bare', 1.0), ('composite', 0.9968126875390553), ('chunks', 0.8687527857724284), ('closing', 0.8669359256011747), ('looking_glass', 0.8149893763508955)]
+Top words for pretrained_GraphCodeBERT neuron indx 3318 [('bytearray', 1.0), ('Default', 0.9826191587732626), ('FormView', 0.9595557998232473), ('protobuf', 0.9538512258447632), ('wait', 0.938810050870609)]
+Top words for pretrained_GraphCodeBERT neuron indx 1274 [('Stretch', 1.0), ('ProviderService', 0.8577267361563812), ('DEFLATED', 0.8479964767012501), ('Redirect', 0.8068336494012333), ('plural', 0.8038943426512677)]
+Top words for pretrained_GraphCodeBERT neuron indx 7427 [('class', 1.0), ('flat', 0.636656508123783), ('not', 0.6341351691921393), ('Else', 0.626459046038944), ('subpath', 0.6028712232537989)]
+Top words for pretrained_GraphCodeBERT neuron indx 7433 [('locals', 1.0), ('rest', 0.8955388975967701), ('WAYS', 0.831493178073184), ('displays', 0.8125953609832368), ('expectedFailure', 0.8043310047216247)]
+Top words for pretrained_GraphCodeBERT neuron indx 1295 [('23', 1.0), ('compat', 0.9691148357351133), ('onerror', 0.9682739988751679), ('blend', 0.9670376146157857), ('router', 0.9196288177193527)]
+Top words for pretrained_GraphCodeBERT neuron indx 5392 [('shortcuts', 1.0), ('Renderer', 0.8974045816932704), ('Origin', 0.8702376081627052), ('seek', 0.8278388957233113), ('slug', 0.8178754374087928)]
+Top words for pretrained_GraphCodeBERT neuron indx 3355 [('Else', 1.0), ('tries', 0.8787464474127025), ('getpid', 0.8668467767139055), ('Allow', 0.80763860051825), ('while', 0.7936387666197381)]
+Top words for pretrained_GraphCodeBERT neuron indx 3356 [('handle', 1.0), ('vpn', 0.869053468339374), ('contrib', 0.8364980125321635), ('multiple', 0.8206720386562144), ('IsOption', 0.809730051895282)]
+Top words for pretrained_GraphCodeBERT neuron indx 9499 [('Default', 1.0), ('DEFAULTBOARD', 0.9867488360138227), ('wait', 0.9452628613851756), ('expanduser', 0.9382623617322184), ('DBPORT', 0.9341293263912466)]
+Top words for pretrained_GraphCodeBERT neuron indx 1323 [('ON', 1.0), ('inc', 0.94609116700699), ('username', 0.9189983610740415), ('TYPE', 0.8710413660127656), ('ND', 0.86775408067353)]
+Top words for pretrained_GraphCodeBERT neuron indx 9517 [('href', 1.0), ('omit', 0.8812737707139414), ('choices', 0.8380766660036235), ('Off', 0.836386850846813), ('select', 0.8335976734267262)]
+Top words for pretrained_GraphCodeBERT neuron indx 1328 [('tagging', 1.0), ('None', 0.8683243550357002), ('moderate', 0.8628400665465968), ('within', 0.8531778740617454), ('flash', 0.8307253516398646)]
+Top words for pretrained_GraphCodeBERT neuron indx 9523 [('addoption', 1.0), ('"{}/{}"', 0.9710138571234161), ('ct', 0.749728566083844), ('SECONDS', 0.7310913876703937), ('GET', 0.7282252822372762)]
+Top words for pretrained_GraphCodeBERT neuron indx 3384 [('class', 1.0), ('def', 0.7911270718103383), ('bytearray', 0.6716510202457964), ('tell', 0.6713719005511743), ('controlflow', 0.6570793982032883)]
+Top words for pretrained_GraphCodeBERT neuron indx 5437 [('fabric', 1.0), ('as', 0.9826200040874371), ('is', 0.9698887937148803), ('google', 0.9456722281889783), ('District', 0.938715803858449)]
+Top words for pretrained_GraphCodeBERT neuron indx 3397 [('v2', 1.0), ('authorization', 0.9701418324123778), ('else', 0.9608231993172135), ('WARNING', 0.9419141504688899), ('chronam', 0.9161569076923886)]
+Top words for pretrained_GraphCodeBERT neuron indx 1356 [('tornado', 1.0), ('matterllo', 0.9518077718963124), ('is', 0.9514879849300911), ('and', 0.9320506650202177), ('redistricting', 0.9304457464093281)]
+Top words for pretrained_GraphCodeBERT neuron indx 3417 [('sha1', 1.0), ('identical', 0.7061303836571033), ('"%0x"', 0.6767992199363387), ('img', 0.5977713376089098), ('filtered', 0.5815009690284713)]
+Top words for pretrained_GraphCodeBERT neuron indx 1369 [('polygon', 1.0), ('pushkin', 0.9722445841358365), ('Libvirt', 0.9607951133481218), ('push', 0.9598909188898381), ('scheme', 0.9139645416538009)]
+Top words for pretrained_GraphCodeBERT neuron indx 9571 [('repeat', 1.0), ('omit', 0.9571460483907602), ('venue', 0.8971086797456824), ('httpRequest', 0.8934402731400781), ('465', 0.8917923569366609)]
+Top words for pretrained_GraphCodeBERT neuron indx 9583 [('62', 1.0), ('to', 0.8120477137262802), ('Bytes', 0.8046475954640555), ('calculator', 0.7889780334155153), ('with', 0.7530937438844597)]
+Top words for pretrained_GraphCodeBERT neuron indx 7538 [('LOG', 1.0), ('while', 0.7706781699967372), ('omit', 0.757063256968892), ('accept', 0.756064071899469), ('region', 0.7447136838327494)]
+Top words for pretrained_GraphCodeBERT neuron indx 3482 [('month', 1.0), ('future', 0.8840724862431507), ('Unauthorized', 0.7903544968843629), ('subscribers', 0.7672546033693038), ('KeyboardInterrupt', 0.7356477534029583)]
+Top words for pretrained_GraphCodeBERT neuron indx 9630 [('identical', 1.0), ('loading', 0.9770153035424056), ('timezone', 0.9678322974565827), ('Bytes', 0.9555918862715261), ('WMS', 0.9182765108847796)]
+Top words for pretrained_GraphCodeBERT neuron indx 1438 [('raise', 1.0), ('Adapter', 0.6891226764009464), ('GET', 0.6750511365830978), ('If', 0.6461826783535844), ('cond', 0.6252037546807004)]
+Top words for pretrained_GraphCodeBERT neuron indx 9648 [('loading', 1.0), ('demos', 0.8625252352657002), ('urandom', 0.790993136238245), ('Response', 0.7869430829397831), ('WARNING', 0.7724534898061134)]
+Top words for pretrained_GraphCodeBERT neuron indx 1459 [('helper', 1.0), ('exc', 0.9259756458213733), ('strict', 0.890866662537546), ('Commit', 0.8579741900460779), ('tostr', 0.8429403225814847)]
+Top words for pretrained_GraphCodeBERT neuron indx 3509 [('basestring', 1.0), ('"0.1.9"', 0.9672423312175318), ('bytearray', 0.9110357437058918), ('"0.14.0"', 0.8960148936251064), ('HTTP_UNAUTHORIZED', 0.8228960893871956)]
+Top words for pretrained_GraphCodeBERT neuron indx 9657 [('rest', 1.0), ('decode', 0.9315979286598058), ('Parse', 0.9086013112939619), ('JSON', 0.9021271559914195), ('Bytes', 0.8282449944577881)]
+Top words for pretrained_GraphCodeBERT neuron indx 9661 [('"lists"', 1.0), ('"boards"', 0.9913174613509175), ('".."', 0.9912614091509844), ('"0"', 0.9844232390570142), ('trial', 0.9547976684135608)]
+Top words for pretrained_GraphCodeBERT neuron indx 5569 [('ll', 1.0), ('Tag', 0.9196642068439498), ('Encoder', 0.8663690893975647), ('web', 0.835398487995512), ('decorator', 0.8291125975634328)]
+Top words for pretrained_GraphCodeBERT neuron indx 7618 [('tocode', 1.0), ('tostring', 0.9689743823208979), ('created', 0.8300799170656425), ('sender', 0.8290182347583781), ('127', 0.8091341365399606)]
+Top words for pretrained_GraphCodeBERT neuron indx 1498 [('Command', 1.0), ('minutes', 0.9023496190398259), ('blocking', 0.8909497195007399), ('services', 0.8717554420649587), ('calculator', 0.8088117746186421)]
+Top words for pretrained_GraphCodeBERT neuron indx 7643 [('for', 1.0), ('synchronized', 0.8749895252173985), ('with', 0.8677551445278717), ('functional', 0.8623641715667487), ('subscriptions', 0.8404262270965038)]
+Top words for pretrained_GraphCodeBERT neuron indx 1499 [('subscriptions', 1.0), ('for', 0.8962713122057806), ('reservations', 0.7660738964439385), ('in', 0.7443523838547843), ('protocols', 0.7112161814768158)]
+Top words for pretrained_GraphCodeBERT neuron indx 3559 [('SUCCESS', 1.0), ('for', 0.9322915411526971), ('urlencode', 0.9092592029368347), ('dataplane_drivers', 0.8740479897045891), ('while', 0.8611622902911918)]
+Top words for pretrained_GraphCodeBERT neuron indx 7673 [('reflection', 1.0), ('descriptor', 0.9914005477477265), ('success', 0.959733886312591), ('itemgetter', 0.9045142840340948), ('USAGE', 0.8833785348308837)]
+Top words for pretrained_GraphCodeBERT neuron indx 9721 [('Connection', 1.0), ('hidden', 0.9736490340540722), ('seek', 0.8837725386481194), ('exists', 0.8493461370280535), ('getSignals', 0.8475575487085906)]
+Top words for pretrained_GraphCodeBERT neuron indx 9736 [('trial', 1.0), ('callbackArgs', 0.8098527435534524), ('shortcuts', 0.780878187210413), ('presentation', 0.766247399500823), ('ObjectDoesNotExist', 0.7509176500983312)]
+Top words for pretrained_GraphCodeBERT neuron indx 1556 [('Simple', 1.0), ('Subject', 0.9527333347152915), ('loading', 0.9084030676216793), ('LAT', 0.8965365386187042), ('composite', 0.8777224279672132)]
+Top words for pretrained_GraphCodeBERT neuron indx 7710 [('mins', 1.0), ('DOTALL', 0.8913753472681571), ('LOG_FILE', 0.7665365789125546), ('LOG', 0.7310458780597329), ('minutes', 0.7226349120875094)]
+Top words for pretrained_GraphCodeBERT neuron indx 9759 [('calculator', 1.0), ('Integer', 0.9848129869244951), ('sites', 0.9492891104692891), ('75', 0.7981491506937756), ('comments', 0.7923871554197962)]
+Top words for pretrained_GraphCodeBERT neuron indx 1579 [('with', 1.0), ('Connection', 0.6905314874241554), ('conf', 0.667336522940345), ('recordings', 0.6655739584641062), ('hidden', 0.629904757822602)]
+Top words for pretrained_GraphCodeBERT neuron indx 5680 [('msb', 1.0), ('def', 0.9368173721527185), ('keyfile', 0.9331347084249595), ('deepcopy', 0.9069718971910729), ('API', 0.8848407677178352)]
+Top words for pretrained_GraphCodeBERT neuron indx 9782 [('in', 1.0), ('3785', 0.973634002379136), ('locals', 0.9397109046408165), ('ConfigParser', 0.8766818245353339), ('other_iface', 0.8714398204717889)]
+Top words for pretrained_GraphCodeBERT neuron indx 1597 [('as', 1.0), ('is', 0.791530487752148), ('fabric', 0.7754206110495601), ('tenant', 0.7665221895231067), ('google', 0.7423895882332094)]
+Top words for pretrained_GraphCodeBERT neuron indx 7741 [('is', 1.0), ('else', 0.9573086835877589), ('dr', 0.9539423143575801), ('District', 0.9516068882934131), ('fabric', 0.9505500536705432)]
+Top words for pretrained_GraphCodeBERT neuron indx 3647 [('return', 1.0), ('decode', 0.9306870994891048), ('pass', 0.923715811281136), ('ELEMENT', 0.8702021505510209), ('spawn', 0.8656142896498112)]
+Top words for pretrained_GraphCodeBERT neuron indx 1608 [('TYPE', 1.0), ('hyper', 0.8663364947512235), ('GENERATOR', 0.7404165572484496), ('Off', 0.7217274786007034), ('Libvirt', 0.7146789890304535)]
+Top words for pretrained_GraphCodeBERT neuron indx 9805 [('ConvertVolumeToImage', 1.0), ('IsBM', 0.9932629267625928), ('Geo', 0.9680027515967164), ('Bytes', 0.9675713449828416), ('commands', 0.9374364141416517)]
+Top words for pretrained_GraphCodeBERT neuron indx 5717 [('127', 1.0), ('ModelBase', 0.8909788078580815), ('63', 0.8683163057604413), ('five', 0.8608871459372569), ('adapters', 0.808907922575245)]
+Top words for pretrained_GraphCodeBERT neuron indx 5722 [('do', 1.0), ('proc', 0.9642918221484286), ('SystemTask', 0.9485653600088659), ('NoRoute', 0.9341069993836412), ('Input', 0.9183411321775117)]
+Top words for pretrained_GraphCodeBERT neuron indx 7771 [('decimal', 1.0), ('initial', 0.8792051646050507), ('reflection', 0.866236350771761), ('abstract', 0.853569730449017), ('construct', 0.8424351539848678)]
+Top words for pretrained_GraphCodeBERT neuron indx 5746 [('bus', 1.0), ('vCard', 0.9593325220030321), ('tostr', 0.9341995249253847), ('SUCCESS', 0.896976483802943), ('compile_module', 0.8932383453113177)]
+Top words for pretrained_GraphCodeBERT neuron indx 1654 [('sr', 1.0), ('frame', 0.7722702448631938), ('lstrip', 0.7638832628286963), ('pisa', 0.7562879703451202), ('forwards', 0.7361405390206851)]
+Top words for pretrained_GraphCodeBERT neuron indx 9846 [('month', 1.0), ('blend', 0.986334159647644), ('moving', 0.9818315758021363), ('tagging', 0.9520897566172886), ('replaceUndefined', 0.9400855010495917)]
+Top words for pretrained_GraphCodeBERT neuron indx 3709 [('Mesh', 1.0), ('urandom', 0.9635131360609475), ('KeyboardInterrupt', 0.9529620931992759), ('SIGINT', 0.9381148412758237), ('Padding', 0.8921875467891177)]
+Top words for pretrained_GraphCodeBERT neuron indx 9860 [('exists', 1.0), ('locals', 0.8627189787352135), ('restart', 0.800781738827668), ('UTF8', 0.7994424594226863), ('USE_ROUTE53', 0.793636945302051)]
+Top words for pretrained_GraphCodeBERT neuron indx 3717 [('Input', 1.0), ('within', 0.9329282848826493), ('intersects', 0.845866719384905), ('deepcopy', 0.8303569814566963), ('Provider', 0.8227432714242573)]
+Top words for pretrained_GraphCodeBERT neuron indx 7814 [('0o444', 1.0), ('chmod', 0.9983427387992799), ('0o555', 0.9402183429091477), ('Cond', 0.924628398892843), ('300', 0.9149425089231769)]
+Top words for pretrained_GraphCodeBERT neuron indx 1668 [('Distance', 1.0), ('as', 0.9443884884472814), ('USAGE', 0.9031752764188605), ('tell', 0.8766239526309644), ('license', 0.8214805510945338)]
+Top words for pretrained_GraphCodeBERT neuron indx 1671 [('localize', 1.0), ('reflection', 0.8100184080271908), ('utc', 0.7916268942361628), ('humanize', 0.7072718242825972), ('venue', 0.697594028211446)]
+Top words for pretrained_GraphCodeBERT neuron indx 7821 [('convert', 1.0), ('closing', 0.8651993969312497), ('visit', 0.8578262047831556), ('gbkDec', 0.7871701508882353), ('hperiod', 0.7836132014985304)]
+Top words for pretrained_GraphCodeBERT neuron indx 7823 [('Int', 1.0), ('in', 0.8691114633103021), ('or', 0.7893350034578103), ('strict', 0.7414645161555923), ('flat', 0.7202812017354192)]
+Top words for pretrained_GraphCodeBERT neuron indx 3742 [('multiple', 1.0), ('old', 0.9319667907112742), ('enum', 0.8093366531384395), ('Output', 0.7854865248850424), ('SUCCESS', 0.6947735047034425)]
+Top words for pretrained_GraphCodeBERT neuron indx 9897 [('"--use-ns"', 1.0), ('"--create-graph"', 0.9712289742882724), ('"--num-executors"', 0.917304224435472), ('chunks', 0.8964505472251603), ('"y"', 0.8716301421787765)]
+Top words for pretrained_GraphCodeBERT neuron indx 7855 [('deepcopy', 1.0), ('resources', 0.8530003852955383), ('strict', 0.8528996516254821), ('capacity', 0.8309235382680108), ('repeat', 0.814737636918464)]
+Top words for pretrained_GraphCodeBERT neuron indx 9908 [('parameter', 1.0), ('composite', 0.8187125203363514), ('fileDependencies', 0.6477906547078556), ('functional', 0.6387765007827768), ('RemoteRunner', 0.6080672817568871)]
+Top words for pretrained_GraphCodeBERT neuron indx 7864 [('3785', 1.0), ('continue', 0.9433625485355495), ('119', 0.7307718025567533), ('Connection', 0.7129029613806148), ('shortcuts', 0.6868714351520206)]
+Top words for pretrained_GraphCodeBERT neuron indx 3772 [('with', 1.0), ('available', 0.8823304934663372), ('implementation', 0.8462290385328006), ('urlopen', 0.7856116432307297), ('expanduser', 0.779672854798052)]
+Top words for pretrained_GraphCodeBERT neuron indx 1727 [('answer', 1.0), ('180.0', 0.8493252623733853), ('90.0', 0.7645685562925367), ('2.1', 0.7422413776151306), ('do', 0.7188137252202914)]
+Top words for pretrained_GraphCodeBERT neuron indx 7872 [('python', 1.0), ('texture', 0.9514483672235343), ('sites', 0.9488948398807757), ('Distance', 0.891045877369985), ('IsSuperBM', 0.8474130116465262)]
+Top words for pretrained_GraphCodeBERT neuron indx 7873 [('ll', 1.0), ('Tag', 0.9286449246969151), ('62', 0.9217932591836258), ('yield', 0.903041411383408), ('decorator', 0.8997495101835226)]
+Top words for pretrained_GraphCodeBERT neuron indx 1729 [('ll', 1.0), ('web', 0.9953732365941876), ('Tag', 0.989821097464852), ('Encoder', 0.8626251097323855), ('55', 0.8475360831026034)]
+Top words for pretrained_GraphCodeBERT neuron indx 3784 [('old', 1.0), ('do', 0.9886595242672539), ('urandom', 0.968358294156613), ('ADJACENCY', 0.9529021877023208), ('MEMBERS', 0.9473724197316794)]
+Top words for pretrained_GraphCodeBERT neuron indx 7885 [('get_current', 1.0), ('build_opener', 0.913355090724971), ('Simple', 0.8535549545108317), ('region', 0.8484809838697001), ('"!H"', 0.8394209204484018)]
+Top words for pretrained_GraphCodeBERT neuron indx 5848 [('999999', 1.0), ('TAG', 0.9966867573848003), ('qdict', 0.9625190570816758), ('with', 0.8983022662904507), ('__license__', 0.8827456281775975)]
+Top words for pretrained_GraphCodeBERT neuron indx 3803 [('subscriptions', 1.0), ('for', 0.9934985087509859), ('synchronized', 0.9497033527984851), ('return', 0.8630628864415961), ('protocols', 0.8603610678626071)]
+Top words for pretrained_GraphCodeBERT neuron indx 9947 [('subscriptions', 1.0), ('return', 0.9710387163576495), ('milliseconds', 0.8609073465607072), ('"100"', 0.8118826546900486), ('shortcuts', 0.7864742592109051)]
+Top words for pretrained_GraphCodeBERT neuron indx 9961 [('plugin', 1.0), ('Plugin', 0.7694850960623271), ('long', 0.7562034552997473), ('lastErr', 0.7375395541529535), ('plugout', 0.7192445920592117)]
+Top words for pretrained_GraphCodeBERT neuron indx 3819 [('localize', 1.0), ('Else', 0.9699451845892013), ('else', 0.960827933874548), ('def', 0.9059852197710714), ('collect', 0.8645723980004362)]
+Top words for pretrained_GraphCodeBERT neuron indx 1782 [('joinall', 1.0), ('old', 0.9570574999989763), ('Default', 0.887640372891468), ('mktime', 0.8185698072542313), ('rest', 0.7877083766337399)]
+Top words for pretrained_GraphCodeBERT neuron indx 5891 [('Else', 1.0), ('tell', 0.8583771927501458), ('class', 0.837081557532287), ('context_instance', 0.7719800562506952), ('store', 0.761550254564116)]
+Top words for pretrained_GraphCodeBERT neuron indx 1805 [('fcsans', 1.0), ('CONNECTED', 0.9571001610418398), ('add_assets', 0.9005261893441369), ('lstrip', 0.8990215813225787), ('collect', 0.8906155552866429)]
+Top words for pretrained_GraphCodeBERT neuron indx 1812 [('119', 1.0), ('warn', 0.980617739411119), ('Integer', 0.9197167660250708), ('no', 0.8704370459768718), ('Action', 0.8656766911114779)]
+Top words for pretrained_GraphCodeBERT neuron indx 1816 [('Simple', 1.0), ('down', 0.9509696543071198), ('negotiate', 0.908189944211944), ('SON', 0.8703953527418846), ('enabled', 0.8626733407221835)]
+Top words for pretrained_GraphCodeBERT neuron indx 3870 [('SUCCESS', 1.0), ('is_py3', 0.93158905538118), ('MICROS_TRANSLATIONS', 0.9205837954113961), ('simplify', 0.8471614324968724), ('PROVISION', 0.8372204903865365)]
+Top words for pretrained_GraphCodeBERT neuron indx 1834 [('On', 1.0), ('continue', 0.8893793993504804), ('xmpp', 0.8794649489343395), ('multiple', 0.8748420238257559), ('tk', 0.831771256325511)]
+Top words for pretrained_GraphCodeBERT neuron indx 5931 [('tell', 1.0), ('seek', 0.962484177683813), ('Card', 0.8957678051658755), ('outputFile', 0.8862330735907391), ('NotFound', 0.8860851321107377)]
+Top words for pretrained_GraphCodeBERT neuron indx 3892 [('fromtimestamp', 1.0), ('within', 0.9893388687884369), ('collect', 0.9156090193495049), ('basestring', 0.8636169018589956), ('SUCCESS', 0.8606729504720644)]
+Top words for pretrained_GraphCodeBERT neuron indx 7994 [('VALUE', 1.0), ('.3', 0.9118367268542328), ('actions', 0.7597736795668497), ('URLError', 0.6707192893675602), ('answer', 0.6667941997212222)]
+Top words for pretrained_GraphCodeBERT neuron indx 3901 [('as', 1.0), ('is', 0.9646614700456213), ('fabric', 0.922065106376243), ('else', 0.8855233285693649), ('or', 0.8543558256693996)]
+Top words for pretrained_GraphCodeBERT neuron indx 1870 [('protobuf', 1.0), ('CREATING', 0.9692016293362055), ('lat', 0.96672878280952), ('by', 0.9634678390011442), ('TERMINATE', 0.9098141618269776)]
+Top words for pretrained_GraphCodeBERT neuron indx 1872 [('discovery', 1.0), ('dom', 0.8393962800983489), ('P2PServiceBaseType', 0.7179820799635559), ('image_path', 0.6844996167576319), ('restart', 0.6794500584914096)]
+Top words for pretrained_GraphCodeBERT neuron indx 3934 [('number', 1.0), ('basestring', 0.9836157128602788), ('CopierNotFound', 0.88489268596114), ('WrongArgs', 0.8329389165186278), ('NotFound', 0.8211822185051099)]
+Top words for pretrained_GraphCodeBERT neuron indx 8035 [('omit', 1.0), ('repeat', 0.8307420750658857), ('submitJob', 0.783401088327996), ('465', 0.7756524829321897), ('httpRequest', 0.7342754787497344)]
+Top words for pretrained_GraphCodeBERT neuron indx 8036 [('else', 1.0), ('Unauthorized', 0.8944634243712474), ('HTTP_FORBIDDEN', 0.8636861954430424), ('each', 0.7967417999927273), ('boards_name', 0.7655938501116144)]
+Top words for pretrained_GraphCodeBERT neuron indx 8043 [('BoardLeft', 1.0), ('"0.0.0.0/0"', 0.9446026100805167), ('required', 0.9382711981393272), ('UTF8', 0.888493108364446), ('advance', 0.8766493619859395)]
+Top words for pretrained_GraphCodeBERT neuron indx 8047 [('to', 1.0), ('blocking', 0.9220184583115263), ('while', 0.8862001620031528), ('with', 0.8601308932411413), ('null', 0.8326851545272907)]
+Top words for pretrained_GraphCodeBERT neuron indx 1916 [('advance', 1.0), ('512', 0.9247004262477194), ('twisted', 0.9201927686839528), ('BaseWorker', 0.8785553101089661), ('wait', 0.857213433435045)]
+Top words for pretrained_GraphCodeBERT neuron indx 1919 [('Switch', 1.0), ('63', 0.8957000403908284), ('95', 0.8770410771071874), ('imap', 0.8048984764532133), ('17', 0.6900067601076049)]
+Top words for pretrained_GraphCodeBERT neuron indx 1938 [('form', 1.0), ('score', 0.8221361169029214), ('framing', 0.8061582563259575), ('False', 0.8038062849473885), ('Label', 0.7704818287875219)]
+Top words for pretrained_GraphCodeBERT neuron indx 1943 [('Padding', 1.0), ('MEMBERS', 0.9738508338955179), ('MEMBER', 0.8947614741952178), ('iterators', 0.8778498175064089), ('MEMBASE', 0.8320573559145278)]
+Top words for pretrained_GraphCodeBERT neuron indx 1948 [('fifteen', 1.0), ('encaps', 0.9941283726955563), ('created', 0.9764350555691903), ('identical', 0.9717602722222809), ('passed', 0.9143245619348702)]
+Top words for pretrained_GraphCodeBERT neuron indx 6066 [('signed', 1.0), ('intersects', 0.9705300616928146), ('cancel', 0.9548888097655781), ('tocode', 0.8519113284936793), ('ay', 0.8303605456974235)]
+Top words for pretrained_GraphCodeBERT neuron indx 1975 [('encaps', 1.0), ('disp', 0.9437620376719194), ('gc', 0.9290353254290922), ('"HTTP"', 0.8950228896035436), ('urls', 0.889522637357145)]
+Top words for pretrained_GraphCodeBERT neuron indx 4032 [('ELEMENT', 1.0), ('S_ISDIR', 0.936719290330702), ('STATUS', 0.8862154974286288), ('PROVISION', 0.8697890831154262), ('BOUNDS', 0.8626957110823412)]
+Top words for pretrained_GraphCodeBERT neuron indx 4033 [('ll', 1.0), ('web', 0.8721097901205123), ('Encoder', 0.8280253539265234), ('Widget', 0.8155163348015549), ('Tag', 0.8021825600150622)]
+Top words for pretrained_GraphCodeBERT neuron indx 1986 [('listen', 1.0), ('DISCONNECTED', 0.8499946462962504), ('tagging', 0.7328215973936982), ('CONNECTED', 0.7104663270459901), ('SON', 0.6988650403964075)]
+Top words for pretrained_GraphCodeBERT neuron indx 1993 [('sht', 1.0), ('Authorization', 0.9046828771820524), ('future', 0.8892807946776358), ('owner', 0.8783845293031481), ('one', 0.8405354520759309)]
+Top words for pretrained_GraphCodeBERT neuron indx 2003 [('On', 1.0), ('ON', 0.8254070047981332), ('WAYS', 0.7948954532133532), ('renderers', 0.7414194519125777), ('ungettext', 0.7376475352574987)]
+Top words for pretrained_GraphCodeBERT neuron indx 6107 [('for', 1.0), ('subscriptions', 0.9726407856974063), ('synchronized', 0.939427581552822), ('with', 0.9266263363920844), ('trial', 0.9139461278952483)]
+Top words for pretrained_GraphCodeBERT neuron indx 2017 [('90.0', 1.0), ('seek', 0.9936055783174653), ('Input', 0.9787034857242058), ('ah', 0.9539761702025619), ('180.0', 0.9230735195187991)]
+Top words for pretrained_GraphCodeBERT neuron indx 6122 [('OK', 1.0), ('tempfile', 0.9691722637184126), ('NamedTemporaryFile', 0.7733903876391841), ('internet', 0.7652963526645745), ('ts', 0.7545760766833325)]
+Top words for pretrained_GraphCodeBERT neuron indx 4074 [('RELATION', 1.0), ('LOG', 0.9606215621198078), ('CACHES', 0.9551206037711256), ('ELEMENT', 0.9337959772521703), ('REF', 0.9337556270685834)]
+Top words for pretrained_GraphCodeBERT neuron indx 2032 [('for', 1.0), ('plural', 0.8402604279032753), ('from', 0.8392335983162129), ('not', 0.8366241196223632), ('Proto', 0.8053611385909873)]
+Top words for pretrained_GraphCodeBERT neuron indx 6133 [('Else', 1.0), ('IPNetwork', 0.9292092000006524), ('sender', 0.9200955194734785), ('REAGGREGATING', 0.9149956680374206), ('RouteEvent', 0.884961707323006)]
+Top words for pretrained_GraphCodeBERT neuron indx 2043 [('next', 1.0), ('2014', 0.7701208102064382), ('reflection', 0.7159774590936444), ('current', 0.6914945816893433), ('Context', 0.625575550273334)]
+Creating control dataset for pretrained_GraphCodeBERT POS tagging task
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0156
+Epoch: [2/10], Loss: 0.0106
+Epoch: [3/10], Loss: 0.0076
+Epoch: [4/10], Loss: 0.0063
+Epoch: [5/10], Loss: 0.0055
+Epoch: [6/10], Loss: 0.0049
+Epoch: [7/10], Loss: 0.0045
+Epoch: [8/10], Loss: 0.0042
+Epoch: [9/10], Loss: 0.0039
+Epoch: [10/10], Loss: 0.0036
+Score (accuracy) of the probe: 0.36
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0155
+Epoch: [2/10], Loss: 0.0108
+Epoch: [3/10], Loss: 0.0077
+Epoch: [4/10], Loss: 0.0063
+Epoch: [5/10], Loss: 0.0055
+Epoch: [6/10], Loss: 0.0050
+Epoch: [7/10], Loss: 0.0046
+Epoch: [8/10], Loss: 0.0042
+Epoch: [9/10], Loss: 0.0039
+Epoch: [10/10], Loss: 0.0037
+Score (accuracy) of the probe: 0.37
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0157
+Epoch: [2/10], Loss: 0.0108
+Epoch: [3/10], Loss: 0.0079
+Epoch: [4/10], Loss: 0.0064
+Epoch: [5/10], Loss: 0.0057
+Epoch: [6/10], Loss: 0.0052
+Epoch: [7/10], Loss: 0.0048
+Epoch: [8/10], Loss: 0.0045
+Epoch: [9/10], Loss: 0.0043
+Epoch: [10/10], Loss: 0.0040
+Score (accuracy) of the probe: 0.36
+Training classification probe
+Creating model...
+Number of training instances: 13636
+Number of classes: 4
+Epoch: [1/10], Loss: 0.0163
+Epoch: [2/10], Loss: 0.0120
+Epoch: [3/10], Loss: 0.0094
+Epoch: [4/10], Loss: 0.0083
+Epoch: [5/10], Loss: 0.0078
+Epoch: [6/10], Loss: 0.0076
+Epoch: [7/10], Loss: 0.0074
+Epoch: [8/10], Loss: 0.0073
+Epoch: [9/10], Loss: 0.0072
+Epoch: [10/10], Loss: 0.0072
+Score (accuracy) of the probe: 0.35
+
+The best l1=0, the best l2=0.001 for pretrained_GraphCodeBERT_control_task
+Accuracy on the test set of probing pretrained_GraphCodeBERT_control_task of all layers:
+Score (accuracy) of the probe: 0.39
+Accuracy on the test set of pretrained_GraphCodeBERT_control_task model using the intercept:
+Score (accuracy) of the probe: 0.11
+
+pretrained_GraphCodeBERT_control_task Selectivity (Diff. between true task and probing task performance):  0.5690511674118232
+----------------------------------------------------------------
