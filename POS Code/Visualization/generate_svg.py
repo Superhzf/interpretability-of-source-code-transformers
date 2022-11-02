@@ -21,9 +21,9 @@ def merge_svg(top_neurons,idx,class_name,model_name,folder_name):
                 {folder_name}/space.svg {folder_name}/{names[3]}> {folder_name}/{model_name}_{class_name}.svg")
 
 for this_model in MODEL_NAMES:
-    if this_model in ['pretrained_GraphCodeBERT']
-    this_top_neuron = TOP_NEURONS[this_model]
-    this_idx = IDX[this_model]
-    this_class_name = CLASSES[this_model]
-    merge_svg(this_top_neuron,this_idx,this_class_name,this_model,FOLDER_NAME)
-    break
+    if this_model in ['pretrained_GraphCodeBERT']:
+        this_top_neuron = TOP_NEURONS[this_model]
+        this_idx = IDX[this_model]
+        this_class_name = CLASSES[this_model]
+        merge_svg(this_top_neuron,this_idx,this_class_name,this_model,FOLDER_NAME)
+        break
