@@ -21,17 +21,17 @@ ACTIVATION_NAMES = {'pretrained_BERT':'bert_activations_train.json',
                     'finetuned_clonedet_CodeBERT':'codebert_clonedet_activations1_train.json',
                     'finetuned_clonedet_GraphCodeBERT':'graphcodebert_clonedet_activations1_train.json'}
 # This set of idx is for pretrained, finetuned defdet, and finetuned clonedet models
-bert_idx = [42,114]
-bert_top_neurons = [9772]
-bert_class = "STRING"
+# bert_idx = [42,114]
+# bert_top_neurons = [9772]
+# bert_class = "STRING"
 # bert_idx = [3,11]
 # bert_top_neurons = [7008]
 # bert_class = "KEYWORD"
-codebert_idx = None
+codebert_idx = [3,4,7,11,14]
+codebert_top_neurons = [8794]
+codebert_class = "NAME"
 graphcodebert_idx = None
-codebert_top_neurons = None
 graphcodebert_top_neurons = None
-codebert_class = None
 graphcodebert_class = None
 
 IDX = {"pretrained_BERT":bert_idx,
@@ -47,7 +47,7 @@ CLASSES = {"pretrained_BERT":bert_class,
            "finetuned_defdet_CodeBERT":codebert_class,"finetuned_defdet_GraphCodeBERT":graphcodebert_class,
            "finetuned_clonedet_CodeBERT":codebert_class,"finetuned_clonedet_GraphCodeBERT":graphcodebert_class}
 
-FOLDER_NAME ="result_all"
+FOLDER_NAME ="result_CodeBERT"
 
 def mkdir_if_needed(dir_name):
     if not os.path.isdir(dir_name):
