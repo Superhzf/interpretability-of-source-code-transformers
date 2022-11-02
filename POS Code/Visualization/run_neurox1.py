@@ -28,12 +28,12 @@ bert_class = "STRING"
 # bert_top_neurons = [7008]
 # bert_class = "KEYWORD"
 
-codebert_idx = [3,4,14]
-codebert_top_neurons = [6875]
-codebert_class = "NAME"
-# codebert_idx = [5,59,91,114]
-# codebert_top_neurons = [2961]
-# codebert_class = "STRING"
+# codebert_idx = [3,4,14]
+# codebert_top_neurons = [6875]
+# codebert_class = "NAME"
+codebert_idx = [5,59,91,114]
+codebert_top_neurons = [2961]
+codebert_class = "STRING"
 
 graphcodebert_idx = [53,144,147]
 graphcodebert_top_neurons = [3384]
