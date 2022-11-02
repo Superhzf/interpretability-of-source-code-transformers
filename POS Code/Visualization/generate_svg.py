@@ -11,11 +11,10 @@ def merge_svg(top_neurons,idx,class_name,model_name,folder_name):
             this_name = f"{model_name}_{this_idx-1}_{layer_idx}_{neuron_idx}.svg"
             names.append(this_name)
             print("good")
-            
+
     os.system(f"/work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python \
                 svg_stack-main/svg_stack.py {folder_name}/{names[0]} {folder_name}/space.svg \
-                {folder_name}/{names[1]} {folder_name}/space.svg {folder_name}/{names[2]}> \
-                {folder_name}/{model_name}_{class_name}.svg")
+                {folder_name}/{names[1]} {folder_name}/space.svg {folder_name}/{names[2]}> {folder_name}/{model_name}_{class_name}.svg")
     # os.system(f"/work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python \
     #             svg_stack-main/svg_stack.py {folder_name}/{names[0]} {folder_name}/space.svg \
     #             {folder_name}/{names[1]} {folder_name}/space.svg {folder_name}/{names[2]} \
@@ -27,4 +26,4 @@ for this_model in MODEL_NAMES:
         this_idx = IDX[this_model]
         this_class_name = CLASSES[this_model]
         merge_svg(this_top_neuron,this_idx,this_class_name,this_model,FOLDER_NAME)
-        break
+    break
