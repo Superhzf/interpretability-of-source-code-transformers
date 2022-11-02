@@ -10,6 +10,7 @@ def merge_svg(top_neurons,idx,class_name,model_name,folder_name):
             neuron_idx = this_neuron%768
             this_name = f"{model_name}_{this_idx-1}_{layer_idx}_{neuron_idx}.svg"
             names.append(this_name)
+            print("good")
 
     os.system(f"/work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python \
                 svg_stack-main/svg_stack.py {folder_name}/{names[0]} {folder_name}/space.svg \
