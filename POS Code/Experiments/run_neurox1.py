@@ -44,7 +44,7 @@ def main():
 
     for this_model in MODEL_NAMES:
         # if this_model in ['pretrained_BERT','pretrained_CodeBERT','pretrained_GraphCodeBERT']:
-        if this_model in ['pretrained_CodeBERT']:
+        if this_model in ['pretrained_BERT']:
             print(f"Anayzing {this_model}")
             tokens_train,activations_train,flat_tokens_train,X_train, y_train, label2idx_train, idx2label_train=preprocess(ACTIVATION_NAMES[this_model][0],
                                                                         './src_files/codetest2_train_unique.in','./src_files/codetest2_train_unique.label',
