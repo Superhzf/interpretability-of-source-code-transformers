@@ -35,7 +35,7 @@ codebert_idx = [5,59,91,114]
 codebert_top_neurons = [2961]
 codebert_class = "STRING"
 
-graphcodebert_idx = [53,144,145,147]
+graphcodebert_idx = [53,144,147]
 graphcodebert_top_neurons = [3384]
 graphcodebert_class = "NUMBER"
 
