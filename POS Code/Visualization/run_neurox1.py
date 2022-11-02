@@ -31,17 +31,13 @@ bert_class = "STRING"
 # codebert_idx = [3,4,14]
 # codebert_top_neurons = [6875]
 # codebert_class = "NAME"
-# codebert_idx = [5,59,91,114]
-# codebert_top_neurons = [2961]
-# codebert_class = "STRING"
-codebert_idx = [810,811,813,815,817]
-codebert_top_neurons = [1916,  264, 6638, 3707]
-codebert_class = "KEYWORD"
+codebert_idx = [5,59,91,114]
+codebert_top_neurons = [2961]
+codebert_class = "STRING"
 
-
-graphcodebert_idx = None
-graphcodebert_top_neurons = None
-graphcodebert_class = None
+graphcodebert_idx = [41,53,76,]
+graphcodebert_top_neurons = [6638, 9179, 8411, 1597]
+graphcodebert_class = "NUMBER"
 
 IDX = {"pretrained_BERT":bert_idx,
        "pretrained_CodeBERT":codebert_idx,"pretrained_GraphCodeBERT":graphcodebert_idx,
