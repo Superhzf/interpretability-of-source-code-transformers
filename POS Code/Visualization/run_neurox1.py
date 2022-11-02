@@ -52,7 +52,7 @@ CLASSES = {"pretrained_BERT":bert_class,
            "finetuned_defdet_CodeBERT":codebert_class,"finetuned_defdet_GraphCodeBERT":graphcodebert_class,
            "finetuned_clonedet_CodeBERT":codebert_class,"finetuned_clonedet_GraphCodeBERT":graphcodebert_class}
 
-FOLDER_NAME ="result_CodeBERT"
+FOLDER_NAME ="result_GraphCodeBERT"
 
 def mkdir_if_needed(dir_name):
     if not os.path.isdir(dir_name):
@@ -91,7 +91,7 @@ def main():
     mkdir_if_needed(f"./{FOLDER_NAME}/")
 
     for this_model in MODEL_NAMES:
-        if this_model in ['pretrained_CodeBERT']:
+        if this_model in ['pretrained_GraphCodeBERT']:
             print(f"Generate svg files for {this_model}")
             this_activation_name = ACTIVATION_NAMES[this_model]
             activations = load_extracted_activations(this_activation_name)
