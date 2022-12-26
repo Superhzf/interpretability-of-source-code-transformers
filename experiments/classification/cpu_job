@@ -1,0 +1,28 @@
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --mem=256G
+#SBATCH --time=2-00:30:00
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8  # number of processor cores
+
+module load ml-gpu
+#ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/pip3 install "ray[tune]"
+#ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/pip3 install progressbar
+
+ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_pipeline_all.py --config config_defdet_codebert.json > Results/test/output_codebert_defdet_sentence_pipeline_all
+
+#ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_probeless.py --config config_clonedet_codebert.json > Probeless_Results/output_clonedet_sentence_probeless_f1
+
+#ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_probeless.py --config config_clonedet_codebert.json > Probeless_Results/output_clonedet_sentence_probeless_f11
+
+#ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_probeless.py --config config_defdet_codebert.json > Probeless_Results/CodeBERT/output_defdet_sentence_probeless_all_test
+
+#ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_probeless.py --config config_defdet_codebert.json > Probeless_Results/CodeBERT/output_defdet_sentence_probeless_all1
+
+#ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_probeless.py --config config_defdet_graphcodebert.json > Probeless_Results/GraphCodeBERT/output_defdet_sentence_probeless_all_test
+
+#ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_probeless.py --config config_defdet_graphcodebert.json > Probeless_Results/GraphCodeBERT/output_defdet_sentence_probeless_all1
+
+#ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_pipeline_all.py --config config_clonedet_codebert.json > output_sentence_pipeline_all_f12
+
+#ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_gridsearch.py --config config_defdet_codebert.json > GridCV_log_DefDet_B

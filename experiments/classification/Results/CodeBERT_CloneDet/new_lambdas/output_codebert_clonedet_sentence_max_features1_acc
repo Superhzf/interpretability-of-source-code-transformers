@@ -1,0 +1,124 @@
+[MEMORY] Begin: 255.67
+*********************** LOADING ACTIVATIONS ***********************
+[MEMORY] Before activation loading: 255.69
+Loading json activations from /work/LAS/jannesar-lab/arushi/Redundancy/Code_data/CodeXGLUE/Code-Code/Clone-detection-BigCloneBench/dataset/activations/codebert/train_activations.json...
+90102 13.0
+Loading json activations from /work/LAS/jannesar-lab/arushi/Redundancy/Code_data/CodeXGLUE/Code-Code/Clone-detection-BigCloneBench/dataset/activations/codebert/dev_activations.json...
+41541 13.0
+Number of train sentences: 90102
+Number of test sentences: 41541
+[MEMORY] After activation loading: 12312.66
+************************* LOADING TOKENS **************************
+[MEMORY] After token loading: 12360.57
+************************ CREATING TENSORS *************************
+Train:
+Number of tokens:  90102
+length of source dictionary:  90102
+length of target dictionary:  2
+90102
+Total instances: 90102
+['sentence_41268', 'sentence_69139', 'sentence_12810', 'sentence_74996', 'sentence_15152', 'sentence_38459', 'sentence_39234', 'sentence_17712', 'sentence_35898', 'sentence_83185', 'sentence_85371', 'sentence_62536', 'sentence_39054', 'sentence_6503', 'sentence_71643', 'sentence_77770', 'sentence_25316', 'sentence_3374', 'sentence_4772', 'sentence_67711']
+(81091, 9984) (81091,)
+Dev:
+(9011, 9984) (9011,)
+Test:
+Number of tokens:  41541
+length of source dictionary:  90102
+length of target dictionary:  2
+41541
+Total instances: 41541
+['sentence_35605', 'sentence_41268', 'sentence_1469', 'sentence_18749', 'sentence_12810', 'sentence_38213', 'sentence_15152', 'sentence_24343', 'sentence_38459', 'sentence_39234', 'sentence_17712', 'sentence_6142', 'sentence_35475', 'sentence_35898', 'sentence_6560', 'sentence_39054', 'sentence_27692', 'sentence_6503', 'sentence_25316', 'sentence_3374']
+(41541, 9984) (41541,)
+[MEMORY] After tensor creation: 20834.59
+************************* FREEING MEMORY **************************
+[MEMORY] After cleanup: 20780.61
+***************** RUNNING BASELINE [ ALL LAYERS ] *****************
+Building model...
+Train: (81091, 9984) (81091,)
+Dev: (9011, 9984) (9011,)
+Test: (41541, 9984) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0057
+Epoch: [2/10], Loss: 0.0057
+Epoch: [3/10], Loss: 0.0057
+Epoch: [4/10], Loss: 0.0057
+Epoch: [5/10], Loss: 0.0057
+Epoch: [6/10], Loss: 0.0057
+Epoch: [7/10], Loss: 0.0057
+Epoch: [8/10], Loss: 0.0057
+Epoch: [9/10], Loss: 0.0057
+Epoch: [10/10], Loss: 0.0057
+Score (accuracy) of the model: 0.51
+Score (accuracy) of the model: 0.51
+Score (accuracy) of the model: 0.41
+Results:
+Train Score (accuracy): 0.507862
+Dev Score (accuracy): 0.505271
+Test Score (accuracy): 0.405984
+[MEMORY] After baseline run: 20810.27
+********************* RUNNING NEURON SELECTION *********************
+------------- Clustering (threshold -1.00) ----------
+Building model...
+Train: (81091, 9984) (81091,)
+Dev: (9011, 9984) (9011,)
+Test: (41541, 9984) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0057
+Epoch: [2/10], Loss: 0.0057
+Epoch: [3/10], Loss: 0.0057
+Epoch: [4/10], Loss: 0.0057
+Epoch: [5/10], Loss: 0.0057
+Epoch: [6/10], Loss: 0.0057
+Epoch: [7/10], Loss: 0.0057
+Epoch: [8/10], Loss: 0.0057
+Epoch: [9/10], Loss: 0.0057
+Epoch: [10/10], Loss: 0.0057
+Score (accuracy) of the model: 0.51
+Score (accuracy) of the model: 0.51
+Score (accuracy) of the model: 0.41
+Results:
+Train Score (accuracy): 0.507775
+Dev Score (accuracy): 0.505493
+Test Score (accuracy): 0.405984
+Gold score (Baseline with selected top layer [and potential clustering]): 0.505493
+Target score (1% drop): 0.500438
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0068
+Epoch: [2/10], Loss: 0.0055
+Epoch: [3/10], Loss: 0.0055
+Epoch: [4/10], Loss: 0.0055
+Epoch: [5/10], Loss: 0.0055
+Epoch: [6/10], Loss: 0.0055
+Epoch: [7/10], Loss: 0.0055
+Epoch: [8/10], Loss: 0.0055
+Epoch: [9/10], Loss: 0.0055
+Epoch: [10/10], Loss: 0.0055
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+[MEMORY] After neuron selection: 20810.70
+***************************** SUMMARY *****************************
+Baseline Score (accuracy): 0.405984
+Clustering paramter: no-clustering
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.868660

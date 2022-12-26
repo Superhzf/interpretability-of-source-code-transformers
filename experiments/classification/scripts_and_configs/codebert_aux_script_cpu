@@ -1,0 +1,15 @@
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --ntasks=8
+#SBATCH --mem=128G
+#SBATCH --time=1-10:00:00
+
+
+
+module load ml-gpu
+
+cd /work/LAS/jannesar-lab/arushi/Redundancy/analyzing-redundancy-in-pretrained-transformer-models/experiments/classification/
+
+
+CUDA_LAUNCH_BLOCKING=1 ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_pipeline_all.py --config config_clonedet_graphcodebert.json > Results/GraphCodeBERT_CloneDet/output_graphcodebert_clonedet_sentence_pipeline_all1
+
