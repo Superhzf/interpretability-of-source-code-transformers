@@ -53,7 +53,7 @@ def main():
                                             './src_files/codetest2_test_unique.in','./src_files/codetest2_test_unique.label',
                                             False,this_model)
             # remove tokens that are shared by training and testing
-            # At the same, make sure to keep at least 10 key words in the training set
+            # At the same time, make sure to keep at least 10 key words in the training set
             idx_selected = []
             count_kw = 0
             for this_token,this_y in zip(flat_tokens_train,y_train):
