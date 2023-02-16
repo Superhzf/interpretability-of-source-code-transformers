@@ -43,8 +43,7 @@ def main():
         print("Getting activations from json files. If you need to extract them, run with --extract=True \n" )
 
     for this_model in MODEL_NAMES:
-        # if this_model in ['pretrained_BERT','pretrained_CodeBERT','pretrained_GraphCodeBERT']:
-        if this_model in ['pretrained_GraphCodeBERT']:
+        if this_model in ['pretrained_BERT','pretrained_CodeBERT','pretrained_GraphCodeBERT']:
             print(f"Anayzing {this_model}")
             tokens_train,activations_train,flat_tokens_train,X_train, y_train, label2idx_train, idx2label_train=preprocess(ACTIVATION_NAMES[this_model][0],
                                                                         './src_files/codetest2_train_unique.in','./src_files/codetest2_train_unique.label',
@@ -115,6 +114,7 @@ def main():
             print("The distribution of classes in testing:")
             print(collections.Counter(y_test))
             print(label2idx_test)
+            exit(0)
             
             X_train_copy = X_train.copy()
             y_train_copy = y_train.copy()
