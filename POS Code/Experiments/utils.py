@@ -28,6 +28,10 @@ def getOverlap(s1, s2):
 
 
 def removeSeenTokens(tokens,activations):
+    """
+    Remove the duplicated tokens and the corresponded representation.
+    This will not affect the grammar because this is executed after the representation is generated.
+    """
     seen_before = []
     new_source_tokens = []
     new_target_tokens = []
@@ -80,7 +84,7 @@ def extract_activations(file_in_name,model_description,activation_name):
 
 def load_extracted_activations(activation_file_name):
     #Load activations from json files
-    activations, num_layers = data_loader.load_activations(activation_file_name,13)
+    activations, num_layers = data_loader.load_activations(activation_file_name)
     return activations
 
 
@@ -123,7 +127,7 @@ def param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2,weight=None):
 
 
 def get_mappings(tokens,activations):
-    ''' Get mappings for all models'''
+    '''Re-organize the representation and labels such that they are ready for model training'''
     X, y, mapping = utils.create_tensors(tokens, activations, 'NAME') #mapping contains tuple of 4 dictionaries
     label2idx, idx2label, src2idx, idx2src = mapping
 
@@ -350,6 +354,9 @@ def probeless(X,y,model_name):
 
 
 def alignTokenAct(tokens,activations,idx_selected):
+    """
+    This method means to filter tokens and activations by idx_selected while keeping the same format.
+    """
     l1 = len([l for sublist in activations for l in sublist])
     l2 = len(idx_selected)
     assert l1 == l2,f"{l1}!={l2}"
@@ -413,6 +420,10 @@ def filter_by_frequency(tokens,activations,X,y,label2idx,idx2label,threshold,mod
 
 
 def filterByClass(tokens,activations,X,y,label2idx,model_name):
+    """
+    This method means to keep the representation and labels for
+    NAME, STRING, NUMBER, and KEYWORD class for the probing task.
+    """
     lookup_table={}
     new_label2idx={}
     new_idx2label={}

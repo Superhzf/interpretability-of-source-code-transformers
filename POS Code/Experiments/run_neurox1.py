@@ -53,7 +53,7 @@ def main():
                                             './src_files/codetest2_test_unique.in','./src_files/codetest2_test_unique.label',
                                             False,this_model)
             # remove tokens that are shared by training and testing
-            # At the same, make sure to keep at least 10 KW in the training set
+            # At the same, make sure to keep at least 10 key words in the training set
             idx_selected = []
             count_kw = 0
             for this_token,this_y in zip(flat_tokens_train,y_train):
@@ -86,8 +86,12 @@ def main():
                 if this_token_test in flat_tokens_train:
                     idx_selected.append(False)
                 else:
+                    # If this_token_test is a key word, then it will be selected for sure.
                     is_selected = True
-                    if this_y_test in [label2idx_train['STRING'],label2idx_train['NUMBER']] :
+                    if this_y_test in [label2idx_train['STRING'],label2idx_train['NUMBER']]:
+                        # Compare this_token_train with this_token_test and remove they are similar (the length of overlap is more than 3)
+                        # because it is possible that they are different but very similar. If that is the case,
+                        # it is highly likely that the the label would be the same.
                         for this_token_train in flat_tokens_train:
                             if getOverlap(this_token_test,this_token_train) >= 3:
                                 is_selected = False
