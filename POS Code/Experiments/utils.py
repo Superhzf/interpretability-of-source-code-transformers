@@ -196,6 +196,7 @@ def get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,probe,label2id
     ''' Returns top 2% neurons for each model'''
 
     #Top neurons
+    # 0.05 means to select neurons that take top 5% mass
     top_neurons, top_neurons_per_class = linear_probe.get_top_neurons(probe, 0.05, label2idx)
     print()
     print(f"{model_name} top neurons")
@@ -208,7 +209,7 @@ def get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,probe,label2id
     X_selected_valid = ablation.filter_activations_keep_neurons(X_valid, top_neurons)
     X_selected_test = ablation.filter_activations_keep_neurons(X_test, top_neurons)
     print("The shape of selected features",X_selected_train.shape)
-    this_model_name = f"{model_name}_top5%_neurons"
+    this_model_name = f"{model_name}_top5%_mass"
     print("The shape of the training set:",X_selected_train.shape)
     print("The shape of the validation set:",X_selected_valid.shape)
     print("The shape of the testing set:",X_selected_test.shape)

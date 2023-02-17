@@ -55,19 +55,27 @@ def main():
             # At the same time, make sure to keep at least 10 key words in the training set
             idx_selected = []
             count_kw = 0
-            count_nm = 0
+            count_number = 0
+            count_name = 0
             for this_token,this_y in zip(flat_tokens_train,y_train):
                 if this_token in flat_tokens_test:
-                    if this_y== label2idx_train['NUMBER'] and count_nm<=1200:
+                    if this_y== label2idx_train['NUMBER'] and count_number<=1200:
                         idx_selected.append(True)
-                        count_nm += 1
+                        count_number += 1
                     elif this_y == label2idx_train['KEYWORD'] and count_kw<=1100:
                         idx_selected.append(True)
                         count_kw+=1
                     else:
                         idx_selected.append(False)
                 else:
-                    idx_selected.append(True)
+                    if this_y== label2idx_train['NAME']:
+                        if count_name <= 1200:
+                            count_name += 1
+                            idx_selected.append(True)
+                        else:
+                            idx_selected.append(False)
+                    else:
+                        idx_selected.append(True)
             assert len(idx_selected) == len(flat_tokens_train)
 
             flat_tokens_train = flat_tokens_train[idx_selected]
@@ -83,23 +91,29 @@ def main():
 
             # This keeps ~10 KW in the test set
             idx_selected = []
+            count_number = 0
             for this_token_test,this_y_test in zip(flat_tokens_test,y_test):
                 if this_token_test in flat_tokens_train:
                     idx_selected.append(False)
                 else:
                     # If this_token_test is a key word, then it will be selected for sure.
                     is_selected = True
-                    if this_y_test in [label2idx_train['STRING'],label2idx_train['NUMBER']]:
+                    if this_y_test == label2idx_train['STRING']:
                         # Compare this_token_train with this_token_test and remove they are similar (the length of overlap is more than 3)
                         # because it is possible that they are different but very similar. If that is the case,
                         # it is highly likely that the the label would be the same.
+                        for this_token_train in flat_tokens_train:
+                            if getOverlap(this_token_test,this_token_train) >= 4:
+                                is_selected = False
+                                break
+                    elif this_y_test == label2idx_train['NUMBER']:
                         for this_token_train in flat_tokens_train:
                             if getOverlap(this_token_test,this_token_train) >= 3:
                                 is_selected = False
                                 break
                     elif this_y_test == label2idx_train['NAME']:
                         for this_token_train in flat_tokens_train:
-                            if getOverlap(this_token_test,this_token_train) >= 2:
+                            if getOverlap(this_token_test,this_token_train) >= 1:
                                 is_selected = False
                                 break
                     idx_selected.append(is_selected)
