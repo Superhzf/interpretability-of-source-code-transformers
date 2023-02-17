@@ -5,6 +5,7 @@ from utils import control_task_probes, probeless,filter_by_frequency,preprocess,
 from sklearn.model_selection import train_test_split
 import numpy as np
 import collections
+import torch
 
 weighted = False
 MODEL_NAMES = ['pretrained_BERT',
@@ -43,6 +44,7 @@ def main():
         print("Getting activations from json files. If you need to extract them, run with --extract=True \n" )
 
     for this_model in MODEL_NAMES:
+        torch.manual_seed(0)
         if this_model in ['pretrained_BERT','pretrained_CodeBERT','pretrained_GraphCodeBERT']:
             print(f"Anayzing {this_model}")
             tokens_train,activations_train,flat_tokens_train,X_train, y_train, label2idx_train, idx2label_train=preprocess(ACTIVATION_NAMES[this_model][0],
@@ -141,7 +143,6 @@ def main():
             print("The distribution of classes in testing:")
             print(collections.Counter(y_test))
             print(label2idx_test)
-            exit(0)
             
             X_train_copy = X_train.copy()
             y_train_copy = y_train.copy()
@@ -149,7 +150,7 @@ def main():
             y_test_copy = y_test.copy()
 
             X_train, X_valid, y_train, y_valid = \
-                train_test_split(X_train, y_train, test_size=0.1, shuffle=False)
+                train_test_split(X_train, y_train, test_size=0.15, shuffle=False)
 
             #normalize the inputs before doing probing
             norm = Normalization(X_train)
