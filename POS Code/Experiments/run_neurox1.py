@@ -55,14 +55,16 @@ def main():
             # At the same time, make sure to keep at least 10 key words in the training set
             idx_selected = []
             count_kw = 0
+            count_nm = 0
             for this_token,this_y in zip(flat_tokens_train,y_train):
                 if this_token in flat_tokens_test:
-                    if this_y!= label2idx_train['KEYWORD']:
-                        idx_selected.append(False)
-                    elif this_y == label2idx_train['KEYWORD'] and count_kw<=1000:
+                    if this_y== label2idx_train['NUMBER'] and count_nm<=1200:
+                        idx_selected.append(True)
+                        count_nm += 1
+                    elif this_y == label2idx_train['KEYWORD'] and count_kw<=1100:
                         idx_selected.append(True)
                         count_kw+=1
-                    elif this_y == label2idx_train['KEYWORD'] and count_kw>1000:
+                    else:
                         idx_selected.append(False)
                 else:
                     idx_selected.append(True)
