@@ -98,6 +98,7 @@ def main():
             # This keeps ~10 KW in the test set
             idx_selected = []
             count_number = 0
+            count_name = 0
             for this_token_test,this_y_test in zip(flat_tokens_test,y_test):
                 if this_token_test in flat_tokens_train:
                     idx_selected.append(False)
@@ -114,14 +115,18 @@ def main():
                                 break
                     elif this_y_test == label2idx_train['NUMBER']:
                         for this_token_train in flat_tokens_train:
-                            if getOverlap(this_token_test,this_token_train) >= 3:
+                            if count_number>210 or getOverlap(this_token_test,this_token_train) >= 3:
                                 is_selected = False
                                 break
+                            else:
+                                count_number += 1
                     elif this_y_test == label2idx_train['NAME']:
                         for this_token_train in flat_tokens_train:
-                            if getOverlap(this_token_test,this_token_train) >= 2:
+                            if count_name> 210 or getOverlap(this_token_test,this_token_train) >= 2:
                                 is_selected = False
                                 break
+                            else:
+                                count_name += 1
                     idx_selected.append(is_selected)
             assert len(idx_selected) == len(flat_tokens_test)
             flat_tokens_test = flat_tokens_test[idx_selected]
