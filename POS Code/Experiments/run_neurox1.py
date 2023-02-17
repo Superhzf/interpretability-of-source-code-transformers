@@ -118,15 +118,15 @@ def main():
                             if count_number>210 or getOverlap(this_token_test,this_token_train) >= 3:
                                 is_selected = False
                                 break
-                            else:
-                                count_number += 1
+                        if is_selected:
+                            count_number += 1
                     elif this_y_test == label2idx_train['NAME']:
                         for this_token_train in flat_tokens_train:
                             if count_name> 210 or getOverlap(this_token_test,this_token_train) >= 2:
                                 is_selected = False
                                 break
-                            else:
-                                count_name += 1
+                        if is_selected:
+                            count_name += 1
                     idx_selected.append(is_selected)
             assert len(idx_selected) == len(flat_tokens_test)
             flat_tokens_test = flat_tokens_test[idx_selected]
