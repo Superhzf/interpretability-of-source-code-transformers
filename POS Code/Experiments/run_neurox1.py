@@ -74,6 +74,12 @@ def main():
                             idx_selected.append(True)
                         else:
                             idx_selected.append(False)
+                    elif this_y== label2idx_train['NUMBER']:
+                        if count_number <= 1200:
+                            count_number += 1
+                            idx_selected.append(True)
+                        else:
+                            idx_selected.append(False)
                     else:
                         idx_selected.append(True)
             assert len(idx_selected) == len(flat_tokens_train)
@@ -113,7 +119,7 @@ def main():
                                 break
                     elif this_y_test == label2idx_train['NAME']:
                         for this_token_train in flat_tokens_train:
-                            if getOverlap(this_token_test,this_token_train) >= 1:
+                            if getOverlap(this_token_test,this_token_train) >= 2:
                                 is_selected = False
                                 break
                     idx_selected.append(is_selected)
