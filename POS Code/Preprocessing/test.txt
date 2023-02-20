@@ -400,3 +400,6 @@ data/azoft-dev-team/imagrium/env/Lib/test/test_setcomps.py
 data/azoft-dev-team/imagrium/env/Lib/test/test_unary.py
 data/azoft-dev-team/imagrium/env/Lib/test/test_whichdb.py
 data/azoft-dev-team/imagrium/env/Lib/test/win_console_handler.py
+data/astroML/gatspy/gatspy/datasets/rrlyrae_generated.py
+data/astroML/sklearn_tutorial/doc/data/sdss_spectra/fetch_data.py
+data/astroML/sklearn_tutorial/examples/plot_iris_projections.py
