@@ -8,7 +8,7 @@ length of source dictionary:  11293
 length of target dictionary:  47
 178060
 Total instances: 178060
-['routeEntry', 'DummyRegistry', 'arr', '"constraint_schema"', 'oldbyte', 'print_exception', 'get_git_object_type', '_RetryWrapper', 'get_caption', 'GroupVisible', 'verbosity', 'UNASSIGNED_DISTRICT_ID', 'not_creating', 'bot', 'drc', 'HttpTransport', 'old_acl', 'zipfile', 'system_entity_toggle', '"cvrfVuln"']
+['RELATIONS_INLINE_SIZE', 'libvirt_name', 'org_approved', 'DeepCopy', 'packs_base_paths', 'GIT_FILEMODE_TREE', '_count_constraint', 'feature', '"MOZ_CRASHREPORTER_DISABLE"', 'AzureRequestError', 'completion_uri', 'from_slot', 'expireat', 'PuppetCertCleanAction', 'SmsTargetCollection', '"fragment_size"', 'used', 'planHandleTurn', 'ApplicationStream', 'epoch_micros']
 Number of samples:  178060
 Stats: Labels with their frequencies in the final set
 NAME 57368
@@ -69,7 +69,7 @@ length of source dictionary:  7337
 length of target dictionary:  46
 135612
 Total instances: 135612
-['0.09990891117239205', 'hrng', 'arr', 'cd15', 'infile', 'd1', '_g_settitle', 'verbosity', 'test__filter_attribute_single_nores', 'false_class', '1045', 'testSVMRBF', 'bot', 'vectorizer', 'photFlag', 'zipfile', 'labelMat', 'segments', 'ograd', 'sigs2']
+['iscalar', '_filterSCPoints', 'cn_scale', 'linestyle', 'reviews', 'kalman_y', '"export-subst"', 'complex_step_jacobian', 'LogisticRegression', 'cdll', 'eigvals', 'triplet', 'CV_32FC1', '__init__', 'create_table', 'Xdf', 'success_files', 'MOCK_MODULES', 'someTrue', 'rho_regr']
 Number of samples:  135612
 Stats: Labels with their frequencies in the final set
 NAME 43640
