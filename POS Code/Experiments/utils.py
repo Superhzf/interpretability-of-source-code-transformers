@@ -283,8 +283,9 @@ def randomReassignment(tokens,labels,distribution):
     # for this_class in label_freqs.keys():
     #     lookup_table[this_class] = np.random.choice(list(label_freqs.keys()), p=distribution)
 
-    for this_token in tokens:
+    for idx,this_token in enumerate(tokens):
             if this_token not in lookup_table:
+                np.random.seed(idx)
                 lookup_table[this_token] = np.random.choice(labels, p=distribution)
     y_ct = []
     for this_token in tokens:

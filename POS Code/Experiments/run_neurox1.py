@@ -181,7 +181,7 @@ def main():
             del X_train, X_test, X_valid,y_train, y_test,y_valid
             #Control task probes
             selectivity = control_task_probes(flat_tokens_train,X_train_copy,y_train_copy,
-                                            flat_tokens_test,X_test_copy,y_test_copy,idx2label_train,scores,this_model,'UNIFORM')
+                                            flat_tokens_test,X_test_copy,y_test_copy,idx2label_train,scores,this_model,'SAME')
             print("----------------------------------------------------------------")
             break
 if __name__ == "__main__":
