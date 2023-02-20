@@ -2,8 +2,8 @@ import os
 FOLDER = './'
 INPUT_IN = "codetest2.in"
 INPUT_LABEL = "codetest2.label"
-OUTPUT_IN = "codetest2_test_unique.in"
-OUTPUT_LABEL = "codetest2_test_unique.label"
+OUTPUT_IN = "codetest2_train_unique.in"
+OUTPUT_LABEL = "codetest2_train_unique.label"
 
 with open(os.path.join(FOLDER, INPUT_IN),'r') as f:
     code = f.readlines()
