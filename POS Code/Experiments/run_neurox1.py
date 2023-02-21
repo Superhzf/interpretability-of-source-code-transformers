@@ -61,23 +61,23 @@ def main():
             count_name = 0
             for this_token,this_y in zip(flat_tokens_train,y_train):
                 if this_token in flat_tokens_test:
-                    if this_y== label2idx_train['NUMBER'] and count_number<=3200:
+                    if this_y== label2idx_train['NUMBER'] and count_number<=1700:
                         idx_selected.append(True)
                         count_number += 1
-                    elif this_y == label2idx_train['KEYWORD'] and count_kw<=3200:
+                    elif this_y == label2idx_train['KEYWORD'] and count_kw<=1700:
                         idx_selected.append(True)
                         count_kw+=1
                     else:
                         idx_selected.append(False)
                 else:
                     if this_y== label2idx_train['NAME']:
-                        if count_name <= 3200:
+                        if count_name <= 1700:
                             count_name += 1
                             idx_selected.append(True)
                         else:
                             idx_selected.append(False)
                     elif this_y== label2idx_train['NUMBER']:
-                        if count_number <= 3200:
+                        if count_number <= 1700:
                             count_number += 1
                             idx_selected.append(True)
                         else:
