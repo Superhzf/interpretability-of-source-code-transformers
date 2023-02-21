@@ -443,3 +443,4 @@ data/conda/conda-build/tests/test-recipes/metadata/numpy_build_run/run_test.py
 data/conda/conda/conda/cli/find_commands.py
 data/conda/conda/conda/lock.py
 data/conda/conda/tests/test_lock.py
+data/dansoutner/LSTM/python-source/TanhNeuron.py
