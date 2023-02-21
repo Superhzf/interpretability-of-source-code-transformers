@@ -22,6 +22,5 @@ for idx,this_file_name in enumerate(eval_files):
     py_code = f.readlines()
     f.close()
     g.writelines(py_code)
-    if idx == 500:
-        break
+    
 g.close()
