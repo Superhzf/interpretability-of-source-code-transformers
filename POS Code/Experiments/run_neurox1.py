@@ -7,6 +7,12 @@ import numpy as np
 import collections
 import torch
 
+
+keyword_list = ['False','await','else','import','pass','None','break','except','in','raise','True',
+                'class','finally','is','return','and','continue','for','lambda','try','as','def','from',
+                'nonlocal','while','assert','del','global','not','with','async''elif','if','or','yield']
+keyword_list_train = keyword_list[:17]
+
 weighted = False
 MODEL_NAMES = ['pretrained_BERT',
                'pretrained_CodeBERT','pretrained_GraphCodeBERT',
@@ -64,7 +70,7 @@ def main():
                     if this_y== label2idx_train['NUMBER'] and count_number<=1700:
                         idx_selected.append(True)
                         count_number += 1
-                    elif this_y == label2idx_train['KEYWORD'] and count_kw<=1700:
+                    elif this_token in keyword_list_train:
                         idx_selected.append(True)
                         count_kw+=1
                     else:
