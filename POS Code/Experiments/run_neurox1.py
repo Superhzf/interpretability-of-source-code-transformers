@@ -44,9 +44,8 @@ def main():
                 print(f"Generating the activation file for {this_model}")
                 activation_file_name=ACTIVATION_NAMES[this_model][0]
                 extract_activations('./src_files/codetest2_train_unique.in',MODEL_DESC[this_model],activation_file_name)
-                # activation_file_name=ACTIVATION_NAMES[this_model][1]
-                # extract_activations('./src_files/codetest2_test_unique.in',MODEL_DESC[this_model],activation_file_name)
-                exit(0)
+                activation_file_name=ACTIVATION_NAMES[this_model][1]
+                extract_activations('./src_files/codetest2_test_unique.in',MODEL_DESC[this_model],activation_file_name)
     else:
         print("Getting activations from json files. If you need to extract them, run with --extract=True \n" )
 
