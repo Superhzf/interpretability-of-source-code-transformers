@@ -8,7 +8,7 @@ length of source dictionary:  16215
 length of target dictionary:  48
 262021
 Total instances: 262021
-['lcd_en', 'HuffmanEncoder', 'with_statement', 'api_test', 'MockGearmanConnection', 'DBURL', 'rollingchecksum', 'st_step', 'isEnabled', 'WB1_SUB1_TASK2', 'VerticalBillboard', 'sender', 'output_weight', 'create_from_matrix', 'has_key', 'API', 'stats', 'referent_schema', 'nextnodes', 'get_remote']
+['AzureConfigAccountNotFound', 'name__startswith', 'full', 'dq', 'ConnectableObservable', 'get_loginid', 'generate_name_from_command', 'validate_email_unique', 'xz', 'dest', '"{0}.{1}.{2}"', 'options', 'put_async', 'num_evaluations', '9144', '"#04D"', 'instanceId', 'onActionChanged', 'hset', 'compute_resource']
 Number of samples:  262021
 Stats: Labels with their frequencies in the final set
 NAME 84096
@@ -70,7 +70,7 @@ length of source dictionary:  15745
 length of target dictionary:  47
 312495
 Total instances: 312495
-['with_statement', 'build_lib', 'test_list_records_zone_does_not_exist', 'refill', '__attributes__', 'sender', 'moment', 'eps', 'track', 'has_key', 'old_tag', 'stats', 'dpid', 'machine_learning_data_set', 'exec_', 'attributeset', 'orecur', 'flag', 'test03', 'InvalidInputException']
+['__changeMeasure', '"Thomas"', 'fresh', 'full', 'obj_see', 'action_chain', 'test_install_throws_on_ec2_instance', 'localBnodes', 'DataMatrix', 'dest', '"environment"', 'pformats', 'options', '"resolution"', 'btype', 'snapshot_name', 'team_players', 'req_field', 'dereference', '"weighted"']
 Number of samples:  312495
 Stats: Labels with their frequencies in the final set
 NAME 99754
@@ -126,8 +126,8 @@ pretrained_BERT distribution after trauncating:
 {'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
 
 The distribution of classes in training after removing repeated tokens between training and tesing:
-Counter({1: 1723, 3: 1701, 0: 1701, 2: 1701})
+Counter({3: 8510, 1: 1723, 0: 1701, 2: 1701})
 {'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
 The distribution of classes in testing:
-Counter({1: 507, 0: 401, 2: 401, 3: 21})
+Counter({3: 10104, 1: 507, 0: 401, 2: 401})
 {'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
