@@ -40,7 +40,6 @@ def main():
                 extract_activations('./src_files/codetest2_train_unique.in',MODEL_DESC[this_model],activation_file_name)
                 activation_file_name=ACTIVATION_NAMES[this_model][1]
                 extract_activations('./src_files/codetest2_test_unique.in',MODEL_DESC[this_model],activation_file_name)
-                exit(0)
     else:
         print("Getting activations from json files. If you need to extract them, run with --extract=True \n" )
 
@@ -62,23 +61,23 @@ def main():
             count_name = 0
             for this_token,this_y in zip(flat_tokens_train,y_train):
                 if this_token in flat_tokens_test:
-                    if this_y== label2idx_train['NUMBER'] and count_number<=1200:
+                    if this_y== label2idx_train['NUMBER'] and count_number<=3200:
                         idx_selected.append(True)
                         count_number += 1
-                    elif this_y == label2idx_train['KEYWORD'] and count_kw<=1100:
+                    elif this_y == label2idx_train['KEYWORD'] and count_kw<=3200:
                         idx_selected.append(True)
                         count_kw+=1
                     else:
                         idx_selected.append(False)
                 else:
                     if this_y== label2idx_train['NAME']:
-                        if count_name <= 1200:
+                        if count_name <= 3200:
                             count_name += 1
                             idx_selected.append(True)
                         else:
                             idx_selected.append(False)
                     elif this_y== label2idx_train['NUMBER']:
-                        if count_number <= 1200:
+                        if count_number <= 3200:
                             count_number += 1
                             idx_selected.append(True)
                         else:
@@ -118,14 +117,14 @@ def main():
                                 break
                     elif this_y_test == label2idx_train['NUMBER']:
                         for this_token_train in flat_tokens_train:
-                            if count_number>210 or getOverlap(this_token_test,this_token_train) >= 3:
+                            if count_number>400 or getOverlap(this_token_test,this_token_train) >= 3:
                                 is_selected = False
                                 break
                         if is_selected:
                             count_number += 1
                     elif this_y_test == label2idx_train['NAME']:
                         for this_token_train in flat_tokens_train:
-                            if count_name> 210 or getOverlap(this_token_test,this_token_train) >= 2:
+                            if count_name> 400 or getOverlap(this_token_test,this_token_train) >= 2:
                                 is_selected = False
                                 break
                         if is_selected:
@@ -144,6 +143,7 @@ def main():
             print("The distribution of classes in testing:")
             print(collections.Counter(y_test))
             print(label2idx_test)
+            exit(0)
             
             X_train_copy = X_train.copy()
             y_train_copy = y_train.copy()
