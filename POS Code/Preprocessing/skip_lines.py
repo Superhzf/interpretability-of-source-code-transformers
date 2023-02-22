@@ -17,7 +17,8 @@ for this_code, this_label in zip(code,label):
     if len(this_code.split(" ")) != len(this_label.split(" ")):
         dropped_idx+=1
         continue
-    elif max([len(i) for i in this_code.split(" ")]) > 512:
+    # elif max([len(i) for i in this_code.split(" ")]) > 512:
+    elif len(this_code.split(" ")) > 512:
         dropped_idx+=1
         continue
     else:

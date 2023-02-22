@@ -718,7 +718,7 @@ data/alphagov/performanceplatform-collector/tests/performanceplatform/collector/
 data/alticelabs/meocloud-cli/meocloud/client/linux/daemon/communication.py
 data/alticelabs/meocloud-cli/meocloud/client/linux/utils.py
 data/alvations/pywsd/merlin/__init__.py
-ata/amarandon/smeuhsocial/apps/account/urls.py
+data/amarandon/smeuhsocial/apps/account/urls.py
 data/amarandon/smeuhsocial/apps/blog/views.py
 data/amarandon/smeuhsocial/apps/django_openid/tests/request_factory.py
 data/amarandon/smeuhsocial/apps/messages/migrations/0001_initial.py
