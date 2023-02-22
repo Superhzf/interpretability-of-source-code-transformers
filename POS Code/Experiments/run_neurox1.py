@@ -68,33 +68,21 @@ def main():
             count_name = 0
             count_str = 0
             for this_token,this_y in zip(flat_tokens_train,y_train):
-                if this_token in flat_tokens_test:
-                    if this_y== label2idx_train['NUMBER'] and count_number<=3400:
-                        idx_selected.append(True)
-                        count_number += 1
-                    elif this_token in keyword_list_train:
-                        idx_selected.append(True)
-                        count_kw+=1
-                    elif this_y == label2idx_train['STRING'] and count_str<=3400:
-                        idx_selected.append(True)
-                        count_str += 1
-                    else:
-                        idx_selected.append(False)
+                # if this_token in flat_tokens_test:
+                if this_y== label2idx_train['NUMBER'] and count_number<=3400:
+                    idx_selected.append(True)
+                    count_number += 1
+                elif this_token in keyword_list_train and count_kw<=3400:
+                    idx_selected.append(True)
+                    count_kw+=1
+                elif this_y == label2idx_train['STRING'] and count_str<=3400:
+                    idx_selected.append(True)
+                    count_str += 1
+                elif this_y== label2idx_train['NAME'] and count_name<=3400:
+                    idx_selected.append(True)
+                    count_name += 1
                 else:
-                    if this_y== label2idx_train['NAME']:
-                        if count_name <= 3400:
-                            count_name += 1
-                            idx_selected.append(True)
-                        else:
-                            idx_selected.append(False)
-                    elif this_y== label2idx_train['NUMBER']:
-                        if count_number <= 3400:
-                            count_number += 1
-                            idx_selected.append(True)
-                        else:
-                            idx_selected.append(False)
-                    else:
-                        idx_selected.append(True)
+                    idx_selected.append(False)
             assert len(idx_selected) == len(flat_tokens_train)
 
             flat_tokens_train = flat_tokens_train[idx_selected]
