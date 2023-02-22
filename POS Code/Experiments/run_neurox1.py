@@ -66,25 +66,29 @@ def main():
             count_kw = 0
             count_number = 0
             count_name = 0
+            count_str = 0
             for this_token,this_y in zip(flat_tokens_train,y_train):
                 if this_token in flat_tokens_test:
-                    if this_y== label2idx_train['NUMBER'] and count_number<=1700:
+                    if this_y== label2idx_train['NUMBER'] and count_number<=3400:
                         idx_selected.append(True)
                         count_number += 1
                     elif this_token in keyword_list_train:
                         idx_selected.append(True)
                         count_kw+=1
+                    elif this_y == label2idx_train['STRING'] and count_str<=3400:
+                        idx_selected.append(True)
+                        count += 1
                     else:
                         idx_selected.append(False)
                 else:
                     if this_y== label2idx_train['NAME']:
-                        if count_name <= 1700:
+                        if count_name <= 3400:
                             count_name += 1
                             idx_selected.append(True)
                         else:
                             idx_selected.append(False)
                     elif this_y== label2idx_train['NUMBER']:
-                        if count_number <= 1700:
+                        if count_number <= 3400:
                             count_number += 1
                             idx_selected.append(True)
                         else:
@@ -104,7 +108,6 @@ def main():
             assert l1 == l2,f"{l1}!={l2}"
             assert len(np.array([l for sublist in tokens_train['target'] for l in sublist])) == l2
 
-            # This keeps ~10 KW in the test set
             idx_selected = []
             count_number = 0
             count_name = 0
