@@ -77,7 +77,7 @@ def main():
                         count_kw+=1
                     elif this_y == label2idx_train['STRING'] and count_str<=3400:
                         idx_selected.append(True)
-                        count += 1
+                        count_str += 1
                     else:
                         idx_selected.append(False)
                 else:
