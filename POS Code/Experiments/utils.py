@@ -477,3 +477,49 @@ def preprocess(activation_file_name,IN_file,LABEL_file,remove_seen_tokens,model_
     X, y, label2idx, _, _, _ = get_mappings(tokens,activations)
     tokens,activations,flat_src_tokens,X_train, y_train, label2idx, idx2label = filterByClass(tokens,activations,X,y,label2idx,model_name)
     return tokens,activations,flat_src_tokens,X_train,y_train,label2idx,idx2label
+
+
+def selectBasedOnTrain(flat_tokens_test,X_test, y_test,flat_tokens_train,label2idx_train,keyword_list_test):
+    idx_selected = []
+    count_number = 0
+    count_name = 0
+    count_keyword = 0
+    for this_token_test,this_y_test in zip(flat_tokens_test,y_test):
+        if this_token_test in flat_tokens_train:
+            idx_selected.append(False)
+        else:
+            # If this_token_test is a key word, then it will be selected for sure.
+            is_selected = True
+            if this_y_test == label2idx_train['STRING']:
+                # Compare this_token_train with this_token_test and remove they are similar (the length of overlap is more than 3)
+                # because it is possible that they are different but very similar. If that is the case,
+                # it is highly likely that the the label would be the same.
+                for this_token_train in flat_tokens_train:
+                    if getOverlap(this_token_test,this_token_train) >= 4:
+                        is_selected = False
+                        break
+            elif this_y_test == label2idx_train['NUMBER']:
+                for this_token_train in flat_tokens_train:
+                    if count_number>400 or getOverlap(this_token_test,this_token_train) >= 3:
+                        is_selected = False
+                        break
+                if is_selected:
+                    count_number += 1
+            elif this_y_test == label2idx_train['NAME']:
+                for this_token_train in flat_tokens_train:
+                    if count_name> 400 or getOverlap(this_token_test,this_token_train) >= 2:
+                        is_selected = False
+                        break
+                if is_selected:
+                    count_name += 1
+            elif this_y_test == label2idx_train['KEYWORD']:
+                if this_token_test not in keyword_list_test or count_keyword > 400:
+                    is_selected = False
+                else:
+                    count_keyword += 1
+            idx_selected.append(is_selected)
+    assert len(idx_selected) == len(flat_tokens_test)
+    flat_tokens_test = flat_tokens_test[idx_selected]
+    X_test = X_test[idx_selected]
+    y_test = y_test[idx_selected]
+    return X_test, y_test, flat_tokens_test, idx_selected
