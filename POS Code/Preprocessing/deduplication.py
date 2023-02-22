@@ -15,14 +15,12 @@ f.close()
 
 assert len(code) == len(label)
 
-# code_unique = []
-# label_unique = []
-# for this_code, this_label in zip(code, label):
-#     if this_code not in code_unique:
-#         code_unique.append(this_code)
-#         label_unique.append(this_label)
-code_unique = list(dict.fromkeys(code))
-label_unique = list(dict.fromkeys(label))
+code_unique = []
+label_unique = []
+for this_code, this_label in zip(code, label):
+    if this_code not in code_unique:
+        code_unique.append(this_code)
+        label_unique.append(this_label)
 
 assert len(code_unique) == len(label_unique)
 with open(os.path.join(FOLDER, OUTPUT_IN),"w") as f:
