@@ -8,7 +8,7 @@ length of source dictionary:  25436
 length of target dictionary:  49
 419332
 Total instances: 419332
-['build_file_configurations', 'nearest_hp_i', 'fetch_items', 'test_03_delete', 'IndexedDB', 'line_color_alpha', 'command_handler', 'TodayBackdoorRequest', 'GridPlot', 'get_full_file_list', 'deal', '"application/x-www-form-urlencoded"', 'more_results', 'doorHandleTurnFrame', '_Feature', '_get_whatToShow', 'setLineStr', 'cmd_port', 'UserName', 'TEMPLATE_CONTEXT_PROCESSORS']
+['_binding_var', 'test_bad_sys_path', 'EntryManager', 'SortRemoteProductReferences', 'crontab_end_comment', 'getPropertyEnumValue', 'NCS_TIMEOUT', '1923', 'ACTION_PARAMS', '"Campaign"', 'ax', 'history', 'coord_info', 'create_libraries_menu', 'prange', 'ScoreFunction', 'is_url', 'obj_id', 'node_testlist_star_expr', 'CrashError']
 Number of samples:  419332
 Stats: Labels with their frequencies in the final set
 NAME 133988
@@ -71,7 +71,7 @@ length of source dictionary:  15745
 length of target dictionary:  47
 312495
 Total instances: 312495
-['softmax_output', 'warn_inplace', 'scipy_gmres', 'get_user_locale', '12.0', 'FileCreator', 'ips', 'Conv3D', 'avg_runtimes', '"content"', 'writer', '_parse_constraint', '"versions_from_vcs"', 'tsd_shape', 'test_segment_take_analogsignal_by_channelindex', 'compile_func', '"league"', 'parentObjType', 'OpenPNM', 'likelihoods']
+['file_info', 'maxmum', 'copy_abs', 'outp', 'objective', 'tasks', 'add_initial_features', 'w_h2', '"endpointPrefix"', 'drawCorrected', 'valid_keys', '_attributes', '"westin_metric"', '1915', 'OpenStack_1_1_Connection', 'gamelift', 'Overflow', 'spherical', 'tweet_id', '_g_move_node']
 Number of samples:  312495
 Stats: Labels with their frequencies in the final set
 NAME 99754
@@ -127,10 +127,10 @@ pretrained_BERT distribution after trauncating:
 {'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
 
 The distribution of classes in training after removing repeated tokens between training and tesing:
-Counter({0: 3001, 3: 3001, 1: 3001, 2: 3001})
+Counter({0: 2501, 3: 2501, 1: 2501, 2: 2501})
 The distribution of classes in valid:
-Counter({3: 401, 0: 401, 2: 401, 1: 113})
+Counter({3: 401, 0: 401, 2: 401, 1: 182})
 {'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
 The distribution of classes in testing:
-Counter({0: 401, 3: 401, 2: 401, 1: 252})
+Counter({0: 401, 3: 401, 2: 401, 1: 275})
 {'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
