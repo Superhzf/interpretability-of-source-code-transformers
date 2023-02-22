@@ -84,7 +84,7 @@ def main():
                     idx_selected_train.append(True)
                     count_name += 1
                 else:
-                    idx_selected.append(False)
+                    idx_selected_train.append(False)
             assert len(idx_selected_train) == len(flat_tokens_train_valid)
 
             flat_tokens_train = flat_tokens_train_valid[idx_selected_train]
