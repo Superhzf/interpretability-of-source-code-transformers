@@ -8,7 +8,7 @@ length of source dictionary:  25436
 length of target dictionary:  49
 419332
 Total instances: 419332
-['attribute_list_message', '"false"', 'createDOMWriter', '453', '"Incident"', 'public_addresses', 'parse_cabal_package', 'k_EMsgGCCStrike15_v2_MatchmakingServerRoundStats', 'old_top', 'test_interval_timespan_negative', 'parse_range_header', 'allocate', 'cur', 'OwnerAccount', '"zeus"', '_get_one', 'district_id', 'ssl_options', '"stderr"', 'light_colors']
+['_make_window', 'base_tests', 'ContactsFocused', 'blowUp', 'maxBytes', 'aspect', '"BOOLEAN"', 'arcname', '_load_plugins_from_dir', 'sismember', 'test_query_all_tags_single_topic', 'CheckoutState', 'diff_id', '"A"', 'utc_datetime', 'get_DrdsInstanceId', 'legend_color', 'hideUnusedFlexNics', 'cxt', 'relpath']
 Number of samples:  419332
 Stats: Labels with their frequencies in the final set
 NAME 133988
@@ -71,7 +71,7 @@ length of source dictionary:  15745
 length of target dictionary:  47
 312495
 Total instances: 312495
-['HelpPageIndex', '_mName', 'iterate_zones', 'pre_sql_setup', 'RANSAC', 'class', 'test_subclass_cmp_right_op', 'SQLAlchemyModelFactory', 'logZ', 'gca', 'ex_create_firewall_rule', 'ex_create_route', '#listOfPaths.append("/hzr71/research/QSData/Processed/Norgate/Equities/US_NYSE/")', 'iloc', 'VistrailController', 'unknowns', '_volume', 'MoveNodeTestCase', 'Entity', 'get_model']
+['boot_disk', 'py_name', 'pEventInfo', 'metareader', '"-dirty"', 'proxy', '"w9xpopen.exe"', 'test_ex_set_machine_type_invalid', 'submode', '"grep"', 'ex_delete_ip_forwarding_rule', '"output_format"', '#freeze_input=True,', 'cc_req', 'cmap', 'maxBytes', 'promname', 'Principal', 'F1lower', 'db_get_function']
 Number of samples:  312495
 Stats: Labels with their frequencies in the final set
 NAME 99754
@@ -127,8 +127,8 @@ pretrained_BERT distribution after trauncating:
 {'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
 
 The distribution of classes in training after removing repeated tokens between training and tesing:
-Counter({3: 14864, 1: 3679, 0: 3401, 2: 3401})
+Counter({0: 3401, 3: 3401, 1: 3401, 2: 3401})
 {'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
 The distribution of classes in testing:
-Counter({3: 10104, 0: 401, 2: 401, 1: 218})
+Counter({3: 10104, 0: 401, 2: 401, 1: 241})
 {'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
