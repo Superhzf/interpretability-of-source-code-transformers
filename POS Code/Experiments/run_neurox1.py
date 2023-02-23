@@ -98,7 +98,7 @@ def main():
             assert len(np.array([l for sublist in tokens_train['target'] for l in sublist])) == l2
 
 
-            X_valid, y_valid, _, _ =selectBasedOnTrain(flat_tokens_train_valid,
+            X_valid, y_valid, flat_tokens_valid, _ =selectBasedOnTrain(flat_tokens_train_valid,
                                                         X_train_valid,
                                                         y_train_valid,
                                                         flat_tokens_train,
@@ -123,15 +123,16 @@ def main():
             print("The distribution of classes in testing:")
             print(collections.Counter(y_test))
             print(label2idx_test)
-            exit(0)
             
             X_train_copy = X_train.copy()
             y_train_copy = y_train.copy()
+            X_valid_copy = X_valid.copy()
+            y_valid_copy = y_valid.copy()
             X_test_copy = X_test.copy()
             y_test_copy = y_test.copy()
 
-            X_train, X_valid, y_train, y_valid = \
-                train_test_split(X_train, y_train, test_size=0.15, shuffle=False)
+            # X_train, X_valid, y_train, y_valid = \
+            #     train_test_split(X_train, y_train, test_size=0.15, shuffle=False)
 
             #normalize the inputs before doing probing
             norm = Normalization(X_train)
@@ -162,6 +163,7 @@ def main():
             del X_train, X_test, X_valid,y_train, y_test,y_valid
             #Control task probes
             selectivity = control_task_probes(flat_tokens_train,X_train_copy,y_train_copy,
+                                            flat_tokens_valid, X_valid_copy, y_valid_copy,
                                             flat_tokens_test,X_test_copy,y_test_copy,idx2label_train,scores,this_model,'SAME')
             print("----------------------------------------------------------------")
             break

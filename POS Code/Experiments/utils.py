@@ -294,7 +294,7 @@ def randomReassignment(tokens,labels,distribution):
     return y_ct
 
 
-def control_task_probes(tokens_train,X_train,y_train,tokens_test,X_test,y_test,idx2label_train,original_scores,model_name,method):
+def control_task_probes(tokens_train,X_train,y_train,tokens_valid,X_valid,y_valid,tokens_test,X_test,y_test,idx2label_train,original_scores,model_name,method):
     print(f"Creating control dataset for {model_name} POS tagging task")
     label_freqs = collections.Counter(y_train)
     distribution = []
@@ -309,14 +309,17 @@ def control_task_probes(tokens_train,X_train,y_train,tokens_test,X_test,y_test,i
         assert 1==0, "method is not understood"
     while True:
         y_train_ct = randomReassignment(tokens_train,list(label_freqs.keys()),distribution)
+        y_valid_ct = randomReassignment(tokens_valid,list(label_freqs.keys()),distribution)
         y_test_ct = randomReassignment(tokens_test,list(label_freqs.keys()),distribution)
         assert len(y_train_ct) == len(y_train)
+        assert len(y_valid_ct) == len(y_valid)
         assert len(y_test_ct) == len(y_test)
         y_train_ct = np.array(y_train_ct)
+        y_valid_ct = np.array(y_valid_ct)
         y_test_ct = np.array(y_test_ct)
 
-        X_train_ct, X_valid_ct, y_train_ct, y_valid_ct = \
-            train_test_split(X_train, y_train_ct, test_size=0.1, shuffle=False)
+        # X_train_ct, X_valid_ct, y_train_ct, y_valid_ct = \
+        #     train_test_split(X_train, y_train_ct, test_size=0.1, shuffle=False)
         # class 0,1,2 must be in y_train_ct
         if 0 in y_train_ct and 1 in y_train_ct and 2 in y_train_ct:
             break
