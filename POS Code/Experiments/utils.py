@@ -328,9 +328,9 @@ def control_task_probes(tokens_train,X_train,y_train,tokens_valid,X_valid,y_vali
     y_test = y_test_ct
     del y_train_ct,y_valid_ct,y_test_ct
     # normalization
-    ct_norm = Normalization(X_train_ct)
-    X_train = ct_norm.norm(X_train_ct)
-    X_valid = ct_norm.norm(X_valid_ct)
+    ct_norm = Normalization(X_train)
+    X_train = ct_norm.norm(X_train)
+    X_valid = ct_norm.norm(X_valid)
     X_test = ct_norm.norm(X_test)
     del ct_norm
 
