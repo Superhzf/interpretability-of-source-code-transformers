@@ -1,0 +1,7 @@
+Generate svg files for pretrained_BERT
+Loading json activations from ../Experiments/bert_activations_train.json...
+44075 13.0
+Length of pretrained_BERT activations: 44075
+Length of pretrained_BERT tokens source: 44075
+The number of neurons for each token in pretrained_BERT: 9984
+-----------------------------------------------------------------
