@@ -58,7 +58,7 @@ def mkdir_if_needed(dir_name):
 
 def load_extracted_activations(activation_file_name):
     #Load activations from json files
-    activations, num_layers = data_loader.load_activations(f"../Experiment/{activation_file_name}",13)
+    activations, num_layers = data_loader.load_activations(f"../Experiments/{activation_file_name}",13)
     return activations
 
 
