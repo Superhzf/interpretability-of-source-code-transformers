@@ -21,8 +21,8 @@ ACTIVATION_NAMES = {'pretrained_BERT':'bert_activations_train.json',
                     'finetuned_clonedet_CodeBERT':'codebert_clonedet_activations1_train.json',
                     'finetuned_clonedet_GraphCodeBERT':'graphcodebert_clonedet_activations1_train.json'}
 # This set of idx is for pretrained, finetuned defdet, and finetuned clonedet models
-bert_idx = [41,50,51]
-bert_top_neurons = [8152]
+bert_idx = [147,182,178，182，198，2066]
+bert_top_neurons = [2075]
 bert_class = "NUMBER"
 # bert_idx = [3,11]
 # bert_top_neurons = [7008]
