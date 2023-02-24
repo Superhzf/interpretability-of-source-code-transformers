@@ -88,7 +88,7 @@ def main():
     mkdir_if_needed(f"./{FOLDER_NAME}/")
 
     for this_model in MODEL_NAMES:
-        if this_model in ['pretrained_GraphCodeBERT']:
+        if this_model in ['pretrained_BERT']:
             print(f"Generate svg files for {this_model}")
             this_activation_name = ACTIVATION_NAMES[this_model]
             activations = load_extracted_activations(this_activation_name)
