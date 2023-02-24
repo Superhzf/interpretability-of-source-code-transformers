@@ -21,23 +21,20 @@ ACTIVATION_NAMES = {'pretrained_BERT':'bert_activations_train.json',
                     'finetuned_clonedet_CodeBERT':'codebert_clonedet_activations1_train.json',
                     'finetuned_clonedet_GraphCodeBERT':'graphcodebert_clonedet_activations1_train.json'}
 # This set of idx is for pretrained, finetuned defdet, and finetuned clonedet models
-bert_idx = [42,114]
-bert_top_neurons = [9772]
-bert_class = "STRING"
+bert_idx = [3,4,7]
+bert_top_neurons = [177]
+bert_class = "NAME"
 # bert_idx = [3,11]
 # bert_top_neurons = [7008]
 # bert_class = "KEYWORD"
 
-# codebert_idx = [3,4,14]
-# codebert_top_neurons = [6875]
-# codebert_class = "NAME"
-codebert_idx = [5,59,91,114]
-codebert_top_neurons = [2961]
-codebert_class = "STRING"
+codebert_idx=[]
+graphcodebert_idx=[]
+codebert_top_neurons=[]
+graphcodebert_top_neurons=[]
+codebert_class =[]
+graphcodebert_class=[]
 
-graphcodebert_idx = [53,144,147]
-graphcodebert_top_neurons = [3384]
-graphcodebert_class = "NUMBER"
 
 IDX = {"pretrained_BERT":bert_idx,
        "pretrained_CodeBERT":codebert_idx,"pretrained_GraphCodeBERT":graphcodebert_idx,
@@ -61,7 +58,7 @@ def mkdir_if_needed(dir_name):
 
 def load_extracted_activations(activation_file_name):
     #Load activations from json files
-    activations, num_layers = data_loader.load_activations(activation_file_name,13)
+    activations, num_layers = data_loader.load_activations(f"../Experiment/{activation_file_name}",13)
     return activations
 
 
