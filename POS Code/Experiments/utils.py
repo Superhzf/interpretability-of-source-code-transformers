@@ -1,6 +1,7 @@
 import neurox
 import neurox.data.extraction.transformers_extractor as transformers_extractor
 import neurox.data.loader as data_loader
+# /work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/NeuroX/neurox/data/loader.py
 import neurox.interpretation.utils as utils
 import neurox.interpretation.linear_probe as linear_probe
 import neurox.interpretation.ablation as ablation
@@ -90,12 +91,12 @@ def load_extracted_activations(activation_file_name):
 
 def load_tokens(activations,FILES_IN,FILES_LABEL):
     #Load tokens and sanity checks for parallelism between tokens, labels and activations
-    tokens = data_loader.load_data(FILES_IN,
+    tokens, sample_idx = data_loader.load_data(FILES_IN,
                                    FILES_LABEL,
                                    activations,
                                    512 # max_sent_length
                                   )
-    return tokens
+    return tokens, sample_idx
 
 
 def param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2,weight=None):
@@ -134,7 +135,7 @@ def get_mappings(tokens,activations):
     return X, y, label2idx, idx2label, src2idx, idx2src
 
 
-def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,src_tokens_test,weighted,model_name):
+def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,src_tokens_test,weighted,model_name,sample_idx_test):
     #Train the linear probes (logistic regression) - POS(code) tagging
     if weighted:
         classes = sorted(list(set(y_train)))
@@ -157,9 +158,11 @@ def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2labe
     if src_tokens_test is not None:
         NAME_NAME, NAME_KW, NAME_STRING,NAME_NUMBER, KW_NAME, KW_KW, KW_other= 0, 0, 0, 0, 0, 0, 0
         NAME_STRING_list,NAME_NUMBER_list = [], []
+        NAME_NUMBER_samples = []
         for idx,this_y_test in enumerate(y_test):
             predicted_class = predictions[idx][1]
             source_token = predictions[idx][0]
+            sample = sample_idx_test[idx]
             if idx2label[this_y_test] == "NAME":
                 if predicted_class == 'NAME':
                     NAME_NAME += 1
@@ -171,6 +174,7 @@ def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2labe
                 elif predicted_class == 'NUMBER':
                     NAME_NUMBER += 1
                     NAME_NUMBER_list.append(source_token)
+                    NAME_NUMBER_samples.append(sample)
             elif idx2label[this_y_test] == "KEYWORD":
                 if predicted_class == 'KEYWORD':
                     KW_KW += 1
@@ -186,6 +190,7 @@ def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2labe
         print(f"NAME_NUMBER:{NAME_NUMBER}")
         print(f"NAME_STRING_list:{NAME_STRING_list}")
         print(f"NAME_NUMBER_list:{NAME_NUMBER_list}")
+        print(f"NAME_NUMBER_sample:{NAME_NUMBER_samples}")
     X_test_baseline = np.zeros_like(X_test)
     print(f"Accuracy on the test set of {model_name} model using the intercept:")
     linear_probe.evaluate_probe(best_probe, X_test_baseline, y_test, idx_to_class=idx2label)
@@ -265,7 +270,7 @@ def get_top_words(top_neurons,tokens,activations,model_name):
         print(f"Top words for {model_name} neuron indx {neuron}",top_words)
 
 
-def layerwise_probes_inference(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,src_tokens_test,weighted,model_name):
+def layerwise_probes_inference(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,src_tokens_test,weighted,model_name,sample_idx_test):
     ''' Returns models and accuracy(score) of the probes trained on activations from different layers '''
     for i in range(13):
         print(f"{model_name} Layer", i)
@@ -274,7 +279,7 @@ def layerwise_probes_inference(X_train,y_train,X_valid,y_valid,X_test,y_test,idx
         layer_valid = ablation.filter_activations_by_layers(X_valid, [i], 13)
         layer_test = ablation.filter_activations_by_layers(X_test, [i], 13)
         _,_ = all_activations_probe(layer_train,y_train,layer_valid,y_valid,layer_test,y_test,
-                                    idx2label,src_tokens_test,weighted,this_model_name)
+                                    idx2label,src_tokens_test,weighted,this_model_name,sample_idx_test)
 
 
 def randomReassignment(tokens,labels,distribution):
@@ -424,7 +429,7 @@ def filter_by_frequency(tokens,activations,X,y,label2idx,idx2label,threshold,mod
     return tokens,activations,flat_src_tokens,X,y,label2idx,idx2label
 
 
-def filterByClass(tokens,activations,X,y,label2idx,model_name):
+def filterByClass(tokens,activations,X,y,label2idx,model_name,sample_idx):
     """
     This method means to keep the representation and labels for
     NAME, STRING, NUMBER, and KEYWORD class for the probing task.
@@ -453,6 +458,7 @@ def filterByClass(tokens,activations,X,y,label2idx,model_name):
     y = [lookup_table[this_y] for this_y in y]
     y = np.array(y)
     X = X[idx_selected]
+    new_sample_idx = sample_idx[idx_selected]
 
     flat_src_tokens = flat_src_tokens[idx_selected]
     tokens,activations=alignTokenAct(tokens,activations,idx_selected)
@@ -469,20 +475,20 @@ def filterByClass(tokens,activations,X,y,label2idx,model_name):
     print(distribution_rate)
     print(distribution)
     print(new_label2idx)
-    return tokens,activations,flat_src_tokens,X,y,new_label2idx,new_idx2label
+    return tokens,activations,flat_src_tokens,X,y,new_label2idx,new_idx2label, new_sample_idx
 
 
 def preprocess(activation_file_name,IN_file,LABEL_file,remove_seen_tokens,model_name):
     activations = load_extracted_activations(activation_file_name)
-    tokens =  load_tokens(activations,IN_file,LABEL_file)
+    tokens, sample_idx =  load_tokens(activations,IN_file,LABEL_file)
     if remove_seen_tokens:
         tokens,activations=removeSeenTokens(tokens,activations)
     X, y, label2idx, _, _, _ = get_mappings(tokens,activations)
-    tokens,activations,flat_src_tokens,X_train, y_train, label2idx, idx2label = filterByClass(tokens,activations,X,y,label2idx,model_name)
-    return tokens,activations,flat_src_tokens,X_train,y_train,label2idx,idx2label
+    tokens,activations,flat_src_tokens,X_train, y_train, label2idx, idx2label, sample_idx = filterByClass(tokens,activations,X,y,label2idx,model_name,sample_idx)
+    return tokens,activations,flat_src_tokens,X_train,y_train,label2idx,idx2label, sample_idx
 
 
-def selectBasedOnTrain(flat_tokens_test,X_test, y_test,flat_tokens_train,label2idx_train,keyword_list_test):
+def selectBasedOnTrain(flat_tokens_test,X_test, y_test,flat_tokens_train,label2idx_train,keyword_list_test,sample_idx_test=None):
     idx_selected = []
     count_number = 0
     count_name = 0
@@ -528,4 +534,7 @@ def selectBasedOnTrain(flat_tokens_test,X_test, y_test,flat_tokens_train,label2i
     flat_tokens_test = flat_tokens_test[idx_selected]
     X_test = X_test[idx_selected]
     y_test = y_test[idx_selected]
-    return X_test, y_test, flat_tokens_test, idx_selected
+    if sample_idx_test:
+        sample_idx_test = sample_idx_test[idx_selected]
+        assert len(sample_idx_test) == len(y_test)
+    return X_test, y_test, flat_tokens_test, idx_selected, sample_idx_test

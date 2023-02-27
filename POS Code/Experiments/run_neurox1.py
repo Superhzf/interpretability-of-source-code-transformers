@@ -1,5 +1,5 @@
 import argparse
-from utils import Normalization, extract_activations, load_extracted_activations, load_tokens
+from utils import Normalization, extract_activations
 from utils import get_mappings,all_activations_probe,get_imp_neurons,get_top_words,layerwise_probes_inference
 from utils import control_task_probes, probeless,filter_by_frequency,preprocess,alignTokenAct,getOverlap, selectBasedOnTrain
 from sklearn.model_selection import train_test_split
@@ -55,10 +55,10 @@ def main():
         torch.manual_seed(0)
         if this_model in ['pretrained_BERT','pretrained_CodeBERT','pretrained_GraphCodeBERT']:
             print(f"Anayzing {this_model}")
-            tokens_train_valid,activations_train_valid,flat_tokens_train_valid,X_train_valid, y_train_valid, label2idx_train, idx2label_train=preprocess(ACTIVATION_NAMES[this_model][0],
+            tokens_train_valid,activations_train_valid,flat_tokens_train_valid,X_train_valid, y_train_valid, label2idx_train, idx2label_train,_=preprocess(ACTIVATION_NAMES[this_model][0],
                                                                         './src_files/codetest2_train_unique.in','./src_files/codetest2_train_unique.label',
                                                                         False,this_model)
-            tokens_test,activations_test,flat_tokens_test,X_test, y_test, label2idx_test, _=preprocess(ACTIVATION_NAMES[this_model][1],
+            tokens_test,activations_test,flat_tokens_test,X_test, y_test, label2idx_test, _, sample_idx_test=preprocess(ACTIVATION_NAMES[this_model][1],
                                             './src_files/codetest2_test_unique.in','./src_files/codetest2_test_unique.label',
                                             False,this_model)
             # remove tokens that are shared by training and testing
@@ -98,19 +98,20 @@ def main():
             assert len(np.array([l for sublist in tokens_train['target'] for l in sublist])) == l2
 
 
-            X_valid, y_valid, flat_tokens_valid, _ =selectBasedOnTrain(flat_tokens_train_valid,
+            X_valid, y_valid, flat_tokens_valid, _, _ =selectBasedOnTrain(flat_tokens_train_valid,
                                                         X_train_valid,
                                                         y_train_valid,
                                                         flat_tokens_train,
                                                         label2idx_train,
                                                         keyword_list_valid)
 
-            X_test, y_test, flat_tokens_test, idx_selected_test =selectBasedOnTrain(flat_tokens_test,
+            X_test, y_test, flat_tokens_test, idx_selected_test, sample_idx_test =selectBasedOnTrain(flat_tokens_test,
                                                                                     X_test,
                                                                                     y_test,
                                                                                     flat_tokens_train,
                                                                                     label2idx_train,
-                                                                                    keyword_list_test)
+                                                                                    keyword_list_test,
+                                                                                    sample_idx_test)
 
             tokens_test,_=alignTokenAct(tokens_test,activations_test,idx_selected_test)
 
@@ -150,11 +151,11 @@ def main():
             print("The shape of the validation set:",X_valid.shape)
             print("The shape of the testing set:",X_test.shape)
             probe, scores = all_activations_probe(X_train,y_train,X_valid,y_valid,X_test, y_test,
-                                                    idx2label_train,tokens_test['source'],weighted,this_model)
+                                                    idx2label_train,tokens_test['source'],weighted,this_model,sample_idx_test)
 
             #Layerwise Probes
             layerwise_probes_inference(X_train,y_train,X_valid,y_valid,X_test,y_test,
-                                                    idx2label_train,tokens_test['source'],weighted,this_model)
+                                                    idx2label_train,tokens_test['source'],weighted,this_model,sample_idx_test)
 
             #Important neuron probes
             top_neurons = get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
