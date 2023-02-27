@@ -536,7 +536,7 @@ def selectBasedOnTrain(flat_tokens_test,X_test, y_test,flat_tokens_train,label2i
     flat_tokens_test = flat_tokens_test[idx_selected]
     X_test = X_test[idx_selected]
     y_test = y_test[idx_selected]
-    if sample_idx_test not None:
+    if sample_idx_test is not None:
         sample_idx_test = sample_idx_test[idx_selected]
         assert len(sample_idx_test) == len(y_test)
     return X_test, y_test, flat_tokens_test, idx_selected, sample_idx_test
