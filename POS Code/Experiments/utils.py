@@ -440,7 +440,7 @@ def filterByClass(tokens,activations,X,y,label2idx,model_name,sample_idx):
 
     flat_targt_tokens = np.array([l for sublist in tokens['target'] for l in sublist])
     flat_src_tokens = np.array([l for sublist in tokens['source'] for l in sublist])
-    flat_sample_idx = np.array([len(idx)*idx for idx,sublist in zip(sample_idx,tokens['source']) for l in sublist])
+    flat_sample_idx = np.array([len(sublist)*idx for idx,sublist in zip(sample_idx,tokens['source'])])
     assert len(flat_targt_tokens) == len(y)
     assert len(flat_src_tokens) == len(y)
     assert len(flat_sample_idx) == len(y)
