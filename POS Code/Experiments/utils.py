@@ -440,6 +440,7 @@ def filterByClass(tokens,activations,X,y,label2idx,model_name,sample_idx):
 
     flat_targt_tokens = np.array([l for sublist in tokens['target'] for l in sublist])
     flat_src_tokens = np.array([l for sublist in tokens['source'] for l in sublist])
+    flat_sample_idx = np.array([len(idx)*idx for idx,sublist in zip(sample_idx,tokens['source']) for l in sublist])
     assert len(flat_targt_tokens) == len(y)
     assert len(flat_src_tokens) == len(y)
 
@@ -458,7 +459,7 @@ def filterByClass(tokens,activations,X,y,label2idx,model_name,sample_idx):
     y = [lookup_table[this_y] for this_y in y]
     y = np.array(y)
     X = X[idx_selected]
-    new_sample_idx = sample_idx[idx_selected]
+    flat_sample_idx = flat_sample_idx[idx_selected]
 
     flat_src_tokens = flat_src_tokens[idx_selected]
     tokens,activations=alignTokenAct(tokens,activations,idx_selected)
@@ -475,7 +476,7 @@ def filterByClass(tokens,activations,X,y,label2idx,model_name,sample_idx):
     print(distribution_rate)
     print(distribution)
     print(new_label2idx)
-    return tokens,activations,flat_src_tokens,X,y,new_label2idx,new_idx2label, new_sample_idx
+    return tokens,activations,flat_src_tokens,X,y,new_label2idx,new_idx2label, flat_sample_idx
 
 
 def preprocess(activation_file_name,IN_file,LABEL_file,remove_seen_tokens,model_name):
