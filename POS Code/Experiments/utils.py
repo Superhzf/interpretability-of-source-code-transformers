@@ -443,6 +443,7 @@ def filterByClass(tokens,activations,X,y,label2idx,model_name,sample_idx):
     flat_sample_idx = np.array([len(idx)*idx for idx,sublist in zip(sample_idx,tokens['source']) for l in sublist])
     assert len(flat_targt_tokens) == len(y)
     assert len(flat_src_tokens) == len(y)
+    assert len(flat_sample_idx) == len(y)
 
     class_wanted = ['NAME','STRING','NUMBER','KEYWORD']
     for idx,this_class in enumerate(class_wanted):
