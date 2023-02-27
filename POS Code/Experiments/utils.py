@@ -481,8 +481,6 @@ def filterByClass(tokens,activations,X,y,label2idx,model_name,sample_idx):
 def preprocess(activation_file_name,IN_file,LABEL_file,remove_seen_tokens,model_name):
     activations = load_extracted_activations(activation_file_name)
     tokens, sample_idx =  load_tokens(activations,IN_file,LABEL_file)
-    print("The type of sample_idx",type(sample_idx))
-    print("The shape of sample_idx",np.shape(sample_idx))
     if remove_seen_tokens:
         tokens,activations=removeSeenTokens(tokens,activations)
     X, y, label2idx, _, _, _ = get_mappings(tokens,activations)
