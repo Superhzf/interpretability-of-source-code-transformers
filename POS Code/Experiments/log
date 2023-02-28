@@ -8,7 +8,7 @@ length of source dictionary:  25436
 length of target dictionary:  49
 419332
 Total instances: 419332
-['ARB', 'SQLALCHEMY_POOL_SIZE', 'assertIn', 'clone_relations_from', 'ntlm_version', '2.0', 'test_init_type_error', 'BluezGattDescriptor', '_epsilon', 'reflection', 'DisredisClient', 'test_injecting_interface_implementation', '97', 'PROXY_TYPE_SOCKS4', 'next_state', 'add_build_config', 'genty', 'DOCUMENT_TYPE_NODE', 'FormFactory', 'importConfigurationManifest']
+['aggregates_module', 'st_base', 'SES_REGION', 'metric_value', '"urn:oasis:names:tc:opendocument:xmlns:of:1.2"', 'lsigned', 'TestEdgeSet', 'tnt_id', 'PROJECT_DIR', 'CrowdInterface', 'os_list', 'space', '_Property', 'ClientWindowState', 'activity_delta', 'LogPageHandler', 'load_library', '"ty=pe"', 'nodeMounts', 'takes_context']
 Number of samples:  419332
 Stats: Labels with their frequencies in the final set
 NAME 133988
@@ -71,7 +71,7 @@ length of source dictionary:  19979
 length of target dictionary:  47
 387342
 Total instances: 387342
-['assertIn', 'my_version', '2.0', 'hasnewline', '97', 'localpref', 'bitsPerComponent', 'DOCUMENT_TYPE_NODE', '"1+2j)"', 'F_4x4_3x3', 'gcedict', 'Install', '_get_extra_dict', 'test03_6times3marks', 'param_array', 'keep_var', 'add3', 'abs_params', 'ltot', 'assertEqual']
+['test_apache_parser', 'aggregates_module', 'PolyLine', 'argsort', 'load_corpus_reader', 'filename_args', 'GpuJoin', '_audio_stream_index', 'LEFT', 'win32', 'load_library', 'takes_context', '"first"', 'rpartition', 'test_overriding_base_binop', 'test_f2k_and_k2f', 'separators', '_checks', 'store_history', 'friendly_redirect_login']
 Number of samples:  387342
 Stats: Labels with their frequencies in the final set
 NAME 124783
@@ -125,6 +125,7 @@ pretrained_BERT distribution after trauncating:
 {0: 0.7630914305632847, 3: 0.15494456437320744, 2: 0.07043657467145295, 1: 0.01152743039205494}
 {0: 124783, 3: 25337, 2: 11518, 1: 1885}
 {'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
+Write tokens in the training set to files:
 
 The distribution of classes in training after removing repeated tokens between training and tesing:
 Counter({0: 2001, 3: 2001, 1: 2001, 2: 2001})
