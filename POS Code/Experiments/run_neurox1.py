@@ -159,7 +159,7 @@ def main():
 
             #Important neuron probes
             top_neurons = get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
-                                            probe,label2idx_train,idx2label_train,tokens_test['source'],weighted,this_model)
+                                            probe,label2idx_train,idx2label_train,tokens_test['source'],weighted,this_model,sample_idx_test)
             get_top_words(top_neurons,tokens_train,activations_train,this_model)
             del X_train, X_test, X_valid,y_train, y_test,y_valid
             #Control task probes

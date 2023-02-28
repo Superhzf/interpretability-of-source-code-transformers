@@ -197,12 +197,12 @@ def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2labe
     return best_probe, scores
 
 
-def get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,probe,label2idx,idx2label,src_tokens_test,weighted,model_name):
+def get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,probe,label2idx,idx2label,src_tokens_test,weighted,model_name,sample_idx_test):
     ''' Returns top 2% neurons for each model'''
 
     #Top neurons
     # 0.05 means to select neurons that take top 5% mass
-    top_neurons, top_neurons_per_class = linear_probe.get_top_neurons(probe, 0.95, label2idx)
+    top_neurons, top_neurons_per_class = linear_probe.get_top_neurons(probe, 0.05, label2idx)
     print()
     print(f"{model_name} top neurons")
     print(repr(top_neurons))
@@ -214,12 +214,12 @@ def get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,probe,label2id
     X_selected_valid = ablation.filter_activations_keep_neurons(X_valid, top_neurons)
     X_selected_test = ablation.filter_activations_keep_neurons(X_test, top_neurons)
     print("The shape of selected features",X_selected_train.shape)
-    this_model_name = f"{model_name}_top95%_mass"
+    this_model_name = f"{model_name}_top5%_mass"
     print("The shape of the training set:",X_selected_train.shape)
     print("The shape of the validation set:",X_selected_valid.shape)
     print("The shape of the testing set:",X_selected_test.shape)
     all_activations_probe(X_selected_train,y_train,X_selected_valid,y_valid,X_selected_test,y_test,idx2label,
-                        src_tokens_test,weighted,this_model_name)
+                        src_tokens_test,weighted,this_model_name,sample_idx_test)
 
     ordering, cutoffs = linear_probe.get_neuron_ordering(probe, label2idx)
     X_selected_train = ablation.filter_activations_keep_neurons(X_train, ordering[:200])
@@ -227,7 +227,7 @@ def get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,probe,label2id
     X_selected_test = ablation.filter_activations_keep_neurons(X_test, ordering[:200])
     this_model_name = f"{model_name}_top200_neurons"
     all_activations_probe(X_selected_train,y_train,X_selected_valid,y_valid,X_selected_test,y_test,idx2label,
-                        src_tokens_test,weighted,this_model_name)
+                        src_tokens_test,weighted,this_model_name,sample_idx_test)
     return top_neurons
 
 
