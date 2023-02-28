@@ -90,6 +90,9 @@ def main():
             X_train = X_train_valid[idx_selected_train]
             y_train = y_train_valid[idx_selected_train]
             tokens_train,activations_train=alignTokenAct(tokens_train_valid,activations_train_valid,idx_selected_train)
+            print(f"Write tokens in the training set to files:")
+            with open('training.txt', 'w') as f:
+                f.write(f"{flat_tokens_train}")
 
             assert (flat_tokens_train == np.array([l for sublist in tokens_train['source'] for l in sublist])).all()
             l1 = len([l for sublist in activations_train for l in sublist])
