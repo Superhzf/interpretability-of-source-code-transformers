@@ -135,7 +135,7 @@ def get_mappings(tokens,activations):
     return X, y, label2idx, idx2label, src2idx, idx2src
 
 
-def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,src_tokens_test,weighted,model_name,sample_idx_test):
+def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,src_tokens_test,weighted,model_name,sample_idx_test=None):
     #Train the linear probes (logistic regression) - POS(code) tagging
     if weighted:
         classes = sorted(list(set(y_train)))
@@ -343,7 +343,7 @@ def control_task_probes(tokens_train,X_train,y_train,tokens_valid,X_valid,y_vali
     assert X_valid.shape[0] == len(y_valid)
     assert X_test.shape[0] == len(y_test)
     model_name = f'{model_name}_control_task'
-    _, ct_scores = all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label_train,None,False,model_name)
+    _, ct_scores = all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label_train,None,False,model_name, None)
     
     selectivity = original_scores['__OVERALL__'] - ct_scores['__OVERALL__']
     print()
