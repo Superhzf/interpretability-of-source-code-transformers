@@ -158,6 +158,7 @@ def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2labe
     if src_tokens_test is not None:
         NAME_NAME, NAME_KW, NAME_STRING,NAME_NUMBER, KW_NAME, KW_KW, KW_other= 0, 0, 0, 0, 0, 0, 0
         NAME_STRING_list,NAME_NUMBER_list = [], []
+        NAME_NAME_list = []
         NAME_NUMBER_samples = []
         NAME_NAME_samples = []
         for idx,this_y_test in enumerate(y_test):
@@ -168,6 +169,7 @@ def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2labe
                 if predicted_class == 'NAME':
                     NAME_NAME += 1
                     NAME_NAME_samples.append(sample)
+                    NAME_NAME_list.append(source_token)
                 elif predicted_class == 'KEYWORD':
                     NAME_KW += 1
                 elif predicted_class == 'STRING':
@@ -187,6 +189,7 @@ def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2labe
         print(scores)
         print(f"Confusion matrix between NAME and KEYWORD:")
         print(f"NAME_NAME:{NAME_NAME},KW_NAME:{KW_NAME}")
+        print(f"NAME_NAME_list:{NAME_NAME_list}")
         print(f"NAME_NAME_sample:{NAME_NAME_samples}",)
         print(f"NAME_KW:{NAME_KW},KW_KW:{KW_KW}")
         print(f"NAME_STRING:{NAME_STRING},KW_other:{KW_other}")
