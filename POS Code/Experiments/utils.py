@@ -706,8 +706,10 @@ def aggregate_repr(state, start, end, aggregation):
         return state[:, :, end, end]
     elif aggregation == "average":
         temp = np.average(state[:, :, start : end + 1, start : end + 1], axis=2)
+        print(f"temp shape:{temp.shape}")
         print(f"temp:{temp[0:3,0:3]}")
         output = np.average(temp[:, :, start : end + 1], axis=2)
+        print(f"output shape:{output.shape}")
         print(f"output:{output[0:3,0:3]}")
         return output
 
