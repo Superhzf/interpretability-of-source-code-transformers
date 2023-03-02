@@ -740,4 +740,4 @@ def extract_attentions(
     
         print(f"The idx of this line of code:{sentence_idx}")
         print(f"Shape of the attention: {attentions.shape}")
-        print(attentions)
+        print(attentions[0:4,0:4,:,:])
