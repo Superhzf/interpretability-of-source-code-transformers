@@ -701,7 +701,6 @@ def aggregate_repr(state, start, end, aggregation):
 def extract_attentions(
     model_desc,
     input_corpus,
-    output_file,
     device="cpu",
     aggregation="last",
     output_type="json",
