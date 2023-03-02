@@ -623,7 +623,6 @@ def extract_sentence_attentions(
     print(all_attentions[0:3,0:3,:,:])
     print(f"tokenization_counts:{tokenization_counts}")
     print(f"segmented_tokens:{segmented_tokens}")
-    exit(0)
 
     # Perform actual subword aggregation/detokenization
     counter = 0
@@ -644,7 +643,6 @@ def extract_sentence_attentions(
             final_attentions = final_attentions[:, :,:len(detokenized),:len(detokenized)]
             inputs_truncated = True
             break
-
         final_attentions[:, :,len(detokenized),len(detokenized)] = aggregate_repr(
             all_attentions,
             current_word_start_idx,
@@ -655,6 +653,9 @@ def extract_sentence_attentions(
             "".join(segmented_tokens[current_word_start_idx:current_word_end_idx])
         )
         counter += tokenization_counts[token]
+        print(f"Processing:{token}")
+        print(f"all_attentions after the processing")
+        print(print(all_attentions[0:3,0:3,:,:]))
 
     print("Detokenized (%03d): %s" % (len(detokenized), detokenized))
     print("Counter: %d" % (counter))
