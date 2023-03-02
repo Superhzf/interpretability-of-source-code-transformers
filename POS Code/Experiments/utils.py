@@ -705,6 +705,8 @@ def aggregate_repr(state, start, end, aggregation):
     elif aggregation == "last":
         return state[:, :, end, end]
     elif aggregation == "average":
+        print("State:")
+        print(state)
         temp = np.average(state[:, :, start : end + 1, start : end + 1], axis=2)
         return np.average(temp[:, :, start : end + 1], axis=2)
 
