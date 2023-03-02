@@ -701,13 +701,9 @@ def aggregate_repr(state, start, end, aggregation):
 def extract_attentions(
     model_desc,
     input_corpus,
-    device="cpu",
-    aggregation="last",
-    output_type="json",
+    device="cuda",
+    aggregation="average",
     random_weights=False,
-    ignore_embeddings=False,
-    decompose_layers=False,
-    filter_layers=None,
 ):
     """
     Adapt from https://neurox.qcri.org/docs/_modules/neurox/data/extraction/transformers_extractor.html#extract_representations
@@ -734,7 +730,6 @@ def extract_attentions(
             model,
             tokenizer,
             device=device,
-            include_embeddings=(not ignore_embeddings),
             aggregation=aggregation,
             tokenization_counts=tokenization_counts
         )
