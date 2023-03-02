@@ -705,10 +705,11 @@ def aggregate_repr(state, start, end, aggregation):
     elif aggregation == "last":
         return state[:, :, end, end]
     elif aggregation == "average":
-        print(f"Start:{start}")
-        print(f"end:{end}")
         temp = np.average(state[:, :, start : end + 1, start : end + 1], axis=2)
-        return np.average(temp[:, :, start : end + 1], axis=2)
+        print(f"temp:{temp[0:3,0:3]}")
+        output = np.average(temp[:, :, start : end + 1], axis=2)
+        print(f"output:{output[0:3,0:3]}")
+        return output
 
 
 def extract_attentions(
