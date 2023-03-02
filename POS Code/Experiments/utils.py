@@ -648,6 +648,7 @@ def extract_sentence_attentions(
         )
         counter += tokenization_counts[token]
         print(f"Processing:{token}")
+        print(f"detokenized:{detokenized}")
         print(f"final_attentions after the processing")
         print(final_attentions[0:3,0:3,:,:])
     
