@@ -709,9 +709,9 @@ def extract_attentions(
     decompose_layers=False,
     filter_layers=None,
 ):
-"""
-Adapt from https://neurox.qcri.org/docs/_modules/neurox/data/extraction/transformers_extractor.html#extract_representations
-"""
+    """
+    Adapt from https://neurox.qcri.org/docs/_modules/neurox/data/extraction/transformers_extractor.html#extract_representations
+    """
     print(f"Loading model: {model_desc}")
     model, tokenizer = get_model_and_tokenizer(
         model_desc, device=device, random_weights=random_weights
