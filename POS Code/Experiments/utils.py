@@ -13,6 +13,7 @@ import numpy as np
 import collections
 import difflib
 import torch
+from transformers import AutoTokenizer, AutoModel
 
 l1 = [0,1e-5,1e-4,1e-3,1e-2,0.1]
 l2 = [0,1e-5,1e-4,1e-3,1e-2,0.1]
@@ -546,3 +547,198 @@ def selectBasedOnTrain(flat_tokens_test,X_test, y_test,flat_tokens_train,label2i
         sample_idx_test = sample_idx_test[idx_selected]
         assert len(sample_idx_test) == len(y_test)
     return X_test, y_test, flat_tokens_test, idx_selected, sample_idx_test
+
+
+def extract_sentence_attentions(
+    sentence,
+    model,
+    tokenizer,
+    device="cpu",
+    aggregation="last",
+    tokenization_counts={}
+):
+    """
+    Adapt from https://neurox.qcri.org/docs/_modules/neurox/data/extraction/transformers_extractor.html#extract_sentence_representations
+    """
+    # this follows the HuggingFace API for transformers
+
+    special_tokens = [
+        x for x in tokenizer.all_special_tokens if x != tokenizer.unk_token
+    ]
+    special_tokens_ids = tokenizer.convert_tokens_to_ids(special_tokens)
+
+    original_tokens = sentence.split(" ")
+    # Add a letter and space before each word since some tokenizers are space sensitive
+    tmp_tokens = [
+        "a" + " " + x if x_idx != 0 else x for x_idx, x in enumerate(original_tokens)
+    ]
+    assert len(original_tokens) == len(tmp_tokens)
+
+    with torch.no_grad():
+        # Get tokenization counts if not already available
+        for token_idx, token in enumerate(tmp_tokens):
+            tok_ids = [
+                x for x in tokenizer.encode(token) if x not in special_tokens_ids
+            ]
+            if token_idx != 0:
+                # Ignore the first token (added letter)
+                tok_ids = tok_ids[1:]
+
+            if token in tokenization_counts:
+                assert tokenization_counts[token] == len(
+                    tok_ids
+                ), "Got different tokenization for already processed word"
+            else:
+                tokenization_counts[token] = len(tok_ids)
+        ids = tokenizer.encode(sentence, truncation=True)
+        input_ids = torch.tensor([ids]).to(device)
+        # Hugging Face format: tuple of torch.FloatTensor of shape (batch_size, num_heads, num_heads, sequence_length)
+        # Tuple has 12 elements for base model: attention values at each layer
+        all_attentions = model(input_ids)[-1]
+
+        all_attentions = [
+            attentions[0].cpu().numpy() for attentions in all_attentions
+        ]
+        # the expected shape is num_layer (12) x num_heads (12) x seq_len x seq_len
+        all_attentions = np.array(all_attentions)
+
+
+    # Remove special tokens
+    ids_without_special_tokens = [x for x in ids if x not in special_tokens_ids]
+    idx_without_special_tokens = [
+        t_i for t_i, x in enumerate(ids) if x not in special_tokens_ids
+    ]
+    filtered_ids = [ids[t_i] for t_i in idx_without_special_tokens]
+    assert all_attentions.shape[1] == len(ids)
+    all_attentions = all_attentions[:, idx_without_special_tokens, :]
+    assert all_attentions.shape[1] == len(filtered_ids)
+    
+    segmented_tokens = tokenizer.convert_ids_to_tokens(filtered_ids)
+
+    # Perform actual subword aggregation/detokenization
+    counter = 0
+    detokenized = []
+    final_attentions = np.zeros(
+        (all_attentions.shape[0],all_attentions.shape[1], len(original_tokens),len(original_tokens))
+    )
+    inputs_truncated = False
+
+    for token_idx, token in enumerate(tmp_tokens):
+        current_word_start_idx = counter
+        current_word_end_idx = counter + tokenization_counts[token]
+
+        # Check for truncated hidden states in the case where the
+        # original word was actually tokenized
+        if  (tokenization_counts[token] != 0 and current_word_start_idx >= all_attentions.shape[2]) \
+                or current_word_end_idx > all_attentions.shape[2]:
+            final_attentions = final_attentions[:, :,:len(detokenized),:len(detokenized)]
+            inputs_truncated = True
+            break
+
+        final_attentions[:, :,len(detokenized),len(detokenized)] = aggregate_repr(
+            all_attentions,
+            current_word_start_idx,
+            current_word_end_idx - 1,
+            aggregation,
+        )
+        detokenized.append(
+            "".join(segmented_tokens[current_word_start_idx:current_word_end_idx])
+        )
+        counter += tokenization_counts[token]
+
+    print("Detokenized (%03d): %s" % (len(detokenized), detokenized))
+    print("Counter: %d" % (counter))
+
+    if inputs_truncated:
+        print("WARNING: Input truncated because of length, skipping check")
+    else:
+        assert counter == len(ids_without_special_tokens)
+        assert len(detokenized) == len(original_tokens)
+    print("===================================================================")
+
+    return final_attentions, detokenized
+
+
+def get_model_and_tokenizer(model_desc, device="cpu", random_weights=False):
+    """
+    Adapt from https://neurox.qcri.org/docs/_modules/neurox/data/extraction/transformers_extractor.html#get_model_and_tokenizer
+    """
+    model_desc = model_desc.split(",")
+    if len(model_desc) == 1:
+        model_name = model_desc[0]
+        tokenizer_name = model_desc[0]
+    else:
+        model_name = model_desc[0]
+        tokenizer_name = model_desc[1]
+    model = AutoModel.from_pretrained(model_name, output_attentions=True).to(device)
+    tokenizer = AutoTokenizer.from_pretrained(tokenizer_name)
+
+    if random_weights:
+        print("Randomizing weights")
+        model.init_weights()
+
+    return model, tokenizer
+
+
+def aggregate_repr(state, start, end, aggregation):
+    """
+    Adapt from https://neurox.qcri.org/docs/_modules/neurox/data/extraction/transformers_extractor.html#aggregate_repr
+    """
+    if end < start:
+        sys.stderr.write("WARNING: An empty slice of tokens was encountered. " +
+            "This probably implies a special unicode character or text " +
+            "encoding issue in your original data that was dropped by the " +
+            "transformer model's tokenizer.\n")
+        return np.zeros((state.shape[0], state.shape[2]))
+    if aggregation == "first":
+        return state[:, :, start, start]
+    elif aggregation == "last":
+        return state[:, :, end, end]
+    elif aggregation == "average":
+        return np.average(state[:, :, start : end + 1, start : end + 1], axis=1)
+
+
+def extract_attentions(
+    model_desc,
+    input_corpus,
+    output_file,
+    device="cpu",
+    aggregation="last",
+    output_type="json",
+    random_weights=False,
+    ignore_embeddings=False,
+    decompose_layers=False,
+    filter_layers=None,
+):
+"""
+Adapt from https://neurox.qcri.org/docs/_modules/neurox/data/extraction/transformers_extractor.html#extract_representations
+"""
+    print(f"Loading model: {model_desc}")
+    model, tokenizer = get_model_and_tokenizer(
+        model_desc, device=device, random_weights=random_weights
+    )
+
+    print("Reading input corpus")
+
+    def corpus_generator(input_corpus_path):
+        with open(input_corpus_path, "r") as fp:
+            for line in fp:
+                yield line.strip()
+            return
+
+
+    print("Extracting representations from model")
+    tokenization_counts = {} # Cache for tokenizer rules
+    for sentence_idx, sentence in enumerate(corpus_generator(input_corpus)):
+        attentions, extracted_words = extract_sentence_attentions(
+            sentence,
+            model,
+            tokenizer,
+            device=device,
+            include_embeddings=(not ignore_embeddings),
+            aggregation=aggregation,
+            tokenization_counts=tokenization_counts
+        )
+    
+        print(f"The idx of this line of code:{sentence_idx}")
+        print(f"Shape of the attention: {attentions.shape}")
