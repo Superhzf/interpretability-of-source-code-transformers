@@ -41,7 +41,7 @@ class Model(nn.Module):
         input_ids=input_ids.view(-1,self.args.block_size)
         outputs = self.encoder(input_ids= input_ids,attention_mask=input_ids.ne(1))[0]
         logits=self.classifier(outputs)
-        prob=F.softmax(logits)
+        prob=F.softmax(logits,dim=1)
         if labels is not None:
             loss_fct = CrossEntropyLoss()
             loss = loss_fct(logits, labels)

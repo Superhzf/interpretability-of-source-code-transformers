@@ -24,6 +24,7 @@ myfile.txt
 
 *.ipynb*
 *.json
+*.jsonl
 
 py150_files.tar.gz
 myfile.txt

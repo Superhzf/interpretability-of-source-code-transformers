@@ -16,21 +16,36 @@ class Model(nn.Module):
         self.config=config
         self.tokenizer=tokenizer
         self.args=args
-    
-        
-    def forward(self, input_ids=None,labels=None): 
+
+    #For Extraction
+    def forward(self, input_ids=None,labels=None):
+        #modify these after finetuning to get extractions
         logits=self.encoder(input_ids,attention_mask=input_ids.ne(1))[0]
-        outputs=self.encoder(input_ids,attention_mask=input_ids.ne(1))
-       # hidden_states=outputs[2]
-        
+        outputs=self.encoder(input_ids,attention_mask=input_ids.ne(1),output_hidden_states=True)
+        hidden_states=outputs[1]
         prob=torch.sigmoid(logits)
         if labels is not None:
             labels=labels.float()
             loss=torch.log(prob[:,0]+1e-10)*labels+torch.log((1-prob)[:,0]+1e-10)*(1-labels)
             loss=-loss.mean()
-            return loss,prob
+            return loss,prob,hidden_states
         else:
-            return prob
+            return prob,hidden_states
+
+    #For Finetuning    
+#    def forward(self, input_ids=None,labels=None): 
+#        logits=self.encoder(input_ids,attention_mask=input_ids.ne(1))[0]
+#        outputs=self.encoder(input_ids,attention_mask=input_ids.ne(1))
+       # hidden_states=outputs[2]
+        
+#        prob=torch.sigmoid(logits)
+#        if labels is not None:
+#            labels=labels.float()
+#            loss=torch.log(prob[:,0]+1e-10)*labels+torch.log((1-prob)[:,0]+1e-10)*(1-labels)
+#            loss=-loss.mean()
+#            return loss,prob
+#        else:
+#            return prob
       
         
  

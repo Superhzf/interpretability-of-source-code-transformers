@@ -16,27 +16,46 @@ cd /work/LAS/jannesar-lab/arushi/Interpretability/interpretability-of-source-cod
 
 #CUDA_LAUNCH_BLOCKING=1 ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_pipeline_all.py --config config_clondet_graphcodebert.json > Results/GraphCodeBERT_CloneDet/output_graphcodebert_clonedet_sentence_pipeline_all1
 
-CUDA_LAUNCH_BLOCKING=1 ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_pipeline_all.py --config config_defdet_codebert.json > Results/CodeBERT_DefDet/output_codebert_defdet_sentence_pipeline_all
 
-CUDA_LAUNCH_BLOCKING=1 ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_pipeline_all.py --config config_defdet_codebert.json > Results/CodeBERT_DefDet/output_codebert_defdet_sentence_pipeline_all1
+CUDA_LAUNCH_BLOCKING=1 ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_pipeline_all.py --config config_defdet_unixcoder.json > Results/UniXCoder_DefDet/output_unixcoder_defdet_sentence_pipeline_all
 
-CUDA_LAUNCH_BLOCKING=1 ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_pipeline_all.py --config config_defdet_codebert.json > Results/CodeBERT_DefDet/output_codebert_defdet_sentence_pipeline_all2
+CUDA_LAUNCH_BLOCKING=1 ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_pipeline_all.py --config config_defdet_unixcoder.json > Results/UniXCoder_DefDet/output_unixcoder_defdet_sentence_pipeline_all1
 
-CUDA_LAUNCH_BLOCKING=1 ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_max_features.py --config config_defdet_codebert.json > Results/CodeBERT_DefDet/output_codebert_defdet_sentence_max_features
-
-CUDA_LAUNCH_BLOCKING=1 ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_max_features.py --config config_defdet_codebert.json > Results/CodeBERT_DefDet/output_codebert_defdet_sentence_max_features1
-
-CUDA_LAUNCH_BLOCKING=1 ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_max_features.py --config config_defdet_codebert.json > Results/CodeBERT_DefDet/output_codebert_defdet_sentence_max_features2
-
-CUDA_LAUNCH_BLOCKING=1 ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_cc_all.py --config config_defdet_codebert.json > Results/CodeBERT_DefDet/output_codebert_defdet_sentence_cc_all
-
-CUDA_LAUNCH_BLOCKING=1 ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_cc_all.py --config config_defdet_codebert.json > Results/CodeBERT_DefDet/output_codebert_defdet_sentence_cc_all1
-
-CUDA_LAUNCH_BLOCKING=1 ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_cc_all.py --config config_defdet_codebert.json > Results/CodeBERT_DefDet/output_codebert_defdet_sentence_cc_all2
+CUDA_LAUNCH_BLOCKING=1 ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_pipeline_all.py --config config_defdet_unixcoder.json > Results/UniXCoder_DefDet/output_unixcoder_defdet_sentence_pipeline_all2
 
 
-CUDA_LAUNCH_BLOCKING=1 ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_pipeline_all.py --config config_defdet_graphcodebert.json > Results/GraphCodeBERT_DefDet/output_graphcodebert_defdet_sentence_pipeline_all
+CUDA_LAUNCH_BLOCKING=1 ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_cc_all.py --config config_defdet_unixcoder.json > Results/UniXCoder_DefDet/output_unixcoder_defdet_sentence_cc_all
 
-CUDA_LAUNCH_BLOCKING=1 ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_pipeline_all.py --config config_defdet_graphcodebert.json > Results/GraphCodeBERT_DefDet/output_graphcodebert_defdet_sentence_pipeline_all1
 
-CUDA_LAUNCH_BLOCKING=1 ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_pipeline_all.py --config config_defdet_graphcodebert.json > Results/GraphCodeBERT_DefDet/output_graphcodebert_defdet_sentence_pipeline_all2
+CUDA_LAUNCH_BLOCKING=1 ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_max_features.py --config config_defdet_unixcoder.json > Results/UniXCoder_DefDet/output_unixcoder_defdet_sentence_max_features
+
+
+#CUDA_LAUNCH_BLOCKING=1 ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_probeless.py --config config_defdet_unixcoder.json > Probeless_Results/output_defdet_sentence_probeless_f1
+
+CUDA_LAUNCH_BLOCKING=1 ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_probeless.py --config config_defdet_unixcoder.json > Probeless_Results/output_defdet_sentence_probeless_acc
+
+
+#CUDA_LAUNCH_BLOCKING=1 ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_pipeline_all.py --config config_defdet_codebert.json > Results/CodeBERT_DefDet/output_codebert_defdet_sentence_pipeline_all
+
+#CUDA_LAUNCH_BLOCKING=1 ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_pipeline_all.py --config config_defdet_codebert.json > Results/CodeBERT_DefDet/output_codebert_defdet_sentence_pipeline_all1
+
+#CUDA_LAUNCH_BLOCKING=1 ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_pipeline_all.py --config config_defdet_codebert.json > Results/CodeBERT_DefDet/output_codebert_defdet_sentence_pipeline_all2
+
+#CUDA_LAUNCH_BLOCKING=1 ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_max_features.py --config config_defdet_codebert.json > Results/CodeBERT_DefDet/output_codebert_defdet_sentence_max_features
+
+#CUDA_LAUNCH_BLOCKING=1 ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_max_features.py --config config_defdet_codebert.json > Results/CodeBERT_DefDet/output_codebert_defdet_sentence_max_features1
+
+#CUDA_LAUNCH_BLOCKING=1 ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_max_features.py --config config_defdet_codebert.json > Results/CodeBERT_DefDet/output_codebert_defdet_sentence_max_features2
+
+#CUDA_LAUNCH_BLOCKING=1 ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_cc_all.py --config config_defdet_codebert.json > Results/CodeBERT_DefDet/output_codebert_defdet_sentence_cc_all
+
+#CUDA_LAUNCH_BLOCKING=1 ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_cc_all.py --config config_defdet_codebert.json > Results/CodeBERT_DefDet/output_codebert_defdet_sentence_cc_all1
+
+#CUDA_LAUNCH_BLOCKING=1 ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_cc_all.py --config config_defdet_codebert.json > Results/CodeBERT_DefDet/output_codebert_defdet_sentence_cc_all2
+
+
+#CUDA_LAUNCH_BLOCKING=1 ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_pipeline_all.py --config config_defdet_graphcodebert.json > Results/GraphCodeBERT_DefDet/output_graphcodebert_defdet_sentence_pipeline_all
+
+#CUDA_LAUNCH_BLOCKING=1 ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_pipeline_all.py --config config_defdet_graphcodebert.json > Results/GraphCodeBERT_DefDet/output_graphcodebert_defdet_sentence_pipeline_all1
+
+#CUDA_LAUNCH_BLOCKING=1 ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_pipeline_all.py --config config_defdet_graphcodebert.json > Results/GraphCodeBERT_DefDet/output_graphcodebert_defdet_sentence_pipeline_all2

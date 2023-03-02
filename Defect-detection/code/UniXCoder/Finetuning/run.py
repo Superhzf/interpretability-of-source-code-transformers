@@ -29,7 +29,8 @@ import pickle
 import random
 import re
 import shutil
-
+import time
+import collections
 import numpy as np
 import torch
 from torch.utils.data import DataLoader, Dataset, SequentialSampler, RandomSampler,TensorDataset
@@ -305,7 +306,7 @@ def evaluate(args, model, tokenizer,eval_when_training=False):
 
 def test(args, model, tokenizer):
     # Loop to handle MNLI double evaluation (matched, mis-matched)
-    eval_dataset = TextDataset(tokenizer, args,args.test_data_file)
+    eval_dataset = TextDataset(tokenizer, args,args.train_data_file)
 
 
     args.eval_batch_size = args.per_gpu_eval_batch_size * max(1, args.n_gpu)
@@ -343,9 +344,115 @@ def test(args, model, tokenizer):
                 f.write(example.idx+'\t1\n')
             else:
                 f.write(example.idx+'\t0\n')    
+   
+
+def extract(args, model, tokenizer,debug=True):
+    # Loop to handle MNLI double evaluation (matched, mis-matched)
+    eval_dataset = TextDataset(tokenizer, args,args.eval_data_file)
+
+    args.eval_batch_size = args.per_gpu_eval_batch_size * max(1, args.n_gpu)
+    # Note that DistributedSampler samples randomly
+    eval_sampler = SequentialSampler(eval_dataset) if args.local_rank == -1 else DistributedSampler(eval_dataset)
+    eval_dataloader = DataLoader(eval_dataset, sampler=eval_sampler, batch_size=args.eval_batch_size)
+
+    # multi-gpu evaluate
+    if args.n_gpu > 1:
+        model = torch.nn.DataParallel(model)
     
-                        
-                        
+    layer_indexes = [int(x) for x in args.layers.split(",")]
+    
+    # Eval!    
+    logger.info("***** Running Extraction *****")
+    logger.info("  Num examples = %d", len(eval_dataset))
+    logger.info("  Batch size = %d", args.eval_batch_size)
+    logger.info("  Extracting layers = %s", ",".join(map(str, layer_indexes)))
+    eval_loss = 0.0
+    nb_eval_steps = 0
+    model.eval()
+    logits=[]
+    labels=[]
+    
+    with open(args.output_file, "w", encoding='utf-8') as writer:
+        unique_id = 0
+        for batch in tqdm(eval_dataloader,total=len(eval_dataloader)):
+            inputs = batch[0].to(args.device)
+            label=batch[1].to(args.device)
+            with torch.no_grad():
+                logit,hidden_states = model(inputs)
+                #print(logit,hidden_states)
+                layer_outputs=hidden_states
+                print(layer_outputs)
+                all_inputs =inputs
+                layer_outputs = [x.detach().cpu().numpy() for x in layer_outputs]
+                logits.append(logit.cpu().numpy())
+                labels.append(label.cpu().numpy())
+                for example_idx in range(len(all_inputs)):
+                    if debug: print("Processing example no %d" % (unique_id))
+                    start_time = time.time()
+                    output_json = collections.OrderedDict()
+
+                    # Iterate over each example in the batch
+                    input_ids = all_inputs[example_idx].tolist()
+                    output_json["linex_index"] = unique_id
+                    all_out_features = []
+
+                    tokens = list(enumerate(tokenizer.convert_ids_to_tokens(input_ids)))
+                    assert len(tokens) == len(input_ids)
+                    if debug:
+                        print("All tokens")
+                        print(tokens)
+                    if args.model_type == 'bert':
+                        tokens = [(i,t) for i,t in tokens if t != '[PAD]']
+                    elif args.model_type == 'xlnet':
+                        tokens = [(i,t) for i,t in tokens if t != '<pad>']
+                    elif args.model_type == 'roberta':
+                        tokens = [(i,t) for i,t in tokens if t != '<pad>']
+                    elif args.model_type == 'distilbert':
+                        tokens = [(i,t) for i,t in tokens if t != '[PAD]']
+
+                    #Only get CLS tokens or first token
+                    if args.sentence_only and args.model_type == 'bert':
+                        tokens = [(i,t) for i,t in tokens if t == '[CLS]']
+                    if args.sentence_only and args.model_type == 'roberta':
+                        tokens = [(i,t) for i,t in tokens if t == '<s>']
+                    if args.sentence_only and args.model_type == 'auto':
+                        tokens = [(i,t) for i,t in tokens if t == '<s>']
+                    if args.sentence_only and args.model_type == 'xlnet':
+                        tokens = [(i,t) for i,t in tokens if t == '<cls>']
+                    if args.sentence_only and args.model_type == 'distilbert':
+                        tokens = [(i,t) for i,t in tokens if t == '[CLS]']
+
+                    if debug:
+                        print("Extracting tokens:")
+                        print(tokens)
+                    for token_idx, token in tokens:
+                        all_layers = []
+                        for j, layer_idx in enumerate(layer_indexes):
+                            layers = collections.OrderedDict()
+                            print(layer_idx, example_idx, token_idx)
+                            layers["index"] = layer_idx
+                            print([x for x in layer_outputs[layer_idx][example_idx][token_idx]])
+                            layers["values"] = [float(round(x, 6)) for x in layer_outputs[layer_idx][example_idx][token_idx]] #[layer_idx][example_idx][token_idx]
+                            all_layers.append(layers)
+                       #print("all_layers", all_layers)
+                        out_features = collections.OrderedDict()
+                        out_features["token"] = token
+                        out_features["layers"] = all_layers
+                        all_out_features.append(out_features)
+                    output_json["features"] = all_out_features
+                    end_time = time.time()
+                    if debug: print("Computed in %d s" %(end_time-start_time))
+                    writer.write(json.dumps(output_json) + "\n")
+                    end_time = time.time()
+                    if debug: print("Saved in %d s" %(end_time-start_time))
+
+                    unique_id += 1
+
+        logits=np.concatenate(logits,0)
+        labels=np.concatenate(labels,0)
+        preds=logits[:,0]>0.5
+
+
 def main():
     parser = argparse.ArgumentParser()
 
@@ -354,13 +461,17 @@ def main():
                         help="The input training data file (a text file).")
     parser.add_argument("--output_dir", default=None, type=str, required=True,
                         help="The output directory where the model predictions and checkpoints will be written.")
+    parser.add_argument("--output_file", default=None, type=str, required=True,
+                                    help="The output file where features will be saved.")
 
     ## Other parameters
     parser.add_argument("--eval_data_file", default=None, type=str,
                         help="An optional input evaluation data file to evaluate the perplexity on (a text file).")
     parser.add_argument("--test_data_file", default=None, type=str,
                         help="An optional input evaluation data file to evaluate the perplexity on (a text file).")
-                    
+    parser.add_argument("--extract_data_file", default=None, type=str,
+                        help="An optional input evaluation data file to get extractions on(a text file).") 
+    
     parser.add_argument("--model_type", default="bert", type=str,
                         help="The model architecture to be fine-tuned.")
     parser.add_argument("--model_name_or_path", default=None, type=str,
@@ -387,6 +498,8 @@ def main():
                         help="Whether to run eval on the dev set.")
     parser.add_argument("--do_test", action='store_true',
                         help="Whether to run eval on the dev set.")    
+    parser.add_argument("--do_extract", action='store_true',
+                        help="Whether to run extraction on the given dataset.")
     parser.add_argument("--evaluate_during_training", action='store_true',
                         help="Run evaluation during training at each logging step.")
     parser.add_argument("--do_lower_case", action='store_true',
@@ -440,7 +553,8 @@ def main():
                         help="For distributed training: local_rank")
     parser.add_argument('--server_ip', type=str, default='', help="For distant debugging.")
     parser.add_argument('--server_port', type=str, default='', help="For distant debugging.")
-
+    parser.add_argument('--sentence_only', action='store_true', help="For Extracting only [CLS] token embeddings")
+    parser.add_argument('--layers', type=str, default='', help="Comma separated list of layers to extract. 0: Embeddings, 1-12: Normal layers")
 
     
 
@@ -554,6 +668,13 @@ def main():
             model.load_state_dict(torch.load(output_dir))                  
             model.to(args.device)
             test(args, model, tokenizer)
+
+    if args.do_extract and args.local_rank in [-1, 0]:
+            checkpoint_prefix = 'checkpoint-best-acc/model.bin'
+            output_dir = os.path.join(args.output_dir, '{}'.format(checkpoint_prefix))
+            model.load_state_dict(torch.load(output_dir))
+            model.to(args.device)
+            extract(args, model, tokenizer)
 
     return results
 

@@ -152,6 +152,13 @@ class TextDataset(Dataset):
             data=random.sample(data,int(len(data)*0.1))
 
         self.examples=pool.map(get_example,tqdm(data,total=len(data)))
+        #Store used data samples (10%) for analysis
+        with open('Selected_dataset.txt', 'w') as f:
+            for idx, example in enumerate(self.examples):
+                print(example.url1, example.url2, example.label)
+                f.write(example.url1, example.url2, example.label)
+                f.write("\n")
+
         if 'train' in postfix:
             for idx, example in enumerate(self.examples[:3]):
                     logger.info("*** Example ***")
