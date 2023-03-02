@@ -618,12 +618,6 @@ def extract_sentence_attentions(
     
     segmented_tokens = tokenizer.convert_ids_to_tokens(filtered_ids)
 
-    print("Hi I'm here")
-    print(f"The shape of all_attentions is {all_attentions.shape}")
-    print(all_attentions[0:3,0:3,:,:])
-    print(f"tokenization_counts:{tokenization_counts}")
-    print(f"segmented_tokens:{segmented_tokens}")
-
     # Perform actual subword aggregation/detokenization
     counter = 0
     detokenized = []
@@ -654,12 +648,11 @@ def extract_sentence_attentions(
         )
         counter += tokenization_counts[token]
         print(f"Processing:{token}")
-        print(f"all_attentions after the processing")
+        print(f"final_attentions after the processing")
         print(final_attentions[0:3,0:3,:,:])
     
     print("~~~~~~~~~~~~~~~~~~~Processing done~~~~~~~~~~~~~~")
     print(final_attentions[0:3,0:3,:,:])
-    exit(0)
 
     print("Detokenized (%03d): %s" % (len(detokenized), detokenized))
     print("Counter: %d" % (counter))
