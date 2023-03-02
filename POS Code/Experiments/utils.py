@@ -609,9 +609,11 @@ def extract_sentence_attentions(
         t_i for t_i, x in enumerate(ids) if x not in special_tokens_ids
     ]
     filtered_ids = [ids[t_i] for t_i in idx_without_special_tokens]
-    assert all_attentions.shape[1] == len(ids)
+    assert all_attentions.shape[2] == len(ids)
+    assert all_attentions.shape[3] == len(ids)
     all_attentions = all_attentions[:, idx_without_special_tokens, :]
-    assert all_attentions.shape[1] == len(filtered_ids)
+    assert all_attentions.shape[2] == len(filtered_ids)
+    assert all_attentions.shape[3] == len(filtered_ids)
     
     segmented_tokens = tokenizer.convert_ids_to_tokens(filtered_ids)
 
