@@ -613,7 +613,6 @@ def extract_sentence_attentions(
     assert all_attentions.shape[3] == len(ids)
     all_attentions = all_attentions[:, :, idx_without_special_tokens, :]
     all_attentions = all_attentions[:, :, :, idx_without_special_tokens]
-    print(f"Shape of all_attentions:{all_attentions.shape}")
     assert all_attentions.shape[2] == len(filtered_ids)
     assert all_attentions.shape[3] == len(filtered_ids)
     
@@ -741,3 +740,4 @@ def extract_attentions(
     
         print(f"The idx of this line of code:{sentence_idx}")
         print(f"Shape of the attention: {attentions.shape}")
+        print(attentions)
