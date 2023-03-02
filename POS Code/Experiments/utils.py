@@ -601,6 +601,10 @@ def extract_sentence_attentions(
         ]
         # the expected shape is num_layer (12) x num_heads (12) x seq_len x seq_len
         all_attentions = np.array(all_attentions)
+        print("Hi I'm here")
+        print(f"The shape of all_attentions is {all_attentions.shape}")
+        print(all_attentions[0:3,0:3,:,:])
+        exit(0)
 
 
     # Remove special tokens
@@ -740,4 +744,4 @@ def extract_attentions(
     
         print(f"The idx of this line of code:{sentence_idx}")
         print(f"Shape of the attention: {attentions.shape}")
-        print(attentions[0:4,0:4,:,:])
+        print(attentions[0:3,0:3,:,:])
