@@ -622,7 +622,7 @@ def extract_sentence_attentions(
     print(f"The shape of all_attentions is {all_attentions.shape}")
     print(all_attentions[0:3,0:3,:,:])
     print(f"tokenization_counts:{tokenization_counts}")
-    prrint(f"segmented_tokens:{segmented_tokens}")
+    print(f"segmented_tokens:{segmented_tokens}")
     exit(0)
 
     # Perform actual subword aggregation/detokenization
