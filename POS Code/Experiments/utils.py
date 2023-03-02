@@ -656,6 +656,10 @@ def extract_sentence_attentions(
         print(f"Processing:{token}")
         print(f"all_attentions after the processing")
         print(print(all_attentions[0:3,0:3,:,:]))
+    
+    print("~~~~~~~~~~~~~~~~~~~Processing done~~~~~~~~~~~~~~")
+    print(print(all_attentions[0:3,0:3,:,:]))
+    exit(0)
 
     print("Detokenized (%03d): %s" % (len(detokenized), detokenized))
     print("Counter: %d" % (counter))
