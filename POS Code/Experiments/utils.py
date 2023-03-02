@@ -611,7 +611,9 @@ def extract_sentence_attentions(
     filtered_ids = [ids[t_i] for t_i in idx_without_special_tokens]
     assert all_attentions.shape[2] == len(ids)
     assert all_attentions.shape[3] == len(ids)
-    all_attentions = all_attentions[:, :, idx_without_special_tokens, idx_without_special_tokens]
+    all_attentions = all_attentions[:, :, idx_without_special_tokens, :]
+    all_attentions = all_attentions[:, :, :, idx_without_special_tokens]
+    print(f"Shape of all_attentions:{all_attentions.shape}")
     assert all_attentions.shape[2] == len(filtered_ids)
     assert all_attentions.shape[3] == len(filtered_ids)
     
