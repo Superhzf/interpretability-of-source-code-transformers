@@ -639,7 +639,7 @@ def extract_sentence_attentions(
             # original word was actually tokenized
             if  (tokenization_counts[token] != 0 and current_word_start_idx_inner >= all_attentions.shape[2]) \
                     or current_word_end_idx_inner > all_attentions.shape[2]:
-                final_attentions = final_attentions[:, :,:len(detokenized),:len(detokenized)]
+                final_attentions = final_attentions[:, :,:len(detokenized_outer),:len(detokenized_inner)]
                 inputs_truncated = True
                 break
             final_attentions[:, :,len(detokenized_outer),len(detokenized_inner)] = aggregate_repr(
