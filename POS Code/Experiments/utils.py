@@ -674,7 +674,7 @@ def extract_sentence_attentions(
         assert len(detokenized_outer) == len(original_tokens)
     print("===================================================================")
 
-    return final_attentions, detokenized
+    return final_attentions
 
 
 def get_model_and_tokenizer(model_desc, device="cpu", random_weights=False):
@@ -745,7 +745,7 @@ def extract_attentions(
     print("Extracting representations from model")
     tokenization_counts = {} # Cache for tokenizer rules
     for sentence_idx, sentence in enumerate(corpus_generator(input_corpus)):
-        attentions, extracted_words = extract_sentence_attentions(
+        attentions, _ = extract_sentence_attentions(
             sentence,
             model,
             tokenizer,
