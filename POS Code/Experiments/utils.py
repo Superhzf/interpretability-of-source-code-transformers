@@ -642,6 +642,8 @@ def extract_sentence_attentions(
                 final_attentions = final_attentions[:, :,:len(detokenized_outer),:len(detokenized_inner)]
                 inputs_truncated = True
                 break
+            print("index:")
+            print(len(detokenized_outer),len(detokenized_inner))
             final_attentions[:, :,len(detokenized_outer),len(detokenized_inner)] = aggregate_repr(
                 all_attentions,
                 current_word_start_idx_outer,
