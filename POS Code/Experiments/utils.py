@@ -745,7 +745,7 @@ def extract_attentions(
     print("Extracting representations from model")
     tokenization_counts = {} # Cache for tokenizer rules
     for sentence_idx, sentence in enumerate(corpus_generator(input_corpus)):
-        attentions, _ = extract_sentence_attentions(
+        attentions = extract_sentence_attentions(
             sentence,
             model,
             tokenizer,
