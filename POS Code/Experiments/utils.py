@@ -664,11 +664,6 @@ def extract_sentence_attentions(
             )
         counter_outer += tokenization_counts[token_outer]
     
-    test = np.allclose(final_attentions, all_attentions,)
-    # print(final_attentions)
-    print(test)
-    exit(0)
-
 
     print("Detokenized (%03d): %s" % (len(detokenized), detokenized))
     print("Counter: %d" % (counter))
@@ -762,4 +757,4 @@ def extract_attentions(
     
         print(f"The idx of this line of code:{sentence_idx}")
         print(f"Shape of the attention: {attentions.shape}")
-        print(attentions[0:3,0:3,:,:])
+        print(attentions)
