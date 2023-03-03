@@ -665,9 +665,6 @@ def extract_sentence_attentions(
         counter_outer += tokenization_counts[token_outer]
     
 
-    print("Detokenized (%03d): %s" % (len(detokenized), detokenized))
-    print("Counter: %d" % (counter))
-
     if inputs_truncated:
         print("WARNING: Input truncated because of length, skipping check")
     else:
