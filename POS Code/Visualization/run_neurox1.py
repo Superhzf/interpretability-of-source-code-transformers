@@ -33,13 +33,13 @@ ACTIVATION_NAMES = {'pretrained_BERT':'bert_activations_train.json',
 # bert_top_neurons = [8322]
 # bert_class = "STRING"
 
-bert_idx = [179,251,707,241,537,11,301]
-bert_top_neurons = [6295]
-bert_class = "KEYWORD"
+# bert_idx = [179,251,707,241,537,11,301]
+# bert_top_neurons = [6295]
+# bert_class = "KEYWORD"
 
-# bert_idx = [115,3621,1082,798]
-# bert_top_neurons = [7]
-# bert_class = "MIXTURE"
+bert_idx = [115,3621,1082,798]
+bert_top_neurons = [7]
+bert_class = "MIXTURE"
 
 
 
