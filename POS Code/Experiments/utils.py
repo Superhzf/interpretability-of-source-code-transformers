@@ -620,9 +620,7 @@ def extract_sentence_attentions(
 
     # Perform actual subword aggregation/detokenization
     counter_outer = 0
-    counter_inner = 0
     detokenized_outer = []
-    detokenized_inner = []
     final_attentions = np.zeros(
         (all_attentions.shape[0],all_attentions.shape[1], len(original_tokens),len(original_tokens))
     )
@@ -631,6 +629,8 @@ def extract_sentence_attentions(
     for _, token_outer in enumerate(tmp_tokens):
         current_word_start_idx_outer = counter_outer
         current_word_end_idx_outer = counter_outer + tokenization_counts[token_outer]
+        detokenized_inner = []
+        counter_inner = 0
         for _, token_inner in enumerate(tmp_tokens):
             current_word_start_idx_inner = counter_inner
             current_word_end_idx_inner = counter_inner + tokenization_counts[token_inner]
@@ -660,7 +660,7 @@ def extract_sentence_attentions(
             detokenized_inner.append(
                 "".join(segmented_tokens[current_word_start_idx_inner:current_word_end_idx_inner])
             )
-            counter_inner = (counter_inner + tokenization_counts[token_inner])%total_len
+            counter_inner += tokenization_counts[token_inner]
 
         if inputs_truncated:
             break
