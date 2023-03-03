@@ -668,8 +668,10 @@ def extract_sentence_attentions(
     if inputs_truncated:
         print("WARNING: Input truncated because of length, skipping check")
     else:
-        assert counter == len(ids_without_special_tokens)
-        assert len(detokenized) == len(original_tokens)
+        assert counter_inner == len(ids_without_special_tokens)
+        assert counter_outer == len(ids_without_special_tokens)
+        assert len(detokenized_inner) == len(original_tokens)
+        assert len(detokenized_outer) == len(original_tokens)
     print("===================================================================")
 
     return final_attentions, detokenized
