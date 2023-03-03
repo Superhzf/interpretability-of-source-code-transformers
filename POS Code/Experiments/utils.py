@@ -641,6 +641,7 @@ def extract_sentence_attentions(
                     or current_word_end_idx_inner > all_attentions.shape[2]:
                 final_attentions = final_attentions[:, :,:len(detokenized_outer),:len(detokenized_inner)]
                 inputs_truncated = True
+                print("You are here!!!!!!!!!!!!")
                 break
             print("index:")
             print(len(detokenized_outer),len(detokenized_inner))
