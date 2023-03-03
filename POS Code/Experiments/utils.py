@@ -754,7 +754,7 @@ def extract_attentions(
             aggregation=aggregation,
             tokenization_counts=tokenization_counts
         )
-        output[sentence_idx]=attentions
+        output[sentence_idx]=attentions.tolist()
     
     with open("attentions.json","w") as f:
         json.dump(output, f)
