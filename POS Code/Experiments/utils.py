@@ -637,8 +637,8 @@ def extract_sentence_attentions(
 
             # Check for truncated hidden states in the case where the
             # original word was actually tokenized
-            if  (tokenization_counts[token] != 0 and current_word_start_idx >= all_attentions.shape[2]) \
-                    or current_word_end_idx > all_attentions.shape[2]:
+            if  (tokenization_counts[token] != 0 and current_word_start_idx_inner >= all_attentions.shape[2]) \
+                    or current_word_end_idx_inner > all_attentions.shape[2]:
                 final_attentions = final_attentions[:, :,:len(detokenized),:len(detokenized)]
                 inputs_truncated = True
                 break
