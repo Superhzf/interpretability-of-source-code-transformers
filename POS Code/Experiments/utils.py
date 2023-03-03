@@ -619,34 +619,49 @@ def extract_sentence_attentions(
     segmented_tokens = tokenizer.convert_ids_to_tokens(filtered_ids)
 
     # Perform actual subword aggregation/detokenization
-    counter = 0
-    detokenized = []
+    counter_outer = 0
+    counter_inner = 0
+    detokenized_outer = []
+    detokenized_inner = []
     final_attentions = np.zeros(
         (all_attentions.shape[0],all_attentions.shape[1], len(original_tokens),len(original_tokens))
     )
     inputs_truncated = False
 
-    for token_idx, token in enumerate(tmp_tokens):
-        current_word_start_idx = counter
-        current_word_end_idx = counter + tokenization_counts[token]
+    for _, token_outer in enumerate(tmp_tokens):
+        current_word_start_idx_outer = counter_outer
+        current_word_end_idx_outer = counter_outer + tokenization_counts[token_outer]
+        for _, token_inner in enumerate(tmp_tokens):
+            current_word_start_idx_inner = counter_inner
+            current_word_end_idx_inner = counter_inner + tokenization_counts[token_inner]
 
-        # Check for truncated hidden states in the case where the
-        # original word was actually tokenized
-        if  (tokenization_counts[token] != 0 and current_word_start_idx >= all_attentions.shape[2]) \
-                or current_word_end_idx > all_attentions.shape[2]:
-            final_attentions = final_attentions[:, :,:len(detokenized),:len(detokenized)]
-            inputs_truncated = True
+            # Check for truncated hidden states in the case where the
+            # original word was actually tokenized
+            if  (tokenization_counts[token] != 0 and current_word_start_idx >= all_attentions.shape[2]) \
+                    or current_word_end_idx > all_attentions.shape[2]:
+                final_attentions = final_attentions[:, :,:len(detokenized),:len(detokenized)]
+                inputs_truncated = True
+                break
+            final_attentions[:, :,len(detokenized_outer),len(detokenized_inner)] = aggregate_repr(
+                all_attentions,
+                current_word_start_idx_outer,
+                current_word_end_idx_outer - 1,
+                current_word_start_idx_inner,
+                current_word_end_idx_inner - 1,
+                aggregation,
+            )
+            detokenized_inner.append(
+                "".join(segmented_tokens[current_word_start_idx_inner:current_word_end_idx_inner])
+            )
+            counter_inner += tokenization_counts[token_inner]
+
+        if inputs_truncated:
             break
-        final_attentions[:, :,len(detokenized),len(detokenized)] = aggregate_repr(
-            all_attentions,
-            current_word_start_idx,
-            current_word_end_idx - 1,
-            aggregation,
-        )
-        detokenized.append(
-            "".join(segmented_tokens[current_word_start_idx:current_word_end_idx])
-        )
-        counter += tokenization_counts[token]
+
+        detokenized_outer.append(
+                "".join(segmented_tokens[current_word_start_idx_outer:current_word_end_idx_outer])
+            )
+        counter_outer += tokenization_counts[token_outer]
         
     print(final_attentions)
     exit(0)
@@ -685,7 +700,7 @@ def get_model_and_tokenizer(model_desc, device="cpu", random_weights=False):
     return model, tokenizer
 
 
-def aggregate_repr(state, start, end, aggregation):
+def aggregate_repr(state, start_x, end_x, start_y,end_y, aggregation):
     """
     Adapt from https://neurox.qcri.org/docs/_modules/neurox/data/extraction/transformers_extractor.html#aggregate_repr
     """
@@ -700,7 +715,7 @@ def aggregate_repr(state, start, end, aggregation):
     elif aggregation == "last":
         return state[:, :, end, end]
     elif aggregation == "average":
-        temp = np.average(state[:, :, start : end + 1, start : end + 1], axis=2)
+        temp = np.average(state[:, :, start_x : end_x + 1, start_y : end_y + 1], axis=2)
         output = np.average(temp[:, :,  : ], axis=2)
         return output
 
