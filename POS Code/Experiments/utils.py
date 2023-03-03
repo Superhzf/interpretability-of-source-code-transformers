@@ -664,6 +664,7 @@ def extract_sentence_attentions(
         counter_outer += tokenization_counts[token_outer]
     
     test = np.allclose(final_attentions, all_attentions,)
+    print(final_attentions - all_attentions)
     print(test)
     exit(0)
 
