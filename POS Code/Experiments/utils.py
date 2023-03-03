@@ -14,6 +14,7 @@ import collections
 import difflib
 import torch
 from transformers import AutoTokenizer, AutoModel
+import json
 
 l1 = [0,1e-5,1e-4,1e-3,1e-2,0.1]
 l2 = [0,1e-5,1e-4,1e-3,1e-2,0.1]
@@ -741,8 +742,8 @@ def extract_attentions(
                 yield line.strip()
             return
 
-
-    print("Extracting representations from model")
+    output = {}
+    print("Extracting attentions from model")
     tokenization_counts = {} # Cache for tokenizer rules
     for sentence_idx, sentence in enumerate(corpus_generator(input_corpus)):
         attentions = extract_sentence_attentions(
@@ -753,7 +754,7 @@ def extract_attentions(
             aggregation=aggregation,
             tokenization_counts=tokenization_counts
         )
+        output[sentence_idx]=attentions
     
-        print(f"The idx of this line of code:{sentence_idx}")
-        print(f"Shape of the attention: {attentions.shape}")
-        print(attentions)
+    with open("attentions.json","w") as f:
+        json.dump(output, f)
