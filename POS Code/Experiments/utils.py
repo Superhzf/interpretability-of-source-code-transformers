@@ -662,9 +662,11 @@ def extract_sentence_attentions(
                 "".join(segmented_tokens[current_word_start_idx_outer:current_word_end_idx_outer])
             )
         counter_outer += tokenization_counts[token_outer]
-        
-    print(final_attentions)
+    
+    test = np.allclose(final_attentions, all_attentions,)
+    print(test)
     exit(0)
+
 
     print("Detokenized (%03d): %s" % (len(detokenized), detokenized))
     print("Counter: %d" % (counter))
