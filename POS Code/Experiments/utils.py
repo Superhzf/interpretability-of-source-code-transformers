@@ -704,16 +704,16 @@ def aggregate_repr(state, start_x, end_x, start_y,end_y, aggregation):
     """
     Adapt from https://neurox.qcri.org/docs/_modules/neurox/data/extraction/transformers_extractor.html#aggregate_repr
     """
-    if end < start:
+    if end_x < start_x or end_y< start_y:
         sys.stderr.write("WARNING: An empty slice of tokens was encountered. " +
             "This probably implies a special unicode character or text " +
             "encoding issue in your original data that was dropped by the " +
             "transformer model's tokenizer.\n")
         return np.zeros((state.shape[0], state.shape[2]))
     if aggregation == "first":
-        return state[:, :, start, start]
+        assert 1 == 0, 'Not implemented yet'
     elif aggregation == "last":
-        return state[:, :, end, end]
+        assert 1 == 0, 'Not implemented yet'
     elif aggregation == "average":
         temp = np.average(state[:, :, start_x : end_x + 1, start_y : end_y + 1], axis=2)
         output = np.average(temp[:, :,  : ], axis=2)
