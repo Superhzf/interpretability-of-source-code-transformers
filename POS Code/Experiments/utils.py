@@ -647,7 +647,8 @@ def extract_sentence_attentions(
             "".join(segmented_tokens[current_word_start_idx:current_word_end_idx])
         )
         counter += tokenization_counts[token]
-    
+        
+    print(final_attentions)
     exit(0)
 
     print("Detokenized (%03d): %s" % (len(detokenized), detokenized))
