@@ -647,13 +647,7 @@ def extract_sentence_attentions(
             "".join(segmented_tokens[current_word_start_idx:current_word_end_idx])
         )
         counter += tokenization_counts[token]
-        print(f"Processing:{token}")
-        print(f"detokenized:{detokenized}")
-        print(f"final_attentions after the processing")
-        print(final_attentions[0:3,0:3,:,:])
     
-    print("~~~~~~~~~~~~~~~~~~~Processing done~~~~~~~~~~~~~~")
-    print(final_attentions[0:3,0:3,:,:])
     exit(0)
 
     print("Detokenized (%03d): %s" % (len(detokenized), detokenized))
@@ -706,11 +700,7 @@ def aggregate_repr(state, start, end, aggregation):
         return state[:, :, end, end]
     elif aggregation == "average":
         temp = np.average(state[:, :, start : end + 1, start : end + 1], axis=2)
-        print(f"temp shape:{temp.shape}")
-        print(f"temp:{temp[0:3,0:3]}")
         output = np.average(temp[:, :,  : ], axis=2)
-        print(f"output shape:{output.shape}")
-        print(f"output:{output[0:3,0:3]}")
         return output
 
 
