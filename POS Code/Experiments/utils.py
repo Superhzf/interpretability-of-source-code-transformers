@@ -635,12 +635,6 @@ def extract_sentence_attentions(
             current_word_start_idx_inner = counter_inner
             current_word_end_idx_inner = counter_inner + tokenization_counts[token_inner]
 
-            print("index:")
-            print(len(detokenized_outer),len(detokenized_inner))
-            print(f"current_word_start_idx_outer:{current_word_start_idx_outer}")
-            print(f"current_word_end_idx_outer:{current_word_end_idx_outer}")
-            print(f"current_word_start_idx_inner:{current_word_start_idx_inner}")
-            print(f"current_word_end_idx_inner:{current_word_end_idx_inner}")
             # Check for truncated hidden states in the case where the
             # original word was actually tokenized
             if  (tokenization_counts[token] != 0 and current_word_start_idx_inner >= all_attentions.shape[2]) \
@@ -670,9 +664,9 @@ def extract_sentence_attentions(
             )
         counter_outer += tokenization_counts[token_outer]
     
-    # test = np.allclose(final_attentions, all_attentions,)
-    print(final_attentions)
-    # print(test)
+    test = np.allclose(final_attentions, all_attentions,)
+    # print(final_attentions)
+    print(test)
     exit(0)
 
 
