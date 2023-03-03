@@ -627,7 +627,7 @@ def extract_sentence_attentions(
         (all_attentions.shape[0],all_attentions.shape[1], len(original_tokens),len(original_tokens))
     )
     inputs_truncated = False
-
+    total_len = sum(tokenization_counts.values())
     for _, token_outer in enumerate(tmp_tokens):
         current_word_start_idx_outer = counter_outer
         current_word_end_idx_outer = counter_outer + tokenization_counts[token_outer]
@@ -660,7 +660,7 @@ def extract_sentence_attentions(
             detokenized_inner.append(
                 "".join(segmented_tokens[current_word_start_idx_inner:current_word_end_idx_inner])
             )
-            counter_inner += tokenization_counts[token_inner]
+            counter_inner = (counter_inner + tokenization_counts[token_inner])%total_len
 
         if inputs_truncated:
             break
