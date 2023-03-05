@@ -83,10 +83,14 @@ class InputFeatures(object):
 def convert_examples_to_features(js,tokenizer,args):
     #source
     code=' '.join(js['func'].split())
+    print("code",code)
+    print("tokenized code original", tokenizer.tokenize(code))
     code_tokens=tokenizer.tokenize(code)[:args.block_size-2]
+    print("tokenized code new", code_tokens)
     source_tokens =[tokenizer.bos_token]+code_tokens+[tokenizer.eos_token]
     source_ids =  tokenizer.convert_tokens_to_ids(source_tokens)
     padding_length = args.block_size - len(source_ids)
+    print(tokenizer.pad_token)
     source_ids+=[tokenizer.pad_token_id]*padding_length
     return InputFeatures(source_tokens,source_ids,js['idx'],js['target'])
 
@@ -404,6 +408,7 @@ def extract(args, model, tokenizer,debug=True):
                     if debug:
                         print("All tokens")
                         print(tokens)
+                        print(input_ids)
                     if args.model_type == 'bert':
                         tokens = [(i,t) for i,t in tokens if t != '[PAD]']
                     elif args.model_type == 'xlnet':
@@ -413,7 +418,7 @@ def extract(args, model, tokenizer,debug=True):
                     elif args.model_type == 'distilbert':
                         tokens = [(i,t) for i,t in tokens if t != '[PAD]']
                     elif args.model_type == 'gpt2':                         
-                        tokens = [(i,t) for i,t in tokens if t != '[PAD]']  #print and verify
+                        tokens = [(i,t) for i,t in tokens if t != '<pad>']  #print and verify
                     #Only get CLS tokens or first token 
                     if args.sentence_only and args.model_type == 'bert':
                         tokens = [(i,t) for i,t in tokens if t == '[CLS]']
@@ -426,7 +431,7 @@ def extract(args, model, tokenizer,debug=True):
                     if args.sentence_only and args.model_type == 'distilbert':
                         tokens = [(i,t) for i,t in tokens if t == '[CLS]']
                     if args.sentence_only and args.model_type == 'gpt2':
-                        tokens = [(i,t) for i,t in tokens if t == '<\s>']
+                        tokens = [(i,t) for i,t in tokens if t == '</s>']
 
                     if debug:
                         print("Extracting tokens:")
@@ -623,12 +628,16 @@ def main():
     config = config_class.from_pretrained(args.config_name if args.config_name else args.model_name_or_path,
                                           cache_dir=args.cache_dir if args.cache_dir else None)
     config.num_labels=2
+    config.pad_token_id=config.eos_token_id
+    print("config")
+    print(config)
     tokenizer = tokenizer_class.from_pretrained(args.tokenizer_name,
                                                 do_lower_case=args.do_lower_case,
                                                 cache_dir=args.cache_dir if args.cache_dir else None)
-    #Added for GPT based models
-    tokenizer.padding_side= "left"
-    tokenizer.pad_token = tokenizer.eos_token
+    
+    print("tokenizer")
+    print(tokenizer)
+
 
     if args.block_size <= 0:
         args.block_size = tokenizer.max_len_single_sentence  # Our input block size will be the max possible for the model
@@ -640,15 +649,14 @@ def main():
                                             cache_dir=args.cache_dir if args.cache_dir else None)    
     else:
         model = model_class(config)
-
-    model.resize_token_embeddings(len(tokenizer))
-    model.config.pad_token_id = model.config.eos_token_id
-    model.config.padding_side="left"
+    
+    print(model)  
     model=Model(model,config,tokenizer,args)
     if args.local_rank == 0:
         torch.distributed.barrier()  # End of barrier to make sure only the first process in distributed training download model & vocab
     
-
+    print(model)
+    print(model.config.pad_token_id)
     logger.info("Training/evaluation parameters %s", args)
 
     # Training
