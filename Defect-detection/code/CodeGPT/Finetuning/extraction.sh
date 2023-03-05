@@ -16,7 +16,7 @@ ml-gpu /work/LAS/jannesar-lab/arushi/Environments/finetuning_env/bin/python run_
     --config_name=microsoft/CodeGPT-small-java-adaptedGPT2 \
     --model_name_or_path=microsoft/CodeGPT-small-java-adaptedGPT2 \
     --tokenizer_name=microsoft/CodeGPT-small-java-adaptedGPT2 \
-    --do_extract \
+    --do_test \
     --train_data_file=/work/LAS/jannesar-lab/arushi/Redundancy/Defect-detection/dataset/train.jsonl \
     --eval_data_file=/work/LAS/jannesar-lab/arushi/Redundancy/Defect-detection/dataset/valid.jsonl \
     --test_data_file=/work/LAS/jannesar-lab/arushi/Redundancy/Defect-detection/dataset/test.jsonl \

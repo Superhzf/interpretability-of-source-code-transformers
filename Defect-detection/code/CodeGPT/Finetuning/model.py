@@ -29,9 +29,15 @@ class Model(nn.Module):
             labels=labels.float()
             loss=torch.log(prob[:,0]+1e-10)*labels+torch.log((1-prob)[:,0]+1e-10)*(1-labels)
             loss=-loss.mean()
-            return loss,prob,hidden_states
+            if self.args.do_extract==True:
+                return loss,prob,hidden_states
+            else: 
+                return loss,prob
         else:
-            return prob,hidden_states
+            if self.args.do_extract==True:
+                return prob,hidden_states
+            else:
+                return prob
       
         
  
