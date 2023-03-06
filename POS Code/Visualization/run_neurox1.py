@@ -28,6 +28,10 @@ ACTIVATION_NAMES = {'pretrained_BERT':'bert_activations_train.json',
 # bert_idx = [461,543,545,381,384,395,254,270,275,41,695,812,798]
 # bert_top_neurons = [4097]
 # bert_class = "NAME"
+bert_idx = [43,44,45,325,326,3100,3118,376,390]
+bert_top_neurons = [2]
+bert_class = "NAME"
+
 
 # bert_idx = [4157,10866,17523,17526]
 # bert_top_neurons = [8322]
@@ -37,9 +41,9 @@ ACTIVATION_NAMES = {'pretrained_BERT':'bert_activations_train.json',
 # bert_top_neurons = [6295]
 # bert_class = "KEYWORD"
 
-bert_idx = [115,3621,1082,798]
-bert_top_neurons = [7]
-bert_class = "MIXTURE"
+# bert_idx = [115,3621,1082,798]
+# bert_top_neurons = [7]
+# bert_class = "MIXTURE"
 
 
 
