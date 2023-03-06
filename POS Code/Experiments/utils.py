@@ -689,6 +689,7 @@ def get_model_and_tokenizer(model_desc, device="cpu", random_weights=False):
     else:
         model_name = model_desc[0]
         tokenizer_name = model_desc[1]
+    # https://huggingface.co/docs/transformers/v4.23.1/en/model_doc/bert#transformers.BertModel
     model = AutoModel.from_pretrained(model_name, output_attentions=True).to(device)
     tokenizer = AutoTokenizer.from_pretrained(tokenizer_name)
 
