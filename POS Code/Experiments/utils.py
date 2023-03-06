@@ -288,6 +288,12 @@ def layerwise_probes_inference(X_train,y_train,X_valid,y_valid,X_test,y_test,idx
         layer_test = ablation.filter_activations_by_layers(X_test, [i], 13)
         _,_ = all_activations_probe(layer_train,y_train,layer_valid,y_valid,layer_test,y_test,
                                     idx2label,src_tokens_test,weighted,this_model_name,sample_idx_test)
+        train0 = ablation.filter_activations_by_layers(X_train, [0], 13)
+        valid0 = ablation.filter_activations_by_layers(X_valid, [0], 13)
+        tets0 = ablation.filter_activations_by_layers(X_test, [0], 13)
+        print(f"The distance between the features in layer {i} and layer 0 (training):{np.linalg.norm(train0-layer_train)}")
+        print(f"The distance between the features in layer {i} and layer 0 (validation):{np.linalg.norm(valid0-layer_valid)}")
+        print(f"The distance between the features in layer {i} and layer 0 (testing):{np.linalg.norm(tets0-layer_test)}")
 
 
 def randomReassignment(tokens,labels,distribution):
