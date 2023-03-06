@@ -1,0 +1,11 @@
+[MEMORY] Begin: 260.66
+*********************** LOADING ACTIVATIONS ***********************
+[MEMORY] Before activation loading: 260.66
+Loading json activations from /work/LAS/jannesar-lab/arushi/Redundancy/Defect-detection/dataset/activations/codegpt/python-adapted/train_activations.json...
+21854 13.0
+Loading json activations from /work/LAS/jannesar-lab/arushi/Redundancy/Defect-detection/dataset/activations/codegpt/python-adapted/dev_activations.json...
+21854 13.0
+Number of train sentences: 21854
+Number of test sentences: 21854
+[MEMORY] After activation loading: 4068.91
+************************* LOADING TOKENS **************************
