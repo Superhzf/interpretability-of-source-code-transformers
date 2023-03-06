@@ -566,8 +566,19 @@ NAME_KW:0,KW_KW:243
 NAME_STRING:1,KW_other:0
 NAME_NUMBER:64
 NAME_STRING_list:['a']
-NAME_NUMBER_list:['x', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'x', 'x', 'x', 'h0', 'X', 'X', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'X', 'X', 'X', 'X', 'X', 'X']
-NAME_NUMBER_sample:[array([164,   9]), array([252,   5]), array([253,   7]), array([260,   4]), array([261,  13]), array([262,  12]), array([263,  10]), array([265,   4]), array([266,  11]), array([267,  10]), array([269,   4]), array([270,   3]), array([276,  16]), array([277,   5]), array([281,   9]), array([282,   8]), array([372,   0]), array([390,   7]), array([391,   3]), array([392,   7]), array([393,  14]), array([394,   7]), array([395,  14]), array([396,   7]), array([397,  15]), array([398,   7]), array([399,  14]), array([400,   9]), array([401,   5]), array([402,   9]), array([403,  28]), array([404,   9]), array([405,  28]), array([406,   9]), array([407,  31]), array([408,   9]), array([409,  28]), array([410,   9]), array([411,  27]), array([412,   9]), array([412,  15]), array([413,  27]), array([414,  26]), array([415,  10]), array([416,  19]), array([627,   4]), array([628,   6]), array([641,   4]), array([642,   6]), array([709,   7]), array([716,   3]), array([864,   5]), array([865,  10]), array([868,   4]), array([869,   7]), array([874,  13]), array([904,  10]), array([908,   7]), array([931,   6]), array([938,   7]), array([941,   7]), array([942,   7]), array([943,   7]), array([944,   7])]
+NAME_NUMBER_list:['x', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'x', 'x', 'x', 'h0', 'X', 'X', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 
+'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2',
+ 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'X', 'X', 'X', 'X', 'X', 'X']
+NAME_NUMBER_sample:[array([164,   9]), array([252,   5]), array([253,   7]), array([260,   4]), array([261,  13]), array([262,  12]), 
+array([263,  10]), array([265,   4]), array([266,  11]), array([267,  10]), array([269,   4]), array([270,   3]), array([276,  16]), 
+array([277,   5]), array([281,   9]), array([282,   8]), array([372,   0]), array([390,   7]), array([391,   3]), array([392,   7]), 
+array([393,  14]), array([394,   7]), array([395,  14]), array([396,   7]), array([397,  15]), array([398,   7]), array([399,  14]), 
+array([400,   9]), array([401,   5]), array([402,   9]), array([403,  28]), array([404,   9]), array([405,  28]), array([406,   9]), 
+array([407,  31]), array([408,   9]), array([409,  28]), array([410,   9]), array([411,  27]), array([412,   9]), array([412,  15]), 
+array([413,  27]), array([414,  26]), array([415,  10]), array([416,  19]), array([627,   4]), array([628,   6]), array([641,   4]), 
+array([642,   6]), array([709,   7]), array([716,   3]), array([864,   5]), array([865,  10]), array([868,   4]), array([869,   7]), 
+array([874,  13]), array([904,  10]), array([908,   7]), array([931,   6]), array([938,   7]), array([941,   7]), array([942,   7]), 
+array([943,   7]), array([944,   7])]
 Accuracy on the test set of pretrained_BERT_layer_2 model using the intercept:
 Score (accuracy) of the probe: 0.25
 pretrained_BERT Layer 3

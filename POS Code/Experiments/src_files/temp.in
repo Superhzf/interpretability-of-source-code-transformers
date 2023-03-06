@@ -1,1 +1,2 @@
-Playing basketball was fun .
+assert values == [ 1.0 * ( 0.99 ** x ) for x in range ( 4 ) ] + [ 0.97 ] * 8
+~~ ~~ def lstm ( X , h , c , W , U , b ) :
