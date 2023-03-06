@@ -111,7 +111,7 @@ def main():
             print(f"Generate svg files for {this_model}")
             this_activation_name = ACTIVATION_NAMES[this_model]
             activations = load_extracted_activations(this_activation_name)
-            tokens =  load_tokens(activations)
+            tokens, _ =  load_tokens(activations)
             print(f"Length of {this_model} activations:",len(activations))
             print(f"Length of {this_model} tokens source:",len(tokens["source"]))
             _, num_neurons = activations[0].shape
