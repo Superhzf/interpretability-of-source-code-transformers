@@ -8,7 +8,7 @@ length of source dictionary:  25436
 length of target dictionary:  49
 419332
 Total instances: 419332
-['col_name', 'max_results', 'remote_ref', 'builtins', 'resource_dir', 'target', 'list_', '_perform_appengine_request', 'EMAIL_REGEX', 'test_dataset_elements_time_span', '"U"', 'pngsize', 'node_tfpdef', 'bottle', 'get_raw', 'distinct', 'SetRotateAxisEnabled', 'serialize', 'is_trainer', 'test_recursive_nested_simple_routers']
+['"headerLine"', 'test_authorized_to_manage_request_watcher', 'changed_cb', 'getChildren', 'RLIM_INFINITY', 'failed_connection', 'date_end', '"application/vnd.oasis.opendocument.presentation-template"', '_on_visibility', 'get_profile_networks', 'cleanlist', 'ajenti', 'test_smoke', '"freebsd_x86/reverse_tcp2"', '281', 'mail', '"prof:test_post_new_profile"', 'check_htmlcalendar_encoding', 'is_success', 'test_like_repr']
 Number of samples:  419332
 Stats: Labels with their frequencies in the final set
 NAME 133988
@@ -71,7 +71,7 @@ length of source dictionary:  19979
 length of target dictionary:  47
 387342
 Total instances: 387342
-['4098', 'db_delete_actionAnnotation', '_left_indent_char', 'Lasso', 'fwd', 'builtins', '"proto"', 'ms_y', 'Sqr', 'QuartzGlyphRenderer', 'target', 'i_minus', 'bottle', 'y_mean', 'second_func', 'distinct', 'serialize', 'SmartPhoneIndex', 'train_loop', 'assert_labels_equal']
+['tuple_arg', 'assertSequenceEqual', 'aa0', 'next_minus', 'Tango', '_check_for_parallel_derivs', 'RESULT_DOC', 'cleanlist', 'eigvals', 'Producer', 'MediaFormatException', 'prep_vars2', 'mail', 'CTFontGetGlyphsForCharacters', 'DefaultHash', '_path2uri', 'common_io_test', 'jmax', 'push', 'add_header']
 Number of samples:  387342
 Stats: Labels with their frequencies in the final set
 NAME 124783
@@ -354,6 +354,9 @@ NAME_NUMBER_list:['h0', 'h0', 'W1', 'V1', 'W2', 'V2', 'x2', 'x2', 'x2', 'x2', 'x
 NAME_NUMBER_sample:[array([271,   4]), array([277,   5]), array([277,  14]), array([277,  18]), array([278,  15]), array([278,  19]), array([372,   0]), array([390,   7]), array([391,   3]), array([392,   7]), array([393,  14]), array([394,   7]), array([395,  14]), array([396,   7]), array([397,  15]), array([398,   7]), array([399,  14]), array([400,   9]), array([401,   5]), array([402,   9]), array([403,  28]), array([404,   9]), array([405,  28]), array([406,   9]), array([407,  31]), array([408,   9]), array([409,  28]), array([410,   9]), array([411,  27]), array([412,   9]), array([412,  15]), array([413,  27]), array([414,  26]), array([415,  10]), array([416,  19])]
 Accuracy on the test set of pretrained_BERT_layer_0 model using the intercept:
 Score (accuracy) of the probe: 0.25
+The distance between the features in layer 0 and layer 0 (training):0.0
+The distance between the features in layer 0 and layer 0 (validation):0.0
+The distance between the features in layer 0 and layer 0 (testing):0.0
 pretrained_BERT Layer 1
 Training classification probe
 Creating model...
@@ -462,6 +465,9 @@ NAME_NUMBER_list:['V1', 'h0', 'h0', 'W1', 'V1', 'x2', 'x2', 'x2', 'x2', 'x2', 'x
 NAME_NUMBER_sample:[array([247,   0]), array([271,   4]), array([277,   5]), array([277,  14]), array([277,  18]), array([390,   7]), array([391,   3]), array([392,   7]), array([393,  14]), array([394,   7]), array([395,  14]), array([396,   7]), array([397,  15]), array([398,   7]), array([399,  14]), array([400,   9]), array([401,   5]), array([402,   9]), array([403,  28]), array([404,   9]), array([405,  28]), array([406,   9]), array([407,  31]), array([408,   9]), array([409,  28]), array([410,   9]), array([411,  27]), array([412,   9]), array([412,  15]), array([413,  27]), array([414,  26]), array([415,  10]), array([416,  19])]
 Accuracy on the test set of pretrained_BERT_layer_1 model using the intercept:
 Score (accuracy) of the probe: 0.25
+The distance between the features in layer 1 and layer 0 (training):1327.1328125
+The distance between the features in layer 1 and layer 0 (validation):534.8392944335938
+The distance between the features in layer 1 and layer 0 (testing):523.5930786132812
 pretrained_BERT Layer 2
 Training classification probe
 Creating model...
@@ -566,21 +572,13 @@ NAME_KW:0,KW_KW:243
 NAME_STRING:1,KW_other:0
 NAME_NUMBER:64
 NAME_STRING_list:['a']
-NAME_NUMBER_list:['x', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'x', 'x', 'x', 'h0', 'X', 'X', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 
-'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2',
- 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'X', 'X', 'X', 'X', 'X', 'X']
-NAME_NUMBER_sample:[array([164,   9]), array([252,   5]), array([253,   7]), array([260,   4]), array([261,  13]), array([262,  12]), 
-array([263,  10]), array([265,   4]), array([266,  11]), array([267,  10]), array([269,   4]), array([270,   3]), array([276,  16]), 
-array([277,   5]), array([281,   9]), array([282,   8]), array([372,   0]), array([390,   7]), array([391,   3]), array([392,   7]), 
-array([393,  14]), array([394,   7]), array([395,  14]), array([396,   7]), array([397,  15]), array([398,   7]), array([399,  14]), 
-array([400,   9]), array([401,   5]), array([402,   9]), array([403,  28]), array([404,   9]), array([405,  28]), array([406,   9]), 
-array([407,  31]), array([408,   9]), array([409,  28]), array([410,   9]), array([411,  27]), array([412,   9]), array([412,  15]), 
-array([413,  27]), array([414,  26]), array([415,  10]), array([416,  19]), array([627,   4]), array([628,   6]), array([641,   4]), 
-array([642,   6]), array([709,   7]), array([716,   3]), array([864,   5]), array([865,  10]), array([868,   4]), array([869,   7]), 
-array([874,  13]), array([904,  10]), array([908,   7]), array([931,   6]), array([938,   7]), array([941,   7]), array([942,   7]), 
-array([943,   7]), array([944,   7])]
+NAME_NUMBER_list:['x', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'x', 'x', 'x', 'h0', 'X', 'X', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x2', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'X', 'X', 'X', 'X', 'X', 'X']
+NAME_NUMBER_sample:[array([164,   9]), array([252,   5]), array([253,   7]), array([260,   4]), array([261,  13]), array([262,  12]), array([263,  10]), array([265,   4]), array([266,  11]), array([267,  10]), array([269,   4]), array([270,   3]), array([276,  16]), array([277,   5]), array([281,   9]), array([282,   8]), array([372,   0]), array([390,   7]), array([391,   3]), array([392,   7]), array([393,  14]), array([394,   7]), array([395,  14]), array([396,   7]), array([397,  15]), array([398,   7]), array([399,  14]), array([400,   9]), array([401,   5]), array([402,   9]), array([403,  28]), array([404,   9]), array([405,  28]), array([406,   9]), array([407,  31]), array([408,   9]), array([409,  28]), array([410,   9]), array([411,  27]), array([412,   9]), array([412,  15]), array([413,  27]), array([414,  26]), array([415,  10]), array([416,  19]), array([627,   4]), array([628,   6]), array([641,   4]), array([642,   6]), array([709,   7]), array([716,   3]), array([864,   5]), array([865,  10]), array([868,   4]), array([869,   7]), array([874,  13]), array([904,  10]), array([908,   7]), array([931,   6]), array([938,   7]), array([941,   7]), array([942,   7]), array([943,   7]), array([944,   7])]
 Accuracy on the test set of pretrained_BERT_layer_2 model using the intercept:
 Score (accuracy) of the probe: 0.25
+The distance between the features in layer 2 and layer 0 (training):1795.6134033203125
+The distance between the features in layer 2 and layer 0 (validation):703.958984375
+The distance between the features in layer 2 and layer 0 (testing):700.8172607421875
 pretrained_BERT Layer 3
 Training classification probe
 Creating model...
@@ -689,6 +687,9 @@ NAME_NUMBER_list:['W1', 'V1', 'V2', 'X', 'X', 'X', 'X', 'X', 'X', 'h0', 'h0', 'x
 NAME_NUMBER_sample:[array([246,   0]), array([247,   0]), array([250,   0]), array([252,   5]), array([261,  13]), array([262,  12]), array([263,  10]), array([265,   4]), array([267,  10]), array([271,   4]), array([277,   5]), array([372,   0]), array([390,   7]), array([391,   3]), array([392,   7]), array([393,  14]), array([394,   7]), array([395,  14]), array([396,   7]), array([397,  15]), array([398,   7]), array([399,  14]), array([400,   9]), array([401,   5]), array([402,   9]), array([403,  28]), array([404,   9]), array([405,  28]), array([406,   9]), array([407,  31]), array([408,   9]), array([409,  28]), array([410,   9]), array([411,  27]), array([412,   9]), array([412,  15]), array([413,  27]), array([414,  26]), array([415,  10]), array([416,  19]), array([716,   3]), array([868,   4]), array([869,   7]), array([904,  10]), array([908,   7]), array([938,   7]), array([942,   7])]
 Accuracy on the test set of pretrained_BERT_layer_3 model using the intercept:
 Score (accuracy) of the probe: 0.25
+The distance between the features in layer 3 and layer 0 (training):2044.9896240234375
+The distance between the features in layer 3 and layer 0 (validation):819.7901611328125
+The distance between the features in layer 3 and layer 0 (testing):795.8544311523438
 pretrained_BERT Layer 4
 Training classification probe
 Creating model...
@@ -797,6 +798,9 @@ NAME_NUMBER_list:['V1', 'V2', 'X', 'X', 'X', 'X', 'x', 'h0', 'x', 'h0', 'V1', 'V
 NAME_NUMBER_sample:[array([247,   0]), array([250,   0]), array([252,   5]), array([261,  13]), array([262,  12]), array([265,   4]), array([270,   3]), array([271,   4]), array([276,  16]), array([277,   5]), array([277,  18]), array([278,  19]), array([281,   9]), array([282,   8]), array([372,   0]), array([390,   7]), array([391,   3]), array([392,   7]), array([393,  14]), array([394,   7]), array([395,  14]), array([396,   7]), array([397,  15]), array([398,   7]), array([399,  14]), array([400,   9]), array([401,   5]), array([402,   9]), array([403,  28]), array([404,   9]), array([405,  28]), array([406,   9]), array([407,  31]), array([408,   9]), array([409,  28]), array([410,   9]), array([411,  27]), array([412,   9]), array([412,  15]), array([413,  27]), array([414,  26]), array([415,  10]), array([416,  19]), array([628,   6]), array([642,   6]), array([709,   7]), array([716,   3]), array([865,  10]), array([869,   7]), array([874,  13]), array([904,  10]), array([908,   7]), array([938,   7]), array([941,   7]), array([941,  17]), array([942,   7]), array([942,  17]), array([943,   7]), array([943,  17]), array([944,   7])]
 Accuracy on the test set of pretrained_BERT_layer_4 model using the intercept:
 Score (accuracy) of the probe: 0.25
+The distance between the features in layer 4 and layer 0 (training):2262.20361328125
+The distance between the features in layer 4 and layer 0 (validation):901.8902587890625
+The distance between the features in layer 4 and layer 0 (testing):869.3283081054688
 pretrained_BERT Layer 5
 Training classification probe
 Creating model...
@@ -905,6 +909,9 @@ NAME_NUMBER_list:['x', 'x', 'V1', 'V2', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 
 NAME_NUMBER_sample:[array([164,   9]), array([164,  12]), array([247,   0]), array([250,   0]), array([252,   5]), array([253,   7]), array([260,   4]), array([261,  13]), array([262,  12]), array([263,  10]), array([265,   4]), array([266,  11]), array([267,  10]), array([269,   4]), array([270,   3]), array([271,   4]), array([276,  16]), array([277,   5]), array([277,  14]), array([277,  18]), array([278,  15]), array([278,  19]), array([281,   9]), array([282,   8]), array([372,   0]), array([374,   8]), array([374,  11]), array([390,   7]), array([391,   3]), array([392,   7]), array([393,  14]), array([394,   7]), array([395,  14]), array([396,   7]), array([397,  15]), array([398,   7]), array([399,  14]), array([400,   9]), array([401,   5]), array([402,   9]), array([403,  28]), array([404,   9]), array([405,  28]), array([406,   9]), array([407,  31]), array([408,   9]), array([409,  28]), array([410,   9]), array([411,  27]), array([412,   9]), array([412,  15]), array([413,  27]), array([414,  26]), array([415,  10]), array([416,  19]), array([492,   6]), array([627,   4]), array([628,   6]), array([641,   4]), array([642,   6]), array([709,   7]), array([716,   3]), array([718,   1]), array([739,  12]), array([863,   2]), array([864,   5]), array([865,  10]), array([868,   4]), array([869,   7]), array([874,  13]), array([904,  10]), array([908,   7]), array([931,   6]), array([938,   7]), array([941,   7]), array([941,  17]), array([942,   7]), array([942,  17]), array([943,   7]), array([943,  17]), array([944,   7])]
 Accuracy on the test set of pretrained_BERT_layer_5 model using the intercept:
 Score (accuracy) of the probe: 0.25
+The distance between the features in layer 5 and layer 0 (training):2434.1845703125
+The distance between the features in layer 5 and layer 0 (validation):985.2410888671875
+The distance between the features in layer 5 and layer 0 (testing):934.4458618164062
 pretrained_BERT Layer 6
 Training classification probe
 Creating model...
@@ -1013,6 +1020,9 @@ NAME_NUMBER_list:['x', 'x', 'W1', 'V1', 'W2', 'V2', 'X', 'b', 'X', 'X', 'X', 'X'
 NAME_NUMBER_sample:[array([164,   9]), array([164,  12]), array([246,   0]), array([247,   0]), array([249,   0]), array([250,   0]), array([252,   5]), array([252,  15]), array([253,   7]), array([260,   4]), array([261,  13]), array([262,  12]), array([263,  10]), array([265,   4]), array([266,  11]), array([267,  10]), array([269,   4]), array([270,   3]), array([271,   0]), array([271,   4]), array([276,  16]), array([277,   5]), array([277,  14]), array([277,  18]), array([278,  15]), array([278,  19]), array([281,   9]), array([282,   8]), array([372,   0]), array([374,   8]), array([374,  11]), array([390,   7]), array([391,   3]), array([392,   7]), array([393,  14]), array([394,   7]), array([395,  14]), array([396,   7]), array([397,  15]), array([398,   7]), array([399,  14]), array([400,   9]), array([401,   5]), array([402,   9]), array([403,  28]), array([404,   9]), array([405,  28]), array([406,   9]), array([407,  31]), array([408,   9]), array([409,  28]), array([410,   9]), array([411,  27]), array([412,   9]), array([412,  15]), array([413,  27]), array([414,  26]), array([415,  10]), array([416,  19]), array([492,   6]), array([627,   4]), array([628,   6]), array([641,   4]), array([642,   6]), array([709,   7]), array([716,   3]), array([718,   1]), array([739,  12]), array([862,   4]), array([863,   2]), array([864,   5]), array([865,  10]), array([868,   4]), array([869,   7]), array([874,  13]), array([904,  10]), array([908,   7]), array([931,   6]), array([938,   1]), array([938,   7]), array([941,   7]), array([941,  17]), array([942,   1]), array([942,   7]), array([942,  17]), array([943,   7]), array([943,  17]), array([944,   1]), array([944,   7])]
 Accuracy on the test set of pretrained_BERT_layer_6 model using the intercept:
 Score (accuracy) of the probe: 0.25
+The distance between the features in layer 6 and layer 0 (training):2549.850341796875
+The distance between the features in layer 6 and layer 0 (validation):1027.5791015625
+The distance between the features in layer 6 and layer 0 (testing):985.4658203125
 pretrained_BERT Layer 7
 Training classification probe
 Creating model...
@@ -1121,6 +1131,9 @@ NAME_NUMBER_list:['x', 'X', 'b', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'x', 'x
 NAME_NUMBER_sample:[array([164,   9]), array([252,   5]), array([252,  15]), array([253,   7]), array([260,   4]), array([261,  13]), array([262,  12]), array([263,  10]), array([265,   4]), array([266,  11]), array([267,  10]), array([269,   4]), array([270,   3]), array([276,  16]), array([281,   9]), array([282,   8]), array([372,   0]), array([374,   8]), array([374,  11]), array([390,   7]), array([391,   3]), array([392,   7]), array([393,  14]), array([394,   7]), array([395,  14]), array([396,   7]), array([397,  15]), array([398,   7]), array([399,  14]), array([400,   9]), array([401,   5]), array([402,   9]), array([403,  28]), array([404,   9]), array([405,  28]), array([406,   9]), array([407,  31]), array([408,   9]), array([409,  28]), array([410,   9]), array([411,  27]), array([412,   9]), array([412,  15]), array([413,  27]), array([414,  26]), array([415,  10]), array([416,  19]), array([492,   8]), array([642,   6]), array([709,   7]), array([716,   3]), array([863,   2]), array([864,   5]), array([865,  10]), array([868,   4]), array([869,   7]), array([874,  13]), array([904,  10]), array([908,   7]), array([931,   6]), array([938,   1]), array([938,   7]), array([941,   7]), array([942,   7]), array([943,   7]), array([944,   7])]
 Accuracy on the test set of pretrained_BERT_layer_7 model using the intercept:
 Score (accuracy) of the probe: 0.25
+The distance between the features in layer 7 and layer 0 (training):2642.12744140625
+The distance between the features in layer 7 and layer 0 (validation):1066.150390625
+The distance between the features in layer 7 and layer 0 (testing):1023.272216796875
 pretrained_BERT Layer 8
 Training classification probe
 Creating model...
@@ -1229,6 +1242,9 @@ NAME_NUMBER_list:['X', 'W', 'b', 'X', 'X', 'X', 'X', 'X', 'x', 'h0', 'x', 'h0', 
 NAME_NUMBER_sample:[array([252,   5]), array([252,  11]), array([252,  15]), array([253,   7]), array([260,   4]), array([261,  13]), array([262,  12]), array([265,   4]), array([269,   4]), array([271,   4]), array([276,  16]), array([277,   5]), array([277,  14]), array([278,  15]), array([281,   9]), array([282,   8]), array([372,   0]), array([374,   8]), array([390,   7]), array([391,   3]), array([392,   7]), array([394,   7]), array([396,   7]), array([398,   7]), array([399,  14]), array([400,   9]), array([401,   5]), array([402,   9]), array([403,  28]), array([404,   9]), array([406,   9]), array([408,   9]), array([410,   9]), array([412,   9]), array([412,  15]), array([413,  27]), array([415,  10]), array([492,   8]), array([641,   2]), array([709,   7]), array([716,   3]), array([865,  10]), array([868,   4]), array([869,   7]), array([869,  10]), array([874,  13]), array([904,  10]), array([908,   7]), array([938,   7]), array([941,   7]), array([942,   7]), array([943,   7]), array([944,   7])]
 Accuracy on the test set of pretrained_BERT_layer_8 model using the intercept:
 Score (accuracy) of the probe: 0.25
+The distance between the features in layer 8 and layer 0 (training):2746.197265625
+The distance between the features in layer 8 and layer 0 (validation):1099.795654296875
+The distance between the features in layer 8 and layer 0 (testing):1070.0697021484375
 pretrained_BERT Layer 9
 Training classification probe
 Creating model...
@@ -1337,6 +1353,9 @@ NAME_NUMBER_list:['X', 'c', 'b', 'X', 'X', 'X', 'X', 'X', 'X', 'h0', 'W1', 'V1',
 NAME_NUMBER_sample:[array([252,   5]), array([252,   9]), array([252,  15]), array([253,   7]), array([260,   4]), array([261,  13]), array([262,  12]), array([263,  10]), array([265,   4]), array([271,   4]), array([277,  14]), array([277,  18]), array([278,  15]), array([278,  19]), array([282,   8]), array([390,   7]), array([391,   3]), array([392,   7]), array([393,  14]), array([394,   7]), array([396,   7]), array([398,   7]), array([399,  14]), array([400,   9]), array([401,   5]), array([402,   9]), array([404,   9]), array([406,   9]), array([408,   9]), array([410,   9]), array([412,   9]), array([412,  15]), array([415,  10]), array([416,  19]), array([492,   8]), array([641,   2]), array([709,   7]), array([716,   3]), array([874,  13]), array([904,  10]), array([908,   7])]
 Accuracy on the test set of pretrained_BERT_layer_9 model using the intercept:
 Score (accuracy) of the probe: 0.25
+The distance between the features in layer 9 and layer 0 (training):2810.44921875
+The distance between the features in layer 9 and layer 0 (validation):1129.090087890625
+The distance between the features in layer 9 and layer 0 (testing):1118.0430908203125
 pretrained_BERT Layer 10
 Training classification probe
 Creating model...
@@ -1445,6 +1464,9 @@ NAME_NUMBER_list:['m', 'm', 'm', 'x', 'X', 'c', 'b', 'h0', 'h0', 'W1', 'W2', 'X'
 NAME_NUMBER_sample:[array([39,  7]), array([65,  6]), array([71,  6]), array([164,   9]), array([252,   5]), array([252,   9]), array([252,  15]), array([271,   4]), array([277,   5]), array([277,  14]), array([278,  15]), array([282,   8]), array([374,   8]), array([390,   7]), array([391,   3]), array([392,   7]), array([394,   7]), array([396,   7]), array([398,   7]), array([399,  14]), array([400,   9]), array([401,   5]), array([402,   9]), array([404,   9]), array([406,   9]), array([408,   9]), array([410,   9]), array([412,   9]), array([412,  15]), array([415,  10]), array([416,  19]), array([489,   4]), array([492,   8]), array([641,   2]), array([709,   7]), array([716,   3]), array([865,  10]), array([874,  13]), array([904,  10]), array([908,   7]), array([938,   7])]
 Accuracy on the test set of pretrained_BERT_layer_10 model using the intercept:
 Score (accuracy) of the probe: 0.25
+The distance between the features in layer 10 and layer 0 (training):2877.056396484375
+The distance between the features in layer 10 and layer 0 (validation):1156.9180908203125
+The distance between the features in layer 10 and layer 0 (testing):1143.2529296875
 pretrained_BERT Layer 11
 Training classification probe
 Creating model...
@@ -1553,6 +1575,9 @@ NAME_NUMBER_list:['m', 'm', 'm', 'x', 'c', 'X', 'h0', 'h0', 'W1', 'X', 'x', 'x',
 NAME_NUMBER_sample:[array([39,  7]), array([65,  6]), array([71,  6]), array([164,   9]), array([252,   9]), array([261,  13]), array([271,   4]), array([277,   5]), array([277,  14]), array([282,   8]), array([374,   8]), array([374,  11]), array([390,   7]), array([391,   3]), array([392,   7]), array([394,   7]), array([396,   7]), array([398,   7]), array([399,  14]), array([400,   9]), array([401,   5]), array([402,   9]), array([404,   9]), array([406,   9]), array([408,   9]), array([410,   9]), array([412,   9]), array([412,  15]), array([415,  10]), array([416,  19]), array([489,   4]), array([641,   2]), array([777,   2]), array([778,  10]), array([778,  14]), array([782,   8]), array([782,  12]), array([799,   9]), array([800,  14]), array([802,   1]), array([803,   7]), array([805,   8]), array([814,   9]), array([814,  13]), array([865,  10]), array([874,  13]), array([904,  10]), array([908,   7]), array([938,   7]), array([941,   7]), array([942,   7]), array([943,   7]), array([944,   7])]
 Accuracy on the test set of pretrained_BERT_layer_11 model using the intercept:
 Score (accuracy) of the probe: 0.25
+The distance between the features in layer 11 and layer 0 (training):2931.56787109375
+The distance between the features in layer 11 and layer 0 (validation):1191.203369140625
+The distance between the features in layer 11 and layer 0 (testing):1174.6553955078125
 pretrained_BERT Layer 12
 Training classification probe
 Creating model...
@@ -1661,6 +1686,9 @@ NAME_NUMBER_list:['m', 'm', 'm', 'x', 'c', 'W', 'W', 'h', 'W', 'p', 'h0', 'h0', 
 NAME_NUMBER_sample:[array([39,  7]), array([65,  6]), array([71,  6]), array([164,   9]), array([252,   9]), array([252,  11]), array([260,   8]), array([264,   7]), array([265,   8]), array([269,   6]), array([271,   4]), array([277,   5]), array([277,  14]), array([277,  16]), array([277,  18]), array([277,  20]), array([278,  15]), array([278,  19]), array([278,  21]), array([374,   8]), array([390,   7]), array([391,   3]), array([392,   7]), array([393,  14]), array([394,   7]), array([396,   7]), array([398,   7]), array([399,  14]), array([400,   9]), array([401,   5]), array([402,   9]), array([403,  28]), array([404,   9]), array([406,   9]), array([408,   9]), array([410,   9]), array([412,   9]), array([412,  15]), array([414,  26]), array([415,  10]), array([416,  19]), array([476,   6]), array([489,   4]), array([778,  10]), array([778,  14]), array([782,   8]), array([802,   1]), array([814,   9]), array([865,  10]), array([874,  13]), array([908,   7]), array([938,   7]), array([941,   7]), array([942,   7]), array([943,   7]), array([944,   7])]
 Accuracy on the test set of pretrained_BERT_layer_12 model using the intercept:
 Score (accuracy) of the probe: 0.25
+The distance between the features in layer 12 and layer 0 (training):3018.075927734375
+The distance between the features in layer 12 and layer 0 (validation):1215.830810546875
+The distance between the features in layer 12 and layer 0 (testing):1180.7099609375
 
 pretrained_BERT top neurons
 array([4097, 4098,    2, 4101, 2053,    7, 6154, 2059, 8203, 2061, 6162,
