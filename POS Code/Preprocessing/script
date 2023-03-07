@@ -11,13 +11,13 @@ module load ml-gpu
 ml-gpu /work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python merge_python_files.py
 
 #This will generate codetest.in and codetest.label
-ml-gpu /work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python POS_dataset_creation.py
+# ml-gpu /work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python POS_dataset_creation.py
 
 #remove observations and labels that have different length
-ml-gpu /work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python skip_lines.py
+# ml-gpu /work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python skip_lines.py
 
 # remove duplicated lines
-ml-gpu /work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python deduplication.py > log
+# ml-gpu /work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python deduplication.py > log
 
 # validate that activation extraction works without problems
 # ml-gpu /work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python activation_extraction.py > log_validation
