@@ -21,3 +21,4 @@ py150_files
 
 py150_files.tar.gz
 py150_files
+*.pickle
