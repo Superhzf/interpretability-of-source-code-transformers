@@ -37,6 +37,9 @@ import pandas as pd
 # f.close()
 
 files = pd.read_pickle(r'deduplicated_python_code.pickle')
+files = files[:2000] # Train
+# files = files[2000:3000] # Dev
+# files = files[3000:4000] # Test
 
 my_file = "myfile.txt"
 
