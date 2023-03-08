@@ -51,5 +51,7 @@ except OSError:
 g = open(my_file,'a')
 for this_file_py_code in files:
     g.writelines(this_file_py_code)
+    g.writelines("\n")
+    g.writelines('\n')
     
 g.close()
