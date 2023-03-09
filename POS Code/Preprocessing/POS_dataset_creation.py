@@ -11,6 +11,8 @@ except OSError:
 #Run python tokenizer on myfile.txt -- which contains original code file
 os.system("python -m tokenize -e myfile.txt > myfile_tokens.txt")
 
+exit(0)
+
 keyword_list = ['False','await','else','import','pass','None','break','except','in','raise','True','class','finally','is','return','and','continue','for','lambda','try','as','def','from','nonlocal','while','assert','del','global','not','with','async''elif','if','or','yield']
 
 #Creating dictionary of tokens and tags from original python source code
