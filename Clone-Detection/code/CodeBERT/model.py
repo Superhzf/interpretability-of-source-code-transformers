@@ -39,10 +39,10 @@ class Model(nn.Module):
         
     def forward(self, input_ids=None,labels=None): 
         input_ids=input_ids.view(-1,self.args.block_size)
-        outputs = self.encoder(input_ids= input_ids,attention_mask=input_ids.ne(1))[0]
-        output= self.encoder(input_ids= input_ids,attention_mask=input_ids.ne(1),output_hidden_states=True)
-        print(output)
-        hidden_states=output[2]
+        outputs = self.encoder(input_ids= input_ids,attention_mask=input_ids.ne(1),output_hidden_states=True)[0]
+        #output= self.encoder(input_ids= input_ids,attention_mask=input_ids.ne(1),output_hidden_states=True)
+        print(len(outputs[2]) #
+        hidden_states=outputs[2] #(batch_size,sequence_length,hiddensize)
         logits=self.classifier(outputs)
         prob=F.softmax(logits)
         if labels is not None:
