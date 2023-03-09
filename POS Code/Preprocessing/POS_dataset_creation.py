@@ -60,28 +60,27 @@ except OSError:
 
 #Convert to required input formats: tokens: codetest.in, tags: codetest.label
 with open('codetest.label', 'a') as f_label, open('codetest.in', 'a') as f_in:
-  for i in range(3000):
-    for i in range(len(lst)):
-      if (lst[i-1][0] == 'NEWLINE' or lst[i-1][0] == 'NL'):
-        # print("\n")
-        f_label.writelines("\n")
-      if (lst[i][0] == 'ENDMARKER'):
-        continue
-      else:
-        # print(lst[i][0], end = ' ')
-        f_label.writelines(lst[i][0] + ' ')
+  for i in range(len(lst)):
+    if (lst[i-1][0] == 'NEWLINE' or lst[i-1][0] == 'NL'):
+      # print("\n")
+      f_label.writelines("\n")
+    if (lst[i][0] == 'ENDMARKER'):
+      continue
+    else:
+      # print(lst[i][0], end = ' ')
+      f_label.writelines(lst[i][0] + ' ')
 
-    for i in range(len(lst)):
-      if (lst[i-1][0] == 'NEWLINE' or lst[i-1][0] == 'NL'):
-        # print("\n")
-        f_in.writelines("\n")
-      if (lst[i][0] == 'ENDMARKER'):
-        # print("\n")
-        # f_in.writelines("\n")
-        continue
-      else:
-        # print(lst[i][1], end = ' ')
-        f_in.writelines(lst[i][1]+ ' ' )
+  for i in range(len(lst)):
+    if (lst[i-1][0] == 'NEWLINE' or lst[i-1][0] == 'NL'):
+      # print("\n")
+      f_in.writelines("\n")
+    if (lst[i][0] == 'ENDMARKER'):
+      # print("\n")
+      # f_in.writelines("\n")
+      continue
+    else:
+      # print(lst[i][1], end = ' ')
+      f_in.writelines(lst[i][1]+ ' ' )
 
 f_label.close()
 f_in.close()
