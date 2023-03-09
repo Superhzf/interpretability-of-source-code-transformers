@@ -18,7 +18,7 @@ keyword_list = ['False','await','else','import','pass','None','break','except','
 with open('myfile_tokens.txt') as f_in:
     lst = []
     for line in f_in:
-        grp = re.search(r"([0-9]+,[0-9]+-[0-9]+,[0-9]+:)\s+([A-Z]+)\s*('.*')\s*|[0-9]+,[0-9]+-[0-9]+,[0-9]+:\s+[A-Z]+\s+'.*'\s*",line)
+        grp = re.search(r"([0-9]+,[0-9]+-[0-9]+,[0-9]+:)\s*([A-Z]+)\s*('.*')\s*|[0-9]+,[0-9]+-[0-9]+,[0-9]+:\s+[A-Z]+\s+'.*'\s*",line)
         #Skip if None; eg 23-27
         if grp is None:
             continue
