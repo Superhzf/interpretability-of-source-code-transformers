@@ -1,5 +1,4 @@
 #Code to randomly sampe 10% of the data from train.txt, valid.txt, test.txt and store in .word and .label files
-
 import json
 import random
 import argparse
@@ -91,129 +90,43 @@ def generate_balanced_dataset_files(filename):
             print(json.dumps(balanced_data[x][2]),file=out)
 
 
+
+def get_dataset_stats(filename):
+
+    with open("stratified/"+filename+'.label', encoding='utf-8') as j:
+        count0 = 0
+        count1=0
+        for line in j:
+            d = line.replace('"', '').replace("'", "")
+            # print(d)
+            if"0"in d:
+                count0=count0+1
+                continue
+            elif "1" in d:
+                count1=count1+1
+                continue
+            else:
+                print("error:"+filename)
+        print(filename+" dataset- 0:", count0,"1:", count1)
+
+
 def main():
     # Create the parser and add arguments
     parser = argparse.ArgumentParser()
-    parser.add_argument(dest='filename',type=str, help="train,valid or test")
-
+    parser.add_argument('-f','--filename',type=str, help="train,valid or test")
+    parser.add_argument('-s','--stats',action='store_true', help="get dataset statistics")
     # Parse and print the results
     args = parser.parse_args()
-    print(args.filename)
-    generate_balanced_dataset_files(args.filename)
 
+    if args.filename is not None:
+        print(args.filename)
+   #     generate_balanced_dataset_files(args.filename)
+
+    if args.stats==True:
+        get_dataset_stats(args.filename)
 
 if __name__ == "__main__":
     main()
-
-
-'''
-data=[]
-with open('valid.txt') as f:
-    for line in f:
-        line=line.strip()
-        url1,url2,label=line.split('\t')
-        if url1 not in url_to_code or url2 not in url_to_code:
-            continue
-            if label=='0':
-                label=0
-            else:
-               label=1
-        data.append((url1,url2,label,url_to_code))
-data=random.sample(data,int(len(data)*0.1))
-
-print(len(data))
-
-with open ('dev.word', 'w', encoding='utf-8') as out:
-    for x in range(len(data)):
-        print(data[x][0])
-        print(json.dumps(data[x][0]),file=out)
-
-
-with open ('dev1.word', 'w', encoding='utf-8') as out:
-    for x in range(len(data)):
-        print(data[x][1])
-        print(json.dumps(data[x][1]),file=out)
-
-with open ('dev.label', 'w', encoding='utf-8') as out:
-    for x in range(len(data)):
-        print(data[x][2])
-        print(json.dumps(data[x][2]),file=out)
-
-
-
-
-#with open ('train1.word', 'w', encoding='utf-8') as out:
-#    with open('train.txt') as f:
-#        for line in f:
-#            line=line.strip()
-#            url1,url2,label=line.split('\t')
-#            if url1 not in url_to_code or url2 not in url_to_code:
-#                continue
-#                if label=='0':
-#                    label=0
-#                else:
-#                    label=1
-#            print(json.dumps(url2),file=out)
-#           
-#with open ('train.label', 'w', encoding='utf-8') as out:
-#    with open('train.txt') as f:
-#        for line in f:
-#            line=line.strip()
-#            url1,url2,label=line.split('\t')
-#            if url1 not in url_to_code or url2 not in url_to_code:
-#                continue
-#                if label=='0':
-#                    label=0
-#                else:
-#                    label=1
-#            print(json.dumps(label),file=out)
-#
-#
-#
-#data=[]
-#with open ('dev.word', 'w', encoding='utf-8') as out:
-#    with open('valid.txt') as f:
-#        for line in f:
-#            line=line.strip()
-#            url1,url2,label=line.split('\t')
-#            if url1 not in url_to_code or url2 not in url_to_code:
-#                continue
-#                if label=='0':
-#                    label=0
-#                else:
-#                    label=1
-#            print(json.dumps(url1),file=out)
-#            data.append((url1,url2,label,url_to_code))
-#
-#with open ('dev1.word', 'w', encoding='utf-8') as out:
-#    with open('valid.txt') as f:
-#        for line in f:
-#            line=line.strip()
-#            url1,url2,label=line.split('\t')
-#            if url1 not in url_to_code or url2 not in url_to_code:
-#                continue
-#                if label=='0':
-#                    label=0
-#                else:
-#                    label=1
-#            print(json.dumps(url2),file=out)
-#
-#with open ('dev.label', 'w', encoding='utf-8') as out:
-#    with open('valid.txt') as f:
-#        for line in f:
-#            line=line.strip()
-#            url1,url2,label=line.split('\t')
-#            if url1 not in url_to_code or url2 not in url_to_code:
-#                continue
-#                if label=='0':
-#                    label=0
-#                else:
-#                    label=1
-#            print(json.dumps(label),file=out)
-#
-
-'''
-
 
 
   
