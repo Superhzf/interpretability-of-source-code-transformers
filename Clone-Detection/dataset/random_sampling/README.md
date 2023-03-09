@@ -6,4 +6,4 @@ Test dataset- 0: 358,596 1: 56,820  (Original size, not 10%)
 
 We observe a major class imbalance in the validation and test sets, with the number of true clone samples being significantly lower than false ones. 
 
-Instead of using random sampling, we  now use stratified sampling to address class imbalance.We save the stratified datasets we use as well. 
+Instead of using random sampling, we now use stratified sampling to address class imbalance.We save the stratified datasets we use as well. 
