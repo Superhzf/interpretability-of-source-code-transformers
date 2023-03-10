@@ -52,7 +52,6 @@ with open('codetest.label', 'a') as f_label, open('codetest.in', 'a') as f_in:
                 my_list[1] = '~~'
             elif ((my_list[0] == 'NAME') and (my_list[1] in keyword_list)):
                 my_list[0] = 'KEYWORD'
-        lst.append(my_list)
         # lst.append(my_list) #store in list of lists
 
         if (my_list[0] == 'NEWLINE' or my_list[0] == 'NL'):
