@@ -27,9 +27,7 @@ except OSError:
 #Creating dictionary of tokens and tags from original python source code
 with open('codetest.label', 'a') as f_label, open('codetest.in', 'a') as f_in:
   with open('myfile_tokens.txt') as f_token:
-      # lst = []
       for line in f_token:
-        #   grp = re.search(r"([0-9]+,[0-9]+-[0-9]+,[0-9]+:)\s*([A-Z]+)\s*('.*')\s*|[0-9]+,[0-9]+-[0-9]+,[0-9]+:\s+[A-Z]+\s+'.*'\s*",line)
         grp1 = re.search(r"""([0-9]+,[0-9]+-[0-9]+,[0-9]+:)\s*([A-Z]+)\s*[']{1}(.*?)[']{1}""",line)
         grp2 = re.search(r"""([0-9]+,[0-9]+-[0-9]+,[0-9]+:)\s*([A-Z]+)\s*["]{1}(.*?)["]{1}""",line)
         if grp1 is not None and grp2 is not None:
@@ -52,7 +50,6 @@ with open('codetest.label', 'a') as f_label, open('codetest.in', 'a') as f_in:
                 my_list[1] = '~~'
             elif ((my_list[0] == 'NAME') and (my_list[1] in keyword_list)):
                 my_list[0] = 'KEYWORD'
-        # lst.append(my_list) #store in list of lists
 
         if (my_list[0] == 'NEWLINE' or my_list[0] == 'NL'):
             f_label.writelines("\n")
@@ -68,52 +65,3 @@ with open('codetest.label', 'a') as f_label, open('codetest.in', 'a') as f_in:
 f_in.close()
 f_label.close()
 f_in.close()
-
-
-# try:
-#     os.remove("POS.csv")
-# except OSError:
-#     pass
-
-# #Store intermediate result in csv file
-# with open('POS.csv', 'a') as f:
-#     for item in clean:
-#         f.write("%s,%s\n"%(item[0],item[1]))
-# f.close()
-
-# try:
-#     os.remove('codetest.label')
-# except OSError:
-#     pass
-
-# try:
-#     os.remove('codetest.in')
-# except OSError:
-#     pass
-
-# #Convert to required input formats: tokens: codetest.in, tags: codetest.label
-# with open('codetest.label', 'a') as f_label, open('codetest.in', 'a') as f_in:
-#   for i in range(len(lst)):
-#     if (lst[i-1][0] == 'NEWLINE' or lst[i-1][0] == 'NL'):
-#       # print("\n")
-#       f_label.writelines("\n")
-#     if (lst[i][0] == 'ENDMARKER'):
-#       continue
-#     else:
-#       # print(lst[i][0], end = ' ')
-#       f_label.writelines(lst[i][0] + ' ')
-
-#   for i in range(len(lst)):
-#     if (lst[i-1][0] == 'NEWLINE' or lst[i-1][0] == 'NL'):
-#       # print("\n")
-#       f_in.writelines("\n")
-#     if (lst[i][0] == 'ENDMARKER'):
-#       # print("\n")
-#       # f_in.writelines("\n")
-#       continue
-#     else:
-#       # print(lst[i][1], end = ' ')
-#       f_in.writelines(lst[i][1]+ ' ' )
-
-# f_label.close()
-# f_in.close()
