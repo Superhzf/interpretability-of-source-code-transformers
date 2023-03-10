@@ -6,6 +6,7 @@ from sklearn.model_selection import train_test_split
 import numpy as np
 import collections
 import torch
+import os
 
 
 keyword_list = ['False','await','else','import','pass','None','break','except','in','raise','True',
@@ -20,17 +21,14 @@ MODEL_NAMES = ['pretrained_BERT',
                'pretrained_CodeBERT','pretrained_GraphCodeBERT',
                'finetuned_defdet_CodeBERT','finetuned_defdet_GraphCodeBERT',
                'finetuned_clonedet_CodeBERT','finetuned_clonedet_GraphCodeBERT']
-# ACTIVATION_NAMES = ['bert_activations.json',
-#                     'codebert_activations.json','graphcodebert_activations.json',
-#                     'codebert_defdet_activations.json','graphcodebert_defdet_activations.json',
-#                     'codebert_clonedet_activations1.json','graphcodebert_clonedet_activations1.json']
-ACTIVATION_NAMES = {'pretrained_BERT':['bert_activations_train.json','bert_activations_test.json'],
+ACTIVATION_NAMES = {'pretrained_BERT':['bert_activations_train.json','bert_activations_valid.json','bert_activations_test.json'],
                     'pretrained_CodeBERT':['codebert_activations_train.json','codebert_activations_test.json'],
                     'pretrained_GraphCodeBERT':['graphcodebert_activations_train.json','graphcodebert_activations_test.json'],
                     'finetuned_defdet_CodeBERT':['codebert_defdet_activations_train.json','codebert_defdet_activations_test.json'],
                     'finetuned_defdet_GraphCodeBERT':['graphcodebert_defdet_activations_train.json','graphcodebert_defdet_activations_test.json'],
                     'finetuned_clonedet_CodeBERT':['codebert_clonedet_activations1_train.json','codebert_clonedet_activations1_test.json'],
                     'finetuned_clonedet_GraphCodeBERT':['graphcodebert_clonedet_activations1_train.json','graphcodebert_clonedet_activations1_test.json']}
+AVTIVATIONS_FOLDER = "./activations/"
 MODEL_DESC = {"pretrained_BERT":'bert-base-uncased',
               "pretrained_CodeBERT":'microsoft/codebert-base',
               "pretrained_GraphCodeBERT":'microsoft/graphcodebert-base'}
@@ -45,11 +43,15 @@ def main():
             if this_model in ['pretrained_BERT','pretrained_CodeBERT','pretrained_GraphCodeBERT']:
                 print(f"Generating the activation file for {this_model}")
                 activation_file_name=ACTIVATION_NAMES[this_model][0]
-                extract_activations('./src_files/codetest2_train_unique.in',MODEL_DESC[this_model],activation_file_name)
+                extract_activations('./src_files/codetest2_train_unique.in',MODEL_DESC[this_model],os.path.join(AVTIVATIONS_FOLDER,activation_file_name))
                 activation_file_name=ACTIVATION_NAMES[this_model][1]
-                extract_activations('./src_files/codetest2_test_unique.in',MODEL_DESC[this_model],activation_file_name)
+                extract_activations('./src_files/codetest2_valid_unique.in',MODEL_DESC[this_model],os.path.join(AVTIVATIONS_FOLDER,activation_file_name))
+                activation_file_name=ACTIVATION_NAMES[this_model][2]
+                extract_activations('./src_files/codetest2_test_unique.in',MODEL_DESC[this_model],os.path.join(AVTIVATIONS_FOLDER,activation_file_name))
+                exit(0)
     else:
         print("Getting activations from json files. If you need to extract them, run with --extract=True \n" )
+    exit(0)
 
     for this_model in MODEL_NAMES:
         torch.manual_seed(0)
