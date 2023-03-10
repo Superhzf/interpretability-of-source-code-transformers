@@ -42,7 +42,7 @@ with open('codetest.label', 'a') as f_label, open('codetest.in', 'a') as f_in:
         elif grp2 is not None:
             grp = grp2
         else:
-            assert 1==0, print(f"Something is wrong with, {i}, {line}")
+            print(f"Something is wrong with, {i}, {line}")
         x = grp.groups()
         my_list = [x[1], x[2]]
         for item in (my_list):
