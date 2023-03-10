@@ -17,7 +17,7 @@ keyword_list = ['False','await','else','import','pass','None','break','except','
 #Creating dictionary of tokens and tags from original python source code
 with open('myfile_tokens.txt') as f_in:
     lst = []
-    for line in f_in:
+    for count,line in enumerate(f_in):
         grp = re.search(r"([0-9]+,[0-9]+-[0-9]+,[0-9]+:)\s*([A-Z]+)\s*('.*')\s*|[0-9]+,[0-9]+-[0-9]+,[0-9]+:\s+[A-Z]+\s+'.*'\s*",line)
         #Skip if None; eg 23-27
         if grp is None:
@@ -33,8 +33,10 @@ with open('myfile_tokens.txt') as f_in:
             if ((my_list[0] == 'NAME') and (my_list[1] in keyword_list)):
                 my_list[0] = 'KEYWORD'
         lst.append(my_list) #store in list of lists
-        clean = [x for x in lst if x is not None]
-        tup_to_dict = dict(clean)
+        # clean = [x for x in lst if x is not None]
+        # tup_to_dict = dict(clean)
+        if count >= 90000:
+          break
 
 f_in.close()
 
