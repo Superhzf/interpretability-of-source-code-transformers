@@ -1,0 +1,208 @@
+Getting activations from json files. If you need to extract them, run with --extract=True 
+
+Anayzing pretrained_BERT
+Loading json activations from ./activations/bert_activations_train.json...
+54291 13.0
+Skipping line:  2
+A: 1, S: 0, T: 0
+Deleting line 2: 1 activations, 0 source, 0 target
+Number of tokens:  507520
+length of source dictionary:  28820
+length of target dictionary:  49
+507520
+Total instances: 507520
+["'deserialization_schema_selector'", 'nextPriv', 'gf', '_stm', 'numelem', 'wait_for', '"docs"', 'opacity', 'report2', 'namespace', 'onDone', 'IntervalTree', 'ref_accession', 'det', 'merge_search_parser', 'qty', 'WRITE', 'sec_symbol', '_LOGGER', 'rawkey']
+Number of samples:  507520
+Stats: Labels with their frequencies in the final set
+NAME 175779
+KEYWORD 38836
+LPAR 37541
+RPAR 36846
+DOT 35570
+COMMA 33435
+EQUAL 30541
+COLON 19841
+STRING 17117
+DEDENT 16599
+LSQB 14740
+RSQB 14613
+INDENT 11963
+NUMBER 10471
+PLUS 1939
+EQEQUAL 1830
+STAR 1500
+MINUS 1458
+LBRACE 1070
+RBRACE 845
+DOUBLESTAR 844
+SLASH 630
+PERCENT 577
+PLUSEQUAL 501
+GREATER 456
+NOTEQUAL 429
+LESS 332
+RARROW 330
+GREATEREQUAL 175
+LESSEQUAL 133
+AMPER 94
+DOUBLESLASH 94
+MINEQUAL 58
+ELLIPSIS 55
+COMMENT 37
+VBAR 35
+AT 29
+STAREQUAL 27
+RIGHTSHIFT 25
+LEFTSHIFT 25
+SLASHEQUAL 24
+VBAREQUAL 23
+TILDE 23
+CIRCUMFLEX 22
+AMPEREQUAL 2
+DOUBLESLASHEQUAL 2
+RIGHTSHIFTEQUAL 2
+ENCODING 1
+DOUBLESTAREQUAL 1
+pretrained_BERT distribution after trauncating:
+{0: 0.7257507132446749, 3: 0.16034483470477245, 1: 0.07067212214547301, 2: 0.04323232990507962}
+{0: 175779, 3: 38836, 1: 17117, 2: 10471}
+{'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
+Loading json activations from ./activations/bert_activations_valid.json...
+33619 13.0
+Skipping line:  4
+A: 1, S: 0, T: 0
+Deleting line 4: 1 activations, 0 source, 0 target
+Number of tokens:  308881
+length of source dictionary:  19446
+length of target dictionary:  46
+308881
+Total instances: 308881
+['_iterate_response_terms', 'valid_opt_name', "r'(?P<koKicker>{0})'", '"grep"', 'metric_class', '365.', 'b_g', '_add_label_from_dict', 'parameter_list', '"CH"', '_resolve_sym', "'order_number'", 'soadat', 'gf', 'realignment', "'OMIM'", '_unlock', 'validation_type', 'combined_parameters', 'mim_genes']
+Number of samples:  308881
+Stats: Labels with their frequencies in the final set
+NAME 106508
+DOT 23234
+KEYWORD 22857
+LPAR 22119
+RPAR 21487
+COMMA 21037
+EQUAL 18195
+STRING 12883
+COLON 12504
+DEDENT 10175
+LSQB 8421
+RSQB 8348
+INDENT 7080
+NUMBER 5227
+EQEQUAL 1207
+PLUS 1136
+LBRACE 1077
+STAR 963
+RBRACE 913
+MINUS 741
+DOUBLESTAR 555
+SLASH 393
+PLUSEQUAL 323
+GREATER 292
+NOTEQUAL 240
+PERCENT 222
+RARROW 214
+LESS 200
+GREATEREQUAL 82
+LESSEQUAL 47
+AT 33
+AMPER 29
+DOUBLESLASH 27
+MINEQUAL 27
+VBAR 23
+COMMENT 13
+ELLIPSIS 13
+STAREQUAL 10
+LEFTSHIFT 7
+TILDE 7
+RIGHTSHIFT 4
+SLASHEQUAL 3
+CIRCUMFLEX 2
+ENCODING 1
+DOUBLESLASHEQUAL 1
+AMPEREQUAL 1
+pretrained_BERT distribution after trauncating:
+{0: 0.7222105441600272, 3: 0.1549889811832514, 1: 0.08735717918291236, 2: 0.035443295473809124}
+{0: 106508, 3: 22857, 1: 12883, 2: 5227}
+{'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
+Loading json activations from ./activations/bert_activations_test.json...
+32570 13.0
+Skipping line:  8
+A: 1, S: 0, T: 0
+Deleting line 8: 1 activations, 0 source, 0 target
+Number of tokens:  302447
+length of source dictionary:  18380
+length of target dictionary:  49
+302447
+Total instances: 302447
+['_aggMonths', 'bias_start', 'maxIndex', '"scheme"', 'ConnectionPool', 'infer_gaps_in_tree', 'executeMetricsQuery', '".so"', 'parameter_list', 'restore_component', 'estimate_q', 'validate_url', 'getSpec', 'fn_actions_and_internals', 'py_tm', 'b_imgs_list', 'PAGE_CATEGORIES', "'stderrConsoleHandler'", '"options"', 'heron_rc_file']
+Number of samples:  302447
+Stats: Labels with their frequencies in the final set
+NAME 106943
+DOT 23125
+LPAR 23019
+RPAR 22645
+KEYWORD 21773
+COMMA 19472
+EQUAL 18096
+COLON 11225
+DEDENT 9777
+STRING 8156
+LSQB 7717
+RSQB 7682
+NUMBER 7295
+INDENT 6823
+EQEQUAL 1344
+MINUS 1259
+PLUS 1013
+STAR 863
+LBRACE 527
+PLUSEQUAL 448
+RBRACE 436
+GREATER 417
+PERCENT 341
+NOTEQUAL 341
+SLASH 323
+DOUBLESTAR 284
+LESS 247
+GREATEREQUAL 216
+LESSEQUAL 107
+AMPER 100
+RIGHTSHIFT 61
+LEFTSHIFT 53
+MINEQUAL 48
+DOUBLESLASH 48
+RARROW 41
+VBAR 38
+ELLIPSIS 28
+COMMENT 19
+AT 17
+CIRCUMFLEX 17
+STAREQUAL 15
+SLASHEQUAL 15
+VBAREQUAL 12
+TILDE 7
+SEMI 6
+PERCENTEQUAL 5
+ENCODING 1
+DOUBLESTAREQUAL 1
+AMPEREQUAL 1
+pretrained_BERT distribution after trauncating:
+{0: 0.7417994409261481, 3: 0.1510262404017563, 1: 0.05657327959935353, 2: 0.05060103907274203}
+{0: 106943, 3: 21773, 1: 8156, 2: 7295}
+{'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
+
+The distribution of classes in training after removing repeated tokens between training and tesing:
+Counter({0: 175779, 3: 38836, 1: 17117, 2: 10471})
+{'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
+The distribution of classes in valid:
+Counter({1: 782, 2: 144, 0: 52})
+{'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
+The distribution of classes in testing:
+Counter({1: 542, 2: 51, 0: 19})
+{'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
