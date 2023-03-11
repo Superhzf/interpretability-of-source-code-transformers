@@ -59,7 +59,7 @@ def main():
                                                                         './src_files/codetest2_train_unique.in','./src_files/codetest2_train_unique.label',
                                                                         False,this_model)
             tokens_valid,activations_valid,flat_tokens_valid,X_valid, y_valid, label2idx_valid, idx2label_valid,_=preprocess(os.path.join(AVTIVATIONS_FOLDER,ACTIVATION_NAMES[this_model][1]),
-                                                            './src_files/codetest2_train_unique.in','./src_files/codetest2_train_unique.label',
+                                                            './src_files/codetest2_valid_unique.in','./src_files/codetest2_valid_unique.label',
                                                             False,this_model)
             tokens_test,activations_test,flat_tokens_test,X_test, y_test, label2idx_test, _, sample_idx_test=preprocess(os.path.join(AVTIVATIONS_FOLDER,ACTIVATION_NAMES[this_model][2]),
                                             './src_files/codetest2_test_unique.in','./src_files/codetest2_test_unique.label',
