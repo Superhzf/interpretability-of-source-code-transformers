@@ -11,7 +11,7 @@ length of source dictionary:  28820
 length of target dictionary:  49
 507520
 Total instances: 507520
-["'deserialization_schema_selector'", 'nextPriv', 'gf', '_stm', 'numelem', 'wait_for', '"docs"', 'opacity', 'report2', 'namespace', 'onDone', 'IntervalTree', 'ref_accession', 'det', 'merge_search_parser', 'qty', 'WRITE', 'sec_symbol', '_LOGGER', 'rawkey']
+['hasName', '4200000', 'Parameter', "'SREGISTRY_NVIDIA_TOKEN'", 'PassManager', "'null_bitmap'", 'add_collection3d', 'z_pad', 'do', 'kb_r', 'position_and_velocity', 'use_batch_norm', '"[[inputs.exec]]\\\\n"', 'child_widgets', "'post_%s'", '"=========================="', 'modify_permissions', 'scl', "'https://api.github.com/licenses/gpl-3.0'", 'allow_large_results']
 Number of samples:  507520
 Stats: Labels with their frequencies in the final set
 NAME 175779
@@ -77,7 +77,7 @@ length of source dictionary:  19446
 length of target dictionary:  46
 308881
 Total instances: 308881
-['_iterate_response_terms', 'valid_opt_name', "r'(?P<koKicker>{0})'", '"grep"', 'metric_class', '365.', 'b_g', '_add_label_from_dict', 'parameter_list', '"CH"', '_resolve_sym', "'order_number'", 'soadat', 'gf', 'realignment', "'OMIM'", '_unlock', 'validation_type', 'combined_parameters', 'mim_genes']
+['"Holiday_18_Day"', 'row_i', 'CHALLENGE', 'sys_byte_code_bak', 'a_series', 'Parameter', '"p"', 'drop', 'meteor_settings', '_name', '_changed_default_parameters', "'complib'", 'url_qs', "'1000000'", '_err_cls', 'getfqdn', 'vis_tmpl', '"name=\\', 'map_dict', 'irun']
 Number of samples:  308881
 Stats: Labels with their frequencies in the final set
 NAME 106508
@@ -140,7 +140,7 @@ length of source dictionary:  18380
 length of target dictionary:  49
 302447
 Total instances: 302447
-['_aggMonths', 'bias_start', 'maxIndex', '"scheme"', 'ConnectionPool', 'infer_gaps_in_tree', 'executeMetricsQuery', '".so"', 'parameter_list', 'restore_component', 'estimate_q', 'validate_url', 'getSpec', 'fn_actions_and_internals', 'py_tm', 'b_imgs_list', 'PAGE_CATEGORIES', "'stderrConsoleHandler'", '"options"', 'heron_rc_file']
+['"imdb.pkl"', 'drop', '_startTime', 'indentLevels', 'initLogger', 'TensorShape', 'getfqdn', 'tempList', 'metricParams', 'print_all_variables', "'logged'", 'totalBlocks', 'JAVA_SERIALIZED_VALUE', '_normalize', 'train_path', 'vectors', 'compMinVal', 'fetch_neighbourhood', 'runtime_configs', "'HTTP_X_TWILIO_SIGNATURE'"]
 Number of samples:  302447
 Stats: Labels with their frequencies in the final set
 NAME 106943
@@ -196,13 +196,16 @@ pretrained_BERT distribution after trauncating:
 {0: 0.7417994409261481, 3: 0.1510262404017563, 1: 0.05657327959935353, 2: 0.05060103907274203}
 {0: 106943, 3: 21773, 1: 8156, 2: 7295}
 {'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
+Write tokens in the training set to files:
+Write tokens in the validation set to files:
+Write tokens in the testing set to files:
 
 The distribution of classes in training after removing repeated tokens between training and tesing:
-Counter({0: 175779, 3: 38836, 1: 17117, 2: 10471})
+Counter({0: 5001, 3: 5001, 1: 5001, 2: 5001})
 {'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
 The distribution of classes in valid:
-Counter({1: 782, 2: 144, 0: 52})
+Counter({3: 1000, 1: 1000, 0: 757, 2: 314})
 {'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
 The distribution of classes in testing:
-Counter({1: 542, 2: 51, 0: 19})
+Counter({3: 1000, 1: 851, 0: 665, 2: 134})
 {'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
