@@ -528,7 +528,7 @@ def selectBasedOnTrain(flat_tokens_test,X_test, y_test,flat_tokens_train,label2i
                     count_str += 1
             elif this_y_test == label2idx_train['NUMBER']:
                 for this_token_train in flat_tokens_train:
-                    if count_number>=1000 or getOverlap(this_token_test,this_token_train) >= 3:
+                    if count_number>=1000:
                         is_selected = False
                         break
                 if is_selected:
