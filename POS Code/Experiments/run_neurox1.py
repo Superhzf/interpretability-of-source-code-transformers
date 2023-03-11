@@ -106,9 +106,9 @@ def main():
             # assert len(np.array([l for sublist in tokens_train['target'] for l in sublist])) == l2
 
 
-            X_valid, y_valid, flat_tokens_valid, _, _ =selectBasedOnTrain(flat_tokens_train_valid,
-                                                        X_train_valid,
-                                                        y_train_valid,
+            X_valid, y_valid, flat_tokens_valid, _, _ =selectBasedOnTrain(flat_tokens_valid,
+                                                        X_valid,
+                                                        y_valid,
                                                         flat_tokens_train,
                                                         label2idx_train,
                                                         keyword_list_valid)
