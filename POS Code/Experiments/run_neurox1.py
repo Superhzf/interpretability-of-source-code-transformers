@@ -66,44 +66,44 @@ def main():
                                             False,this_model)
             # remove tokens that are shared by training and testing
             # At the same time, make sure to keep at least 10 key words in the training set
-            # idx_selected_train = []
-            # count_kw = 0
-            # count_number = 0
-            # count_name = 0
-            # count_str = 0
-            # for this_token,this_y in zip(flat_tokens_train,y_train_valid):
-            #     # if this_token in flat_tokens_test:
-            #     if this_y == label2idx_train['NUMBER'] and count_number<=2000:
-            #         idx_selected_train.append(True)
-            #         count_number += 1
-            #     elif this_token in keyword_list_train and count_kw<=2000:
-            #         idx_selected_train.append(True)
-            #         count_kw+=1
-            #     elif this_y == label2idx_train['STRING'] and count_str<=2000:
-            #         idx_selected_train.append(True)
-            #         count_str += 1
-            #     elif this_y== label2idx_train['NAME'] and count_name<=2000:
-            #         idx_selected_train.append(True)
-            #         count_name += 1
-            #     else:
-            #         idx_selected_train.append(False)
-            # assert len(idx_selected_train) == len(flat_tokens_train_valid)
+            idx_selected_train = []
+            count_kw = 0
+            count_number = 0
+            count_name = 0
+            count_str = 0
+            for this_token,this_y in zip(flat_tokens_train,y_train_valid):
+                # if this_token in flat_tokens_test:
+                if this_y == label2idx_train['NUMBER'] and count_number<=5000:
+                    idx_selected_train.append(True)
+                    count_number += 1
+                elif this_token in keyword_list_train and count_kw<=5000:
+                    idx_selected_train.append(True)
+                    count_kw+=1
+                elif this_y == label2idx_train['STRING'] and count_str<=5000:
+                    idx_selected_train.append(True)
+                    count_str += 1
+                elif this_y== label2idx_train['NAME'] and count_name<=5000:
+                    idx_selected_train.append(True)
+                    count_name += 1
+                else:
+                    idx_selected_train.append(False)
+            assert len(idx_selected_train) == len(flat_tokens_train_valid)
 
-            # flat_tokens_train = flat_tokens_train[idx_selected_train]
-            # X_train = X_train[idx_selected_train]
-            # y_train = y_train[idx_selected_train]
-            # tokens_train,activations_train=alignTokenAct(tokens_train,activations_train,idx_selected_train)
-            # print(f"Write tokens in the training set to files:")
-            # f = open('training.txt','w')
-            # for this_token in flat_tokens_train:
-            #     f.write(this_token+"\n")
-            # f.close()
+            flat_tokens_train = flat_tokens_train[idx_selected_train]
+            X_train = X_train[idx_selected_train]
+            y_train = y_train[idx_selected_train]
+            tokens_train,activations_train=alignTokenAct(tokens_train,activations_train,idx_selected_train)
+            print(f"Write tokens in the training set to files:")
+            f = open('training.txt','w')
+            for this_token in flat_tokens_train:
+                f.write(this_token+"\n")
+            f.close()
 
-            # assert (flat_tokens_train == np.array([l for sublist in tokens_train['source'] for l in sublist])).all()
-            # l1 = len([l for sublist in activations_train for l in sublist])
-            # l2 = len(flat_tokens_train)
-            # assert l1 == l2,f"{l1}!={l2}"
-            # assert len(np.array([l for sublist in tokens_train['target'] for l in sublist])) == l2
+            assert (flat_tokens_train == np.array([l for sublist in tokens_train['source'] for l in sublist])).all()
+            l1 = len([l for sublist in activations_train for l in sublist])
+            l2 = len(flat_tokens_train)
+            assert l1 == l2,f"{l1}!={l2}"
+            assert len(np.array([l for sublist in tokens_train['target'] for l in sublist])) == l2
 
 
             X_valid, y_valid, flat_tokens_valid, _, _ =selectBasedOnTrain(flat_tokens_valid,
@@ -112,6 +112,11 @@ def main():
                                                         flat_tokens_train,
                                                         label2idx_train,
                                                         keyword_list_valid)
+            print(f"Write tokens in the validation set to files:")
+            f = open('validation.txt','w')
+            for this_token in flat_tokens_valid:
+                f.write(this_token+"\n")
+            f.close()
 
             X_test, y_test, flat_tokens_test, idx_selected_test, sample_idx_test =selectBasedOnTrain(flat_tokens_test,
                                                                                     X_test,
@@ -120,6 +125,11 @@ def main():
                                                                                     label2idx_train,
                                                                                     keyword_list_test,
                                                                                     sample_idx_test)
+            print(f"Write tokens in the testing set to files:")
+            f = open('testing.txt','w')
+            for this_token in flat_tokens_test:
+                f.write(this_token+"\n")
+            f.close()
 
             tokens_test,_=alignTokenAct(tokens_test,activations_test,idx_selected_test)
 
