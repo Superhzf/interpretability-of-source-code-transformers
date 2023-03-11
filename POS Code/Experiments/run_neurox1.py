@@ -55,13 +55,13 @@ def main():
         torch.manual_seed(0)
         if this_model in ['pretrained_BERT','pretrained_CodeBERT','pretrained_GraphCodeBERT']:
             print(f"Anayzing {this_model}")
-            tokens_train,activations_train,flat_tokens_train,X_train, y_train, label2idx_train, idx2label_train,_=preprocess(ACTIVATION_NAMES[this_model][0],
+            tokens_train,activations_train,flat_tokens_train,X_train, y_train, label2idx_train, idx2label_train,_=preprocess(os.path.join(AVTIVATIONS_FOLDER,ACTIVATION_NAMES[this_model][0]),
                                                                         './src_files/codetest2_train_unique.in','./src_files/codetest2_train_unique.label',
                                                                         False,this_model)
-            tokens_valid,activations_valid,flat_tokens_valid,X_valid, y_valid, label2idx_valid, idx2label_valid,_=preprocess(ACTIVATION_NAMES[this_model][1],
+            tokens_valid,activations_valid,flat_tokens_valid,X_valid, y_valid, label2idx_valid, idx2label_valid,_=preprocess(os.path.join(AVTIVATIONS_FOLDER,ACTIVATION_NAMES[this_model][1]),
                                                             './src_files/codetest2_train_unique.in','./src_files/codetest2_train_unique.label',
                                                             False,this_model)
-            tokens_test,activations_test,flat_tokens_test,X_test, y_test, label2idx_test, _, sample_idx_test=preprocess(ACTIVATION_NAMES[this_model][2],
+            tokens_test,activations_test,flat_tokens_test,X_test, y_test, label2idx_test, _, sample_idx_test=preprocess(os.path.join(AVTIVATIONS_FOLDER,ACTIVATION_NAMES[this_model][2]),
                                             './src_files/codetest2_test_unique.in','./src_files/codetest2_test_unique.label',
                                             False,this_model)
             # remove tokens that are shared by training and testing
