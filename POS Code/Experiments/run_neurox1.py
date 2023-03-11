@@ -71,7 +71,7 @@ def main():
             count_number = 0
             count_name = 0
             count_str = 0
-            for this_token,this_y in zip(flat_tokens_train,y_train_valid):
+            for this_token,this_y in zip(flat_tokens_train,y_train):
                 # if this_token in flat_tokens_test:
                 if this_y == label2idx_train['NUMBER'] and count_number<=5000:
                     idx_selected_train.append(True)
@@ -87,7 +87,7 @@ def main():
                     count_name += 1
                 else:
                     idx_selected_train.append(False)
-            assert len(idx_selected_train) == len(flat_tokens_train_valid)
+            assert len(idx_selected_train) == len(flat_tokens_train)
 
             flat_tokens_train = flat_tokens_train[idx_selected_train]
             X_train = X_train[idx_selected_train]
