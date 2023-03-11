@@ -11,7 +11,7 @@ length of source dictionary:  28820
 length of target dictionary:  49
 507520
 Total instances: 507520
-['hasName', '4200000', 'Parameter', "'SREGISTRY_NVIDIA_TOKEN'", 'PassManager', "'null_bitmap'", 'add_collection3d', 'z_pad', 'do', 'kb_r', 'position_and_velocity', 'use_batch_norm', '"[[inputs.exec]]\\\\n"', 'child_widgets', "'post_%s'", '"=========================="', 'modify_permissions', 'scl', "'https://api.github.com/licenses/gpl-3.0'", 'allow_large_results']
+['get_from_hub', 'add_content', '_first_calculation', 'build_cf', '"print"', "'invalid_response'", '"extra_inputs"', 'bin_real', '_retry_codes', 'temp_filename', 'HTML', ':', "'oc'", 'timestamp_s', "'XDG_CONFIG_HOME'", '_1', 'swap', '100.0', '_discover_sensitivity_seq', '_instruction_to_gate']
 Number of samples:  507520
 Stats: Labels with their frequencies in the final set
 NAME 175779
@@ -77,7 +77,7 @@ length of source dictionary:  19446
 length of target dictionary:  46
 308881
 Total instances: 308881
-['"Holiday_18_Day"', 'row_i', 'CHALLENGE', 'sys_byte_code_bak', 'a_series', 'Parameter', '"p"', 'drop', 'meteor_settings', '_name', '_changed_default_parameters', "'complib'", 'url_qs', "'1000000'", '_err_cls', 'getfqdn', 'vis_tmpl', '"name=\\', 'map_dict', 'irun']
+["'FEMALE'", 'self_len', 'on_startup', 'name_idx', 'clustermap', 'Qcorr', 'f"{_NS_VAR_VALUE}.add_import"', 'assert_ordered', 'bsid', '0.0', 'names', 'splitpasswd', 'polyfit', 'add_content', 'set_y', 'non_existing', 'how', 'get_dashboard_info', 'locate_package_json', 'm_ser']
 Number of samples:  308881
 Stats: Labels with their frequencies in the final set
 NAME 106508
@@ -140,7 +140,7 @@ length of source dictionary:  18380
 length of target dictionary:  49
 302447
 Total instances: 302447
-['"imdb.pkl"', 'drop', '_startTime', 'indentLevels', 'initLogger', 'TensorShape', 'getfqdn', 'tempList', 'metricParams', 'print_all_variables', "'logged'", 'totalBlocks', 'JAVA_SERIALIZED_VALUE', '_normalize', 'train_path', 'vectors', 'compMinVal', 'fetch_neighbourhood', 'runtime_configs', "'HTTP_X_TWILIO_SIGNATURE'"]
+['fieldsInfo', "r'/\\\\1'", 'sameSynapse', "'<code>%s</code>'", 'tf_update_batch', 'names', '0.0', '"SERVER_NAME"', '_get_matching_segments', "'\\\\$SP_ENABLE'", 'encodeValue', '_CollapseStrings', 'live_update', "'encoderType'", 'nf', 'unroll_loop', '_parse_href', 'build_info', 'potential1', 'defn_file']
 Number of samples:  302447
 Stats: Labels with their frequencies in the final set
 NAME 106943
@@ -204,8 +204,8 @@ The distribution of classes in training after removing repeated tokens between t
 Counter({0: 5001, 3: 5001, 1: 5001, 2: 5001})
 {'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
 The distribution of classes in valid:
-Counter({3: 1000, 1: 1000, 0: 757, 2: 314})
+Counter({3: 1000, 1: 1000, 0: 757, 2: 676})
 {'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
 The distribution of classes in testing:
-Counter({3: 1000, 1: 851, 0: 665, 2: 134})
+Counter({3: 1000, 1: 851, 0: 665, 2: 365})
 {'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
