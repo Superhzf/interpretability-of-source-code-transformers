@@ -73,16 +73,16 @@ def main():
             count_str = 0
             for this_token,this_y in zip(flat_tokens_train,y_train):
                 # if this_token in flat_tokens_test:
-                if this_y == label2idx_train['NUMBER'] and count_number<=5000:
+                if this_y == label2idx_train['NUMBER'] and count_number<=4000:
                     idx_selected_train.append(True)
                     count_number += 1
-                elif this_token in keyword_list_train and count_kw<=5000:
+                elif this_token in keyword_list_train and count_kw<=4000:
                     idx_selected_train.append(True)
                     count_kw+=1
-                elif this_y == label2idx_train['STRING'] and count_str<=5000:
+                elif this_y == label2idx_train['STRING'] and count_str<=4000:
                     idx_selected_train.append(True)
                     count_str += 1
-                elif this_y== label2idx_train['NAME'] and count_name<=5000:
+                elif this_y== label2idx_train['NAME'] and count_name<=4000:
                     idx_selected_train.append(True)
                     count_name += 1
                 else:
