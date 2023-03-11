@@ -48,61 +48,62 @@ def main():
                 extract_activations('./src_files/codetest2_valid_unique.in',MODEL_DESC[this_model],os.path.join(AVTIVATIONS_FOLDER,activation_file_name))
                 activation_file_name=ACTIVATION_NAMES[this_model][2]
                 extract_activations('./src_files/codetest2_test_unique.in',MODEL_DESC[this_model],os.path.join(AVTIVATIONS_FOLDER,activation_file_name))
-                exit(0)
     else:
         print("Getting activations from json files. If you need to extract them, run with --extract=True \n" )
-    exit(0)
 
     for this_model in MODEL_NAMES:
         torch.manual_seed(0)
         if this_model in ['pretrained_BERT','pretrained_CodeBERT','pretrained_GraphCodeBERT']:
             print(f"Anayzing {this_model}")
-            tokens_train_valid,activations_train_valid,flat_tokens_train_valid,X_train_valid, y_train_valid, label2idx_train, idx2label_train,_=preprocess(ACTIVATION_NAMES[this_model][0],
+            tokens_train,activations_train,flat_tokens_train,X_train, y_train, label2idx_train, idx2label_train,_=preprocess(ACTIVATION_NAMES[this_model][0],
                                                                         './src_files/codetest2_train_unique.in','./src_files/codetest2_train_unique.label',
                                                                         False,this_model)
-            tokens_test,activations_test,flat_tokens_test,X_test, y_test, label2idx_test, _, sample_idx_test=preprocess(ACTIVATION_NAMES[this_model][1],
+            tokens_valid,activations_valid,flat_tokens_valid,X_valid, y_valid, label2idx_valid, idx2label_valid,_=preprocess(ACTIVATION_NAMES[this_model][1],
+                                                            './src_files/codetest2_train_unique.in','./src_files/codetest2_train_unique.label',
+                                                            False,this_model)
+            tokens_test,activations_test,flat_tokens_test,X_test, y_test, label2idx_test, _, sample_idx_test=preprocess(ACTIVATION_NAMES[this_model][2],
                                             './src_files/codetest2_test_unique.in','./src_files/codetest2_test_unique.label',
                                             False,this_model)
             # remove tokens that are shared by training and testing
             # At the same time, make sure to keep at least 10 key words in the training set
-            idx_selected_train = []
-            count_kw = 0
-            count_number = 0
-            count_name = 0
-            count_str = 0
-            for this_token,this_y in zip(flat_tokens_train_valid,y_train_valid):
-                # if this_token in flat_tokens_test:
-                if this_y == label2idx_train['NUMBER'] and count_number<=2000:
-                    idx_selected_train.append(True)
-                    count_number += 1
-                elif this_token in keyword_list_train and count_kw<=2000:
-                    idx_selected_train.append(True)
-                    count_kw+=1
-                elif this_y == label2idx_train['STRING'] and count_str<=2000:
-                    idx_selected_train.append(True)
-                    count_str += 1
-                elif this_y== label2idx_train['NAME'] and count_name<=2000:
-                    idx_selected_train.append(True)
-                    count_name += 1
-                else:
-                    idx_selected_train.append(False)
-            assert len(idx_selected_train) == len(flat_tokens_train_valid)
+            # idx_selected_train = []
+            # count_kw = 0
+            # count_number = 0
+            # count_name = 0
+            # count_str = 0
+            # for this_token,this_y in zip(flat_tokens_train,y_train_valid):
+            #     # if this_token in flat_tokens_test:
+            #     if this_y == label2idx_train['NUMBER'] and count_number<=2000:
+            #         idx_selected_train.append(True)
+            #         count_number += 1
+            #     elif this_token in keyword_list_train and count_kw<=2000:
+            #         idx_selected_train.append(True)
+            #         count_kw+=1
+            #     elif this_y == label2idx_train['STRING'] and count_str<=2000:
+            #         idx_selected_train.append(True)
+            #         count_str += 1
+            #     elif this_y== label2idx_train['NAME'] and count_name<=2000:
+            #         idx_selected_train.append(True)
+            #         count_name += 1
+            #     else:
+            #         idx_selected_train.append(False)
+            # assert len(idx_selected_train) == len(flat_tokens_train_valid)
 
-            flat_tokens_train = flat_tokens_train_valid[idx_selected_train]
-            X_train = X_train_valid[idx_selected_train]
-            y_train = y_train_valid[idx_selected_train]
-            tokens_train,activations_train=alignTokenAct(tokens_train_valid,activations_train_valid,idx_selected_train)
-            print(f"Write tokens in the training set to files:")
-            f = open('training.txt','w')
-            for this_token in flat_tokens_train:
-                f.write(this_token+"\n")
-            f.close()
+            # flat_tokens_train = flat_tokens_train[idx_selected_train]
+            # X_train = X_train[idx_selected_train]
+            # y_train = y_train[idx_selected_train]
+            # tokens_train,activations_train=alignTokenAct(tokens_train,activations_train,idx_selected_train)
+            # print(f"Write tokens in the training set to files:")
+            # f = open('training.txt','w')
+            # for this_token in flat_tokens_train:
+            #     f.write(this_token+"\n")
+            # f.close()
 
-            assert (flat_tokens_train == np.array([l for sublist in tokens_train['source'] for l in sublist])).all()
-            l1 = len([l for sublist in activations_train for l in sublist])
-            l2 = len(flat_tokens_train)
-            assert l1 == l2,f"{l1}!={l2}"
-            assert len(np.array([l for sublist in tokens_train['target'] for l in sublist])) == l2
+            # assert (flat_tokens_train == np.array([l for sublist in tokens_train['source'] for l in sublist])).all()
+            # l1 = len([l for sublist in activations_train for l in sublist])
+            # l2 = len(flat_tokens_train)
+            # assert l1 == l2,f"{l1}!={l2}"
+            # assert len(np.array([l for sublist in tokens_train['target'] for l in sublist])) == l2
 
 
             X_valid, y_valid, flat_tokens_valid, _, _ =selectBasedOnTrain(flat_tokens_train_valid,
@@ -125,12 +126,14 @@ def main():
             print()
             print("The distribution of classes in training after removing repeated tokens between training and tesing:")
             print(collections.Counter(y_train))
+            print(label2idx_train)
             print("The distribution of classes in valid:")
             print(collections.Counter(y_valid))
-            print(label2idx_train)
+            print(label2idx_valid)
             print("The distribution of classes in testing:")
             print(collections.Counter(y_test))
             print(label2idx_test)
+            exit(0)
             
             X_train_copy = X_train.copy()
             y_train_copy = y_train.copy()

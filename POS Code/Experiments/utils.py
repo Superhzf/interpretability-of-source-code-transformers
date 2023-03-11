@@ -521,27 +521,27 @@ def selectBasedOnTrain(flat_tokens_test,X_test, y_test,flat_tokens_train,label2i
                 # because it is possible that they are different but very similar. If that is the case,
                 # it is highly likely that the the label would be the same.
                 for this_token_train in flat_tokens_train:
-                    if count_str>=280 or getOverlap(this_token_test,this_token_train) >= 4:
+                    if count_str>=1000 or getOverlap(this_token_test,this_token_train) >= 4:
                         is_selected = False
                         break
                 if is_selected:
                     count_str += 1
             elif this_y_test == label2idx_train['NUMBER']:
                 for this_token_train in flat_tokens_train:
-                    if count_number>=280 or getOverlap(this_token_test,this_token_train) >= 3:
+                    if count_number>=1000 or getOverlap(this_token_test,this_token_train) >= 3:
                         is_selected = False
                         break
                 if is_selected:
                     count_number += 1
             elif this_y_test == label2idx_train['NAME']:
                 for this_token_train in flat_tokens_train:
-                    if count_name>= 280 or getOverlap(this_token_test,this_token_train) >= 2:
+                    if count_name>= 1000 or getOverlap(this_token_test,this_token_train) >= 2:
                         is_selected = False
                         break
                 if is_selected:
                     count_name += 1
             elif this_y_test == label2idx_train['KEYWORD']:
-                if this_token_test not in keyword_list_test or count_keyword >= 280:
+                if this_token_test not in keyword_list_test or count_keyword >= 1000:
                     is_selected = False
                 else:
                     count_keyword += 1
