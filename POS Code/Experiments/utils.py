@@ -514,7 +514,6 @@ def selectBasedOnTrain(flat_tokens_test,X_test, y_test,flat_tokens_train,label2i
         if this_token_test in flat_tokens_train:
             idx_selected.append(False)
         else:
-            # If this_token_test is a key word, then it will be selected for sure.
             is_selected = True
             if this_y_test == label2idx_train['STRING']:
                 # Compare this_token_train with this_token_test and remove they are similar (the length of overlap is more than 3)
@@ -529,7 +528,6 @@ def selectBasedOnTrain(flat_tokens_test,X_test, y_test,flat_tokens_train,label2i
             elif this_y_test == label2idx_train['NUMBER']:
                 if not set(list(this_token_test)).issubset(num_test) or count_number>=1000:
                     is_selected = False
-                    break
                 if is_selected:
                     count_number += 1
             elif this_y_test == label2idx_train['NAME']:
