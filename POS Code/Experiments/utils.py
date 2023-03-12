@@ -504,7 +504,7 @@ def preprocess(activation_file_name,IN_file,LABEL_file,remove_seen_tokens,model_
     return tokens,activations,flat_src_tokens,X_train,y_train,label2idx,idx2label, sample_idx
 
 
-def selectBasedOnTrain(flat_tokens_test,X_test, y_test,flat_tokens_train,label2idx_train,keyword_list_test,sample_idx_test=None):
+def selectBasedOnTrain(flat_tokens_test,X_test, y_test,flat_tokens_train,label2idx_train,keyword_list_test,num_test,sample_idx_test=None):
     idx_selected = []
     count_number = 0
     count_name = 0
@@ -527,10 +527,9 @@ def selectBasedOnTrain(flat_tokens_test,X_test, y_test,flat_tokens_train,label2i
                 if is_selected:
                     count_str += 1
             elif this_y_test == label2idx_train['NUMBER']:
-                for this_token_train in flat_tokens_train:
-                    if count_number>=1000:
-                        is_selected = False
-                        break
+                if not set(list(this_token_test)).issubset(num_test) or count_number>=1000:
+                    is_selected = False
+                    break
                 if is_selected:
                     count_number += 1
             elif this_y_test == label2idx_train['NAME']:

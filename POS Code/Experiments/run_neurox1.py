@@ -12,9 +12,14 @@ import os
 keyword_list = ['False','await','else','import','pass','None','break','except','in','raise','True',
                 'class','finally','is','return','and','continue','for','lambda','try','as','def','from',
                 'nonlocal','while','assert','del','global','not','with','async''elif','if','or','yield']
+number = ['0','1','2','3','4','5','6','7','8','9']
+
 keyword_list_train = keyword_list[:17]
 keyword_list_valid = keyword_list[17:25]
 keyword_list_test = keyword_list[25:]
+num_train = number[:6]
+num_valid = number[6:8]
+num_test = number[8:]
 
 weighted = False
 MODEL_NAMES = ['pretrained_BERT',
@@ -73,16 +78,17 @@ def main():
             count_str = 0
             for this_token,this_y in zip(flat_tokens_train,y_train):
                 # if this_token in flat_tokens_test:
-                if this_y == label2idx_train['NUMBER'] and count_number<=4000:
-                    idx_selected_train.append(True)
-                    count_number += 1
-                elif this_token in keyword_list_train and count_kw<=4000:
+                if this_y == label2idx_train['NUMBER'] and count_number<=5000:
+                    if set(list(this_token)).issubset(num_train):
+                        idx_selected_train.append(True)
+                        count_number += 1
+                elif this_token in keyword_list_train and count_kw<=5000:
                     idx_selected_train.append(True)
                     count_kw+=1
-                elif this_y == label2idx_train['STRING'] and count_str<=4000:
+                elif this_y == label2idx_train['STRING'] and count_str<=5000:
                     idx_selected_train.append(True)
                     count_str += 1
-                elif this_y== label2idx_train['NAME'] and count_name<=4000:
+                elif this_y== label2idx_train['NAME'] and count_name<=5000:
                     idx_selected_train.append(True)
                     count_name += 1
                 else:
@@ -111,6 +117,7 @@ def main():
                                                         y_valid,
                                                         flat_tokens_train,
                                                         label2idx_train,
+                                                        num_valid,
                                                         keyword_list_valid)
             print(f"Write tokens in the validation set to files:")
             f = open('validation.txt','w')
@@ -124,6 +131,7 @@ def main():
                                                                                     flat_tokens_train,
                                                                                     label2idx_train,
                                                                                     keyword_list_test,
+                                                                                    num_test,
                                                                                     sample_idx_test)
             print(f"Write tokens in the testing set to files:")
             f = open('testing.txt','w')
