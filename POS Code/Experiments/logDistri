@@ -11,7 +11,7 @@ length of source dictionary:  28820
 length of target dictionary:  49
 507520
 Total instances: 507520
-['get_from_hub', 'add_content', '_first_calculation', 'build_cf', '"print"', "'invalid_response'", '"extra_inputs"', 'bin_real', '_retry_codes', 'temp_filename', 'HTML', ':', "'oc'", 'timestamp_s', "'XDG_CONFIG_HOME'", '_1', 'swap', '100.0', '_discover_sensitivity_seq', '_instruction_to_gate']
+['lstm_output_flat', 'params_temp', 'occurences', 'setIsLast', 'current_settings', 'team', 'yavg', 'build_node_query', '_get_measure_outcome', '_error', "'n_characters'", "'vcf_sv'", "'.md5'", 'artifacts_dir', 'sliceVals', "'comment_proto'", '__next__', 'ngram_range', '_inputs', 'send_confirmation']
 Number of samples:  507520
 Stats: Labels with their frequencies in the final set
 NAME 175779
@@ -77,7 +77,7 @@ length of source dictionary:  19446
 length of target dictionary:  46
 308881
 Total instances: 308881
-["'FEMALE'", 'self_len', 'on_startup', 'name_idx', 'clustermap', 'Qcorr', 'f"{_NS_VAR_VALUE}.add_import"', 'assert_ordered', 'bsid', '0.0', 'names', 'splitpasswd', 'polyfit', 'add_content', 'set_y', 'non_existing', 'how', 'get_dashboard_info', 'locate_package_json', 'm_ser']
+["'finished'", 'f_add_group', 'explore_list', "'is_dia'", '45.00', 'IdentifierType', "'1000G_MAX_AF'", '"message"', 'code_markers', 'PARAMETER_GROUP', 'USERINFO_SAFE_CHARS', 'team_names', 'MonopriceSync', 'object_key', 'HDF5_STRCOL_MAX_RANGE_LENGTH', 'stdout_truncated', 'completeRE', "'isFairCatch'", '__start_datanode', "'teamScore'"]
 Number of samples:  308881
 Stats: Labels with their frequencies in the final set
 NAME 106508
@@ -140,7 +140,7 @@ length of source dictionary:  18380
 length of target dictionary:  49
 302447
 Total instances: 302447
-['fieldsInfo', "r'/\\\\1'", 'sameSynapse', "'<code>%s</code>'", 'tf_update_batch', 'names', '0.0', '"SERVER_NAME"', '_get_matching_segments', "'\\\\$SP_ENABLE'", 'encodeValue', '_CollapseStrings', 'live_update', "'encoderType'", 'nf', 'unroll_loop', '_parse_href', 'build_info', 'potential1', 'defn_file']
+["b'#'", "'finished'", '"message"', 'CheckForNewlineAtEOF', 'line_prefix', 'SM32', 'MetadataStatement', 'n_batch', 'modelsGetCandidates', 'cellsSavePath', 'Crates', "'observe-timestep'", '_topology_config', '"useAuxiliary"', '_modelCheckpointGUID', 'zip_dir', 'isAlive', 'genIdx', '4326', 'unavailableKeys']
 Number of samples:  302447
 Stats: Labels with their frequencies in the final set
 NAME 106943
@@ -201,11 +201,11 @@ Write tokens in the validation set to files:
 Write tokens in the testing set to files:
 
 The distribution of classes in training after removing repeated tokens between training and tesing:
-Counter({0: 5001, 3: 5001, 1: 5001, 2: 5001})
+Counter({0: 4001, 3: 4001, 1: 4001, 2: 4001})
 {'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
 The distribution of classes in valid:
-Counter({3: 1000, 1: 1000, 0: 757, 2: 676})
+Counter({3: 1000, 1: 1000, 0: 959, 2: 702})
 {'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
 The distribution of classes in testing:
-Counter({3: 1000, 1: 851, 0: 665, 2: 365})
+Counter({3: 1000, 1: 983, 0: 930, 2: 392})
 {'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
