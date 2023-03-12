@@ -82,6 +82,8 @@ def main():
                     if set(list(this_token)).issubset(num_train):
                         idx_selected_train.append(True)
                         count_number += 1
+                    else:
+                        idx_selected_train.append(False)
                 elif this_token in keyword_list_train and count_kw<=5000:
                     idx_selected_train.append(True)
                     count_kw+=1
