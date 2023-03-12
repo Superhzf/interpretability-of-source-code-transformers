@@ -48,8 +48,8 @@ from model import Model
 
 cpu_cont = 16
 from transformers import (WEIGHTS_NAME, AdamW, get_linear_schedule_with_warmup,
-                          BertConfig, BertForMaskedLM, BertTokenizer,
-                          GPT2Config, GPT2LMHeadModel, GPT2Tokenizer,
+                          BertConfig, BertModel, BertTokenizer,
+                          GPT2Config, GPT2Model, GPT2Tokenizer,
                           OpenAIGPTConfig, OpenAIGPTLMHeadModel, OpenAIGPTTokenizer,
                           RobertaConfig, RobertaModel, RobertaTokenizer,
                           DistilBertConfig, DistilBertForMaskedLM, DistilBertTokenizer)
@@ -151,9 +151,9 @@ class TextDataset(Dataset):
                     label=1
                 data.append((url1,url2,label,tokenizer, args,cache,url_to_code))
                 #stratify
-                if label=='0':
+                if label==0:
                     data0.append((url1,url2,label,tokenizer, args,cache,url_to_code))
-                elif label=='1':
+                elif label==1:
                     data1.append((url1,url2,label,tokenizer, args,cache,url_to_code))
                 else:
                     print("corrupt sample")
@@ -161,38 +161,38 @@ class TextDataset(Dataset):
         #10% train and validatioin sets but complete test set
         if 'test' not in postfix:
             #data=random.sample(data,int(len(data)*0.1))
-            
+        
             #randomly sample 10% of class 0 data
-			data0=random.sample(data0,int(len(data0)*0.1))
-			print(len(data0))
-			#randomly sample 10% of class 1 data
-			data1=random.sample(data1,int(len(data1)*0.1))
-			print(len(data1))
+            data0=random.sample(data0,int(len(data0)*0.1))
+            print(len(data0))
+            #randomly sample 10% of class 1 data
+            data1=random.sample(data1,int(len(data1)*0.1))
+            print(len(data1))
 
-			#balance teh dataset
-			if len(data0) > len(data1):
-				diff = len(data0)-len(data1)
-				data0=data0[0:len(data1)]
-				print(len(data0))
-				print(len(data1))
-			elif len(data0) < len(data1):
-				data1=data1[0:len(data0)]
-				print(len(data0))
-				print(len(data1))
+        #balance teh dataset
+        if len(data0) > len(data1):
+            diff = len(data0)-len(data1)
+            data0=data0[0:len(data1)]
+            print(len(data0))
+            print(len(data1))
+        elif len(data0) < len(data1):
+            data1=data1[0:len(data0)]
+            print(len(data0))
+            print(len(data1))
 
-		balanced_data=data0+data1
-		random.shuffle(balanced_data)
-		print("balanced_data", len(balanced_data))
-			   
+        balanced_data=data0+data1
+        random.shuffle(balanced_data)
+        print("balanced_data", len(balanced_data))
+               
         self.examples=pool.map(get_example,tqdm(balanced_data,total=len(balanced_data)))
 
 
        #Store used data samples (10%) for analysis
-        with open('Selected_dataset.txt', 'w') as f:
-            for idx, example in enumerate(self.examples):
-                print(example.url1, example.url2, example.label)
-                f.write(example.url1, example.url2, example.label)
-                f.write("\n")
+      #  with open('Selected_dataset.txt', 'w') as f:
+       #     for idx, example in enumerate(self.examples):
+        #        print(example.url1, example.url2, example.label)
+         #       f.write(example.url1, example.url2, example.label)
+          #      f.write("\n")
 
         if 'train' in postfix:
             for idx, example in enumerate(self.examples[:3]):
