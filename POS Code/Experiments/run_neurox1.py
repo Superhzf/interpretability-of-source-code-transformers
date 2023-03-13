@@ -17,9 +17,9 @@ number = ['0','1','2','3','4','5','6','7','8','9']
 keyword_list_train = keyword_list[:17]
 keyword_list_valid = keyword_list[17:25]
 keyword_list_test = keyword_list[25:]
-num_train = number[:6]
-num_valid = number[6:8]
-num_test = number[8:]
+num_train = number[:4]
+num_valid = number[4:7]
+num_test = number[7:]
 
 weighted = False
 MODEL_NAMES = ['pretrained_BERT',
