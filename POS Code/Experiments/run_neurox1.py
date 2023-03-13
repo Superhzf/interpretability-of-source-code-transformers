@@ -120,7 +120,8 @@ def main():
                                                         flat_tokens_train,
                                                         label2idx_train,
                                                         keyword_list_valid,
-                                                        num_valid)
+                                                        num_valid,
+                                                        540)
             print(f"Write tokens in the validation set to files:")
             f = open('validation.txt','w')
             for this_token in flat_tokens_valid:
@@ -134,6 +135,7 @@ def main():
                                                                                     label2idx_train,
                                                                                     keyword_list_test,
                                                                                     num_test,
+                                                                                    660,
                                                                                     sample_idx_test)
             print(f"Write tokens in the testing set to files:")
             f = open('testing.txt','w')
