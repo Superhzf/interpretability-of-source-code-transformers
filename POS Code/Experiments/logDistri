@@ -11,7 +11,7 @@ length of source dictionary:  28820
 length of target dictionary:  49
 507520
 Total instances: 507520
-['truncate', '0.025', 'compressed_file_type', 'isEvDependentOn', 'geometry', 'dict_of_parsed', 'followlinks', 'column_separation', '_format', '"complete"', '"(-arccos({z}/{distance})+pi/2){transform}"', 'convert_outlook_msg', 'CHANGE', "'verified_variants'", 'lstm_fw_cell', '_preprocessors', 'GerritClient', 'get_load_plan', 'idle_start_time', '_submit_multipart_request']
+['"C:\\\\\\\\GeoIP\\\\\\\\GeoLite2-Country.mmdb"', 'items_per_page', "'context.activity.id'", '1.j', 'max_points', '"batches_seen"', 'CAT_FACTS_URL', 'difference', 'iplot_state_city', "'ammo_type'", "'application'", 'nxpd', '_get_pk_val', 'child_list', 'set_values', '"\\\\\\\\qswap"', 'image_ext', 'latex_file', '_generate_response', "r'(?P<octave>[+-]?\\\\d+)?'"]
 Number of samples:  507520
 Stats: Labels with their frequencies in the final set
 NAME 175779
@@ -77,7 +77,7 @@ length of source dictionary:  19446
 length of target dictionary:  46
 308881
 Total instances: 308881
-['truncate', 'Quote', "'uint256'", 'dicts', '0.025', 'drop_index', 'xs', 'graph_io', 'splinefit', 'get_widgets_sorted', "'_tmp'", 'resp_obj', 'issubdtype', 'compression_opts', 'oncotator_db', 'opt_name', 'lfdr', 'manipulate_multiproc_safe', "'send_id'", '"complete"']
+['get_pk_value_on_save', 'ALL_LINEUP_COLS', "'penDeclined'", "'simple_id'", 'hgnc_lines', 'clnsig_predictions', '"examples"', "'sizeof'", '_run_by_environment', 'tmp', 'assert_index_equal', '_cameras_by_id', '0x7a80', 'module_postfixes', 'configure_profile', 'outbox', "'darwin'", "'benchmarks'", "'/boards'", 'visited_stop_ids']
 Number of samples:  308881
 Stats: Labels with their frequencies in the final set
 NAME 106508
@@ -140,7 +140,7 @@ length of source dictionary:  18380
 length of target dictionary:  49
 302447
 Total instances: 302447
-["'images2.zip'", 'truncate', 'nullDistribution', 'imgs_insseg_file_list', 'return_last', 'ProcessLine', 'obs_bufs', 'Variable', 'n_col', 'totalOnTime', "'-XX:+PrintGCTimeStamps'", 'route', 'scaled_images', '__outputFieldsMeta', "'span.note'", 'xs', "'readwrite'", 'colSpan', '"self._cd._W"', '"logfile"']
+['timesteps_per_batch', '"--genTopNDescriptions"', 'getArgType', '"Java"', 'bucket_filenames', '"initialPerm="', 'tmp', 'PostcodeSerializerHuman', 'ACK_COUNT', "'sizeof'", "r'\\\\bstring\\\\b(\\\\s+const)?\\\\s*[\\\\*\\\\&]\\\\s*(const\\\\s+)?\\\\w'", 'includeIndices', 'obses_tp1', 'topbins', 'tmpOutput', 'imh', "'darwin'", "'team_id'", 'bottombins', "'ul'"]
 Number of samples:  302447
 Stats: Labels with their frequencies in the final set
 NAME 106943
@@ -204,8 +204,8 @@ The distribution of classes in training after removing repeated tokens between t
 Counter({0: 5001, 3: 5001, 1: 5001, 2: 5001})
 {'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
 The distribution of classes in valid:
-Counter({3: 1000, 1: 1000, 0: 757, 2: 546})
+Counter({3: 540, 1: 540, 2: 540, 0: 540})
 {'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
 The distribution of classes in testing:
-Counter({3: 1000, 1: 852, 2: 680, 0: 665})
+Counter({1: 660, 3: 660, 0: 660, 2: 660})
 {'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
