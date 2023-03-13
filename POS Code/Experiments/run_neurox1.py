@@ -119,8 +119,8 @@ def main():
                                                         y_valid,
                                                         flat_tokens_train,
                                                         label2idx_train,
-                                                        num_valid,
-                                                        keyword_list_valid)
+                                                        keyword_list_valid,
+                                                        num_valid)
             print(f"Write tokens in the validation set to files:")
             f = open('validation.txt','w')
             for this_token in flat_tokens_valid:
