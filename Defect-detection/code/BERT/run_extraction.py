@@ -47,7 +47,7 @@ import multiprocessing
 from model import Model
 cpu_cont = multiprocessing.cpu_count()
 from transformers import (WEIGHTS_NAME, AdamW, get_linear_schedule_with_warmup,
-                          BertConfig, BertForMaskedLM, BertTokenizer,
+                          BertConfig, BertForSequenceClassification, BertTokenizer,
                           GPT2Config, GPT2ForSequenceClassification, GPT2Tokenizer,
                           OpenAIGPTConfig, OpenAIGPTLMHeadModel, OpenAIGPTTokenizer,
                           RobertaConfig, RobertaForSequenceClassification, RobertaTokenizer,
@@ -58,7 +58,7 @@ logger = logging.getLogger(__name__)
 MODEL_CLASSES = {
     'gpt2': (GPT2Config, GPT2ForSequenceClassification, GPT2Tokenizer),
     'openai-gpt': (OpenAIGPTConfig, OpenAIGPTLMHeadModel, OpenAIGPTTokenizer),
-    'bert': (BertConfig, BertForMaskedLM, BertTokenizer),
+    'bert': (BertConfig, BertForSequenceClassification, BertTokenizer),
     'roberta': (RobertaConfig, RobertaForSequenceClassification, RobertaTokenizer),
     'distilbert': (DistilBertConfig, DistilBertForMaskedLM, DistilBertTokenizer)
 }
@@ -87,7 +87,10 @@ def convert_examples_to_features(js,tokenizer,args):
     print("tokenized code original", tokenizer.tokenize(code))
     code_tokens=tokenizer.tokenize(code)[:args.block_size-2]
     print("tokenized code new", code_tokens)
-    source_tokens =[tokenizer.bos_token]+code_tokens+[tokenizer.eos_token]
+    if args.model_type == 'bert':
+        source_tokens =[tokenizer.cls_token]+code_tokens+[tokenizer.sep_token]
+    else:
+        source_tokens =[tokenizer.bos_token]+code_tokens+[tokenizer.eos_token]
     source_ids =  tokenizer.convert_tokens_to_ids(source_tokens)
     padding_length = args.block_size - len(source_ids)
     print(tokenizer.pad_token)
