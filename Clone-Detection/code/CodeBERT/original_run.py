@@ -29,8 +29,6 @@ import pickle
 import random
 import re
 import shutil
-import time
-import collections
 import json
 import numpy as np
 import torch
@@ -48,8 +46,8 @@ from model import Model
 
 cpu_cont = 16
 from transformers import (WEIGHTS_NAME, AdamW, get_linear_schedule_with_warmup,
-                          BertConfig, BertModel, BertTokenizer,
-                          GPT2Config, GPT2Model, GPT2Tokenizer,
+                          BertConfig, BertForMaskedLM, BertTokenizer,
+                          GPT2Config, GPT2LMHeadModel, GPT2Tokenizer,
                           OpenAIGPTConfig, OpenAIGPTLMHeadModel, OpenAIGPTTokenizer,
                           RobertaConfig, RobertaModel, RobertaTokenizer,
                           DistilBertConfig, DistilBertForMaskedLM, DistilBertTokenizer)
@@ -57,9 +55,9 @@ from transformers import (WEIGHTS_NAME, AdamW, get_linear_schedule_with_warmup,
 logger = logging.getLogger(__name__)
 
 MODEL_CLASSES = {
-    'gpt2': (GPT2Config, GPT2Model, GPT2Tokenizer),
+    'gpt2': (GPT2Config, GPT2LMHeadModel, GPT2Tokenizer),
     'openai-gpt': (OpenAIGPTConfig, OpenAIGPTLMHeadModel, OpenAIGPTTokenizer),
-    'bert': (BertConfig, BertModel, BertTokenizer),
+    'bert': (BertConfig, BertForMaskedLM, BertTokenizer),
     'roberta': (RobertaConfig, RobertaModel, RobertaTokenizer),
     'distilbert': (DistilBertConfig, DistilBertForMaskedLM, DistilBertTokenizer)
 }
@@ -135,8 +133,6 @@ class TextDataset(Dataset):
                 url_to_code[js['idx']]=js['func']
 
         data=[]
-        data0=[]
-        data1=[]
         cache={}
         f=open(index_filename)
         with open(index_filename) as f:
@@ -150,50 +146,10 @@ class TextDataset(Dataset):
                 else:
                     label=1
                 data.append((url1,url2,label,tokenizer, args,cache,url_to_code))
-                #stratify
-                if label==0:
-                    data0.append((url1,url2,label,tokenizer, args,cache,url_to_code))
-                elif label==1:
-                    data1.append((url1,url2,label,tokenizer, args,cache,url_to_code))
-                else:
-                    print("corrupt sample")
-
-        #10% train and validatioin sets but complete test set
         if 'test' not in postfix:
-            #data=random.sample(data,int(len(data)*0.1))
-        
-            #randomly sample 10% of class 0 data
-            data0=random.sample(data0,int(len(data0)*0.1))
-            print(len(data0))
-            #randomly sample 10% of class 1 data
-            data1=random.sample(data1,int(len(data1)*0.1))
-            print(len(data1))
+            data=random.sample(data,int(len(data)*0.1))
 
-        #balance teh dataset
-        if len(data0) > len(data1):
-            diff = len(data0)-len(data1)
-            data0=data0[0:len(data1)]
-            print(len(data0))
-            print(len(data1))
-        elif len(data0) < len(data1):
-            data1=data1[0:len(data0)]
-            print(len(data0))
-            print(len(data1))
-
-        balanced_data=data0+data1
-        random.shuffle(balanced_data)
-        print("balanced_data", len(balanced_data))
-               
-        self.examples=pool.map(get_example,tqdm(balanced_data,total=len(balanced_data)))
-
-
-       #Store used data samples (10%) for analysis
-      #  with open('Selected_dataset.txt', 'w') as f:
-       #     for idx, example in enumerate(self.examples):
-        #        print(example.url1, example.url2, example.label)
-         #       f.write(example.url1, example.url2, example.label)
-          #      f.write("\n")
-
+        self.examples=pool.map(get_example,tqdm(data,total=len(data)))
         if 'train' in postfix:
             for idx, example in enumerate(self.examples[:3]):
                     logger.info("*** Example ***")
@@ -212,8 +168,8 @@ class TextDataset(Dataset):
         return torch.tensor(self.examples[item].input_ids),torch.tensor(self.examples[item].label)
 
 
-def load_and_cache_examples(args, tokenizer, evaluate=False,test=False,extract=False,pool=None):
-    dataset = TextDataset(tokenizer, args, file_path=args.extract_data_file if extract else (args.test_data_file if test else (args.eval_data_file if evaluate else args.train_data_file)),block_size=args.block_size,pool=pool)
+def load_and_cache_examples(args, tokenizer, evaluate=False,test=False,pool=None):
+    dataset = TextDataset(tokenizer, args, file_path=args.test_data_file if test else (args.eval_data_file if evaluate else args.train_data_file),block_size=args.block_size,pool=pool)
     return dataset
 
 def set_seed(seed=42):
@@ -298,7 +254,7 @@ def train(args, train_dataset, model, tokenizer,pool):
             inputs = batch[0].to(args.device)        
             labels=batch[1].to(args.device) 
             model.train()
-            loss,logits,hidden_states = model(inputs,labels)
+            loss,logits = model(inputs,labels)
 
 
             if args.n_gpu > 1:
@@ -390,7 +346,7 @@ def evaluate(args, model, tokenizer, prefix="",pool=None,eval_when_training=Fals
         inputs = batch[0].to(args.device)        
         labels=batch[1].to(args.device) 
         with torch.no_grad():
-            lm_loss,logit,hidden_states = model(inputs,labels)
+            lm_loss,logit = model(inputs,labels)
             eval_loss += lm_loss.mean().item()
             logits.append(logit.cpu().numpy())
             y_trues.append(labels.cpu().numpy())
@@ -459,7 +415,7 @@ def test(args, model, tokenizer, prefix="",pool=None,best_threshold=0):
         inputs = batch[0].to(args.device)        
         labels=batch[1].to(args.device) 
         with torch.no_grad():
-            lm_loss,logit,hidden_states = model(inputs,labels)
+            lm_loss,logit = model(inputs,labels)
             eval_loss += lm_loss.mean().item()
             logits.append(logit.cpu().numpy())
             y_trues.append(labels.cpu().numpy())
@@ -472,125 +428,6 @@ def test(args, model, tokenizer, prefix="",pool=None,best_threshold=0):
                 f.write(example.url1+'\t'+example.url2+'\t'+'1'+'\n')
             else:
                 f.write(example.url1+'\t'+example.url2+'\t'+'0'+'\n')
-
-
-def extract(args, model, tokenizer, prefix="",pool=None,best_threshold=0,debug=True):
-    # Loop to handle MNLI double evaluation (matched, mis-matched)
-
-    eval_dataset = load_and_cache_examples(args, tokenizer, extract=True,pool=pool)
-
-    args.eval_batch_size = args.per_gpu_eval_batch_size * max(1, args.n_gpu)
-    # Note that DistributedSampler samples randomly
-    eval_sampler = SequentialSampler(eval_dataset) if args.local_rank == -1 else DistributedSampler(eval_dataset)
-    eval_dataloader = DataLoader(eval_dataset, sampler=eval_sampler, batch_size=args.eval_batch_size,num_workers=4,pin_memory=True)
-
-    # multi-gpu evaluate
-    if args.n_gpu > 1:
-        model = torch.nn.DataParallel(model)
-    
-    layer_indexes = [int(x) for x in args.layers.split(",")]
-
-    # Eval!
-    logger.info("***** Running Extraction {} *****".format(prefix))
-    logger.info("  Num examples = %d", len(eval_dataset))
-    logger.info("  Batch size = %d", args.eval_batch_size)
-    logger.info("  Extracting layers = %s", ",".join(map(str, layer_indexes)))
-    eval_loss = 0.0
-    nb_eval_steps = 0
-    model.eval()
-    logits=[]
-    y_trues=[]
-    with open(args.output_file, "w", encoding='utf-8') as writer:
-        unique_id = 0
-        for batch in eval_dataloader:
-            inputs = batch[0].to(args.device)
-            labels=batch[1].to(args.device)
-            with torch.no_grad():
-                lm_loss,logit,hidden_states = model(inputs,labels)
-                print(lm_loss, logits,hidden_states)
-                layer_outputs=hidden_states
-                print("layer_outputs",layer_outputs)
-                all_inputs =inputs
-                print("length of layer_outputs", len(layer_outputs))
-                print("len")
-                print([x.shape for x in layer_outputs])
-                layer_outputs = [x.detach().cpu().numpy() for x in layer_outputs]
-                eval_loss += lm_loss.mean().item()
-                logits.append(logit.cpu().numpy())
-                y_trues.append(labels.cpu().numpy())
-                print("all_inputs", all_inputs, len(all_inputs))
-                for example_idx in range(len(all_inputs)):
-                    if debug: print("Processing example no %d" % (unique_id))
-                    start_time = time.time()
-                    output_json = collections.OrderedDict()
-
-                    # Iterate over each example in the batch
-                    input_ids = all_inputs[example_idx].tolist()
-                    output_json["linex_index"] = unique_id
-                    all_out_features = []
-
-                    tokens = list(enumerate(tokenizer.convert_ids_to_tokens(input_ids)))
-                    assert len(tokens) == len(input_ids)
-                    if debug:
-                        print("All tokens")
-                        print(tokens)
-                    if args.model_type == 'bert':
-                        tokens = [(i,t) for i,t in tokens if t != '[PAD]']
-                    elif args.model_type == 'xlnet':
-                        tokens = [(i,t) for i,t in tokens if t != '<pad>']
-                    elif args.model_type == 'roberta':
-                        tokens = [(i,t) for i,t in tokens if t != '<pad>']
-                    elif args.model_type == 'distilbert':
-                        tokens = [(i,t) for i,t in tokens if t != '[PAD]']
-                    elif args.model_type == 'gpt2':
-                        tokens = [(i,t) for i,t in tokens if t != '<pad>']
-
-                    #Only get CLS tokens or first token in case of clone detection
-                    if args.sentence_only and args.model_type == 'bert':
-                        tokens = [(i,t) for i,t in tokens if t == '[CLS]']
-                    if args.sentence_only and args.model_type == 'roberta':
-                        tokens = [(i,t) for i,t in tokens if (t == '<s>'and i == 0)]
-                    if args.sentence_only and args.model_type == 'auto':
-                        tokens = [(i,t) for i,t in tokens if t == '<s>']
-                    if args.sentence_only and args.model_type == 'xlnet':
-                        tokens = [(i,t) for i,t in tokens if t == '<cls>']
-                    if args.sentence_only and args.model_type == 'distilbert':
-                        tokens = [(i,t) for i,t in tokens if t == '[CLS]']
-                    if args.sentence_only and args.model_type == 'gpt2':
-                        tokens = [(i,t) for i,t in tokens if t == '</s>'] #last token for GPT models
-
-                    if debug:
-                        print("Extracting tokens:")
-                        print(tokens)
-                    for token_idx, token in tokens:
-                        all_layers = []
-                        for j, layer_idx in enumerate(layer_indexes): #layer_indexes=0,1,2,3,4,5,6,7,8,9,10,11,12
-                            layers = collections.OrderedDict()
-                            print(layer_idx, example_idx, token_idx,token)
-                            layers["index"] = layer_idx
-                            print(layer_outputs[layer_idx][example_idx][token_idx])
-                            layers["values"] = [float(round(x, 6)) for x in layer_outputs[layer_idx][example_idx][token_idx]] #[layer_idx][example_idx][token_idx]
-                            all_layers.append(layers)
-                       #print("all_layers", all_layers)
-                        out_features = collections.OrderedDict()
-                        out_features["token"] = token
-                        out_features["layers"] = all_layers
-                        all_out_features.append(out_features)
-                    output_json["features"] = all_out_features
-                    end_time = time.time()
-                    if debug: print("Computed in %d s" %(end_time-start_time))
-                    writer.write(json.dumps(output_json) + "\n")
-                    end_time = time.time()
-                    if debug: print("Saved in %d s" %(end_time-start_time))
-
-                    unique_id += 1
-
-            nb_eval_steps += 1
-        logits=np.concatenate(logits,0)
-        y_preds=logits[:,1]>best_threshold
-    
-
-
                                                 
 def main():
     parser = argparse.ArgumentParser()
@@ -600,16 +437,13 @@ def main():
                         help="The input training data file (a text file).")
     parser.add_argument("--output_dir", default=None, type=str, required=True,
                         help="The output directory where the model predictions and checkpoints will be written.")
-    parser.add_argument("--output_file", default=None, type=str, required=True,
-                        help="The output file where features will be saved.")
+
     ## Other parameters
     parser.add_argument("--eval_data_file", default=None, type=str,
                         help="An optional input evaluation data file to evaluate the perplexity on (a text file).")
     parser.add_argument("--test_data_file", default=None, type=str,
                         help="An optional input evaluation data file to evaluate the perplexity on (a text file).")
-    parser.add_argument("--extract_data_file", default=None, type=str,
-                        help="An optional input evaluation data file to evaluate the perplexity on (a text file).")
-    
+                    
     parser.add_argument("--model_type", default="bert", type=str,
                         help="The model architecture to be fine-tuned.")
     parser.add_argument("--model_name_or_path", default=None, type=str,
@@ -636,8 +470,6 @@ def main():
                         help="Whether to run eval on the dev set.")
     parser.add_argument("--do_test", action='store_true',
                         help="Whether to run eval on the dev set.")    
-    parser.add_argument("--do_extract", action='store_true',
-                        help="Whether to run extraction on the given set.")
     parser.add_argument("--evaluate_during_training", action='store_true',
                         help="Run evaluation during training at each logging step.")
     parser.add_argument("--do_lower_case", action='store_true',
@@ -691,8 +523,7 @@ def main():
                         help="For distributed training: local_rank")
     parser.add_argument('--server_ip', type=str, default='', help="For distant debugging.")
     parser.add_argument('--server_port', type=str, default='', help="For distant debugging.")
-    parser.add_argument('--sentence_only', action='store_true', help="For Extracting only [CLS] token embeddings")
-    parser.add_argument('--layers', type=str, default='', help="Comma separated list of layers to extract. 0: Embeddings, 1-12: Normal layers")
+
     
     pool = multiprocessing.Pool(cpu_cont)
     args = parser.parse_args()
@@ -752,10 +583,6 @@ def main():
     config = config_class.from_pretrained(args.config_name if args.config_name else args.model_name_or_path,
                                           cache_dir=args.cache_dir if args.cache_dir else None)
     config.num_labels=2
-
-    if args.model_type == 'gpt2':
-        config.pad_token_id=config.eos_token_id
-
     tokenizer = tokenizer_class.from_pretrained(args.tokenizer_name,
                                                 do_lower_case=args.do_lower_case,
                                                 cache_dir=args.cache_dir if args.cache_dir else None)
@@ -804,18 +631,9 @@ def main():
         model.load_state_dict(torch.load(output_dir))
         model.to(args.device)
         test(args, model, tokenizer,pool=pool,best_threshold=0.5)
-    
-    if args.do_extract and args.local_rank in [-1, 0]:
-        checkpoint_prefix = 'checkpoint-best-f1/model.bin'
-        output_dir = os.path.join(args.output_dir, '{}'.format(checkpoint_prefix))
-        model.load_state_dict(torch.load(output_dir))
-        model.to(args.device)
-        extract(args, model, tokenizer,pool=pool,best_threshold=0.5)    
 
- 
     return results
 
 
 if __name__ == "__main__":
     main()
-

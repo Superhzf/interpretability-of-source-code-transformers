@@ -136,7 +136,7 @@ cd /work/LAS/jannesar-lab/arushi/Interpretability/interpretability-of-source-cod
 ml-gpu /work/LAS/jannesar-lab/arushi/Environments/finetuning_env/bin/python run.py \
     --output_dir=$OUTPUT_DIR \
     --model_type=$MODEL_TYPE \
-    --output_file=$OUTPUT_DIR/test_activations.json \
+    --output_file=$OUTPUT_DIR/${DATA}_activations.json \
     --config_name=$MODEL \
     --model_name_or_path=$MODEL \
     --tokenizer_name=$TOKENIZER \
@@ -153,7 +153,7 @@ ml-gpu /work/LAS/jannesar-lab/arushi/Environments/finetuning_env/bin/python run.
     --evaluate_during_training \
     --max_grad_norm 1.0 \
     --layers 0,1,2,3,4,5,6,7,8,9,10,11,12 \
-    --sentence_only --seed 123456 2>&1| tee $OUTPUT_DIR/test_extraction.log
+    --sentence_only --seed 123456 2>&1| tee $OUTPUT_DIR/${DATA}_${TASK}.log
 
 
 

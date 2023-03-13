@@ -62,14 +62,18 @@ class Model(nn.Module):
         
     def forward(self, input_ids=None,labels=None): 
         input_ids=input_ids.view(-1,self.args.block_size)
-        outputs = self.encoder(input_ids= input_ids,attention_mask=input_ids.ne(1),output_hidden_states=True)[0]
-        #output= self.encoder(input_ids= input_ids,attention_mask=input_ids.ne(1),output_hidden_states=True)
-        print(len(outputs[2]))
-        hidden_states=outputs[2] #(batch_size,sequence_length,hiddensize)
+        outputs = self.encoder(input_ids= input_ids,attention_mask=input_ids.ne(1))[0] #[0] just for last hidden state, use for finetuning
+        
+        output= self.encoder(input_ids= input_ids,attention_mask=input_ids.ne(1),output_hidden_states=True) #use for extraction
+        print(len(output)) #64 for last hidden state
+        print("output",type(output))
+
+        hidden_states=output[2] #(batch_size,sequence_length,hiddensize) [2] for BERT/RoBERTa-based models
         if self.args.model_type == "gpt2":
             logits=self.classifier2(outputs) #GPT2ClassificationHead
         else:
             logits=self.classifier1(outputs) #RobertaClassificationHead
+        
         prob=F.softmax(logits)
         if labels is not None:
             loss_fct = CrossEntropyLoss()
