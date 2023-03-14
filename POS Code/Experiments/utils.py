@@ -6,7 +6,7 @@ import neurox.interpretation.utils as utils
 import neurox.interpretation.linear_probe as linear_probe
 import neurox.interpretation.ablation as ablation
 import neurox.data.control_task as ct
-import neurox.interpretation.clustering
+import neurox.interpretation.clustering as clustering
 from sklearn.model_selection import train_test_split
 import neurox.analysis.corpus as corpus
 import numpy as np
@@ -101,7 +101,7 @@ def load_tokens(activations,FILES_IN,FILES_LABEL):
     return tokens, sample_idx
 
 
-def param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2,weight=None):
+def param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2):
     best_l1 = None
     best_l2 = None
     best_score = -float('inf')
@@ -112,15 +112,8 @@ def param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2,weight=None):
                                                                     lambda_l1=this_l1,
                                                                     lambda_l2=this_l2,
                                                                     num_epochs=10,
-                                                                    batch_size=128,
-                                                                    weight=weight)
+                                                                    batch_size=128)
             this_score = linear_probe.evaluate_probe(this_probe, X_valid, y_valid, idx_to_class=idx2label)
-            this_weights = list(this_probe.parameters())[0].data.cpu().numpy()
-            this_weights_mean = np.mean(np.abs(this_weights))
-            # print(f"l1={this_l1},l2={this_l2}")
-            # print("Absolute average value of parameters:",this_weights_mean)
-            # print("Number of parameters that are not zero:",np.sum(this_weights != 0,axis=1))
-            # print("Accuracy on the validation set:",this_score)
             if this_score['__OVERALL__'] > best_score:
                 best_score = this_score['__OVERALL__']
                 best_l1 = this_l1
@@ -137,20 +130,9 @@ def get_mappings(tokens,activations):
     return X, y, label2idx, idx2label, src2idx, idx2src
 
 
-def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,src_tokens_test,weighted,model_name,sample_idx_test=None):
+def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,src_tokens_test,model_name,sample_idx_test=None):
     #Train the linear probes (logistic regression) - POS(code) tagging
-    if weighted:
-        classes = sorted(list(set(y_train)))
-        count_classes = collections.Counter(y_train)
-        total = sum(count_classes.values())
-        weight = []
-        for this_class in classes:
-            this_weight =  count_classes[this_class]/total
-            weight.append(this_weight)
-        weight = torch.as_tensor(weight,device=torch.device('cuda'))
-    else:
-        weight = None
-    best_l1,best_l2,best_probe=param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2,weight)
+    best_l1,best_l2,best_probe=param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2)
     #Get scores of probes
     print()
     print(f"The best l1={best_l1}, the best l2={best_l2} for {model_name}")
@@ -205,7 +187,7 @@ def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2labe
     return best_probe, scores
 
 
-def get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,probe,label2idx,idx2label,src_tokens_test,weighted,model_name,sample_idx_test):
+def get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,probe,label2idx,idx2label,src_tokens_test,model_name,sample_idx_test):
     ''' Returns top 2% neurons for each model'''
 
     #Top neurons
@@ -227,7 +209,7 @@ def get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,probe,label2id
     print("The shape of the validation set:",X_selected_valid.shape)
     print("The shape of the testing set:",X_selected_test.shape)
     all_activations_probe(X_selected_train,y_train,X_selected_valid,y_valid,X_selected_test,y_test,idx2label,
-                        src_tokens_test,weighted,this_model_name,sample_idx_test)
+                        src_tokens_test,this_model_name,sample_idx_test)
 
     ordering, cutoffs = linear_probe.get_neuron_ordering(probe, label2idx)
     X_selected_train = ablation.filter_activations_keep_neurons(X_train, ordering[:200])
@@ -235,7 +217,7 @@ def get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,probe,label2id
     X_selected_test = ablation.filter_activations_keep_neurons(X_test, ordering[:200])
     this_model_name = f"{model_name}_top200_neurons"
     all_activations_probe(X_selected_train,y_train,X_selected_valid,y_valid,X_selected_test,y_test,idx2label,
-                        src_tokens_test,weighted,this_model_name,sample_idx_test)
+                        src_tokens_test,this_model_name,sample_idx_test)
     return top_neurons
 
 
@@ -247,7 +229,7 @@ def get_top_words(top_neurons,tokens,activations,model_name):
         print(f"Top words for {model_name} neuron indx {neuron}",top_words)
 
 
-def independent_layerwise_probeing(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,src_tokens_test,weighted,model_name,sample_idx_test):
+def independent_layerwise_probeing(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,src_tokens_test,model_name,sample_idx_test):
     ''' Returns models and accuracy(score) of the probes trained on activations from different layers '''
     this_results = {}
     for i in range(13):
@@ -257,18 +239,12 @@ def independent_layerwise_probeing(X_train,y_train,X_valid,y_valid,X_test,y_test
         layer_valid = ablation.filter_activations_by_layers(X_valid, [i], 13)
         layer_test = ablation.filter_activations_by_layers(X_test, [i], 13)
         _,this_score = all_activations_probe(layer_train,y_train,layer_valid,y_valid,layer_test,y_test,
-                                    idx2label,src_tokens_test,weighted,this_model_name,sample_idx_test)
+                                    idx2label,src_tokens_test,this_model_name,sample_idx_test)
         this_results[f"layer_{i}"] = this_score
     return this_results
-        # train0 = ablation.filter_activations_by_layers(X_train, [0], 13)
-        # valid0 = ablation.filter_activations_by_layers(X_valid, [0], 13)
-        # tets0 = ablation.filter_activations_by_layers(X_test, [0], 13)
-        # print(f"The distance between the features in layer {i} and layer 0 (training):{np.linalg.norm(train0-layer_train)}")
-        # print(f"The distance between the features in layer {i} and layer 0 (validation):{np.linalg.norm(valid0-layer_valid)}")
-        # print(f"The distance between the features in layer {i} and layer 0 (testing):{np.linalg.norm(tets0-layer_test)}")
 
 
-def incremental_layerwise_probeing(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,src_tokens_test,weighted,model_name,sample_idx_test):
+def incremental_layerwise_probeing(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,src_tokens_test,model_name,sample_idx_test):
     ''' Returns models and accuracy(score) of the probes trained on activations from different layers '''
     this_results = {}
     for i in range(2,12):
@@ -279,20 +255,77 @@ def incremental_layerwise_probeing(X_train,y_train,X_valid,y_valid,X_test,y_test
         layer_valid = ablation.filter_activations_by_layers(X_valid, layers, 13)
         layer_test = ablation.filter_activations_by_layers(X_test, layers, 13)
         _,this_score = all_activations_probe(layer_train,y_train,layer_valid,y_valid,layer_test,y_test,
-                                    idx2label,src_tokens_test,weighted,this_model_name,sample_idx_test)
+                                    idx2label,src_tokens_test,this_model_name,sample_idx_test)
         this_results[f"{layers}"] = this_score
     return this_results
 
 
-def select_minimum_layers(all_results,target,all_layer_result):
+def select_minimum_layers(incremental_layerwise_result,target,all_layer_result):
     """
     Select the minimum number of layers such that the performance fullfil the target
     """
-    for this_target in range(target):
-        for this_layer,this_accuracy in all_results.items():
-            if this_accuracy > all_layer_result*(1-this_target):
-                return this_layer
+    for idx, this_accuracy in enumerate(list(incremental_layerwise_result.values())):
+        if this_accuracy > all_layer_result*(1-target):
+            return idx+1
     return -1
+
+
+def select_independent_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
+                            idx2label,label2idx,src_tokens_test,this_model_name,
+                            sample_idx_test,layer_idx,clustering_threshold,target_neuron):
+    this_result = {}
+    layers = list(range(layer_idx+1))
+    layer_train = ablation.filter_activations_by_layers(X_train, layers, 13)
+    layer_valid = ablation.filter_activations_by_layers(X_valid, layers, 13)
+    layer_test = ablation.filter_activations_by_layers(X_test, layers, 13)
+    for this_threshold in clustering_threshold:
+        if this_threshold == -1:
+            X_train_filtered = layer_train
+            X_valid_filtered = layer_valid
+            X_test_filtered = layer_test
+            result_key = "no-clustering"
+            this_result[result_key]={}
+        else:
+            result_key = f"clustering-{this_threshold}"
+            this_result[result_key] = {}
+            independent_neurons, clusters = clustering.extract_independent_neurons(layer_train, use_abs_correlation=True, clustering_threshold=this_threshold)
+            X_train_filtered = ablation.filter_activations_keep_neurons(layer_train,independent_neurons)
+            X_valid_filtered = ablation.filter_activations_keep_neurons(layer_valid,independent_neurons)
+            X_test_filtered = ablation.filter_activations_keep_neurons(layer_test,independent_neurons)
+            this_result[result_key]["clustering_threshold"] = this_threshold
+            this_result[result_key]["clusters"] = [int(x) for x in clusters]
+            this_result[result_key]["independent_neurons"] = [int(x) for x in independent_neurons]
+
+        model,this_score = all_activations_probe(X_train_filtered,y_train,X_valid_filtered,y_valid,X_test_filtered,y_test,
+                                    idx2label,src_tokens_test,this_model_name,sample_idx_test)
+        this_result[result_key]['base_results'] = this_score
+        target_score = this_score*(1-target_neuron)
+        ordering,_ = linear_probe.get_neuron_ordering(model, label2idx,search_stride=1000)
+        this_result[result_key]["ordering"] = [int(x) for x in ordering]
+        percentages = [0.001,0.002,0.003,0.004,0.005,0.01,
+            0.02,0.03,0.04,0.05,0.06,0.07,0.08,0.09,0.10,
+            0.15,0.20,0.25,0.30,0.35,0.40,0.45,0.50,0.60,
+            0.70,0.80,0.90,]
+        minimal_neuron_set_size = X_train_filtered.shape[1]
+        this_result[result_key]["minimal_neuron_set_size"] = minimal_neuron_set_size
+        this_result[result_key]["minimal_neuron_set"] = this_result[result_key]["ordering"]
+        this_result[result_key][f"selected-{X_filtered.shape[1]}-neurons"] = this_score
+        for this_percentage in percentages:
+            selected_num_neurons = int(percentage * 13 * 768)
+            selected_neurons = ordering[:selected_num_neurons]
+            X_train_selected = ablation.filter_activations_keep_neurons(X_train_filtered, selected_neurons)
+            X_valid_selected = utils.filter_activations_keep_neurons(X_valid_filtered, selected_neurons)
+            X_test_selected = utils.filter_activations_keep_neurons(X_test_filtered, selected_neurons)
+            _,this_score = all_activations_probe(X_train_selected,y_train,X_valid_selected,y_valid,X_test_selected,y_test,
+                                    idx2label,src_tokens_test,this_model_name,sample_idx_test)
+            this_result[result_key][f"selected-{selected_num_neurons}-neurons"] = this_score
+            if this_score > target_score:
+                minimal_neuron_set_size = selected_num_neurons
+                this_result[result_key]["minimal_neuron_set_size"] = minimal_neuron_set_size
+                this_result[result_key]["minimal_neuron_set"] = [int(x) for x in selected_neurons]
+                break
+    return this_result
+
 
 
 def randomReassignment(tokens,labels,distribution):

@@ -1,6 +1,7 @@
 import argparse
 from utils import Normalization, extract_activations
 from utils import get_mappings,all_activations_probe,get_imp_neurons,get_top_words,independent_layerwise_probeing,incremental_layerwise_probeing
+from utils import select_independent_neurons
 from utils import control_task_probes, probeless,filter_by_frequency,preprocess,alignTokenAct,getOverlap, selectBasedOnTrain
 from sklearn.model_selection import train_test_split
 import numpy as np
@@ -21,7 +22,6 @@ num_train = number[0:3]
 num_valid = number[3:]
 num_test = number[3:]
 
-weighted = False
 MODEL_NAMES = ['pretrained_BERT',
                'pretrained_CodeBERT','pretrained_GraphCodeBERT',
                'finetuned_defdet_CodeBERT','finetuned_defdet_GraphCodeBERT',
@@ -179,27 +179,35 @@ def main():
             all_results={}
             # All-layer probing
             probe, scores = all_activations_probe(X_train,y_train,X_valid,y_valid,X_test, y_test,
-                                                    idx2label_train,tokens_test['source'],weighted,this_model,sample_idx_test)
+                                                    idx2label_train,tokens_test['source'],this_model,sample_idx_test)
             all_results["baseline"] = scores
 
             # Independent-layerwise probing
             results = independent_layerwise_probeing(X_train,y_train,X_valid,y_valid,X_test,y_test,
-                                                    idx2label_train,tokens_test['source'],weighted,this_model,sample_idx_test)
+                                                    idx2label_train,tokens_test['source'],this_model,sample_idx_test)
             all_results["independent_layerwise"] = results
             # Incremental-layerwise probing
             results = incremental_layerwise_probeing(X_train,y_train,X_valid,y_valid,X_test,y_test,
-                                                    idx2label_train,tokens_test['source'],weighted,this_model,sample_idx_test)
+                                                    idx2label_train,tokens_test['source'],this_model,sample_idx_test)
             all_results["incremental_layerwise"] = results
             # select minimum layers
-            target = [0.03,0.02,0.01]
-            layer_idx = select_minimum_layers(all_results,target,all_results["baseline"])
-            all_results["selected_minimum_layer"] = layer_idx
-
-            
+            target_layer = [0.03,0.02,0.01]
+            target_neuron = [0.01]
+            clustering_thresholds = [-1,0.3]
+            all_results['select_minimum_layer'] = {}
+            for this_target_layer in target_layer:
+                layer_idx = select_minimum_layers(all_results['incremental_layerwise'],this_target_layer,all_results["baseline"])
+                all_results["select_minimum_layer"][this_target_layer] = layer_idx
+                all_results["select_minimum_neuron"][layer_idx] = {}
+                # probing using independent neurons
+                for this_target_neuron in target_neuron:
+                    this_result = select_independent_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
+                                            idx2label_train,label2idx_train,tokens_test['source'],this_model,sample_idx_test,layer_idx,clustering_thresholds,this_target_neuron)
+                    all_results["select_minimum_neuron"][layer_idx][this_target_neuron] = this_result
 
             # Important neuron probeing
             top_neurons = get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
-                                            probe,label2idx_train,idx2label_train,tokens_test['source'],weighted,this_model,sample_idx_test)
+                                            probe,label2idx_train,idx2label_train,tokens_test['source'],this_model,sample_idx_test)
             get_top_words(top_neurons,tokens_train,activations_train,this_model)
             del X_train, X_test, X_valid,y_train, y_test,y_valid
             #Control task probes
