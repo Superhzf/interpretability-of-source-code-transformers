@@ -155,7 +155,6 @@ def main():
             print("The distribution of classes in testing:")
             print(collections.Counter(y_test))
             print(label2idx_test)
-            exit(0)
             
             X_train_copy = X_train.copy()
             y_train_copy = y_train.copy()
