@@ -22,6 +22,9 @@ import logging
 import os
 import random
 
+import collections
+import time
+import json
 
 import numpy as np
 import torch
@@ -34,9 +37,11 @@ except:
 from tqdm import tqdm, trange
 
 from transformers import (WEIGHTS_NAME, get_linear_schedule_with_warmup, AdamW,
-                          RobertaConfig,
-                          RobertaModel,
-                          RobertaTokenizer)
+                          RobertaConfig,RobertaModel,RobertaTokenizer,
+                          BertConfig, BertModel, BertTokenizer,
+                          GPT2Config, GPT2Model, GPT2Tokenizer,
+                          OpenAIGPTConfig, OpenAIGPTLMHeadModel, OpenAIGPTTokenizer,
+                          DistilBertConfig, DistilBertForMaskedLM, DistilBertTokenizer)
 
 from models import Model
 from utils import acc_and_f1, TextDataset
@@ -45,9 +50,15 @@ cpu_cont = multiprocessing.cpu_count()
 
 logger = logging.getLogger(__name__)
 
-MODEL_CLASSES = {'roberta': (RobertaConfig, RobertaModel, RobertaTokenizer)}
+MODEL_CLASSES = {
+    'gpt2': (GPT2Config, GPT2Model, GPT2Tokenizer),
+    'openai-gpt': (OpenAIGPTConfig, OpenAIGPTLMHeadModel, OpenAIGPTTokenizer),
+    'bert': (BertConfig, BertModel, BertTokenizer),
+    'roberta': (RobertaConfig, RobertaModel, RobertaTokenizer),
+    'distilbert': (DistilBertConfig, DistilBertForMaskedLM, DistilBertTokenizer)
+}
 
-
+                 
 def set_seed(seed=42):
     random.seed(seed)
     os.environ['PYHTONHASHSEED'] = str(seed)
@@ -312,22 +323,65 @@ def test(args, model, tokenizer):
             f.write(example.idx+'\t'+str(int(pred))+'\n')
 
 
+def extract(args, model, tokenizer):
+    test_data_path = os.path.join(args.data_dir, args.extract_file)
+    eval_dataset = TextDataset(tokenizer, args, test_data_path, type='extract') #add type=extract in utils.TextDataset
+
+    args.eval_batch_size = args.per_gpu_eval_batch_size * max(1, args.n_gpu)
+    # Note that DistributedSampler samples randomly
+    eval_sampler = SequentialSampler(eval_dataset) if args.local_rank == -1 else DistributedSampler(eval_dataset)
+    eval_dataloader = DataLoader(eval_dataset, sampler=eval_sampler, batch_size=args.eval_batch_size)
+
+    # multi-gpu evaluate
+    if args.n_gpu > 1:
+        model = torch.nn.DataParallel(model)
+
+    # Eval!
+    logger.info("***** Running Test *****"):wq
+    logger.info("  Num examples = %d", len(eval_dataset))
+    logger.info("  Batch size = %d", args.eval_batch_size)
+
+    nb_eval_steps = 0
+    all_predictions = []
+    for batch in eval_dataloader:
+        code_inputs = batch[0].to(args.device)
+        nl_inputs = batch[1].to(args.device)
+        labels = batch[2].to(args.device)
+        with torch.no_grad():
+            _, predictions,hidden_states = model(code_inputs, nl_inputs, labels)
+            all_predictions.append(predictions.cpu())
+        nb_eval_steps += 1
+    all_predictions = torch.cat(all_predictions, 0).squeeze().numpy()
+
+    logger.info("***** Running Test *****")
+    with open(args.prediction_file,'w') as f:
+        for example, pred in zip(eval_dataset.examples, all_predictions.tolist()):
+            f.write(example.idx+'\t'+str(int(pred))+'\n')
+
+
+
+
+
 def main():
     parser = argparse.ArgumentParser()
 
     ## Required parameters
     parser.add_argument("--data_dir", default=None, type=str, required=True,
                         help="The input data dir. Should contain the .tsv files (or other data files) for the task.")
-    parser.add_argument("--train_file", default=None, type=str,
-                        help="The input training data file (a text file).")
     parser.add_argument("--output_dir", default=None, type=str, required=True,
                         help="The output directory where the model predictions and checkpoints will be written.")
+    parser.add_argument("--output_file", default=None, type=str, required=True,
+                        help="The output file where features will be saved.")
 
     ## Other parameters
+    parser.add_argument("--train_file", default=None, type=str,
+                        help="The input training data file (a text file).")
     parser.add_argument("--dev_file", default=None, type=str,
                         help="An optional input evaluation data file to evaluate the perplexity on (a text file).")
     parser.add_argument("--test_file", default=None, type=str,
                         help="An optional input evaluation data file to evaluate the perplexity on (a text file).")
+    parser.add_argument("--extract_file", default=None, type=str,
+                        help="An optional input data file to extract the activations on (a text file).")
 
     parser.add_argument("--model_type", default="roberta", type=str,
                         help="The model architecture to be fine-tuned.")
@@ -359,6 +413,9 @@ def main():
                         help="Whether to run eval on the dev set.")
     parser.add_argument("--do_test", action='store_true',
                         help="Whether to run predict on the test set.")
+    parser.add_argument("--do_extract", action='store_true',
+                        help="Whether to run extraction on the given set.")
+
     parser.add_argument("--evaluate_during_training", action='store_true',
                         help="Rul evaluation during training at each logging step.")
     parser.add_argument("--do_lower_case", action='store_true',
@@ -417,6 +474,10 @@ def main():
                         help='path to store test result')
     parser.add_argument("--prediction_file", default='predictions.txt', type=str,
                         help='path to save predictions result, note to specify task name')
+    parser.add_argument('--sentence_only', action='store_true', help="For Extracting only [CLS] token embeddings")
+    parser.add_argument('--layers', type=str, default='', help="Comma separated list of layers to extract. 0: Embeddings, 1-12: Normal layers")
+    
+
     args = parser.parse_args()
 
     # Setup distant debugging if needed
@@ -536,6 +597,25 @@ def main():
         model.to(args.device)
         test(args, model, tokenizer)
         logger.info("Test Model From: {}".format(model_path))
+
+    if args.do_extract and args.local_rank in [-1, 0]:
+        logger.info("***** Extraction results *****")
+        checkpoint_prefix = 'checkpoint-best-aver'
+        if checkpoint_prefix not in args.output_dir and \
+                os.path.exists(os.path.join(args.output_dir, checkpoint_prefix)):
+            output_dir = os.path.join(args.output_dir, checkpoint_prefix)
+        else:
+            output_dir = args.output_dir
+        if not args.pred_model_dir:
+            model_path = os.path.join(output_dir, 'pytorch_model.bin')
+        else:
+            model_path = os.path.join(args.pred_model_dir, 'pytorch_model.bin')
+        model.load_state_dict(torch.load(model_path))
+        tokenizer = tokenizer.from_pretrained(output_dir)
+        model.to(args.device)
+        extract(args, model, tokenizer)
+        logger.info("Extract Model From: {}".format(model_path))
+
     return results
 
 
