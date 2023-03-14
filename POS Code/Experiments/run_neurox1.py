@@ -177,10 +177,6 @@ def main():
             # probeless(X_train,y_train,this_model)
 
             #All activations probes
-            print()
-            print("The shape of the training set:",X_train.shape)
-            print("The shape of the validation set:",X_valid.shape)
-            print("The shape of the testing set:",X_test.shape)
             probe, scores = all_activations_probe(X_train,y_train,X_valid,y_valid,X_test, y_test,
                                                     idx2label_train,tokens_test['source'],weighted,this_model,sample_idx_test)
 
