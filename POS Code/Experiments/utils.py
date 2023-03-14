@@ -247,22 +247,52 @@ def get_top_words(top_neurons,tokens,activations,model_name):
         print(f"Top words for {model_name} neuron indx {neuron}",top_words)
 
 
-def layerwise_probes_inference(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,src_tokens_test,weighted,model_name,sample_idx_test):
+def independent_layerwise_probeing(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,src_tokens_test,weighted,model_name,sample_idx_test):
     ''' Returns models and accuracy(score) of the probes trained on activations from different layers '''
+    this_results = {}
     for i in range(13):
         print(f"{model_name} Layer", i)
         this_model_name = f"{model_name}_layer_{i}"
         layer_train = ablation.filter_activations_by_layers(X_train, [i], 13)
         layer_valid = ablation.filter_activations_by_layers(X_valid, [i], 13)
         layer_test = ablation.filter_activations_by_layers(X_test, [i], 13)
-        _,_ = all_activations_probe(layer_train,y_train,layer_valid,y_valid,layer_test,y_test,
+        _,this_score = all_activations_probe(layer_train,y_train,layer_valid,y_valid,layer_test,y_test,
                                     idx2label,src_tokens_test,weighted,this_model_name,sample_idx_test)
-        train0 = ablation.filter_activations_by_layers(X_train, [0], 13)
-        valid0 = ablation.filter_activations_by_layers(X_valid, [0], 13)
-        tets0 = ablation.filter_activations_by_layers(X_test, [0], 13)
+        this_results[f"layer_{i}"] = this_score
+    return this_results
+        # train0 = ablation.filter_activations_by_layers(X_train, [0], 13)
+        # valid0 = ablation.filter_activations_by_layers(X_valid, [0], 13)
+        # tets0 = ablation.filter_activations_by_layers(X_test, [0], 13)
         # print(f"The distance between the features in layer {i} and layer 0 (training):{np.linalg.norm(train0-layer_train)}")
         # print(f"The distance between the features in layer {i} and layer 0 (validation):{np.linalg.norm(valid0-layer_valid)}")
         # print(f"The distance between the features in layer {i} and layer 0 (testing):{np.linalg.norm(tets0-layer_test)}")
+
+
+def incremental_layerwise_probeing(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,src_tokens_test,weighted,model_name,sample_idx_test):
+    ''' Returns models and accuracy(score) of the probes trained on activations from different layers '''
+    this_results = {}
+    for i in range(2,12):
+        layers = list(range(i))
+        print(f"{model_name} Layer", layers)
+        this_model_name = f"{model_name}_layer_{layers}"
+        layer_train = ablation.filter_activations_by_layers(X_train, layers, 13)
+        layer_valid = ablation.filter_activations_by_layers(X_valid, layers, 13)
+        layer_test = ablation.filter_activations_by_layers(X_test, layers, 13)
+        _,this_score = all_activations_probe(layer_train,y_train,layer_valid,y_valid,layer_test,y_test,
+                                    idx2label,src_tokens_test,weighted,this_model_name,sample_idx_test)
+        this_results[f"{layers}"] = this_score
+    return this_results
+
+
+def select_minimum_layers(all_results,target,all_layer_result):
+    """
+    Select the minimum number of layers such that the performance fullfil the target
+    """
+    for this_target in range(target):
+        for this_layer,this_accuracy in all_results.items():
+            if this_accuracy > all_layer_result*(1-this_target):
+                return this_layer
+    return -1
 
 
 def randomReassignment(tokens,labels,distribution):
