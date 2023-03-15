@@ -96,9 +96,9 @@ fi
 
 
 
-cd /work/LAS/jannesar-lab/arushi/Interpretability/interpretability-of-source-code-transformers/NL-Code-Search/NL-code-search-WebQuery
-ml-gpu /work/LAS/jannesar-lab/arushi/Environments/finetuning_env/bin/python code/run_classifier.py \
-                        --model_type $MODEL_TYPE \
+cd /work/LAS/cjquinn-lab/zefuh/selectivity/Interpretability/interpretability-of-source-code-transformers/NL-Code-Search/NL-code-search-WebQuery
+ml-gpu /work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python code/run_classifier.py \
+                        --model_type roberta \
                         --do_train \
                         --do_eval \
                         --eval_all_checkpoints \
@@ -117,7 +117,7 @@ ml-gpu /work/LAS/jannesar-lab/arushi/Environments/finetuning_env/bin/python code
                         --encoder_name_or_path microsoft/codebert-base \
 			--tokenizer_name microsoft/codebert-base | tee code/saved_models/CodeBERT/train.log
 
-ml-gpu /work/LAS/jannesar-lab/arushi/Environments/finetuning_env/bin/python code/run_classifier.py \
+ml-gpu /work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python code/run_classifier.py \
 			--model_type roberta \
 			--do_train \
 			--do_eval \
