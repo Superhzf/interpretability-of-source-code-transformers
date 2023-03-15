@@ -163,18 +163,12 @@ def main():
             X_test_copy = X_test.copy()
             y_test_copy = y_test.copy()
 
-            # X_train, X_valid, y_train, y_valid = \
-            #     train_test_split(X_train, y_train, test_size=0.15, shuffle=False)
-
             #normalize the inputs before doing probing
             norm = Normalization(X_train)
             X_train = norm.norm(X_train)
             X_valid = norm.norm(X_valid)
             X_test = norm.norm(X_test)
             del norm
-
-            #Probeless clustering experiments
-            # probeless(X_train,y_train,this_model)
 
             all_results={}
             # All-layer probing
