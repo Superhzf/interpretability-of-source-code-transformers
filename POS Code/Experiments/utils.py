@@ -88,7 +88,7 @@ def extract_activations(file_in_name,model_description,activation_name):
 def load_extracted_activations(activation_file_name):
     #Load activations from json files
     activations, num_layers = data_loader.load_activations(activation_file_name)
-    return activations
+    return activations, num_layers
 
 
 def load_tokens(activations,FILES_IN,FILES_LABEL):
@@ -229,31 +229,31 @@ def get_top_words(top_neurons,tokens,activations,model_name):
         print(f"Top words for {model_name} neuron indx {neuron}",top_words)
 
 
-def independent_layerwise_probeing(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,src_tokens_test,model_name,sample_idx_test):
+def independent_layerwise_probeing(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,src_tokens_test,model_name,sample_idx_test,num_layers):
     ''' Returns models and accuracy(score) of the probes trained on activations from different layers '''
     this_results = {}
-    for i in range(13):
+    for i in range(num_layers):
         print(f"{model_name} Layer", i)
         this_model_name = f"{model_name}_layer_{i}"
-        layer_train = ablation.filter_activations_by_layers(X_train, [i], 13)
-        layer_valid = ablation.filter_activations_by_layers(X_valid, [i], 13)
-        layer_test = ablation.filter_activations_by_layers(X_test, [i], 13)
+        layer_train = ablation.filter_activations_by_layers(X_train, [i], num_layers)
+        layer_valid = ablation.filter_activations_by_layers(X_valid, [i], num_layers)
+        layer_test = ablation.filter_activations_by_layers(X_test, [i], num_layers)
         _,this_score = all_activations_probe(layer_train,y_train,layer_valid,y_valid,layer_test,y_test,
                                     idx2label,src_tokens_test,this_model_name,sample_idx_test)
         this_results[f"layer_{i}"] = this_score
     return this_results
 
 
-def incremental_layerwise_probeing(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,src_tokens_test,model_name,sample_idx_test):
+def incremental_layerwise_probeing(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,src_tokens_test,model_name,sample_idx_test,num_layers):
     ''' Returns models and accuracy(score) of the probes trained on activations from different layers '''
     this_results = {}
-    for i in range(2,12):
+    for i in range(2,num_layers-1):
         layers = list(range(i))
         print(f"{model_name} Layer", layers)
         this_model_name = f"{model_name}_layer_{layers}"
-        layer_train = ablation.filter_activations_by_layers(X_train, layers, 13)
-        layer_valid = ablation.filter_activations_by_layers(X_valid, layers, 13)
-        layer_test = ablation.filter_activations_by_layers(X_test, layers, 13)
+        layer_train = ablation.filter_activations_by_layers(X_train, layers, num_layers)
+        layer_valid = ablation.filter_activations_by_layers(X_valid, layers, num_layers)
+        layer_test = ablation.filter_activations_by_layers(X_test, layers, num_layers)
         _,this_score = all_activations_probe(layer_train,y_train,layer_valid,y_valid,layer_test,y_test,
                                     idx2label,src_tokens_test,this_model_name,sample_idx_test)
         this_results[f"{layers}"] = this_score
@@ -272,12 +272,13 @@ def select_minimum_layers(incremental_layerwise_result,target,all_layer_result):
 
 def select_independent_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
                             idx2label,label2idx,src_tokens_test,this_model_name,
-                            sample_idx_test,layer_idx,clustering_threshold,target_neuron=None,neuron_percentage=None,full_probing=False):
+                            sample_idx_test,layer_idx,clustering_threshold,num_layers,neurons_per_layer,
+                            target_neuron=None,neuron_percentage=None,full_probing=False):
     this_result = {}
     layers = list(range(layer_idx+1))
-    layer_train = ablation.filter_activations_by_layers(X_train, layers, 13)
-    layer_valid = ablation.filter_activations_by_layers(X_valid, layers, 13)
-    layer_test = ablation.filter_activations_by_layers(X_test, layers, 13)
+    layer_train = ablation.filter_activations_by_layers(X_train, layers, num_layers)
+    layer_valid = ablation.filter_activations_by_layers(X_valid, layers, num_layers)
+    layer_test = ablation.filter_activations_by_layers(X_test, layers, num_layers)
     for this_threshold in clustering_threshold:
         if this_threshold == -1:
             X_train_filtered = layer_train
@@ -309,7 +310,9 @@ def select_independent_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
             this_result[result_key]["minimal_neuron_set"] = this_result[result_key]["ordering"]
             this_result[result_key][f"selected-{X_filtered.shape[1]}-neurons"] = this_score
             for this_percentage in neuron_percentage:
-                selected_num_neurons = int(percentage * 13 * 768)
+                selected_num_neurons = int(percentage * num_layers * neurons_per_layer)
+                if selected_num_neurons > X_train_filtered.shape[1]:
+                    continue
                 selected_neurons = ordering[:selected_num_neurons]
                 X_train_selected = ablation.filter_activations_keep_neurons(X_train_filtered, selected_neurons)
                 X_valid_selected = utils.filter_activations_keep_neurons(X_valid_filtered, selected_neurons)
@@ -525,13 +528,13 @@ def filterByClass(tokens,activations,X,y,label2idx,model_name,sample_idx):
 
 
 def preprocess(activation_file_name,IN_file,LABEL_file,remove_seen_tokens,model_name):
-    activations = load_extracted_activations(activation_file_name)
+    activations,num_layers = load_extracted_activations(activation_file_name)
     tokens, sample_idx =  load_tokens(activations,IN_file,LABEL_file)
     if remove_seen_tokens:
         tokens,activations=removeSeenTokens(tokens,activations)
     X, y, label2idx, _, _, _ = get_mappings(tokens,activations)
     tokens,activations,flat_src_tokens,X_train, y_train, label2idx, idx2label, sample_idx = filterByClass(tokens,activations,X,y,label2idx,model_name,sample_idx)
-    return tokens,activations,flat_src_tokens,X_train,y_train,label2idx,idx2label, sample_idx
+    return tokens,activations,flat_src_tokens,X_train,y_train,label2idx,idx2label, sample_idx, num_layers
 
 
 def selectBasedOnTrain(flat_tokens_test,X_test, y_test,flat_tokens_train,label2idx_train,keyword_list_test,num_test,upper_bound,sample_idx_test=None):

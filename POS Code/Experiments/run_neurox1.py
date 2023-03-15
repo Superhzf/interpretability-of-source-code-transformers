@@ -60,13 +60,13 @@ def main():
         torch.manual_seed(0)
         if this_model in ['pretrained_BERT','pretrained_CodeBERT','pretrained_GraphCodeBERT']:
             print(f"Anayzing {this_model}")
-            tokens_train,activations_train,flat_tokens_train,X_train, y_train, label2idx_train, idx2label_train,_=preprocess(os.path.join(AVTIVATIONS_FOLDER,ACTIVATION_NAMES[this_model][0]),
+            tokens_train,activations_train,flat_tokens_train,X_train, y_train, label2idx_train, idx2label_train,_,num_layers=preprocess(os.path.join(AVTIVATIONS_FOLDER,ACTIVATION_NAMES[this_model][0]),
                                                                         './src_files/codetest2_train_unique.in','./src_files/codetest2_train_unique.label',
                                                                         False,this_model)
-            tokens_valid,activations_valid,flat_tokens_valid,X_valid, y_valid, label2idx_valid, idx2label_valid,_=preprocess(os.path.join(AVTIVATIONS_FOLDER,ACTIVATION_NAMES[this_model][1]),
+            tokens_valid,activations_valid,flat_tokens_valid,X_valid, y_valid, label2idx_valid, idx2label_valid,_,_=preprocess(os.path.join(AVTIVATIONS_FOLDER,ACTIVATION_NAMES[this_model][1]),
                                                             './src_files/codetest2_valid_unique.in','./src_files/codetest2_valid_unique.label',
                                                             False,this_model)
-            tokens_test,activations_test,flat_tokens_test,X_test, y_test, label2idx_test, _, sample_idx_test=preprocess(os.path.join(AVTIVATIONS_FOLDER,ACTIVATION_NAMES[this_model][2]),
+            tokens_test,activations_test,flat_tokens_test,X_test, y_test, label2idx_test, _, sample_idx_test,_=preprocess(os.path.join(AVTIVATIONS_FOLDER,ACTIVATION_NAMES[this_model][2]),
                                             './src_files/codetest2_test_unique.in','./src_files/codetest2_test_unique.label',
                                             False,this_model)
             # remove tokens that are shared by training and testing
@@ -155,6 +155,9 @@ def main():
             print("The distribution of classes in testing:")
             print(collections.Counter(y_test))
             print(label2idx_test)
+
+            neurons_per_layer = X_train.shape[1]//num_layers
+            assert neurons_per_layer!=X_train.shape[1]/num_layers, f"Model:{this_model},Something is wrong with either number of layers={num_layers} or total neurons={X_train.shape[1]}"
             
             X_train_copy = X_train.copy()
             y_train_copy = y_train.copy()
@@ -178,11 +181,11 @@ def main():
 
             # Independent-layerwise probing
             results = independent_layerwise_probeing(X_train,y_train,X_valid,y_valid,X_test,y_test,
-                                                    idx2label_train,tokens_test['source'],this_model,sample_idx_test)
+                                                    idx2label_train,tokens_test['source'],this_model,sample_idx_test,num_layers)
             all_results["independent_layerwise"] = results
             # Incremental-layerwise probing
             results = incremental_layerwise_probeing(X_train,y_train,X_valid,y_valid,X_test,y_test,
-                                                    idx2label_train,tokens_test['source'],this_model,sample_idx_test)
+                                                    idx2label_train,tokens_test['source'],this_model,sample_idx_test,num_layers)
             all_results["incremental_layerwise"] = results
             # select minimum layers
             target_layer = [0.03,0.02,0.01]
@@ -200,14 +203,16 @@ def main():
                 # probing using independent neurons based on minimum layers
                 for this_target_neuron in target_neuron:
                     this_result = select_independent_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
-                            idx2label_train,label2idx_train,tokens_test['source'],this_model,sample_idx_test,layer_idx,clustering_thresholds,this_target_neuron,neuron_percentage,True)
+                            idx2label_train,label2idx_train,tokens_test['source'],this_model,sample_idx_test,layer_idx,
+                            clustering_thresholds,num_layers,neurons_per_layer,this_target_neuron,neuron_percentage,True)
                     all_results["select_minimum_neuron"][layer_idx][this_target_neuron] = this_result
             
             # probing independent neurons based on all layers (run_cc_all.py)
             clustering_thresholds = [-1, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
             layer_idx = 12
             this_result = select_independent_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
-                                idx2label_train,label2idx_train,tokens_test['source'],this_model,sample_idx_test,layer_idx,clustering_thresholds,None,None,False)
+                                idx2label_train,label2idx_train,tokens_test['source'],this_model,sample_idx_test,layer_idx,
+                                clustering_thresholds,num_layers,neurons_per_layer,None,None,False)
             all_results["select_from_all_neurons"] = this_result
 
             # probing independent neurons based on all layers with coarse percentage (run_max_features.py)
@@ -234,7 +239,8 @@ def main():
                                 0.30,0.35,0.40,0.45,0.50,0.60,0.70,0.80,
                                 0.90,]
             this_result = select_independent_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
-                                idx2label_train,label2idx_train,tokens_test['source'],this_model,sample_idx_test,layer_idx,clustering_thresholds,this_target_neuron,neuron_percentage,True)
+                                idx2label_train,label2idx_train,tokens_test['source'],this_model,sample_idx_test,layer_idx,
+                                clustering_thresholds,num_layers,neurons_per_layer,this_target_neuron,neuron_percentage,True)
             all_results['select_minimum_neurons_finer_percentage'] = this_result
 
             # Important neuron probeing
