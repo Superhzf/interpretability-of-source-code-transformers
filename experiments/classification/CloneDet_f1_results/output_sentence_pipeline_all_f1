@@ -1,0 +1,2707 @@
+[MEMORY] Begin: 265.62
+*********************** LOADING ACTIVATIONS ***********************
+[MEMORY] Before activation loading: 265.77
+Loading json activations from /work/LAS/jannesar-lab/arushi/Redundancy/Code_data/CodeXGLUE/Code-Code/Clone-detection-BigCloneBench/dataset/activations/codebert/train_activations.json...
+90102 13.0
+Loading json activations from /work/LAS/jannesar-lab/arushi/Redundancy/Code_data/CodeXGLUE/Code-Code/Clone-detection-BigCloneBench/dataset/activations/codebert/dev_activations.json...
+41541 13.0
+Number of train sentences: 90102
+Number of test sentences: 41541
+[MEMORY] After activation loading: 12205.70
+************************* LOADING TOKENS **************************
+[MEMORY] After token loading: 12253.62
+************************ CREATING TENSORS *************************
+Train:
+Number of tokens:  90102
+length of source dictionary:  90102
+length of target dictionary:  2
+90102
+Total instances: 90102
+['sentence_85894', 'sentence_17221', 'sentence_24506', 'sentence_37729', 'sentence_2430', 'sentence_52404', 'sentence_41709', 'sentence_33521', 'sentence_38245', 'sentence_77288', 'sentence_60414', 'sentence_52367', 'sentence_23801', 'sentence_21591', 'sentence_11349', 'sentence_48728', 'sentence_22319', 'sentence_84234', 'sentence_42508', 'sentence_4764']
+(81091, 9984) (81091,)
+Dev:
+(9011, 9984) (9011,)
+Test:
+Number of tokens:  41541
+length of source dictionary:  90102
+length of target dictionary:  2
+41541
+Total instances: 41541
+['sentence_301', 'sentence_17221', 'sentence_11376', 'sentence_24506', 'sentence_37258', 'sentence_37729', 'sentence_2430', 'sentence_33521', 'sentence_1357', 'sentence_1741', 'sentence_38245', 'sentence_8494', 'sentence_18006', 'sentence_23801', 'sentence_21591', 'sentence_38383', 'sentence_11349', 'sentence_22319', 'sentence_35891', 'sentence_2344']
+(41541, 9984) (41541,)
+[MEMORY] After tensor creation: 20727.80
+************************* FREEING MEMORY **************************
+[MEMORY] After cleanup: 20676.21
+***************** RUNNING BASELINE [ ALL LAYERS ] *****************
+Building model...
+Train: (81091, 9984) (81091,)
+Dev: (9011, 9984) (9011,)
+Test: (41541, 9984) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0057
+Epoch: [2/10], Loss: 0.0057
+Epoch: [3/10], Loss: 0.0057
+Epoch: [4/10], Loss: 0.0057
+Epoch: [5/10], Loss: 0.0057
+Epoch: [6/10], Loss: 0.0057
+Epoch: [7/10], Loss: 0.0057
+Epoch: [8/10], Loss: 0.0057
+Epoch: [9/10], Loss: 0.0057
+Epoch: [10/10], Loss: 0.0057
+Score (f1) of the model: 0.33
+Score (f1) of the model: 0.32
+Score (f1) of the model: 0.52
+Results:
+Train Score (f1): 0.327865
+Dev Score (f1): 0.318376
+Test Score (f1): 0.520789
+[MEMORY] After baseline run: 20679.54
+****************** RUNNING INDEPENDENT LAYERWISE ******************
+----------------------- Running Layer 00 ------------------------
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+[MEMORY]     Independent layerwise (00): 20679.85
+----------------------- Running Layer 01 ------------------------
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.00
+Score (f1) of the model: 0.00
+Score (f1) of the model: 0.00
+Results:
+Train Score (f1): 0.000000
+Dev Score (f1): 0.000000
+Test Score (f1): 0.000000
+[MEMORY]     Independent layerwise (01): 20680.15
+----------------------- Running Layer 02 ------------------------
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.00
+Score (f1) of the model: 0.00
+Score (f1) of the model: 0.00
+Results:
+Train Score (f1): 0.000000
+Dev Score (f1): 0.000000
+Test Score (f1): 0.000000
+[MEMORY]     Independent layerwise (02): 20680.15
+----------------------- Running Layer 03 ------------------------
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.03
+Score (f1) of the model: 0.03
+Score (f1) of the model: 0.06
+Results:
+Train Score (f1): 0.031796
+Dev Score (f1): 0.030264
+Test Score (f1): 0.059633
+[MEMORY]     Independent layerwise (03): 20680.16
+----------------------- Running Layer 04 ------------------------
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.27
+Score (f1) of the model: 0.27
+Score (f1) of the model: 0.32
+Results:
+Train Score (f1): 0.268428
+Dev Score (f1): 0.272186
+Test Score (f1): 0.315185
+[MEMORY]     Independent layerwise (04): 20680.66
+----------------------- Running Layer 05 ------------------------
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.16
+Score (f1) of the model: 0.17
+Score (f1) of the model: 0.22
+Results:
+Train Score (f1): 0.164215
+Dev Score (f1): 0.171912
+Test Score (f1): 0.217313
+[MEMORY]     Independent layerwise (05): 20680.41
+----------------------- Running Layer 06 ------------------------
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.667752
+Dev Score (f1): 0.669916
+Test Score (f1): 0.929315
+[MEMORY]     Independent layerwise (06): 20680.66
+----------------------- Running Layer 07 ------------------------
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.23
+Score (f1) of the model: 0.23
+Score (f1) of the model: 0.15
+Results:
+Train Score (f1): 0.228477
+Dev Score (f1): 0.231015
+Test Score (f1): 0.148546
+[MEMORY]     Independent layerwise (07): 20680.41
+----------------------- Running Layer 08 ------------------------
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.01
+Score (f1) of the model: 0.00
+Score (f1) of the model: 0.01
+Results:
+Train Score (f1): 0.005285
+Dev Score (f1): 0.002193
+Test Score (f1): 0.012271
+[MEMORY]     Independent layerwise (08): 20680.41
+----------------------- Running Layer 09 ------------------------
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0055
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.14
+Score (f1) of the model: 0.14
+Score (f1) of the model: 0.22
+Results:
+Train Score (f1): 0.144336
+Dev Score (f1): 0.139393
+Test Score (f1): 0.218860
+[MEMORY]     Independent layerwise (09): 20680.43
+----------------------- Running Layer 10 ------------------------
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0055
+Epoch: [3/10], Loss: 0.0055
+Epoch: [4/10], Loss: 0.0055
+Epoch: [5/10], Loss: 0.0055
+Epoch: [6/10], Loss: 0.0055
+Epoch: [7/10], Loss: 0.0055
+Epoch: [8/10], Loss: 0.0055
+Epoch: [9/10], Loss: 0.0055
+Epoch: [10/10], Loss: 0.0055
+Score (f1) of the model: 0.16
+Score (f1) of the model: 0.16
+Score (f1) of the model: 0.26
+Results:
+Train Score (f1): 0.163098
+Dev Score (f1): 0.159610
+Test Score (f1): 0.257113
+[MEMORY]     Independent layerwise (10): 20680.18
+----------------------- Running Layer 11 ------------------------
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0055
+Epoch: [3/10], Loss: 0.0055
+Epoch: [4/10], Loss: 0.0055
+Epoch: [5/10], Loss: 0.0055
+Epoch: [6/10], Loss: 0.0055
+Epoch: [7/10], Loss: 0.0055
+Epoch: [8/10], Loss: 0.0055
+Epoch: [9/10], Loss: 0.0055
+Epoch: [10/10], Loss: 0.0055
+Score (f1) of the model: 0.27
+Score (f1) of the model: 0.26
+Score (f1) of the model: 0.42
+Results:
+Train Score (f1): 0.265891
+Dev Score (f1): 0.263678
+Test Score (f1): 0.423580
+[MEMORY]     Independent layerwise (11): 20680.43
+----------------------- Running Layer 12 ------------------------
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0055
+Epoch: [3/10], Loss: 0.0055
+Epoch: [4/10], Loss: 0.0055
+Epoch: [5/10], Loss: 0.0055
+Epoch: [6/10], Loss: 0.0055
+Epoch: [7/10], Loss: 0.0055
+Epoch: [8/10], Loss: 0.0055
+Epoch: [9/10], Loss: 0.0055
+Epoch: [10/10], Loss: 0.0055
+Score (f1) of the model: 0.38
+Score (f1) of the model: 0.37
+Score (f1) of the model: 0.63
+Results:
+Train Score (f1): 0.382018
+Dev Score (f1): 0.370680
+Test Score (f1): 0.627835
+[MEMORY]     Independent layerwise (12): 20680.18
+[MEMORY] After indendent layerwise run: 20680.18
+****************** RUNNING INCREMENTAL LAYERWISE ******************
+-------------------- Running Layer 00 to 00 ---------------------
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+[MEMORY]     Incremental layerwise (00 -> 00): 20680.43
+-------------------- Running Layer 00 to 01 ---------------------
+Building model...
+Train: (81091, 1536) (81091,)
+Dev: (9011, 1536) (9011,)
+Test: (41541, 1536) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+[MEMORY]     Incremental layerwise (00 -> 01): 20680.37
+-------------------- Running Layer 00 to 02 ---------------------
+Building model...
+Train: (81091, 2304) (81091,)
+Dev: (9011, 2304) (9011,)
+Test: (41541, 2304) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.667582
+Dev Score (f1): 0.669918
+Test Score (f1): 0.929345
+[MEMORY]     Incremental layerwise (00 -> 02): 20680.88
+-------------------- Running Layer 00 to 03 ---------------------
+Building model...
+Train: (81091, 3072) (81091,)
+Dev: (9011, 3072) (9011,)
+Test: (41541, 3072) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0055
+Epoch: [3/10], Loss: 0.0055
+Epoch: [4/10], Loss: 0.0055
+Epoch: [5/10], Loss: 0.0055
+Epoch: [6/10], Loss: 0.0055
+Epoch: [7/10], Loss: 0.0055
+Epoch: [8/10], Loss: 0.0055
+Epoch: [9/10], Loss: 0.0055
+Epoch: [10/10], Loss: 0.0055
+Score (f1) of the model: 0.00
+Score (f1) of the model: 0.00
+Score (f1) of the model: 0.00
+Results:
+Train Score (f1): 0.000000
+Dev Score (f1): 0.000000
+Test Score (f1): 0.000000
+[MEMORY]     Incremental layerwise (00 -> 03): 20680.38
+-------------------- Running Layer 00 to 04 ---------------------
+Building model...
+Train: (81091, 3840) (81091,)
+Dev: (9011, 3840) (9011,)
+Test: (41541, 3840) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0055
+Epoch: [3/10], Loss: 0.0055
+Epoch: [4/10], Loss: 0.0055
+Epoch: [5/10], Loss: 0.0055
+Epoch: [6/10], Loss: 0.0055
+Epoch: [7/10], Loss: 0.0055
+Epoch: [8/10], Loss: 0.0055
+Epoch: [9/10], Loss: 0.0055
+Epoch: [10/10], Loss: 0.0055
+Score (f1) of the model: 0.55
+Score (f1) of the model: 0.55
+Score (f1) of the model: 0.69
+Results:
+Train Score (f1): 0.547727
+Dev Score (f1): 0.553102
+Test Score (f1): 0.693177
+[MEMORY]     Incremental layerwise (00 -> 04): 20680.66
+-------------------- Running Layer 00 to 05 ---------------------
+Building model...
+Train: (81091, 4608) (81091,)
+Dev: (9011, 4608) (9011,)
+Test: (41541, 4608) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0055
+Epoch: [3/10], Loss: 0.0055
+Epoch: [4/10], Loss: 0.0055
+Epoch: [5/10], Loss: 0.0055
+Epoch: [6/10], Loss: 0.0055
+Epoch: [7/10], Loss: 0.0055
+Epoch: [8/10], Loss: 0.0055
+Epoch: [9/10], Loss: 0.0055
+Epoch: [10/10], Loss: 0.0055
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.667855
+Dev Score (f1): 0.670160
+Test Score (f1): 0.929714
+[MEMORY]     Incremental layerwise (00 -> 05): 20680.67
+-------------------- Running Layer 00 to 06 ---------------------
+Building model...
+Train: (81091, 5376) (81091,)
+Dev: (9011, 5376) (9011,)
+Test: (41541, 5376) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0055
+Epoch: [3/10], Loss: 0.0055
+Epoch: [4/10], Loss: 0.0055
+Epoch: [5/10], Loss: 0.0055
+Epoch: [6/10], Loss: 0.0055
+Epoch: [7/10], Loss: 0.0055
+Epoch: [8/10], Loss: 0.0055
+Epoch: [9/10], Loss: 0.0055
+Epoch: [10/10], Loss: 0.0055
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+[MEMORY]     Incremental layerwise (00 -> 06): 20680.42
+-------------------- Running Layer 00 to 07 ---------------------
+Building model...
+Train: (81091, 6144) (81091,)
+Dev: (9011, 6144) (9011,)
+Test: (41541, 6144) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0055
+Epoch: [3/10], Loss: 0.0055
+Epoch: [4/10], Loss: 0.0055
+Epoch: [5/10], Loss: 0.0055
+Epoch: [6/10], Loss: 0.0055
+Epoch: [7/10], Loss: 0.0055
+Epoch: [8/10], Loss: 0.0055
+Epoch: [9/10], Loss: 0.0055
+Epoch: [10/10], Loss: 0.0055
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+[MEMORY]     Incremental layerwise (00 -> 07): 20680.42
+-------------------- Running Layer 00 to 08 ---------------------
+Building model...
+Train: (81091, 6912) (81091,)
+Dev: (9011, 6912) (9011,)
+Test: (41541, 6912) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0055
+Epoch: [3/10], Loss: 0.0055
+Epoch: [4/10], Loss: 0.0055
+Epoch: [5/10], Loss: 0.0055
+Epoch: [6/10], Loss: 0.0055
+Epoch: [7/10], Loss: 0.0055
+Epoch: [8/10], Loss: 0.0055
+Epoch: [9/10], Loss: 0.0055
+Epoch: [10/10], Loss: 0.0055
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+[MEMORY]     Incremental layerwise (00 -> 08): 22818.56
+-------------------- Running Layer 00 to 09 ---------------------
+Building model...
+Train: (81091, 7680) (81091,)
+Dev: (9011, 7680) (9011,)
+Test: (41541, 7680) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0055
+Epoch: [3/10], Loss: 0.0055
+Epoch: [4/10], Loss: 0.0055
+Epoch: [5/10], Loss: 0.0055
+Epoch: [6/10], Loss: 0.0055
+Epoch: [7/10], Loss: 0.0055
+Epoch: [8/10], Loss: 0.0055
+Epoch: [9/10], Loss: 0.0055
+Epoch: [10/10], Loss: 0.0055
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.667560
+Dev Score (f1): 0.669573
+Test Score (f1): 0.929069
+[MEMORY]     Incremental layerwise (00 -> 09): 23056.13
+-------------------- Running Layer 00 to 10 ---------------------
+Building model...
+Train: (81091, 8448) (81091,)
+Dev: (9011, 8448) (9011,)
+Test: (41541, 8448) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0056
+Epoch: [2/10], Loss: 0.0055
+Epoch: [3/10], Loss: 0.0055
+Epoch: [4/10], Loss: 0.0055
+Epoch: [5/10], Loss: 0.0055
+Epoch: [6/10], Loss: 0.0055
+Epoch: [7/10], Loss: 0.0055
+Epoch: [8/10], Loss: 0.0055
+Epoch: [9/10], Loss: 0.0055
+Epoch: [10/10], Loss: 0.0055
+Score (f1) of the model: 0.40
+Score (f1) of the model: 0.39
+Score (f1) of the model: 0.65
+Results:
+Train Score (f1): 0.403556
+Dev Score (f1): 0.394666
+Test Score (f1): 0.651734
+[MEMORY]     Incremental layerwise (00 -> 10): 23293.70
+-------------------- Running Layer 00 to 11 ---------------------
+Building model...
+Train: (81091, 9216) (81091,)
+Dev: (9011, 9216) (9011,)
+Test: (41541, 9216) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0056
+Epoch: [2/10], Loss: 0.0056
+Epoch: [3/10], Loss: 0.0056
+Epoch: [4/10], Loss: 0.0056
+Epoch: [5/10], Loss: 0.0056
+Epoch: [6/10], Loss: 0.0056
+Epoch: [7/10], Loss: 0.0056
+Epoch: [8/10], Loss: 0.0056
+Epoch: [9/10], Loss: 0.0056
+Epoch: [10/10], Loss: 0.0056
+Score (f1) of the model: 0.37
+Score (f1) of the model: 0.36
+Score (f1) of the model: 0.61
+Results:
+Train Score (f1): 0.373803
+Dev Score (f1): 0.362942
+Test Score (f1): 0.609369
+[MEMORY]     Incremental layerwise (00 -> 11): 23531.78
+---------------- Copying Layer 00 to 12 from baseline -----------------
+[MEMORY] After incremental layerwise run: 20680.92
+********************* SELECTING NEURONS *********************
+********************* SELECTING MINIMUM LAYERS (3% drop) *********************
+Gold score (f1) (Baseline): 0.318376
+Target score (f1) (3% drop): 0.308825
+Selected top layer: Layer 00
+Dev score: 0.670552
+[MEMORY] After top layer selection: 20680.92
+********************* RUNNING NEURON SELECTION *********************
+------------- Clustering (threshold -1.00) ----------
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+Gold score (Baseline with selected top layer [and potential clustering]): 0.670552
+Target score (1% drop): 0.663846
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+------------- Clustering (threshold 0.10) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+Gold score (Baseline with selected top layer [and potential clustering]): 0.670552
+Target score (1% drop): 0.663846
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+------------- Clustering (threshold 0.20) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+Gold score (Baseline with selected top layer [and potential clustering]): 0.670552
+Target score (1% drop): 0.663846
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+------------- Clustering (threshold 0.30) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+Gold score (Baseline with selected top layer [and potential clustering]): 0.670552
+Target score (1% drop): 0.663846
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+------------- Clustering (threshold 0.40) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+Gold score (Baseline with selected top layer [and potential clustering]): 0.670552
+Target score (1% drop): 0.663846
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+------------- Clustering (threshold 0.50) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+Gold score (Baseline with selected top layer [and potential clustering]): 0.670552
+Target score (1% drop): 0.663846
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+------------- Clustering (threshold 0.60) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+Gold score (Baseline with selected top layer [and potential clustering]): 0.670552
+Target score (1% drop): 0.663846
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+------------- Clustering (threshold 0.70) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+Gold score (Baseline with selected top layer [and potential clustering]): 0.670552
+Target score (1% drop): 0.663846
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+------------- Clustering (threshold 0.80) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+Gold score (Baseline with selected top layer [and potential clustering]): 0.670552
+Target score (1% drop): 0.663846
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+------------- Clustering (threshold 0.90) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+Gold score (Baseline with selected top layer [and potential clustering]): 0.670552
+Target score (1% drop): 0.663846
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+[MEMORY] After neuron selection: 20697.20
+********************* SELECTING MINIMUM LAYERS (2% drop) *********************
+Gold score (f1) (Baseline): 0.318376
+Target score (f1) (2% drop): 0.312009
+Selected top layer: Layer 00
+Dev score: 0.670552
+[MEMORY] After top layer selection: 20697.20
+********************* RUNNING NEURON SELECTION *********************
+------------- Clustering (threshold -1.00) ----------
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+Gold score (Baseline with selected top layer [and potential clustering]): 0.670552
+Target score (1% drop): 0.663846
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+------------- Clustering (threshold 0.10) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+Gold score (Baseline with selected top layer [and potential clustering]): 0.670552
+Target score (1% drop): 0.663846
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+------------- Clustering (threshold 0.20) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+Gold score (Baseline with selected top layer [and potential clustering]): 0.670552
+Target score (1% drop): 0.663846
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+------------- Clustering (threshold 0.30) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+Gold score (Baseline with selected top layer [and potential clustering]): 0.670552
+Target score (1% drop): 0.663846
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0057
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+------------- Clustering (threshold 0.40) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+Gold score (Baseline with selected top layer [and potential clustering]): 0.670552
+Target score (1% drop): 0.663846
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+------------- Clustering (threshold 0.50) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+Gold score (Baseline with selected top layer [and potential clustering]): 0.670552
+Target score (1% drop): 0.663846
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+------------- Clustering (threshold 0.60) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+Gold score (Baseline with selected top layer [and potential clustering]): 0.670552
+Target score (1% drop): 0.663846
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0059
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+------------- Clustering (threshold 0.70) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+Gold score (Baseline with selected top layer [and potential clustering]): 0.670552
+Target score (1% drop): 0.663846
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+------------- Clustering (threshold 0.80) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+Gold score (Baseline with selected top layer [and potential clustering]): 0.670552
+Target score (1% drop): 0.663846
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+------------- Clustering (threshold 0.90) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+Gold score (Baseline with selected top layer [and potential clustering]): 0.670552
+Target score (1% drop): 0.663846
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0059
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+[MEMORY] After neuron selection: 20697.70
+********************* SELECTING MINIMUM LAYERS (1% drop) *********************
+Gold score (f1) (Baseline): 0.318376
+Target score (f1) (1% drop): 0.315192
+Selected top layer: Layer 00
+Dev score: 0.670552
+[MEMORY] After top layer selection: 20697.70
+********************* RUNNING NEURON SELECTION *********************
+------------- Clustering (threshold -1.00) ----------
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+Gold score (Baseline with selected top layer [and potential clustering]): 0.670552
+Target score (1% drop): 0.663846
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+------------- Clustering (threshold 0.10) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+Gold score (Baseline with selected top layer [and potential clustering]): 0.670552
+Target score (1% drop): 0.663846
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0057
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+------------- Clustering (threshold 0.20) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+Gold score (Baseline with selected top layer [and potential clustering]): 0.670552
+Target score (1% drop): 0.663846
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+------------- Clustering (threshold 0.30) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+Gold score (Baseline with selected top layer [and potential clustering]): 0.670552
+Target score (1% drop): 0.663846
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+------------- Clustering (threshold 0.40) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+Gold score (Baseline with selected top layer [and potential clustering]): 0.670552
+Target score (1% drop): 0.663846
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+------------- Clustering (threshold 0.50) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+Gold score (Baseline with selected top layer [and potential clustering]): 0.670552
+Target score (1% drop): 0.663846
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+------------- Clustering (threshold 0.60) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+Gold score (Baseline with selected top layer [and potential clustering]): 0.670552
+Target score (1% drop): 0.663846
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+------------- Clustering (threshold 0.70) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+Gold score (Baseline with selected top layer [and potential clustering]): 0.670552
+Target score (1% drop): 0.663846
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0056
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+------------- Clustering (threshold 0.80) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+Gold score (Baseline with selected top layer [and potential clustering]): 0.670552
+Target score (1% drop): 0.663846
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+------------- Clustering (threshold 0.90) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+Gold score (Baseline with selected top layer [and potential clustering]): 0.670552
+Target score (1% drop): 0.663846
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.67
+Score (f1) of the model: 0.93
+Results:
+Train Score (f1): 0.668041
+Dev Score (f1): 0.670552
+Test Score (f1): 0.929714
+[MEMORY] After neuron selection: 20698.00
+***************************** SUMMARY *****************************
+Baseline Score (f1): 0.520789
+Independent Layerwise:
+  Layer 00: 0.929714
+  Layer 01: 0.000000
+  Layer 02: 0.000000
+  Layer 03: 0.059633
+  Layer 04: 0.315185
+  Layer 05: 0.217313
+  Layer 06: 0.929315
+  Layer 07: 0.148546
+  Layer 08: 0.012271
+  Layer 09: 0.218860
+  Layer 10: 0.257113
+  Layer 11: 0.423580
+  Layer 12: 0.627835
+Incremental Layerwise:
+  Layer 0 -> 00: 0.929714
+  Layer 0 -> 01: 0.929714
+  Layer 0 -> 02: 0.929345
+  Layer 0 -> 03: 0.000000
+  Layer 0 -> 04: 0.693177
+  Layer 0 -> 05: 0.929714
+  Layer 0 -> 06: 0.929714
+  Layer 0 -> 07: 0.929714
+  Layer 0 -> 08: 0.929714
+  Layer 0 -> 09: 0.929069
+  Layer 0 -> 10: 0.651734
+  Layer 0 -> 11: 0.609369
+  Layer 0 -> 12: 0.520789
+Selection parameters: selection-3-1
+Selected top layer: Layer 00
+Clustering paramter: no-clustering
+Minimal set of neurons: 9 neurons
+Minimal set score (f1): 0.929714
+Clustering paramter: clustering-0.10
+Independent Neurons: 768 neurons
+CC score (f1): 0.929714
+Minimal set of neurons: 9 neurons
+Minimal set score (f1): 0.929714
+Clustering paramter: clustering-0.20
+Independent Neurons: 768 neurons
+CC score (f1): 0.929714
+Minimal set of neurons: 9 neurons
+Minimal set score (f1): 0.929714
+Clustering paramter: clustering-0.30
+Independent Neurons: 768 neurons
+CC score (f1): 0.929714
+Minimal set of neurons: 9 neurons
+Minimal set score (f1): 0.929714
+Clustering paramter: clustering-0.40
+Independent Neurons: 768 neurons
+CC score (f1): 0.929714
+Minimal set of neurons: 9 neurons
+Minimal set score (f1): 0.929714
+Clustering paramter: clustering-0.50
+Independent Neurons: 768 neurons
+CC score (f1): 0.929714
+Minimal set of neurons: 9 neurons
+Minimal set score (f1): 0.929714
+Clustering paramter: clustering-0.60
+Independent Neurons: 768 neurons
+CC score (f1): 0.929714
+Minimal set of neurons: 9 neurons
+Minimal set score (f1): 0.929714
+Clustering paramter: clustering-0.70
+Independent Neurons: 768 neurons
+CC score (f1): 0.929714
+Minimal set of neurons: 9 neurons
+Minimal set score (f1): 0.929714
+Clustering paramter: clustering-0.80
+Independent Neurons: 768 neurons
+CC score (f1): 0.929714
+Minimal set of neurons: 9 neurons
+Minimal set score (f1): 0.929714
+Clustering paramter: clustering-0.90
+Independent Neurons: 768 neurons
+CC score (f1): 0.929714
+Minimal set of neurons: 9 neurons
+Minimal set score (f1): 0.929714
+Selection parameters: selection-2-1
+Selected top layer: Layer 00
+Clustering paramter: no-clustering
+Minimal set of neurons: 9 neurons
+Minimal set score (f1): 0.929714
+Clustering paramter: clustering-0.10
+Independent Neurons: 768 neurons
+CC score (f1): 0.929714
+Minimal set of neurons: 9 neurons
+Minimal set score (f1): 0.929714
+Clustering paramter: clustering-0.20
+Independent Neurons: 768 neurons
+CC score (f1): 0.929714
+Minimal set of neurons: 9 neurons
+Minimal set score (f1): 0.929714
+Clustering paramter: clustering-0.30
+Independent Neurons: 768 neurons
+CC score (f1): 0.929714
+Minimal set of neurons: 9 neurons
+Minimal set score (f1): 0.929714
+Clustering paramter: clustering-0.40
+Independent Neurons: 768 neurons
+CC score (f1): 0.929714
+Minimal set of neurons: 9 neurons
+Minimal set score (f1): 0.929714
+Clustering paramter: clustering-0.50
+Independent Neurons: 768 neurons
+CC score (f1): 0.929714
+Minimal set of neurons: 9 neurons
+Minimal set score (f1): 0.929714
+Clustering paramter: clustering-0.60
+Independent Neurons: 768 neurons
+CC score (f1): 0.929714
+Minimal set of neurons: 9 neurons
+Minimal set score (f1): 0.929714
+Clustering paramter: clustering-0.70
+Independent Neurons: 768 neurons
+CC score (f1): 0.929714
+Minimal set of neurons: 9 neurons
+Minimal set score (f1): 0.929714
+Clustering paramter: clustering-0.80
+Independent Neurons: 768 neurons
+CC score (f1): 0.929714
+Minimal set of neurons: 9 neurons
+Minimal set score (f1): 0.929714
+Clustering paramter: clustering-0.90
+Independent Neurons: 768 neurons
+CC score (f1): 0.929714
+Minimal set of neurons: 9 neurons
+Minimal set score (f1): 0.929714
+Selection parameters: selection-1-1
+Selected top layer: Layer 00
+Clustering paramter: no-clustering
+Minimal set of neurons: 9 neurons
+Minimal set score (f1): 0.929714
+Clustering paramter: clustering-0.10
+Independent Neurons: 768 neurons
+CC score (f1): 0.929714
+Minimal set of neurons: 9 neurons
+Minimal set score (f1): 0.929714
+Clustering paramter: clustering-0.20
+Independent Neurons: 768 neurons
+CC score (f1): 0.929714
+Minimal set of neurons: 9 neurons
+Minimal set score (f1): 0.929714
+Clustering paramter: clustering-0.30
+Independent Neurons: 768 neurons
+CC score (f1): 0.929714
+Minimal set of neurons: 9 neurons
+Minimal set score (f1): 0.929714
+Clustering paramter: clustering-0.40
+Independent Neurons: 768 neurons
+CC score (f1): 0.929714
+Minimal set of neurons: 9 neurons
+Minimal set score (f1): 0.929714
+Clustering paramter: clustering-0.50
+Independent Neurons: 768 neurons
+CC score (f1): 0.929714
+Minimal set of neurons: 9 neurons
+Minimal set score (f1): 0.929714
+Clustering paramter: clustering-0.60
+Independent Neurons: 768 neurons
+CC score (f1): 0.929714
+Minimal set of neurons: 9 neurons
+Minimal set score (f1): 0.929714
+Clustering paramter: clustering-0.70
+Independent Neurons: 768 neurons
+CC score (f1): 0.929714
+Minimal set of neurons: 9 neurons
+Minimal set score (f1): 0.929714
+Clustering paramter: clustering-0.80
+Independent Neurons: 768 neurons
+CC score (f1): 0.929714
+Minimal set of neurons: 9 neurons
+Minimal set score (f1): 0.929714
+Clustering paramter: clustering-0.90
+Independent Neurons: 768 neurons
+CC score (f1): 0.929714
+Minimal set of neurons: 9 neurons
+Minimal set score (f1): 0.929714

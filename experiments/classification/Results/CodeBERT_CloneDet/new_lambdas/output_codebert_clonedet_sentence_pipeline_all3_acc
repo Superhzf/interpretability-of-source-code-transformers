@@ -1,0 +1,2707 @@
+[MEMORY] Begin: 259.19
+*********************** LOADING ACTIVATIONS ***********************
+[MEMORY] Before activation loading: 259.34
+Loading json activations from /work/LAS/jannesar-lab/arushi/Redundancy/Code_data/CodeXGLUE/Code-Code/Clone-detection-BigCloneBench/dataset/activations/codebert/train_activations.json...
+90102 13.0
+Loading json activations from /work/LAS/jannesar-lab/arushi/Redundancy/Code_data/CodeXGLUE/Code-Code/Clone-detection-BigCloneBench/dataset/activations/codebert/dev_activations.json...
+41541 13.0
+Number of train sentences: 90102
+Number of test sentences: 41541
+[MEMORY] After activation loading: 12315.64
+************************* LOADING TOKENS **************************
+[MEMORY] After token loading: 12363.56
+************************ CREATING TENSORS *************************
+Train:
+Number of tokens:  90102
+length of source dictionary:  90102
+length of target dictionary:  2
+90102
+Total instances: 90102
+['sentence_49824', 'sentence_83622', 'sentence_10527', 'sentence_15309', 'sentence_62439', 'sentence_21267', 'sentence_53577', 'sentence_68800', 'sentence_69238', 'sentence_84854', 'sentence_26179', 'sentence_53873', 'sentence_74019', 'sentence_2127', 'sentence_19742', 'sentence_38435', 'sentence_18207', 'sentence_68122', 'sentence_75256', 'sentence_2108']
+(81091, 9984) (81091,)
+Dev:
+(9011, 9984) (9011,)
+Test:
+Number of tokens:  41541
+length of source dictionary:  90102
+length of target dictionary:  2
+41541
+Total instances: 41541
+['sentence_182', 'sentence_10527', 'sentence_15309', 'sentence_35014', 'sentence_21267', 'sentence_6517', 'sentence_15963', 'sentence_2292', 'sentence_2420', 'sentence_6350', 'sentence_26179', 'sentence_2127', 'sentence_19742', 'sentence_38435', 'sentence_18207', 'sentence_2108', 'sentence_13793', 'sentence_12717', 'sentence_24177', 'sentence_7629']
+(41541, 9984) (41541,)
+[MEMORY] After tensor creation: 20837.59
+************************* FREEING MEMORY **************************
+[MEMORY] After cleanup: 20791.15
+***************** RUNNING BASELINE [ ALL LAYERS ] *****************
+Building model...
+Train: (81091, 9984) (81091,)
+Dev: (9011, 9984) (9011,)
+Test: (41541, 9984) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0057
+Epoch: [2/10], Loss: 0.0057
+Epoch: [3/10], Loss: 0.0057
+Epoch: [4/10], Loss: 0.0057
+Epoch: [5/10], Loss: 0.0057
+Epoch: [6/10], Loss: 0.0057
+Epoch: [7/10], Loss: 0.0057
+Epoch: [8/10], Loss: 0.0057
+Epoch: [9/10], Loss: 0.0057
+Epoch: [10/10], Loss: 0.0057
+Score (accuracy) of the model: 0.51
+Score (accuracy) of the model: 0.51
+Score (accuracy) of the model: 0.41
+Results:
+Train Score (accuracy): 0.507862
+Dev Score (accuracy): 0.505382
+Test Score (accuracy): 0.407044
+[MEMORY] After baseline run: 20794.14
+****************** RUNNING INDEPENDENT LAYERWISE ******************
+----------------------- Running Layer 00 ------------------------
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+[MEMORY]     Independent layerwise (00): 20794.20
+----------------------- Running Layer 01 ------------------------
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.13
+Results:
+Train Score (accuracy): 0.498452
+Dev Score (accuracy): 0.495616
+Test Score (accuracy): 0.131340
+[MEMORY]     Independent layerwise (01): 20794.20
+----------------------- Running Layer 02 ------------------------
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.13
+Results:
+Train Score (accuracy): 0.498452
+Dev Score (accuracy): 0.495616
+Test Score (accuracy): 0.131340
+[MEMORY]     Independent layerwise (02): 20794.20
+----------------------- Running Layer 03 ------------------------
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.13
+Results:
+Train Score (accuracy): 0.498452
+Dev Score (accuracy): 0.495616
+Test Score (accuracy): 0.131340
+[MEMORY]     Independent layerwise (03): 20794.20
+----------------------- Running Layer 04 ------------------------
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.35
+Results:
+Train Score (accuracy): 0.497996
+Dev Score (accuracy): 0.500610
+Test Score (accuracy): 0.353771
+[MEMORY]     Independent layerwise (04): 20794.20
+----------------------- Running Layer 05 ------------------------
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.25
+Results:
+Train Score (accuracy): 0.498748
+Dev Score (accuracy): 0.499612
+Test Score (accuracy): 0.251872
+[MEMORY]     Independent layerwise (05): 20794.20
+----------------------- Running Layer 06 ------------------------
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+[MEMORY]     Independent layerwise (06): 20794.28
+----------------------- Running Layer 07 ------------------------
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.18
+Results:
+Train Score (accuracy): 0.497293
+Dev Score (accuracy): 0.496393
+Test Score (accuracy): 0.176091
+[MEMORY]     Independent layerwise (07): 20794.49
+----------------------- Running Layer 08 ------------------------
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.13
+Results:
+Train Score (accuracy): 0.498452
+Dev Score (accuracy): 0.495616
+Test Score (accuracy): 0.131340
+[MEMORY]     Independent layerwise (08): 20794.54
+----------------------- Running Layer 09 ------------------------
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0055
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.49
+Score (accuracy) of the model: 0.14
+Results:
+Train Score (accuracy): 0.498921
+Dev Score (accuracy): 0.494951
+Test Score (accuracy): 0.135481
+[MEMORY]     Independent layerwise (09): 20794.54
+----------------------- Running Layer 10 ------------------------
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0055
+Epoch: [3/10], Loss: 0.0055
+Epoch: [4/10], Loss: 0.0055
+Epoch: [5/10], Loss: 0.0055
+Epoch: [6/10], Loss: 0.0055
+Epoch: [7/10], Loss: 0.0055
+Epoch: [8/10], Loss: 0.0055
+Epoch: [9/10], Loss: 0.0055
+Epoch: [10/10], Loss: 0.0055
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.17
+Results:
+Train Score (accuracy): 0.500438
+Dev Score (accuracy): 0.496171
+Test Score (accuracy): 0.165523
+[MEMORY]     Independent layerwise (10): 20794.54
+----------------------- Running Layer 11 ------------------------
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0055
+Epoch: [3/10], Loss: 0.0055
+Epoch: [4/10], Loss: 0.0055
+Epoch: [5/10], Loss: 0.0055
+Epoch: [6/10], Loss: 0.0055
+Epoch: [7/10], Loss: 0.0055
+Epoch: [8/10], Loss: 0.0055
+Epoch: [9/10], Loss: 0.0055
+Epoch: [10/10], Loss: 0.0055
+Score (accuracy) of the model: 0.51
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.38
+Results:
+Train Score (accuracy): 0.506221
+Dev Score (accuracy): 0.502275
+Test Score (accuracy): 0.377675
+[MEMORY]     Independent layerwise (11): 20794.54
+----------------------- Running Layer 12 ------------------------
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0056
+Epoch: [2/10], Loss: 0.0055
+Epoch: [3/10], Loss: 0.0055
+Epoch: [4/10], Loss: 0.0055
+Epoch: [5/10], Loss: 0.0055
+Epoch: [6/10], Loss: 0.0055
+Epoch: [7/10], Loss: 0.0055
+Epoch: [8/10], Loss: 0.0055
+Epoch: [9/10], Loss: 0.0055
+Epoch: [10/10], Loss: 0.0055
+Score (accuracy) of the model: 0.51
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.47
+Results:
+Train Score (accuracy): 0.506197
+Dev Score (accuracy): 0.499057
+Test Score (accuracy): 0.468766
+[MEMORY]     Independent layerwise (12): 20794.54
+[MEMORY] After indendent layerwise run: 20794.54
+****************** RUNNING INCREMENTAL LAYERWISE ******************
+-------------------- Running Layer 00 to 00 ---------------------
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+[MEMORY]     Incremental layerwise (00 -> 00): 20794.54
+-------------------- Running Layer 00 to 01 ---------------------
+Building model...
+Train: (81091, 1536) (81091,)
+Dev: (9011, 1536) (9011,)
+Test: (41541, 1536) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+[MEMORY]     Incremental layerwise (00 -> 01): 20794.54
+-------------------- Running Layer 00 to 02 ---------------------
+Building model...
+Train: (81091, 2304) (81091,)
+Dev: (9011, 2304) (9011,)
+Test: (41541, 2304) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+[MEMORY]     Incremental layerwise (00 -> 02): 20794.54
+-------------------- Running Layer 00 to 03 ---------------------
+Building model...
+Train: (81091, 3072) (81091,)
+Dev: (9011, 3072) (9011,)
+Test: (41541, 3072) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0055
+Epoch: [3/10], Loss: 0.0055
+Epoch: [4/10], Loss: 0.0055
+Epoch: [5/10], Loss: 0.0055
+Epoch: [6/10], Loss: 0.0055
+Epoch: [7/10], Loss: 0.0055
+Epoch: [8/10], Loss: 0.0055
+Epoch: [9/10], Loss: 0.0055
+Epoch: [10/10], Loss: 0.0055
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.13
+Results:
+Train Score (accuracy): 0.498452
+Dev Score (accuracy): 0.495616
+Test Score (accuracy): 0.131340
+[MEMORY]     Incremental layerwise (00 -> 03): 20794.54
+-------------------- Running Layer 00 to 04 ---------------------
+Building model...
+Train: (81091, 3840) (81091,)
+Dev: (9011, 3840) (9011,)
+Test: (41541, 3840) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0055
+Epoch: [3/10], Loss: 0.0055
+Epoch: [4/10], Loss: 0.0055
+Epoch: [5/10], Loss: 0.0055
+Epoch: [6/10], Loss: 0.0055
+Epoch: [7/10], Loss: 0.0055
+Epoch: [8/10], Loss: 0.0055
+Epoch: [9/10], Loss: 0.0055
+Epoch: [10/10], Loss: 0.0055
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.51
+Score (accuracy) of the model: 0.57
+Results:
+Train Score (accuracy): 0.498859
+Dev Score (accuracy): 0.505715
+Test Score (accuracy): 0.566597
+[MEMORY]     Incremental layerwise (00 -> 04): 20794.55
+-------------------- Running Layer 00 to 05 ---------------------
+Building model...
+Train: (81091, 4608) (81091,)
+Dev: (9011, 4608) (9011,)
+Test: (41541, 4608) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0055
+Epoch: [3/10], Loss: 0.0055
+Epoch: [4/10], Loss: 0.0055
+Epoch: [5/10], Loss: 0.0055
+Epoch: [6/10], Loss: 0.0055
+Epoch: [7/10], Loss: 0.0055
+Epoch: [8/10], Loss: 0.0055
+Epoch: [9/10], Loss: 0.0055
+Epoch: [10/10], Loss: 0.0055
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+[MEMORY]     Incremental layerwise (00 -> 05): 20794.56
+-------------------- Running Layer 00 to 06 ---------------------
+Building model...
+Train: (81091, 5376) (81091,)
+Dev: (9011, 5376) (9011,)
+Test: (41541, 5376) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0055
+Epoch: [3/10], Loss: 0.0055
+Epoch: [4/10], Loss: 0.0055
+Epoch: [5/10], Loss: 0.0055
+Epoch: [6/10], Loss: 0.0055
+Epoch: [7/10], Loss: 0.0055
+Epoch: [8/10], Loss: 0.0055
+Epoch: [9/10], Loss: 0.0055
+Epoch: [10/10], Loss: 0.0055
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+[MEMORY]     Incremental layerwise (00 -> 06): 20794.56
+-------------------- Running Layer 00 to 07 ---------------------
+Building model...
+Train: (81091, 6144) (81091,)
+Dev: (9011, 6144) (9011,)
+Test: (41541, 6144) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0055
+Epoch: [3/10], Loss: 0.0055
+Epoch: [4/10], Loss: 0.0055
+Epoch: [5/10], Loss: 0.0055
+Epoch: [6/10], Loss: 0.0055
+Epoch: [7/10], Loss: 0.0055
+Epoch: [8/10], Loss: 0.0055
+Epoch: [9/10], Loss: 0.0055
+Epoch: [10/10], Loss: 0.0055
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+[MEMORY]     Incremental layerwise (00 -> 07): 20794.56
+-------------------- Running Layer 00 to 08 ---------------------
+Building model...
+Train: (81091, 6912) (81091,)
+Dev: (9011, 6912) (9011,)
+Test: (41541, 6912) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0055
+Epoch: [3/10], Loss: 0.0055
+Epoch: [4/10], Loss: 0.0055
+Epoch: [5/10], Loss: 0.0055
+Epoch: [6/10], Loss: 0.0055
+Epoch: [7/10], Loss: 0.0055
+Epoch: [8/10], Loss: 0.0055
+Epoch: [9/10], Loss: 0.0055
+Epoch: [10/10], Loss: 0.0055
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+[MEMORY]     Incremental layerwise (00 -> 08): 20794.59
+-------------------- Running Layer 00 to 09 ---------------------
+Building model...
+Train: (81091, 7680) (81091,)
+Dev: (9011, 7680) (9011,)
+Test: (41541, 7680) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0055
+Epoch: [3/10], Loss: 0.0055
+Epoch: [4/10], Loss: 0.0055
+Epoch: [5/10], Loss: 0.0055
+Epoch: [6/10], Loss: 0.0055
+Epoch: [7/10], Loss: 0.0055
+Epoch: [8/10], Loss: 0.0055
+Epoch: [9/10], Loss: 0.0055
+Epoch: [10/10], Loss: 0.0055
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501461
+Dev Score (accuracy): 0.504051
+Test Score (accuracy): 0.868660
+[MEMORY]     Incremental layerwise (00 -> 09): 23170.30
+-------------------- Running Layer 00 to 10 ---------------------
+Building model...
+Train: (81091, 8448) (81091,)
+Dev: (9011, 8448) (9011,)
+Test: (41541, 8448) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0056
+Epoch: [2/10], Loss: 0.0055
+Epoch: [3/10], Loss: 0.0055
+Epoch: [4/10], Loss: 0.0055
+Epoch: [5/10], Loss: 0.0055
+Epoch: [6/10], Loss: 0.0055
+Epoch: [7/10], Loss: 0.0055
+Epoch: [8/10], Loss: 0.0055
+Epoch: [9/10], Loss: 0.0055
+Epoch: [10/10], Loss: 0.0055
+Score (accuracy) of the model: 0.51
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.52
+Results:
+Train Score (accuracy): 0.507109
+Dev Score (accuracy): 0.499279
+Test Score (accuracy): 0.515346
+[MEMORY]     Incremental layerwise (00 -> 10): 20794.59
+-------------------- Running Layer 00 to 11 ---------------------
+Building model...
+Train: (81091, 9216) (81091,)
+Dev: (9011, 9216) (9011,)
+Test: (41541, 9216) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0056
+Epoch: [2/10], Loss: 0.0056
+Epoch: [3/10], Loss: 0.0056
+Epoch: [4/10], Loss: 0.0056
+Epoch: [5/10], Loss: 0.0056
+Epoch: [6/10], Loss: 0.0056
+Epoch: [7/10], Loss: 0.0056
+Epoch: [8/10], Loss: 0.0056
+Epoch: [9/10], Loss: 0.0056
+Epoch: [10/10], Loss: 0.0056
+Score (accuracy) of the model: 0.51
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.48
+Results:
+Train Score (accuracy): 0.507886
+Dev Score (accuracy): 0.499945
+Test Score (accuracy): 0.480898
+[MEMORY]     Incremental layerwise (00 -> 11): 23645.45
+---------------- Copying Layer 00 to 12 from baseline -----------------
+[MEMORY] After incremental layerwise run: 20794.59
+********************* SELECTING NEURONS *********************
+********************* SELECTING MINIMUM LAYERS (3% drop) *********************
+Gold score (accuracy) (Baseline): 0.505382
+Target score (accuracy) (3% drop): 0.490221
+Selected top layer: Layer 00
+Dev score: 0.504384
+[MEMORY] After top layer selection: 20794.59
+********************* RUNNING NEURON SELECTION *********************
+------------- Clustering (threshold -1.00) ----------
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+Gold score (Baseline with selected top layer [and potential clustering]): 0.504384
+Target score (1% drop): 0.499340
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+------------- Clustering (threshold 0.10) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+Gold score (Baseline with selected top layer [and potential clustering]): 0.504384
+Target score (1% drop): 0.499340
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+------------- Clustering (threshold 0.20) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+Gold score (Baseline with selected top layer [and potential clustering]): 0.504384
+Target score (1% drop): 0.499340
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+------------- Clustering (threshold 0.30) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+Gold score (Baseline with selected top layer [and potential clustering]): 0.504384
+Target score (1% drop): 0.499340
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+------------- Clustering (threshold 0.40) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+Gold score (Baseline with selected top layer [and potential clustering]): 0.504384
+Target score (1% drop): 0.499340
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+------------- Clustering (threshold 0.50) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+Gold score (Baseline with selected top layer [and potential clustering]): 0.504384
+Target score (1% drop): 0.499340
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+------------- Clustering (threshold 0.60) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+Gold score (Baseline with selected top layer [and potential clustering]): 0.504384
+Target score (1% drop): 0.499340
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+------------- Clustering (threshold 0.70) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+Gold score (Baseline with selected top layer [and potential clustering]): 0.504384
+Target score (1% drop): 0.499340
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+------------- Clustering (threshold 0.80) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+Gold score (Baseline with selected top layer [and potential clustering]): 0.504384
+Target score (1% drop): 0.499340
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+------------- Clustering (threshold 0.90) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+Gold score (Baseline with selected top layer [and potential clustering]): 0.504384
+Target score (1% drop): 0.499340
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+[MEMORY] After neuron selection: 20816.05
+********************* SELECTING MINIMUM LAYERS (2% drop) *********************
+Gold score (accuracy) (Baseline): 0.505382
+Target score (accuracy) (2% drop): 0.495275
+Selected top layer: Layer 00
+Dev score: 0.504384
+[MEMORY] After top layer selection: 20816.05
+********************* RUNNING NEURON SELECTION *********************
+------------- Clustering (threshold -1.00) ----------
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+Gold score (Baseline with selected top layer [and potential clustering]): 0.504384
+Target score (1% drop): 0.499340
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+------------- Clustering (threshold 0.10) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+Gold score (Baseline with selected top layer [and potential clustering]): 0.504384
+Target score (1% drop): 0.499340
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+------------- Clustering (threshold 0.20) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+Gold score (Baseline with selected top layer [and potential clustering]): 0.504384
+Target score (1% drop): 0.499340
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+------------- Clustering (threshold 0.30) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+Gold score (Baseline with selected top layer [and potential clustering]): 0.504384
+Target score (1% drop): 0.499340
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+------------- Clustering (threshold 0.40) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+Gold score (Baseline with selected top layer [and potential clustering]): 0.504384
+Target score (1% drop): 0.499340
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+------------- Clustering (threshold 0.50) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+Gold score (Baseline with selected top layer [and potential clustering]): 0.504384
+Target score (1% drop): 0.499340
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+------------- Clustering (threshold 0.60) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+Gold score (Baseline with selected top layer [and potential clustering]): 0.504384
+Target score (1% drop): 0.499340
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+------------- Clustering (threshold 0.70) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+Gold score (Baseline with selected top layer [and potential clustering]): 0.504384
+Target score (1% drop): 0.499340
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+------------- Clustering (threshold 0.80) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+Gold score (Baseline with selected top layer [and potential clustering]): 0.504384
+Target score (1% drop): 0.499340
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+------------- Clustering (threshold 0.90) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+Gold score (Baseline with selected top layer [and potential clustering]): 0.504384
+Target score (1% drop): 0.499340
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+[MEMORY] After neuron selection: 20816.05
+********************* SELECTING MINIMUM LAYERS (1% drop) *********************
+Gold score (accuracy) (Baseline): 0.505382
+Target score (accuracy) (1% drop): 0.500328
+Selected top layer: Layer 00
+Dev score: 0.504384
+[MEMORY] After top layer selection: 20816.05
+********************* RUNNING NEURON SELECTION *********************
+------------- Clustering (threshold -1.00) ----------
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+Gold score (Baseline with selected top layer [and potential clustering]): 0.504384
+Target score (1% drop): 0.499340
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+------------- Clustering (threshold 0.10) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+Gold score (Baseline with selected top layer [and potential clustering]): 0.504384
+Target score (1% drop): 0.499340
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+------------- Clustering (threshold 0.20) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+Gold score (Baseline with selected top layer [and potential clustering]): 0.504384
+Target score (1% drop): 0.499340
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+------------- Clustering (threshold 0.30) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+Gold score (Baseline with selected top layer [and potential clustering]): 0.504384
+Target score (1% drop): 0.499340
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+------------- Clustering (threshold 0.40) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+Gold score (Baseline with selected top layer [and potential clustering]): 0.504384
+Target score (1% drop): 0.499340
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+------------- Clustering (threshold 0.50) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+Gold score (Baseline with selected top layer [and potential clustering]): 0.504384
+Target score (1% drop): 0.499340
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+------------- Clustering (threshold 0.60) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+Gold score (Baseline with selected top layer [and potential clustering]): 0.504384
+Target score (1% drop): 0.499340
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+------------- Clustering (threshold 0.70) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+Gold score (Baseline with selected top layer [and potential clustering]): 0.504384
+Target score (1% drop): 0.499340
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+------------- Clustering (threshold 0.80) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+Gold score (Baseline with selected top layer [and potential clustering]): 0.504384
+Target score (1% drop): 0.499340
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0054
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+------------- Clustering (threshold 0.90) ----------
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 768
+Reduced to 768 neurons
+Building model...
+Train: (81091, 768) (81091,)
+Dev: (9011, 768) (9011,)
+Test: (41541, 768) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+Gold score (Baseline with selected top layer [and potential clustering]): 0.504384
+Target score (1% drop): 0.499340
+Getting neuron ranking...
+Searching for minimal neuron set...
+------------- Retraining with 9 neurons (0.10% of total) -------------
+Building model...
+Train: (81091, 9) (81091,)
+Dev: (9011, 9) (9011,)
+Test: (41541, 9) (41541,)
+Training classification model
+Creating model...
+Number of training instances: 81091
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0055
+Epoch: [2/10], Loss: 0.0054
+Epoch: [3/10], Loss: 0.0054
+Epoch: [4/10], Loss: 0.0054
+Epoch: [5/10], Loss: 0.0054
+Epoch: [6/10], Loss: 0.0054
+Epoch: [7/10], Loss: 0.0054
+Epoch: [8/10], Loss: 0.0054
+Epoch: [9/10], Loss: 0.0054
+Epoch: [10/10], Loss: 0.0054
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.50
+Score (accuracy) of the model: 0.87
+Results:
+Train Score (accuracy): 0.501548
+Dev Score (accuracy): 0.504384
+Test Score (accuracy): 0.868660
+[MEMORY] After neuron selection: 20816.07
+***************************** SUMMARY *****************************
+Baseline Score (accuracy): 0.407044
+Independent Layerwise:
+  Layer 00: 0.868660
+  Layer 01: 0.131340
+  Layer 02: 0.131340
+  Layer 03: 0.131340
+  Layer 04: 0.353771
+  Layer 05: 0.251872
+  Layer 06: 0.868660
+  Layer 07: 0.176091
+  Layer 08: 0.131340
+  Layer 09: 0.135481
+  Layer 10: 0.165523
+  Layer 11: 0.377675
+  Layer 12: 0.468766
+Incremental Layerwise:
+  Layer 0 -> 00: 0.868660
+  Layer 0 -> 01: 0.868660
+  Layer 0 -> 02: 0.868660
+  Layer 0 -> 03: 0.131340
+  Layer 0 -> 04: 0.566597
+  Layer 0 -> 05: 0.868660
+  Layer 0 -> 06: 0.868660
+  Layer 0 -> 07: 0.868660
+  Layer 0 -> 08: 0.868660
+  Layer 0 -> 09: 0.868660
+  Layer 0 -> 10: 0.515346
+  Layer 0 -> 11: 0.480898
+  Layer 0 -> 12: 0.407044
+Selection parameters: selection-3-1
+Selected top layer: Layer 00
+Clustering paramter: no-clustering
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.868660
+Clustering paramter: clustering-0.10
+Independent Neurons: 768 neurons
+CC score (accuracy): 0.868660
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.868660
+Clustering paramter: clustering-0.20
+Independent Neurons: 768 neurons
+CC score (accuracy): 0.868660
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.868660
+Clustering paramter: clustering-0.30
+Independent Neurons: 768 neurons
+CC score (accuracy): 0.868660
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.868660
+Clustering paramter: clustering-0.40
+Independent Neurons: 768 neurons
+CC score (accuracy): 0.868660
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.868660
+Clustering paramter: clustering-0.50
+Independent Neurons: 768 neurons
+CC score (accuracy): 0.868660
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.868660
+Clustering paramter: clustering-0.60
+Independent Neurons: 768 neurons
+CC score (accuracy): 0.868660
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.868660
+Clustering paramter: clustering-0.70
+Independent Neurons: 768 neurons
+CC score (accuracy): 0.868660
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.868660
+Clustering paramter: clustering-0.80
+Independent Neurons: 768 neurons
+CC score (accuracy): 0.868660
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.868660
+Clustering paramter: clustering-0.90
+Independent Neurons: 768 neurons
+CC score (accuracy): 0.868660
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.868660
+Selection parameters: selection-2-1
+Selected top layer: Layer 00
+Clustering paramter: no-clustering
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.868660
+Clustering paramter: clustering-0.10
+Independent Neurons: 768 neurons
+CC score (accuracy): 0.868660
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.868660
+Clustering paramter: clustering-0.20
+Independent Neurons: 768 neurons
+CC score (accuracy): 0.868660
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.868660
+Clustering paramter: clustering-0.30
+Independent Neurons: 768 neurons
+CC score (accuracy): 0.868660
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.868660
+Clustering paramter: clustering-0.40
+Independent Neurons: 768 neurons
+CC score (accuracy): 0.868660
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.868660
+Clustering paramter: clustering-0.50
+Independent Neurons: 768 neurons
+CC score (accuracy): 0.868660
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.868660
+Clustering paramter: clustering-0.60
+Independent Neurons: 768 neurons
+CC score (accuracy): 0.868660
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.868660
+Clustering paramter: clustering-0.70
+Independent Neurons: 768 neurons
+CC score (accuracy): 0.868660
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.868660
+Clustering paramter: clustering-0.80
+Independent Neurons: 768 neurons
+CC score (accuracy): 0.868660
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.868660
+Clustering paramter: clustering-0.90
+Independent Neurons: 768 neurons
+CC score (accuracy): 0.868660
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.868660
+Selection parameters: selection-1-1
+Selected top layer: Layer 00
+Clustering paramter: no-clustering
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.868660
+Clustering paramter: clustering-0.10
+Independent Neurons: 768 neurons
+CC score (accuracy): 0.868660
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.868660
+Clustering paramter: clustering-0.20
+Independent Neurons: 768 neurons
+CC score (accuracy): 0.868660
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.868660
+Clustering paramter: clustering-0.30
+Independent Neurons: 768 neurons
+CC score (accuracy): 0.868660
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.868660
+Clustering paramter: clustering-0.40
+Independent Neurons: 768 neurons
+CC score (accuracy): 0.868660
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.868660
+Clustering paramter: clustering-0.50
+Independent Neurons: 768 neurons
+CC score (accuracy): 0.868660
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.868660
+Clustering paramter: clustering-0.60
+Independent Neurons: 768 neurons
+CC score (accuracy): 0.868660
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.868660
+Clustering paramter: clustering-0.70
+Independent Neurons: 768 neurons
+CC score (accuracy): 0.868660
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.868660
+Clustering paramter: clustering-0.80
+Independent Neurons: 768 neurons
+CC score (accuracy): 0.868660
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.868660
+Clustering paramter: clustering-0.90
+Independent Neurons: 768 neurons
+CC score (accuracy): 0.868660
+Minimal set of neurons: 9 neurons
+Minimal set score (accuracy): 0.868660

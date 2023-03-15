@@ -1,0 +1,62 @@
+[MEMORY] Begin: 260.45
+*********************** LOADING ACTIVATIONS ***********************
+[MEMORY] Before activation loading: 260.45
+Loading json activations from /work/LAS/jannesar-lab/arushi/Redundancy/Defect-detection/dataset/activations/codeberta/train_activations.json...
+21854 7.0
+Loading json activations from /work/LAS/jannesar-lab/arushi/Redundancy/Defect-detection/dataset/activations/codeberta/dev_activations.json...
+2732 7.0
+Number of train sentences: 21854
+Number of test sentences: 2732
+[MEMORY] After activation loading: 1419.76
+************************* LOADING TOKENS **************************
+[MEMORY] After token loading: 1426.71
+************************ CREATING TENSORS *************************
+Train:
+Number of tokens:  21854
+length of source dictionary:  21854
+length of target dictionary:  2
+21854
+Total instances: 21854
+['sentence_16154', 'sentence_4884', 'sentence_5083', 'sentence_14561', 'sentence_5502', 'sentence_5692', 'sentence_12798', 'sentence_5760', 'sentence_13458', 'sentence_18483', 'sentence_13447', 'sentence_4989', 'sentence_17184', 'sentence_4410', 'sentence_4345', 'sentence_1791', 'sentence_1872', 'sentence_5337', 'sentence_18397', 'sentence_19727']
+(19668, 5376) (19668,)
+Dev:
+(2186, 5376) (2186,)
+Test:
+Number of tokens:  2732
+length of source dictionary:  21854
+length of target dictionary:  2
+2732
+Total instances: 2732
+['sentence_2185', 'sentence_2047', 'sentence_732', 'sentence_817', 'sentence_1535', 'sentence_910', 'sentence_2289', 'sentence_1297', 'sentence_613', 'sentence_1442', 'sentence_1365', 'sentence_2527', 'sentence_837', 'sentence_1816', 'sentence_1824', 'sentence_1106', 'sentence_2214', 'sentence_568', 'sentence_196', 'sentence_2440']
+(2732, 5376) (2732,)
+[MEMORY] After tensor creation: 2387.55
+************************* FREEING MEMORY **************************
+[MEMORY] After cleanup: 2384.30
+***************** RUNNING BASELINE [ ALL LAYERS ] *****************
+Building model...
+Train: (19668, 5376) (19668,)
+Dev: (2186, 5376) (2186,)
+Test: (2732, 5376) (2732,)
+Training classification model
+Creating model...
+Number of training instances: 19668
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0081
+Epoch: [2/10], Loss: 0.0074
+Epoch: [3/10], Loss: 0.0074
+Epoch: [4/10], Loss: 0.0074
+Epoch: [5/10], Loss: 0.0073
+Epoch: [6/10], Loss: 0.0073
+Epoch: [7/10], Loss: 0.0073
+Epoch: [8/10], Loss: 0.0073
+Epoch: [9/10], Loss: 0.0073
+Epoch: [10/10], Loss: 0.0073
+Score (accuracy) of the model: 0.82
+Score (accuracy) of the model: 0.78
+Score (accuracy) of the model: 0.63
+Results:
+Train Score (accuracy): 0.821741
+Dev Score (accuracy): 0.784995
+Test Score (accuracy): 0.628111
+[MEMORY] After baseline run: 2388.26
+********************* RUNNING NEURON SELECTION *********************

@@ -1,0 +1,2 @@
+loss,accuracy,time_this_iter_s,should_checkpoint,done,timesteps_total,episodes_total,training_iteration,trial_id,experiment_id,date,timestamp,time_total_s,pid,hostname,node_ip,time_since_restore,timesteps_since_restore,iterations_since_restore,warmup_time
+0.17500138751903346,46.42566605653854,77.27983355522156,True,True,,,1,a24a7_00086,d98475006484492681d8ee97182b14a8,2022-10-20_22-30-42,1666323042,77.27983355522156,30807,swift-5.las.iastate.edu,10.90.5.66,77.27983355522156,0,1,0.002120494842529297

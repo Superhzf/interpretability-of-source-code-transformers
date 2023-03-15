@@ -1,0 +1,380 @@
+[MEMORY] Begin: 260.10
+*********************** LOADING ACTIVATIONS ***********************
+[MEMORY] Before activation loading: 260.29
+Loading json activations from /work/LAS/jannesar-lab/arushi/Redundancy/Defect-detection/dataset/activations/codegpt/java-original/train_activations.json...
+21854 13.0
+Loading json activations from /work/LAS/jannesar-lab/arushi/Redundancy/Defect-detection/dataset/activations/codegpt/java-original/dev_activations.json...
+2732 13.0
+Number of train sentences: 21854
+Number of test sentences: 2732
+[MEMORY] After activation loading: 2440.43
+************************* LOADING TOKENS **************************
+[MEMORY] After token loading: 2446.92
+************************ CREATING TENSORS *************************
+Train:
+Number of tokens:  21854
+length of source dictionary:  21854
+length of target dictionary:  2
+21854
+Total instances: 21854
+['sentence_16626', 'sentence_12425', 'sentence_12301', 'sentence_9576', 'sentence_15500', 'sentence_16268', 'sentence_20750', 'sentence_565', 'sentence_10993', 'sentence_8571', 'sentence_13360', 'sentence_341', 'sentence_2288', 'sentence_12012', 'sentence_17595', 'sentence_8101', 'sentence_14529', 'sentence_12241', 'sentence_10853', 'sentence_7229']
+(19668, 9984) (19668,)
+Dev:
+(2186, 9984) (2186,)
+Test:
+Number of tokens:  2732
+length of source dictionary:  21854
+length of target dictionary:  2
+2732
+Total instances: 2732
+['sentence_228', 'sentence_771', 'sentence_818', 'sentence_1043', 'sentence_1179', 'sentence_620', 'sentence_832', 'sentence_2600', 'sentence_565', 'sentence_1758', 'sentence_2573', 'sentence_2731', 'sentence_341', 'sentence_430', 'sentence_775', 'sentence_2288', 'sentence_757', 'sentence_849', 'sentence_1914', 'sentence_268']
+(2732, 9984) (2732,)
+[MEMORY] After tensor creation: 4224.14
+************************* FREEING MEMORY **************************
+[MEMORY] After cleanup: 4219.12
+***************** RUNNING BASELINE [ ALL LAYERS ] *****************
+Building model...
+Train: (19668, 9984) (19668,)
+Dev: (2186, 9984) (2186,)
+Test: (2732, 9984) (2732,)
+Training classification model
+Creating model...
+Number of training instances: 19668
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0329
+Epoch: [2/10], Loss: 0.0216
+Epoch: [3/10], Loss: 0.0189
+Epoch: [4/10], Loss: 0.0250
+Epoch: [5/10], Loss: 0.0174
+Epoch: [6/10], Loss: 0.0200
+Epoch: [7/10], Loss: 0.0171
+Epoch: [8/10], Loss: 0.0195
+Epoch: [9/10], Loss: 0.0199
+Epoch: [10/10], Loss: 0.0224
+Score (accuracy) of the model: 0.62
+Score (accuracy) of the model: 0.64
+Score (accuracy) of the model: 0.61
+Results:
+Train Score (accuracy): 0.619839
+Dev Score (accuracy): 0.636780
+Test Score (accuracy): 0.613470
+[MEMORY] After baseline run: 4222.89
+********************* RUNNING NEURON SELECTION *********************
+------------- Clustering (threshold -1.00) ----------
+Building model...
+Train: (19668, 9984) (19668,)
+Dev: (2186, 9984) (2186,)
+Test: (2732, 9984) (2732,)
+Training classification model
+Creating model...
+Number of training instances: 19668
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0238
+Epoch: [2/10], Loss: 0.0208
+Epoch: [3/10], Loss: 0.0229
+Epoch: [4/10], Loss: 0.0195
+Epoch: [5/10], Loss: 0.0190
+Epoch: [6/10], Loss: 0.0201
+Epoch: [7/10], Loss: 0.0198
+Epoch: [8/10], Loss: 0.0219
+Epoch: [9/10], Loss: 0.0186
+Epoch: [10/10], Loss: 0.0195
+Score (accuracy) of the model: 0.73
+Score (accuracy) of the model: 0.71
+Score (accuracy) of the model: 0.62
+Results:
+Train Score (accuracy): 0.728290
+Dev Score (accuracy): 0.709973
+Test Score (accuracy): 0.624085
+------------- Clustering (threshold 0.10) ----------
+Correlation matrix size (#neurons x #neurons): (9984, 9984)
+Number of clusters detected: 5880
+Reduced to 5880 neurons
+Building model...
+Train: (19668, 5880) (19668,)
+Dev: (2186, 5880) (2186,)
+Test: (2732, 5880) (2732,)
+Training classification model
+Creating model...
+Number of training instances: 19668
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0137
+Epoch: [2/10], Loss: 0.0120
+Epoch: [3/10], Loss: 0.0121
+Epoch: [4/10], Loss: 0.0127
+Epoch: [5/10], Loss: 0.0126
+Epoch: [6/10], Loss: 0.0120
+Epoch: [7/10], Loss: 0.0120
+Epoch: [8/10], Loss: 0.0123
+Epoch: [9/10], Loss: 0.0130
+Epoch: [10/10], Loss: 0.0128
+Score (accuracy) of the model: 0.60
+Score (accuracy) of the model: 0.57
+Score (accuracy) of the model: 0.54
+Results:
+Train Score (accuracy): 0.596858
+Dev Score (accuracy): 0.572278
+Test Score (accuracy): 0.538433
+------------- Clustering (threshold 0.20) ----------
+Correlation matrix size (#neurons x #neurons): (9984, 9984)
+Number of clusters detected: 3905
+Reduced to 3905 neurons
+Building model...
+Train: (19668, 3905) (19668,)
+Dev: (2186, 3905) (2186,)
+Test: (2732, 3905) (2732,)
+Training classification model
+Creating model...
+Number of training instances: 19668
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0126
+Epoch: [2/10], Loss: 0.0115
+Epoch: [3/10], Loss: 0.0113
+Epoch: [4/10], Loss: 0.0112
+Epoch: [5/10], Loss: 0.0111
+Epoch: [6/10], Loss: 0.0110
+Epoch: [7/10], Loss: 0.0110
+Epoch: [8/10], Loss: 0.0110
+Epoch: [9/10], Loss: 0.0109
+Epoch: [10/10], Loss: 0.0109
+Score (accuracy) of the model: 0.73
+Score (accuracy) of the model: 0.71
+Score (accuracy) of the model: 0.61
+Results:
+Train Score (accuracy): 0.727120
+Dev Score (accuracy): 0.712717
+Test Score (accuracy): 0.611274
+------------- Clustering (threshold 0.30) ----------
+Correlation matrix size (#neurons x #neurons): (9984, 9984)
+Number of clusters detected: 2862
+Reduced to 2862 neurons
+Building model...
+Train: (19668, 2862) (19668,)
+Dev: (2186, 2862) (2186,)
+Test: (2732, 2862) (2732,)
+Training classification model
+Creating model...
+Number of training instances: 19668
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0117
+Epoch: [2/10], Loss: 0.0107
+Epoch: [3/10], Loss: 0.0106
+Epoch: [4/10], Loss: 0.0105
+Epoch: [5/10], Loss: 0.0104
+Epoch: [6/10], Loss: 0.0103
+Epoch: [7/10], Loss: 0.0103
+Epoch: [8/10], Loss: 0.0103
+Epoch: [9/10], Loss: 0.0102
+Epoch: [10/10], Loss: 0.0102
+Score (accuracy) of the model: 0.73
+Score (accuracy) of the model: 0.70
+Score (accuracy) of the model: 0.62
+Results:
+Train Score (accuracy): 0.728340
+Dev Score (accuracy): 0.704026
+Test Score (accuracy): 0.617862
+------------- Clustering (threshold 0.40) ----------
+Correlation matrix size (#neurons x #neurons): (9984, 9984)
+Number of clusters detected: 2070
+Reduced to 2070 neurons
+Building model...
+Train: (19668, 2070) (19668,)
+Dev: (2186, 2070) (2186,)
+Test: (2732, 2070) (2732,)
+Training classification model
+Creating model...
+Number of training instances: 19668
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0119
+Epoch: [2/10], Loss: 0.0110
+Epoch: [3/10], Loss: 0.0108
+Epoch: [4/10], Loss: 0.0107
+Epoch: [5/10], Loss: 0.0106
+Epoch: [6/10], Loss: 0.0105
+Epoch: [7/10], Loss: 0.0105
+Epoch: [8/10], Loss: 0.0105
+Epoch: [9/10], Loss: 0.0105
+Epoch: [10/10], Loss: 0.0105
+Score (accuracy) of the model: 0.71
+Score (accuracy) of the model: 0.69
+Score (accuracy) of the model: 0.60
+Results:
+Train Score (accuracy): 0.706478
+Dev Score (accuracy): 0.688472
+Test Score (accuracy): 0.599195
+------------- Clustering (threshold 0.50) ----------
+Correlation matrix size (#neurons x #neurons): (9984, 9984)
+Number of clusters detected: 1443
+Reduced to 1443 neurons
+Building model...
+Train: (19668, 1443) (19668,)
+Dev: (2186, 1443) (2186,)
+Test: (2732, 1443) (2732,)
+Training classification model
+Creating model...
+Number of training instances: 19668
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0117
+Epoch: [2/10], Loss: 0.0110
+Epoch: [3/10], Loss: 0.0108
+Epoch: [4/10], Loss: 0.0107
+Epoch: [5/10], Loss: 0.0106
+Epoch: [6/10], Loss: 0.0106
+Epoch: [7/10], Loss: 0.0105
+Epoch: [8/10], Loss: 0.0105
+Epoch: [9/10], Loss: 0.0105
+Epoch: [10/10], Loss: 0.0105
+Score (accuracy) of the model: 0.70
+Score (accuracy) of the model: 0.67
+Score (accuracy) of the model: 0.60
+Results:
+Train Score (accuracy): 0.695038
+Dev Score (accuracy): 0.672004
+Test Score (accuracy): 0.598829
+------------- Clustering (threshold 0.60) ----------
+Correlation matrix size (#neurons x #neurons): (9984, 9984)
+Number of clusters detected: 1023
+Reduced to 1023 neurons
+Building model...
+Train: (19668, 1023) (19668,)
+Dev: (2186, 1023) (2186,)
+Test: (2732, 1023) (2732,)
+Training classification model
+Creating model...
+Number of training instances: 19668
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0118
+Epoch: [2/10], Loss: 0.0111
+Epoch: [3/10], Loss: 0.0109
+Epoch: [4/10], Loss: 0.0108
+Epoch: [5/10], Loss: 0.0107
+Epoch: [6/10], Loss: 0.0107
+Epoch: [7/10], Loss: 0.0106
+Epoch: [8/10], Loss: 0.0106
+Epoch: [9/10], Loss: 0.0106
+Epoch: [10/10], Loss: 0.0105
+Score (accuracy) of the model: 0.66
+Score (accuracy) of the model: 0.67
+Score (accuracy) of the model: 0.63
+Results:
+Train Score (accuracy): 0.661582
+Dev Score (accuracy): 0.670174
+Test Score (accuracy): 0.625915
+------------- Clustering (threshold 0.70) ----------
+Correlation matrix size (#neurons x #neurons): (9984, 9984)
+Number of clusters detected: 600
+Reduced to 600 neurons
+Building model...
+Train: (19668, 600) (19668,)
+Dev: (2186, 600) (2186,)
+Test: (2732, 600) (2732,)
+Training classification model
+Creating model...
+Number of training instances: 19668
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0117
+Epoch: [2/10], Loss: 0.0110
+Epoch: [3/10], Loss: 0.0108
+Epoch: [4/10], Loss: 0.0107
+Epoch: [5/10], Loss: 0.0106
+Epoch: [6/10], Loss: 0.0106
+Epoch: [7/10], Loss: 0.0106
+Epoch: [8/10], Loss: 0.0105
+Epoch: [9/10], Loss: 0.0105
+Epoch: [10/10], Loss: 0.0105
+Score (accuracy) of the model: 0.64
+Score (accuracy) of the model: 0.65
+Score (accuracy) of the model: 0.62
+Results:
+Train Score (accuracy): 0.637482
+Dev Score (accuracy): 0.648216
+Test Score (accuracy): 0.620425
+------------- Clustering (threshold 0.80) ----------
+Correlation matrix size (#neurons x #neurons): (9984, 9984)
+Number of clusters detected: 263
+Reduced to 263 neurons
+Building model...
+Train: (19668, 263) (19668,)
+Dev: (2186, 263) (2186,)
+Test: (2732, 263) (2732,)
+Training classification model
+Creating model...
+Number of training instances: 19668
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0121
+Epoch: [2/10], Loss: 0.0116
+Epoch: [3/10], Loss: 0.0115
+Epoch: [4/10], Loss: 0.0114
+Epoch: [5/10], Loss: 0.0114
+Epoch: [6/10], Loss: 0.0113
+Epoch: [7/10], Loss: 0.0113
+Epoch: [8/10], Loss: 0.0113
+Epoch: [9/10], Loss: 0.0113
+Epoch: [10/10], Loss: 0.0113
+Score (accuracy) of the model: 0.63
+Score (accuracy) of the model: 0.63
+Score (accuracy) of the model: 0.61
+Results:
+Train Score (accuracy): 0.633160
+Dev Score (accuracy): 0.625343
+Test Score (accuracy): 0.611640
+------------- Clustering (threshold 0.90) ----------
+Correlation matrix size (#neurons x #neurons): (9984, 9984)
+Number of clusters detected: 32
+Reduced to 32 neurons
+Building model...
+Train: (19668, 32) (19668,)
+Dev: (2186, 32) (2186,)
+Test: (2732, 32) (2732,)
+Training classification model
+Creating model...
+Number of training instances: 19668
+Number of classes: 2
+Epoch: [1/10], Loss: 0.0124
+Epoch: [2/10], Loss: 0.0124
+Epoch: [3/10], Loss: 0.0123
+Epoch: [4/10], Loss: 0.0123
+Epoch: [5/10], Loss: 0.0123
+Epoch: [6/10], Loss: 0.0123
+Epoch: [7/10], Loss: 0.0123
+Epoch: [8/10], Loss: 0.0123
+Epoch: [9/10], Loss: 0.0123
+Epoch: [10/10], Loss: 0.0123
+Score (accuracy) of the model: 0.55
+Score (accuracy) of the model: 0.57
+Score (accuracy) of the model: 0.58
+Results:
+Train Score (accuracy): 0.551810
+Dev Score (accuracy): 0.572278
+Test Score (accuracy): 0.575403
+[MEMORY] After neuron selection: 4261.16
+***************************** SUMMARY *****************************
+Baseline Score (accuracy): 0.613470
+Clustering paramter: no-clustering
+Clustering paramter: clustering-0.10
+Independent Neurons: 5880 neurons
+CC score (accuracy): 0.538433
+Clustering paramter: clustering-0.20
+Independent Neurons: 3905 neurons
+CC score (accuracy): 0.611274
+Clustering paramter: clustering-0.30
+Independent Neurons: 2862 neurons
+CC score (accuracy): 0.617862
+Clustering paramter: clustering-0.40
+Independent Neurons: 2070 neurons
+CC score (accuracy): 0.599195
+Clustering paramter: clustering-0.50
+Independent Neurons: 1443 neurons
+CC score (accuracy): 0.598829
+Clustering paramter: clustering-0.60
+Independent Neurons: 1023 neurons
+CC score (accuracy): 0.625915
+Clustering paramter: clustering-0.70
+Independent Neurons: 600 neurons
+CC score (accuracy): 0.620425
+Clustering paramter: clustering-0.80
+Independent Neurons: 263 neurons
+CC score (accuracy): 0.611640
+Clustering paramter: clustering-0.90
+Independent Neurons: 32 neurons
+CC score (accuracy): 0.575403

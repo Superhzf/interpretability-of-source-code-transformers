@@ -18,6 +18,7 @@ py150_files
 
 *.ipynb*
 *.json
+*.jsonl
 
 py150_files.tar.gz
 py150_files

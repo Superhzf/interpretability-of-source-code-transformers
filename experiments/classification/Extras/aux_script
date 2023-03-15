@@ -1,0 +1,18 @@
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH --ntasks=8
+#SBATCH --mem=128G
+#SBATCH --time=10:00:00
+#SBATCH --partition=gpu #specify the gpu partition
+#SBATCH --gres=gpu:1
+
+#Run experiments after extraction-- details in example_config.json
+
+module load ml-gpu
+
+cd /work/LAS/jannesar-lab/arushi/Redundancy/analyzing-redundancy-in-pretrained-transformer-models/experiments/classification
+ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_pipeline_all.py --config example_config.json > Results/output_bert_sst_sentence_pipeline_all
+
+ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_cc_all.py --config example_config.json > Results/output_bert_sst_sentence_cc_all
+
+ml-gpu /work/LAS/jannesar-lab/arushi/Environments/aux_classifier_env/bin/python run_sentence_max_features.py --config example_config.json > Results/output_bert_sst_sentence_max_features

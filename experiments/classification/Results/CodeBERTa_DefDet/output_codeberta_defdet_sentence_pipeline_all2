@@ -1,0 +1,11 @@
+[MEMORY] Begin: 260.67
+*********************** LOADING ACTIVATIONS ***********************
+[MEMORY] Before activation loading: 260.83
+Loading json activations from /work/LAS/jannesar-lab/arushi/Redundancy/Defect-detection/dataset/activations/codeberta/train_activations.json...
+2732 7.0
+Loading json activations from /work/LAS/jannesar-lab/arushi/Redundancy/Defect-detection/dataset/activations/codeberta/dev_activations.json...
+2732 7.0
+Number of train sentences: 2732
+Number of test sentences: 2732
+[MEMORY] After activation loading: 505.32
+************************* LOADING TOKENS **************************
