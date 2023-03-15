@@ -272,7 +272,7 @@ def select_minimum_layers(incremental_layerwise_result,target,all_layer_result):
 
 def select_independent_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
                             idx2label,label2idx,src_tokens_test,this_model_name,
-                            sample_idx_test,layer_idx,clustering_threshold,target_neuron):
+                            sample_idx_test,layer_idx,clustering_threshold,target_neuron=None,full_probing=False):
     this_result = {}
     layers = list(range(layer_idx+1))
     layer_train = ablation.filter_activations_by_layers(X_train, layers, 13)
@@ -299,31 +299,33 @@ def select_independent_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
         model,this_score = all_activations_probe(X_train_filtered,y_train,X_valid_filtered,y_valid,X_test_filtered,y_test,
                                     idx2label,src_tokens_test,this_model_name,sample_idx_test)
         this_result[result_key]['base_results'] = this_score
-        target_score = this_score*(1-target_neuron)
-        ordering,_ = linear_probe.get_neuron_ordering(model, label2idx,search_stride=1000)
-        this_result[result_key]["ordering"] = [int(x) for x in ordering]
-        percentages = [0.001,0.002,0.003,0.004,0.005,0.01,
-            0.02,0.03,0.04,0.05,0.06,0.07,0.08,0.09,0.10,
-            0.15,0.20,0.25,0.30,0.35,0.40,0.45,0.50,0.60,
-            0.70,0.80,0.90,]
-        minimal_neuron_set_size = X_train_filtered.shape[1]
-        this_result[result_key]["minimal_neuron_set_size"] = minimal_neuron_set_size
-        this_result[result_key]["minimal_neuron_set"] = this_result[result_key]["ordering"]
-        this_result[result_key][f"selected-{X_filtered.shape[1]}-neurons"] = this_score
-        for this_percentage in percentages:
-            selected_num_neurons = int(percentage * 13 * 768)
-            selected_neurons = ordering[:selected_num_neurons]
-            X_train_selected = ablation.filter_activations_keep_neurons(X_train_filtered, selected_neurons)
-            X_valid_selected = utils.filter_activations_keep_neurons(X_valid_filtered, selected_neurons)
-            X_test_selected = utils.filter_activations_keep_neurons(X_test_filtered, selected_neurons)
-            _,this_score = all_activations_probe(X_train_selected,y_train,X_valid_selected,y_valid,X_test_selected,y_test,
-                                    idx2label,src_tokens_test,this_model_name,sample_idx_test)
-            this_result[result_key][f"selected-{selected_num_neurons}-neurons"] = this_score
-            if this_score > target_score:
-                minimal_neuron_set_size = selected_num_neurons
-                this_result[result_key]["minimal_neuron_set_size"] = minimal_neuron_set_size
-                this_result[result_key]["minimal_neuron_set"] = [int(x) for x in selected_neurons]
-                break
+        
+        if full_probing:
+            target_score = this_score*(1-target_neuron)
+            ordering,_ = linear_probe.get_neuron_ordering(model, label2idx,search_stride=1000)
+            this_result[result_key]["ordering"] = [int(x) for x in ordering]
+            percentages = [0.001,0.002,0.003,0.004,0.005,0.01,
+                0.02,0.03,0.04,0.05,0.06,0.07,0.08,0.09,0.10,
+                0.15,0.20,0.25,0.30,0.35,0.40,0.45,0.50,0.60,
+                0.70,0.80,0.90,]
+            minimal_neuron_set_size = X_train_filtered.shape[1]
+            this_result[result_key]["minimal_neuron_set_size"] = minimal_neuron_set_size
+            this_result[result_key]["minimal_neuron_set"] = this_result[result_key]["ordering"]
+            this_result[result_key][f"selected-{X_filtered.shape[1]}-neurons"] = this_score
+            for this_percentage in percentages:
+                selected_num_neurons = int(percentage * 13 * 768)
+                selected_neurons = ordering[:selected_num_neurons]
+                X_train_selected = ablation.filter_activations_keep_neurons(X_train_filtered, selected_neurons)
+                X_valid_selected = utils.filter_activations_keep_neurons(X_valid_filtered, selected_neurons)
+                X_test_selected = utils.filter_activations_keep_neurons(X_test_filtered, selected_neurons)
+                _,this_score = all_activations_probe(X_train_selected,y_train,X_valid_selected,y_valid,X_test_selected,y_test,
+                                        idx2label,src_tokens_test,this_model_name,sample_idx_test)
+                this_result[result_key][f"selected-{selected_num_neurons}-neurons"] = this_score
+                if this_score > target_score:
+                    minimal_neuron_set_size = selected_num_neurons
+                    this_result[result_key]["minimal_neuron_set_size"] = minimal_neuron_set_size
+                    this_result[result_key]["minimal_neuron_set"] = [int(x) for x in selected_neurons]
+                    break
     return this_result
 
 

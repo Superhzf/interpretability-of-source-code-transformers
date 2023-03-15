@@ -193,11 +193,19 @@ def main():
                 layer_idx = select_minimum_layers(all_results['incremental_layerwise'],this_target_layer,all_results["baseline"])
                 all_results["select_minimum_layer"][this_target_layer] = layer_idx
                 all_results["select_minimum_neuron"][layer_idx] = {}
-                # probing using independent neurons
+                # probing using independent neurons based on minimum layers
                 for this_target_neuron in target_neuron:
                     this_result = select_independent_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
-                                            idx2label_train,label2idx_train,tokens_test['source'],this_model,sample_idx_test,layer_idx,clustering_thresholds,this_target_neuron)
+                                            idx2label_train,label2idx_train,tokens_test['source'],this_model,sample_idx_test,layer_idx,clustering_thresholds,this_target_neuron,True)
                     all_results["select_minimum_neuron"][layer_idx][this_target_neuron] = this_result
+            
+            # probing independent neurons based on all layers (run_cc_all.py)
+            clustering_thresholds = [-1, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+            layer_idx = 12
+            this_result = select_independent_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
+                                idx2label_train,label2idx_train,tokens_test['source'],this_model,sample_idx_test,layer_idx,clustering_thresholds,None,False)
+            all_results["select_from_all_neurons"] = this_result
+
 
             # Important neuron probeing
             top_neurons = get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
