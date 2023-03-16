@@ -265,7 +265,7 @@ def select_minimum_layers(incremental_layerwise_result,target,all_layer_result):
     Select the minimum number of layers such that the performance fullfil the target
     """
     for idx, this_accuracy in enumerate(list(incremental_layerwise_result.values())):
-        if this_accuracy > all_layer_result*(1-target):
+        if this_accuracy["__OVERALL__"] > all_layer_result*(1-target):
             return idx+1
     return -1
 
