@@ -315,8 +315,8 @@ def select_independent_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
                     continue
                 selected_neurons = ordering[:selected_num_neurons]
                 X_train_selected = ablation.filter_activations_keep_neurons(X_train_filtered, selected_neurons)
-                X_valid_selected = utils.filter_activations_keep_neurons(X_valid_filtered, selected_neurons)
-                X_test_selected = utils.filter_activations_keep_neurons(X_test_filtered, selected_neurons)
+                X_valid_selected = ablation.filter_activations_keep_neurons(X_valid_filtered, selected_neurons)
+                X_test_selected = ablation.filter_activations_keep_neurons(X_test_filtered, selected_neurons)
                 _,this_score = all_activations_probe(X_train_selected,y_train,X_valid_selected,y_valid,X_test_selected,y_test,
                                         idx2label,src_tokens_test,this_model_name,sample_idx_test)
                 this_result[result_key][f"selected-{selected_num_neurons}-neurons"] = this_score
