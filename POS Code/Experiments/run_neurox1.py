@@ -246,7 +246,7 @@ def main():
                                 0.90,]
             this_result = select_independent_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
                                 idx2label_train,label2idx_train,tokens_test['source'],this_model,sample_idx_test,layer_idx,
-                                clustering_thresholds,num_layers,neurons_per_layer,this_target_neuron,neuron_percentage,True)
+                                clustering_thresholds,num_layers,neurons_per_layer,this_target_neuron[0],neuron_percentage,True)
             all_results['select_minimum_neurons_finer_percentage'] = this_result
             print(f"select_minimum_neurons_finer_percentage:")
             print(this_result)
