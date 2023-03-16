@@ -308,7 +308,7 @@ def select_independent_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
             minimal_neuron_set_size = X_train_filtered.shape[1]
             this_result[result_key]["minimal_neuron_set_size"] = minimal_neuron_set_size
             this_result[result_key]["minimal_neuron_set"] = this_result[result_key]["ordering"]
-            this_result[result_key][f"selected-{X_filtered.shape[1]}-neurons"] = this_score
+            this_result[result_key][f"selected-{X_train_filtered.shape[1]}-neurons"] = this_score
             for this_percentage in neuron_percentage:
                 selected_num_neurons = int(percentage * num_layers * neurons_per_layer)
                 if selected_num_neurons > X_train_filtered.shape[1]:
