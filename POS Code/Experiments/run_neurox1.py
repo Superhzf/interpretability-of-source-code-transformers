@@ -157,7 +157,7 @@ def main():
             print(label2idx_test)
 
             neurons_per_layer = X_train.shape[1]//num_layers
-            assert neurons_per_layer!=X_train.shape[1]/num_layers, f"Model:{this_model},Something is wrong with either number of layers={num_layers} or total neurons={X_train.shape[1]}"
+            assert neurons_per_layer==X_train.shape[1]/num_layers, f"Model:{this_model},Something is wrong with either number of layers={num_layers} or total neurons={X_train.shape[1]}"
             
             X_train_copy = X_train.copy()
             y_train_copy = y_train.copy()
