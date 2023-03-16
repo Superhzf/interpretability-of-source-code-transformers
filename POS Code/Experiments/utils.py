@@ -302,7 +302,7 @@ def select_independent_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
         this_result[result_key]['base_results'] = this_score
 
         if full_probing:
-            target_score = this_score*(1-target_neuron)
+            target_score = this_score["__OVERALL__"]*(1-target_neuron)
             ordering,_ = linear_probe.get_neuron_ordering(model, label2idx,search_stride=1000)
             this_result[result_key]["ordering"] = [int(x) for x in ordering]
             minimal_neuron_set_size = X_train_filtered.shape[1]
@@ -320,7 +320,7 @@ def select_independent_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
                 _,this_score = all_activations_probe(X_train_selected,y_train,X_valid_selected,y_valid,X_test_selected,y_test,
                                         idx2label,src_tokens_test,this_model_name,sample_idx_test)
                 this_result[result_key][f"selected-{selected_num_neurons}-neurons"] = this_score
-                if this_score > target_score:
+                if this_score["__OVERALL__"] > target_score:
                     minimal_neuron_set_size = selected_num_neurons
                     this_result[result_key]["minimal_neuron_set_size"] = minimal_neuron_set_size
                     this_result[result_key]["minimal_neuron_set"] = [int(x) for x in selected_neurons]
