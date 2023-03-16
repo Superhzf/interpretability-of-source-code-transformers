@@ -196,6 +196,7 @@ def main():
                 0.15,0.20,0.25,0.30,0.35,0.40,0.45,0.50,0.60,
                 0.70,0.80,0.90,]
             all_results['select_minimum_layer'] = {}
+            all_results["select_minimum_neuron"] = {}
             for this_target_layer in target_layer:
                 layer_idx = select_minimum_layers(all_results['incremental_layerwise'],this_target_layer,all_results["baseline"]["__OVERALL__"])
                 print(f"To lose only {this_target_layer}*100% of accuracy when using all layers, keep layers from 0 to {layer_idx}")
