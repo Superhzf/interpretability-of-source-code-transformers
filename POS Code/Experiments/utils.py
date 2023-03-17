@@ -390,7 +390,7 @@ def control_task_probes(tokens_train,X_train,y_train,tokens_valid,X_valid,y_vali
     assert X_valid.shape[0] == len(y_valid)
     assert X_test.shape[0] == len(y_test)
     model_name = f'{model_name}_control_task'
-    _, ct_scores = all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label_train,model_name, None)
+    _, ct_scores = all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label_train,None,model_name, None)
     
     selectivity = original_scores['__OVERALL__'] - ct_scores['__OVERALL__']
     print()
