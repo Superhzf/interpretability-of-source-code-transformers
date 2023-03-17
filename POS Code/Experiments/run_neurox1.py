@@ -24,20 +24,28 @@ num_test = number[3:]
 
 MODEL_NAMES = ['pretrained_BERT',
                'pretrained_CodeBERT','pretrained_GraphCodeBERT',
-               'finetuned_defdet_CodeBERT','finetuned_defdet_GraphCodeBERT',
-               'finetuned_clonedet_CodeBERT','finetuned_clonedet_GraphCodeBERT']
+               ]
 ACTIVATION_NAMES = {'pretrained_BERT':['bert_activations_train.json','bert_activations_valid.json','bert_activations_test.json'],
                     'pretrained_CodeBERT':['codebert_activations_train.json','codebert_activations_valid','codebert_activations_test.json'],
                     'pretrained_GraphCodeBERT':['graphcodebert_activations_train.json','graphcodebert_activations_valid.json','graphcodebert_activations_test.json'],
+                    'pretrained_CodeBERTa':['codeberta_activations_train.json','codeberta_activations_valid.json','codeberta_activations_test.json'],
+                    "pretrained_UniXCoder":['UniXCoder_activations_train.json','UniXCoder_activations_valid.json','UniXCoder_activations_test.json'],
+                    "pretrained_RoBERTa":['RoBERTa_activations_train.json','RoBERTa_activations_valid.json','RoBERTa_activations_test.json'],
+                    "pretrained_JavaBERT":['JavaBERT_activations_train.json','JavaBERT_activations_valid.json','JavaBERT_activations_test.json'],
+                    "pretrained_GPT2":['GPT2_activations_train.json','GPT2_activations_valid.json','GPT2_activations_test.json'],
+                    "pretrained_codeGPTJava":['codeGPTJava_activations_train.json','codeGPTJava_activations_valid.json','codeGPTJava_activations_test.json'],
+                    "pretrained_codeGPTPy":['codeGPTPy_activations_train.json','codeGPTPy_activations_valid.json','codeGPTPy_activations_test.json'],
+                    "pretrained_codeGPTJavaAdapted":['codeGPTJavaAdapted_activations_train.json','codeGPTJavaAdapted_activations_valid.json','codeGPTJavaAdapted_activations_test.json'],
+                    "pretrained_codeGPTPyAdapted":['codeGPTPyAdapted_activations_train.json','codeGPTPyAdapted_activations_valid.json','codeGPTPyAdapted_activations_test.json'],
                     }
 AVTIVATIONS_FOLDER = "./activations/"
 MODEL_DESC = {"pretrained_BERT":'bert-base-uncased',
               "pretrained_CodeBERT":'microsoft/codebert-base',
               "pretrained_GraphCodeBERT":'microsoft/graphcodebert-base',
-              "pretrained_CodeBERTa":'CodeBERTa-small-v1',
+              "pretrained_CodeBERTa":'huggingface/CodeBERTa-small-v1',
               "pretrained_UniXCoder":"microsoft/unixcoder-base",
-              "pretrained_RoBERTa":"xlm-roberta-base",
-              "pretrained_JavaBERT":"CAUKiel/JavaBERT-uncased",
+              "pretrained_RoBERTa":"roberta-base",
+              "pretrained_JavaBERT":"CAUKiel/JavaBERT",
               "pretrained_GPT2":"gpt2",
               "pretrained_codeGPTJava": "microsoft/CodeGPT-small-java",
               'pretrained_codeGPTPy':"microsoft/CodeGPT-small-py",
@@ -52,7 +60,9 @@ def main():
     args = parser.parse_args()
     if args.extract == 'True':
         for this_model in MODEL_NAMES:
-            if this_model in ['pretrained_BERT','pretrained_CodeBERT','pretrained_GraphCodeBERT']:
+            if this_model in ['pretrained_CodeBERT','pretrained_GraphCodeBERT','pretrained_CodeBERTa','pretrained_UniXCoder',
+                                'pretrained_RoBERTa','pretrained_JavaBERT','pretrained_GPT2','pretrained_codeGPTJava','pretrained_codeGPTPy',
+                                'pretrained_codeGPTJavaAdapted','pretrained_codeGPTPyAdapted']:
                 print(f"Generating the activation file for {this_model}")
                 activation_file_name=ACTIVATION_NAMES[this_model][0]
                 extract_activations('./src_files/codetest2_train_unique.in',MODEL_DESC[this_model],os.path.join(AVTIVATIONS_FOLDER,activation_file_name))
@@ -62,6 +72,7 @@ def main():
                 extract_activations('./src_files/codetest2_test_unique.in',MODEL_DESC[this_model],os.path.join(AVTIVATIONS_FOLDER,activation_file_name))
     else:
         print("Getting activations from json files. If you need to extract them, run with --extract=True \n" )
+    break
 
     for this_model in MODEL_NAMES:
         torch.manual_seed(0)
