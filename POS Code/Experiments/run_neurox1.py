@@ -27,16 +27,23 @@ MODEL_NAMES = ['pretrained_BERT',
                'finetuned_defdet_CodeBERT','finetuned_defdet_GraphCodeBERT',
                'finetuned_clonedet_CodeBERT','finetuned_clonedet_GraphCodeBERT']
 ACTIVATION_NAMES = {'pretrained_BERT':['bert_activations_train.json','bert_activations_valid.json','bert_activations_test.json'],
-                    'pretrained_CodeBERT':['codebert_activations_train.json','codebert_activations_test.json'],
-                    'pretrained_GraphCodeBERT':['graphcodebert_activations_train.json','graphcodebert_activations_test.json'],
-                    'finetuned_defdet_CodeBERT':['codebert_defdet_activations_train.json','codebert_defdet_activations_test.json'],
-                    'finetuned_defdet_GraphCodeBERT':['graphcodebert_defdet_activations_train.json','graphcodebert_defdet_activations_test.json'],
-                    'finetuned_clonedet_CodeBERT':['codebert_clonedet_activations1_train.json','codebert_clonedet_activations1_test.json'],
-                    'finetuned_clonedet_GraphCodeBERT':['graphcodebert_clonedet_activations1_train.json','graphcodebert_clonedet_activations1_test.json']}
+                    'pretrained_CodeBERT':['codebert_activations_train.json','codebert_activations_valid','codebert_activations_test.json'],
+                    'pretrained_GraphCodeBERT':['graphcodebert_activations_train.json','graphcodebert_activations_valid.json','graphcodebert_activations_test.json'],
+                    }
 AVTIVATIONS_FOLDER = "./activations/"
 MODEL_DESC = {"pretrained_BERT":'bert-base-uncased',
               "pretrained_CodeBERT":'microsoft/codebert-base',
-              "pretrained_GraphCodeBERT":'microsoft/graphcodebert-base'}
+              "pretrained_GraphCodeBERT":'microsoft/graphcodebert-base',
+              "pretrained_CodeBERTa":'CodeBERTa-small-v1',
+              "pretrained_UniXCoder":"microsoft/unixcoder-base",
+              "pretrained_RoBERTa":"xlm-roberta-base",
+              "pretrained_JavaBERT":"CAUKiel/JavaBERT-uncased",
+              "pretrained_GPT2":"gpt2",
+              "pretrained_codeGPTJava": "microsoft/CodeGPT-small-java",
+              'pretrained_codeGPTPy':"microsoft/CodeGPT-small-py",
+              "pretrained_codeGPTJavaAdapted": "microsoft/CodeGPT-small-java-adaptedGPT2",
+              "pretrained_codeGPTPyAdapted":"microsoft/CodeGPT-small-py-adaptedGPT2",
+              }
 
 def main():
     parser = argparse.ArgumentParser()
