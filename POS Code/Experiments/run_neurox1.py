@@ -29,7 +29,7 @@ MODEL_NAMES = ['pretrained_BERT',
                ]
 
 ACTIVATION_NAMES = {'pretrained_BERT':['bert_activations_train.json','bert_activations_valid.json','bert_activations_test.json'],
-                    'pretrained_CodeBERT':['codebert_activations_train.json','codebert_activations_valid','codebert_activations_test.json'],
+                    'pretrained_CodeBERT':['codebert_activations_train.json','codebert_activations_valid.json','codebert_activations_test.json'],
                     'pretrained_GraphCodeBERT':['graphcodebert_activations_train.json','graphcodebert_activations_valid.json','graphcodebert_activations_test.json'],
                     'pretrained_CodeBERTa':['codeberta_activations_train.json','codeberta_activations_valid.json','codeberta_activations_test.json'],
                     "pretrained_UniXCoder":['UniXCoder_activations_train.json','UniXCoder_activations_valid.json','UniXCoder_activations_test.json'],
