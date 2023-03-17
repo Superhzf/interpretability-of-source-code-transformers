@@ -23,8 +23,11 @@ num_valid = number[3:]
 num_test = number[3:]
 
 MODEL_NAMES = ['pretrained_BERT',
-               'pretrained_CodeBERT','pretrained_GraphCodeBERT',
+               'pretrained_CodeBERT','pretrained_GraphCodeBERT','pretrained_CodeBERTa','pretrained_UniXCoder',
+               'pretrained_RoBERTa','pretrained_JavaBERT','pretrained_GPT2','pretrained_codeGPTJava','pretrained_codeGPTPy',
+               'pretrained_codeGPTJavaAdapted','pretrained_codeGPTPyAdapted'
                ]
+
 ACTIVATION_NAMES = {'pretrained_BERT':['bert_activations_train.json','bert_activations_valid.json','bert_activations_test.json'],
                     'pretrained_CodeBERT':['codebert_activations_train.json','codebert_activations_valid','codebert_activations_test.json'],
                     'pretrained_GraphCodeBERT':['graphcodebert_activations_train.json','graphcodebert_activations_valid.json','graphcodebert_activations_test.json'],
