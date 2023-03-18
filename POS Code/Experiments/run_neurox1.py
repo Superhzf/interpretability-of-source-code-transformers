@@ -196,19 +196,26 @@ def main():
 
             all_results={}
             # All-layer probing
+            print("All-layer probing")
             probe, scores = all_activations_probe(X_train,y_train,X_valid,y_valid,X_test, y_test,
                                                     idx2label_train,tokens_test['source'],this_model,sample_idx_test)
             all_results["baseline"] = scores
+            print("~"*50)
 
             # Independent-layerwise probing
+            print('Independent-layerwise probing')
             results = independent_layerwise_probeing(X_train,y_train,X_valid,y_valid,X_test,y_test,
                                                     idx2label_train,tokens_test['source'],this_model,sample_idx_test,num_layers)
             all_results["independent_layerwise"] = results
+            print("~"*50)
             # Incremental-layerwise probing
+            print('Incremental-layerwise probing')
             results = incremental_layerwise_probeing(X_train,y_train,X_valid,y_valid,X_test,y_test,
                                                     idx2label_train,tokens_test['source'],this_model,sample_idx_test,num_layers)
             all_results["incremental_layerwise"] = results
+            print("~"*50)
             # select minimum layers
+            print('select minimum layers')
             target_layer = [0.03,0.02,0.01]
             target_neuron = [0.01]
             clustering_thresholds = [-1,0.3]
@@ -231,8 +238,10 @@ def main():
                     print(f"Based on the layers from 0 to {layer_idx}, the clustering parameters and selected neuron information is:")
                     print(this_result)
                     all_results["select_minimum_neuron"][layer_idx][this_target_neuron] = this_result
+            print("~"*50)
             
             # probing independent neurons based on all layers (run_cc_all.py)
+            print('probing independent neurons based on all layers (run_cc_all.py)')
             clustering_thresholds = [-1, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
             layer_idx = 12
             this_result = select_independent_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
@@ -241,8 +250,10 @@ def main():
             all_results["select_from_all_neurons"] = this_result
             print(f"Results of probing independent neurons based on all layers without selection:")
             print(this_result)
+            print("~"*50)
 
-            # probing independent neurons based on all layers with coarse percentage (run_max_features.py)
+            # probing independent neurons based on all layers with finer percentage (run_max_features.py)
+            print('probing independent neurons based on all layers with finer percentage (run_max_features.py)')
             clustering_thresholds = [-1]
             layer_idx = 12
             this_target_neuron = [0.01]
@@ -271,10 +282,10 @@ def main():
             all_results['select_minimum_neurons_finer_percentage'] = this_result
             print(f"select_minimum_neurons_finer_percentage:")
             print(this_result)
+            print("~"*50)
 
             # Important neuron probeing
-            top_neurons = get_imp_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
-                                            probe,label2idx_train,idx2label_train,tokens_test['source'],this_model,sample_idx_test)
+            top_neurons = get_imp_neurons(probe,label2idx_train,this_model)
             get_top_words(top_neurons,tokens_train,activations_train,this_model)
             del X_train, X_test, X_valid,y_train, y_test,y_valid
             #Control task probes
