@@ -197,9 +197,9 @@ def main():
             # All-layer probing
             print("All-layer probing")
             model_name = f"{this_model}_all_layers"
-            probe, scores = all_activations_probe(X_train,y_train,X_valid,y_valid,X_test, y_test,
+            probe, scores, this_results = all_activations_probe(X_train,y_train,X_valid,y_valid,X_test, y_test,
                                                     idx2label_train,tokens_test['source'],model_name,sample_idx_test)
-            all_results["baseline"] = scores
+            all_results["baseline"] = this_results
             print("~"*50)
 
             # Independent-layerwise probing
@@ -227,7 +227,6 @@ def main():
             all_results["select_minimum_neuron"] = {}
             for this_target_layer in target_layer:
                 layer_idx = select_minimum_layers(all_results['incremental_layerwise'],this_target_layer,all_results["baseline"]["__OVERALL__"])
-                print(f"To lose only {this_target_layer}*100% of accuracy when using all layers, keep layers from 0 to {layer_idx}")
                 all_results["select_minimum_layer"][this_target_layer] = layer_idx
                 all_results["select_minimum_neuron"][layer_idx] = {}
                 # probing using independent neurons based on minimum layers

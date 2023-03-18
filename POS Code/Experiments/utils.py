@@ -134,12 +134,13 @@ def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2labe
     #Train the linear probes (logistic regression) - POS(code) tagging
     best_l1,best_l2,best_probe=param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2)
     #Get scores of probes
-    print()
-    print(f"The best l1={best_l1}, the best l2={best_l2} for {model_name}")
-    print(f"Accuracy on the test set of probing {model_name}:")
+    results = {}
     scores,predictions = linear_probe.evaluate_probe(best_probe, X_test, y_test,idx_to_class=idx2label,
                                                     return_predictions=True,source_tokens=src_tokens_test)
-    print(scores)
+    results['model_name'] = model_name
+    results['best_l1'] = best_l1
+    results['best_l2'] = best_l2
+    results['scores'] = scores
     if src_tokens_test is not None and need_cm:
         NAME_NAME, NAME_KW, NAME_STRING,NAME_NUMBER, KW_NAME, KW_KW, KW_other= 0, 0, 0, 0, 0, 0, 0
         NAME_STRING_list,NAME_NUMBER_list = [], []
@@ -172,20 +173,23 @@ def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2labe
                 else:
                     KW_other += 1
         
-        print(f"Confusion matrix between NAME and KEYWORD:")
-        print(f"NAME_NAME:{NAME_NAME},KW_NAME:{KW_NAME}")
-        print(f"NAME_NAME_list:{NAME_NAME_list}")
-        print(f"NAME_NAME_sample:{NAME_NAME_samples}",)
-        print(f"NAME_KW:{NAME_KW},KW_KW:{KW_KW}")
-        print(f"NAME_STRING:{NAME_STRING},KW_other:{KW_other}")
-        print(f"NAME_NUMBER:{NAME_NUMBER}")
-        print(f"NAME_STRING_list:{NAME_STRING_list}")
-        print(f"NAME_NUMBER_list:{NAME_NUMBER_list}")
-        print(f"NAME_NUMBER_sample:{NAME_NUMBER_samples}")
+        results['NAME_NAME'] = NAME_NAME
+        results['KW_NAME'] = KW_NAME
+        results['NAME_NAME_list'] = NAME_NAME_list
+        results['NAME_NAME_sample'] = NAME_NAME_samples
+        results['NAME_KW'] = NAME_KW
+        results['KW_KW'] = KW_KW
+        results['NAME_STRING'] = NAME_STRING
+        results['KW_other'] = KW_other
+        results['NAME_NUMBER'] = NAME_NUMBER
+        results['NAME_STRING_list'] = NAME_STRING_list
+        results['NAME_NUMBER_list'] = NAME_NUMBER_list
+        results['NAME_NUMBER_sample'] = NAME_NUMBER_sample
     X_test_baseline = np.zeros_like(X_test)
-    print(f"Accuracy on the test set of {model_name} model using the intercept:")
-    linear_probe.evaluate_probe(best_probe, X_test_baseline, y_test, idx_to_class=idx2label)
-    return best_probe, scores
+
+    scores_intercept,_ = linear_probe.evaluate_probe(best_probe, X_test_baseline, y_test, idx_to_class=idx2label)
+    results['intercept'] = scores_intercept
+    return best_probe, scores, results
 
 
 def get_imp_neurons(probe,label2idx,model_name):
@@ -213,34 +217,32 @@ def get_top_words(top_neurons,tokens,activations,model_name):
 
 def independent_layerwise_probeing(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,src_tokens_test,model_name,sample_idx_test,num_layers):
     ''' Returns models and accuracy(score) of the probes trained on activations from different layers '''
-    this_results = {}
+    results = {}
     need_cm = True
     for i in range(num_layers):
-        print(f"{model_name} Layer", i)
         this_model_name = f"{model_name}_layer_{i}"
         layer_train = ablation.filter_activations_by_layers(X_train, [i], num_layers)
         layer_valid = ablation.filter_activations_by_layers(X_valid, [i], num_layers)
         layer_test = ablation.filter_activations_by_layers(X_test, [i], num_layers)
-        _,this_score = all_activations_probe(layer_train,y_train,layer_valid,y_valid,layer_test,y_test,
+        _,this_score,this_result = all_activations_probe(layer_train,y_train,layer_valid,y_valid,layer_test,y_test,
                                     idx2label,src_tokens_test,this_model_name,sample_idx_test,need_cm)
-        this_results[f"layer_{i}"] = this_score
-    return this_results
+        results[f"layer_{i}"] = this_result
+    return results
 
 
 def incremental_layerwise_probeing(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,src_tokens_test,model_name,sample_idx_test,num_layers):
     ''' Returns models and accuracy(score) of the probes trained on activations from different layers '''
-    this_results = {}
+    results = {}
     need_cm = True
     for i in range(2,num_layers):
         layers = list(range(i))
-        print(f"{model_name} Layer", layers)
         this_model_name = f"{model_name}_layer_{layers}"
         layer_train = ablation.filter_activations_by_layers(X_train, layers, num_layers)
         layer_valid = ablation.filter_activations_by_layers(X_valid, layers, num_layers)
         layer_test = ablation.filter_activations_by_layers(X_test, layers, num_layers)
-        _,this_score = all_activations_probe(layer_train,y_train,layer_valid,y_valid,layer_test,y_test,
+        _,this_score,this_result = all_activations_probe(layer_train,y_train,layer_valid,y_valid,layer_test,y_test,
                                     idx2label,src_tokens_test,this_model_name,sample_idx_test,need_cm)
-        this_results[f"{layers}"] = this_score
+        results[f"{layers}"] = this_result
     return this_results
 
 
