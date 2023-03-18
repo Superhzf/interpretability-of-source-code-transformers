@@ -33,7 +33,7 @@ for idx1, this_code in enumerate(code):
         end = datetime.datetime.now()
         diff = end - start
         print(f"{100*(idx1+1)/total:.2f}% has been checked,{len(selected_token_idx)}\
-        lines of code are saved，time passed:{end-start}")
+        lines of code are saved,time passed:{end-start}")
 
 
 new_code = []

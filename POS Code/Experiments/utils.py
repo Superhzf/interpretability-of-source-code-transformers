@@ -247,7 +247,7 @@ def independent_layerwise_probeing(X_train,y_train,X_valid,y_valid,X_test,y_test
 def incremental_layerwise_probeing(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,src_tokens_test,model_name,sample_idx_test,num_layers):
     ''' Returns models and accuracy(score) of the probes trained on activations from different layers '''
     this_results = {}
-    for i in range(2,num_layers-1):
+    for i in range(2,num_layers):
         layers = list(range(i))
         print(f"{model_name} Layer", layers)
         this_model_name = f"{model_name}_layer_{layers}"
