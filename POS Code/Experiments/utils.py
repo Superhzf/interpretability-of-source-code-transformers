@@ -136,7 +136,7 @@ def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2labe
     #Get scores of probes
     print()
     print(f"The best l1={best_l1}, the best l2={best_l2} for {model_name}")
-    print(f"Accuracy on the test set of probing {model_name} of all layers:")
+    print(f"Accuracy on the test set of probing {model_name}:")
     scores,predictions = linear_probe.evaluate_probe(best_probe, X_test, y_test,idx_to_class=idx2label,
                                                     return_predictions=True,source_tokens=src_tokens_test)
     print(scores)
