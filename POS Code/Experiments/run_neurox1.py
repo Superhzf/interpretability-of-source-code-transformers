@@ -75,7 +75,6 @@ def main():
                 extract_activations('./src_files/codetest2_test_unique.in',MODEL_DESC[this_model],os.path.join(AVTIVATIONS_FOLDER,activation_file_name))
     else:
         print("Getting activations from json files. If you need to extract them, run with --extract=True \n" )
-    exit(0)
 
     for this_model in MODEL_NAMES:
         torch.manual_seed(0)
