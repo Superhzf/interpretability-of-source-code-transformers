@@ -260,7 +260,7 @@ def select_independent_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
                             idx2label,label2idx,src_tokens_test,this_model_name,
                             sample_idx_test,layer_idx,clustering_threshold,num_layers,neurons_per_layer,
                             target_neuron=None,neuron_percentage=None,full_probing=False):
-    this_result = {}
+    result = {}
     layers = list(range(layer_idx+1))
     layer_train = ablation.filter_activations_by_layers(X_train, layers, num_layers)
     layer_valid = ablation.filter_activations_by_layers(X_valid, layers, num_layers)
@@ -271,33 +271,33 @@ def select_independent_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
             X_valid_filtered = layer_valid
             X_test_filtered = layer_test
             result_key = "no-clustering"
-            this_result[result_key]={}
+            result[result_key]={}
             need_cm = False
         else:
             need_cm = True
             result_key = f"clustering-{this_threshold}"
-            this_result[result_key] = {}
+            result[result_key] = {}
             independent_neurons, clusters = clustering.extract_independent_neurons(layer_train, use_abs_correlation=True, clustering_threshold=this_threshold)
             X_train_filtered = ablation.filter_activations_keep_neurons(layer_train,independent_neurons)
             X_valid_filtered = ablation.filter_activations_keep_neurons(layer_valid,independent_neurons)
             X_test_filtered = ablation.filter_activations_keep_neurons(layer_test,independent_neurons)
-            this_result[result_key]["clustering_threshold"] = this_threshold
-            this_result[result_key]["clusters"] = [int(x) for x in clusters]
-            this_result[result_key]["independent_neurons"] = [int(x) for x in independent_neurons]
+            result[result_key]["clustering_threshold"] = this_threshold
+            result[result_key]["clusters"] = [int(x) for x in clusters]
+            result[result_key]["independent_neurons"] = [int(x) for x in independent_neurons]
 
-        model,this_score = all_activations_probe(X_train_filtered,y_train,X_valid_filtered,y_valid,X_test_filtered,y_test,
+        model,this_score,this_result = all_activations_probe(X_train_filtered,y_train,X_valid_filtered,y_valid,X_test_filtered,y_test,
                                     idx2label,src_tokens_test,this_model_name,sample_idx_test,need_cm)
-        this_result[result_key]['base_results'] = this_score
+        result[result_key]['base_results'] = this_result
 
         if full_probing:
             need_cm = False
             target_score = this_score["__OVERALL__"]*(1-target_neuron)
             ordering,_ = linear_probe.get_neuron_ordering(model, label2idx,search_stride=1000)
-            this_result[result_key]["ordering"] = [int(x) for x in ordering]
+            result[result_key]["ordering"] = [int(x) for x in ordering]
             minimal_neuron_set_size = X_train_filtered.shape[1]
-            this_result[result_key]["minimal_neuron_set_size"] = minimal_neuron_set_size
-            this_result[result_key]["minimal_neuron_set"] = this_result[result_key]["ordering"]
-            this_result[result_key][f"selected-{X_train_filtered.shape[1]}-neurons"] = this_score
+            result[result_key]["minimal_neuron_set_size"] = minimal_neuron_set_size
+            result[result_key]["minimal_neuron_set"] = result[result_key]["ordering"]
+            result[result_key][f"selected-{X_train_filtered.shape[1]}-neurons"] = this_score
             for this_percentage in neuron_percentage:
                 selected_num_neurons = int(this_percentage * num_layers * neurons_per_layer)
                 if selected_num_neurons > X_train_filtered.shape[1]:
@@ -306,15 +306,15 @@ def select_independent_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
                 X_train_selected = ablation.filter_activations_keep_neurons(X_train_filtered, selected_neurons)
                 X_valid_selected = ablation.filter_activations_keep_neurons(X_valid_filtered, selected_neurons)
                 X_test_selected = ablation.filter_activations_keep_neurons(X_test_filtered, selected_neurons)
-                _,this_score = all_activations_probe(X_train_selected,y_train,X_valid_selected,y_valid,X_test_selected,y_test,
+                _,this_score, this_result = all_activations_probe(X_train_selected,y_train,X_valid_selected,y_valid,X_test_selected,y_test,
                                         idx2label,src_tokens_test,this_model_name,sample_idx_test,need_cm)
-                this_result[result_key][f"selected-{selected_num_neurons}-neurons"] = this_score
+                result[result_key][f"selected-{selected_num_neurons}-neurons"] = this_result
                 if this_score["__OVERALL__"] > target_score:
                     minimal_neuron_set_size = selected_num_neurons
-                    this_result[result_key]["minimal_neuron_set_size"] = minimal_neuron_set_size
-                    this_result[result_key]["minimal_neuron_set"] = [int(x) for x in selected_neurons]
+                    result[result_key]["minimal_neuron_set_size"] = minimal_neuron_set_size
+                    result[result_key]["minimal_neuron_set"] = [int(x) for x in selected_neurons]
                     break
-    return this_result
+    return result
 
 
 

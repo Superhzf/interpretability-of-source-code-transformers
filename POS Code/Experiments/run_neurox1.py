@@ -234,8 +234,6 @@ def main():
                     this_result = select_independent_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
                             idx2label_train,label2idx_train,tokens_test['source'],this_model,sample_idx_test,layer_idx,
                             clustering_thresholds,num_layers,neurons_per_layer,this_target_neuron,neuron_percentage,True)
-                    print(f"Based on the layers from 0 to {layer_idx}, the clustering parameters and selected neuron information is:")
-                    print(this_result)
                     all_results["select_minimum_neuron"][layer_idx][this_target_neuron] = this_result
             print("~"*50)
             
@@ -247,8 +245,6 @@ def main():
                                 idx2label_train,label2idx_train,tokens_test['source'],this_model,sample_idx_test,layer_idx,
                                 clustering_thresholds,num_layers,neurons_per_layer,None,None,False)
             all_results["select_from_all_neurons"] = this_result
-            print(f"Results of probing independent neurons based on all layers without selection:")
-            print(this_result)
             print("~"*50)
 
             # probing independent neurons based on all layers with finer percentage (run_max_features.py)
@@ -279,8 +275,6 @@ def main():
                                 idx2label_train,label2idx_train,tokens_test['source'],this_model,sample_idx_test,layer_idx,
                                 clustering_thresholds,num_layers,neurons_per_layer,this_target_neuron[0],neuron_percentage,True)
             all_results['select_minimum_neurons_finer_percentage'] = this_result
-            print(f"select_minimum_neurons_finer_percentage:")
-            print(this_result)
             print("~"*50)
 
             # Important neuron probeing
