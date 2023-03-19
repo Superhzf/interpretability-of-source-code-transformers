@@ -334,7 +334,10 @@ def main():
             target_neuron = all_results['select_minimum_neurons_finer_percentage'][result_key]['target_neuron']
             print(f"Based on all layers: from 0 to {num_layers-1}, no clustering, to lose only {target_neuron}*100% of accuracy")
             print(f"The minimum number of neurons needed is { all_results['select_minimum_neurons_finer_percentage'][result_key][minimal_neuron_set_size]}")
-           
+
+            with open(f"{this_model}DetailedOutput.json","w") as f:
+                json.dump(all_results, f)
+            f.close()
             print("----------------------------------------------------------------")
             break
 if __name__ == "__main__":
