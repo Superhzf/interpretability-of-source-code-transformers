@@ -623,6 +623,8 @@ def extract_sentence_attentions(
         # Hugging Face format: tuple of torch.FloatTensor of shape (batch_size, num_heads, num_heads, sequence_length)
         # Tuple has 12 elements for base model: attention values at each layer
         all_attentions = model(input_ids)[-1]
+        print("All good")
+        exit(0)
 
         all_attentions = [
             attentions[0].cpu().numpy() for attentions in all_attentions
@@ -717,7 +719,8 @@ def get_model_and_tokenizer(model_desc, device="cpu", random_weights=False):
         model_name = model_desc[0]
         tokenizer_name = model_desc[1]
     # https://huggingface.co/docs/transformers/v4.23.1/en/model_doc/bert#transformers.BertModel
-    model = AutoModel.from_pretrained(model_name, output_attentions=True).to(device)
+    # model = AutoModel.from_pretrained(model_name, output_attentions=True).to(device)
+    model = AutoModel.from_pretrained(model_name, output_hidden_states=True).to(device)
     tokenizer = AutoTokenizer.from_pretrained(tokenizer_name)
 
     if random_weights:
