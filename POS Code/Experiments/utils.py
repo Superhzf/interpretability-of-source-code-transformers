@@ -187,7 +187,7 @@ def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2labe
         results['NAME_NUMBER_sample'] = NAME_NUMBER_sample
     X_test_baseline = np.zeros_like(X_test)
 
-    scores_intercept,_ = linear_probe.evaluate_probe(best_probe, X_test_baseline, y_test, idx_to_class=idx2label)
+    scores_intercept = linear_probe.evaluate_probe(best_probe, X_test_baseline, y_test, idx_to_class=idx2label)
     results['intercept'] = scores_intercept
     return best_probe, scores, results
 
