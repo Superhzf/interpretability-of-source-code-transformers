@@ -2,6 +2,7 @@ utf-8 def verified_excel_file ( store , institute_list , temp_excel_dir ) :
 document_lines = [ ] 
 written_files = 0 
 today = datetime . datetime . now ( ) . strftime ( '%Y-%m-%d' ) 
+~~
 for cust in institute_list : 
 ~~~ verif_vars = store . verified ( institute_id = cust ) 
 if not verif_vars : 
