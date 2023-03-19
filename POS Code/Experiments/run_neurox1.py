@@ -286,7 +286,7 @@ def main():
                                             flat_tokens_test,X_test_copy,y_test_copy,idx2label_train,scores,this_model,'SAME')
             print("~~~~~~~~~~~~~~~~~~~~~~~Summary~~~~~~~~~~~~~~~~~~~~~~~")
             print(f"Experimental results for {this_model}:")
-            print(f"Baseline score {all_results['scores']}")
+            print(f"Baseline score {all_results['baseline']['scores']}")
 
             print(f"Independent layerwise probing:")
             for i in range(num_layers):
@@ -295,7 +295,7 @@ def main():
             print(f"'Incremental-layerwise probing:")
             for i in range(2,num_layers):
                 layers = list(range(i))
-                print(f"Layer {layers}:{all_results['incremental_layerwise'][f'layers']['scores']}")
+                print(f"Layer {layers}:{all_results['incremental_layerwise'][f'{layers}']['scores']}")
             print(f"select minimum layers:")
             for this_target_layer,layer_idx in all_results['select_minimum_layer'].items():
                 print(f"To lose {this_target_layer}*100% accuracy based on all layers, keep the layers from 0 to {layer_idx}")
