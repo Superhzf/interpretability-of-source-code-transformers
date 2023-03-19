@@ -321,12 +321,12 @@ def main():
             for result_key in all_results["select_from_all_neurons"]:
                 if result_key=='no-clustering':
                     print(f"When no clustering:")
-                    print(f"the probing result is {all_results["select_from_all_neurons"][result_key]['base_results']['scores']}")
+                    print(f"the probing result is {all_results['select_from_all_neurons'][result_key]['base_results']['scores']}")
                 else:
-                    print(f"Clustering threshold:{this_result[result_key]['clustering_threshold']}")
-                    print(f"The number of independent neurons:{len(this_result[result_key]['independent_neurons'])}")
-                    print(f"The number of clusters:{len(this_result[result_key]['clusters'])}")
-                    print(f"The probing result (CC score) is :{this_result[result_key]['base_results']['scores']}")
+                    print(f"Clustering threshold:{all_results['select_from_all_neurons'][result_key]['clustering_threshold']}")
+                    print(f"The number of independent neurons:{len(all_results['select_from_all_neurons'][result_key]['independent_neurons'])}")
+                    print(f"The number of clusters:{len(all_results['select_from_all_neurons'][result_key]['clusters'])}")
+                    print(f"The probing result (CC score) is :{all_results['select_from_all_neurons'][result_key]['base_results']['scores']}")
 
 
             print(f"probe independent neurons based on all layers without clustering (run_max_features.py)")
