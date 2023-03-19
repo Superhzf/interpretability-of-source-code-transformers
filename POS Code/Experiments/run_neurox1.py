@@ -225,7 +225,7 @@ def main():
             all_results['select_minimum_layer'] = {}
             all_results["select_minimum_neuron"] = {}
             for this_target_layer in target_layer:
-                layer_idx = select_minimum_layers(all_results['incremental_layerwise'],this_target_layer,all_results["baseline"]["__OVERALL__"])
+                layer_idx = select_minimum_layers(all_results['incremental_layerwise'],this_target_layer,all_results["baseline"]['scores']["__OVERALL__"])
                 all_results["select_minimum_layer"][this_target_layer] = layer_idx
                 all_results["select_minimum_neuron"][layer_idx] = {}
                 # probing using independent neurons based on minimum layers
