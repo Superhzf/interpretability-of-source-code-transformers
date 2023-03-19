@@ -243,7 +243,7 @@ def incremental_layerwise_probeing(X_train,y_train,X_valid,y_valid,X_test,y_test
         _,this_score,this_result = all_activations_probe(layer_train,y_train,layer_valid,y_valid,layer_test,y_test,
                                     idx2label,src_tokens_test,this_model_name,sample_idx_test,need_cm)
         results[f"{layers}"] = this_result
-    return this_results
+    return results
 
 
 def select_minimum_layers(incremental_layerwise_result,target,all_layer_result):
