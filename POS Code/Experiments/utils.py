@@ -184,7 +184,7 @@ def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2labe
         results['NAME_NUMBER'] = NAME_NUMBER
         results['NAME_STRING_list'] = NAME_STRING_list
         results['NAME_NUMBER_list'] = NAME_NUMBER_list
-        results['NAME_NUMBER_sample'] = NAME_NUMBER_sample
+        results['NAME_NUMBER_sample'] = NAME_NUMBER_samples
     X_test_baseline = np.zeros_like(X_test)
 
     scores_intercept = linear_probe.evaluate_probe(best_probe, X_test_baseline, y_test, idx_to_class=idx2label)

@@ -63,8 +63,7 @@ def main():
     args = parser.parse_args()
     if args.extract == 'True':
         for this_model in MODEL_NAMES:
-            if this_model in ['pretrained_CodeBERT','pretrained_GraphCodeBERT','pretrained_CodeBERTa','pretrained_UniXCoder',
-                                'pretrained_RoBERTa','pretrained_JavaBERT','pretrained_GPT2','pretrained_codeGPTJava','pretrained_codeGPTPy',
+            if this_model in ['pretrained_GPT2','pretrained_codeGPTJava','pretrained_codeGPTPy',
                                 'pretrained_codeGPTJavaAdapted','pretrained_codeGPTPyAdapted']:
                 print(f"Generating the activation file for {this_model}")
                 activation_file_name=ACTIVATION_NAMES[this_model][0]
@@ -75,6 +74,7 @@ def main():
                 extract_activations('./src_files/codetest2_test_unique.in',MODEL_DESC[this_model],os.path.join(AVTIVATIONS_FOLDER,activation_file_name))
     else:
         print("Getting activations from json files. If you need to extract them, run with --extract=True \n" )
+    exit(0)
 
     for this_model in MODEL_NAMES:
         torch.manual_seed(0)
