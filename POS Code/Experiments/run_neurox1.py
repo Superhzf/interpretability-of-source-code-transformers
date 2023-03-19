@@ -294,7 +294,7 @@ def main():
                 print(f"Layer {i}:{all_results['independent_layerwise'][f'layer_{i}']['scores']}")
     
             print(f"'Incremental-layerwise probing:")
-            for i in range(2:num_layers):
+            for i in range(2,num_layers):
                 layers = list(range(i))
                 print(f"Layer {layers}:{all_results['incremental_layerwise'][f'layers']['scores']}")
             print(f"select minimum layers:")
