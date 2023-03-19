@@ -237,7 +237,7 @@ def main():
                     all_results["select_minimum_neuron"][layer_idx][this_target_neuron] = this_result
             print("~"*50)
             
-            # probing independent neurons based on all layers (run_cc_all.py)
+            # probe independent neurons based on all layers (run_cc_all.py)
             print('probing independent neurons based on all layers (run_cc_all.py)')
             clustering_thresholds = [-1, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
             layer_idx = 12
@@ -285,6 +285,56 @@ def main():
             selectivity = control_task_probes(flat_tokens_train,X_train_copy,y_train_copy,
                                             flat_tokens_valid, X_valid_copy, y_valid_copy,
                                             flat_tokens_test,X_test_copy,y_test_copy,idx2label_train,scores,this_model,'SAME')
+            print("~~~~~~~~~~~~~~~~~~~~~~~Summary~~~~~~~~~~~~~~~~~~~~~~~")
+            print(f"Experimental results for {this_model}:")
+            print(f"Baseline score {all_results['scores']}")
+
+            print(f"Independent layerwise probing:")
+            for i in range(num_layers):
+                print(f"Layer {i}:{all_results['independent_layerwise'][f'layer_{i}']['scores']}")
+    
+            print(f"'Incremental-layerwise probing:")
+            for i in range(2:num_layers):
+                layers = list(range(i))
+                print(f"Layer {layers}:{all_results['incremental_layerwise'][f'layers']['scores']}")
+            print(f"select minimum layers:")
+            for this_target_layer,layer_idx in all_results['select_minimum_layer'].items():
+                print(f"To lose {this_target_layer}*100% accuracy based on all layers, keep the layers from 0 to {layer_idx}")
+                for this_target_neuron, this_result in all_results['select_minimum_neuron'][layer_idx]:
+                    print(f"Clustering based on the layers above: 0 to {layer_idx}:")
+                    for result_key in this_result:
+                        if result_key=='no-clustering':
+                            print(f"When no clustering:")
+                            print(f"the probing result is {this_result[result_key]['base_results']['scores']}")
+                            print(f"To lose {this_target_neuron}*100% of accuracy based on the model above:{result_key}")
+                            print(f"The minimum number of neurons needed is {this_result[result_key][minimal_neuron_set_size]}")
+                        else:
+                            print(f"Clustering threshold:{this_result[result_key]['clustering_threshold']}")
+                            print(f"The number of independent neurons:{len(this_result[result_key]['independent_neurons'])}")
+                            print(f"The number of clusters:{len(this_result[result_key]['clusters'])}")
+                            print(f"The probing result (CC score) is :{this_result[result_key]['base_results']['scores']}")
+                            print(f"To lose {this_target_neuron}*100% of accuracy based on the model above:{result_key}")
+                            print(f"The minimum number of neurons needed is {this_result[result_key][minimal_neuron_set_size]}")
+            
+        
+            print(f"probe independent neurons based on all layers with clustering (run_cc_all.py)")
+            for result_key in all_results["select_from_all_neurons"]:
+                if result_key=='no-clustering':
+                    print(f"When no clustering:")
+                    print(f"the probing result is {all_results["select_from_all_neurons"][result_key]['base_results']['scores']}")
+                else:
+                    print(f"Clustering threshold:{this_result[result_key]['clustering_threshold']}")
+                    print(f"The number of independent neurons:{len(this_result[result_key]['independent_neurons'])}")
+                    print(f"The number of clusters:{len(this_result[result_key]['clusters'])}")
+                    print(f"The probing result (CC score) is :{this_result[result_key]['base_results']['scores']}")
+
+
+            print(f"probe independent neurons based on all layers without clustering (run_max_features.py)")
+            result_key='no-clustering'
+            target_neuron = all_results['select_minimum_neurons_finer_percentage'][result_key]['target_neuron']
+            print(f"Based on all layers: from 0 to {num_layers-1}, no clustering, to lose only {target_neuron}*100% of accuracy")
+            print(f"The minimum number of neurons needed is { all_results['select_minimum_neurons_finer_percentage'][result_key][minimal_neuron_set_size]}")
+           
             print("----------------------------------------------------------------")
             break
 if __name__ == "__main__":

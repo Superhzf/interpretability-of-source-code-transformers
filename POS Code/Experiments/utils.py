@@ -288,6 +288,7 @@ def select_independent_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
         model,this_score,this_result = all_activations_probe(X_train_filtered,y_train,X_valid_filtered,y_valid,X_test_filtered,y_test,
                                     idx2label,src_tokens_test,this_model_name,sample_idx_test,need_cm)
         result[result_key]['base_results'] = this_result
+        result[result_key]['target_neuron'] = target_neuron
 
         if full_probing:
             need_cm = False
@@ -380,7 +381,7 @@ def control_task_probes(tokens_train,X_train,y_train,tokens_valid,X_valid,y_vali
     assert X_valid.shape[0] == len(y_valid)
     assert X_test.shape[0] == len(y_test)
     model_name = f'{model_name}_control_task'
-    _, ct_scores = all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label_train,None,model_name, None,need_cm)
+    _, ct_scores, this_result = all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label_train,None,model_name, None,need_cm)
     
     selectivity = original_scores['__OVERALL__'] - ct_scores['__OVERALL__']
     print()
