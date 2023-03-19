@@ -106,8 +106,8 @@ ml-gpu /work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python code/run_cl
 			--do_train \
 			--do_eval \
 			--eval_all_checkpoints \
-			--train_file cosqa-train.json \
-			--dev_file cosqa-dev.json \
+			--train_file cosqa_train.json \
+			--dev_file cosqa_dev.json \
 			--max_seq_length 200 \
 			--per_gpu_train_batch_size 16 \
 			--per_gpu_eval_batch_size 16 \
