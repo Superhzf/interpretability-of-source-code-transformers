@@ -3,6 +3,7 @@ from utils import Normalization, extract_activations
 from utils import get_mappings,all_activations_probe,get_imp_neurons,get_top_words,independent_layerwise_probeing,incremental_layerwise_probeing
 from utils import select_independent_neurons,select_minimum_layers
 from utils import control_task_probes, probeless,filter_by_frequency,preprocess,alignTokenAct,getOverlap, selectBasedOnTrain
+from utils import NumpyEncoder
 from sklearn.model_selection import train_test_split
 import numpy as np
 import collections
@@ -286,8 +287,9 @@ def main():
                                             flat_tokens_valid, X_valid_copy, y_valid_copy,
                                             flat_tokens_test,X_test_copy,y_test_copy,idx2label_train,scores,this_model,'SAME')
             print("~~~~~~~~~~~~~~~~~~~~~~~Summary~~~~~~~~~~~~~~~~~~~~~~~")
+            json_dump = json.dumps(all_results, cls=NumpyEncoder)
             with open(f"{this_model}DetailedOutput.json","w") as f:
-                json.dump(all_results, f)
+                json.dump(json_dump, f)
             f.close()
             
             print(f"Experimental results for {this_model}:")
