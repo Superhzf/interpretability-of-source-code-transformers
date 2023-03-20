@@ -8,6 +8,7 @@ import numpy as np
 import collections
 import torch
 import os
+import json
 
 
 keyword_list = ['False','await','else','import','pass','None','break','except','in','raise','True',
@@ -285,6 +286,10 @@ def main():
                                             flat_tokens_valid, X_valid_copy, y_valid_copy,
                                             flat_tokens_test,X_test_copy,y_test_copy,idx2label_train,scores,this_model,'SAME')
             print("~~~~~~~~~~~~~~~~~~~~~~~Summary~~~~~~~~~~~~~~~~~~~~~~~")
+            with open(f"{this_model}DetailedOutput.json","w") as f:
+                json.dump(all_results, f)
+            f.close()
+            
             print(f"Experimental results for {this_model}:")
             print(f"Baseline score {all_results['baseline']['scores']}")
 
@@ -334,9 +339,7 @@ def main():
             print(f"Based on all layers: from 0 to {num_layers-1}, no clustering, to lose only {target_neuron}*100% of accuracy")
             print(f"The minimum number of neurons needed is { all_results['select_minimum_neurons_finer_percentage'][result_key]['minimal_neuron_set_size']}")
 
-            with open(f"{this_model}DetailedOutput.json","w") as f:
-                json.dump(all_results, f)
-            f.close()
+            
             print("----------------------------------------------------------------")
             break
 if __name__ == "__main__":
