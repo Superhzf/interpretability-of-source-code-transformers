@@ -306,14 +306,14 @@ def main():
                             print(f"When no clustering:")
                             print(f"the probing result is {this_result[result_key]['base_results']['scores']}")
                             print(f"To lose {this_target_neuron}*100% of accuracy based on the model above:{result_key}")
-                            print(f"The minimum number of neurons needed is {this_result[result_key][minimal_neuron_set_size]}")
+                            print(f"The minimum number of neurons needed is {this_result[result_key]['minimal_neuron_set_size']}")
                         else:
                             print(f"Clustering threshold:{this_result[result_key]['clustering_threshold']}")
                             print(f"The number of independent neurons:{len(this_result[result_key]['independent_neurons'])}")
                             print(f"The number of clusters:{len(this_result[result_key]['clusters'])}")
                             print(f"The probing result (CC score) is :{this_result[result_key]['base_results']['scores']}")
                             print(f"To lose {this_target_neuron}*100% of accuracy based on the model above:{result_key}")
-                            print(f"The minimum number of neurons needed is {this_result[result_key][minimal_neuron_set_size]}")
+                            print(f"The minimum number of neurons needed is {this_result[result_key]['minimal_neuron_set_size']}")
             
         
             print(f"probe independent neurons based on all layers with clustering (run_cc_all.py)")
@@ -332,7 +332,7 @@ def main():
             result_key='no-clustering'
             target_neuron = all_results['select_minimum_neurons_finer_percentage'][result_key]['target_neuron']
             print(f"Based on all layers: from 0 to {num_layers-1}, no clustering, to lose only {target_neuron}*100% of accuracy")
-            print(f"The minimum number of neurons needed is { all_results['select_minimum_neurons_finer_percentage'][result_key][minimal_neuron_set_size]}")
+            print(f"The minimum number of neurons needed is { all_results['select_minimum_neurons_finer_percentage'][result_key]['minimal_neuron_set_size']}")
 
             with open(f"{this_model}DetailedOutput.json","w") as f:
                 json.dump(all_results, f)
