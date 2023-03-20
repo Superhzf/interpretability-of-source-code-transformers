@@ -299,7 +299,7 @@ def main():
             print(f"select minimum layers:")
             for this_target_layer,layer_idx in all_results['select_minimum_layer'].items():
                 print(f"To lose {this_target_layer}*100% accuracy based on all layers, keep the layers from 0 to {layer_idx}")
-                for this_target_neuron, this_result in all_results['select_minimum_neuron'][layer_idx]:
+                for this_target_neuron, this_result in all_results['select_minimum_neuron'][layer_idx].items():
                     print(f"Clustering based on the layers above: 0 to {layer_idx}:")
                     for result_key in this_result:
                         if result_key=='no-clustering':
