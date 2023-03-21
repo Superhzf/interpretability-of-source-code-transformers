@@ -285,7 +285,7 @@ def main():
             probeless_neuron_percentage = neuron_percentage
             probeless_target_neuron = this_target_neuron
             this_result = probeless(X_train,y_train,X_valid,y_valid,X_test,y_test,
-                                    idx2label_train,tokens_test['source'],this_model_name,
+                                    idx2label_train,tokens_test['source'],this_model,
                                     sample_idx_test,probeless_layer_idx,num_layers,neurons_per_layer,
                                     probeless_target_neuron[0],probeless_neuron_percentage)
             all_results['probeless'] = this_result
