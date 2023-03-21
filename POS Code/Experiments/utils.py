@@ -406,7 +406,7 @@ def probeless(X_train,y_train,X_valid,y_valid,X_test,y_test,
     model,this_score,this_result = all_activations_probe(layer_train,y_train,layer_valid,y_valid,layer_test,y_test,
                                     idx2label,src_tokens_test,this_model_name,sample_idx_test,need_cm)
 
-    overall_ordering, ordering_per_tag = probeless.get_neuron_ordering(X_train,y_train,idx2label)
+    overall_ordering, ordering_per_tag = probeless.get_neuron_ordering_for_all_tags(X_train,y_train,idx2label)
     result['probeless_overall_ordering'] = overall_ordering
     result['probeless_ordering_per_tag'] = ordering_per_tag
     result['target_neuron'] = target_neuron
