@@ -388,7 +388,7 @@ def main():
             print(f"Based on all layers: from 0 to {num_layers-1}, no clustering, to lose only {target_neuron}*100% of accuracy:")
             minimum_neuron_size = all_results['select_minimum_neurons_finer_percentage'][result_key]['minimal_neuron_set_size']
             print(f"The minimum number of neurons needed is {minimum_neuron_size}")
-            print(f"The performance is {all_results['select_minimum_neurons_finer_percentage'][result_key][f"selected-{minimum_neuron_size}-neurons"]}")
+            print(f"The performance is {all_results['select_minimum_neurons_finer_percentage'][result_key][f'selected-{minimum_neuron_size}-neurons']}")
 
             print()
             print(f"Probeless:")
