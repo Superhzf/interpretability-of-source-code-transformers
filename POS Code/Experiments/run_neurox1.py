@@ -243,7 +243,7 @@ def main():
             # probe independent neurons based on all layers (run_cc_all.py)
             print('probing independent neurons based on all layers (run_cc_all.py)')
             clustering_thresholds = [-1, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
-            layer_idx = num_layer - 1
+            layer_idx = num_layers - 1
             this_result = select_independent_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
                                 idx2label_train,label2idx_train,tokens_test['source'],this_model,sample_idx_test,layer_idx,
                                 clustering_thresholds,num_layers,neurons_per_layer,None,None,False)
