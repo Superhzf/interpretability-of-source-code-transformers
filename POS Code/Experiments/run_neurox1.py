@@ -196,6 +196,7 @@ def main():
 
             all_results={}
             all_results['total_neurons'] = X_train.shape[1]
+
             # All-layer probing
             print("All-layer probing")
             model_name = f"{this_model}_all_layers"
@@ -242,7 +243,7 @@ def main():
             # probe independent neurons based on all layers (run_cc_all.py)
             print('probing independent neurons based on all layers (run_cc_all.py)')
             clustering_thresholds = [-1, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
-            layer_idx = 12
+            layer_idx = num_layer - 1
             this_result = select_independent_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
                                 idx2label_train,label2idx_train,tokens_test['source'],this_model,sample_idx_test,layer_idx,
                                 clustering_thresholds,num_layers,neurons_per_layer,None,None,False)
@@ -252,7 +253,7 @@ def main():
             # probing independent neurons based on all layers with finer percentage (run_max_features.py)
             print('probing independent neurons based on all layers with finer percentage (run_max_features.py)')
             clustering_thresholds = [-1]
-            layer_idx = 12
+            layer_idx = num_layers - 1
             this_target_neuron = [0.01]
             neuron_percentage = [0.001,0.002,0.003,0.004,0.005,0.006,
                                 0.007,0.008,0.009,0.01,0.011,0.012,
@@ -277,6 +278,17 @@ def main():
                                 idx2label_train,label2idx_train,tokens_test['source'],this_model,sample_idx_test,layer_idx,
                                 clustering_thresholds,num_layers,neurons_per_layer,this_target_neuron[0],neuron_percentage,True)
             all_results['select_minimum_neurons_finer_percentage'] = this_result
+            print("~"*50)
+
+            # Probeless
+            probeless_layer_idx = layer_idx
+            probeless_neuron_percentage = neuron_percentage
+            probeless_target_neuron = this_target_neuron
+            this_result = probeless(X_train,y_train,X_valid,y_valid,X_test,y_test,
+                                    idx2label,tokens_test['source'],this_model_name,
+                                    sample_idx_test,probeless_layer_idx,num_layers,neurons_per_layer,
+                                    probeless_target_neuron[0],probeless_neuron_percentage)
+            all_results['probeless'] = this_result
             print("~"*50)
 
             # Important neuron probeing
@@ -369,14 +381,22 @@ def main():
             print(f"The corresponding number of neuron percentage reduction is: {percent_reduc}")
 
 
-
+            print()
             print(f"probe independent neurons based on all layers without clustering (run_max_features.py)")
             result_key='no-clustering'
             target_neuron = all_results['select_minimum_neurons_finer_percentage'][result_key]['target_neuron']
-            print(f"Based on all layers: from 0 to {num_layers-1}, no clustering, to lose only {target_neuron}*100% of accuracy")
-            print(f"The minimum number of neurons needed is { all_results['select_minimum_neurons_finer_percentage'][result_key]['minimal_neuron_set_size']}")
+            print(f"Based on all layers: from 0 to {num_layers-1}, no clustering, to lose only {target_neuron}*100% of accuracy:")
+            minimum_neuron_size = all_results['select_minimum_neurons_finer_percentage'][result_key]['minimal_neuron_set_size']
+            print(f"The minimum number of neurons needed is {minimum_neuron_size}")
+            print(f"The performance is {all_results['select_minimum_neurons_finer_percentage'][result_key][f"selected-{minimum_neuron_size}-neurons"]}")
 
-            
+            print()
+            print(f"Probeless:")
+            target_neuron = all_results['probeless']['target_neuron']
+            print(f"Based on all layers, from 0 to {num_layers-1}, no clustering, to lose only {target_neuron}*100% of accuracy:")
+            minimum_neuron_size = all_results['probeless']['probeless_minimal_neuron_set_size']
+            print(f"The minimum number of neurons needed is :{minimum_neuron_size}")
+            print(f"The performance is :{all_results['probeless'][f'probeless_selected-{minimum_neuron_size}-neurons']}")
             print("----------------------------------------------------------------")
             break
 if __name__ == "__main__":

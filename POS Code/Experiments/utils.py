@@ -7,6 +7,7 @@ import neurox.interpretation.linear_probe as linear_probe
 import neurox.interpretation.ablation as ablation
 import neurox.data.control_task as ct
 import neurox.interpretation.clustering as clustering
+import neurox.interpretation.probeless as probeless
 from sklearn.model_selection import train_test_split
 import neurox.analysis.corpus as corpus
 import numpy as np
@@ -390,15 +391,49 @@ def control_task_probes(tokens_train,X_train,y_train,tokens_valid,X_valid,y_vali
     return selectivity
 
 
-def probeless(X,y,model_name):
+def probeless(X_train,y_train,X_valid,y_valid,X_test,y_test,
+                idx2label,src_tokens_test,this_model_name,
+                sample_idx_test,layer_idx,num_layers,neurons_per_layer,
+                target_neuron,neuron_percentage):
     '''General and Task specific probeless '''
-    #Task specific : POS Tagging
-    print(f"{model_name} Probless neuron ordering")
-    print(neurox.interpretation.probeless.get_neuron_ordering(X,y))
-    #General clustering analysis of POS dataset
-    ''' Neuron Analysis on general tasks -- clustering'''
-    print(f"{model_name} Clustering POS")
-    print(neurox.interpretation.clustering.create_correlation_clusters(X, use_abs_correlation=True, clustering_threshold=0.5, method='average'))
+    result = {}
+    need_cm = False
+    layers = list(range(layer_idx+1))
+    layer_train = ablation.filter_activations_by_layers(X_train, layers, num_layers)
+    layer_valid = ablation.filter_activations_by_layers(X_valid, layers, num_layers)
+    layer_test = ablation.filter_activations_by_layers(X_test, layers, num_layers)
+
+    model,this_score,this_result = all_activations_probe(layer_train,y_train,layer_valid,y_valid,layer_test,y_test,
+                                    idx2label,src_tokens_test,this_model_name,sample_idx_test,need_cm)
+
+    overall_ordering, ordering_per_tag = probeless.get_neuron_ordering(X_train,y_train,idx2label)
+    result['probeless_overall_ordering'] = overall_ordering
+    result['probeless_ordering_per_tag'] = ordering_per_tag
+    result['target_neuron'] = target_neuron
+    
+    target_score = this_score["__OVERALL__"]*(1-target_neuron)
+    minimal_neuron_set_size = layer_train.shape[1]
+    result[f"probeless_minimal_neuron_set_size"] = minimal_neuron_set_size
+    result[f"probeless_minimal_neuron_set"] = result["probeless_overall_ordering"]
+    result[f"probeless_selected-{layer_train.shape[1]}-neurons"] = this_result
+    for this_percentage in neuron_percentage:
+        selected_num_neurons = int(this_percentage * num_layers * neurons_per_layer)
+        if selected_num_neurons > layer_train.shape[1]:
+            continue
+        selected_neurons = overall_ordering[:selected_num_neurons]
+        X_train_selected = ablation.filter_activations_keep_neurons(layer_train, selected_neurons)
+        X_valid_selected = ablation.filter_activations_keep_neurons(layer_valid, selected_neurons)
+        X_test_selected = ablation.filter_activations_keep_neurons(layer_test, selected_neurons)
+        _,this_score, this_result = all_activations_probe(X_train_selected,y_train,X_valid_selected,y_valid,X_test_selected,y_test,
+                                idx2label,src_tokens_test,this_model_name,sample_idx_test,need_cm)
+        result[f"probeless_selected-{selected_num_neurons}-neurons"] = this_result
+        if this_score["__OVERALL__"] > target_score:
+            minimal_neuron_set_size = selected_num_neurons
+            result["probeless_minimal_neuron_set_size"] = minimal_neuron_set_size
+            result["probeless_minimal_neuron_set"] = [int(x) for x in selected_neurons]
+            break
+    return result
+
 
 
 def alignTokenAct(tokens,activations,idx_selected):
