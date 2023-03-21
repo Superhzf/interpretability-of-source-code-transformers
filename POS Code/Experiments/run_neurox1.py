@@ -306,7 +306,7 @@ def main():
             f.close()
             
             print(f"Experimental results for {this_model}:")
-            print(f"Baseline score {all_results['baseline']['scores']}")
+            print(f"Baseline score (probing using all neurons, {neurons_per_layer} each, of all layers {num_layers}) :{all_results['baseline']['scores']}")
             print()
             print(f"Independent layerwise probing:")
             for i in range(num_layers):
@@ -325,13 +325,16 @@ def main():
                     print(f"Clustering based on the layers above: 0 to {layer_idx}:")
                     best_accuracy = 0
                     best_num_neuron = 0
+                    best_clustering_threshold = -1
                     for result_key in this_result:
                         if result_key=='no-clustering':
                             print(f"When no clustering:")
                             print(f"the probing result is {this_result[result_key]['base_results']['scores']}")
+                            clustering_threshold = -1
                             
                         else:
-                            print(f"Clustering threshold:{this_result[result_key]['clustering_threshold']}")
+                            clustering_threshold = this_result[result_key]['clustering_threshold']
+                            print(f"Clustering threshold:{clustering_threshold}")
                             print(f"The number of independent neurons:{len(this_result[result_key]['independent_neurons'])}")
                             print(f"The number of clusters:{len(this_result[result_key]['clusters'])}")
                             print(f"The probing result (CC score) is :{this_result[result_key]['base_results']['scores']}")
@@ -346,10 +349,12 @@ def main():
                             best_accuracy = accuracy['__OVERALL__']
                             best_num_neuron = minimal_neuron_set_size
                             percent_reduc = 1 - minimal_neuron_set_size/all_results['total_neurons']
+                            best_clustering_threshold = clustering_threshold
 
                 print(f"The best accuracy is: {best_accuracy}")
                 print(f"The corresponding number of neurons:{best_num_neuron}")
                 print(f"The corresponding number of neuron percentage reduction is: {percent_reduc}")
+                print(f"The corresponding clustering threshold is :{best_clustering_threshold}")
             
             print()
             print(f"probe independent neurons based on all layers with clustering (run_cc_all.py)")
@@ -379,6 +384,7 @@ def main():
             print(f"The best accuracy is: {best_accuracy}")
             print(f"The corresponding number of neurons:{best_num_neuron}")
             print(f"The corresponding number of neuron percentage reduction is: {percent_reduc}")
+            print(f"The corresponding clustering threshold is :{best_clustering_threshold}")
 
 
             print()
