@@ -177,6 +177,8 @@ def main():
             print(collections.Counter(y_test))
             print(label2idx_test)
 
+            exit(0)
+
             neurons_per_layer = X_train.shape[1]//num_layers
             assert neurons_per_layer==X_train.shape[1]/num_layers, f"Model:{this_model},Something is wrong with either number of layers={num_layers} or total neurons={X_train.shape[1]}"
             
