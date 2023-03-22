@@ -2,7 +2,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=8
 #SBATCH --mem=64G
-#SBATCH --time=16:00:00
+#SBATCH --time=3:00:00
 #SBATCH --partition=gpu
 #SBATCH --gres=gpu:rtx_6000:1
 
