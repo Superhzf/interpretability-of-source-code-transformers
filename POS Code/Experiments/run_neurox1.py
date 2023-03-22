@@ -310,7 +310,7 @@ def main():
             print(f"Experimental results for {this_model}:")
             print(f"Baseline score (probing using all neurons, {neurons_per_layer} each, of all layers {num_layers}) :{all_results['baseline']['scores']}")
             print()
-            print(f"The accuracy when only using the intercept:"{all_results['baseline']['intercept']})
+            print(f"The accuracy when only using the intercept:{all_results['baseline']['intercept']}")
             print()
             print(f"Independent layerwise probing:")
             for i in range(num_layers):
