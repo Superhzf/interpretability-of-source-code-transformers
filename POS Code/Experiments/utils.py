@@ -575,11 +575,8 @@ def selectBasedOnTrain(flat_tokens_test,X_test, y_test,flat_tokens_train,label2i
         else:
             is_selected = True
             if this_y_test == label2idx_train['STRING']:
-                # Compare this_token_train with this_token_test and remove they are similar (the length of overlap is more than 3)
-                # because it is possible that they are different but very similar. If that is the case,
-                # it is highly likely that the the label would be the same.
                 for this_token_train in flat_tokens_train:
-                    if count_str>=upper_bound or getOverlap(this_token_test,this_token_train) >= 4 or len(this_token_test)<=4:
+                    if count_str>=upper_bound:
                         is_selected = False
                         break
                 if is_selected:
@@ -591,7 +588,7 @@ def selectBasedOnTrain(flat_tokens_test,X_test, y_test,flat_tokens_train,label2i
                     count_number += 1
             elif this_y_test == label2idx_train['NAME']:
                 for this_token_train in flat_tokens_train:
-                    if count_name>= upper_bound or getOverlap(this_token_test,this_token_train) >= 2 or len(this_token_test)<=2:
+                    if count_name>= upper_bound:
                         is_selected = False
                         break
                 if is_selected:
