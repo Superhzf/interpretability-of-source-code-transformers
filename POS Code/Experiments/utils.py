@@ -78,10 +78,11 @@ class Normalization:
 
 #Extract activations.json files
 def extract_activations(file_in_name,model_description,activation_name):
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     transformers_extractor.extract_representations(model_description,
         file_in_name,
         activation_name,
-        'cuda',
+        device,
         aggregation="average" #last, first
     )
 
