@@ -1,0 +1,921 @@
+Getting activations from json files. If you need to extract them, run with --extract=True 
+
+Anayzing pretrained_GPT2
+Loading json activations from ./activations/GPT2_activations_train.json...
+54291 13.0
+Number of tokens:  507521
+length of source dictionary:  28820
+length of target dictionary:  49
+507521
+Total instances: 507521
+['W_transform', 'part_number', 'return_type', '"{0}"', '"{0}\\\\t{1}\\\\t{2}\\\\t{3}\\\\t{4}\\\\t{5}\\\\t{6}"', "'%s.has_children'", 'portItemfromSignal', 'resource_manager', 'deeper_units', 'startups', '_list_endpoint', 'gl_session', 'failed_message', 'Trans', 'global_qregs', 'lsuffix', 'curve', 'rv', 'caseB', 'avg_wchar']
+Number of samples:  507521
+Stats: Labels with their frequencies in the final set
+NAME 175779
+KEYWORD 38836
+LPAR 37541
+RPAR 36846
+DOT 35570
+COMMA 33435
+EQUAL 30541
+COLON 19841
+STRING 17117
+DEDENT 16600
+LSQB 14740
+RSQB 14613
+INDENT 11963
+NUMBER 10471
+PLUS 1939
+EQEQUAL 1830
+STAR 1500
+MINUS 1458
+LBRACE 1070
+RBRACE 845
+DOUBLESTAR 844
+SLASH 630
+PERCENT 577
+PLUSEQUAL 501
+GREATER 456
+NOTEQUAL 429
+LESS 332
+RARROW 330
+GREATEREQUAL 175
+LESSEQUAL 133
+AMPER 94
+DOUBLESLASH 94
+MINEQUAL 58
+ELLIPSIS 55
+COMMENT 37
+VBAR 35
+AT 29
+STAREQUAL 27
+RIGHTSHIFT 25
+LEFTSHIFT 25
+SLASHEQUAL 24
+VBAREQUAL 23
+TILDE 23
+CIRCUMFLEX 22
+AMPEREQUAL 2
+DOUBLESLASHEQUAL 2
+RIGHTSHIFTEQUAL 2
+ENCODING 1
+DOUBLESTAREQUAL 1
+pretrained_GPT2 distribution after trauncating:
+{0: 0.7257507132446749, 3: 0.16034483470477245, 1: 0.07067212214547301, 2: 0.04323232990507962}
+{0: 175779, 3: 38836, 1: 17117, 2: 10471}
+{'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
+Loading json activations from ./activations/GPT2_activations_valid.json...
+33619 13.0
+Number of tokens:  308882
+length of source dictionary:  19446
+length of target dictionary:  46
+308882
+Total instances: 308882
+["'is_charge'", "'start'", 'lin', 'threading', '"{0}"', 'seq', 'locals', 'Pulse_Ratio_3', 'mean_ff', 'data_type_table', 'build_panel', "'CRITICAL'", 'bass', "'isError'", 'login_user', '_get_exporter', "'season'", '0.05', 'casedata_objs', '24.']
+Number of samples:  308882
+Stats: Labels with their frequencies in the final set
+NAME 106508
+DOT 23234
+KEYWORD 22857
+LPAR 22119
+RPAR 21487
+COMMA 21037
+EQUAL 18195
+STRING 12883
+COLON 12504
+DEDENT 10176
+LSQB 8421
+RSQB 8348
+INDENT 7080
+NUMBER 5227
+EQEQUAL 1207
+PLUS 1136
+LBRACE 1077
+STAR 963
+RBRACE 913
+MINUS 741
+DOUBLESTAR 555
+SLASH 393
+PLUSEQUAL 323
+GREATER 292
+NOTEQUAL 240
+PERCENT 222
+RARROW 214
+LESS 200
+GREATEREQUAL 82
+LESSEQUAL 47
+AT 33
+AMPER 29
+DOUBLESLASH 27
+MINEQUAL 27
+VBAR 23
+COMMENT 13
+ELLIPSIS 13
+STAREQUAL 10
+LEFTSHIFT 7
+TILDE 7
+RIGHTSHIFT 4
+SLASHEQUAL 3
+CIRCUMFLEX 2
+ENCODING 1
+DOUBLESLASHEQUAL 1
+AMPEREQUAL 1
+pretrained_GPT2 distribution after trauncating:
+{0: 0.7222105441600272, 3: 0.1549889811832514, 1: 0.08735717918291236, 2: 0.035443295473809124}
+{0: 106508, 3: 22857, 1: 12883, 2: 5227}
+{'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
+Loading json activations from ./activations/GPT2_activations_test.json...
+32570 13.0
+Number of tokens:  302448
+length of source dictionary:  18380
+length of target dictionary:  49
+302448
+Total instances: 302448
+['has_next', 'rooted_line_samples', 'stateful_config_file', '_connectionPolicy', 'return_type', 'd2x', 'RESPONSE_KEY_STATUS', 'missing_item', 'threading', '"{0}"', 'seq', 'loss_fn', 'locals', 'convert_model_to_onnx', 'sdr_category', 'winnerCell', 'preprocessing', 'configcommand', "'CRITICAL'", 'fn_preprocess']
+Number of samples:  302448
+Stats: Labels with their frequencies in the final set
+NAME 106943
+DOT 23125
+LPAR 23019
+RPAR 22645
+KEYWORD 21773
+COMMA 19472
+EQUAL 18096
+COLON 11225
+DEDENT 9778
+STRING 8156
+LSQB 7717
+RSQB 7682
+NUMBER 7295
+INDENT 6823
+EQEQUAL 1344
+MINUS 1259
+PLUS 1013
+STAR 863
+LBRACE 527
+PLUSEQUAL 448
+RBRACE 436
+GREATER 417
+PERCENT 341
+NOTEQUAL 341
+SLASH 323
+DOUBLESTAR 284
+LESS 247
+GREATEREQUAL 216
+LESSEQUAL 107
+AMPER 100
+RIGHTSHIFT 61
+LEFTSHIFT 53
+MINEQUAL 48
+DOUBLESLASH 48
+RARROW 41
+VBAR 38
+ELLIPSIS 28
+COMMENT 19
+AT 17
+CIRCUMFLEX 17
+STAREQUAL 15
+SLASHEQUAL 15
+VBAREQUAL 12
+TILDE 7
+SEMI 6
+PERCENTEQUAL 5
+ENCODING 1
+DOUBLESTAREQUAL 1
+AMPEREQUAL 1
+pretrained_GPT2 distribution after trauncating:
+{0: 0.7417994409261481, 3: 0.1510262404017563, 1: 0.05657327959935353, 2: 0.05060103907274203}
+{0: 106943, 3: 21773, 1: 8156, 2: 7295}
+{'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
+Write tokens in the training set to files:
+Write tokens in the validation set to files:
+Write tokens in the testing set to files:
+
+The distribution of classes in training after removing repeated tokens between training and tesing:
+Counter({0: 5001, 3: 5001, 1: 5001, 2: 5001})
+{'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
+The distribution of classes in valid:
+Counter({3: 540, 0: 540, 1: 540, 2: 540})
+{'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
+The distribution of classes in testing:
+Counter({0: 670, 1: 670, 3: 670, 2: 670})
+{'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
+All-layer probing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Independent-layerwise probing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Incremental-layerwise probing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+select minimum layers
+Correlation matrix size (#neurons x #neurons): (1536, 1536)
+Number of clusters detected: 1450
+Correlation matrix size (#neurons x #neurons): (1536, 1536)
+Number of clusters detected: 1450
+Correlation matrix size (#neurons x #neurons): (1536, 1536)
+Number of clusters detected: 1450
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+probing independent neurons based on all layers (run_cc_all.py)
+Correlation matrix size (#neurons x #neurons): (9984, 9984)
+Number of clusters detected: 5834
+Correlation matrix size (#neurons x #neurons): (9984, 9984)
+Number of clusters detected: 3463
+Correlation matrix size (#neurons x #neurons): (9984, 9984)
+Number of clusters detected: 2583
+Correlation matrix size (#neurons x #neurons): (9984, 9984)
+Number of clusters detected: 2020
+Correlation matrix size (#neurons x #neurons): (9984, 9984)
+Number of clusters detected: 1508
+Correlation matrix size (#neurons x #neurons): (9984, 9984)
+Number of clusters detected: 999
+Correlation matrix size (#neurons x #neurons): (9984, 9984)
+Number of clusters detected: 561
+Correlation matrix size (#neurons x #neurons): (9984, 9984)
+Number of clusters detected: 207
+Correlation matrix size (#neurons x #neurons): (9984, 9984)
+Number of clusters detected: 5
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+probing independent neurons based on all layers with finer percentage (run_max_features.py)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+pretrained_GPT2 top neurons
+array([2050, 2054,    7, 4104,    9,   12,   15,   18, 2072, 8216,   28,
+         35, 2086, 8232,   42,   45, 2096, 2098,   59,   63,   68,   73,
+         75, 6223,   81,   83,   85,   88,   91, 2147,  101, 4199,  104,
+       4201,  105,  109, 6254,  122,  123,  127,  129,  133, 2185,  140,
+        145,  150,  153,  155, 4258,  162,  168, 2224, 4275,  181,  182,
+       2229, 2232,  185, 8376,  188, 8389,  198,  199,  201,  209,  210,
+        218,  222,  223, 2275,  227,  234,  235,  236,  240,  242,  243,
+       2295,  254,  259,  260,  261, 2310,  263,  264,  262, 4364,  268,
+        278,  279, 2328,  304, 4402,  306,  312, 4413,  317,  322,  324,
+        325,  330,  333, 2383, 2392, 2396, 6503, 2408, 6505, 8558,  386,
+        387,  393,  396, 2448,  401,  403,  404,  405,  411,  412,  413,
+       2463, 6562,  419,  422, 8615,  429,  433,  435, 6579,  441,  448,
+       4547,  452, 4549,  457,  464, 8659,  475,  478,  482, 4579,  484,
+       2533, 2536,  490,  502, 2553,  512, 2568,  528,  531,  532,  539,
+       2589, 4638,  545,  546,  549,  550,  552, 2601,  559,  565,  568,
+        569, 6714,  572,  573,  576,  578,  580,  584,  586,  587,  589,
+       4687,  593, 4696,  602,  606,  608,  613, 8807,  619, 4718, 2671,
+       8816,  628,  630,  634,  641,  646,  649,  662,  663,  664, 6809,
+       2722,  677, 2729, 2730,  691, 2739,  693,  698, 4797,  705,  707,
+        709,  717, 2766,  721,  732,  733,  737, 6883,  744,  749,  753,
+       2802,  754,  759,  766, 2818, 2821,  774,  780, 6927,  789, 2840,
+        792,  796,  806,  807, 2854,  810, 9006,  816, 2866, 2877,  830,
+        842,  847, 6991, 4945,  856, 7000,  860, 2915, 9064, 4969,  872,
+        878, 7022,  879,  889, 2955,  912,  920, 9113,  929, 5026,  930,
+        934,  937, 5041, 5043, 9144,  957, 3013,  967,  983,  994, 3043,
+        997,  998, 1007, 1011, 1012, 1017, 1029, 3078, 1031, 1032, 5132,
+       1041, 1043, 1046, 1047, 1053, 1061, 1065, 1071, 1076, 1085, 5181,
+       3151, 3160, 1113, 1115, 1122, 3176, 1131, 3182, 1136, 9348, 1158,
+       1167, 1179, 1182, 1183, 1186, 1187, 9383, 1191, 1193, 1194, 1203,
+       7347, 1215, 1217, 5315, 5317, 1230, 1238, 1250, 5347, 1252, 3301,
+       3304, 1257, 1266, 1269, 1282, 3336, 1289, 1296, 3357, 5406, 1317,
+       1318, 7464, 3376, 1330, 1341, 1345, 1353, 1358, 5455, 1367, 1378,
+       5486, 9584, 1398, 1404, 1416, 1419, 5535, 3490, 1443, 3497, 1456,
+       1458, 1461, 1466, 5565, 1473, 1475, 1481, 1483, 1499, 1507, 9709,
+       1527, 1533, 1542, 1548, 7695, 1574, 9775, 1584, 3634, 3645, 1615,
+       1624, 1628, 3683, 1640, 5737, 1646, 5762, 3721, 3723, 1680, 1688,
+       1695, 1697, 5794, 5811, 9912, 1725, 3781, 9925, 1735, 3811, 1765,
+       1768, 1774, 1785, 1788, 1800, 5900, 1821, 3870, 1833, 1839, 5949,
+       3919, 3928, 1899, 3950, 6041, 1951, 1954, 1961, 1962, 1969, 8115,
+       1971, 6083, 6085, 1998, 6115, 2020, 4072, 2025, 2034])
+pretrained_GPT2 top neurons per class
+{'NAME': array([ 243,  698,  878, 2866, 1193,  101,  236,  608, 1954, 2729, 5794,
+        490, 1998, 1961,  847, 1269, 1179, 3497, 1533,  264, 2072, 1735,
+       2098,  260, 1282,  565, 8232,  325,  572, 1481, 4201,  435,  387,
+       2310, 7464, 2050,  705, 1404, 1483, 6562,  602, 1800,  482,   35,
+       2722,  263,  262,  774,   75,  324, 1186, 1250, 5026,  528, 3043,
+       1011, 1466,   12,   91,  393, 6883, 1230, 1646, 3182,  242, 2955,
+       1257,  709,   83,  478,  330,   15, 3811, 3634, 2766, 1345, 1217,
+       8558, 6115,  967,  593, 1839,  464, 1458,  693, 2086, 1419,  104,
+        448, 1542, 2818, 2025, 3490, 4402,  185, 4945, 4969, 1318, 4797,
+       1238, 2275, 8807, 1507, 8216, 4258,  613, 3078, 6505,  780, 5737,
+        578, 3950,  133, 2840,   73, 3376,  122, 1085, 5347,  441, 2671,
+       3723,   85, 1774,  569, 6503, 1548, 2096, 7695]), 'STRING': array([ 709, 1800,   42,  587,  698,  411,  796,   59, 9912,  663, 2568,
+       1398,  602,  324,  573,  452,  693,  565,  188,   28,  994,  105,
+       4364, 2054, 1179, 5900,  550,  856, 1296, 1257,  482, 5317, 1032,
+        182, 9709, 1131, 1269, 1624,  539, 2915,  254, 1017, 8389, 1043,
+        576,  930, 1252,  580, 2553, 5132, 2020, 2802,  753, 1183, 1954,
+       1969, 1031,  878, 1765, 4638, 3013,   15, 4549, 2232, 4104,  830,
+       1839, 1193,   35,  589, 2147,  630,  150, 3336, 9064, 1115, 2730,
+        403, 2396, 1584, 1680, 5041, 2034,  997, 5762,  816,  236, 5406,
+       3870, 4797, 3301, 3723, 6254, 8659,  606,  912, 5565,  860, 1007,
+         81,  185, 3781, 1785, 2533, 6085, 9925, 4718,  330,  396, 7022,
+       2448, 2955,  754, 2185, 1378, 1962,  641, 2463, 2072, 3683, 4199,
+       3721, 5535,  478, 9144,  705,  929,  475, 3950, 9006,  140,  649,
+       8376, 2840, 2050,  306, 4413, 1041, 1071, 1695, 1194, 1158,  393,
+       1628, 2821,  744, 5181, 1899, 5486]), 'NUMBER': array([ 105,  201,  198,  386,  236,  422,  317, 1230,  104, 1053,  806,
+        766, 1367,    7, 1266, 1821,    9, 1456,  123,  162,   45,  168,
+        733,  235,  572, 2589, 1768,  322,  646,  404, 1443,  433,  155,
+        545,  737, 1527,  222,  792, 1473,  807,  153,  405,  552,  677,
+        810,  634,  512,  419,  448,   83,  502, 1187,  889, 2536,  531,
+        983, 1122,  412,  732,  584,  268,  181, 1345,  998, 1065,  619,
+        312, 2034, 1203,   88,  325, 1951,  789,  929,  920, 1833, 3357,
+       1215,  691, 1574, 1317, 1358,  717, 1475, 2295, 1353, 1542, 2229,
+       1725, 1499, 4072, 1461, 1788, 1047,  967,  457,  628,  278,  234,
+       3304,  484,  842, 2054,  957, 1289, 1046, 1998,  593, 2328,  664,
+       1697,  127, 1688,  401,  218,  559,  721, 1113, 9383,  413, 2224,
+       2601,  662, 1061, 1191,  568, 1029,  324, 1416]), 'KEYWORD': array([ 243,  260,  872,  188, 3160, 1640, 2392,  109,  223, 2383, 5455,
+       3151, 1615, 3928,  279,  150,  254,  759,  613, 2866,  847, 4413,
+       3919,  333,  261, 4687,  262, 1230, 6223, 5181, 1341, 1318,  549,
+        749, 1203, 1624, 1466,  201, 2275, 3645, 2877, 5026,  129,  448,
+        259,   63, 4696, 5794, 5949, 3043,  934,  199,  879, 6809, 1507,
+       5315, 2408, 6083, 5043,  236,  856, 7000, 4547, 1012, 7347, 8115,
+        240,  707,  586,  569,  429,  435, 2098,  937, 1252, 3490,   68,
+       5811, 1998, 6883, 8816, 9775, 1182, 2086, 5347, 6115,  209,  198,
+       4258, 1971,  227, 3811, 1330,  145, 6991, 6927, 2854, 6579, 9113,
+        532, 6714, 6562, 2739, 1954, 3176,  304,  210,  387,  264, 1167,
+       9584,   75, 6041,   18, 9348, 8615,  546, 1076, 1136, 4275, 7695,
+       4579])}
+pretrained_GPT2 top words
+Top words for pretrained_GPT2 neuron indx 2050 [('quote', 3.531444787979126), ('fid', 3.2962940335273743), ('splits', 3.037324905395508), ('dirname', 2.926029920578003), ('exceptions', 2.800867795944214)]
+Top words for pretrained_GPT2 neuron indx 2054 [('close', 4.682729244232178), ('settings', 4.535620621272495), ('degrees', 4.394693374633789), ('dumps', 3.995263655980428), ('preferences', 3.798919649918874)]
+Top words for pretrained_GPT2 neuron indx 7 [('sleep', 3.701439619064331), ('theme', 3.605384111404419), ('flush', 3.476854920387268), ('class', 3.3525538444519043), ('io', 3.2218196392059326)]
+Top words for pretrained_GPT2 neuron indx 4104 [('join', 4.285407589541541), ('"{},{}"', 3.1348214149475098), ('"accuracy"', 2.8497962951660156), ('escape', 2.697862148284912), ('method', 2.6669942140579224)]
+Top words for pretrained_GPT2 neuron indx 9 [('resize', 4.56425940990448), ('size', 4.357942289380885), ('keys', 3.8398972511291505), ('strip', 3.6590561866760254), ('completer', 3.4013734658559165)]
+Top words for pretrained_GPT2 neuron indx 12 [('println', 4.367537498474121), ('mul', 3.89694881439209), ('pred', 3.7552863359451294), ('cookies', 3.6574641466140747), ('count', 3.601734757423401)]
+Top words for pretrained_GPT2 neuron indx 15 [('filename', 3.127597457484195), ('default', 2.96243953704834), ('match', 2.8527026222302365), ('type', 2.852097988128662), ('attempt', 2.5905776023864746)]
+Top words for pretrained_GPT2 neuron indx 18 [('count', 3.2691195011138916), ('True', 3.197662898472377), ('sort', 3.1918318271636963), ('row', 3.187666654586792), ('tensor', 3.138000084832311)]
+Top words for pretrained_GPT2 neuron indx 2072 [('tar', 4.000033020973206), ('v', 3.6020182371139526), ('save', 3.5975029945373533), ('padding', 3.5724071979522707), ('cookies', 3.457924723625183)]
+Top words for pretrained_GPT2 neuron indx 8216 [('join', 2.9133421927690506), ('encoding', 2.898305972417196), ('RESET', 2.6944499015808105), ('"pm_b"', 2.6528711318969727), ('expanduser', 2.6321825981140137)]
+Top words for pretrained_GPT2 neuron indx 28 [('tag', 4.074949026107788), ('stride', 3.879406213760376), ('scale', 3.8284095355442593), ('graph', 3.35535991191864), ('classes', 3.3124129374821982)]
+Top words for pretrained_GPT2 neuron indx 35 [('fid', 5.20170271396637), ('ord', 4.392408939508291), ('crop', 4.360888361930847), ('cookies', 4.162140488624573), ('dumps', 4.145812034606934)]
+Top words for pretrained_GPT2 neuron indx 2086 [('logger', 4.066462993621826), ('Image', 3.1687653485466454), ('aux1', 2.872884750366211), ('path', 2.837361430579966), ('ET', 2.765549898147583)]
+Top words for pretrained_GPT2 neuron indx 8232 [('println', 3.4515042304992676), ('Iterable', 3.4073617458343506), ('isfile', 3.2960225343704224), ('os', 3.2155904759620797), ('sub', 3.1241953372955322)]
+Top words for pretrained_GPT2 neuron indx 42 [('max', 5.213171601295471), ('reshape', 4.624247074127197), ('decompress', 4.058770179748535), ('settings', 3.818334170750209), ('child', 3.6698633432388306)]
+Top words for pretrained_GPT2 neuron indx 45 [('gamma', 5.996925989786784), ('format', 4.814549045562744), ('img', 4.169929647445679), ('println', 3.7709808349609375), ('rotate', 3.558615207672119)]
+Top words for pretrained_GPT2 neuron indx 2096 [('uniform', 4.69340671192516), ('conf', 3.8489008247852325), ('Sequence', 3.5685622692108154), ('host', 3.1719815731048584), ('println', 3.049483060836792)]
+Top words for pretrained_GPT2 neuron indx 2098 [('download', 4.327006101608276), ('pop', 4.023572524388631), ('111', 3.3129864931106567), ('RED', 3.257373094558716), ('int', 3.1899219751358032)]
+Top words for pretrained_GPT2 neuron indx 59 [('default', 4.200488567352295), ('sort', 3.922743797302246), ('host', 3.44463198525565), ('contiguous', 3.404144525527954), ('child', 3.346725344657898)]
+Top words for pretrained_GPT2 neuron indx 63 [('Sequence', 3.7107131481170654), ('stride', 3.2247061729431152), ('d', 3.023983421779814), ("'cos'", 2.7327582836151123), ('sprint', 2.6887295246124268)]
+Top words for pretrained_GPT2 neuron indx 68 [('items', 6.082454681396484), ('units', 5.821767965952556), ('streams', 5.604438066482544), ('keywords', 5.329377174377441), ('channels', 5.177719593048096)]
+Top words for pretrained_GPT2 neuron indx 73 [("')'", 3.6077440977096558), ('ele', 3.5926265716552734), ('fid', 3.2565102577209473), ("':'", 3.195245385169983), ('class', 3.137922763824463)]
+Top words for pretrained_GPT2 neuron indx 75 [('math', 2.644561211268107), ('git', 2.6267285346984863), ('pad', 2.6097649335861206), ('stack', 2.602271318435669), ('exit', 2.57806134223938)]
+Top words for pretrained_GPT2 neuron indx 6223 [('mul', 3.58774995803833), ('KeyError', 3.488998055458069), ('enumerate', 3.444050603442722), ('git', 3.433819055557251), ('main_dev', 3.149446725845337)]
+Top words for pretrained_GPT2 neuron indx 81 [('Optional', 5.494332790374756), ('"\\', 4.417485952377319), ('cat', 4.393529415130615), ('Exception', 4.215651035308838), ('"<HTTP>"', 4.1292948722839355)]
+Top words for pretrained_GPT2 neuron indx 83 [('append', 5.516792134540837), ('translate', 4.9188255071640015), ('mean', 4.822070956230164), ('div', 4.355149745941162), ('pad', 4.226224422454834)]
+Top words for pretrained_GPT2 neuron indx 85 [('sprint', 4.175312042236328), ('classes', 3.76449445883433), ('uniform', 3.668115637519143), ('lang', 3.548121392726898), ('letters', 3.4770113229751587)]
+Top words for pretrained_GPT2 neuron indx 88 [('buffer', 3.839598536491394), ('finally', 3.81306529045105), ('mode', 3.4065175586276584), ('force', 3.3226512670516968), ('im', 3.2018301486968994)]
+Top words for pretrained_GPT2 neuron indx 91 [('attempt', 3.8418965339660645), ('width', 3.684236012972318), ('stack', 3.4035749435424805), ('splits', 3.236884593963623), ('gui', 3.2363064289093018)]
+Top words for pretrained_GPT2 neuron indx 2147 [('param', 4.39988358815511), ('keywords', 4.180636882781982), ('format', 4.095911750793457), ('111', 3.918511986732483), ('render', 3.614338517189026)]
+Top words for pretrained_GPT2 neuron indx 101 [('cookies', 4.505536437034607), ('fid', 4.372629761695862), ('"""wrapper"""', 3.619659662246704), ('result', 3.1644860605398812), ('shuffle', 3.084827184677124)]
+Top words for pretrained_GPT2 neuron indx 4199 [('confidence', 3.453628659248352), ('barrier', 2.916902542114258), ('tuple', 2.793738842010498), ('202', 2.738061785697937), ('11', 2.7102563083171844)]
+Top words for pretrained_GPT2 neuron indx 104 [('axis', 5.165904720624288), ('replace', 4.986565709114075), ('contiguous', 4.924874782562256), ('pop', 4.527897040049235), ('join', 4.427736626731025)]
+Top words for pretrained_GPT2 neuron indx 4201 [('tw', 4.0884810090065), ('else', 3.085324254718799), ('KeyboardInterrupt', 3.0355567932128906), ('o', 3.018435001373291), ('log', 2.9318907260894775)]
+Top words for pretrained_GPT2 neuron indx 105 [('mean', 4.212026953697205), ('print', 4.08282715624029), ('splits', 4.06154203414917), ('key', 3.9252312183380127), ('Color', 3.753796100616455)]
+Top words for pretrained_GPT2 neuron indx 109 [('root', 4.298492456304616), ('os', 4.259005415028539), ('args', 3.8198703726132712), ('sleep', 3.416084051132202), ('gui', 3.307710886001587)]
+Top words for pretrained_GPT2 neuron indx 6254 [('training_file', 2.642946481704712), ('Contrast', 2.55855131149292), ('_training_file', 2.4874956607818604), ('e', 2.477923168290046), ("'.git'", 2.3953577280044556)]
+Top words for pretrained_GPT2 neuron indx 122 [('"\\', 3.0565580626328788), ('stride', 2.835546890894572), ("''", 2.753077184831774), ('barrier', 2.6490542888641357), ('False', 2.461757784936486)]
+Top words for pretrained_GPT2 neuron indx 123 [('gui', 4.229225158691406), ('clone', 3.832301616668701), ('resize', 3.8224785327911377), ('sleep', 3.5502779483795166), ('perspective', 3.454664468765259)]
+Top words for pretrained_GPT2 neuron indx 127 [('colors', 3.6811280846595764), ('cfg', 2.859006404876709), ('center', 2.7576549847920737), ('crop', 2.6855376064777374), ('match', 2.5111107642834005)]
+Top words for pretrained_GPT2 neuron indx 129 [('eq', 5.907154083251953), ('resp', 5.287004321813583), ('dictify', 5.076478600502014), ('Response', 4.649769973754883), ('response', 4.4507171048058405)]
+Top words for pretrained_GPT2 neuron indx 133 [('mul', 4.542158603668213), ('loads', 4.245183348655701), ('head', 3.773292899131775), ('letters', 3.36213755607605), ('mult', 3.3505890369415283)]
+Top words for pretrained_GPT2 neuron indx 2185 [('clone', 4.089718341827393), ('201', 3.982844670613607), ('arg', 3.9569501876831055), ('close', 3.9494922161102295), ('total', 3.921868324279785)]
+Top words for pretrained_GPT2 neuron indx 140 [('copy', 4.0889137268066404), ('encoding', 3.738924821217855), ('scale', 3.673128809247698), ('total', 3.6200567483901978), ('type', 3.4862146377563477)]
+Top words for pretrained_GPT2 neuron indx 145 [('continue', 3.5109403928120932), ('type', 3.2256457805633545), ('return', 3.187301239998044), ('finally', 3.1000449657440186), ('resize', 2.960417628288269)]
+Top words for pretrained_GPT2 neuron indx 150 [('param', 4.520799318949382), ('q', 3.6835129261016846), ('axis', 3.483412186304728), ('logger', 3.482679843902588), ('len', 3.4668444828553633)]
+Top words for pretrained_GPT2 neuron indx 153 [('error', 5.568177223205566), ('ref', 5.48434575398763), ('theme', 4.963672637939453), ('extract', 4.431453704833984), ('finally', 3.920935034751892)]
+Top words for pretrained_GPT2 neuron indx 155 [('round', 4.041375255584716), ('classes', 3.9283661047617593), ('moves', 3.7943809032440186), ('translate', 3.56958869099617), ('quality', 3.5462594032287598)]
+Top words for pretrained_GPT2 neuron indx 4258 [('exp', 4.978871822357178), ('Color', 3.983203649520874), ('width', 3.8890597820281982), ('count', 3.338428258895874), ('len', 3.2611081925305454)]
+Top words for pretrained_GPT2 neuron indx 162 [('requests', 3.81069008509318), ('path', 3.76489779624072), ('request', 3.6517322569182427), ('log', 3.5240684509277345), ('target', 3.4279723167419434)]
+Top words for pretrained_GPT2 neuron indx 168 [('theme', 4.375475883483887), ('dir', 4.235414505004883), ('answer', 3.945899724960327), ('head', 3.8531793355941772), ('narrow', 3.773033380508423)]
+Top words for pretrained_GPT2 neuron indx 2224 [('os', 4.866926287782603), ('round', 4.047589826583862), ('close', 3.7678089141845703), ('join', 3.7099955479303994), ('fid', 3.6168246269226074)]
+Top words for pretrained_GPT2 neuron indx 4275 [('args', 3.5212401747703552), ('termios', 3.3497400283813477), ('decode', 3.2043981075286867), ('dumps', 3.194610516230265), ('path', 3.1935530157590453)]
+Top words for pretrained_GPT2 neuron indx 181 [('preferred', 4.495183706283569), ('answer', 4.391740798950195), ('fid', 3.9292625188827515), ('str', 3.4987401366233826), ('tar', 3.220526695251465)]
+Top words for pretrained_GPT2 neuron indx 182 [('clone', 5.243379592895508), ('hue', 5.23833429813385), ('min', 4.6866936683654785), ('suffix', 3.808392286300659), ('round', 3.7605855464935303)]
+Top words for pretrained_GPT2 neuron indx 2229 [('np', 4.405975583272102), ('mul', 4.330680847167969), ('padding', 4.265080920855204), ('append', 3.85721585227222), ('param', 3.498767932256063)]
+Top words for pretrained_GPT2 neuron indx 2232 [('len', 3.781374151056463), ('XML', 3.6239423751831055), ('BOLD', 3.4758150577545166), ('palette', 3.2100791931152344), ('open', 3.1433984438578286)]
+Top words for pretrained_GPT2 neuron indx 185 [('tuple', 5.269599437713623), ('tile', 5.2071733474731445), ('range', 4.652362732660203), ('height', 3.9925337488001045), ('plugins', 3.899483839670817)]
+Top words for pretrained_GPT2 neuron indx 8376 [('BOLD', 4.0554178555806475), ('stdout', 3.774101495742798), ('MAX_WBITS', 3.089975595474243), ('root', 2.8089185480413765), ('escape', 2.80489981174469)]
+Top words for pretrained_GPT2 neuron indx 188 [('cookies', 4.334723711013794), ('upper', 4.22916316986084), ('preferred', 4.218695521354675), ('fill', 4.147508064905803), ('lower', 4.066484292348226)]
+Top words for pretrained_GPT2 neuron indx 8389 [("']'", 2.8575878938039145), ('">"', 2.6253409385681152), ("'://'", 2.506572961807251), ('accuracy', 2.504190683364868), ('pow', 2.4957327842712402)]
+Top words for pretrained_GPT2 neuron indx 198 [('finally', 3.850663423538208), ('rotate', 3.6221641302108765), ('endpoint', 3.474462866783142), ('Session', 3.3520214557647705), ('conf', 3.2353082597255707)]
+Top words for pretrained_GPT2 neuron indx 199 [('map', 3.7484166622161865), ('escape', 3.7103464603424072), ('classes', 3.705290198326111), ('perspective', 3.4022440910339355), ('border', 3.2223410606384277)]
+Top words for pretrained_GPT2 neuron indx 201 [('squeeze', 4.814268589019775), ('resp', 4.527994483709335), ('exceptions', 4.456655502319336), ('site', 4.2823052406311035), ('headers', 4.281369079243053)]
+Top words for pretrained_GPT2 neuron indx 209 [('override', 4.907098865509033), ('range', 4.855080786205473), ('array', 4.484793186187744), ('math', 4.4198853969573975), ('center', 4.266586780548096)]
+Top words for pretrained_GPT2 neuron indx 210 [('zip', 2.9539853731791177), ('tmp', 2.8571583032608032), ('translate', 2.8440891206264496), ('url', 2.8198420018264927), ('contiguous', 2.7769534587860107)]
+Top words for pretrained_GPT2 neuron indx 218 [('ratio', 4.576144899640765), ('site', 4.481761932373047), ('sleep', 4.089191436767578), ('confidence', 4.02815306186676), ('pid', 3.90830135345459)]
+Top words for pretrained_GPT2 neuron indx 222 [('translate', 4.52860689163208), ('decode', 3.9507397174835206), ('extract', 3.9226737022399902), ('target', 3.8998960653940835), ('torch', 3.832942614684234)]
+Top words for pretrained_GPT2 neuron indx 223 [('param', 3.5502074559529624), ('dumps', 3.050233523050944), ('tw', 2.964017689228058), ('io', 2.8763930797576904), ('ord', 2.8484173783889184)]
+Top words for pretrained_GPT2 neuron indx 2275 [('len', 4.1938993172212085), ('Exception', 4.1489481925964355), ('cat', 3.6891520023345947), ('flatten', 3.5560765266418457), ('sqrt', 3.4615215063095093)]
+Top words for pretrained_GPT2 neuron indx 227 [('close', 4.916954040527344), ('theme', 4.752542495727539), ('await', 4.720203446017371), ('expanded', 4.120901584625244), ('f', 4.069545609610421)]
+Top words for pretrained_GPT2 neuron indx 234 [('shuffle', 5.67112922668457), ('reporthook', 5.25159215927124), ('dist', 4.876370429992676), ("'='", 4.824873606363933), ('np', 4.811909418839675)]
+Top words for pretrained_GPT2 neuron indx 235 [('import', 4.58290073606703), ('colors', 4.26109504699707), ('item', 4.135408520698547), ('clone', 3.900641441345215), ('keys', 3.664988088607788)]
+Top words for pretrained_GPT2 neuron indx 236 [('flush', 5.537267446517944), ('Number', 4.205239772796631), ('default', 3.9450151920318604), ('rotate', 3.7293670177459717), ('set', 3.3327341079711914)]
+Top words for pretrained_GPT2 neuron indx 240 [('ref', 4.168861786524455), ('dict', 4.108426094055176), ('Sequence', 3.9392683506011963), ('RED', 3.5494205951690674), ('hue', 3.4891937971115112)]
+Top words for pretrained_GPT2 neuron indx 242 [('download', 3.7629234790802), ('update', 3.3802402019500732), ('extract', 3.3499767780303955), ('replace', 3.170786678791046), ('zip', 3.0777263243993125)]
+Top words for pretrained_GPT2 neuron indx 243 [('contrast', 3.744363248348236), ('ow', 3.498936573664347), ('AlexNet', 3.2380433082580566), ('exp', 3.08672833442688), ('quality', 3.0809134244918823)]
+Top words for pretrained_GPT2 neuron indx 2295 [('pad', 4.711942195892334), ('query', 3.4806757515127007), ('r\\', 3.4602409390842213), ('"<HTTP>"', 3.4392285346984863), ('self', 3.414391563317486)]
+Top words for pretrained_GPT2 neuron indx 254 [('len', 3.3384979746558447), ('strip', 3.219227155049642), ('cfg', 3.2007644176483154), ('sprint', 3.1022226810455322), ('">"', 3.005242347717285)]
+Top words for pretrained_GPT2 neuron indx 259 [('permute', 4.531691074371338), ('part', 4.522186994552612), ('borders', 4.488866806030273), ('match', 4.487882210658147), ('preferred', 4.443477392196655)]
+Top words for pretrained_GPT2 neuron indx 260 [('opt', 4.637590249379476), ('stride', 4.164122263590495), ('dict', 4.097509860992432), ('preferred', 3.978643536567688), ('filter', 3.9709880352020264)]
+Top words for pretrained_GPT2 neuron indx 261 [('axis', 3.917137364546458), ('cookies', 3.5844162702560425), ('directories', 3.4053321480751038), ('contiguous', 3.2791099548339844), ('minutes', 3.263711452484131)]
+Top words for pretrained_GPT2 neuron indx 2310 [('dim', 6.523407936096191), ('sub', 5.240301609039307), ('accuracy', 4.747324466705322), ('param', 4.544248898824056), ('redirect', 4.533688068389893)]
+Top words for pretrained_GPT2 neuron indx 263 [('lang', 4.391085004806518), ('offset', 3.491838057835897), ('terminated', 3.255476713180542), ('class', 3.074608564376831), ('attention', 3.0094544887542725)]
+Top words for pretrained_GPT2 neuron indx 264 [('req', 4.995365279061454), ('io', 4.9854254722595215), ('seq', 4.5634660720825195), ('exp', 3.9382972717285156), ('v', 3.8763108253479004)]
+Top words for pretrained_GPT2 neuron indx 262 [('conf', 3.553106039762497), ('ratio', 3.3758410726274763), ('categories', 3.229705286026001), ('False', 3.087051442192822), ('pred', 3.014455556869507)]
+Top words for pretrained_GPT2 neuron indx 4364 [('Contrast', 4.395446300506592), ('urljoin', 4.196707248687744), ('stream', 3.8167976311274936), ('quote', 3.518895149230957), ('Iterable', 3.408973455429077)]
+Top words for pretrained_GPT2 neuron indx 268 [('download', 4.004817008972168), ('default', 3.511521100997925), ('theme', 3.385582685470581), ('convert', 3.293885898590088), ('div', 3.2665276527404785)]
+Top words for pretrained_GPT2 neuron indx 278 [('pattern', 3.8019000053405763), ('patterns', 3.5780473709106446), ('log', 3.5126118659973145), ('201', 3.501008669535319), ('port', 3.2817765871683755)]
+Top words for pretrained_GPT2 neuron indx 279 [('seq', 6.344546556472778), ('io', 4.893502712249756), ('channels', 4.446385860443115), ('println', 4.332296848297119), ('scale', 4.165058408464704)]
+Top words for pretrained_GPT2 neuron indx 2328 [('fid', 5.029878854751587), ('Image', 4.598030707415412), ('img', 4.439931072180087), ('resize', 4.438996076583862), ('sys', 3.9730878353118895)]
+Top words for pretrained_GPT2 neuron indx 304 [('merge', 3.881565091333219), ('mean', 3.5587130784988403), ('exceptions', 3.3780150413513184), ('axis', 3.3039017717043557), ('decompress', 3.2738609313964844)]
+Top words for pretrained_GPT2 neuron indx 4402 [('StopIteration', 3.3146727085113525), ('get_enabled', 3.2580623626708984), ('111', 3.0168559551239014), ('classes', 2.973697622617086), ('index_error', 2.86690092086792)]
+Top words for pretrained_GPT2 neuron indx 306 [('Contrast', 6.91896390914917), ('quote', 5.1780900955200195), ('im', 5.126751899719238), ('contrast', 4.584864854812622), ('descend', 4.025362968444824)]
+Top words for pretrained_GPT2 neuron indx 312 [('extract', 3.887057304382324), ('timeout', 3.635900616645813), ('axis', 3.572513302167257), ('write', 3.527139107386271), ('repetitions', 3.4518980979919434)]
+Top words for pretrained_GPT2 neuron indx 4413 [('struct', 3.864452838897705), ('preferences', 3.57171155611674), ('stride', 3.221808433532715), ('seek', 3.1706645488739014), ('scheme', 3.0262832641601562)]
+Top words for pretrained_GPT2 neuron indx 317 [('parse', 3.7933430671691895), ('descend', 3.42394757270813), ('AlexNet', 3.281698703765869), ('exit', 3.2676398754119873), ('torch', 3.267589317785727)]
+Top words for pretrained_GPT2 neuron indx 322 [('dumps', 4.7792426745096845), ('communicate', 4.442793369293213), ('gui', 4.225399017333984), ('sprint', 3.948091506958008), ('dom', 3.7717434406280517)]
+Top words for pretrained_GPT2 neuron indx 324 [('Session', 4.8320794105529785), ('theme', 4.581546306610107), ('id', 3.999983310699463), ('session', 3.8356564044952393), ('site', 3.802860736846924)]
+Top words for pretrained_GPT2 neuron indx 325 [('ET', 3.906416893005371), ('predicted', 3.6252766251564026), ('barrier', 3.616478681564331), ('redirect', 3.547537326812744), ('merge', 3.5291674826826367)]
+Top words for pretrained_GPT2 neuron indx 330 [('args', 3.920869767665863), ('error', 3.7489657402038574), ('eq', 3.663576126098633), ('channels', 3.3283066749572754), ('resize', 3.3208673000335693)]
+Top words for pretrained_GPT2 neuron indx 333 [('pop', 4.525144894917806), ('categories', 4.355166053771972), ('stats', 4.059477627277374), ('open', 3.873150873184204), ('suffix', 3.815507650375366)]
+Top words for pretrained_GPT2 neuron indx 2383 [('seconds', 3.2848771810531616), ('join', 3.2665750715467663), ('mul', 3.094245433807373), ('form', 2.9386157194773355), ('"\\', 2.908388838171959)]
+Top words for pretrained_GPT2 neuron indx 2392 [('logger', 4.989674091339111), ('sub', 4.85411262512207), ('tag', 4.156453549861908), ('log', 3.6422895908355715), ('div', 3.5112428665161133)]
+Top words for pretrained_GPT2 neuron indx 2396 [('themes', 4.025688158141242), ('tw', 3.8988881707191467), ('Exception', 3.5358216762542725), ('softmax', 3.511277198791504), ('version', 3.089040994644165)]
+Top words for pretrained_GPT2 neuron indx 6503 [('confidence', 3.469332277774811), ('F', 3.0958101749420166), ('get', 2.8124251582405786), ('LongTensor', 2.808120012283325), ('tuple', 2.793833374977112)]
+Top words for pretrained_GPT2 neuron indx 2408 [('arg', 4.093926906585693), ('border', 4.036021828651428), ('timestamp', 3.7641595204671225), ('axis', 3.6229361494382224), ('parse', 3.463576853275299)]
+Top words for pretrained_GPT2 neuron indx 6505 [('else', 3.5151986983215924), ('skill', 3.003100872039795), ('activation', 2.8733344078063965), ('tw', 2.872568190097809), ('stream', 2.8648114715303694)]
+Top words for pretrained_GPT2 neuron indx 8558 [("'metadata.json'", 3.0240511894226074), ('answer', 2.855799913406372), ("'.cfg'", 2.6788089275360107), ('training_file', 2.5660743713378906), ("'../..'", 2.5256261825561523)]
+Top words for pretrained_GPT2 neuron indx 386 [('id', 3.8756975531578064), ('descend', 3.8285083770751953), ('engines', 3.7263965606689453), ('xmaps', 3.6392053365707397), ('errstate', 3.524552345275879)]
+Top words for pretrained_GPT2 neuron indx 387 [('code', 5.01837420463562), ('resize', 4.736866593360901), ('row', 4.488324165344238), ('Image', 4.028351643506219), ('expanded', 3.944359302520752)]
+Top words for pretrained_GPT2 neuron indx 393 [('six', 4.283073425292969), ('dist', 3.98862361907959), ('correct', 3.4370967149734497), ('gui', 3.3989245891571045), ('class', 3.315122127532959)]
+Top words for pretrained_GPT2 neuron indx 396 [('UnicodeWriter', 3.84447979927063), ('theme', 3.5629689693450928), ('ET', 3.5455310344696045), ('headers', 3.524532209743153), ('save', 3.5191653251647947)]
+Top words for pretrained_GPT2 neuron indx 2448 [('redirect', 3.507181406021118), ('cookies', 2.7736631631851196), ('moves', 2.6596498489379883), ('log', 2.6258672952651976), ('streams', 2.5654478669166565)]
+Top words for pretrained_GPT2 neuron indx 401 [('clone', 5.249391555786133), ('suffix', 4.389713764190674), ('engine', 4.095996856689453), ('crop', 3.929463803768158), ('120', 3.7919939756393433)]
+Top words for pretrained_GPT2 neuron indx 403 [('letters', 3.9440383911132812), ('git', 3.729848623275757), ('ET', 3.6519663333892822), ('logger', 3.567408800125122), ('resp', 3.5268963128328323)]
+Top words for pretrained_GPT2 neuron indx 404 [('sprint', 3.7272825241088867), ('exceptions', 3.604253053665161), ('fid', 3.4216887950897217), ('root', 3.2917493458451896), ('\\', 3.135557641585668)]
+Top words for pretrained_GPT2 neuron indx 405 [('Response', 2.694203233718872), ('str', 2.6391004621982574), ('map', 2.498997449874878), ('info', 2.4932444989681244), ('override', 2.4638412475585936)]
+Top words for pretrained_GPT2 neuron indx 411 [('parts', 4.637953519821167), ('tw', 4.07045704126358), ('decompress', 3.4359843730926514), ('im', 3.3968021869659424), ('dist', 3.3523542881011963)]
+Top words for pretrained_GPT2 neuron indx 412 [('mean', 4.46679413318634), ('encoding', 4.05837607383728), ('device', 3.896510648727417), ('logger', 3.7872371673583984), ('quote', 3.770543098449707)]
+Top words for pretrained_GPT2 neuron indx 413 [('mul', 3.971440553665161), ('settings', 3.7094368594033376), ("'sic'", 3.0948939323425293), ('timestamp', 3.0814258257548013), ('categories', 3.012203884124756)]
+Top words for pretrained_GPT2 neuron indx 2463 [('palette', 3.8918201128641763), ('shape', 3.659947729110718), ('join', 3.4785830643441944), ('enhance', 3.406965494155884), ('prepare', 3.377852439880371)]
+Top words for pretrained_GPT2 neuron indx 6562 [('exp', 3.590273141860962), ('AlexNet', 3.5087995529174805), ('count', 3.4061367511749268), ('Lambda', 3.2243146896362305), ('width', 3.1841182708740234)]
+Top words for pretrained_GPT2 neuron indx 419 [('append', 3.3037494682684176), ('201', 3.174005111058553), ('mode', 3.003337118360731), ('headers', 2.976149645718661), ('minutes', 2.912656307220459)]
+Top words for pretrained_GPT2 neuron indx 422 [('param', 4.297392686208089), ('clone', 3.6962194442749023), ('prefix', 3.3819917837778726), ('pid', 3.0838167667388916), ('rotate', 3.038411855697632)]
+Top words for pretrained_GPT2 neuron indx 8615 [("'#ffb000'", 5.427948474884033), ("'amzn1.echo-api.session.3c6ebffd-55b9-4e1a-bf3c-c921c1801b63'", 5.110180854797363), ("'#fe6100'", 5.010389804840088), ("'amzn1.echo-api.request.388d0f6e-04b9-4450-a687-b9abaa73ac6a'", 4.946913242340088), ("'amzn1.ask.skill.8b17a5de-3749-4919-aa1f-e0bbaf8a46a6'", 4.682157516479492)]
+Top words for pretrained_GPT2 neuron indx 429 [('contiguous', 4.828364849090576), ('Session', 3.9886534214019775), ('expanded', 3.2326720555623374), ('dict', 3.1903882026672363), ('map', 3.0393580198287964)]
+Top words for pretrained_GPT2 neuron indx 433 [('tag', 5.841646194458008), ('dir', 5.265327572822571), ('strip', 4.734227339426677), ('append', 4.584054063006145), ('dirpath', 4.1600353717803955)]
+Top words for pretrained_GPT2 neuron indx 435 [('children', 5.247501969337463), ('days', 5.086329936981201), ('dist', 4.95806884765625), ('sprint', 4.8554887771606445), ('pow', 4.648338317871094)]
+Top words for pretrained_GPT2 neuron indx 6579 [('path', 3.7241500086066397), ('Request', 3.722134828567505), ('URLError', 3.5822694301605225), ('headers', 3.49652268669822), ('PERSPECTIVE', 3.454092264175415)]
+Top words for pretrained_GPT2 neuron indx 441 [('answer', 4.287092208862305), ('logger', 4.179238796234131), ('now', 4.00724184513092), ('crop', 3.907993793487549), ('round', 3.8523615837097167)]
+Top words for pretrained_GPT2 neuron indx 448 [('descend', 4.009497165679932), ('rotate', 3.936578392982483), ('Contrast', 3.882274866104126), ('patterns', 3.8633718490600586), ('confidence', 3.793058753013611)]
+Top words for pretrained_GPT2 neuron indx 4547 [('letters', 4.769764184951782), ('filename', 4.275600794114564), ('set', 3.9153891086578367), ('split', 3.753954335262901), ('splits', 3.5239219665527344)]
+Top words for pretrained_GPT2 neuron indx 452 [('stride', 3.896737813949585), ('Color', 3.88138747215271), ('pop', 3.3841939767201743), ('area', 3.2301971912384033), ('uniform', 3.2224271947687324)]
+Top words for pretrained_GPT2 neuron indx 4549 [('Sequence', 2.8591880798339844), ('Response', 2.744178533554077), ('println', 2.6143715381622314), ('ele', 2.564198613166809), ("'microsoft'", 2.4700396060943604)]
+Top words for pretrained_GPT2 neuron indx 457 [('min', 4.070240365134345), ('ids', 3.8976594607035318), ('encoding', 3.8704919815063477), ('unicode', 3.841813087463379), ('stride', 3.777693192164103)]
+Top words for pretrained_GPT2 neuron indx 464 [('img', 4.74195116024751), ('conf', 3.7954046428203583), ('irange', 3.7563209533691406), ('ids', 3.6191113789876304), ('Response', 3.552124357223511)]
+Top words for pretrained_GPT2 neuron indx 8659 [('ratio', 4.029568535940988), ('degrees', 3.9041499296824136), ('round', 3.516150379180908), ('min', 3.469765133327908), ('upper', 3.3511197566986084)]
+Top words for pretrained_GPT2 neuron indx 475 [('dir', 5.355082750320435), ('ele', 4.799189329147339), ('pid', 4.615704536437988), ('basename', 4.55009126663208), ('ratio', 4.507999352046421)]
+Top words for pretrained_GPT2 neuron indx 478 [('eq', 4.500965595245361), ('engines', 3.6378867626190186), ('clone', 3.51106858253479), ('crop', 3.4341410994529724), ('row', 3.209524691104889)]
+Top words for pretrained_GPT2 neuron indx 482 [('barrier', 4.784018516540527), ('model', 4.3246750831604), ('fill', 4.120750109354655), ('mul', 3.566612720489502), ('ratio', 3.4931266648428783)]
+Top words for pretrained_GPT2 neuron indx 4579 [('Exception', 5.036916732788086), ('cat', 3.6729886531829834), ('fh', 3.5323398113250732), ('pattern', 3.347974967956543), ('param', 3.303824027379354)]
+Top words for pretrained_GPT2 neuron indx 484 [('sleep', 3.6941075325012207), ('dict', 3.665320873260498), ('sys', 3.281340503692627), ('req', 3.235617024557931), ('id', 3.0668500661849976)]
+Top words for pretrained_GPT2 neuron indx 2533 [('rotate', 4.093207955360413), ('RED', 3.619520902633667), ('Iterable', 3.5882015228271484), ('barrier', 3.575063943862915), ('s', 3.3256591388157437)]
+Top words for pretrained_GPT2 neuron indx 2536 [('tw', 3.904695987701416), ('encoding', 3.8125078678131104), ('encode', 3.5957792599995932), ('format', 3.505740556716919), ('quote', 3.4599599838256836)]
+Top words for pretrained_GPT2 neuron indx 490 [('dom', 5.10324125289917), ('contiguous', 4.310166358947754), ('image', 4.26878825823466), ('np', 3.9671356739142003), ('println', 3.8642795085906982)]
+Top words for pretrained_GPT2 neuron indx 502 [('seq', 5.0683369636535645), ('descend', 4.157232761383057), ('q', 3.9329564571380615), ('ratio', 3.8872556005205428), ('struct', 3.825737237930298)]
+Top words for pretrained_GPT2 neuron indx 2553 [('count', 6.063497304916382), ('ratio', 4.292015654700143), ('len', 4.067319664088163), ('decode', 3.99646110534668), ('tuple', 3.803125023841858)]
+Top words for pretrained_GPT2 neuron indx 512 [('attempt', 4.081671714782715), ('six', 3.8403537273406982), ('fid', 3.8095072507858276), ('len', 2.7733888897028836), ('degrees', 2.7727530797322593)]
+Top words for pretrained_GPT2 neuron indx 2568 [('join', 4.469434592458937), ('struct', 3.9325544834136963), ('merge', 3.5659428553921835), ('mul', 3.1495726108551025), ('split', 3.1188459961037887)]
+Top words for pretrained_GPT2 neuron indx 528 [("'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJodHRwczovL2FwaS5hbWF6b25hbGV4YS5jb20iLCJpc3MiOiJBbGV4YVNraWxsS2l0Iiwic3ViIjoiYW16bjEuYXNrLnNraWxsLjhiMTdhNWRlLTM3NDktNDkxOS1hYTFmLWUwYmJhZjhhNDZhNiIsImV4cCI6MTU0NTIyMzY1OCwiaWF0IjoxNTQ1MjIwMDU4LCJuYmYiOjE1NDUyMjAwNTgsInByaXZhdGVDbGFpbXMiOnsiY29uc2VudFRva2VuIjpudWxsLCJkZXZpY2VJZCI6ImFtem4xLmFzay5kZXZpY2UuQUZRQU1MWU9ZUVVVQUNTRTdIRlZZUzRaSTJLVUIzNUpQSFFSVVBLVERDQVUzQTQ3V0VTUDVMNTdLU1dUNUw2UlQzRlZYV0g0T0EyRE5QSlJNWjJWR0VJQUNGM1BKRUlEQ09VV1VCQzRXNVJQSk5VQjNaVlQyMko0VUpONVVMM1QyVUJQMzZSVkhGSjVQNElQVDJIVVkzUDJZT1kzM0lPVTRPMzNIVUFHN1IyQlVOUk9FSDRUMiIsInVzZXJJZCI6ImFtem4xLmFzay5hY2NvdW50LkFHUjRSMkxPVkhNTk1OT0dST0JWTkxVN0NMNEM1N1g0NjVYSkYyVDJGNTVPVVhOVExDWERRUDNJNTVVWFpJQUxFS0taSjZRMk1BNU1FRlNNWlZQRUw1TlZaUzZGWkxFVTQ0NEJWT0xQQjVXVkg1Q0hZVFFBS0dEN1ZGTEdQUkZaVkhISDJOSUI0SEtOSEhHWDZITTZTNlFEV0NLWFdPSVpMN09OTlFTQlVDVlBNWlFLTUNZWFJHNUJBMlBPWUVYRkRYUlhDR0VWRFdWU01QUSJ9fQ.jcomYhBhU485T4uoe2NyhWnL-kZHoPQKpcycFqa-1sy_lSIitfFGup9DKrf2NkN-I9lZ3xwq9llqx9WRN78fVJjN6GLcDhBDH0irPwt3n9_V7_5bfB6KARv5ZG-JKOmZlLBqQbnln0DAJ10D8HNiytMARNEwduMBVDNK0A5z6YxtRcLYYFD2-Ieg_V8Qx90eE2pd2U5xOuIEL0pXfSoiJ8vpxb8BKwaMO47tdE4qhg_k7v8ClwyXg3EMEhZFjixYNqdW1tCrwDGj58IWMXDyzZhIlRMh6uudMOT6scSzcNVD0v42IOTZ3S_X6rG01B7xhUDlZXMqkrCuzOyqctGaPw'", 8.630392074584961), ("'u'", 4.762148857116699), ("'filename'", 4.386558532714844), ("'Z5H5wqd06ExFVPNfJiqhKvAFjkf+cTVodOUirucHGcEVAMO1LfvgqWUkZ/X1ITDZbI0w+SMwVkEQZlkeThbVS/54M22StNDUtfz4Ua20xNDpIPwcWIACAmZ38XxbbTEFJI5WwqrbilNcfzqiGrIPfdO5rl+/xUjHFUdcJdUY/QzBxXsceytVYfEiR9MzOCN2m4C0XnpThUavAu159KrLj8AkuzN0JF87iXv+zOEeZRgEuwmsAnJrRUwkJ4yWokEPnSVdjF0D6f6CscfyvRe9nsWShq7/zRTa41meweh+n006zvf58MbzRdXPB22RI4AN0ksWW7hSC8/QLAKQE+lvaw=='", 4.354841709136963), ("'v'", 4.3389599323272705)]
+Top words for pretrained_GPT2 neuron indx 531 [('barrier', 4.460507869720459), ('exit', 4.267175674438477), ('self', 4.2250060455821385), ('suggestions', 4.128384272257487), ('mult', 4.029192924499512)]
+Top words for pretrained_GPT2 neuron indx 532 [('crop', 3.8382926881313324), ('eq', 3.635195732116699), ('tmp', 3.620710849761963), ('mean', 3.549146890640259), ('degrees', 3.4032866954803467)]
+Top words for pretrained_GPT2 neuron indx 539 [('count', 4.173889636993408), ('ret', 3.845839789935521), ('view', 3.7722198963165283), ('squeeze', 3.44814395904541), ('import', 3.3507789075374603)]
+Top words for pretrained_GPT2 neuron indx 2589 [('resize', 4.304901361465454), ('len', 4.231699520891363), ('round', 3.936872673034668), ('fid', 3.859331429004669), ('sub', 3.814150810241699)]
+Top words for pretrained_GPT2 neuron indx 4638 [('time', 4.461428006490071), ('math', 3.75870688756307), ('RED', 3.659083604812622), ('history', 3.577944040298462), ('terminated', 3.41400408744812)]
+Top words for pretrained_GPT2 neuron indx 545 [('dir', 4.314465045928955), ('RED', 4.2830047607421875), ('target', 4.226016362508138), ('json', 4.090764999389648), ('device', 3.785140562057495)]
+Top words for pretrained_GPT2 neuron indx 546 [('degrees', 5.770348866780599), ('datetime', 5.193066596984863), ('prefix', 4.00528883934021), ('Number', 3.946695645650228), ('line', 3.9230907758076987)]
+Top words for pretrained_GPT2 neuron indx 549 [('enhance', 3.9224464893341064), ('pred', 3.4704642295837402), ('ImageOps', 3.3639917373657227), ('theme', 3.218702793121338), ('dumps', 3.112955013910929)]
+Top words for pretrained_GPT2 neuron indx 550 [('param', 3.54343851407369), ('shuffle', 3.368497133255005), ('stream', 3.3128730569567), ('timeout', 3.221923271814982), ("']'", 3.2028962771097818)]
+Top words for pretrained_GPT2 neuron indx 552 [('attempt', 4.0710530281066895), ('ids', 4.028884967168172), ('random', 3.796701818704605), ('error', 3.4865965843200684), ('fid', 3.4746928811073303)]
+Top words for pretrained_GPT2 neuron indx 2601 [('path', 3.0551016025922517), ('unicode', 2.8989036083221436), ('narrow', 2.855837106704712), ('param', 2.5609232584635415), ('range', 2.4684227875300815)]
+Top words for pretrained_GPT2 neuron indx 559 [('dist', 3.037684440612793), ('len', 3.033995335752314), ('type', 2.6269993782043457), ('class', 2.5164690017700195), ('UnicodeWriter', 2.5138819217681885)]
+Top words for pretrained_GPT2 neuron indx 565 [('logger', 3.9866268634796143), ('crop', 3.7601702511310577), ('stride', 3.5696703592936196), ('prepare', 3.5288960933685303), ('prefix', 3.4739999771118164)]
+Top words for pretrained_GPT2 neuron indx 568 [('hue', 4.379061698913574), ('filter', 3.9324939250946045), ('site', 3.649991989135742), ('debug', 3.4005000591278076), ('override', 3.3840968132019045)]
+Top words for pretrained_GPT2 neuron indx 569 [('exceptions', 5.7772216796875), ('logger', 5.649563789367676), ('minutes', 4.8205718994140625), ('shortcuts', 4.741735458374023), ('patches', 4.220219572385152)]
+Top words for pretrained_GPT2 neuron indx 6714 [('sort', 4.403636932373047), ('gui', 3.9510838985443115), ('borders', 3.8214969635009766), ('border', 3.5871362686157227), ('RED', 3.5392587184906006)]
+Top words for pretrained_GPT2 neuron indx 572 [('prefix', 4.26255464553833), ('append', 4.1731422819742345), ('eq', 3.539177179336548), ('fid', 3.250749409198761), ('i', 3.1769152955806)]
+Top words for pretrained_GPT2 neuron indx 573 [('quote', 4.437458038330078), ('sum', 4.277449417114258), ('resp', 3.8426121920347214), ('saturation', 3.7726404666900635), ('pad', 3.476870536804199)]
+Top words for pretrained_GPT2 neuron indx 576 [('ratio', 5.642131669180734), ('theme', 4.3897600173950195), ('shuffle', 4.283026218414307), ('stream', 3.9635259764535085), ('ext', 3.743095923872555)]
+Top words for pretrained_GPT2 neuron indx 578 [('hue', 4.557761549949646), ('requests', 3.918952703475952), ('override', 3.6257628440856933), ('torch', 3.440362176379642), ('brightness', 3.3251694440841675)]
+Top words for pretrained_GPT2 neuron indx 580 [('mul', 3.957123041152954), ('map', 3.5376354455947876), ('hit', 3.2665547847747805), ('break', 2.960811138153076), ('site', 2.931957960128784)]
+Top words for pretrained_GPT2 neuron indx 584 [('mul', 4.371089458465576), ('"\\', 3.9851800998051963), ('gamma', 3.9632581075032554), ('squeeze', 3.830440044403076), ('queries', 3.5497454404830933)]
+Top words for pretrained_GPT2 neuron indx 586 [('pow', 4.176075458526611), ('sum', 3.700100231170654), ('padding', 3.631788166364034), ('im', 3.5648114681243896), ('gamma', 3.5420285860697427)]
+Top words for pretrained_GPT2 neuron indx 587 [('encode', 3.9169088999430337), ('keys', 3.8430123329162598), ('class', 3.7089364528656006), ('barrier', 3.6937105655670166), ('ext', 3.520893279243918)]
+Top words for pretrained_GPT2 neuron indx 589 [('fid', 3.907394826412201), ('exceptions', 3.7006828784942627), ('terminated', 3.597417116165161), ('Response', 3.477875518798828), ('engine', 3.419846534729004)]
+Top words for pretrained_GPT2 neuron indx 4687 [('seconds', 3.5306153297424316), ('timestamp', 3.1607988675435386), ('git', 3.1095993518829346), ('join', 2.8739519748422833), ('KeyError', 2.8424746990203857)]
+Top words for pretrained_GPT2 neuron indx 593 [('sys', 4.000541019439697), ('eq', 3.7090494632720947), ('gui', 3.525886297225952), ('stream', 3.420348916734968), ('lower', 3.3503597577412925)]
+Top words for pretrained_GPT2 neuron indx 4696 [('tar', 3.718757152557373), ('sub', 3.492818832397461), ('logger', 3.3800747394561768), ('opt', 3.2923715511957803), ('path', 3.0275646967982706)]
+Top words for pretrained_GPT2 neuron indx 602 [('except', 4.57787001410196), ('skill', 3.4960399866104126), ('headers', 3.3546820120377974), ('communicate', 3.233494997024536), ('keywords', 3.1557745933532715)]
+Top words for pretrained_GPT2 neuron indx 606 [('cookies', 4.040963172912598), ('mul', 3.8082807064056396), ('translate', 3.3673940300941467), ('request', 3.309345577702378), ('""', 3.296951362821791)]
+Top words for pretrained_GPT2 neuron indx 608 [("'FlagCooling'", 2.7128493785858154), ('attempt', 2.664353847503662), ('six', 2.6358916759490967), ('RESET', 2.5848195552825928), ("r'miaopai\\\\.com/show/([^.]+)\\\\.htm'", 2.552546977996826)]
+Top words for pretrained_GPT2 neuron indx 613 [('stack', 4.508990287780762), ('total', 4.220965147018433), ('port', 4.212766329447429), ('convert', 4.079593181610107), ('override', 4.063816928863526)]
+Top words for pretrained_GPT2 neuron indx 8807 [('getdata', 3.1487224102020264), ('F', 3.0087175369262695), ('println', 2.9786276817321777), ('find', 2.9151060581207275), ('confidence', 2.7785518169403076)]
+Top words for pretrained_GPT2 neuron indx 619 [('resize', 5.191326856613159), ('xml', 4.7347493171691895), ('stride', 4.002150456110637), ('resample', 3.912201404571533), ('json', 3.5449661016464233)]
+Top words for pretrained_GPT2 neuron indx 4718 [('Color', 3.3650946617126465), ('Contrast', 3.1661617755889893), ('translate', 2.8111191391944885), ('bias', 2.679812431335449), ('hue', 2.6674751937389374)]
+Top words for pretrained_GPT2 neuron indx 2671 [('else', 4.325343974585672), ('int', 3.8910100189968944), ('zip', 3.554430445035299), ('sort', 3.46490740776062), ('seek', 3.194042682647705)]
+Top words for pretrained_GPT2 neuron indx 8816 [('line', 2.9398715496063232), ('color', 2.813515782356262), ('URLError', 2.806025981903076), ('symbols', 2.5585473775863647), ('ZipFile', 2.5540807247161865)]
+Top words for pretrained_GPT2 neuron indx 628 [('""', 3.889529996448093), ('RED', 3.5284950733184814), ("''", 3.4752464144079536), ('descend', 3.2872800827026367), ('keys', 2.960606002807617)]
+Top words for pretrained_GPT2 neuron indx 630 [('symbols', 3.6515692472457886), ('len', 3.5641090761531484), ('False', 3.2330058923581753), ('npimg', 3.041153601237706), ('shuffle', 3.0010931491851807)]
+Top words for pretrained_GPT2 neuron indx 634 [('override', 5.80517692565918), ('resize', 4.889301896095276), ('dir', 4.215045809745789), ('render', 3.86744087934494), ('angle', 3.6642045279343924)]
+Top words for pretrained_GPT2 neuron indx 641 [('tag', 4.0997700691223145), ('degrees', 4.042652765909831), ('flush', 3.998487710952759), ('timeout', 3.4870702028274536), ('days', 3.4825189113616943)]
+Top words for pretrained_GPT2 neuron indx 646 [('dict', 5.8987884521484375), ('Exception', 5.641476154327393), ('classes', 4.176052252451579), ('dictified', 4.110520720481873), ('dictify', 4.087518692016602)]
+Top words for pretrained_GPT2 neuron indx 649 [('borders', 3.0080769062042236), ('else', 2.788614048541171), ('parts', 2.7854538559913635), ('cookies', 2.7799772024154663), ('sprint', 2.735927104949951)]
+Top words for pretrained_GPT2 neuron indx 662 [('xml', 4.139999032020569), ('args', 3.519922395547231), ('Session', 3.5087339878082275), ('completer', 3.507547378540039), ('cmt', 3.49491810798645)]
+Top words for pretrained_GPT2 neuron indx 663 [('Number', 5.68405818939209), ('accuracy', 4.591152667999268), ('quality', 4.146411418914795), ('axis', 3.871414224306742), ('numbers', 3.7883880138397217)]
+Top words for pretrained_GPT2 neuron indx 664 [('cookies', 3.9867608547210693), ('palette', 3.656031688054403), ('site', 3.484830379486084), ('transform', 3.405128002166748), ('link', 3.360940098762512)]
+Top words for pretrained_GPT2 neuron indx 6809 [('min', 3.891539282268948), ('channels', 3.751580238342285), ('save', 3.6587082386016845), ('str', 3.289727568626404), ('seconds', 3.2741684913635254)]
+Top words for pretrained_GPT2 neuron indx 2722 [('exp', 5.4012131690979), ('width', 4.355910998124343), ('Color', 3.5927813053131104), ('color', 3.2848527431488037), ('ET', 3.206674814224243)]
+Top words for pretrained_GPT2 neuron indx 677 [('encode', 5.299729983011882), ('println', 5.122311592102051), ('encoding', 5.062147458394368), ('decode', 4.957087612152099), ('import', 4.582559204763836)]
+Top words for pretrained_GPT2 neuron indx 2729 [('"%"', 4.312206506729126), ('flush', 4.219963431358337), ('enhance', 4.071259498596191), ('"("', 4.023009379704793), ("'('", 3.9415037631988525)]
+Top words for pretrained_GPT2 neuron indx 2730 [('extend', 4.52531099319458), ('bias', 4.488689422607422), ('AlexNet', 4.159601211547852), ('softmax', 4.149624347686768), ('predicted', 3.5166758000850677)]
+Top words for pretrained_GPT2 neuron indx 691 [('ext', 4.067435657276826), ('redirect', 3.579267740249634), ('open', 3.4092329502105714), ('y', 3.270314795630319), ('loads', 3.192233681678772)]
+Top words for pretrained_GPT2 neuron indx 2739 [('gui', 4.235090255737305), ('decode', 3.6605413913726808), ('args', 3.59285302956899), ('termios', 3.570786237716675), ('headers', 3.5363177819685503)]
+Top words for pretrained_GPT2 neuron indx 693 [('flush', 3.7883944511413574), ('scale', 3.606558459145682), ('size', 3.266042609712971), ('read', 3.1848650376001992), ('buffer', 3.091086745262146)]
+Top words for pretrained_GPT2 neuron indx 698 [('splits', 4.44499397277832), ('pow', 4.180922031402588), ('letters', 3.797850012779236), ('classes', 3.616267720858256), ('root', 3.6039905630309006)]
+Top words for pretrained_GPT2 neuron indx 4797 [('Number', 4.080906232198079), ('XML', 3.2273242473602295), ('Image', 3.0502348507151886), ("'csv'", 2.6977871656417847), ("'Year'", 2.6884827613830566)]
+Top words for pretrained_GPT2 neuron indx 705 [('Session', 5.807414531707764), ('Exception', 4.648684501647949), ('upper', 4.520425796508789), ('attempt', 4.2275495529174805), ('crop', 4.119005858898163)]
+Top words for pretrained_GPT2 neuron indx 707 [('default', 4.784956455230713), ('eq', 3.9117684364318848), ('locales', 3.7877798080444336), ('reshape', 3.7830989360809326), ('lang', 3.7242778301239015)]
+Top words for pretrained_GPT2 neuron indx 709 [("'sort'", 4.951949596405029), ('"fields"', 4.5859222412109375), ("'six'", 4.518946170806885), ("'suggestions'", 4.289519309997559), ("'side'", 4.259742736816406)]
+Top words for pretrained_GPT2 neuron indx 717 [('Sequence', 5.216217041015625), ('ord', 4.811759673632109), ('ele', 4.4732561111450195), ('flush', 4.256770849227905), ('suffix', 4.1179327964782715)]
+Top words for pretrained_GPT2 neuron indx 2766 [('zip', 4.367582003275554), ('contiguous', 3.7961106300354004), ('raise', 3.642717954439995), ('zeros', 3.642043352127075), ('git', 3.6403958797454834)]
+Top words for pretrained_GPT2 neuron indx 721 [('rotate', 3.5274887084960938), ('shuffle', 3.44169545173645), ('ratio', 2.853804452078683), ('im', 2.8314478397369385), ('override', 2.7796285152435303)]
+Top words for pretrained_GPT2 neuron indx 732 [('Session', 4.228461742401123), ('await', 3.3725547757413654), ('join', 3.2663818995157876), ('reporthook', 3.202761650085449), ('datetime', 3.192062497138977)]
+Top words for pretrained_GPT2 neuron indx 733 [('ele', 4.52416205406189), ('q', 4.223844051361084), ('req', 4.018564701080322), ('opt', 3.795029640197754), ('parts', 3.7544246912002563)]
+Top words for pretrained_GPT2 neuron indx 737 [('sleep', 4.334410667419434), ('logger', 4.233573913574219), ("''", 4.083821159225327), ('days', 3.910956621170044), ('class', 3.7240843772888184)]
+Top words for pretrained_GPT2 neuron indx 6883 [('Exception', 4.947165489196777), ('exceptions', 3.664639949798584), ('Response', 3.506515550613403), ('fh', 3.3613603115081787), ('cat', 3.2507591247558594)]
+Top words for pretrained_GPT2 neuron indx 744 [('random', 3.2774228155612946), ('Brightness', 3.1523592472076416), ('dir', 3.117769956588745), ("'='", 3.0861312548319497), ('total', 3.0845463275909424)]
+Top words for pretrained_GPT2 neuron indx 749 [('bias', 4.813676357269287), ('uniform', 4.704298929734663), ('count', 4.378986835479736), ('pred', 4.352818965911865), ('gui', 4.079046726226807)]
+Top words for pretrained_GPT2 neuron indx 753 [('escape', 4.590970516204834), ('transform', 3.60384464263916), ('palette', 3.570632298787435), ('narrow', 3.4396495819091797), ('splits', 3.3601796627044678)]
+Top words for pretrained_GPT2 neuron indx 2802 [('""', 4.686378484302097), ('str', 3.690819889307022), ('log', 3.3637725353240966), ('requests', 3.129891316095988), ('add', 2.9991979598999023)]
+Top words for pretrained_GPT2 neuron indx 754 [('loads', 5.144789934158325), ('preferences', 4.436066847046217), ('width', 4.241707508380596), ('answer', 4.09953498840332), ('strip', 3.9471441507339478)]
+Top words for pretrained_GPT2 neuron indx 759 [('cookies', 3.8267276287078857), ('requests', 2.9508055051167807), ('ByteStorage', 2.9067699909210205), ('type', 2.863240957260132), ('int', 2.8425539839081466)]
+Top words for pretrained_GPT2 neuron indx 766 [('println', 3.9311628341674805), ('eq', 3.9020540714263916), ('dim', 3.496786117553711), ('print', 3.162764375860041), ('quote', 2.8531179428100586)]
+Top words for pretrained_GPT2 neuron indx 2818 [('dirname', 2.801330089569092), ('fid', 2.4876448810100555), ('quote', 2.456451892852783), ('set', 2.3410009384155273), ('"\\', 2.2844804326693215)]
+Top words for pretrained_GPT2 neuron indx 2821 [('shape', 3.9416142463684083), ('pow', 3.8170413970947266), ('time', 3.6076873143514), ('sys', 3.4878959178924562), ('Dense', 3.3898927211761474)]
+Top words for pretrained_GPT2 neuron indx 774 [('dim', 6.54565954208374), ('sub', 6.019731044769287), ('param', 5.420121351877849), ('mult', 4.699936389923096), ('brightness', 4.6570791602134705)]
+Top words for pretrained_GPT2 neuron indx 780 [('exceptions', 3.6504287719726562), ('RED', 3.609081983566284), ('preferences', 3.585719160238902), ('graph', 3.4112789630889893), ('transpose', 3.38879664738973)]
+Top words for pretrained_GPT2 neuron indx 6927 [('communicate', 3.5827181339263916), ('sort', 3.3336446285247803), ('copyto', 3.323061943054199), ('exp', 3.2306036949157715), ('byte', 2.924008846282959)]
+Top words for pretrained_GPT2 neuron indx 789 [('border', 4.0952383279800415), ('fid', 3.904346525669098), ('eq', 3.8234341144561768), ('label', 3.650174140930176), ('shape', 3.4412268161773683)]
+Top words for pretrained_GPT2 neuron indx 2840 [('tar', 4.0504209995269775), ('cookies', 3.5674331188201904), ('opt', 3.4292922417322793), ('padding', 3.097396636009216), ('v', 3.0800323486328125)]
+Top words for pretrained_GPT2 neuron indx 792 [('fid', 6.548372507095337), ('resize', 4.780307054519653), ('img', 4.492116242188674), ('os', 4.270012866834114), ('append', 3.8808493032688047)]
+Top words for pretrained_GPT2 neuron indx 796 [('saturation', 3.845586836338043), ('opt', 3.3631548484166465), ('height', 3.1293990828774194), ('Request', 3.058199405670166), ('fillcolor', 2.941377639770508)]
+Top words for pretrained_GPT2 neuron indx 806 [('sys', 5.210962867736816), ('os', 4.568774402141571), ('io', 4.34340238571167), ('mul', 4.129588603973389), ('std', 3.9011301696300507)]
+Top words for pretrained_GPT2 neuron indx 807 [('RED', 3.975675344467163), ('skill', 3.833526611328125), ('contiguous', 3.7976322174072266), ('sub_', 3.652129888534546), ('sub', 3.5927085876464844)]
+Top words for pretrained_GPT2 neuron indx 2854 [('bias', 3.4204068183898926), ('stride', 3.2703051567077637), ('logger', 3.1163549423217773), ('read', 3.088721752166748), ('decode', 2.824885034561157)]
+Top words for pretrained_GPT2 neuron indx 810 [('preferred', 3.0218634605407715), ('scale', 2.894434315817697), ('override', 2.8029292583465577), ('reshape', 2.796164035797119), ('index', 2.693305594580514)]
+Top words for pretrained_GPT2 neuron indx 9006 [('"table"', 3.328899383544922), ("'utf32'", 2.9564614295959473), ("'flex-inline'", 2.87934034211295), ('stack', 2.8616180419921875), ('list_dir', 2.7264063358306885)]
+Top words for pretrained_GPT2 neuron indx 816 [('index', 4.013197064399719), ('suffix', 3.6188355684280396), ('saturation', 3.4815338850021362), ('indexes', 3.4049321242741177), ('Response', 3.2556854248046876)]
+Top words for pretrained_GPT2 neuron indx 2866 [('download', 3.523000876108805), ('r\\', 3.1730514624539543), ('RED', 2.9977474212646484), ('ZipFile', 2.9861183166503906), ('arg', 2.877953052520752)]
+Top words for pretrained_GPT2 neuron indx 2877 [('struct', 4.729345798492432), ('RED', 3.8746156692504883), ('save', 3.7477213382720946), ('div', 3.7471907138824463), ('r', 3.6388291352325015)]
+Top words for pretrained_GPT2 neuron indx 830 [('pad', 5.449992060661316), ('pow', 5.104533672332764), ('math', 4.949809551239014), ('tile', 4.757566928863525), ('stack', 4.718830585479736)]
+Top words for pretrained_GPT2 neuron indx 842 [('label', 5.308355331420898), ('dumps', 4.851737976074219), ('pow', 4.660871982574463), ('sprint', 4.53728723526001), ('any', 4.384289264678955)]
+Top words for pretrained_GPT2 neuron indx 847 [('mul', 4.3003764152526855), ('202', 4.0336594581604), ('Exception', 3.996415138244629), ('headers', 3.930302294817838), ('lower', 3.7295072078704834)]
+Top words for pretrained_GPT2 neuron indx 6991 [('enumerate', 3.5974720584021673), ('KeyboardInterrupt', 3.540651321411133), ('mul', 3.400334119796753), ('Popen', 3.383599281311035), ('main_dev', 3.34645414352417)]
+Top words for pretrained_GPT2 neuron indx 4945 [('border', 3.9508821964263916), ('parse', 3.3515106439590454), ('permute', 3.3287298679351807), ('read', 3.2721914450327554), ('mean', 3.2579913437366486)]
+Top words for pretrained_GPT2 neuron indx 856 [('mul', 5.287667274475098), ('logger', 4.3688530921936035), ('log', 4.126989316940308), ('tag', 4.120941638946533), ('buffer', 3.990091323852539)]
+Top words for pretrained_GPT2 neuron indx 7000 [('sub', 3.2324588298797607), ('mode', 3.087374281000208), ('"vx"', 3.0189380049705505), ('part', 2.781045973300934), ('units', 2.7720037698745728)]
+Top words for pretrained_GPT2 neuron indx 860 [('themes', 4.774418738153246), ('opt', 3.4659214417139688), ('write', 3.324787894884745), ('shuffle', 3.291841983795166), ('scheme', 3.26584529876709)]
+Top words for pretrained_GPT2 neuron indx 2915 [('param', 4.301275571187337), ('111', 4.05058479309082), ('keywords', 3.875056028366089), ('format', 3.7763490104675292), ('strip', 3.306025266647339)]
+Top words for pretrained_GPT2 neuron indx 9064 [('gamma', 3.589374303817749), ('unpack', 3.4242026805877686), ('strip', 3.368736187616984), ('unlink', 3.278510570526123), ('array', 3.185408502817154)]
+Top words for pretrained_GPT2 neuron indx 4969 [('tw', 3.5469703674316406), ('else', 3.4545189434463537), ('extend', 3.1642589569091797), ('log', 3.0854202270507813), ('stream', 2.8574322972978865)]
+Top words for pretrained_GPT2 neuron indx 872 [('color', 5.223236560821533), ('border', 4.715037107467651), ('pic', 4.664878229962455), ('timestamp', 4.433856010437012), ('parse', 4.250789701938629)]
+Top words for pretrained_GPT2 neuron indx 878 [('bias', 3.8307716846466064), ('decode', 2.9547677040100098), ('tw', 2.925175130367279), ('text', 2.897590865691503), ('encode', 2.8890902996063232)]
+Top words for pretrained_GPT2 neuron indx 7022 [('training_file', 2.9385924339294434), ('answer', 2.6430788040161133), ('_training_file', 2.599853038787842), ('e', 2.2702116024109626), ("'adapter'", 2.2536582946777344)]
+Top words for pretrained_GPT2 neuron indx 879 [('extend', 3.1015818119049072), ('stride', 2.9559362729390464), ('narrow', 2.709205985069275), ('math', 2.6793076197306314), ('brightness', 2.675209641456604)]
+Top words for pretrained_GPT2 neuron indx 889 [('palette', 6.01612663269043), ('tar', 5.344123125076294), ('\\', 5.0107401907444), ('preferences', 4.476699205239614), ('filename', 4.432577497080753)]
+Top words for pretrained_GPT2 neuron indx 2955 [('border', 4.313404083251953), ('upper', 4.040694236755371), ('mul', 3.4450364112854004), ('narrow', 3.259781837463379), ('lower', 3.2535998026529946)]
+Top words for pretrained_GPT2 neuron indx 912 [('redirect', 4.405243873596191), ('streams', 2.997898757457733), ('threadLocal', 2.9281906485557556), ('debug', 2.9012277126312256), ('logger', 2.685607671737671)]
+Top words for pretrained_GPT2 neuron indx 920 [('prefix', 4.711440881093343), ('str', 4.1300255954265594), ('suffix', 4.112315058708191), ('XML', 4.0432538986206055), ('xml', 3.65412700176239)]
+Top words for pretrained_GPT2 neuron indx 9113 [("'AM.'", 3.845689535140991), ("'A.'", 3.484895706176758), ('min', 3.253315567970276), ("'Z5H5wqd06ExFVPNfJiqhKvAFjkf+cTVodOUirucHGcEVAMO1LfvgqWUkZ/X1ITDZbI0w+SMwVkEQZlkeThbVS/54M22StNDUtfz4Ua20xNDpIPwcWIACAmZ38XxbbTEFJI5WwqrbilNcfzqiGrIPfdO5rl+/xUjHFUdcJdUY/QzBxXsceytVYfEiR9MzOCN2m4C0XnpThUavAu159KrLj8AkuzN0JF87iXv+zOEeZRgEuwmsAnJrRUwkJ4yWokEPnSVdjF0D6f6CscfyvRe9nsWShq7/zRTa41meweh+n006zvf58MbzRdXPB22RI4AN0ksWW7hSC8/QLAKQE+lvaw=='", 3.2451419830322266), ('"batches_seen"', 3.1473865509033203)]
+Top words for pretrained_GPT2 neuron indx 929 [('saturation', 4.243476510047913), ('size', 3.470477513412931), ('mul', 3.41613507270813), ('streams', 3.3966264128684998), ('req', 3.3072441646030972)]
+Top words for pretrained_GPT2 neuron indx 5026 [('exp', 4.6172685623168945), ('width', 3.9420397648444543), ('Color', 3.7958319187164307), ('count', 3.6307952404022217), ('len', 3.3254341212185947)]
+Top words for pretrained_GPT2 neuron indx 930 [('communicate', 4.685440540313721), ('contiguous', 4.683203220367432), ('logger', 4.54238224029541), ('tar', 4.272665977478027), ('XML', 3.9892899990081787)]
+Top words for pretrained_GPT2 neuron indx 934 [('final', 3.45924703280131), ('sum', 3.433160924911499), ('plugins', 3.4261892239252725), ('json', 3.294747233390808), ('console', 3.1312592029571533)]
+Top words for pretrained_GPT2 neuron indx 937 [('args', 4.800061662991841), ('method', 4.444544315338135), ('bytes', 3.8603899478912354), ('arg', 3.8398871421813965), ('self', 3.688941919079451)]
+Top words for pretrained_GPT2 neuron indx 5041 [('ref', 4.443350791931152), ('palette', 3.9348493417104087), ('git', 3.848559617996216), ('pop', 3.754985809326172), ('render', 3.714451551437378)]
+Top words for pretrained_GPT2 neuron indx 5043 [('args', 3.7590352296829224), ('keywords', 3.6228151321411133), ('termios', 3.09057879447937), ('path', 3.073109757366844), ('headers', 3.051425825465809)]
+Top words for pretrained_GPT2 neuron indx 9144 [('stdout', 3.5280051231384277), ('BOLD', 3.4308252334594727), ('extend', 3.1786036491394043), ('words', 3.164713144302368), ("'video'", 2.9387913942337036)]
+Top words for pretrained_GPT2 neuron indx 957 [('len', 5.055885336615822), ('XML', 4.71578311920166), ('xml', 4.144239544868469), ('match', 4.084681822703435), ('exp', 3.702493906021118)]
+Top words for pretrained_GPT2 neuron indx 3013 [('Response', 3.484255838394165), ("'microsoft'", 3.026834726333618), ('Sequence', 3.004101037979126), ('pow', 2.8710920810699463), ('println', 2.801340341567993)]
+Top words for pretrained_GPT2 neuron indx 967 [('Exception', 4.036908149719238), ('exceptions', 3.808993339538574), ('flush', 3.7591787576675415), ('cookies', 3.7467591762542725), ('pad', 3.586703360080719)]
+Top words for pretrained_GPT2 neuron indx 983 [('sub', 4.099061489105225), ('classes', 3.1286545197168985), ('tag', 3.112019181251526), ('div', 3.0094165802001953), ('group', 2.9900885581970216)]
+Top words for pretrained_GPT2 neuron indx 994 [('git', 4.3376030921936035), ('plugins', 3.503519296646118), ('close', 3.249547004699707), ('VGG', 3.2292380332946777), ('shutil', 3.182529330253601)]
+Top words for pretrained_GPT2 neuron indx 3043 [('Exception', 4.572739124298096), ('pattern', 3.747302436828613), ('ValueError', 3.5224857330322266), ('cat', 3.5187904834747314), ('len', 3.4380329088731245)]
+Top words for pretrained_GPT2 neuron indx 997 [('contiguous', 5.282284736633301), ('stride', 3.6568140983581543), ('Sequence', 3.5689938068389893), ('"@"', 3.4370670318603516), ('threadLocal', 3.3912644386291504)]
+Top words for pretrained_GPT2 neuron indx 998 [('finally', 4.615716338157654), ('flush', 3.248329281806946), ('skill', 3.222438335418701), ('redirect', 3.130746364593506), ('dist', 2.8411279916763306)]
+Top words for pretrained_GPT2 neuron indx 1007 [('param', 4.916792869567871), ('ratio', 4.734477451869419), ('"\\', 4.6135656634966535), ('XML', 4.534260272979736), ('height', 4.216017896478826)]
+Top words for pretrained_GPT2 neuron indx 1011 [('shape', 4.614357852935791), ('dom', 4.341452264785767), ('mode', 4.1094412185527665), ('channels', 3.8066911697387695), ('categorie', 3.6791804432868958)]
+Top words for pretrained_GPT2 neuron indx 1012 [('mul', 5.330385684967041), ('Contrast', 4.781314373016357), ('pad', 4.491333842277527), ('tar', 4.4491435289382935), ('timedelta', 4.383350372314453)]
+Top words for pretrained_GPT2 neuron indx 1017 [('count', 5.0339765548706055), ('ratio', 3.918334415980748), ('eq', 3.873077630996704), ('buffer', 3.7788915634155273), ('contiguous', 3.629293918609619)]
+Top words for pretrained_GPT2 neuron indx 1029 [('arg', 4.634482383728027), ('axis', 3.7988149325052896), ('download', 3.6554617087046304), ('flush', 3.51289701461792), ('Popen', 3.4164655208587646)]
+Top words for pretrained_GPT2 neuron indx 3078 [('dim', 5.386628150939941), ('sub', 4.603179931640625), ('param', 4.326469898223877), ('degrees', 3.8869805335998535), ('mult', 3.8199076652526855)]
+Top words for pretrained_GPT2 neuron indx 1031 [('A', 3.8137898445129395), ('language', 3.7254553522382463), ("'\\\\''", 3.5058648586273193), ('headers', 3.4779122959483755), ('rotate', 3.3363821506500244)]
+Top words for pretrained_GPT2 neuron indx 1032 [('io', 4.234771251678467), ('println', 3.8800196647644043), ('struct', 3.397618055343628), ('sprint', 3.1721303462982178), ('bias', 3.035707473754883)]
+Top words for pretrained_GPT2 neuron indx 5132 [('redirect', 3.809720516204834), ('urljoin', 3.755681037902832), ('stream', 3.391505105154855), ('Contrast', 3.3637421131134033), ('streams', 3.2512378692626953)]
+Top words for pretrained_GPT2 neuron indx 1041 [('println', 6.21380090713501), ('download', 3.9600552717844644), ('extract', 3.348041296005249), ('d', 3.1259476116725375), ('struct', 3.0119006633758545)]
+Top words for pretrained_GPT2 neuron indx 1043 [('dim', 6.32845401763916), ('Sequence', 4.5104899406433105), ('mul', 4.25175142288208), ('gamma', 4.141351064046224), ('pow', 4.107753753662109)]
+Top words for pretrained_GPT2 neuron indx 1046 [('patterns', 4.442633056640625), ('completer', 4.297927538553874), ('keywords', 4.173786640167236), ('colors', 4.006773948669434), ('exceptions', 3.9270589351654053)]
+Top words for pretrained_GPT2 neuron indx 1047 [('contiguous', 4.512931823730469), ('cat', 4.359818935394287), ('git', 4.2336225509643555), ('array', 3.6558991968631744), ('keywords', 3.491860866546631)]
+Top words for pretrained_GPT2 neuron indx 1053 [('resize', 4.976279854774475), ('len', 4.471579334952614), ('fid', 4.356533169746399), ('cost', 4.104486703872681), ('git', 4.067005157470703)]
+Top words for pretrained_GPT2 neuron indx 1061 [('termios', 3.3111109733581543), ('"""wrapper"""', 3.2744832038879395), ('prepare', 2.996469497680664), ('seq', 2.803201198577881), ('await', 2.7595041543245316)]
+Top words for pretrained_GPT2 neuron indx 1065 [('opt', 3.8279471397399902), ('range', 3.2674804415021623), ('narrow', 3.2179105281829834), ('stream', 3.2015754154750278), ('dumps', 3.1974665323893228)]
+Top words for pretrained_GPT2 neuron indx 1071 [('fid', 4.349390387535095), ('np', 4.310096991558869), ('narrow', 4.094660520553589), ('Contrast', 3.529045343399048), ('Request', 3.313644528388977)]
+Top words for pretrained_GPT2 neuron indx 1076 [('Exception', 5.340146064758301), ('mul', 5.128486633300781), ('debug', 4.5657196044921875), ('ndim', 4.349392890930176), ('UnicodeWriter', 4.271840572357178)]
+Top words for pretrained_GPT2 neuron indx 1085 [('fid', 5.660448312759399), ('mul', 5.39363956451416), ('quote', 4.982885360717773), ('pic', 4.787997362348769), ('root', 4.508627932647179)]
+Top words for pretrained_GPT2 neuron indx 5181 [('struct', 4.149658679962158), ('scheme', 3.5160505771636963), ('preferences', 3.42825204928716), ('suggestions', 3.3207163711388907), ('seek', 3.228527545928955)]
+Top words for pretrained_GPT2 neuron indx 3151 [('join', 3.995627694659763), ('search', 3.530057794517941), ('sort', 3.3848373889923096), ('seconds', 3.256481409072876), ('find', 3.1787221431732178)]
+Top words for pretrained_GPT2 neuron indx 3160 [('sub', 4.686846733093262), ('logger', 4.412355422973633), ('tar', 3.954321026802063), ('tag', 3.768820822238922), ('finally', 3.3786916732788086)]
+Top words for pretrained_GPT2 neuron indx 1113 [('uniform', 4.236523498188365), ('final', 4.142692512936062), ('exceptions', 3.495555877685547), ('min', 3.267677757475111), ('fill', 3.2649664084116616)]
+Top words for pretrained_GPT2 neuron indx 1115 [('encode', 4.4279476801554365), ('timestamp', 4.0116855303446455), ('git', 3.783616781234741), ('dict', 3.7493317127227783), ('timeout', 3.6831489404042563)]
+Top words for pretrained_GPT2 neuron indx 1122 [('split', 3.51753178395723), ('splits', 3.387148380279541), ('result', 3.028739204009374), ('conf', 2.9670069217681885), ('override', 2.965860939025879)]
+Top words for pretrained_GPT2 neuron indx 3176 [('arg', 3.9085512161254883), ('_help', 3.5150811672210693), ('border', 3.4836692810058594), ('ZipFile', 3.2875070571899414), ('elif', 3.263139125463125)]
+Top words for pretrained_GPT2 neuron indx 1131 [('color', 4.172078967094421), ('append', 3.84831308155525), ('colors', 3.6323243379592896), ('moves', 3.2918670177459717), ('splits', 3.2409801483154297)]
+Top words for pretrained_GPT2 neuron indx 3182 [('hue', 3.128708243370056), ('Color', 2.87473726272583), ('translate', 2.8441593647003174), ('bias', 2.706732749938965), ('activation', 2.4726924498875937)]
+Top words for pretrained_GPT2 neuron indx 1136 [('fid', 5.704134106636047), ('Contrast', 4.628718852996826), ('mime', 4.084861874580383), ('bias', 3.913271903991699), ('settings', 3.8881516456604004)]
+Top words for pretrained_GPT2 neuron indx 9348 [('hexdigest', 3.8266284465789795), ("'data-time-ms'", 3.694852113723755), ('new_full', 3.625438928604126), ('enhance', 3.404693126678467), ('opt', 3.3905893166859946)]
+Top words for pretrained_GPT2 neuron indx 1158 [('eq', 5.308394908905029), ('len', 4.356936324726451), ('os', 3.9085506724900214), ('preferred', 3.6940975189208984), ('days', 3.6789894104003906)]
+Top words for pretrained_GPT2 neuron indx 1167 [('convert', 4.710389518737793), ('bytes', 4.664143085479736), ('pred', 4.101927399635315), ('pow', 3.7329821586608887), ('strip', 3.6911144256591797)]
+Top words for pretrained_GPT2 neuron indx 1179 [('fid', 5.646417737007141), ('exceptions', 5.042478561401367), ('logger', 4.890975475311279), ('append', 4.608974526568157), ("''", 4.397868360485043)]
+Top words for pretrained_GPT2 neuron indx 1182 [('clone', 4.820596218109131), ('ZipFile', 4.233018398284912), ('RawTextQuery', 3.780670166015625), ('root', 3.2737347319208343), ('render', 3.253470301628113)]
+Top words for pretrained_GPT2 neuron indx 1183 [('ext', 6.224807129186742), ('terminated', 5.071625232696533), ('parse', 4.646220088005066), ('gain', 4.628156661987305), ('palette', 4.517816384633382)]
+Top words for pretrained_GPT2 neuron indx 1186 [('exp', 6.353336811065674), ('width', 4.427356334832998), ('color', 4.159984350204468), ('Color', 4.145000457763672), ('colors', 4.111966192722321)]
+Top words for pretrained_GPT2 neuron indx 1187 [('strip', 6.383507490158081), ('dim', 4.460102081298828), ('search', 4.396183729171753), ('stride', 4.353278636932373), ('cookies', 4.29566764831543)]
+Top words for pretrained_GPT2 neuron indx 9383 [('22', 6.1321234703063965), ("'#ffb000'", 4.478265285491943), ("'#ff764a'", 4.343280792236328), ("'amzn1.echo-api.session.3c6ebffd-55b9-4e1a-bf3c-c921c1801b63'", 4.032357692718506), ("'#bc5090'", 3.9126334190368652)]
+Top words for pretrained_GPT2 neuron indx 1191 [('pow', 6.588496685028076), ('copy', 4.7702155113220215), ('ow', 4.600725253423055), ('pred', 4.138584136962891), ('dir', 4.102975010871887)]
+Top words for pretrained_GPT2 neuron indx 1193 [('sort', 5.776671409606934), ('enhance', 4.090953826904297), ('random', 4.024846742550532), ('redirect', 3.677602529525757), ('eq', 3.6382503509521484)]
+Top words for pretrained_GPT2 neuron indx 1194 [('extend', 4.280473232269287), ('corrections', 3.8060350020726523), ('torch', 3.7457859773893616), ('hit', 3.738296556472778), ('bias', 3.7332849502563477)]
+Top words for pretrained_GPT2 neuron indx 1203 [('headers', 6.724513530731201), ('gui', 4.549527168273926), ('ref', 4.483376820882161), ('j', 4.150799655914307), ('decode', 4.0795635223388675)]
+Top words for pretrained_GPT2 neuron indx 7347 [('headers', 3.431731245734475), ('args', 3.4198481837908425), ('URLError', 3.410111904144287), ('path', 3.329271398146044), ('PERSPECTIVE', 3.2603535652160645)]
+Top words for pretrained_GPT2 neuron indx 1215 [('im', 5.2339043617248535), ('q', 5.160594940185547), ('theme', 4.994396209716797), ('type', 4.986374378204346), ('class', 4.942586421966553)]
+Top words for pretrained_GPT2 neuron indx 1217 [('now', 3.9144210815429688), ('crop', 3.612734019756317), ('git', 3.523047685623169), ('scheme', 3.5072879791259766), ('ele', 3.489091634750366)]
+Top words for pretrained_GPT2 neuron indx 5315 [('set', 4.225095176696778), ('letters', 4.098131895065308), ('filename', 3.8166733290019788), ('splits', 3.721769332885742), ('split', 3.3655326052715906)]
+Top words for pretrained_GPT2 neuron indx 5317 [('Sequence', 2.876830577850342), ('Response', 2.730367660522461), ('pow', 2.705218553543091), ('sqrt', 2.6576493978500366), ("'graph'", 2.643925905227661)]
+Top words for pretrained_GPT2 neuron indx 1230 [('mul', 4.043915748596191), ('raise', 3.972871523637038), ('git', 3.537311315536499), ('zip', 3.2396113872528076), ('id', 3.1688249111175537)]
+Top words for pretrained_GPT2 neuron indx 1238 [('dim', 4.1440958976745605), ('settings', 3.9164870466504778), ('mode', 3.748371221401073), ('flush', 3.6874983310699463), ('pic', 3.4600825270016986)]
+Top words for pretrained_GPT2 neuron indx 1250 [('barrier', 3.96555757522583), ('dict', 3.584526300430298), ('keywords', 3.53715443611145), ('moves', 3.256162643432617), ('corrections', 3.2227300802866616)]
+Top words for pretrained_GPT2 neuron indx 5347 [('Exception', 5.100155353546143), ('cat', 4.098312854766846), ('fh', 3.6948347091674805), ('len', 3.428026806224476), ('Response', 3.2874386310577393)]
+Top words for pretrained_GPT2 neuron indx 1252 [('br', 4.558018922805786), ('graph', 4.520042419433594), ('title', 4.2562296858855655), ('pow', 4.239652633666992), ('any', 4.1235127449035645)]
+Top words for pretrained_GPT2 neuron indx 3301 [('rotate', 4.234013676643372), ('barrier', 3.7463223934173584), ("'/Cell'", 3.6181302070617676), ('Iterable', 3.510864734649658), ('RED', 3.490654706954956)]
+Top words for pretrained_GPT2 neuron indx 3304 [('tw', 4.427977800369263), ('encode', 4.168581088383992), ('encoding', 3.5622048377990723), ('remove', 3.4274755716323853), ('format', 3.365242099761963)]
+Top words for pretrained_GPT2 neuron indx 1257 [('std', 5.7815505266189575), ('height', 5.269721508026123), ('fid', 4.920503258705139), ('degrees', 4.7662614186604815), ('angle', 4.229748368263245)]
+Top words for pretrained_GPT2 neuron indx 1266 [('eq', 3.489739179611206), ('keywords', 3.4484386444091797), ('answer', 3.353640556335449), ('log', 3.338992691040039), ('tile', 3.2961788177490234)]
+Top words for pretrained_GPT2 neuron indx 1269 [("''", 4.176574165756638), ('fid', 3.9107208251953125), ('else', 3.4012927731263987), ('palette', 3.1800251801808677), ('descend', 3.0344655513763428)]
+Top words for pretrained_GPT2 neuron indx 1282 [('fid', 4.045271635055542), ('splits', 3.944335460662842), ('quote', 3.6445791721343994), ('dirname', 3.387376070022583), ('read', 3.2280948559443154)]
+Top words for pretrained_GPT2 neuron indx 3336 [('join', 4.3143290347523156), ('struct', 2.777806520462036), ('mul', 2.649878740310669), ('escape', 2.649148464202881), ('"{},{}"', 2.5852606296539307)]
+Top words for pretrained_GPT2 neuron indx 1289 [('debug', 5.389361381530762), ('math', 4.38183871905009), ('ele', 4.094745397567749), ('borders', 3.9772064685821533), ('std', 3.953207850456238)]
+Top words for pretrained_GPT2 neuron indx 1296 [('append', 4.702059780679098), ('graph', 3.6946160793304443), ('flush', 3.6833608150482178), ('pad', 3.5925187468528748), ('Response', 3.561022233963013)]
+Top words for pretrained_GPT2 neuron indx 3357 [('sub', 4.795436859130859), ('len', 4.508045521649447), ('round', 4.466477012634277), ('resize', 4.095508515834808), ('console', 3.8651318550109863)]
+Top words for pretrained_GPT2 neuron indx 5406 [('time', 4.244178136189778), ('RED', 3.9305810928344727), ('math', 3.691307624181112), ('history', 3.318296432495117), ('copy', 3.3178634643554688)]
+Top words for pretrained_GPT2 neuron indx 1317 [('mul', 4.697442054748535), ('encoding', 4.299752076466878), ('await', 4.138746759129895), ('clone', 3.940199375152588), ('extract', 3.741093873977661)]
+Top words for pretrained_GPT2 neuron indx 1318 [('logger', 3.5718026161193848), ('dir', 3.4964306950569153), ('palette', 3.320743719736735), ('import', 3.0568631953663297), ('force', 3.0326203107833862)]
+Top words for pretrained_GPT2 neuron indx 7464 [('math', 3.128521124521891), ('Iterable', 3.098094940185547), ('os', 3.014108021197648), ('system', 2.9670655727386475), ('find', 2.865773916244507)]
+Top words for pretrained_GPT2 neuron indx 3376 [('fid', 5.24781060218811), ('Request', 4.079570531845093), ('tar', 3.931612253189087), ('fpath', 3.7058472633361816), ('permute', 3.670243501663208)]
+Top words for pretrained_GPT2 neuron indx 1330 [('pow', 4.515414714813232), ('download', 4.0344163576761884), ('dumps', 3.756563345591227), ('111', 3.6143639087677), ('answer', 3.6142544746398926)]
+Top words for pretrained_GPT2 neuron indx 1341 [('save', 3.7437882900238035), ('r', 3.7159989608658686), ('except', 3.6428138322608414), ('activation', 3.6292819579442344), ('sum', 3.6212634563446047)]
+Top words for pretrained_GPT2 neuron indx 1345 [('\\', 4.620786627133687), ('fid', 3.9366745352745056), ('seq', 3.923781454563141), ('conf', 3.8895369172096252), ('Session', 3.844149351119995)]
+Top words for pretrained_GPT2 neuron indx 1353 [('merge', 3.6543832523482185), ('debug', 3.5699973106384277), ('logger', 3.5244929790496826), ('pow', 3.3550729751586914), ('all', 3.334181785583496)]
+Top words for pretrained_GPT2 neuron indx 1358 [('pow', 4.311220645904541), ('copy', 4.158298397064209), ('themes', 4.07584681113561), ('XML', 3.8622286319732666), ('np', 3.738617593804613)]
+Top words for pretrained_GPT2 neuron indx 5455 [('mul', 3.5653536319732666), ('KeyError', 3.2497371435165405), ('seconds', 3.1196056604385376), ('utt_id', 3.107040286064148), ('enumerate', 3.055504322052002)]
+Top words for pretrained_GPT2 neuron indx 1367 [('mul', 6.846020221710205), ('lang', 5.572280216217041), ('mul_', 4.881279945373535), ('range', 4.333220901943388), ('fid', 4.188906311988831)]
+Top words for pretrained_GPT2 neuron indx 1378 [('np', 5.071754969083345), ('sum', 4.981733798980713), ('sprint', 4.344979763031006), ('rotate', 4.232985734939575), ('accuracy', 4.0960259437561035)]
+Top words for pretrained_GPT2 neuron indx 5486 [('Color', 3.0290422439575195), ('Contrast', 2.876430034637451), ('training_file', 2.801872968673706), ('_training_file', 2.6912953853607178), ('force', 2.6080206632614136)]
+Top words for pretrained_GPT2 neuron indx 9584 [('join', 4.611181096898185), ('expanduser', 4.369356632232666), ('div', 4.028741359710693), ('URLError', 3.7380878925323486), ('exp', 3.417706251144409)]
+Top words for pretrained_GPT2 neuron indx 1398 [('tar', 7.117487192153931), ('node', 5.114074945449829), ('clone', 4.573363304138184), ('escape', 4.459171533584595), ('symbols', 4.4188072681427)]
+Top words for pretrained_GPT2 neuron indx 1404 [('skill', 3.7793813943862915), ('suffix', 3.4432384967803955), ('debug', 3.2342212200164795), ('info', 3.2303084433078766), ('plugins', 3.2149396737416587)]
+Top words for pretrained_GPT2 neuron indx 1416 [('println', 5.194759845733643), ('suffix', 4.358367681503296), ('zip', 4.197737495104472), ('upper', 4.0506672859191895), ('root', 3.996594387909462)]
+Top words for pretrained_GPT2 neuron indx 1419 [('upper', 3.8810911178588867), ('border', 3.4274569749832153), ('"\\', 3.3255165492494903), ('timestamp', 3.321526368459066), ('br', 2.897300601005554)]
+Top words for pretrained_GPT2 neuron indx 5535 [('n', 3.425569772720337), ('prepare', 3.34509015083313), ('append', 3.285131500988472), ('replace', 3.2029529213905334), ('join', 3.1552586687935724)]
+Top words for pretrained_GPT2 neuron indx 3490 [('exp', 5.365662574768066), ('width', 4.045767233921931), ('count', 3.823109745979309), ('sort', 3.7440173625946045), ('Color', 3.711750030517578)]
+Top words for pretrained_GPT2 neuron indx 1443 [('logger', 4.861372947692871), ('contiguous', 4.422085762023926), ('ref', 4.356926838556926), ('lang', 3.9391692081466316), ('git', 3.893420696258545)]
+Top words for pretrained_GPT2 neuron indx 3497 [('uniform', 4.917856129732999), ('float', 3.6535657473972867), ('zeros', 3.4037396907806396), ('min', 3.3926949236128063), ('close', 3.3155012130737305)]
+Top words for pretrained_GPT2 neuron indx 1456 [('os', 4.5613774061203), ('round', 4.430620193481445), ('fid', 3.851408362388611), ('scale', 3.4517371313912526), ('gamma', 3.2586327393849692)]
+Top words for pretrained_GPT2 neuron indx 1458 [('println', 7.004486560821533), ('mult', 4.607864618301392), ('tmp', 4.360567092895508), ('mul', 4.314927577972412), ('target', 3.845322608947754)]
+Top words for pretrained_GPT2 neuron indx 1461 [('np', 5.839314262072246), ('mul', 5.12708854675293), ('append', 4.447801549260209), ('padding', 4.197956744829813), ('param', 3.932976484298706)]
+Top words for pretrained_GPT2 neuron indx 1466 [('graph', 4.203551530838013), ('format', 3.515324897766113), ('os', 3.4306602231387435), ('splits', 3.351710081100464), ('item', 3.1846319437026978)]
+Top words for pretrained_GPT2 neuron indx 5565 [('Number', 4.568673292795817), ('Request', 3.2561416625976562), ('Image', 3.1230679820565617), ('XML', 2.7799105644226074), ('Sequence', 2.6901025772094727)]
+Top words for pretrained_GPT2 neuron indx 1473 [('shuffle', 4.074870586395264), ('method', 3.650130033493042), ('202', 3.503144860267639), ('stack', 3.4785983562469482), ('merge', 3.3476044399397713)]
+Top words for pretrained_GPT2 neuron indx 1475 [('filename', 5.710835249800431), ('sleep', 5.0589470863342285), ('letters', 4.597530126571655), ('str', 4.006322503089905), ('set', 3.5955050945281983)]
+Top words for pretrained_GPT2 neuron indx 1481 [('redirect', 4.522139072418213), ('sum', 3.6108370780944825), ('pic', 3.6052579151259527), ('affine', 3.421937942504883), ('exceptions', 3.321216583251953)]
+Top words for pretrained_GPT2 neuron indx 1483 [('tar', 4.492620229721069), ('stride', 4.2958760261535645), ('log', 4.003938436508179), ('streams', 3.7197006344795227), ('read', 3.6763126850128174)]
+Top words for pretrained_GPT2 neuron indx 1499 [('decode', 2.6965482234954834), ('json', 2.6622443199157715), ('contiguous', 2.644176721572876), ('sum', 2.632691669464111), ('encode', 2.563900629679362)]
+Top words for pretrained_GPT2 neuron indx 1507 [('len', 4.51469175382094), ('cat', 3.87681245803833), ('bl', 3.5587940216064453), ('flatten', 3.5248606204986572), ('Exception', 3.335829496383667)]
+Top words for pretrained_GPT2 neuron indx 9709 [('rstrip', 4.133552074432373), ('crop', 3.340088874101639), ('timedelta', 3.2971932888031006), ('Session', 3.285747766494751), ('datetime', 3.2617266178131104)]
+Top words for pretrained_GPT2 neuron indx 1527 [('squeeze', 4.491373538970947), ('query', 3.930743174119429), ('console', 3.7625715732574463), ('format', 3.482930316925049), ('pad', 3.440867006778717)]
+Top words for pretrained_GPT2 neuron indx 1533 [('fid', 5.225867509841919), ('pow', 5.171026706695557), ('degrees', 4.759454886118571), ('tw', 4.645843029022217), ('render', 4.488382458686829)]
+Top words for pretrained_GPT2 neuron indx 1542 [('dim', 6.59264612197876), ('sub', 5.998142719268799), ('param', 5.095579783121745), ('opt', 4.61308741569519), ('RED', 4.604536533355713)]
+Top words for pretrained_GPT2 neuron indx 1548 [('quality', 3.685319423675537), ('RED', 3.6702144145965576), ('preferred', 3.5841771364212036), ('eq', 3.5409188270568848), ('transpose', 3.501561482747396)]
+Top words for pretrained_GPT2 neuron indx 7695 [('sort', 3.2331464290618896), ('asarray', 3.0565919876098633), ('communicate', 2.9714527130126953), ('exp', 2.759289026260376), ('byte', 2.582939386367798)]
+Top words for pretrained_GPT2 neuron indx 1574 [('os', 4.927899414095386), ('sys', 4.917794036865234), ('mul', 4.1510539054870605), ('io', 3.746314764022827), ('std', 3.3333508372306824)]
+Top words for pretrained_GPT2 neuron indx 9775 [('sub', 3.146876811981201), ('GoogLeNet', 3.023093342781067), ('new_full', 2.9391632080078125), ('over', 2.76871919631958), ('Session', 2.7441160678863525)]
+Top words for pretrained_GPT2 neuron indx 1584 [('index', 3.8327212503978183), ('Response', 3.1929666996002197), ('indexes', 2.9823285852159773), ('Lambda', 2.8255948305130003), ('tw', 2.8050038814544678)]
+Top words for pretrained_GPT2 neuron indx 3634 [('StopIteration', 3.5012362003326416), ('get_ordered_results', 3.0746331214904785), ('111', 2.920089602470398), ('getheader', 2.9186004797617593), ('get_enabled', 2.87726092338562)]
+Top words for pretrained_GPT2 neuron indx 3645 [('struct', 4.2530741691589355), ('RED', 3.513885736465454), ('preferences', 3.3665128628412884), ('stride', 3.2783326307932534), ('seek', 3.246629238128662)]
+Top words for pretrained_GPT2 neuron indx 1615 [('headers', 3.5642276893962515), ('mul', 3.349562168121338), ('XML', 3.0107831954956055), ('202', 2.935992121696472), ('lower', 2.9091127713521323)]
+Top words for pretrained_GPT2 neuron indx 1624 [('logger', 4.546166896820068), ('tag', 4.509538531303406), ('sub', 3.9403610229492188), ('log', 3.8889925956726072), ('target', 3.852954864501953)]
+Top words for pretrained_GPT2 neuron indx 1628 [('themes', 4.025440812110901), ('Exception', 3.793379545211792), ('version', 3.5664000511169434), ('opt', 3.112194379170736), ('processed_folder', 3.0482763767242433)]
+Top words for pretrained_GPT2 neuron indx 3683 [('keywords', 3.3562684059143066), ('format', 3.1189594364166258), ('param', 3.041931629180908), ('strip', 2.9975706736246743), ('render', 2.961231768131256)]
+Top words for pretrained_GPT2 neuron indx 1640 [('arg', 3.8504433631896973), ('axis', 3.828933616479238), ('color', 3.799664855003357), ('attempt', 3.6299262046813965), ('parse', 3.5878217220306396)]
+Top words for pretrained_GPT2 neuron indx 5737 [('tw', 3.163949966430664), ('skill', 2.9402735233306885), ('log', 2.8404735803604124), ('stream', 2.835221086229597), ('activation', 2.8265616297721863)]
+Top words for pretrained_GPT2 neuron indx 1646 [('bias', 3.2174184322357178), ('text', 2.897779420018196), ('hue', 2.885509431362152), ('torch', 2.771957474785882), ('search', 2.621589528189765)]
+Top words for pretrained_GPT2 neuron indx 5762 [('flush', 4.581810235977173), ('update', 4.2493743896484375), ('println', 3.886413812637329), ('prepare', 3.597407817840576), ('contiguous', 3.4081380367279053)]
+Top words for pretrained_GPT2 neuron indx 3721 [('total', 3.8653424978256226), ('dumps', 3.762973149617513), ('clone', 3.546273708343506), ('close', 3.5277798175811768), ('div', 3.3502538204193115)]
+Top words for pretrained_GPT2 neuron indx 3723 [('upper', 4.294142246246338), ('border', 4.172154664993286), ('lower', 3.640143712361654), ('mul', 3.6178765296936035), ('narrow', 3.478317141532898)]
+Top words for pretrained_GPT2 neuron indx 1680 [('redirect', 3.229163885116577), ('debug', 2.794963836669922), ("'─'", 2.4591026306152344), ("'»'", 2.4368560314178467), ("'--'", 2.3904362618923187)]
+Top words for pretrained_GPT2 neuron indx 1688 [('str', 4.28250789642334), ('prefix', 4.196171681086223), ('XML', 4.0095672607421875), ('suffix', 3.51045560836792), ('pow', 3.3305869102478027)]
+Top words for pretrained_GPT2 neuron indx 1695 [('palette', 4.52482271194458), ('patch', 3.9602078199386597), ('x', 3.7609307169914246), ('enhance', 3.7490296363830566), ('append', 3.6694915992457693)]
+Top words for pretrained_GPT2 neuron indx 1697 [('saturation', 3.452779710292816), ('numbers', 3.332854747772217), ('streams', 3.1081634163856506), ('Number', 3.105904976526896), ('req', 3.048792702811105)]
+Top words for pretrained_GPT2 neuron indx 5794 [('exp', 4.491010665893555), ('count', 3.8236881494522095), ('width', 3.729545703301063), ('AlexNet', 3.3503260612487793), ('Lambda', 3.3401034832000733)]
+Top words for pretrained_GPT2 neuron indx 5811 [('args', 3.6129649877548218), ('keywords', 3.483459711074829), ('Response', 3.189831018447876), ('path', 3.1232590688900514), ('Request', 3.083730101585388)]
+Top words for pretrained_GPT2 neuron indx 9912 [('stdout', 5.116395473480225), ('extend', 3.506251573562622), ('dict', 3.0144073963165283), ('words', 2.88661789894104), ('border', 2.810290575027466)]
+Top words for pretrained_GPT2 neuron indx 1725 [('match', 4.076270296023442), ('len', 3.841906189918518), ('path', 3.597743727944114), ('XML', 3.375561237335205), ('exp', 3.3135626316070557)]
+Top words for pretrained_GPT2 neuron indx 3781 [('println', 3.199533462524414), ('Response', 3.139263153076172), ('Sequence', 2.8684256076812744), ('ele', 2.861136794090271), ('pow', 2.823539972305298)]
+Top words for pretrained_GPT2 neuron indx 9925 [('">"', 3.326723337173462), ('"width"', 3.0092978477478027), ('"depth"', 2.7840311527252197), ('"session"', 2.7828617095947266), ('"time"', 2.7418668270111084)]
+Top words for pretrained_GPT2 neuron indx 1735 [('Exception', 4.658472061157227), ('console', 3.573880434036255), ('dumps', 3.4793575604756675), ('exceptions', 3.437276601791382), ('logger', 3.4103949069976807)]
+Top words for pretrained_GPT2 neuron indx 3811 [('Exception', 4.672621726989746), ('cat', 3.592022657394409), ('pattern', 3.3412529945373537), ('ValueError', 3.299229860305786), ('fh', 3.237515926361084)]
+Top words for pretrained_GPT2 neuron indx 1765 [('logger', 4.066756725311279), ('contiguous', 3.819024085998535), ('line', 3.7481011152267456), ('Sequence', 3.648674488067627), ('rotate', 3.648064970970154)]
+Top words for pretrained_GPT2 neuron indx 1768 [('borders', 4.305055141448975), ('tw', 4.224069535732269), ('prefix', 3.7041587829589844), ('ref', 3.691821257273356), ('encode', 3.6807421843210855)]
+Top words for pretrained_GPT2 neuron indx 1774 [('gamma', 4.930759429931641), ('sum', 4.654664707183838), ('mul', 4.620301723480225), ('pow', 3.6036837100982666), ('params', 3.5136592388153076)]
+Top words for pretrained_GPT2 neuron indx 1785 [('count', 5.6745898723602295), ('ratio', 4.03074448449271), ('Sequence', 3.838172197341919), ('"\\', 3.588581090172132), ('query', 3.51607638055628)]
+Top words for pretrained_GPT2 neuron indx 1788 [('accuracy', 3.6504273414611816), ('headers', 3.548164649443193), ('RESET', 3.0404176712036133), ('prepare', 3.028594970703125), ('gui', 3.0272624492645264)]
+Top words for pretrained_GPT2 neuron indx 1800 [('struct', 4.726162910461426), ('io', 4.093952178955078), ('println', 3.829829692840576), ('join', 3.5721140768792896), ('tmp', 3.4583568572998047)]
+Top words for pretrained_GPT2 neuron indx 5900 [('Contrast', 3.9908103942871094), ('redirect', 3.7322232723236084), ('urljoin', 3.2908554077148438), ('stream', 3.145821077483041), ('quote', 3.0362367630004883)]
+Top words for pretrained_GPT2 neuron indx 1821 [('len', 4.642224734479731), ('resize', 4.453206121921539), ('fid', 4.167359113693237), ('sub', 3.853557586669922), ('cost', 3.6525931358337402)]
+Top words for pretrained_GPT2 neuron indx 3870 [('RED', 4.543064117431641), ('time', 4.512233893076579), ('version', 4.067609786987305), ('history', 3.8486478328704834), ('math', 3.8380566040674844)]
+Top words for pretrained_GPT2 neuron indx 1833 [('range', 2.909767060052781), ('narrow', 2.7520601749420166), ('self', 2.586293150331372), ('opt', 2.5111116568247476), ('ffmpeg_params', 2.503378689289093)]
+Top words for pretrained_GPT2 neuron indx 1839 [('fid', 4.060206115245819), ('np', 3.968688022822906), ('narrow', 3.937439441680908), ('Contrast', 3.1544241905212402), ('cat', 3.0981533527374268)]
+Top words for pretrained_GPT2 neuron indx 5949 [('struct', 3.8927230834960938), ('scheme', 3.474977731704712), ('seek', 3.360381841659546), ('preferences', 3.27422509988149), ('ele', 3.10223925113678)]
+Top words for pretrained_GPT2 neuron indx 3919 [('seconds', 3.3362832069396973), ('timestamp', 3.234333594640096), ('join', 3.1787251631418862), ('KeyError', 3.1189380884170532), ('"There\\', 3.0578055381774902)]
+Top words for pretrained_GPT2 neuron indx 3928 [('sub', 4.440268039703369), ('tar', 4.077557921409607), ('logger', 3.6284279823303223), ('path', 3.583076510917057), ('opt', 3.5157166719436646)]
+Top words for pretrained_GPT2 neuron indx 1899 [('color', 3.190058708190918), ('append', 3.1821094489679105), ('v', 3.1796496510505676), ('cat', 3.067368268966675), ('else', 2.8432945140357155)]
+Top words for pretrained_GPT2 neuron indx 3950 [('Color', 3.432711124420166), ('bias', 3.0315394401550293), ('hue', 2.9505271911621094), ('Contrast', 2.907024383544922), ('translate', 2.74383145570755)]
+Top words for pretrained_GPT2 neuron indx 6041 [('min', 3.813855859968397), ('channels', 3.789091110229492), ('RED', 3.43269681930542), ('save', 3.3131436347961425), ('append', 3.0862473394812606)]
+Top words for pretrained_GPT2 neuron indx 1951 [('ext', 5.743779357741861), ('border', 5.0056986808776855), ('borders', 4.7527594566345215), ('fid', 4.563427448272705), ('render', 4.560868620872498)]
+Top words for pretrained_GPT2 neuron indx 1954 [('exp', 5.810016632080078), ('width', 4.424898165922898), ('color', 3.8347744941711426), ('colors', 3.435562312602997), ('Color', 3.4114623069763184)]
+Top words for pretrained_GPT2 neuron indx 1961 [('sort', 4.872998237609863), ('enhance', 4.654795169830322), ('uniform', 4.474786758422852), ('random', 4.409468472003937), ('"%"', 4.3170506954193115)]
+Top words for pretrained_GPT2 neuron indx 1962 [('bias', 4.2100911140441895), ('extend', 4.1570940017700195), ("''", 3.943536179559725), ('corrections', 3.689286231994629), ('softmax', 3.582418441772461)]
+Top words for pretrained_GPT2 neuron indx 1969 [('palette', 4.872663815816243), ('args', 4.825239221254985), ('Optional', 4.447253704071045), ('ref', 4.259807745615642), ('div', 4.11649751663208)]
+Top words for pretrained_GPT2 neuron indx 8115 [('KeyboardInterrupt', 3.849411964416504), ('Color', 3.8425631523132324), ('StringIO', 3.6863045692443848), ('PERSPECTIVE', 3.6420071125030518), ('Image', 3.411459488027236)]
+Top words for pretrained_GPT2 neuron indx 1971 [('headers', 4.439975261688232), ('gui', 4.436824321746826), ('decode', 3.8908379554748533), ('""', 3.798430177900526), ('termios', 3.6571204662323)]
+Top words for pretrained_GPT2 neuron indx 6083 [('set', 4.171612882614136), ('letters', 4.008689045906067), ('filename', 3.8718951705255007), ('splits', 3.713552474975586), ('split', 3.6284746182592293)]
+Top words for pretrained_GPT2 neuron indx 6085 [('Response', 2.870045566558838), ("'graph'", 2.7095282077789307), ("'Topics'", 2.628236711025238), ("'://'", 2.48366117477417), ("'metrics'", 2.4793131351470947)]
+Top words for pretrained_GPT2 neuron indx 1998 [('git', 3.571728467941284), ('zip', 3.514763355255127), ('zeros', 3.185068368911743), ('raise', 3.150489403651311), ('mul', 3.086789131164551)]
+Top words for pretrained_GPT2 neuron indx 6115 [('Exception', 5.066399097442627), ('fh', 3.6377354860305786), ('Response', 3.568510580062866), ('cat', 3.5200111865997314), ('exceptions', 3.3449316024780273)]
+Top words for pretrained_GPT2 neuron indx 2020 [('exp', 4.392855167388916), ('graph', 4.3367578983306885), ('prepare', 4.265567302703857), ('any', 4.110466480255127), ('axis', 3.9693031509717307)]
+Top words for pretrained_GPT2 neuron indx 4072 [('encode', 4.356672763824463), ('tw', 4.172593772411346), ('encoding', 3.5712998708089194), ('format', 3.342900581359863), ('Reshape', 3.147194266319275)]
+Top words for pretrained_GPT2 neuron indx 2025 [('degrees', 6.088052431742351), ('height', 5.849952350963246), ('std', 5.079519748687744), ('angle', 5.024851520856221), ('fid', 4.757418274879456)]
+Top words for pretrained_GPT2 neuron indx 2034 [('""', 4.158881971571181), ('str', 4.043307036161423), ('log', 3.3370123386383055), ('"<table>"', 3.2065802812576294), ('int', 3.1798200506018475)]
+Creating control dataset for pretrained_GPT2 POS tagging task
+
+pretrained_GPT2_control_task Selectivity (Diff. between true task and probing task performance):  0.7294776119402986
+~~~~~~~~~~~~~~~~~~~~~~~Summary~~~~~~~~~~~~~~~~~~~~~~~
+Experimental results for pretrained_GPT2:
+Baseline score (probing using all neurons, 768 each, of all layers 13) :{'__OVERALL__': 0.9119402985074627, 'NAME': 0.9313432835820895, 'STRING': 1.0, 'NUMBER': 0.9417910447761194, 'KEYWORD': 0.7746268656716417}
+
+The accuracy when only using the intercept:{'__OVERALL__': 0.25, 'NAME': 0.0, 'STRING': 1.0, 'NUMBER': 0.0, 'KEYWORD': 0.0}
+
+Independent layerwise probing:
+Layer 0:{'__OVERALL__': 0.8783582089552239, 'NAME': 0.9895522388059701, 'STRING': 1.0, 'NUMBER': 0.935820895522388, 'KEYWORD': 0.5880597014925373}
+Layer 1:{'__OVERALL__': 0.8119402985074626, 'NAME': 0.9940298507462687, 'STRING': 1.0, 'NUMBER': 0.9298507462686567, 'KEYWORD': 0.3238805970149254}
+Layer 2:{'__OVERALL__': 0.9305970149253732, 'NAME': 0.9970149253731343, 'STRING': 1.0, 'NUMBER': 0.9985074626865672, 'KEYWORD': 0.7268656716417911}
+Layer 3:{'__OVERALL__': 0.9630597014925373, 'NAME': 0.9895522388059701, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 0.8626865671641791}
+Layer 4:{'__OVERALL__': 0.9347014925373134, 'NAME': 0.9865671641791045, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 0.7522388059701492}
+Layer 5:{'__OVERALL__': 0.9582089552238806, 'NAME': 0.982089552238806, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 0.8507462686567164}
+Layer 6:{'__OVERALL__': 0.9955223880597015, 'NAME': 0.9865671641791045, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 0.9955223880597015}
+Layer 7:{'__OVERALL__': 0.991044776119403, 'NAME': 0.9686567164179104, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 0.9955223880597015}
+Layer 8:{'__OVERALL__': 0.9376865671641791, 'NAME': 0.9761194029850746, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 0.7746268656716417}
+Layer 9:{'__OVERALL__': 0.9884328358208955, 'NAME': 0.9582089552238806, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 0.9955223880597015}
+Layer 10:{'__OVERALL__': 0.9861940298507462, 'NAME': 0.9492537313432836, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 0.9955223880597015}
+Layer 11:{'__OVERALL__': 0.9906716417910447, 'NAME': 0.9671641791044776, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 0.9955223880597015}
+Layer 12:{'__OVERALL__': 0.9843283582089553, 'NAME': 0.9641791044776119, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 0.9731343283582089}
+
+'Incremental-layerwise probing:
+Layer [0, 1]:{'__OVERALL__': 0.9626865671641791, 'NAME': 0.9537313432835821, 'STRING': 1.0, 'NUMBER': 0.9373134328358209, 'KEYWORD': 0.9597014925373134}
+Layer [0, 1, 2]:{'__OVERALL__': 0.8182835820895522, 'NAME': 0.9985074626865672, 'STRING': 1.0, 'NUMBER': 0.9388059701492537, 'KEYWORD': 0.3358208955223881}
+Layer [0, 1, 2, 3]:{'__OVERALL__': 0.9753731343283583, 'NAME': 0.9134328358208955, 'STRING': 1.0, 'NUMBER': 0.9985074626865672, 'KEYWORD': 0.9895522388059701}
+Layer [0, 1, 2, 3, 4]:{'__OVERALL__': 0.9682835820895522, 'NAME': 0.8820895522388059, 'STRING': 1.0, 'NUMBER': 0.9985074626865672, 'KEYWORD': 0.9925373134328358}
+Layer [0, 1, 2, 3, 4, 5]:{'__OVERALL__': 0.9432835820895522, 'NAME': 0.9925373134328358, 'STRING': 1.0, 'NUMBER': 0.935820895522388, 'KEYWORD': 0.844776119402985}
+Layer [0, 1, 2, 3, 4, 5, 6]:{'__OVERALL__': 0.9514925373134329, 'NAME': 0.9611940298507463, 'STRING': 1.0, 'NUMBER': 0.9761194029850746, 'KEYWORD': 0.8686567164179104}
+Layer [0, 1, 2, 3, 4, 5, 6, 7]:{'__OVERALL__': 0.9854477611940299, 'NAME': 0.982089552238806, 'STRING': 1.0, 'NUMBER': 0.9641791044776119, 'KEYWORD': 0.9955223880597015}
+Layer [0, 1, 2, 3, 4, 5, 6, 7, 8]:{'__OVERALL__': 0.9891791044776119, 'NAME': 0.9761194029850746, 'STRING': 1.0, 'NUMBER': 0.9925373134328358, 'KEYWORD': 0.9880597014925373}
+Layer [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]:{'__OVERALL__': 0.9936567164179104, 'NAME': 0.9895522388059701, 'STRING': 1.0, 'NUMBER': 0.9925373134328358, 'KEYWORD': 0.9925373134328358}
+Layer [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:{'__OVERALL__': 0.9891791044776119, 'NAME': 0.9611940298507463, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 0.9955223880597015}
+Layer [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]:{'__OVERALL__': 0.9899253731343284, 'NAME': 0.9791044776119403, 'STRING': 1.0, 'NUMBER': 0.9850746268656716, 'KEYWORD': 0.9955223880597015}
+
+select minimum layers:
+To lose 0.03*100% accuracy based on all layers, keep the layers from 0 to 1
+Clustering based on the layers above: 0 to 1:
+When no clustering:
+the probing result is {'__OVERALL__': 0.9574626865671642, 'NAME': 0.9552238805970149, 'STRING': 1.0, 'NUMBER': 0.9388059701492537, 'KEYWORD': 0.935820895522388}
+To lose 0.01*100% of accuracy based on the model above:no-clustering
+The minimum number of neurons needed is 1497
+The accuracy of the minimum neuron set is {'__OVERALL__': 0.960820895522388, 'NAME': 0.9552238805970149, 'STRING': 1.0, 'NUMBER': 0.9432835820895522, 'KEYWORD': 0.9447761194029851}
+
+Clustering threshold:0.3
+The number of independent neurons:1450
+The number of clusters:1536
+The probing result (CC score) is :{'__OVERALL__': 0.8805970149253731, 'NAME': 0.9388059701492537, 'STRING': 1.0, 'NUMBER': 0.9791044776119403, 'KEYWORD': 0.6044776119402985}
+To lose 0.01*100% of accuracy based on the model above:clustering-0.3
+The minimum number of neurons needed is 199
+The accuracy of the minimum neuron set is {'__OVERALL__': 0.8824626865671642, 'NAME': 0.9641791044776119, 'STRING': 1.0, 'NUMBER': 0.9925373134328358, 'KEYWORD': 0.573134328358209}
+
+The best accuracy is: 0.960820895522388
+The corresponding number of neurons:1497
+The corresponding number of neuron percentage reduction is: 0.8500600961538461
+The corresponding clustering threshold is :-1
+To lose 0.02*100% accuracy based on all layers, keep the layers from 0 to 1
+Clustering based on the layers above: 0 to 1:
+When no clustering:
+the probing result is {'__OVERALL__': 0.9574626865671642, 'NAME': 0.9552238805970149, 'STRING': 1.0, 'NUMBER': 0.9388059701492537, 'KEYWORD': 0.935820895522388}
+To lose 0.01*100% of accuracy based on the model above:no-clustering
+The minimum number of neurons needed is 1497
+The accuracy of the minimum neuron set is {'__OVERALL__': 0.960820895522388, 'NAME': 0.9552238805970149, 'STRING': 1.0, 'NUMBER': 0.9432835820895522, 'KEYWORD': 0.9447761194029851}
+
+Clustering threshold:0.3
+The number of independent neurons:1450
+The number of clusters:1536
+The probing result (CC score) is :{'__OVERALL__': 0.8805970149253731, 'NAME': 0.9388059701492537, 'STRING': 1.0, 'NUMBER': 0.9791044776119403, 'KEYWORD': 0.6044776119402985}
+To lose 0.01*100% of accuracy based on the model above:clustering-0.3
+The minimum number of neurons needed is 199
+The accuracy of the minimum neuron set is {'__OVERALL__': 0.8824626865671642, 'NAME': 0.9641791044776119, 'STRING': 1.0, 'NUMBER': 0.9925373134328358, 'KEYWORD': 0.573134328358209}
+
+The best accuracy is: 0.960820895522388
+The corresponding number of neurons:1497
+The corresponding number of neuron percentage reduction is: 0.8500600961538461
+The corresponding clustering threshold is :-1
+To lose 0.01*100% accuracy based on all layers, keep the layers from 0 to 1
+Clustering based on the layers above: 0 to 1:
+When no clustering:
+the probing result is {'__OVERALL__': 0.9574626865671642, 'NAME': 0.9552238805970149, 'STRING': 1.0, 'NUMBER': 0.9388059701492537, 'KEYWORD': 0.935820895522388}
+To lose 0.01*100% of accuracy based on the model above:no-clustering
+The minimum number of neurons needed is 1497
+The accuracy of the minimum neuron set is {'__OVERALL__': 0.960820895522388, 'NAME': 0.9552238805970149, 'STRING': 1.0, 'NUMBER': 0.9432835820895522, 'KEYWORD': 0.9447761194029851}
+
+Clustering threshold:0.3
+The number of independent neurons:1450
+The number of clusters:1536
+The probing result (CC score) is :{'__OVERALL__': 0.8805970149253731, 'NAME': 0.9388059701492537, 'STRING': 1.0, 'NUMBER': 0.9791044776119403, 'KEYWORD': 0.6044776119402985}
+To lose 0.01*100% of accuracy based on the model above:clustering-0.3
+The minimum number of neurons needed is 199
+The accuracy of the minimum neuron set is {'__OVERALL__': 0.8824626865671642, 'NAME': 0.9641791044776119, 'STRING': 1.0, 'NUMBER': 0.9925373134328358, 'KEYWORD': 0.573134328358209}
+
+The best accuracy is: 0.960820895522388
+The corresponding number of neurons:1497
+The corresponding number of neuron percentage reduction is: 0.8500600961538461
+The corresponding clustering threshold is :-1
+
+probe independent neurons based on all layers with clustering (run_cc_all.py)
+When no clustering:
+The probing result (CC score) is :{'__OVERALL__': 0.9873134328358208, 'NAME': 0.9776119402985075, 'STRING': 1.0, 'NUMBER': 0.9761194029850746, 'KEYWORD': 0.9955223880597015}
+Clustering threshold:0.1
+The number of independent neurons:5834
+The number of clusters:9984
+The probing result (CC score) is :{'__OVERALL__': 0.9772388059701492, 'NAME': 0.9835820895522388, 'STRING': 1.0, 'NUMBER': 0.9582089552238806, 'KEYWORD': 0.9671641791044776}
+Clustering threshold:0.2
+The number of independent neurons:3463
+The number of clusters:9984
+The probing result (CC score) is :{'__OVERALL__': 0.9679104477611941, 'NAME': 0.9014925373134328, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 0.9701492537313433}
+Clustering threshold:0.3
+The number of independent neurons:2583
+The number of clusters:9984
+The probing result (CC score) is :{'__OVERALL__': 0.9761194029850746, 'NAME': 0.908955223880597, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 0.9955223880597015}
+Clustering threshold:0.4
+The number of independent neurons:2020
+The number of clusters:9984
+The probing result (CC score) is :{'__OVERALL__': 0.9791044776119403, 'NAME': 0.9208955223880597, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 0.9955223880597015}
+Clustering threshold:0.5
+The number of independent neurons:1508
+The number of clusters:9984
+The probing result (CC score) is :{'__OVERALL__': 0.871268656716418, 'NAME': 1.0, 'STRING': 1.0, 'NUMBER': 0.9970149253731343, 'KEYWORD': 0.4880597014925373}
+Clustering threshold:0.6
+The number of independent neurons:999
+The number of clusters:9984
+The probing result (CC score) is :{'__OVERALL__': 0.8705223880597015, 'NAME': 0.9970149253731343, 'STRING': 1.0, 'NUMBER': 0.9970149253731343, 'KEYWORD': 0.4880597014925373}
+Clustering threshold:0.7
+The number of independent neurons:561
+The number of clusters:9984
+The probing result (CC score) is :{'__OVERALL__': 0.8384328358208956, 'NAME': 0.9955223880597015, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 0.3582089552238806}
+Clustering threshold:0.8
+The number of independent neurons:207
+The number of clusters:9984
+The probing result (CC score) is :{'__OVERALL__': 0.8854477611940299, 'NAME': 0.9746268656716418, 'STRING': 1.0, 'NUMBER': 0.982089552238806, 'KEYWORD': 0.5850746268656717}
+Clustering threshold:0.9
+The number of independent neurons:5
+The number of clusters:9984
+The probing result (CC score) is :{'__OVERALL__': 0.458955223880597, 'NAME': 0.18955223880597014, 'STRING': 0.44776119402985076, 'NUMBER': 0.44328358208955226, 'KEYWORD': 0.755223880597015}
+The best accuracy is: 0.9873134328358208
+The corresponding number of neurons:9984
+The corresponding number of neuron percentage reduction is: 0.0
+The corresponding clustering threshold is :-1
+
+probe independent neurons based on all layers without clustering (run_max_features.py)
+Based on all layers: from 0 to 12, no clustering, to lose only 0.01*100% of accuracy:
+The minimum number of neurons needed is 1497
+The performance is {'model_name': 'pretrained_GPT2', 'best_l1': 0, 'best_l2': 0.01, 'scores': {'__OVERALL__': 0.9884328358208955, 'NAME': 0.9641791044776119, 'STRING': 1.0, 'NUMBER': 1.0, 'KEYWORD': 0.9895522388059701}, 'intercept': {'__OVERALL__': 0.25, 'NAME': 1.0, 'STRING': 0.0, 'NUMBER': 0.0, 'KEYWORD': 0.0}}
+
+Probeless:
+Based on all layers, from 0 to 12, no clustering, to lose only 0.01*100% of accuracy:
+The minimum number of neurons needed is :89
+The performance is :{'model_name': 'pretrained_GPT2', 'best_l1': 0, 'best_l2': 0, 'scores': {'__OVERALL__': 0.8805970149253731, 'NAME': 0.9970149253731343, 'STRING': 1.0, 'NUMBER': 0.9507462686567164, 'KEYWORD': 0.5746268656716418}, 'intercept': {'__OVERALL__': 0.25, 'NAME': 1.0, 'STRING': 0.0, 'NUMBER': 0.0, 'KEYWORD': 0.0}}
+----------------------------------------------------------------
