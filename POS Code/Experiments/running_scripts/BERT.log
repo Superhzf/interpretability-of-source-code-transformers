@@ -8,7 +8,7 @@ length of source dictionary:  28820
 length of target dictionary:  49
 507521
 Total instances: 507521
-['get_size_inches', 'qubit_size', 'old', 'clear', 'backlink', 'spans', 'do_GEOHASH', "'run_config.'", 'FunctionContainer', '"Containers"', 'graph_layer', 'challenge', "'sitetrees_reset'", 'forensic_index', '_instruction_to_operator', 'callback_type', '_expand_parameters', 'agg_function', 'UnicodeEncodeError', 'to_yaml']
+['_io_change', '_multi_graph', "'public_url'", 'ammo', 'add_pred', "'schema_update_options'", 'max_nfds', '_clean_signal_meta', 'parse_transcript', 'lx', '"--no-special"', 'logging_context', 'first_status', 'WIN', '_num_requests_needed', 'log_stdout_stderr', 'get_dep', 'cont', 'instance_type', 'append']
 Number of samples:  507521
 Stats: Labels with their frequencies in the final set
 NAME 175779
@@ -71,7 +71,7 @@ length of source dictionary:  19446
 length of target dictionary:  46
 308882
 Total instances: 308882
-["'daysback'", 'bp_terms', 'is_extensible', 'queue_maxsize', 'await', 'run_name_set', 'to_list', "'output.sam'", 'sre_constants', 'old', 'method_regex', 'statc', 'apply_Mueller', "'diagnosis_phenotypes'", 'rotate_x_labels', '1.107', 'get_index_type', 'parsed_ind', 'init_node', 'rid']
+['loqusdb', "'XR'", 'underline', "'verb'", 'checklistitem_json', 'datastructures', '"/Messages.json"', 'U_ON', 'server_name', 'irrelevant_ids', 'float_data', '50.00', 'Vote', 'serial_for_url', "'ensembl_link'", '"modules"', '"depth"', 'graceful_exit', '_exec_cached_module', '"count"']
 Number of samples:  308882
 Stats: Labels with their frequencies in the final set
 NAME 106508
@@ -131,7 +131,7 @@ length of source dictionary:  18380
 length of target dictionary:  49
 302448
 Total instances: 302448
-['jquery', '_error_suppressions', 'await', '_lsize', 'lscsum0', '__fetch_summary', 'pick_signed_metadata_statements', '_iterationIdx', 'printStates', 'ptb_iterator', 'is_spout', 'Glob', 'tf_action_exploration', '"requirements.txt"', 'EmbeddingInputlayer', 'optimizeKeyPattern', '0x4', '_SparseMatrixCorticalColumnAdapter', 'checkModelIDs', 'UpdateIncludeState']
+['VSI_TYPES', "'RSI'", 'ystd', 'Na_c', 'get_wrapper_by_name', "'streams'", 'head_key', 'time_utils', 'ypred', '"imdb.pkl"', '0.99999', 'rotatePoint', '"count"', '_finishedLearning', 'runLen', '"VOC2012"', 'savez', 'distinct', 'optionInferenceArgs', 'TwoGramModel']
 Number of samples:  302448
 Stats: Labels with their frequencies in the final set
 NAME 106943
@@ -921,7 +921,7 @@ Top words for pretrained_BERT neuron indx 2046 [('sort', 4.470424175262451), ('c
 Top words for pretrained_BERT neuron indx 6143 [('upper', 4.666971683502197), ('lower', 3.9934326807657876), ('degrees', 3.5296401977539062), ('final', 3.3402814070383706), ('sprint', 3.325535774230957)]
 Creating control dataset for pretrained_BERT POS tagging task
 
-pretrained_BERT_control_task Selectivity (Diff. between true task and probing task performance):  0.7682835820895522
+pretrained_BERT_control_task Selectivity (Diff. between true task and probing task performance):  0.7712686567164179
 ~~~~~~~~~~~~~~~~~~~~~~~Summary~~~~~~~~~~~~~~~~~~~~~~~
 Experimental results for pretrained_BERT:
 Baseline score (probing using all neurons, 768 each, of all layers 13) :{'__OVERALL__': 0.975, 'NAME': 0.9955223880597015, 'STRING': 1.0, 'NUMBER': 0.9462686567164179, 'KEYWORD': 0.9582089552238806}
@@ -960,115 +960,115 @@ select minimum layers:
 To lose 0.03*100% accuracy based on all layers, keep the layers from 0 to 4
 Clustering based on the layers above: 0 to 4:
 When no clustering:
-the probing result is {'__OVERALL__': 0.966044776119403, 'NAME': 0.9970149253731343, 'STRING': 1.0, 'NUMBER': 0.9402985074626866, 'KEYWORD': 0.926865671641791}
+the probing result is {'__OVERALL__': 0.9705223880597015, 'NAME': 0.9970149253731343, 'STRING': 1.0, 'NUMBER': 0.9462686567164179, 'KEYWORD': 0.9388059701492537}
 To lose 0.01*100% of accuracy based on the model above:no-clustering
-The minimum number of neurons needed is 399
-The accuracy of the minimum neuron set is {'__OVERALL__': 0.9727611940298507, 'NAME': 0.9940298507462687, 'STRING': 1.0, 'NUMBER': 0.9611940298507463, 'KEYWORD': 0.935820895522388}
+The minimum number of neurons needed is 199
+The accuracy of the minimum neuron set is {'__OVERALL__': 0.9757462686567164, 'NAME': 0.9761194029850746, 'STRING': 1.0, 'NUMBER': 0.9955223880597015, 'KEYWORD': 0.9313432835820895}
 
 Clustering threshold:0.3
 The number of independent neurons:1139
 The number of clusters:3840
-The probing result (CC score) is :{'__OVERALL__': 0.9753731343283583, 'NAME': 1.0, 'STRING': 1.0, 'NUMBER': 0.9537313432835821, 'KEYWORD': 0.9477611940298507}
+The probing result (CC score) is :{'__OVERALL__': 0.9817164179104477, 'NAME': 0.9985074626865672, 'STRING': 1.0, 'NUMBER': 0.9865671641791045, 'KEYWORD': 0.9417910447761194}
 To lose 0.01*100% of accuracy based on the model above:clustering-0.3
-The minimum number of neurons needed is 99
-The accuracy of the minimum neuron set is {'__OVERALL__': 0.9720149253731343, 'NAME': 0.9850746268656716, 'STRING': 1.0, 'NUMBER': 0.9880597014925373, 'KEYWORD': 0.9149253731343283}
+The minimum number of neurons needed is 299
+The accuracy of the minimum neuron set is {'__OVERALL__': 0.9735074626865672, 'NAME': 0.9985074626865672, 'STRING': 1.0, 'NUMBER': 0.9940298507462687, 'KEYWORD': 0.9014925373134328}
 
-The best accuracy is: 0.9727611940298507
-The corresponding number of neurons:399
-The corresponding number of neuron percentage reduction is: 0.9600360576923077
+The best accuracy is: 0.9757462686567164
+The corresponding number of neurons:199
+The corresponding number of neuron percentage reduction is: 0.980068108974359
 The corresponding clustering threshold is :-1
 To lose 0.02*100% accuracy based on all layers, keep the layers from 0 to 4
 Clustering based on the layers above: 0 to 4:
 When no clustering:
-the probing result is {'__OVERALL__': 0.966044776119403, 'NAME': 0.9970149253731343, 'STRING': 1.0, 'NUMBER': 0.9402985074626866, 'KEYWORD': 0.926865671641791}
+the probing result is {'__OVERALL__': 0.9705223880597015, 'NAME': 0.9970149253731343, 'STRING': 1.0, 'NUMBER': 0.9462686567164179, 'KEYWORD': 0.9388059701492537}
 To lose 0.01*100% of accuracy based on the model above:no-clustering
-The minimum number of neurons needed is 399
-The accuracy of the minimum neuron set is {'__OVERALL__': 0.9727611940298507, 'NAME': 0.9940298507462687, 'STRING': 1.0, 'NUMBER': 0.9611940298507463, 'KEYWORD': 0.935820895522388}
+The minimum number of neurons needed is 199
+The accuracy of the minimum neuron set is {'__OVERALL__': 0.9757462686567164, 'NAME': 0.9761194029850746, 'STRING': 1.0, 'NUMBER': 0.9955223880597015, 'KEYWORD': 0.9313432835820895}
 
 Clustering threshold:0.3
 The number of independent neurons:1139
 The number of clusters:3840
-The probing result (CC score) is :{'__OVERALL__': 0.9753731343283583, 'NAME': 1.0, 'STRING': 1.0, 'NUMBER': 0.9537313432835821, 'KEYWORD': 0.9477611940298507}
+The probing result (CC score) is :{'__OVERALL__': 0.9817164179104477, 'NAME': 0.9985074626865672, 'STRING': 1.0, 'NUMBER': 0.9865671641791045, 'KEYWORD': 0.9417910447761194}
 To lose 0.01*100% of accuracy based on the model above:clustering-0.3
-The minimum number of neurons needed is 99
-The accuracy of the minimum neuron set is {'__OVERALL__': 0.9720149253731343, 'NAME': 0.9850746268656716, 'STRING': 1.0, 'NUMBER': 0.9880597014925373, 'KEYWORD': 0.9149253731343283}
+The minimum number of neurons needed is 299
+The accuracy of the minimum neuron set is {'__OVERALL__': 0.9735074626865672, 'NAME': 0.9985074626865672, 'STRING': 1.0, 'NUMBER': 0.9940298507462687, 'KEYWORD': 0.9014925373134328}
 
-The best accuracy is: 0.9727611940298507
-The corresponding number of neurons:399
-The corresponding number of neuron percentage reduction is: 0.9600360576923077
+The best accuracy is: 0.9757462686567164
+The corresponding number of neurons:199
+The corresponding number of neuron percentage reduction is: 0.980068108974359
 The corresponding clustering threshold is :-1
 To lose 0.01*100% accuracy based on all layers, keep the layers from 0 to 4
 Clustering based on the layers above: 0 to 4:
 When no clustering:
-the probing result is {'__OVERALL__': 0.966044776119403, 'NAME': 0.9970149253731343, 'STRING': 1.0, 'NUMBER': 0.9402985074626866, 'KEYWORD': 0.926865671641791}
+the probing result is {'__OVERALL__': 0.9705223880597015, 'NAME': 0.9970149253731343, 'STRING': 1.0, 'NUMBER': 0.9462686567164179, 'KEYWORD': 0.9388059701492537}
 To lose 0.01*100% of accuracy based on the model above:no-clustering
-The minimum number of neurons needed is 399
-The accuracy of the minimum neuron set is {'__OVERALL__': 0.9727611940298507, 'NAME': 0.9940298507462687, 'STRING': 1.0, 'NUMBER': 0.9611940298507463, 'KEYWORD': 0.935820895522388}
+The minimum number of neurons needed is 199
+The accuracy of the minimum neuron set is {'__OVERALL__': 0.9757462686567164, 'NAME': 0.9761194029850746, 'STRING': 1.0, 'NUMBER': 0.9955223880597015, 'KEYWORD': 0.9313432835820895}
 
 Clustering threshold:0.3
 The number of independent neurons:1139
 The number of clusters:3840
-The probing result (CC score) is :{'__OVERALL__': 0.9753731343283583, 'NAME': 1.0, 'STRING': 1.0, 'NUMBER': 0.9537313432835821, 'KEYWORD': 0.9477611940298507}
+The probing result (CC score) is :{'__OVERALL__': 0.9817164179104477, 'NAME': 0.9985074626865672, 'STRING': 1.0, 'NUMBER': 0.9865671641791045, 'KEYWORD': 0.9417910447761194}
 To lose 0.01*100% of accuracy based on the model above:clustering-0.3
-The minimum number of neurons needed is 99
-The accuracy of the minimum neuron set is {'__OVERALL__': 0.9720149253731343, 'NAME': 0.9850746268656716, 'STRING': 1.0, 'NUMBER': 0.9880597014925373, 'KEYWORD': 0.9149253731343283}
+The minimum number of neurons needed is 299
+The accuracy of the minimum neuron set is {'__OVERALL__': 0.9735074626865672, 'NAME': 0.9985074626865672, 'STRING': 1.0, 'NUMBER': 0.9940298507462687, 'KEYWORD': 0.9014925373134328}
 
-The best accuracy is: 0.9727611940298507
-The corresponding number of neurons:399
-The corresponding number of neuron percentage reduction is: 0.9600360576923077
+The best accuracy is: 0.9757462686567164
+The corresponding number of neurons:199
+The corresponding number of neuron percentage reduction is: 0.980068108974359
 The corresponding clustering threshold is :-1
 
 probe independent neurons based on all layers with clustering (run_cc_all.py)
 When no clustering:
-The probing result (CC score) is :{'__OVERALL__': 0.9738805970149254, 'NAME': 0.9955223880597015, 'STRING': 1.0, 'NUMBER': 0.9462686567164179, 'KEYWORD': 0.9537313432835821}
+The probing result (CC score) is :{'__OVERALL__': 0.9791044776119403, 'NAME': 0.9940298507462687, 'STRING': 1.0, 'NUMBER': 0.9641791044776119, 'KEYWORD': 0.9582089552238806}
 Clustering threshold:0.1
 The number of independent neurons:6806
 The number of clusters:9984
-The probing result (CC score) is :{'__OVERALL__': 0.982089552238806, 'NAME': 0.9955223880597015, 'STRING': 1.0, 'NUMBER': 0.9686567164179104, 'KEYWORD': 0.9641791044776119}
+The probing result (CC score) is :{'__OVERALL__': 0.9787313432835821, 'NAME': 0.9955223880597015, 'STRING': 1.0, 'NUMBER': 0.9611940298507463, 'KEYWORD': 0.9582089552238806}
 Clustering threshold:0.2
 The number of independent neurons:3922
 The number of clusters:9984
-The probing result (CC score) is :{'__OVERALL__': 0.9854477611940299, 'NAME': 0.9955223880597015, 'STRING': 1.0, 'NUMBER': 0.9716417910447761, 'KEYWORD': 0.9746268656716418}
+The probing result (CC score) is :{'__OVERALL__': 0.983955223880597, 'NAME': 0.9955223880597015, 'STRING': 1.0, 'NUMBER': 0.9641791044776119, 'KEYWORD': 0.9761194029850746}
 Clustering threshold:0.3
 The number of independent neurons:2543
 The number of clusters:9984
-The probing result (CC score) is :{'__OVERALL__': 0.983955223880597, 'NAME': 0.9955223880597015, 'STRING': 1.0, 'NUMBER': 0.9746268656716418, 'KEYWORD': 0.9656716417910448}
+The probing result (CC score) is :{'__OVERALL__': 0.9861940298507462, 'NAME': 0.9970149253731343, 'STRING': 1.0, 'NUMBER': 0.9701492537313433, 'KEYWORD': 0.9776119402985075}
 Clustering threshold:0.4
 The number of independent neurons:1785
 The number of clusters:9984
-The probing result (CC score) is :{'__OVERALL__': 0.9880597014925373, 'NAME': 0.9955223880597015, 'STRING': 1.0, 'NUMBER': 0.9716417910447761, 'KEYWORD': 0.9850746268656716}
+The probing result (CC score) is :{'__OVERALL__': 0.9850746268656716, 'NAME': 1.0, 'STRING': 1.0, 'NUMBER': 0.9716417910447761, 'KEYWORD': 0.9686567164179104}
 Clustering threshold:0.5
 The number of independent neurons:1298
 The number of clusters:9984
-The probing result (CC score) is :{'__OVERALL__': 0.9869402985074627, 'NAME': 0.9940298507462687, 'STRING': 1.0, 'NUMBER': 0.9656716417910448, 'KEYWORD': 0.9880597014925373}
+The probing result (CC score) is :{'__OVERALL__': 0.9850746268656716, 'NAME': 0.9970149253731343, 'STRING': 1.0, 'NUMBER': 0.9582089552238806, 'KEYWORD': 0.9850746268656716}
 Clustering threshold:0.6
 The number of independent neurons:932
 The number of clusters:9984
-The probing result (CC score) is :{'__OVERALL__': 0.9902985074626866, 'NAME': 0.9925373134328358, 'STRING': 1.0, 'NUMBER': 0.991044776119403, 'KEYWORD': 0.9776119402985075}
+The probing result (CC score) is :{'__OVERALL__': 0.9917910447761195, 'NAME': 0.9955223880597015, 'STRING': 1.0, 'NUMBER': 0.9835820895522388, 'KEYWORD': 0.9880597014925373}
 Clustering threshold:0.7
 The number of independent neurons:574
 The number of clusters:9984
-The probing result (CC score) is :{'__OVERALL__': 0.9873134328358208, 'NAME': 0.9940298507462687, 'STRING': 1.0, 'NUMBER': 0.9776119402985075, 'KEYWORD': 0.9776119402985075}
+The probing result (CC score) is :{'__OVERALL__': 0.9895522388059701, 'NAME': 0.9970149253731343, 'STRING': 1.0, 'NUMBER': 0.9925373134328358, 'KEYWORD': 0.9686567164179104}
 Clustering threshold:0.8
 The number of independent neurons:227
 The number of clusters:9984
-The probing result (CC score) is :{'__OVERALL__': 0.9735074626865672, 'NAME': 0.9880597014925373, 'STRING': 1.0, 'NUMBER': 0.9552238805970149, 'KEYWORD': 0.9507462686567164}
+The probing result (CC score) is :{'__OVERALL__': 0.9798507462686568, 'NAME': 0.9761194029850746, 'STRING': 0.9985074626865672, 'NUMBER': 0.9791044776119403, 'KEYWORD': 0.9656716417910448}
 Clustering threshold:0.9
 The number of independent neurons:4
 The number of clusters:9984
-The probing result (CC score) is :{'__OVERALL__': 0.40261194029850744, 'NAME': 0.3194029850746269, 'STRING': 0.5686567164179105, 'NUMBER': 0.5, 'KEYWORD': 0.22238805970149253}
-The best accuracy is: 0.9902985074626866
+The probing result (CC score) is :{'__OVERALL__': 0.31977611940298506, 'NAME': 0.5059701492537313, 'STRING': 0.6358208955223881, 'NUMBER': 0.11343283582089553, 'KEYWORD': 0.023880597014925373}
+The best accuracy is: 0.9917910447761195
 The corresponding number of neurons:932
 The corresponding number of neuron percentage reduction is: 0.906650641025641
 The corresponding clustering threshold is :0.6
 
 probe independent neurons based on all layers without clustering (run_max_features.py)
 Based on all layers: from 0 to 12, no clustering, to lose only 0.01*100% of accuracy:
-The minimum number of neurons needed is 379
-The performance is {'model_name': 'pretrained_BERT', 'best_l1': 0, 'best_l2': 0.0001, 'scores': {'__OVERALL__': 0.9735074626865672, 'NAME': 0.9895522388059701, 'STRING': 1.0, 'NUMBER': 0.9776119402985075, 'KEYWORD': 0.926865671641791}, 'intercept': {'__OVERALL__': 0.25, 'NAME': 1.0, 'STRING': 0.0, 'NUMBER': 0.0, 'KEYWORD': 0.0}}
+The minimum number of neurons needed is 129
+The performance is {'model_name': 'pretrained_BERT', 'best_l1': 0, 'best_l2': 0.1, 'scores': {'__OVERALL__': 0.9720149253731343, 'NAME': 0.9492537313432836, 'STRING': 0.9985074626865672, 'NUMBER': 0.9761194029850746, 'KEYWORD': 0.9641791044776119}, 'intercept': {'__OVERALL__': 0.25, 'NAME': 1.0, 'STRING': 0.0, 'NUMBER': 0.0, 'KEYWORD': 0.0}}
 
 Probeless:
 Based on all layers, from 0 to 12, no clustering, to lose only 0.01*100% of accuracy:
-The minimum number of neurons needed is :189
-The performance is :{'model_name': 'pretrained_BERT', 'best_l1': 0, 'best_l2': 0.001, 'scores': {'__OVERALL__': 0.9731343283582089, 'NAME': 0.9567164179104478, 'STRING': 1.0, 'NUMBER': 0.9746268656716418, 'KEYWORD': 0.9611940298507463}, 'intercept': {'__OVERALL__': 0.25, 'NAME': 1.0, 'STRING': 0.0, 'NUMBER': 0.0, 'KEYWORD': 0.0}}
+The minimum number of neurons needed is :169
+The performance is :{'model_name': 'pretrained_BERT', 'best_l1': 0, 'best_l2': 0.01, 'scores': {'__OVERALL__': 0.9679104477611941, 'NAME': 0.9388059701492537, 'STRING': 1.0, 'NUMBER': 0.9641791044776119, 'KEYWORD': 0.9686567164179104}, 'intercept': {'__OVERALL__': 0.25, 'NAME': 1.0, 'STRING': 0.0, 'NUMBER': 0.0, 'KEYWORD': 0.0}}
 ----------------------------------------------------------------
