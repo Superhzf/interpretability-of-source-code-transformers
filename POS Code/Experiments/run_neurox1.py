@@ -79,6 +79,7 @@ def main():
         print("Getting activations from json files. If you need to extract them, run with --extract=True \n" )
 
     torch.manual_seed(0)
+    this_model = args.this_model 
     print(f"Anayzing {this_model}")
     tokens_train,activations_train,flat_tokens_train,X_train, y_train, label2idx_train, idx2label_train,_,num_layers=preprocess(os.path.join(AVTIVATIONS_FOLDER,ACTIVATION_NAMES[this_model][0]),
                                                                 './src_files/codetest2_train_unique.in','./src_files/codetest2_train_unique.label',
