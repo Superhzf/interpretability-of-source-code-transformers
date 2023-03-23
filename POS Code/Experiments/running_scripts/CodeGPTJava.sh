@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --nodes=1
 #SBATCH --ntasks=8
-#SBATCH --mem=64G
+#SBATCH --mem=96G
 #SBATCH --time=4:00:00
 
 module load ml-gpu
