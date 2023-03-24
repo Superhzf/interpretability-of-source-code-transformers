@@ -327,11 +327,13 @@ def main():
     best_layer_idx = -1
     best_target_layer = -1
     best_target_neuron = -1
+    best_percent_reduc = 0
 
     best_lw_layer_idx = -1
     best_lw_target_layer = -1
     best_lw_num_neuron = -1
     best_lw_accuracy = 0
+    best_lw_percent_reduc = 0
     print(f"select minimum layers:(LS+CC+LCA)")
     for this_target_layer,layer_idx in all_results['select_minimum_layer'].items():
         print(f"Layerwise (LS):To lose {this_target_layer}*100% accuracy based on all layers, keep the layers from 0 to {layer_idx}")
@@ -340,14 +342,14 @@ def main():
         layers = list(range(layer_idx+1))
         target_layer_accuracy = all_results['incremental_layerwise'][f'{layers}']['scores']
         print(f"The accuracy is:{target_layer_accuracy}")
-        percent_reduc = 1 - neurons2keep/all_results['total_neurons']
+        lw_percent_reduc = 1 - neurons2keep/all_results['total_neurons']
         print(f"Percentage reduction (neurons):{percent_reduc}")
         print()
         if target_layer_accuracy['__OVERALL__'] > best_lw_accuracy:
             best_lw_layer_idx = layer_idx
             best_lw_target_layer = this_target_layer
             best_lw_accuracy = target_layer_accuracy['__OVERALL__']
-            best_lw_percent_reduc =  percent_reduc
+            best_lw_percent_reduc =  lw_percent_reduc
             best_lw_num_neuron = neurons2keep
 
         for this_target_neuron, this_result in all_results['select_minimum_neuron'][layer_idx].items():
@@ -373,7 +375,7 @@ def main():
                 if accuracy['__OVERALL__'] > best_accuracy:
                     best_accuracy = accuracy['__OVERALL__']
                     best_num_neuron = minimal_neuron_set_size
-                    percent_reduc = 1 - minimal_neuron_set_size/all_results['total_neurons']
+                    best_percent_reduc = 1 - minimal_neuron_set_size/all_results['total_neurons']
                     best_clustering_threshold = clustering_threshold
                     best_layer_idx = layer_idx
                     best_target_layer = this_target_layer
@@ -393,7 +395,7 @@ def main():
     print(f"The best clustering threshold:{best_clustering_threshold}")
     print(f"The best number of neurons:{best_num_neuron}")
     print(f"The best accuracy: {best_accuracy}")
-    print(f"The best neuron percentage reduction: {percent_reduc}")
+    print(f"The best neuron percentage reduction: {best_percent_reduc}")
     
     
     print()
