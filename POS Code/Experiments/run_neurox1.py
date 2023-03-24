@@ -219,7 +219,7 @@ def main():
     all_results["incremental_layerwise"] = results
     print("~"*50)
     # select minimum layers
-    print('select minimum layers')
+    print('select minimum layers (LS+CC+LCA)')
     target_layer = [0.03,0.02,0.01]
     target_neuron = [0.01]
     clustering_thresholds = [-1,0.3]
@@ -321,9 +321,12 @@ def main():
         print(f"Layer {layers}:{all_results['incremental_layerwise'][f'{layers}']['scores']}")
 
     print()
-    print(f"select minimum layers:")
+    print(f"select minimum layers:(LS+CC+LCA)")
     for this_target_layer,layer_idx in all_results['select_minimum_layer'].items():
-        print(f"To lose {this_target_layer}*100% accuracy based on all layers, keep the layers from 0 to {layer_idx}")
+        print(f"Layerwise (LS):To lose {this_target_layer}*100% accuracy based on all layers, keep the layers from 0 to {layer_idx}")
+        neurons2keep = (layer_idx + 1)*neurons_per_layer
+        print(f"The number of neurons to keep is {neurons2keep}")
+        print(f"Neuron percentage reduction:{1-neurons2keep/all_results['total_neurons']}")
         for this_target_neuron, this_result in all_results['select_minimum_neuron'][layer_idx].items():
             print(f"Clustering based on the layers above: 0 to {layer_idx}:")
             best_accuracy = 0
