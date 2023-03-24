@@ -342,6 +342,7 @@ def main():
         print(f"The accuracy is:{target_layer_accuracy}")
         percent_reduc = 1 - neurons2keep/all_results['total_neurons']
         print(f"Percentage reduction (neurons):{percent_reduc}")
+        print()
         if target_layer_accuracy['__OVERALL__'] > best_lw_accuracy:
             best_lw_layer_idx = layer_idx
             best_lw_target_layer = this_target_layer
@@ -384,6 +385,7 @@ def main():
     print(f"The best number of neurons:{best_lw_num_neuron}")
     print(f"The best accuracy:{best_lw_accuracy}")
     print(f"The best percentage reduction: {best_lw_percent_reduc}")
+    print()
 
     print(f"The result of LS+CC+LCA")
     print(f"Keep the layer from 0 to {best_layer_idx}")
