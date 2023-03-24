@@ -343,7 +343,7 @@ def main():
         target_layer_accuracy = all_results['incremental_layerwise'][f'{layers}']['scores']
         print(f"The accuracy is:{target_layer_accuracy}")
         lw_percent_reduc = 1 - neurons2keep/all_results['total_neurons']
-        print(f"Percentage reduction (neurons):{percent_reduc}")
+        print(f"Percentage reduction (neurons):{lw_percent_reduc}")
         print()
         if target_layer_accuracy['__OVERALL__'] > best_lw_accuracy:
             best_lw_layer_idx = layer_idx
