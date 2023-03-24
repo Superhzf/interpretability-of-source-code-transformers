@@ -321,23 +321,41 @@ def main():
         print(f"Layer {layers}:{all_results['incremental_layerwise'][f'{layers}']['scores']}")
 
     print()
+    best_accuracy = 0
+    best_num_neuron = 0
+    best_clustering_threshold = -1
+    best_layer_idx = -1
+    best_target_layer = -1
+    best_target_neuron = -1
+
+    best_lw_layer_idx = -1
+    best_lw_target_layer = -1
+    best_lw_num_neuron = -1
+    best_lw_accuracy = 0
     print(f"select minimum layers:(LS+CC+LCA)")
     for this_target_layer,layer_idx in all_results['select_minimum_layer'].items():
         print(f"Layerwise (LS):To lose {this_target_layer}*100% accuracy based on all layers, keep the layers from 0 to {layer_idx}")
         neurons2keep = (layer_idx + 1)*neurons_per_layer
         print(f"The number of neurons to keep is {neurons2keep}")
-        print(f"Neuron percentage reduction:{1-neurons2keep/all_results['total_neurons']}")
+        layers = list(range(layer_idx+1))
+        target_layer_accuracy = all_results['incremental_layerwise'][f'{layers}']['scores']
+        print(f"The accuracy is:{target_layer_accuracy}")
+        percent_reduc = 1 - neurons2keep/all_results['total_neurons']
+        print(f"Percentage reduction (neurons):{percent_reduc}")
+        if target_layer_accuracy['__OVERALL__'] > best_lw_accuracy:
+            best_lw_layer_idx = layer_idx
+            best_lw_target_layer = this_target_layer
+            best_lw_accuracy = target_layer_accuracy
+            best_lw_percent_reduc =  percent_reduc
+            best_lw_num_neuron = neurons2keep
+
         for this_target_neuron, this_result in all_results['select_minimum_neuron'][layer_idx].items():
             print(f"Clustering based on the layers above: 0 to {layer_idx}:")
-            best_accuracy = 0
-            best_num_neuron = 0
-            best_clustering_threshold = -1
             for result_key in this_result:
                 if result_key=='no-clustering':
                     print(f"When no clustering:")
                     print(f"the probing result is {this_result[result_key]['base_results']['scores']}")
                     clustering_threshold = -1
-                    
                 else:
                     clustering_threshold = this_result[result_key]['clustering_threshold']
                     print(f"Clustering threshold:{clustering_threshold}")
@@ -356,11 +374,25 @@ def main():
                     best_num_neuron = minimal_neuron_set_size
                     percent_reduc = 1 - minimal_neuron_set_size/all_results['total_neurons']
                     best_clustering_threshold = clustering_threshold
+                    best_layer_idx = layer_idx
+                    best_target_layer = this_target_layer
+                    best_target_neuron = this_target_neuron
 
-        print(f"The best accuracy is: {best_accuracy}")
-        print(f"The corresponding number of neurons:{best_num_neuron}")
-        print(f"The corresponding number of neuron percentage reduction is: {percent_reduc}")
-        print(f"The corresponding clustering threshold is :{best_clustering_threshold}")
+    print(f"The result of Layerwise (LS):")
+    print(f"Keep the layer from 0 to {best_lw_layer_idx}")
+    print(f"The best layer delta:{best_lw_target_layer}")
+    print(f"The best number of neurons:{best_lw_num_neuron}")
+    print(f"The best accuracy:{best_lw_accuracy}")
+    print(f"The best percentage reduction: {best_lw_percent_reduc}")
+
+    print(f"The result of LS+CC+LCA")
+    print(f"Keep the layer from 0 to {best_layer_idx}")
+    print(f"The best performance delta: {best_target_layer},{best_target_neuron}")
+    print(f"The best clustering threshold:{best_clustering_threshold}")
+    print(f"The best number of neurons:{best_num_neuron}")
+    print(f"The best accuracy: {best_accuracy}")
+    print(f"The best neuron percentage reduction: {percent_reduc}")
+    
     
     print()
     print(f"probe independent neurons based on all layers with clustering (run_cc_all.py)")
@@ -386,29 +418,36 @@ def main():
             best_clustering_threshold = clustering_threshold
             best_num_neuron = num_neuron
             percent_reduc = 1 - best_num_neuron/all_results['total_neurons']
-    
+    print(f"The result of CC:")
+    print(f"The best clustering threshold is :{best_clustering_threshold}")
+    print(f"The best number of neurons:{best_num_neuron}")
     print(f"The best accuracy is: {best_accuracy}")
-    print(f"The corresponding number of neurons:{best_num_neuron}")
-    print(f"The corresponding number of neuron percentage reduction is: {percent_reduc}")
-    print(f"The corresponding clustering threshold is :{best_clustering_threshold}")
+    print(f"Percentage reduction (neurons):{percent_reduc}")
+    
 
 
     print()
     print(f"probe independent neurons based on all layers without clustering (run_max_features.py)")
+    print(f"The result of LCA:")
     result_key='no-clustering'
     target_neuron = all_results['select_minimum_neurons_finer_percentage'][result_key]['target_neuron']
     print(f"Based on all layers: from 0 to {num_layers-1}, no clustering, to lose only {target_neuron}*100% of accuracy:")
     minimum_neuron_size = all_results['select_minimum_neurons_finer_percentage'][result_key]['minimal_neuron_set_size']
     print(f"The minimum number of neurons needed is {minimum_neuron_size}")
+    percent_reduc = 1 - minimum_neuron_size/all_results['total_neurons']
     print(f"The performance is {all_results['select_minimum_neurons_finer_percentage'][result_key][f'selected-{minimum_neuron_size}-neurons']}")
+    print(f"Percentage reduction (neurons):{percent_reduc}")
 
     print()
     print(f"Probeless:")
+    print(f"The result of probeless:")
     target_neuron = all_results['probeless']['target_neuron']
     print(f"Based on all layers, from 0 to {num_layers-1}, no clustering, to lose only {target_neuron}*100% of accuracy:")
     minimum_neuron_size = all_results['probeless']['probeless_minimal_neuron_set_size']
     print(f"The minimum number of neurons needed is :{minimum_neuron_size}")
+    percent_reduc = 1 - minimum_neuron_size/all_results['total_neurons']
     print(f"The performance is :{all_results['probeless'][f'probeless_selected-{minimum_neuron_size}-neurons']}")
+    print(f"Percentage reduction (neurons):{percent_reduc}")
     print("----------------------------------------------------------------")
 if __name__ == "__main__":
     main()

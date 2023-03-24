@@ -236,7 +236,7 @@ def incremental_layerwise_probeing(X_train,y_train,X_valid,y_valid,X_test,y_test
     ''' Returns models and accuracy(score) of the probes trained on activations from different layers '''
     results = {}
     need_cm = True
-    for i in range(2,num_layers):
+    for i in range(1,num_layers+1):
         layers = list(range(i))
         this_model_name = f"{model_name}_layer_{layers}"
         layer_train = ablation.filter_activations_by_layers(X_train, layers, num_layers)
@@ -254,8 +254,8 @@ def select_minimum_layers(incremental_layerwise_result,target,all_layer_result):
     """
     for idx, this_accuracy in enumerate(list(incremental_layerwise_result.values())):
         if this_accuracy['scores']["__OVERALL__"] > all_layer_result*(1-target):
-            return idx+1
-    return -1
+            return idx
+    assert 1==0, "something is wrong"
 
 
 def select_independent_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
