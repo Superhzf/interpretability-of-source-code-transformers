@@ -346,7 +346,7 @@ def main():
         if target_layer_accuracy['__OVERALL__'] > best_lw_accuracy:
             best_lw_layer_idx = layer_idx
             best_lw_target_layer = this_target_layer
-            best_lw_accuracy = target_layer_accuracy
+            best_lw_accuracy = target_layer_accuracy['__OVERALL__']
             best_lw_percent_reduc =  percent_reduc
             best_lw_num_neuron = neurons2keep
 
