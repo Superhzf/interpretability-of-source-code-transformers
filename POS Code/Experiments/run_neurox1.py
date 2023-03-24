@@ -316,7 +316,7 @@ def main():
         print(f"Layer {i}:{all_results['independent_layerwise'][f'layer_{i}']['scores']}")
     print()
     print(f"'Incremental-layerwise probing:")
-    for i in range(2,num_layers):
+    for i in range(1,num_layers+1):
         layers = list(range(i))
         print(f"Layer {layers}:{all_results['incremental_layerwise'][f'{layers}']['scores']}")
 
