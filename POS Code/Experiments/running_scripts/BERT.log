@@ -8,7 +8,7 @@ length of source dictionary:  28820
 length of target dictionary:  49
 507521
 Total instances: 507521
-['hash_', 'plot_gate_map', '_collect_data', 'visit_JoinedStr', "'amzn1.echo-api.session.3c6ebffd-55b9-4e1a-bf3c-c921c1801b63'", 'word_inputs', '"{0}s"', '"skesa"', 'boto3', "'--until='", 'put_container', 'whitelisted_keys', 'hgnc_symbols', 'ConfigError', "'answered_by'", 'calc_total_commits', "'Signaturecertchainurl'", 'x_axis', 'value1', "'DESCRIPTION.rst'"]
+['stmListB', 'zlib', '_default_shouldEnterFn', '_validate_after_init', 'to_', '"--group-by-addressbook"', 'raw_config_dict', 'pct', '_IDX_ORPHAN_TREES', 'save_model', 'telemetry_properties', 'select_nothing', 'connection_label', 'distortion_scale', 'old_ref', 'duration_s', 'orgs', 'get_tracks', 'aggregate_reports_folder', 'seriazlize']
 Number of samples:  507521
 Stats: Labels with their frequencies in the final set
 NAME 175779
@@ -71,7 +71,7 @@ length of source dictionary:  19446
 length of target dictionary:  46
 308882
 Total instances: 308882
-["'ca_certs'", "'mobile'", '0.93', 'server_url', 'get_schemas', 'decoy_scores', 'add_resource_url', "'run_admin'", "'course_name'", 'LOAD', "'right'", "'XMM'", 'init_code', 'compound_name', "'SNP'", 'calc', 'batch_add', '"idf"', 'field_width', 'type_description']
+['chunk', 'map_files', 'version', "'exp_pts_after'", 'deployer_address', 'item_range', '"Month_4_Tariff_4"', 'force_str', '_noise_func', 'repeat_id', 'dsa', 'grid', 'ProgrammaticLogin', 'link_name', 'innerp', 'patient_id', 'deleted_objects', 'idx_name', 'sanitize_address', "'recal'"]
 Number of samples:  308882
 Stats: Labels with their frequencies in the final set
 NAME 106508
@@ -131,7 +131,7 @@ length of source dictionary:  18380
 length of target dictionary:  49
 302448
 Total instances: 302448
-['deferredList', 'SequenceMatcher', '_partitionIdMap', 'getInstanceJstack', '0o700', 'hash_', 'val_loss', '"regionLevel"', 'init_code', "'/../public'", 'spreadShape', 'get_postcode_random', "'Byte'", "r'\\\\b(class|struct)\\\\b'", 'TransformTo', 'existing_mph', "'-NL127.0.0.1:%d:%s:%d'", "r'\\\\boperator_*\\\\b'", 'DEBUG', 'postcode_opt']
+['none_priority_index', 'chunk', 'zlib', 'version', "'_with_keypoints_origin.png'", 'nupicJobID', 'shaded_std', 'tmaster_env', "'startRecordID'", 'differenceList', "'--hostport'", 'encoderChoices', 'existing_stage_names', '282', "'({[<'", "'DI'", 'grid', 'observation_placeholder', 'getData', "'_detail'"]
 Number of samples:  302448
 Stats: Labels with their frequencies in the final set
 NAME 106943
@@ -944,6 +944,7 @@ Layer 11:{'__OVERALL__': 0.9794776119402985, 'NAME': 0.982089552238806, 'STRING'
 Layer 12:{'__OVERALL__': 0.9585820895522388, 'NAME': 0.991044776119403, 'STRING': 1.0, 'NUMBER': 0.8865671641791045, 'KEYWORD': 0.9567164179104478}
 
 'Incremental-layerwise probing:
+Layer [0]:{'__OVERALL__': 0.9492537313432836, 'NAME': 1.0, 'STRING': 1.0, 'NUMBER': 0.9194029850746268, 'KEYWORD': 0.8776119402985074}
 Layer [0, 1]:{'__OVERALL__': 0.8399253731343284, 'NAME': 1.0, 'STRING': 1.0, 'NUMBER': 0.9373134328358209, 'KEYWORD': 0.4223880597014925}
 Layer [0, 1, 2]:{'__OVERALL__': 0.8761194029850746, 'NAME': 0.9970149253731343, 'STRING': 1.0, 'NUMBER': 0.9313432835820895, 'KEYWORD': 0.5761194029850746}
 Layer [0, 1, 2, 3]:{'__OVERALL__': 0.935820895522388, 'NAME': 0.9955223880597015, 'STRING': 1.0, 'NUMBER': 0.9328358208955224, 'KEYWORD': 0.8149253731343283}
@@ -955,6 +956,7 @@ Layer [0, 1, 2, 3, 4, 5, 6, 7, 8]:{'__OVERALL__': 0.9779850746268657, 'NAME': 0.
 Layer [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]:{'__OVERALL__': 0.9779850746268657, 'NAME': 0.9955223880597015, 'STRING': 1.0, 'NUMBER': 0.9641791044776119, 'KEYWORD': 0.9522388059701492}
 Layer [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:{'__OVERALL__': 0.9805970149253731, 'NAME': 0.9985074626865672, 'STRING': 1.0, 'NUMBER': 0.9641791044776119, 'KEYWORD': 0.9597014925373134}
 Layer [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]:{'__OVERALL__': 0.9791044776119403, 'NAME': 0.9985074626865672, 'STRING': 1.0, 'NUMBER': 0.9552238805970149, 'KEYWORD': 0.9626865671641791}
+Layer [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]:{'__OVERALL__': 0.9742537313432836, 'NAME': 0.9940298507462687, 'STRING': 1.0, 'NUMBER': 0.9477611940298507, 'KEYWORD': 0.9552238805970149}
 
 select minimum layers:(LS+CC+LCA)
 Layerwise (LS):To lose 0.03*100% accuracy based on all layers, keep the layers from 0 to 0
@@ -1030,7 +1032,7 @@ The best performance delta: 0.02,0.01
 The best clustering threshold:0.3
 The best number of neurons:199
 The best accuracy: 0.983955223880597
-The best neuron percentage reduction: 0.6153846153846154
+The best neuron percentage reduction: 0.980068108974359
 
 probe independent neurons based on all layers with clustering (run_cc_all.py)
 When no clustering:
