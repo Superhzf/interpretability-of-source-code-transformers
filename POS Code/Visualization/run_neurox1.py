@@ -77,14 +77,14 @@ def mkdir_if_needed(dir_name):
 
 def load_extracted_activations(activation_file_name):
     #Load activations from json files
-    activations, num_layers = data_loader.load_activations(f"../Experiments/{activation_file_name}",13)
+    activations, num_layers = data_loader.load_activations(f"../Experiments/activations/{activation_file_name}",13)
     return activations
 
 
 def load_tokens(activations):
     #Load tokens and sanity checks for parallelism between tokens, labels and activations
-    tokens = data_loader.load_data('./src_files/codetest2_train_unique.in',
-                                   './src_files/codetest2_train_unique.label',
+    tokens = data_loader.load_data('../Experiments/src_files/codetest2_train_unique.in',
+                                   '../Experiments/src_files/codetest2_train_unique.label',
                                    activations,
                                    512 # max_sent_length
                                   )
