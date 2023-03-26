@@ -46,9 +46,7 @@ codebert_class = "MIXTURE_NUMBER_NAME"
 # 1069
 
 graphcodebert_idx=[]
-codebert_top_neurons=[]
 graphcodebert_top_neurons=[]
-codebert_class =[]
 graphcodebert_class=[]
 
 
