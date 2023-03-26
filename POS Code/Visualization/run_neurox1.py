@@ -29,7 +29,6 @@ bert_idx = [947,971,17075, 606,696]
 bert_top_neurons = [456]
 bert_class = "NAME"
 
-
 # bert_idx = [4157,10866,17523,17526]
 # bert_top_neurons = [8322]
 # bert_class = "STRING"
@@ -37,6 +36,7 @@ bert_class = "NAME"
 # bert_idx = [179,251,707,241,537,11,301]
 # bert_top_neurons = [6295]
 # bert_class = "KEYWORD"
+# raise True class finally
 
 # bert_idx = [115,3621,1082,798]
 # bert_top_neurons = [7]
