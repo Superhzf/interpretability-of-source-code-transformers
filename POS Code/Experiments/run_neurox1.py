@@ -102,7 +102,6 @@ def main():
                 selected_NUMBER[this_token] += 1
             else:
                 selected_NUMBER[this_token] = 1
-            selected_NUMBER.append(this_token)
             idx_selected_train.append(True)
             count_number+=1
         elif this_token in keyword_list_train and count_kw<=5000:
