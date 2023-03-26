@@ -564,10 +564,8 @@ def preprocess(activation_file_name,IN_file,LABEL_file,remove_seen_tokens,model_
     return tokens,activations,flat_src_tokens,X_train,y_train,label2idx,idx2label, sample_idx, num_layers
 
 
-def selectBasedOnTrain(flat_tokens_test,X_test, y_test,flat_tokens_train,label2idx_train,keyword_list_test,upper_bound,sample_idx_test=None):
+def selectBasedOnTrain(flat_tokens_test,X_test, y_test,flat_tokens_train,label2idx_train,keyword_list_test,num_test,upper_bound,sample_idx_test=None):
     idx_selected = []
-    selected_STRING = {}
-    selected_NUMBER = {}
     count_number = 0
     count_name = 0
     count_keyword = 0
@@ -578,27 +576,23 @@ def selectBasedOnTrain(flat_tokens_test,X_test, y_test,flat_tokens_train,label2i
         else:
             is_selected = True
             if this_y_test == label2idx_train['STRING']:
-                if count_str>=upper_bound or selected_STRING.get(this_token_test,-1) > 2:
-                    is_selected = False
-                else:
-                    if this_token_test in selected_STRING:
-                        selected_STRING[this_token_test] += 1
-                    else:
-                        selected_STRING[this_token_test] = 1
+                for this_token_train in flat_tokens_train:
+                    if count_str>=upper_bound:
+                        is_selected = False
+                        break
+                if is_selected:
                     count_str += 1
             elif this_y_test == label2idx_train['NUMBER']:
-                if count_number>=upper_bound or selected_NUMBER.get(this_token_test,-1)>10:
+                if not set(list(this_token_test)).issubset(num_test) or count_number>=upper_bound:
                     is_selected = False
-                else:
-                    if this_token_test in selected_NUMBER:
-                        selected_NUMBER[this_token_test] += 1
-                    else:
-                        selected_NUMBER[this_token_test] = 1
+                if is_selected:
                     count_number += 1
             elif this_y_test == label2idx_train['NAME']:
-                if count_name>= upper_bound:
-                    is_selected = False
-                else:
+                for this_token_train in flat_tokens_train:
+                    if count_name>= upper_bound:
+                        is_selected = False
+                        break
+                if is_selected:
                     count_name += 1
             elif this_y_test == label2idx_train['KEYWORD']:
                 if this_token_test not in keyword_list_test or count_keyword >= upper_bound:
