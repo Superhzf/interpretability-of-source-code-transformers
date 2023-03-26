@@ -566,6 +566,8 @@ def preprocess(activation_file_name,IN_file,LABEL_file,remove_seen_tokens,model_
 
 def selectBasedOnTrain(flat_tokens_test,X_test, y_test,flat_tokens_train,label2idx_train,keyword_list_test,upper_bound,sample_idx_test=None):
     idx_selected = []
+    selected_STRING = {}
+    selected_NUMBER = {}
     count_number = 0
     count_name = 0
     count_keyword = 0
@@ -576,14 +578,22 @@ def selectBasedOnTrain(flat_tokens_test,X_test, y_test,flat_tokens_train,label2i
         else:
             is_selected = True
             if this_y_test == label2idx_train['STRING']:
-                if count_str>=upper_bound:
+                if count_str>=upper_bound or selected_STRING.get(this_token,-1) > 2:
                     is_selected = False
                 else:
+                    if this_token in selected_STRING:
+                        selected_STRING[this_token] += 1
+                    else:
+                        selected_STRING[this_token] = 1
                     count_str += 1
             elif this_y_test == label2idx_train['NUMBER']:
-                if count_number>=upper_bound:
+                if count_number>=upper_bound or selected_NUMBER.get(this_token,-1)>2:
                     is_selected = False
                 else:
+                    if this_token in selected_NUMBER:
+                        selected_NUMBER[this_token] += 1
+                    else:
+                        selected_NUMBER[this_token] = 1
                     count_number += 1
             elif this_y_test == label2idx_train['NAME']:
                 if count_name>= upper_bound:
