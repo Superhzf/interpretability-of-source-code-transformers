@@ -10,9 +10,7 @@ import os
 
 
 MODEL_NAMES = ['pretrained_BERT',
-               'pretrained_CodeBERT','pretrained_GraphCodeBERT',
-               'finetuned_defdet_CodeBERT','finetuned_defdet_GraphCodeBERT',
-               'finetuned_clonedet_CodeBERT','finetuned_clonedet_GraphCodeBERT']
+               'pretrained_CodeBERT','pretrained_GraphCodeBERT',]
 ACTIVATION_NAMES = {'pretrained_BERT':'bert_activations_train.json',
                     'pretrained_CodeBERT':'codebert_activations_train.json',
                     'pretrained_GraphCodeBERT':'graphcodebert_activations_train.json',
@@ -38,18 +36,18 @@ ACTIVATION_NAMES = {'pretrained_BERT':'bert_activations_train.json',
 # bert_class = "MIXTURE_KEYWORD_NAME"
 # raise True class finally
 
-# bert_idx = [115,3621,1082,798]
-# bert_top_neurons = [7]
-# bert_class = "MIXTURE"
 
 
+codebert_idx=[35372,7095,10836,11027,12701]
+codebert_top_neurons = [1069]
+cobert_class = "MIXTURE_NUMBER_NAME"
+# 1069
 
-codebert_idx=[]
-graphcodebert_idx=[]
-codebert_top_neurons=[]
-graphcodebert_top_neurons=[]
-codebert_class =[]
-graphcodebert_class=[]
+# graphcodebert_idx=[]
+# codebert_top_neurons=[]
+# graphcodebert_top_neurons=[]
+# codebert_class =[]
+# graphcodebert_class=[]
 
 
 IDX = {"pretrained_BERT":bert_idx,
@@ -104,7 +102,7 @@ def main():
     mkdir_if_needed(f"./{FOLDER_NAME}/")
 
     for this_model in MODEL_NAMES:
-        if this_model in ['pretrained_BERT']:
+        if this_model in ['pretrained_CodeBERT']:
             print(f"Generate svg files for {this_model}")
             this_activation_name = ACTIVATION_NAMES[this_model]
             activations = load_extracted_activations(this_activation_name)
