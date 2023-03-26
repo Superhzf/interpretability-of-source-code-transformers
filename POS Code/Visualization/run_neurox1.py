@@ -36,18 +36,20 @@ ACTIVATION_NAMES = {'pretrained_BERT':'bert_activations_train.json',
 # bert_class = "MIXTURE_KEYWORD_NAME"
 # raise True class finally
 
-
+bert_idx = []
+bert_top_neurons = []
+bert_class =''
 
 codebert_idx=[35372,7095,10836,11027,12701]
 codebert_top_neurons = [1069]
 cobert_class = "MIXTURE_NUMBER_NAME"
 # 1069
 
-# graphcodebert_idx=[]
-# codebert_top_neurons=[]
-# graphcodebert_top_neurons=[]
-# codebert_class =[]
-# graphcodebert_class=[]
+graphcodebert_idx=[]
+codebert_top_neurons=[]
+graphcodebert_top_neurons=[]
+codebert_class =[]
+graphcodebert_class=[]
 
 
 IDX = {"pretrained_BERT":bert_idx,
