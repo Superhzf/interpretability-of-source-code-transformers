@@ -587,7 +587,7 @@ def selectBasedOnTrain(flat_tokens_test,X_test, y_test,flat_tokens_train,label2i
                         selected_STRING[this_token_test] = 1
                     count_str += 1
             elif this_y_test == label2idx_train['NUMBER']:
-                if count_number>=upper_bound or selected_NUMBER.get(this_token_test,-1)>2:
+                if count_number>=upper_bound or selected_NUMBER.get(this_token_test,-1)>5:
                     is_selected = False
                 else:
                     if this_token_test in selected_NUMBER:
