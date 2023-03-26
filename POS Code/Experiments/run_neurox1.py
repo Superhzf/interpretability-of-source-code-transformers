@@ -97,7 +97,7 @@ def main():
     count_str = 0
     for this_token,this_y in zip(flat_tokens_train,y_train):
         # if this_token in flat_tokens_test:
-        if this_y == label2idx_train['NUMBER'] and count_number<=5000 and selected_NUMBER.get(this_token,-1)<=10:
+        if this_y == label2idx_train['NUMBER'] and count_number<=5000 and selected_NUMBER.get(this_token,-1)<=50:
             if this_token in selected_NUMBER:
                 selected_NUMBER[this_token] += 1
             else:
