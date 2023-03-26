@@ -42,7 +42,7 @@ bert_class =''
 
 codebert_idx=[35372,7095,10836,11027,12701]
 codebert_top_neurons = [1069]
-cobert_class = "MIXTURE_NUMBER_NAME"
+codebert_class = "MIXTURE_NUMBER_NAME"
 # 1069
 
 graphcodebert_idx=[]
@@ -53,17 +53,11 @@ graphcodebert_class=[]
 
 
 IDX = {"pretrained_BERT":bert_idx,
-       "pretrained_CodeBERT":codebert_idx,"pretrained_GraphCodeBERT":graphcodebert_idx,
-       "finetuned_defdet_CodeBERT":codebert_idx,"finetuned_defdet_GraphCodeBERT":graphcodebert_idx,
-       "finetuned_clonedet_CodeBERT":codebert_idx,"finetuned_clonedet_GraphCodeBERT":graphcodebert_idx}
+       "pretrained_CodeBERT":codebert_idx,"pretrained_GraphCodeBERT":graphcodebert_idx,}
 TOP_NEURONS = {"pretrained_BERT":bert_top_neurons,
-               "pretrained_CodeBERT":codebert_top_neurons,"pretrained_GraphCodeBERT":graphcodebert_top_neurons,
-               "finetuned_defdet_CodeBERT":codebert_top_neurons,"finetuned_defdet_GraphCodeBERT":graphcodebert_top_neurons,
-               "finetuned_clonedet_CodeBERT":codebert_top_neurons,"finetuned_clonedet_GraphCodeBERT":graphcodebert_top_neurons}
+               "pretrained_CodeBERT":codebert_top_neurons,"pretrained_GraphCodeBERT":graphcodebert_top_neurons,}
 CLASSES = {"pretrained_BERT":bert_class,
-           "pretrained_CodeBERT":codebert_class,"pretrained_GraphCodeBERT":graphcodebert_class,
-           "finetuned_defdet_CodeBERT":codebert_class,"finetuned_defdet_GraphCodeBERT":graphcodebert_class,
-           "finetuned_clonedet_CodeBERT":codebert_class,"finetuned_clonedet_GraphCodeBERT":graphcodebert_class}
+           "pretrained_CodeBERT":codebert_class,"pretrained_GraphCodeBERT":graphcodebert_class,}
 
 FOLDER_NAME ="result_all"
 
