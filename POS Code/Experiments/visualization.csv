@@ -1,0 +1,13 @@
+﻿Neuron,Top-5 words,Property,Model
+2693," 'darwin', 'sep', make_response, 200, import","NUMBER, NAME, STRING,KEYWORD",BERT
+217," 'vlat', 'filename', 'pm_lat', 'flag_entr_ics','FlagMetals'",STRING,CodeBERT
+118,"120, open, splits, '-', except","NUMBER, NAME,KEYWORD",CodeBERTa
+293,"111, ')', engines, numpy, ']'","NUMBER, NAME, STRING",CodeGPTJava
+553,"convert, class, import, range, saturation","NAME, KEYWORD",CodeGPTJavaAdapted
+2,"shuffle, urlretrieve, dumps, type, randint",NAME,CodeGPTPy
+6081,"optional, tuple, image_ext, except, 'severity'","NAME, STRING, KEYWORD ",CodeGPTPyAdapted
+8389,"accuracy,  pow, ']','>','://'","NAME, STRING",GPT2
+6533,"break, 'r', ""r"", 'a', 'wb'","STRING, KEYWORD ",GraphCodeBERT
+6835,"class, communicate, 12000, escape, d",NAME,JavaBERT
+5383,"class, 120, 12200, finally, 200","NUMBER, KEYWORD",RoBERTa
+1442,"200, 201, 100, print, 111","NUMBER, NAME",UniXCoder
