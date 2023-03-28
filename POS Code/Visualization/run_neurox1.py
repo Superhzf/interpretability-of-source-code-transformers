@@ -44,10 +44,14 @@ bert_class =''
 # codebert_top_neurons = [1069]
 # codebert_class = "MIXTURE_NUMBER_NAME"
 
-codebert_idx=[3678,8679,11604,25972,25813]
-codebert_top_neurons = [1652]
-codebert_class = "STRING_KEYWORD"
-# 1652
+# codebert_idx=[3678,8679,11604,25972,25813]
+# codebert_top_neurons = [1652]
+# codebert_class = "STRING_KEYWORD"
+
+codebert_idx=[382,516, 13, 1005, 5996]
+codebert_top_neurons = [2122]
+codebert_class = "NAME"
+
 
 # 1069
 
