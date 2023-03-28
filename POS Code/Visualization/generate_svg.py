@@ -23,7 +23,7 @@ def merge_svg(top_neurons,idx,class_name,model_name,folder_name):
     os.system(command)
 
 for this_model in MODEL_NAMES:
-    if this_model == 'pretrained_BERT':
+    if this_model == 'pretrained_CodeBERT':
         this_top_neuron = TOP_NEURONS[this_model]
         this_idx = IDX[this_model]
         this_class_name = CLASSES[this_model]
