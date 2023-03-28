@@ -40,9 +40,15 @@ bert_idx = []
 bert_top_neurons = []
 bert_class =''
 
-codebert_idx=[35372,7095,10836,11027,12701]
-codebert_top_neurons = [1069]
-codebert_class = "MIXTURE_NUMBER_NAME"
+# codebert_idx=[35372,7095,10836,11027,12701]
+# codebert_top_neurons = [1069]
+# codebert_class = "MIXTURE_NUMBER_NAME"
+
+codebert_idx=[5770,31982,4226,4764,]
+codebert_top_neurons = [217]
+codebert_class = "STRING"
+# 1652
+
 # 1069
 
 graphcodebert_idx=[]
