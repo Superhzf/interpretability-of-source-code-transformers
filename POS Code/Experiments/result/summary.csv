@@ -1,4 +1,4 @@
-﻿Selection,,POS tagging,,,,Code Search,,DefDect,,,CloneDetction,
+﻿Selection,,Token tagging,,,,Code Search,,DefDect,,,CloneDetction,
 ,,CodeBERT,GraphCodeBERT,CodeGPTPyAdapted,UniXCoder,CodeBERT,UniXCoder,CodeBERT,GraphCodeBERT,UniXCoder,GraphCodeBERT,UniXCoder
 CC,Clustering threshold,0.5,-1,0.7,0.4,0.8,0.1,0.7,0.7,0.2,0.3,0.8
 ,# of neurons,3229,9984,644,3406,1066,1092,1742,2555,8890,6688,865
