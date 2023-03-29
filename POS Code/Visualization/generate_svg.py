@@ -11,14 +11,14 @@ def merge_svg(top_neurons,idx,class_name,model_name,folder_name):
             this_name = f"{model_name}_{this_idx-1}_{layer_idx}_{neuron_idx}.svg"
             names.append(this_name)
 
-    os.system(f"/work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python \
-                svg_stack-main/svg_stack.py {folder_name}/{names[0]} {folder_name}/space.svg \
-                {folder_name}/{names[1]} {folder_name}/space.svg {folder_name}/{names[2]} \
-                {folder_name}/space.svg {folder_name}/{names[3]}> {folder_name}/{model_name}_{class_name}.svg")
+    # os.system(f"/work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python \
+    #             svg_stack-main/svg_stack.py {folder_name}/{names[0]} {folder_name}/space.svg \
+    #             {folder_name}/{names[1]} {folder_name}/space.svg {folder_name}/{names[2]} \
+    #             {folder_name}/space.svg {folder_name}/{names[3]}> {folder_name}/{model_name}_{class_name}.svg")
 
     command = f"/work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python svg_stack-main/svg_stack.py"
     for this_name in names:
-        command = command + f" {folder_name}/{this_name} {folder_name}/space.svg"
+        command = command + f" {folder_name}/{this_name}"
     command = command + f"> {folder_name}/{model_name}_{class_name}.svg"
     os.system(command)
 
