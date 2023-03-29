@@ -1,27 +1,12 @@
-﻿Selection,,BERT,CodeBERT,CodeBERTa,CodeGPTJava,CodeGPTJavaAdapted,CodeGPTPy,CodeGPTPyAdapted,GPT2,GraphCodeBERT,JavaBERT,RoBERTa,UniXCoder
-All,original # of neurons,9984,9984,5376,9984,9984,9984,9984,9984,9984,9984,9984,9984
-,Baseline accuracy,97.50%,91.40%,94.20%,98.40%,87.30%,92.30%,83.60%,91.20%,89.30%,98.10%,99.00%,96.00%
-None,# of neurons,0,0,0,0,0,0,0,0,0,0,0,0
-,Accuracy,25.00%,25.00%,25.00%,25.00%,25.00%,25.00%,25.00%,25.00%,25.00%,25.00%,25.00%,25.00%
-LCA,# of neurons,169,19,53,49,299,79,139,119,139,189,229,39
-,Accuracy,97.10%,94.00%,93.10%,93.80%,88.50%,91.80%,83.30%,97.70%,95.90%,97.50%,98.40%,94.40%
-,Neuron reduction,98.30%,99.80%,99.00%,99.50%,97.00%,99.20%,98.60%,98.80%,98.60%,98.10%,97.70%,99.60%
-Probeless,# of neurons,199,209,430,399,9,609,29,129,9,159,9,169
-,Accuracy,96.30%,96.90%,94.60%,97.30%,87.80%,98.90%,93.90%,97.60%,84.80%,97.10%,82.90%,96.30%
-,Neuron reduction,98.00%,97.90%,92.00%,96.00%,99.90%,93.90%,99.70%,98.70%,99.90%,98.40%,99.90%,98.30%
-CC,Clustering threshold,0.60,0.5,0.3,0.7,0.5,0.1,0.7,-1,-1,0.6,0.7,0.4
-,# of neurons,932,3229,2352,495,1388,4836,644,9984,9984,1016,902,3406
-,Accuracy,99.00%,94.90%,95.90%,99.30%,99.00%,98.80%,98.80%,99.50%,98.20%,99.00%,99.10%,99.00%
-,Neuron reduction,90.70%,67.70%,56.20%,95.00%,86.10%,51.60%,93.50%,0.00%,0.00%,89.80%,91.00%,65.90%
-"Layerwise
-(LS)",Layer Selection,Layer 4,Layer 1,Layer 4,Layer 0,Layer 0,Layer 0,Layer 1,Layer 1,Layer 0,Layer 8,Layer 4,Layer 0
-,Performance layer delta,2,2,3,3,3,3,3,3,3,1,1,3
-,# of neurons,3840,1536,3840,768,768,768,1536,1536,768,6912,3840,768
-,Accuracy,97.00%,93.60%,93.90%,98.20%,98.90%,99.40%,85.10%,97.40%,89.40%,97.40%,98.40%,99.30%
-,Neuron reduction,61.50%,84.60%,28.60%,92.30%,92.30%,92.30%,84.60%,84.60%,92.30%,30.80%,61.50%,92.30%
-LS+CC+LCA,Layer Selection,Layer 4,Layer 1,Layer 4,Layer 0,Layer 0,Layer 0,Layer 1,Layer 1,Layer 0,Layer 7,Layer 4,Layer 0
-,Performance delta,2-1,2-1,3-1,3-1,3-1,3-1,3-1,3-1,3-1,3-1,1-1,3-1
-,Clustering threshold,0.3,-1,0.3,0.3,-1,0.3,-1,-1,-1,0.3,0.3,0.3
-,# of neurons,199,29,161,499,768,499,9,1536,49,199,199,199
-,Accuracy,98.40%,94.20%,96.60%,98.20%,98.60%,99.30%,87%,95.80%,89.60%,98.40%,98.70%,99.00%
-,Neuron reduction,98.00%,99.70%,97.00%,95.00%,92.30%,95.00%,99.90%,84.60%,99.50%,98.00%,98.00%,98.00%
+﻿Selection,,POS tagging,,,,Code Search,,DefDect,,,CloneDetction,
+,,CodeBERT,GraphCodeBERT,CodeGPTPyAdapted,UniXCoder,CodeBERT,UniXCoder,CodeBERT,GraphCodeBERT,UniXCoder,GraphCodeBERT,UniXCoder
+CC,Clustering threshold,0.5,-1,0.7,0.4,0.8,0.1,0.7,0.7,0.2,0.3,0.8
+,# of neurons,3229,9984,644,3406,1066,1092,1742,2555,8890,6688,865
+,Score,94.90%,98.20%,98.80%,99.00%,51.65%,50.17%,65.52%,64.35%,67.02%,0.64,0.67
+,Neuron reduction,67.66%,0.00%,93.55%,65.89%,89.32%,89.06%,82.55%,74.41%,10.96%,33.01%,91.34%
+LS+CC+LCA,Layer Selection,Layer 1,Layer 0,Layer 1,Layer 0,Layer 0,Layer 0,Layer 11,Layer 12,Layer 12,Layer 0,Layer 02
+,Performance delta,1-Feb,1-Mar,1-Mar,1-Mar,1-Mar,1-Mar,1-Feb,1-Jan,1-Feb,1-Mar,1-Mar
+,Clustering threshold,NA,NA,NA,0.3,NA,NA,NA,0.3,0.1,NA,NA
+,# of neurons,29,49,9,199,9,9,99,399,29,29,1996
+,Score,94.20%,89.60%,87%,99.00%,48.18%,48.18%,65.15%,63.65%,65.56%,0.67,0.67
+,Neuron reduction,99.71%,99.51%,99.91%,98.01%,99.91%,99.91%,99.01%,96.00%,99.71%,99.71%,80.01%
