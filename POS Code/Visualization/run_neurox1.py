@@ -48,7 +48,7 @@ bert_class =''
 # codebert_top_neurons = [1652]
 # codebert_class = "STRING_KEYWORD"
 
-codebert_idx=[9825,26035,15920,6234, 6142]
+codebert_idx=[9825,26035,15920,19489, 6142]
 codebert_top_neurons = [4205]
 codebert_class = "NAME"
 
