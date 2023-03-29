@@ -40,17 +40,17 @@ bert_idx = []
 bert_top_neurons = []
 bert_class =''
 
-# codebert_idx=[35372,7095,10836,11027,12701]
-# codebert_top_neurons = [1069]
-# codebert_class = "MIXTURE_NUMBER_NAME"
+codebert_idx=[35372,7095,10836,11027,12701]
+codebert_top_neurons = [1069]
+codebert_class = "MIXTURE_NUMBER_NAME"
 
 # codebert_idx=[3678,8679,11604,25972,25813]
 # codebert_top_neurons = [1652]
 # codebert_class = "STRING_KEYWORD"
 
-codebert_idx=[9825,26035,15920,19489, 6142]
-codebert_top_neurons = [4205]
-codebert_class = "NAME"
+# codebert_idx=[9825,26035,15920,19489, 6142]
+# codebert_top_neurons = [4205]
+# codebert_class = "NAME"
 
 
 # 1069
