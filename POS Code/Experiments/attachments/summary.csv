@@ -10,7 +10,6 @@ CC,Cluster threshold,0.5,NA,0.7,0.4,0.8,NA,0.8,0.7,0.7,0.2
 "LS+
 CC+
 LCA",Layer selection,0-1,0-0,0-1,0-0,0-0,0-0,0-0,0-11,0-12,0-12
-,Perf delta,1-Feb,1-Mar,1-Mar,1-Mar,1-Mar,1-Mar,1-Mar,1-Feb,1-Jan,1-Feb
 ,Cluster threshold,NA,NA,NA,0.3,NA,NA,NA,NA,0.3,0.1
 ,# of neurons,29,49,9,199,9,9,9,99,399,29
 ,Score,94.18%,89.59%,87%,99.03%,48.18%,48.18%,48.18%,65.15%,63.65%,65.56%
