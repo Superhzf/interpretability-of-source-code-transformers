@@ -1,3 +1,5 @@
+import os
+
 f = open('code.txt','r')
 code = f.readlines()
 f.close()
