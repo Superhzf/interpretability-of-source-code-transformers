@@ -42,6 +42,7 @@ assert len(code) == len(label)
 
 OUTPUT_IN = "codetest2_test_unique.in"
 OUTPUT_LABEL = "codetest2_test_unique.label"
+FOLDER = './'
 
 code_unique = []
 label_unique = []
