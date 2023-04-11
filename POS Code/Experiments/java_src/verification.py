@@ -1,7 +1,7 @@
-f = open('code_result.txt','r')
+f = open('code.txt','r')
 code = f.readlines()
 f.close()
-f = open('label_result.txt','r')
+f = open('label.txt','r')
 label = f.readlines()
 f.close()
 
