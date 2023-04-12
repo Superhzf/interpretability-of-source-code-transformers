@@ -2,8 +2,9 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=8
 #SBATCH --mem=80G
-#SBATCH --time=3:00:00
-#SBATCH --partition=speedy
+#SBATCH --time=12:00:00
+#SBATCH --partition=gpu
+#SBATCH --gres=gpu:rtx_6000:1
 
 
 module load ml-gpu
