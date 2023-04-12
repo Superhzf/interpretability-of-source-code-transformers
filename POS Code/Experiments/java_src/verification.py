@@ -83,12 +83,12 @@ for idx,combo in enumerate(zip(per,files)):
         this_label = label_unique[start:]
 
     count += len(this_label)
-    with open(os.path.join(FOLDER, files[0]),"w") as f:
+    with open(os.path.join(FOLDER, this_file[0]),"w") as f:
         for this_code in code_unique:
             f.writelines(f"{this_code}")
     f.close()
 
-    with open(os.path.join(FOLDER, files[1]),"w") as f:
+    with open(os.path.join(FOLDER, this_file[1]),"w") as f:
         for this_label in label_unique:
             f.writelines(f"{this_label}")
     f.close()
