@@ -66,7 +66,8 @@ per = [per_train,per_valid,per_test]
 files = [(OUTPUT_IN_TRAIN,OUTPUT_LABEL_TRAIN),(OUTPUT_IN_VALID,OUTPUT_LABEL_VALID),(OUTPUT_IN_TEST,OUTPUT_LABEL_TEST)]
 
 count = 0
-for idx,this_per,this_file in enumerate(zip(per,files)):
+for idx,combo in enumerate(zip(per,files)):
+    this_per, this_file = combo
     if idx == 0:
         end = int(len(code_unique) * this_per)
         this_code = code_unique[:end]
