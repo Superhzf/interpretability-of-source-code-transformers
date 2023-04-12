@@ -70,9 +70,11 @@ def main():
     if language == 'python':
         src_folder = "src_files"
         AVTIVATIONS_FOLDER = "./activations/"
+        class_wanted = ['NAME','STRING','NUMBER','KEYWORD']
     elif language == 'java':
         src_folder = 'src_java'
         AVTIVATIONS_FOLDER = './activations_java/'
+        class_wanted = ["MODIFIER","KEYWORD","TYPE","CONDITIONOP","NUMBER","STRING"]
     else:
         assert 1 == 0, "language is not understood"
 
@@ -85,8 +87,6 @@ def main():
             extract_activations('./src_files/codetest2_valid_unique.in',MODEL_DESC[this_model],os.path.join(AVTIVATIONS_FOLDER,activation_file_name))
             activation_file_name=ACTIVATION_NAMES[this_model][2]
             extract_activations('./src_files/codetest2_test_unique.in',MODEL_DESC[this_model],os.path.join(AVTIVATIONS_FOLDER,activation_file_name))
-            if this_model == 'pretrained_BERT':
-                exit(0)
     else:
         print("Getting activations from json files. If you need to extract them, run with --extract=True \n" )
 
@@ -97,13 +97,26 @@ def main():
     print(f"Anayzing {this_model}")
     tokens_train,activations_train,flat_tokens_train,X_train, y_train, label2idx_train, idx2label_train,_,num_layers=preprocess(os.path.join(AVTIVATIONS_FOLDER,ACTIVATION_NAMES[this_model][0]),
                                                                 f'./{src_folder}/codetest2_train_unique.in',f'./{src_folder}/codetest2_train_unique.label',
-                                                                False,this_model)
+                                                                False,this_model,class_wanted)
     tokens_valid,activations_valid,flat_tokens_valid,X_valid, y_valid, label2idx_valid, idx2label_valid,_,_=preprocess(os.path.join(AVTIVATIONS_FOLDER,ACTIVATION_NAMES[this_model][1]),
                                                     f'./{src_folder}/codetest2_valid_unique.in',f'./{src_folder}/codetest2_valid_unique.label',
-                                                    False,this_model)
+                                                    False,this_model,class_wanted)
     tokens_test,activations_test,flat_tokens_test,X_test, y_test, label2idx_test, _, sample_idx_test,_=preprocess(os.path.join(AVTIVATIONS_FOLDER,ACTIVATION_NAMES[this_model][2]),
                                     f'./{src_folder}/codetest2_test_unique.in',f'./{src_folder}/codetest2_test_unique.label',
-                                    False,this_model)
+                                    False,this_model,class_wanted)
+
+    print("The distribution of classes in training after removing repeated tokens between training and tesing:")
+    print(collections.Counter(y_train))
+    print(label2idx_train)
+    print("The distribution of classes in valid:")
+    print(collections.Counter(y_valid))
+    print(label2idx_valid)
+    print("The distribution of classes in testing:")
+    print(collections.Counter(y_test))
+    print(label2idx_test)
+
+    exit(0)
+    
     # remove tokens that are shared by training and testing
     # At the same time, make sure to keep at least 10 key words in the training set
     idx_selected_train = []

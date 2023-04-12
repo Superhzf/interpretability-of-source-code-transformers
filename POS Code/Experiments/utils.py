@@ -503,7 +503,7 @@ def filter_by_frequency(tokens,activations,X,y,label2idx,idx2label,threshold,mod
     return tokens,activations,flat_src_tokens,X,y,label2idx,idx2label
 
 
-def filterByClass(tokens,activations,X,y,label2idx,model_name,sample_idx):
+def filterByClass(tokens,activations,X,y,label2idx,model_name,sample_idx,class_wanted):
     """
     This method means to keep the representation and labels for
     NAME, STRING, NUMBER, and KEYWORD class for the probing task.
@@ -519,7 +519,7 @@ def filterByClass(tokens,activations,X,y,label2idx,model_name,sample_idx):
     assert len(flat_src_tokens) == len(y)
     assert len(flat_sample_idx) == len(y)
 
-    class_wanted = ['NAME','STRING','NUMBER','KEYWORD']
+    
     for idx,this_class in enumerate(class_wanted):
         lookup_table[label2idx[this_class]] = idx
         new_label2idx[this_class] = idx
@@ -554,13 +554,13 @@ def filterByClass(tokens,activations,X,y,label2idx,model_name,sample_idx):
     return tokens,activations,flat_src_tokens,X,y,new_label2idx,new_idx2label, flat_sample_idx
 
 
-def preprocess(activation_file_name,IN_file,LABEL_file,remove_seen_tokens,model_name):
+def preprocess(activation_file_name,IN_file,LABEL_file,remove_seen_tokens,model_name,class_wanted):
     activations,num_layers = load_extracted_activations(activation_file_name)
     tokens, sample_idx =  load_tokens(activations,IN_file,LABEL_file)
     if remove_seen_tokens:
         tokens,activations=removeSeenTokens(tokens,activations)
     X, y, label2idx, _, _, _ = get_mappings(tokens,activations)
-    tokens,activations,flat_src_tokens,X_train, y_train, label2idx, idx2label, sample_idx = filterByClass(tokens,activations,X,y,label2idx,model_name,sample_idx)
+    tokens,activations,flat_src_tokens,X_train, y_train, label2idx, idx2label, sample_idx = filterByClass(tokens,activations,X,y,label2idx,model_name,sample_idx,class_wanted)
     return tokens,activations,flat_src_tokens,X_train,y_train,label2idx,idx2label, sample_idx, num_layers
 
 
