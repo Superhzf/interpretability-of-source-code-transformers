@@ -65,6 +65,8 @@ OUTPUT_LABEL_TEST = "codetest2_test_unique.label"
 per = [per_train,per_valid,per_test]
 files = [(OUTPUT_IN_TRAIN,OUTPUT_LABEL_TRAIN),(OUTPUT_IN_VALID,OUTPUT_LABEL_VALID),(OUTPUT_IN_TEST,OUTPUT_LABEL_TEST)]
 
+assert 1 == per_train + per_valid + per_test
+
 count = 0
 for idx,combo in enumerate(zip(per,files)):
     this_per, this_file = combo
@@ -72,13 +74,13 @@ for idx,combo in enumerate(zip(per,files)):
         end = int(len(code_unique) * this_per)
         this_code = code_unique[:end]
         this_label = label_unique[:end]
-    elif idx != len(per) - 1:
-        start = int(len(code_unique) * this_per)
+    elif idx == 1:
+        start = end
         end = int(len(code_unique) * per[idx+1])
         this_code = code_unique[start:end]
         this_code = label_unique[start:end]
     else:
-        start = int(len(code_unique) * this_per)
+        start = end
         this_code = code_unique[start:]
         this_label = label_unique[start:]
 
