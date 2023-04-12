@@ -95,7 +95,7 @@ for idx,combo in enumerate(zip(per,files)):
             f.writelines(f"{this_label}")
     f.close()
 
-assert count == len(code_unique), f"{count}!={code_unique}"
+assert count == len(code_unique), f"{count}!={len(code_unique)}"
 
 print(f"After removing redundant observations, {count} samples are\
 left and written to files")
