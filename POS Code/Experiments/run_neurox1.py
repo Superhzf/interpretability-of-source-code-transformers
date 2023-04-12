@@ -71,7 +71,7 @@ def main():
         src_folder = "src_files"
         AVTIVATIONS_FOLDER = "./activations/"
     elif language == 'java':
-        src_folder = 'java_src'
+        src_folder = 'src_java'
         AVTIVATIONS_FOLDER = './activations_java/'
     else:
         assert 1 == 0, "language is not understood"
