@@ -1,0 +1,227 @@
+Getting activations from json files. If you need to extract them, run with --extract=True 
+
+Anayzing pretrained_BERT
+Loading json activations from ./activations_java/bert_activations_train.json...
+54804 13.0
+Number of tokens:  581365
+length of source dictionary:  27864
+length of target dictionary:  54
+581365
+Total instances: 581365
+['getFilePointer', 'myDivideBy', 'np', 'DD', 'waitingReaders', 'collectionPointer', 'cdmrFeatureGrid', 'RpcCommandHandler', 'getClassByClusterId', 'cdmdim', 'setSelectedIcon', 'CompletableMergeIterable', 'ODLparser', 'ifield', 'doCreateServiceAccount', 'up', 'llbb', 'MonitoringPointType', '"THREDDS"', 'ObservableMergeWithSingle']
+Number of samples:  581365
+Stats: Labels with their frequencies in the final set
+IDENT 200579
+LPAR 65171
+RPAR 65117
+DOT 41662
+SEMI 35609
+KEYWORD 30970
+COMMA 22960
+EQUAL 19409
+LBRACE 12572
+MODIFIER 11352
+TYPE 10021
+NUMBER 9258
+LESS 6532
+GREATER 6282
+RBRACE 5689
+STRING 5161
+LSQB 4654
+RSQB 4654
+EQEQUAL 3521
+COLON 2449
+NOTEQUAL 2396
+PLUS 2335
+CONDITIONOP 1725
+MINUS 1605
+BOOL 1475
+AND 1286
+NOT 1180
+STAR 1065
+DOUBLEPLUS 925
+OR 887
+SLASH 509
+PLUSEUQAL 361
+GREATEREQUAL 332
+AMPER 276
+UNKNOWN 255
+AT 222
+LESSEQUAL 162
+LEFTSHIFT 142
+VBAR 133
+ELLIPSIS 90
+RARROW 86
+PERCENT 59
+DOUBLEMINUS 54
+MINEQUAL 49
+STAREQUAL 34
+AMPEREQUAL 29
+VBAREQUAL 27
+DOUBLECOLON 17
+CIRCUMFLEX 9
+SLASHEQUAL 8
+TILDE 5
+CIRCUMFLEXEQUAL 3
+RIGHTSHIFTEQUAL 1
+LEFTSHIFTEQUAL 1
+pretrained_BERT distribution after trauncating:
+{1: 0.7454639382159024, 2: 0.11510187091642943, 0: 0.04219039194844388, 3: 0.037243650256814316, 5: 0.03440791478670661, 6: 0.019181167445905464, 4: 0.0064110664297978934}
+{1: 200579, 2: 30970, 0: 11352, 3: 10021, 5: 9258, 6: 5161, 4: 1725}
+{'MODIFIER': 0, 'IDENT': 1, 'KEYWORD': 2, 'TYPE': 3, 'CONDITIONOP': 4, 'NUMBER': 5, 'STRING': 6}
+Loading json activations from ./activations_java/bert_activations_valid.json...
+27402 13.0
+Skipping line:  13171
+A: 2, S: 3, T: 2
+Skipping line:  13172
+A: 22, S: 23, T: 22
+Skipping line:  13173
+A: 2, S: 3, T: 2
+Skipping line:  13174
+A: 2, S: 3, T: 2
+Skipping line:  13175
+A: 2, S: 3, T: 2
+Deleting line 13171: 2 activations, 3 source, 2 target
+Deleting line 13171: 22 activations, 23 source, 22 target
+Deleting line 13171: 2 activations, 3 source, 2 target
+Deleting line 13171: 2 activations, 3 source, 2 target
+Deleting line 13171: 2 activations, 3 source, 2 target
+Number of tokens:  286205
+length of source dictionary:  17130
+length of target dictionary:  53
+286205
+Total instances: 286205
+['getFilePointer', 'CUBLAS_GEMM_ALGO18', 'E1', 'mConfigProperty', '"\\\\r\\\\n"', 'Ref3DPxg', 'cancelButton', 'contributePreProcessors', 'configureClient', 'strictRead', 'formName', 'toTuple3D', 'MatchResult', 'invokingServiceSet', 'ZonedDateTime', 'getFrom', 'endOfLife', 'paramInt', 'newLocator', 'DescribeStreamRequest']
+Number of samples:  286205
+Stats: Labels with their frequencies in the final set
+IDENT 101919
+LPAR 31461
+RPAR 31305
+DOT 22877
+SEMI 16401
+KEYWORD 14080
+COMMA 12568
+EQUAL 8810
+MODIFIER 7252
+LBRACE 6886
+TYPE 4248
+RBRACE 3791
+NUMBER 3054
+STRING 2427
+LESS 2420
+GREATER 2288
+LSQB 1563
+RSQB 1563
+PLUS 1518
+EQEQUAL 1420
+STAR 1215
+NOTEQUAL 1054
+MINUS 910
+COLON 847
+NOT 669
+BOOL 594
+AND 583
+OR 396
+CONDITIONOP 385
+SLASH 335
+DOUBLEPLUS 310
+PLUSEUQAL 232
+AT 124
+GREATEREQUAL 116
+LESSEQUAL 97
+RARROW 85
+DOUBLECOLON 66
+SLASHEQUAL 59
+AMPER 49
+UNKNOWN 44
+VBAR 41
+PERCENT 32
+ELLIPSIS 28
+STAREQUAL 23
+LEFTSHIFT 21
+DOUBLEMINUS 17
+MINEQUAL 9
+PERCENTEQUAL 4
+CIRCUMFLEX 3
+LEFTSHIFTEQUAL 2
+RIGHTSHIFTEQUAL 2
+VBAREQUAL 1
+AMPEREQUAL 1
+pretrained_BERT distribution after trauncating:
+{1: 0.7642109998875267, 2: 0.10557492595508566, 0: 0.05437708544220748, 3: 0.03185243504667641, 5: 0.022899561354178383, 6: 0.018198177932740974, 4: 0.0028868143815843736}
+{1: 101919, 2: 14080, 0: 7252, 3: 4248, 5: 3054, 6: 2427, 4: 385}
+{'MODIFIER': 0, 'IDENT': 1, 'KEYWORD': 2, 'TYPE': 3, 'CONDITIONOP': 4, 'NUMBER': 5, 'STRING': 6}
+Loading json activations from ./activations_java/bert_activations_test.json...
+27402 13.0
+Number of tokens:  277357
+length of source dictionary:  19270
+length of target dictionary:  51
+277357
+Total instances: 277357
+['partitionSolver', 'belongsToEnum', 'storeErrors', 'doModel', 'ZonedDateTime', 'ListIndexesOperation', 'IndexRequestBuilder', '52.467790', '7.026832', 'getContains', 'receiveMessagesSyncronously', 'IteratorOrArray', 'fileNameNormalized', 'formFieldValue', 'HARD_MEDIUM_SOFT', '"$type"', 'CharBuffer', 'KEY_PASSWORD_AUTHENTICATOR_IS_SINGLETON', 'js', 'FormContainerTableRecord']
+Number of samples:  277357
+Stats: Labels with their frequencies in the final set
+IDENT 96372
+LPAR 32419
+RPAR 32205
+DOT 22316
+SEMI 14928
+KEYWORD 14440
+COMMA 11622
+LBRACE 7469
+MODIFIER 7232
+EQUAL 7193
+GREATER 3472
+LESS 3454
+RBRACE 3325
+NUMBER 3260
+STRING 2768
+TYPE 2626
+EQEQUAL 1378
+LSQB 1342
+RSQB 1342
+NOTEQUAL 1173
+COLON 1107
+PLUS 702
+AND 641
+CONDITIONOP 602
+NOT 598
+OR 536
+BOOL 447
+DOUBLEPLUS 389
+MINUS 318
+RARROW 286
+AT 204
+STAR 170
+UNKNOWN 151
+LESSEQUAL 115
+ELLIPSIS 99
+PLUSEUQAL 98
+GREATEREQUAL 97
+AMPER 94
+LEFTSHIFT 68
+VBAR 63
+DOUBLECOLON 56
+SLASH 46
+VBAREQUAL 44
+PERCENT 25
+MINEQUAL 24
+DOUBLEMINUS 22
+TILDE 6
+CIRCUMFLEX 4
+LEFTSHIFTEQUAL 4
+AMPEREQUAL 3
+STAREQUAL 2
+pretrained_BERT distribution after trauncating:
+{1: 0.7570463472113118, 2: 0.11343283582089553, 0: 0.056810683424980364, 5: 0.025608798114689708, 6: 0.021743912018853104, 3: 0.020628436763550667, 4: 0.004728986645718775}
+{1: 96372, 2: 14440, 0: 7232, 5: 3260, 6: 2768, 3: 2626, 4: 602}
+{'MODIFIER': 0, 'IDENT': 1, 'KEYWORD': 2, 'TYPE': 3, 'CONDITIONOP': 4, 'NUMBER': 5, 'STRING': 6}
+The distribution of classes in training after removing repeated tokens between training and tesing:
+Counter({1: 200579, 2: 30970, 0: 11352, 3: 10021, 5: 9258, 6: 5161, 4: 1725})
+{'MODIFIER': 0, 'IDENT': 1, 'KEYWORD': 2, 'TYPE': 3, 'CONDITIONOP': 4, 'NUMBER': 5, 'STRING': 6}
+The distribution of classes in valid:
+Counter({1: 101919, 2: 14080, 0: 7252, 3: 4248, 5: 3054, 6: 2427, 4: 385})
+{'MODIFIER': 0, 'IDENT': 1, 'KEYWORD': 2, 'TYPE': 3, 'CONDITIONOP': 4, 'NUMBER': 5, 'STRING': 6}
+The distribution of classes in testing:
+Counter({1: 96372, 2: 14440, 0: 7232, 5: 3260, 6: 2768, 3: 2626, 4: 602})
+{'MODIFIER': 0, 'IDENT': 1, 'KEYWORD': 2, 'TYPE': 3, 'CONDITIONOP': 4, 'NUMBER': 5, 'STRING': 6}
