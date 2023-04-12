@@ -78,7 +78,7 @@ for idx,combo in enumerate(zip(per,files)):
         start = end
         end = start + int(len(code_unique) * per[idx+1])
         this_code = code_unique[start:end]
-        this_code = label_unique[start:end]
+        this_label = label_unique[start:end]
     else:
         start = end
         this_code = code_unique[start:]
