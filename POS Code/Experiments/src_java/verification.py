@@ -86,13 +86,13 @@ for idx,combo in enumerate(zip(per,files)):
 
     count += len(this_label)
     with open(os.path.join(FOLDER, this_file[0]),"w") as f:
-        for this_code in code_unique:
-            f.writelines(f"{this_code}")
+        for code in this_code:
+            f.writelines(f"{code}")
     f.close()
 
     with open(os.path.join(FOLDER, this_file[1]),"w") as f:
-        for this_label in label_unique:
-            f.writelines(f"{this_label}")
+        for label in this_label:
+            f.writelines(f"{label}")
     f.close()
 
 assert count == len(code_unique), f"{count}!={len(code_unique)}"
