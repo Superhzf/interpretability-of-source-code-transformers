@@ -76,7 +76,7 @@ for idx,combo in enumerate(zip(per,files)):
         this_label = label_unique[:end]
     elif idx == 1:
         start = end
-        end = int(len(code_unique) * per[idx+1])
+        end = start + int(len(code_unique) * per[idx+1])
         this_code = code_unique[start:end]
         this_code = label_unique[start:end]
     else:
@@ -94,6 +94,8 @@ for idx,combo in enumerate(zip(per,files)):
         for this_label in label_unique:
             f.writelines(f"{this_label}")
     f.close()
+
+assert count == len(code_unique)
 
 print(f"After removing redundant observations, {count} samples are\
 left and written to files")
