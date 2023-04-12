@@ -62,33 +62,47 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--extract",choices=('True','False'), default='False')
     parser.add_argument("--this_model", default='pretrained_BERT')
+    parser.add_argument("--language", default='python')
 
     args = parser.parse_args()
+
+    language = args.language
+    if language == 'python':
+        src_folder = "src_files"
+        AVTIVATIONS_FOLDER = "./activations/"
+    elif language == 'java':
+        src_folder = 'java_src'
+        AVTIVATIONS_FOLDER = './activations_java/'
+    else:
+        assert 1 == 0, "language is not understood"
+
     if args.extract == 'True':
         for this_model in MODEL_NAMES:
-            if this_model in ['pretrained_GPT2','pretrained_codeGPTJava','pretrained_codeGPTPy',
-                                'pretrained_codeGPTJavaAdapted','pretrained_codeGPTPyAdapted']:
-                print(f"Generating the activation file for {this_model}")
-                activation_file_name=ACTIVATION_NAMES[this_model][0]
-                extract_activations('./src_files/codetest2_train_unique.in',MODEL_DESC[this_model],os.path.join(AVTIVATIONS_FOLDER,activation_file_name))
-                activation_file_name=ACTIVATION_NAMES[this_model][1]
-                extract_activations('./src_files/codetest2_valid_unique.in',MODEL_DESC[this_model],os.path.join(AVTIVATIONS_FOLDER,activation_file_name))
-                activation_file_name=ACTIVATION_NAMES[this_model][2]
-                extract_activations('./src_files/codetest2_test_unique.in',MODEL_DESC[this_model],os.path.join(AVTIVATIONS_FOLDER,activation_file_name))
+            print(f"Generating the activation file for {this_model}")
+            activation_file_name=ACTIVATION_NAMES[this_model][0]
+            extract_activations('./src_files/codetest2_train_unique.in',MODEL_DESC[this_model],os.path.join(AVTIVATIONS_FOLDER,activation_file_name))
+            activation_file_name=ACTIVATION_NAMES[this_model][1]
+            extract_activations('./src_files/codetest2_valid_unique.in',MODEL_DESC[this_model],os.path.join(AVTIVATIONS_FOLDER,activation_file_name))
+            activation_file_name=ACTIVATION_NAMES[this_model][2]
+            extract_activations('./src_files/codetest2_test_unique.in',MODEL_DESC[this_model],os.path.join(AVTIVATIONS_FOLDER,activation_file_name))
+            if this_model == 'pretrained_BERT':
+                exit(0)
     else:
         print("Getting activations from json files. If you need to extract them, run with --extract=True \n" )
 
     torch.manual_seed(0)
-    this_model = args.this_model 
+    this_model = args.this_model
+    
+
     print(f"Anayzing {this_model}")
     tokens_train,activations_train,flat_tokens_train,X_train, y_train, label2idx_train, idx2label_train,_,num_layers=preprocess(os.path.join(AVTIVATIONS_FOLDER,ACTIVATION_NAMES[this_model][0]),
-                                                                './src_files/codetest2_train_unique.in','./src_files/codetest2_train_unique.label',
+                                                                f'./{src_folder}/codetest2_train_unique.in',f'./{src_folder}/codetest2_train_unique.label',
                                                                 False,this_model)
     tokens_valid,activations_valid,flat_tokens_valid,X_valid, y_valid, label2idx_valid, idx2label_valid,_,_=preprocess(os.path.join(AVTIVATIONS_FOLDER,ACTIVATION_NAMES[this_model][1]),
-                                                    './src_files/codetest2_valid_unique.in','./src_files/codetest2_valid_unique.label',
+                                                    f'./{src_folder}/codetest2_valid_unique.in',f'./{src_folder}/codetest2_valid_unique.label',
                                                     False,this_model)
     tokens_test,activations_test,flat_tokens_test,X_test, y_test, label2idx_test, _, sample_idx_test,_=preprocess(os.path.join(AVTIVATIONS_FOLDER,ACTIVATION_NAMES[this_model][2]),
-                                    './src_files/codetest2_test_unique.in','./src_files/codetest2_test_unique.label',
+                                    f'./{src_folder}/codetest2_test_unique.in',f'./{src_folder}/codetest2_test_unique.label',
                                     False,this_model)
     # remove tokens that are shared by training and testing
     # At the same time, make sure to keep at least 10 key words in the training set
