@@ -74,7 +74,7 @@ def main():
     elif language == 'java':
         src_folder = 'src_java'
         AVTIVATIONS_FOLDER = './activations_java/'
-        class_wanted = ["MODIFIER","KEYWORD","TYPE","CONDITIONOP","NUMBER","STRING"]
+        class_wanted = ["MODIFIER","IDENT","KEYWORD","TYPE","CONDITIONOP","NUMBER","STRING"]
     else:
         assert 1 == 0, "language is not understood"
 
@@ -82,11 +82,11 @@ def main():
         for this_model in MODEL_NAMES:
             print(f"Generating the activation file for {this_model}")
             activation_file_name=ACTIVATION_NAMES[this_model][0]
-            extract_activations('./src_files/codetest2_train_unique.in',MODEL_DESC[this_model],os.path.join(AVTIVATIONS_FOLDER,activation_file_name))
+            extract_activations(f'./{src_files}/codetest2_train_unique.in',MODEL_DESC[this_model],os.path.join(AVTIVATIONS_FOLDER,activation_file_name))
             activation_file_name=ACTIVATION_NAMES[this_model][1]
-            extract_activations('./src_files/codetest2_valid_unique.in',MODEL_DESC[this_model],os.path.join(AVTIVATIONS_FOLDER,activation_file_name))
+            extract_activations(f'./{src_files}/codetest2_valid_unique.in',MODEL_DESC[this_model],os.path.join(AVTIVATIONS_FOLDER,activation_file_name))
             activation_file_name=ACTIVATION_NAMES[this_model][2]
-            extract_activations('./src_files/codetest2_test_unique.in',MODEL_DESC[this_model],os.path.join(AVTIVATIONS_FOLDER,activation_file_name))
+            extract_activations(f'./{src_files}/codetest2_test_unique.in',MODEL_DESC[this_model],os.path.join(AVTIVATIONS_FOLDER,activation_file_name))
     else:
         print("Getting activations from json files. If you need to extract them, run with --extract=True \n" )
 
