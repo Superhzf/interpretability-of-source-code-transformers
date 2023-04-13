@@ -8,7 +8,7 @@ length of source dictionary:  27864
 length of target dictionary:  54
 581365
 Total instances: 581365
-['getFilePointer', 'myDivideBy', 'np', 'DD', 'waitingReaders', 'collectionPointer', 'cdmrFeatureGrid', 'RpcCommandHandler', 'getClassByClusterId', 'cdmdim', 'setSelectedIcon', 'CompletableMergeIterable', 'ODLparser', 'ifield', 'doCreateServiceAccount', 'up', 'llbb', 'MonitoringPointType', '"THREDDS"', 'ObservableMergeWithSingle']
+['y4', 'getTxContext', 'rawIterator', '"enabled"', 'runDateAttr', 'runGroupList', 'VariableSimpleImpl', 'checkHeaders', 'getView', 'characters', 'putLong', 'UUID', 'releaseEngine', 'STATION_DESC', 'SRC', 'rhoHR_gate_count', '1000', 'RegistrationInformation', 'clazz', 'countBits']
 Number of samples:  581365
 Stats: Labels with their frequencies in the final set
 IDENT 200579
@@ -91,7 +91,7 @@ length of source dictionary:  17130
 length of target dictionary:  53
 286205
 Total instances: 286205
-['getFilePointer', 'CUBLAS_GEMM_ALGO18', 'E1', 'mConfigProperty', '"\\\\r\\\\n"', 'Ref3DPxg', 'cancelButton', 'contributePreProcessors', 'configureClient', 'strictRead', 'formName', 'toTuple3D', 'MatchResult', 'invokingServiceSet', 'ZonedDateTime', 'getFrom', 'endOfLife', 'paramInt', 'newLocator', 'DescribeStreamRequest']
+['y4', 'aliasListType', 'subdivisionsEntities', 'methodName', 'validateSbbActivityContextInterface', 'findTabIndexWithName', 'NotificationSource', '"lockinfo"', 'getConfigurationBoolean', 'email', 'validateButtonTooltip', 'pageCollection', 'putBuffer', 'AuthorizationAuthority', 'upperIndex', '"/system"', 'publicKey', 'ImageLoader', 'largestDiff', '"makeObject()"']
 Number of samples:  286205
 Stats: Labels with their frequencies in the final set
 IDENT 101919
@@ -158,7 +158,7 @@ length of source dictionary:  19270
 length of target dictionary:  51
 277357
 Total instances: 277357
-['partitionSolver', 'belongsToEnum', 'storeErrors', 'doModel', 'ZonedDateTime', 'ListIndexesOperation', 'IndexRequestBuilder', '52.467790', '7.026832', 'getContains', 'receiveMessagesSyncronously', 'IteratorOrArray', 'fileNameNormalized', 'formFieldValue', 'HARD_MEDIUM_SOFT', '"$type"', 'CharBuffer', 'KEY_PASSWORD_AUTHENTICATOR_IS_SINGLETON', 'js', 'FormContainerTableRecord']
+['problemFactOrEntity', 'ACTION_DELETE_ASPECT_LOG', 'regexpList', 'methodName', 'EvaluationContext', 'userToLockAsParam', 'getParameterValues', 'REQUEST_TEMPLATE', 'INIT_PARAM_XSS_PROTECTION', 'parseExpression', 'assertInitialScoreFromScratch', 'templateEngine', 'templateLocators', 'EntityType', 'enableCustomHttpMethods', 'getView', 'DmnDecision', 'characters', '"updateOptions"', 'UUID']
 Number of samples:  277357
 Stats: Labels with their frequencies in the final set
 IDENT 96372
@@ -219,9 +219,12 @@ pretrained_BERT distribution after trauncating:
 The distribution of classes in training after removing repeated tokens between training and tesing:
 Counter({1: 200579, 2: 30970, 0: 11352, 3: 10021, 5: 9258, 6: 5161, 4: 1725})
 {'MODIFIER': 0, 'IDENT': 1, 'KEYWORD': 2, 'TYPE': 3, 'CONDITIONOP': 4, 'NUMBER': 5, 'STRING': 6}
+269066 269066
 The distribution of classes in valid:
 Counter({1: 101919, 2: 14080, 0: 7252, 3: 4248, 5: 3054, 6: 2427, 4: 385})
 {'MODIFIER': 0, 'IDENT': 1, 'KEYWORD': 2, 'TYPE': 3, 'CONDITIONOP': 4, 'NUMBER': 5, 'STRING': 6}
+133365 133365
 The distribution of classes in testing:
 Counter({1: 96372, 2: 14440, 0: 7232, 5: 3260, 6: 2768, 3: 2626, 4: 602})
 {'MODIFIER': 0, 'IDENT': 1, 'KEYWORD': 2, 'TYPE': 3, 'CONDITIONOP': 4, 'NUMBER': 5, 'STRING': 6}
+127300 127300
