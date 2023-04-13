@@ -3,7 +3,7 @@ from utils import Normalization, extract_activations
 from utils import get_mappings,all_activations_probe,get_imp_neurons,get_top_words,independent_layerwise_probeing,incremental_layerwise_probeing
 from utils import select_independent_neurons,select_minimum_layers
 from utils import control_task_probes, probeless,filter_by_frequency,preprocess,alignTokenAct,getOverlap, selectBasedOnTrain
-from utils import NumpyEncoder
+from utils import NumpyEncoder,EDA
 from sklearn.model_selection import train_test_split
 import numpy as np
 import collections
@@ -108,15 +108,21 @@ def main():
     print("The distribution of classes in training after removing repeated tokens between training and tesing:")
     print(collections.Counter(y_train))
     print(label2idx_train)
-    print(len(flat_tokens_train),len(y_train))
+    assert len(flat_tokens_train) == len(y_train)
+    EDA(flat_tokens_train,y_train,"IDENT")    
+
     print("The distribution of classes in valid:")
     print(collections.Counter(y_valid))
     print(label2idx_valid)
-    print(len(flat_tokens_valid),len(y_valid))
+    assert len(flat_tokens_valid) == len(y_valid)
+    EDA(flat_tokens_valid,y_valid,"IDENT")
+
     print("The distribution of classes in testing:")
     print(collections.Counter(y_test))
     print(label2idx_test)
-    print(len(flat_tokens_test),len(y_test))
+    assert len(flat_tokens_test) == len(y_test)
+    EDA(flat_tokens_test,y_test,"IDENT")
+
     exit(0)
     
     # remove tokens that are shared by training and testing

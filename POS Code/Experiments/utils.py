@@ -832,3 +832,16 @@ class NumpyEncoder(json.JSONEncoder):
         elif isinstance(obj, np.ndarray):
             return obj.tolist()
         return json.JSONEncoder.default(self, obj)
+
+
+def EDA(flat_tokens_train,y_train,void_label):
+    unique_token_label = {}
+    for this_token, this_label in zip(flat_tokens_train,y_train):
+        if this_token != void_label:
+            if this_label in unique_token_label:
+                unique_token_label[this_label].add(this_token)
+            else:
+                unique_token_label[this_label] = set([this_token])
+    for this_label in unique_token_label:
+        print(f"label:{this_label}, the number of unique tokens:{len(unique_token_label[this_label])}")
+        print(f"The unique labels are:{unique_token_label[this_label]}")
