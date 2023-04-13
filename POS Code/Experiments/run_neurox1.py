@@ -108,13 +108,15 @@ def main():
     print("The distribution of classes in training after removing repeated tokens between training and tesing:")
     print(collections.Counter(y_train))
     print(label2idx_train)
+    print(len(flat_tokens_train),len(y_train))
     print("The distribution of classes in valid:")
     print(collections.Counter(y_valid))
     print(label2idx_valid)
+    print(len(flat_tokens_valid),len(y_valid))
     print("The distribution of classes in testing:")
     print(collections.Counter(y_test))
     print(label2idx_test)
-
+    print(len(flat_tokens_test),len(y_test))
     exit(0)
     
     # remove tokens that are shared by training and testing
