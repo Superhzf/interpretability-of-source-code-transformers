@@ -74,7 +74,7 @@ def main():
     elif language == 'java':
         src_folder = 'src_java'
         AVTIVATIONS_FOLDER = './activations_java/'
-        class_wanted = ["MODIFIER","IDENT","KEYWORD","TYPE","CONDITIONOP","NUMBER","STRING"]
+        class_wanted = ["MODIFIER","IDENT","KEYWORD","TYPE","NUMBER","STRING"]
     else:
         assert 1 == 0, "language is not understood"
 
@@ -109,19 +109,19 @@ def main():
     print(collections.Counter(y_train))
     print(label2idx_train)
     assert len(flat_tokens_train) == len(y_train)
-    EDA(flat_tokens_train,y_train,"IDENT")    
+    EDA(flat_tokens_train,y_train,[label2idx_train["IDENT"],label2idx_train["STRING"]])    
 
     print("The distribution of classes in valid:")
     print(collections.Counter(y_valid))
     print(label2idx_valid)
     assert len(flat_tokens_valid) == len(y_valid)
-    EDA(flat_tokens_valid,y_valid,"IDENT")
+    EDA(flat_tokens_valid,y_valid,[label2idx_valid["IDENT"],label2idx_valid["STRING"]])
 
     print("The distribution of classes in testing:")
     print(collections.Counter(y_test))
     print(label2idx_test)
     assert len(flat_tokens_test) == len(y_test)
-    EDA(flat_tokens_test,y_test,"IDENT")
+    EDA(flat_tokens_test,y_test,[label2idx_test["IDENT"],label2idx_test["STRING"]])
 
     exit(0)
     
