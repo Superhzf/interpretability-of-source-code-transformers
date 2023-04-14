@@ -18,6 +18,8 @@ keyword_list_python = ['False','await','else','import','pass','None','break','ex
 keyword_list_java = {'throw', 'do', 'extends', 'instanceof', 'for', 'try', 'case', 'assert', 'else', 'if', 
                     'return', 'new', 'implements', 'continue', 'throws', 'finally', 'void', 'break', 'class', 
                     'while', 'catch', 'this', 'super', 'switch'}
+modifier_java = {'static', 'protected', 'volatile', 'private', 'public', 'synchronized', 'final', 'default'}
+types_java = {'boolean', 'long', 'short', 'byte', 'int', 'double', 'char', 'float'}
 
 MODEL_NAMES = ['pretrained_BERT',
                'pretrained_CodeBERT','pretrained_GraphCodeBERT','pretrained_CodeBERTa','pretrained_UniXCoder',
@@ -77,6 +79,14 @@ def main():
         keyword_list_train = keyword_list_python[:12]
         keyword_list_valid = keyword_list_python[12:18]
         keyword_list_test = keyword_list_python[18:]
+
+        modifier_train = modifier_java[:4]
+        modifier_valid = modifier_java[4:6]
+        modifier_test = modifier_java[6:]
+
+        type_train = types_java[:4]
+        type_valid = types_java[4:6]
+        type_test = types_java[6:]
     else:
         assert 1 == 0, "language is not understood"
 
@@ -135,9 +145,10 @@ def main():
         counter[index] = 0
     for this_token,this_y in zip(flat_tokens_train,y_train):
         # if this_token in flat_tokens_test:
-        if this_token in keyword_list_train and counter[this_y]<=5000:
-            idx_selected_train.append(True)
-            counter[this_y] += 1
+        if this_y == label2idx_train['KEYWORD']:
+            if this_token in keyword_list_train and counter[this_y]<=5000:
+                idx_selected_train.append(True)
+                counter[this_y] += 1
         elif counter[this_y]<=5000:
             idx_selected_train.append(True)
             counter[this_y] += 1
