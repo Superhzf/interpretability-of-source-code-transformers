@@ -567,7 +567,7 @@ def preprocess(activation_file_name,IN_file,LABEL_file,remove_seen_tokens,model_
 def selectBasedOnTrain(flat_tokens_test,X_test, y_test,flat_tokens_train,label2idx_test,idx2label_test,special_class_split,upper_bound,sample_idx_test=None):
     idx_selected = []
     counter = {}
-    for label,index in label2idx_train.items():
+    for label,index in label2idx_test.items():
         counter[index] = 0
     for this_token_test,this_y_test in zip(flat_tokens_test,y_test):
         if this_token_test in flat_tokens_train:
