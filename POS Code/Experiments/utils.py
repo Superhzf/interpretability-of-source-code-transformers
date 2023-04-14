@@ -564,7 +564,7 @@ def preprocess(activation_file_name,IN_file,LABEL_file,remove_seen_tokens,model_
     return tokens,activations,flat_src_tokens,X_train,y_train,label2idx,idx2label, sample_idx, num_layers
 
 
-def selectBasedOnTrain(flat_tokens_test,X_test, y_test,flat_tokens_train,label2idx_train,keyword_list_test,upper_bound,sample_idx_test=None):
+def selectBasedOnTrain(flat_tokens_test,X_test, y_test,flat_tokens_train,label2idx_test,idx2label_test,special_class_split,upper_bound,sample_idx_test=None):
     idx_selected = []
     counter = {}
     for label,index in label2idx_train.items():
@@ -574,8 +574,9 @@ def selectBasedOnTrain(flat_tokens_test,X_test, y_test,flat_tokens_train,label2i
             idx_selected.append(False)
         else:
             is_selected = True
-            if this_y_test == label2idx_train['KEYWORD']:
-                if this_token_test not in keyword_list_test or counter[this_y_test] >= upper_bound:
+            if idx2label_test[this_y_test] in special_class_split.values():
+                this_class = idx2label_test[this_y_test]
+                if this_y_test not in special_class_split[this_class] or counter[this_y_test] >= upper_bound:
                     is_selected = False
                 else:
                     counter[this_y_test] += 1

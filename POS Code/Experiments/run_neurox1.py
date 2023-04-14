@@ -68,27 +68,46 @@ def main():
         src_folder = "src_files"
         AVTIVATIONS_FOLDER = "./activations/"
         class_wanted = ['NAME','STRING','NUMBER','KEYWORD']
+        special_classes = ['KEYWORD']
+        num_train = 5000
+        num_valid = 540
+        num_test = 670
+
         keyword_list_train = keyword_list_python[:17]
         keyword_list_valid = keyword_list_python[17:25]
         keyword_list_test = keyword_list_python[25:]
+        
+        special_class_split = {"train":{"KEYWORD":keyword_list_train},
+                                "valid":{"KEYWORD":keyword_list_valid},
+                                "test":{"KEYWORD":keyword_list_test}}
 
     elif language == 'java':
         src_folder = 'src_java'
         AVTIVATIONS_FOLDER = './activations_java/'
         class_wanted = ["MODIFIER","IDENT","KEYWORD","TYPE","NUMBER","STRING"]
+        special_classes = ['KEYWORD','MODIFIER','TYPE']
+        num_train = 5000
+        num_valid = 540
+        num_test = 670
+
         keyword_list_train = keyword_list_python[:12]
         keyword_list_valid = keyword_list_python[12:18]
         keyword_list_test = keyword_list_python[18:]
 
-        modifier_train = modifier_java[:4]
-        modifier_valid = modifier_java[4:6]
-        modifier_test = modifier_java[6:]
+        modifier_list_train = modifier_java[:4]
+        modifier_list_valid = modifier_java[4:6]
+        modifier_list_test = modifier_java[6:]
 
-        type_train = types_java[:4]
-        type_valid = types_java[4:6]
-        type_test = types_java[6:]
+        type_list_train = types_java[:4]
+        type_list_valid = types_java[4:6]
+        type_list_test = types_java[6:]
+        
+        special_class_split = {"train":{"KEYWORD":keyword_list_train,"MODIFIER":modifier_list_train,"TYPE":type_list_train},
+                                "valid":{"KEYWORD":keyword_list_valid,"MODIFIER":modifier_list_valid,"TYPE":type_list_valid},
+                                "test":{"KEYWORD":keyword_list_test,"MODIFIER":modifier_list_test,"TYPE":type_list_test}}
     else:
         assert 1 == 0, "language is not understood"
+    
 
     if args.extract == 'True':
         for this_model in MODEL_NAMES:
@@ -113,43 +132,39 @@ def main():
     tokens_valid,activations_valid,flat_tokens_valid,X_valid, y_valid, label2idx_valid, idx2label_valid,_,_=preprocess(os.path.join(AVTIVATIONS_FOLDER,ACTIVATION_NAMES[this_model][1]),
                                                     f'./{src_folder}/codetest2_valid_unique.in',f'./{src_folder}/codetest2_valid_unique.label',
                                                     False,this_model,class_wanted)
-    tokens_test,activations_test,flat_tokens_test,X_test, y_test, label2idx_test, _, sample_idx_test,_=preprocess(os.path.join(AVTIVATIONS_FOLDER,ACTIVATION_NAMES[this_model][2]),
+    tokens_test,activations_test,flat_tokens_test,X_test, y_test, label2idx_test, idx2label_test, sample_idx_test,_=preprocess(os.path.join(AVTIVATIONS_FOLDER,ACTIVATION_NAMES[this_model][2]),
                                     f'./{src_folder}/codetest2_test_unique.in',f'./{src_folder}/codetest2_test_unique.label',
                                     False,this_model,class_wanted)
 
-    print("The distribution of classes in training after removing repeated tokens between training and tesing:")
-    print(collections.Counter(y_train))
-    print(label2idx_train)
-    assert len(flat_tokens_train) == len(y_train)
-    EDA(flat_tokens_train,y_train,[label2idx_train["IDENT"],label2idx_train["STRING"]])    
+    # print("The distribution of classes in training after removing repeated tokens between training and tesing:")
+    # print(collections.Counter(y_train))
+    # print(label2idx_train)
+    # assert len(flat_tokens_train) == len(y_train)
+    # EDA(flat_tokens_train,y_train,[label2idx_train["IDENT"],label2idx_train["STRING"]])    
 
-    print("The distribution of classes in valid:")
-    print(collections.Counter(y_valid))
-    print(label2idx_valid)
-    assert len(flat_tokens_valid) == len(y_valid)
-    EDA(flat_tokens_valid,y_valid,[label2idx_valid["IDENT"],label2idx_valid["STRING"]])
+    # print("The distribution of classes in valid:")
+    # print(collections.Counter(y_valid))
+    # print(label2idx_valid)
+    # assert len(flat_tokens_valid) == len(y_valid)
+    # EDA(flat_tokens_valid,y_valid,[label2idx_valid["IDENT"],label2idx_valid["STRING"]])
 
-    print("The distribution of classes in testing:")
-    print(collections.Counter(y_test))
-    print(label2idx_test)
-    assert len(flat_tokens_test) == len(y_test)
-    EDA(flat_tokens_test,y_test,[label2idx_test["IDENT"],label2idx_test["STRING"]])
-
-    exit(0)
+    # print("The distribution of classes in testing:")
+    # print(collections.Counter(y_test))
+    # print(label2idx_test)
+    # assert len(flat_tokens_test) == len(y_test)
+    # EDA(flat_tokens_test,y_test,[label2idx_test["IDENT"],label2idx_test["STRING"]])
     
-    # remove tokens that are shared by training and testing
-    # At the same time, make sure to keep at least 10 key words in the training set
     idx_selected_train = []
     counter = {}
     for label,index in label2idx_train.items():
         counter[index] = 0
     for this_token,this_y in zip(flat_tokens_train,y_train):
-        # if this_token in flat_tokens_test:
-        if this_y == label2idx_train['KEYWORD']:
-            if this_token in keyword_list_train and counter[this_y]<=5000:
+        if idx2label_train[this_y] in special_classes:
+            this_class = idx2label_train[this_y]
+            if this_token in special_class_split['train'][this_class] and counter[this_y]<=num_train:
                 idx_selected_train.append(True)
                 counter[this_y] += 1
-        elif counter[this_y]<=5000:
+        elif counter[this_y]<=num_train:
             idx_selected_train.append(True)
             counter[this_y] += 1
         else:
@@ -177,9 +192,10 @@ def main():
                                                 X_valid,
                                                 y_valid,
                                                 flat_tokens_train,
-                                                label2idx_train,
-                                                keyword_list_valid,
-                                                540)
+                                                label2idx_valid,
+                                                idx2label_valid,
+                                                special_class_split["valid"],
+                                                num_valid)
     print(f"Write tokens in the validation set to files:")
     f = open(f'{this_model}validation.txt','w')
     for this_token in flat_tokens_valid:
@@ -190,9 +206,10 @@ def main():
                                                                             X_test,
                                                                             y_test,
                                                                             flat_tokens_train,
-                                                                            label2idx_train,
-                                                                            keyword_list_test,
-                                                                            670,
+                                                                            label2idx_test,
+                                                                            idx2label_test,
+                                                                            special_class_split["test"],
+                                                                            num_test,
                                                                             sample_idx_test)
     print(f"Write tokens in the testing set to files:")
     f = open(f'{this_model}testing.txt','w')
@@ -212,6 +229,8 @@ def main():
     print("The distribution of classes in testing:")
     print(collections.Counter(y_test))
     print(label2idx_test)
+
+    exit(0)
 
 
     neurons_per_layer = X_train.shape[1]//num_layers
