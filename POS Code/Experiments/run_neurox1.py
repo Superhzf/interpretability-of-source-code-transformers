@@ -130,24 +130,17 @@ def main():
     # remove tokens that are shared by training and testing
     # At the same time, make sure to keep at least 10 key words in the training set
     idx_selected_train = []
-    count_kw = 0
-    count_number = 0
-    count_name = 0
-    count_str = 0
+    counter = {}
+    for label,index in label2idx_train.items():
+        counter[index] = 0
     for this_token,this_y in zip(flat_tokens_train,y_train):
         # if this_token in flat_tokens_test:
-        if this_y == label2idx_train['NUMBER'] and count_number<=5000:
+        if this_token in keyword_list_train and counter[this_y]<=5000:
             idx_selected_train.append(True)
-            count_number += 1
-        elif this_token in keyword_list_train and count_kw<=5000:
+            counter[this_y] += 1
+        elif counter[this_y]<=5000:
             idx_selected_train.append(True)
-            count_kw+=1
-        elif this_y == label2idx_train['STRING'] and count_str<=5000:
-            idx_selected_train.append(True)
-            count_str += 1
-        elif this_y== label2idx_train['NAME'] and count_name<=5000:
-            idx_selected_train.append(True)
-            count_name += 1
+            counter[this_y] += 1
         else:
             idx_selected_train.append(False)
     assert len(idx_selected_train) == len(flat_tokens_train)
