@@ -12,17 +12,12 @@ import os
 import json
 
 
-keyword_list = ['False','await','else','import','pass','None','break','except','in','raise','True',
+keyword_list_python = ['False','await','else','import','pass','None','break','except','in','raise','True',
                 'class','finally','is','return','and','continue','for','lambda','try','as','def','from',
                 'nonlocal','while','assert','del','global','not','with','async''elif','if','or','yield']
-number = ['0','1','2','3','4','5','6','7','8','9']
-
-keyword_list_train = keyword_list[:17]
-keyword_list_valid = keyword_list[17:25]
-keyword_list_test = keyword_list[25:]
-num_train = number[0:3]
-num_valid = number[3:]
-num_test = number[3:]
+keyword_list_java = {'throw', 'do', 'extends', 'instanceof', 'for', 'try', 'case', 'assert', 'else', 'if', 
+                    'return', 'new', 'implements', 'continue', 'throws', 'finally', 'void', 'break', 'class', 
+                    'while', 'catch', 'this', 'super', 'switch'}
 
 MODEL_NAMES = ['pretrained_BERT',
                'pretrained_CodeBERT','pretrained_GraphCodeBERT','pretrained_CodeBERTa','pretrained_UniXCoder',
@@ -71,10 +66,17 @@ def main():
         src_folder = "src_files"
         AVTIVATIONS_FOLDER = "./activations/"
         class_wanted = ['NAME','STRING','NUMBER','KEYWORD']
+        keyword_list_train = keyword_list_python[:17]
+        keyword_list_valid = keyword_list_python[17:25]
+        keyword_list_test = keyword_list_python[25:]
+
     elif language == 'java':
         src_folder = 'src_java'
         AVTIVATIONS_FOLDER = './activations_java/'
         class_wanted = ["MODIFIER","IDENT","KEYWORD","TYPE","NUMBER","STRING"]
+        keyword_list_train = keyword_list_python[:12]
+        keyword_list_valid = keyword_list_python[12:18]
+        keyword_list_test = keyword_list_python[18:]
     else:
         assert 1 == 0, "language is not understood"
 
@@ -135,11 +137,8 @@ def main():
     for this_token,this_y in zip(flat_tokens_train,y_train):
         # if this_token in flat_tokens_test:
         if this_y == label2idx_train['NUMBER'] and count_number<=5000:
-            if set(list(this_token)).issubset(num_train):
-                idx_selected_train.append(True)
-                count_number += 1
-            else:
-                idx_selected_train.append(False)
+            idx_selected_train.append(True)
+            count_number += 1
         elif this_token in keyword_list_train and count_kw<=5000:
             idx_selected_train.append(True)
             count_kw+=1
@@ -176,7 +175,6 @@ def main():
                                                 flat_tokens_train,
                                                 label2idx_train,
                                                 keyword_list_valid,
-                                                num_valid,
                                                 540)
     print(f"Write tokens in the validation set to files:")
     f = open(f'{this_model}validation.txt','w')
@@ -190,7 +188,6 @@ def main():
                                                                             flat_tokens_train,
                                                                             label2idx_train,
                                                                             keyword_list_test,
-                                                                            num_test,
                                                                             670,
                                                                             sample_idx_test)
     print(f"Write tokens in the testing set to files:")
