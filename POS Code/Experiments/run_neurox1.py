@@ -164,6 +164,8 @@ def main():
             if this_token in special_class_split['train'][this_class] and counter[this_y]<=num_train:
                 idx_selected_train.append(True)
                 counter[this_y] += 1
+            else:
+                idx_selected_train.append(False)
         elif counter[this_y]<=num_train:
             idx_selected_train.append(True)
             counter[this_y] += 1
