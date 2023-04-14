@@ -15,11 +15,11 @@ import json
 keyword_list_python = ['False','await','else','import','pass','None','break','except','in','raise','True',
                 'class','finally','is','return','and','continue','for','lambda','try','as','def','from',
                 'nonlocal','while','assert','del','global','not','with','async''elif','if','or','yield']
-keyword_list_java = {'throw', 'do', 'extends', 'instanceof', 'for', 'try', 'case', 'assert', 'else', 'if', 
+keyword_list_java = ['throw', 'do', 'extends', 'instanceof', 'for', 'try', 'case', 'assert', 'else', 'if', 
                     'return', 'new', 'implements', 'continue', 'throws', 'finally', 'void', 'break', 'class', 
-                    'while', 'catch', 'this', 'super', 'switch'}
-modifier_java = {'static', 'protected', 'volatile', 'private', 'public', 'synchronized', 'final', 'default'}
-types_java = {'boolean', 'long', 'short', 'byte', 'int', 'double', 'char', 'float'}
+                    'while', 'catch', 'this', 'super', 'switch']
+modifier_java = ['static', 'protected', 'volatile', 'private', 'public', 'synchronized', 'final', 'default']
+types_java = ['boolean', 'long', 'short', 'byte', 'int', 'double', 'char', 'float']
 
 MODEL_NAMES = ['pretrained_BERT',
                'pretrained_CodeBERT','pretrained_GraphCodeBERT','pretrained_CodeBERTa','pretrained_UniXCoder',
