@@ -8,7 +8,7 @@ length of source dictionary:  27864
 length of target dictionary:  54
 581365
 Total instances: 581365
-['"content-length"', 'EntriesIterator', 'savepos', 'SingleDoFinally', 'posDot2', 'REQUEST_SHUTDOWN', 'yystate', 'useSession', 'linkClass', 'extrapinterpolate', 'removeDimension', '"getFeatureTypes"', '"accept"', 'completableSource', 'QUERY_SELECT_FROM', 'SubQueryCollector', '"<unspecified>"', 'TypedDataset', 'ja', '"powerpc"']
+['nkeep', 'persistMinutes', 'dbPath', 'setUseLightweightEdges', 'GridTableLookup', 'switch', '"day"', 'TRUSTPASSWORD', 'getDatasetSource', 'graphDb', 'getIndexes', 'timeBuilder', 'unpacked_data', 'constructDimensions', 'getTopologicalSortedSchedule', 'withKind', 'registerDatabase', 'getRecordSerializer', 'getGroupPath', 'lonNormalFrom']
 Number of samples:  581365
 Stats: Labels with their frequencies in the final set
 IDENT 200579
@@ -91,7 +91,7 @@ length of source dictionary:  17130
 length of target dictionary:  53
 286205
 Total instances: 286205
-['ProfileEntityFramework', 'generateSignature', 'jpaProfileDataSource', 'LineSegment2D_F64', 'invalidFieldEditor', 'getServerFeatures', 'getTimeCoord', 'vv', 'getActivityTypes', 'evaluate', 'SBB_VENDOR_KEY', 'bound', 'nonOptArgIndex', 'reportAuthenticationFailure', 'textDir', 'dap', 'ulpt', 'cacheSchedulerHelper', 'HEADER_PARAM_KEY_DATE', 'logServiceAsync']
+['90', 'KeyFactory', 'addMap', '"background-color:rgb("', 'Closeable', 'WildcardExpanderHandlerAware', 'getExpression', 'comparison', 'repLoc', '"-"', 'myASIBs', 'alts', 'switch', 'setFirstRow', 'getStyle', 'cublasZher2k', 'putResource', 'ADDRESS_PRESENTATION_RESTRICTED', 'norm', 'remainder']
 Number of samples:  286205
 Stats: Labels with their frequencies in the final set
 IDENT 101919
@@ -158,7 +158,7 @@ length of source dictionary:  19270
 length of target dictionary:  51
 277357
 Total instances: 277357
-['getArgumentNames', 'getFrameType', 'resourceManager', 'mediumScore', 'scanConfig', 'GenuineVariableDescriptor', 'skipWS', 'watcherRunnable', 'TxcLogicException', 'problemFactOrEntity', 'textSearchOptions', 'databaseUrl', 'range_name', 'IoWriter', 'todoManagerImpl', 'evaluate', '"results"', '"ssl.KeyManagerFactory.algorithm"', 'EngineId', 'BodyAsExtractor']
+['KeyFactory', 'requestID', 'isDownloadAllowed', 'Closeable', 'tracing', 'getClip', 'setWriter', '"-"', 'correction', 'switch', 'typeToClass', '"TABLE_TYPE"', 'partCalculationCount', 'MASKED', 'remainder', 'hasProperties', 'DEFAULT_CONTEXT', 'MODE_PROD', 'jfree', '3.919711']
 Number of samples:  277357
 Stats: Labels with their frequencies in the final set
 IDENT 96372
@@ -260,11 +260,11 @@ Write tokens in the validation set to files:
 Write tokens in the testing set to files:
 
 The distribution of classes in training after removing repeated tokens between training and tesing:
-Counter({1: 5001, 4: 5001, 2: 5001, 5: 5001, 3: 3202, 0: 2725})
+Counter({0: 5001, 1: 5001, 3: 5001, 4: 5001, 2: 5001, 5: 5001})
 {'MODIFIER': 0, 'IDENT': 1, 'KEYWORD': 2, 'TYPE': 3, 'NUMBER': 4, 'STRING': 5}
 The distribution of classes in valid:
-Counter({1: 540, 2: 540, 3: 540, 0: 540, 5: 540, 4: 72})
+Counter({1: 540, 2: 540, 3: 540, 5: 540, 0: 540, 4: 72})
 {'MODIFIER': 0, 'IDENT': 1, 'KEYWORD': 2, 'TYPE': 3, 'NUMBER': 4, 'STRING': 5}
 The distribution of classes in testing:
-Counter({1: 670, 0: 670, 2: 670, 5: 670, 3: 670, 4: 670})
+Counter({1: 670, 2: 670, 5: 670, 0: 670, 4: 670, 3: 340})
 {'MODIFIER': 0, 'IDENT': 1, 'KEYWORD': 2, 'TYPE': 3, 'NUMBER': 4, 'STRING': 5}
