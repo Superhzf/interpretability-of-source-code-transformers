@@ -163,7 +163,7 @@ def main():
                                     unique_token_label_test,
                                     label2idx_train,
                                     idx2label_train,
-                                    priority_list=priority_list):
+                                    priority_list=priority_list)
 
 
     flat_tokens_train = flat_tokens_train[idx_selected_train]
