@@ -824,10 +824,10 @@ def EDA(flat_tokens_train,y_train,void_label):
     unique_token_label = {}
     for this_token, this_label in zip(flat_tokens_train,y_train):
         if this_label in unique_token_label:
-            unique_token_label[this_label].add(this_token)
+            unique_token_label[this_label].append(this_token)
         else:
-            unique_token_label[this_label] = set([this_token])
+            unique_token_label[this_label] = [this_token]
     for this_label in unique_token_label:
-        print(f"label:{this_label}, the number of unique tokens:{len(unique_token_label[this_label])}")
+        print(f"label:{this_label}, the number of unique tokens:{len(set(unique_token_label[this_label]))},total tokens:{len(unique_token_label[this_label])}")
         if this_label not in void_label:
-            print(f"The unique labels are:{unique_token_label[this_label]}")
+            print(f"The unique labels are:{sorted(list(set(unique_token_label[this_label])))}")

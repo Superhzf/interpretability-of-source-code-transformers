@@ -90,8 +90,8 @@ def main():
         num_valid = 540
         num_test = 670
 
-        keyword_list_train = keyword_list_python[:12]
-        keyword_list_valid = keyword_list_python[12:18]
+        keyword_list_train = keyword_list_python[:18]
+        keyword_list_valid = keyword_list_python[18:]
         keyword_list_test = keyword_list_python[18:]
 
         modifier_list_train = modifier_java[:4]
@@ -136,23 +136,23 @@ def main():
                                     f'./{src_folder}/codetest2_test_unique.in',f'./{src_folder}/codetest2_test_unique.label',
                                     False,this_model,class_wanted)
 
-    # print("The distribution of classes in training after removing repeated tokens between training and tesing:")
-    # print(collections.Counter(y_train))
-    # print(label2idx_train)
-    # assert len(flat_tokens_train) == len(y_train)
-    # EDA(flat_tokens_train,y_train,[label2idx_train["IDENT"],label2idx_train["STRING"]])    
+    print("The distribution of classes in training after removing repeated tokens between training and tesing:")
+    print(collections.Counter(y_train))
+    print(label2idx_train)
+    assert len(flat_tokens_train) == len(y_train)
+    EDA(flat_tokens_train,y_train,[label2idx_train["IDENT"],label2idx_train["STRING"]])    
 
-    # print("The distribution of classes in valid:")
-    # print(collections.Counter(y_valid))
-    # print(label2idx_valid)
-    # assert len(flat_tokens_valid) == len(y_valid)
-    # EDA(flat_tokens_valid,y_valid,[label2idx_valid["IDENT"],label2idx_valid["STRING"]])
+    print("The distribution of classes in valid:")
+    print(collections.Counter(y_valid))
+    print(label2idx_valid)
+    assert len(flat_tokens_valid) == len(y_valid)
+    EDA(flat_tokens_valid,y_valid,[label2idx_valid["IDENT"],label2idx_valid["STRING"]])
 
-    # print("The distribution of classes in testing:")
-    # print(collections.Counter(y_test))
-    # print(label2idx_test)
-    # assert len(flat_tokens_test) == len(y_test)
-    # EDA(flat_tokens_test,y_test,[label2idx_test["IDENT"],label2idx_test["STRING"]])
+    print("The distribution of classes in testing:")
+    print(collections.Counter(y_test))
+    print(label2idx_test)
+    assert len(flat_tokens_test) == len(y_test)
+    EDA(flat_tokens_test,y_test,[label2idx_test["IDENT"],label2idx_test["STRING"]])
     
     idx_selected_train = []
     counter = {}
