@@ -595,6 +595,55 @@ def selectBasedOnTrain(flat_tokens_test,X_test, y_test,flat_tokens_train,label2i
         assert len(sample_idx_test) == len(y_test)
     return X_test, y_test, flat_tokens_test, idx_selected, sample_idx_test
 
+def selectTrain(flat_tokens_train,y_train,unique_token_label_train,unique_token_label_valid,unique_token_label_test,
+                label2idx_train,idx2label_train,priority_list=None):
+    idx_selected_train = []
+    counter = {}
+    if priority_list is not None:
+        idx_selected_train_prior = []
+        for this_prior_class in priority_list:
+            priority_tokens1 = set(unique_token_label_train[this_prior_class]) - set(unique_token_label_valid[this_prior_class])
+            priority_tokens2 = set(unique_token_label_train[this_prior_class]) - set(unique_token_label_test[this_prior_class])
+            priority_tokens = priority_tokens1.union(priority_tokens2)
+            priority_tokens = list(priority_tokens)
+            priority = {this_prior_class:priority_tokens}
+
+        for label,index in label2idx_train.items():
+            counter[index] = 0
+        for this_token,this_y in zip(flat_tokens_train,y_train):
+            this_class = idx2label_train[this_y]
+            if this_class in priority:
+                if this_y in priority[this_class] and counter[this_y] <= num_train:
+                    idx_selected_train_prior.append(True)
+                    counter[this_y] += 1
+                else:
+                    idx_selected_train_prior.append(False)
+            else:
+                idx_selected_train_prior.append(False)
+    else:
+        idx_selected_train_prior = [False]*len(flat_tokens_train)
+
+    assert len(flat_tokens_train) == len(idx_selected_train_prior)
+
+    for idx, (this_token,this_y) in enumerate(zip(flat_tokens_train,y_train)):
+        if idx_selected_train_prior[idx]:
+            idx_selected_train.append(False)
+        elif idx2label_train[this_y] in special_classes:
+            this_class = idx2label_train[this_y]
+            if this_token in special_class_split['train'][this_class] and counter[this_y]<=num_train:
+                idx_selected_train.append(True)
+                counter[this_y] += 1
+            else:
+                idx_selected_train.append(False)
+        elif counter[this_y]<=num_train:
+            idx_selected_train.append(True)
+            counter[this_y] += 1
+        else:
+            idx_selected_train.append(False)
+    assert len(idx_selected_train) == len(flat_tokens_train)
+    return idx_selected_train
+
+
 
 def extract_sentence_attentions(
     sentence,
@@ -831,3 +880,4 @@ def EDA(flat_tokens_train,y_train,void_label):
         print(f"label:{this_label}, the number of unique tokens:{len(set(unique_token_label[this_label]))},total tokens:{len(unique_token_label[this_label])}")
         if this_label not in void_label:
             print(f"The unique labels are:{sorted(list(set(unique_token_label[this_label])))}")
+    return unique_token_label

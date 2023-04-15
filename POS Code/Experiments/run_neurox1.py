@@ -80,6 +80,7 @@ def main():
         special_class_split = {"train":{"KEYWORD":keyword_list_train},
                                 "valid":{"KEYWORD":keyword_list_valid},
                                 "test":{"KEYWORD":keyword_list_test}}
+        priority_list=None
 
     elif language == 'java':
         src_folder = 'src_java'
@@ -105,6 +106,7 @@ def main():
         special_class_split = {"train":{"KEYWORD":keyword_list_train,"MODIFIER":modifier_list_train,"TYPE":type_list_train},
                                 "valid":{"KEYWORD":keyword_list_valid,"MODIFIER":modifier_list_valid,"TYPE":type_list_valid},
                                 "test":{"KEYWORD":keyword_list_test,"MODIFIER":modifier_list_test,"TYPE":type_list_test}}
+        priority_list=["NUMBER"]
     else:
         assert 1 == 0, "language is not understood"
     
@@ -140,38 +142,29 @@ def main():
     print(collections.Counter(y_train))
     print(label2idx_train)
     assert len(flat_tokens_train) == len(y_train)
-    EDA(flat_tokens_train,y_train,[label2idx_train["IDENT"],label2idx_train["STRING"]])    
+    unique_token_label_train = EDA(flat_tokens_train,y_train,[label2idx_train["IDENT"],label2idx_train["STRING"]])    
 
     print("The distribution of classes in valid:")
     print(collections.Counter(y_valid))
     print(label2idx_valid)
     assert len(flat_tokens_valid) == len(y_valid)
-    EDA(flat_tokens_valid,y_valid,[label2idx_valid["IDENT"],label2idx_valid["STRING"]])
+    unique_token_label_valid = EDA(flat_tokens_valid,y_valid,[label2idx_valid["IDENT"],label2idx_valid["STRING"]])
 
     print("The distribution of classes in testing:")
     print(collections.Counter(y_test))
     print(label2idx_test)
     assert len(flat_tokens_test) == len(y_test)
-    EDA(flat_tokens_test,y_test,[label2idx_test["IDENT"],label2idx_test["STRING"]])
+    unique_token_label_test = EDA(flat_tokens_test,y_test,[label2idx_test["IDENT"],label2idx_test["STRING"]])
     
-    idx_selected_train = []
-    counter = {}
-    for label,index in label2idx_train.items():
-        counter[index] = 0
-    for this_token,this_y in zip(flat_tokens_train,y_train):
-        if idx2label_train[this_y] in special_classes:
-            this_class = idx2label_train[this_y]
-            if this_token in special_class_split['train'][this_class] and counter[this_y]<=num_train:
-                idx_selected_train.append(True)
-                counter[this_y] += 1
-            else:
-                idx_selected_train.append(False)
-        elif counter[this_y]<=num_train:
-            idx_selected_train.append(True)
-            counter[this_y] += 1
-        else:
-            idx_selected_train.append(False)
-    assert len(idx_selected_train) == len(flat_tokens_train)
+    idx_selected_train = selectTrain(flat_tokens_train,
+                                    y_train,
+                                    unique_token_label_train,
+                                    unique_token_label_valid,
+                                    unique_token_label_test,
+                                    label2idx_train,
+                                    idx2label_train,
+                                    priority_list=priority_list):
+
 
     flat_tokens_train = flat_tokens_train[idx_selected_train]
     X_train = X_train[idx_selected_train]
