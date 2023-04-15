@@ -94,13 +94,13 @@ def main():
         keyword_list_valid = keyword_list_python[18:]
         keyword_list_test = keyword_list_python[18:]
 
-        modifier_list_train = modifier_java[:4]
-        modifier_list_valid = modifier_java[4:6]
-        modifier_list_test = modifier_java[6:]
+        modifier_list_train = modifier_java[:5]
+        modifier_list_valid = modifier_java[5:]
+        modifier_list_test = modifier_java[5:]
 
-        type_list_train = types_java[:4]
-        type_list_valid = types_java[4:6]
-        type_list_test = types_java[6:]
+        type_list_train = types_java[:5]
+        type_list_valid = types_java[5:]
+        type_list_test = types_java[5:]
         
         special_class_split = {"train":{"KEYWORD":keyword_list_train,"MODIFIER":modifier_list_train,"TYPE":type_list_train},
                                 "valid":{"KEYWORD":keyword_list_valid,"MODIFIER":modifier_list_valid,"TYPE":type_list_valid},
