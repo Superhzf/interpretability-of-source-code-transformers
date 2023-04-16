@@ -615,7 +615,7 @@ def selectTrain(flat_tokens_train,y_train,unique_token_label_train,unique_token_
         for this_token,this_y in zip(flat_tokens_train,y_train):
             this_class = idx2label_train[this_y]
             if this_class in priority:
-                if this_y in priority[this_class] and counter[this_y] <= num_train:
+                if this_token in priority[this_class] and counter[this_y] <= num_train:
                     idx_selected_train_prior.append(True)
                     counter[this_y] += 1
                 else:
