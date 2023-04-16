@@ -596,7 +596,7 @@ def selectBasedOnTrain(flat_tokens_test,X_test, y_test,flat_tokens_train,label2i
     return X_test, y_test, flat_tokens_test, idx_selected, sample_idx_test
 
 def selectTrain(flat_tokens_train,y_train,unique_token_label_train,unique_token_label_valid,unique_token_label_test,
-                special_classes,special_class_split,
+                special_classes,special_class_split,num_train,
                 label2idx_train,idx2label_train,priority_list=None):
     idx_selected_train = []
     counter = {}

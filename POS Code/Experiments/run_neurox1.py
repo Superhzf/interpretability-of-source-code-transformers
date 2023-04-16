@@ -161,8 +161,9 @@ def main():
                                     unique_token_label_train,
                                     unique_token_label_valid,
                                     unique_token_label_test,
-                                    special_class_split,
                                     special_classes,
+                                    special_class_split,
+                                    num_train,
                                     label2idx_train,
                                     idx2label_train,
                                     priority_list=priority_list)
