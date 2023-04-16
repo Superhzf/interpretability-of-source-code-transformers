@@ -3,7 +3,7 @@ from utils import Normalization, extract_activations
 from utils import get_mappings,all_activations_probe,get_imp_neurons,get_top_words,independent_layerwise_probeing,incremental_layerwise_probeing
 from utils import select_independent_neurons,select_minimum_layers
 from utils import control_task_probes, probeless,filter_by_frequency,preprocess,alignTokenAct,getOverlap, selectBasedOnTrain
-from utils import NumpyEncoder,EDA
+from utils import NumpyEncoder,EDA, selectTrain
 from sklearn.model_selection import train_test_split
 import numpy as np
 import collections
