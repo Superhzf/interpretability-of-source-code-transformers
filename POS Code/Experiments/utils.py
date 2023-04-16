@@ -638,7 +638,7 @@ def selectTrain(flat_tokens_train,y_train,unique_token_label_train,unique_token_
                 counter[this_y] += 1
             else:
                 idx_selected_train.append(False)
-        elif counter[this_y]<=num_train:
+        elif idx2label_train[this_y] not in priority_list and counter[this_y]<=num_train:
             idx_selected_train.append(True)
             counter[this_y] += 1
         else:
