@@ -597,10 +597,10 @@ def selectBasedOnTrain(flat_tokens_test,X_test, y_test,flat_tokens_train,label2i
 
 def selectTrain(flat_tokens_train,y_train,unique_token_label_train,unique_token_label_valid,unique_token_label_test,
                 special_classes,special_class_split,num_train,
-                label2idx_train,idx2label_train,priority_list=None):
+                label2idx_train,idx2label_train,priority_list=[]):
     idx_selected_train = []
     counter = {}
-    if priority_list is not None:
+    if len(priority_list)>0:
         idx_selected_train_prior = []
         for this_prior_class in priority_list:
             idx = label2idx_train[this_prior_class]

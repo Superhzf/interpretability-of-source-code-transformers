@@ -80,7 +80,7 @@ def main():
         special_class_split = {"train":{"KEYWORD":keyword_list_train},
                                 "valid":{"KEYWORD":keyword_list_valid},
                                 "test":{"KEYWORD":keyword_list_test}}
-        priority_list=None
+        priority_list=[]
 
     elif language == 'java':
         src_folder = 'src_java'
