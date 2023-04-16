@@ -630,6 +630,7 @@ def selectTrain(flat_tokens_train,y_train,unique_token_label_train,unique_token_
     for idx, (this_token,this_y) in enumerate(zip(flat_tokens_train,y_train)):
         if idx_selected_train_prior[idx]:
             idx_selected_train.append(True)
+            counter[this_y] += 1
         elif idx2label_train[this_y] in special_classes:
             this_class = idx2label_train[this_y]
             if this_token in special_class_split['train'][this_class] and counter[this_y]<=num_train:
