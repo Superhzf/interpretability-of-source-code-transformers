@@ -8,7 +8,7 @@ length of source dictionary:  27864
 length of target dictionary:  54
 581365
 Total instances: 581365
-['ScheduledReplaySupplier', 'setStartValue', 'UnitDBImpl', 'profiles', '"miny"', 'TIME_VAR', 'activeNodes', 'callback', 'SEEK_SET', 'CollectionAbstract', '"bufr"', 'stationTime', 'backslashEscapeCDMString', 'RegistrationInformation', '"accessPoint"', 'createDefaultHeader', 'amendFromODL', 'linkedType', 'getClusterById', 'elementOClassName']
+['"Apply"', '"NML"', 'MAX_VALUE', 'otherValue', 'po', 'getChangesPerKey', 'iso', 'generateCatalog', 'DefaultConvention', 'trajectoryIds', '"formula_terms"', 'getNTimes', 'createGlobalAttributes', '"base58:"', 'disc', 'isExecutionModeSynchronous', 'setRejectMatchingDatasets', 'enabledForCurrentThread', 'configEqualMap', 'doShowEncodingNoIndex']
 Number of samples:  581365
 Stats: Labels with their frequencies in the final set
 IDENT 200579
@@ -91,7 +91,7 @@ length of source dictionary:  17130
 length of target dictionary:  53
 286205
 Total instances: 286205
-['elevations', 'jaxb', 'negate', 'submitMode', 'XZY', 'profiles', 'addToDftGraph', 'MalformedElementException', 'QualifiedNameImpl', 'buildLoggingEventAndAppend', 'callback', 'okeys', 'special', 'isCheckRequiredForGroup', 'decreaseMask', 'rootSupplier', 'cublasSnrm2', 'removeCellComment', 'absoluteBox', 'requires']
+['MULTICAST_STRING', 'host_sa', 'sizeReplicatedOrLocalRegion', 'getHost', 'setBody', 'ProfileCMPInterfaceDescriptor', 'rename', 'setFooterCellRange', 'CONTENT_ENCODING', 'AtomicBoolean', 'MAX_VALUE', '"set."', 'lastColor', 'intervals', 'setColumnStyle', 'agregatedIncrement', 'getCertificate', 'po', 'RegionFunctionContext', 'ProviderFinder']
 Number of samples:  286205
 Stats: Labels with their frequencies in the final set
 IDENT 101919
@@ -158,7 +158,7 @@ length of source dictionary:  19270
 length of target dictionary:  51
 277357
 Total instances: 277357
-['negate', 'cronManager', 'assertWorkingSolutionInitialized', 'ninjaMode', '52.545530', 'deployDefaultProcessesToEngine', 'numberOfRecordsLoaded', 'outer_name', 'LocalVariableInstruction', 'PackageDoc', '"age"', 'gtfsFile', 'Flatten', '"%s/webwxlogout"', 'getSslInvalidHostnameAllowed', 'closeAndClean', 'rule7', 'callback', 'objKey', 'special']
+['getBsonReader', '"ement"', 'getHost', 'KEYWORD', 'setBody', 'lacIRepressibleGeneSequence', 'frame', 'doRequest', 'rename', 'newSAXParser', 'LegacyBinarySerializer', 'getEndPC', 'MAX_VALUE', 'succeeded', 'getIndexNames', 'getInternalServerErrorResult', '4.824689', 'configContext', 'SCHEDULE_EXCEPTION', 'radix']
 Number of samples:  277357
 Stats: Labels with their frequencies in the final set
 IDENT 96372
