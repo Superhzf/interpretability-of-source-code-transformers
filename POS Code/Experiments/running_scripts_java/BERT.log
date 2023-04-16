@@ -8,7 +8,7 @@ length of source dictionary:  27864
 length of target dictionary:  54
 581365
 Total instances: 581365
-['"Apply"', '"NML"', 'MAX_VALUE', 'otherValue', 'po', 'getChangesPerKey', 'iso', 'generateCatalog', 'DefaultConvention', 'trajectoryIds', '"formula_terms"', 'getNTimes', 'createGlobalAttributes', '"base58:"', 'disc', 'isExecutionModeSynchronous', 'setRejectMatchingDatasets', 'enabledForCurrentThread', 'configEqualMap', 'doShowEncodingNoIndex']
+['1852.', 'distanceR', 'entity1', 'subQuery', 'iospParam', 'DMParam', 'indexFound', 'omonth', 'addPolymorphicClusterIds', 'collectionId', 'OSpatialQueryContext', 'stnVarSizes', 'getBooleansByName', 'clusterOverride', 'makeLC', 'ObservableMap', 'contributors', 'servers', 'grib2TablePanel', 'SingleDoAfterTerminate']
 Number of samples:  581365
 Stats: Labels with their frequencies in the final set
 IDENT 200579
@@ -91,7 +91,7 @@ length of source dictionary:  17130
 length of target dictionary:  53
 286205
 Total instances: 286205
-['MULTICAST_STRING', 'host_sa', 'sizeReplicatedOrLocalRegion', 'getHost', 'setBody', 'ProfileCMPInterfaceDescriptor', 'rename', 'setFooterCellRange', 'CONTENT_ENCODING', 'AtomicBoolean', 'MAX_VALUE', '"set."', 'lastColor', 'intervals', 'setColumnStyle', 'agregatedIncrement', 'getCertificate', 'po', 'RegionFunctionContext', 'ProviderFinder']
+['ListenerFilterHandbackTriplet', 'instantiator', 'StageStyle', 'cublasCtbmvNative', 'setLastCollection', 'QueryExp', 'newContext', 'SbbNotification', 'SbbDescriptor', 'setCellComment', 'IStatus', 'onAfterMerge', 'jsonRepos', 'isSheetHidden', 'synchronousStart', 'removeEnd', 'PropertySetterException', 'mnode', '"href"', '"SimplifiableIfStatement"']
 Number of samples:  286205
 Stats: Labels with their frequencies in the final set
 IDENT 101919
@@ -158,7 +158,7 @@ length of source dictionary:  19270
 length of target dictionary:  51
 277357
 Total instances: 277357
-['getBsonReader', '"ement"', 'getHost', 'KEYWORD', 'setBody', 'lacIRepressibleGeneSequence', 'frame', 'doRequest', 'rename', 'newSAXParser', 'LegacyBinarySerializer', 'getEndPC', 'MAX_VALUE', 'succeeded', 'getIndexNames', 'getInternalServerErrorResult', '4.824689', 'configContext', 'SCHEDULE_EXCEPTION', 'radix']
+['51.177410', 'rule2', 'BackendCaller', 'handleActualRequest', 'extractSyntacticMarkers', 'Channel', 'QueueManager', 'KEY_MESSAGEQ_IS_SINGLETON', 'Determinants', '"al"', 'filterField', 'getAuthorisedUsername', 'getPasswordAuthenticatorClassName', 'IdentityWriteTransformer', 'MongoIterableSubscription', 'getCrc', 'PERMISSION', 'responseStreams', 'registerClassProcessor', '"href"']
 Number of samples:  277357
 Stats: Labels with their frequencies in the final set
 IDENT 96372
@@ -260,10 +260,10 @@ Write tokens in the validation set to files:
 Write tokens in the testing set to files:
 
 The distribution of classes in training after removing repeated tokens between training and tesing:
-Counter({0: 5001, 1: 5001, 3: 5001, 4: 5001, 2: 5001, 5: 5001})
+Counter({0: 5001, 1: 5001, 3: 5001, 2: 5001, 5: 5001, 4: 4731})
 {'MODIFIER': 0, 'IDENT': 1, 'KEYWORD': 2, 'TYPE': 3, 'NUMBER': 4, 'STRING': 5}
 The distribution of classes in valid:
-Counter({1: 540, 2: 540, 3: 540, 5: 540, 0: 540, 4: 72})
+Counter({1: 540, 2: 540, 3: 540, 5: 540, 0: 540, 4: 82})
 {'MODIFIER': 0, 'IDENT': 1, 'KEYWORD': 2, 'TYPE': 3, 'NUMBER': 4, 'STRING': 5}
 The distribution of classes in testing:
 Counter({1: 670, 2: 670, 5: 670, 0: 670, 4: 670, 3: 340})
