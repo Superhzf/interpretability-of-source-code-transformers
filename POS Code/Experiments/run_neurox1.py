@@ -139,22 +139,8 @@ def main():
                                     False,this_model,class_wanted)
 
 
-    print("The distribution of classes in training after removing repeated tokens between training and tesing:")
-    print(collections.Counter(y_train))
-    print(label2idx_train)
-    assert len(flat_tokens_train) == len(y_train)
     unique_token_label_train = EDA(flat_tokens_train,y_train,[label2idx_train["IDENT"],label2idx_train["STRING"]])    
-
-    print("The distribution of classes in valid:")
-    print(collections.Counter(y_valid))
-    print(label2idx_valid)
-    assert len(flat_tokens_valid) == len(y_valid)
     unique_token_label_valid = EDA(flat_tokens_valid,y_valid,[label2idx_valid["IDENT"],label2idx_valid["STRING"]])
-
-    print("The distribution of classes in testing:")
-    print(collections.Counter(y_test))
-    print(label2idx_test)
-    assert len(flat_tokens_test) == len(y_test)
     unique_token_label_test = EDA(flat_tokens_test,y_test,[label2idx_test["IDENT"],label2idx_test["STRING"]])
     
     idx_selected_train = selectTrain(flat_tokens_train,
