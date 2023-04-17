@@ -87,8 +87,8 @@ def main():
         AVTIVATIONS_FOLDER = './activations_java/'
         class_wanted = ["MODIFIER","IDENT","KEYWORD","TYPE","NUMBER","STRING"]
         special_classes = ['KEYWORD','MODIFIER','TYPE']
-        num_train = 2000
-        num_valid = 340
+        num_train = 1999
+        num_valid = 289
         num_test = 340
 
         keyword_list_train = keyword_list_python[:18]
