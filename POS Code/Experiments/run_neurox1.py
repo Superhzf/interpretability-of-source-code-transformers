@@ -138,8 +138,6 @@ def main():
                                     f'./{src_folder}/codetest2_test_unique.in',f'./{src_folder}/codetest2_test_unique.label',
                                     False,this_model,class_wanted)
 
-    f = open(f'Good.txt','w')
-    f.close()
 
     print("The distribution of classes in training after removing repeated tokens between training and tesing:")
     print(collections.Counter(y_train))
