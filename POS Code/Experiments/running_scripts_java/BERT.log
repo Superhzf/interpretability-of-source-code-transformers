@@ -8,7 +8,7 @@ length of source dictionary:  27864
 length of target dictionary:  54
 581365
 Total instances: 581365
-['ecs', 'BoundingBoxHelper', 'newContentFile', 'errorSupplier', 'PublishSubscriber', 'getSupportedAudioFormats', 'timeCoverage', 'QueueDrainHelper', 'getMatchLength', 'invalidateCache', 'oneSent', 'fetchCGroupSoftMemoryLimit', 'preProcessInvokeContext', 'contourList', 'SingleFlatMapObservable', 'OCommandExecutor', 'getEventTypeName', 'LatLonPointNoNormalize', 'OQueryAbstract', 'sequenceNames']
+['secs', 'generatePointer', 'addChsub', 'isZPositive', '"Nbits"', 'TrustManagerFactory', 'getSchemaRecordId', 'rasp_xscale', 'addAcceptList', 'recordGrowFactor', "'i'", 'STARTED', 'openCatalogFromLocation', 'percentTerminatorEvidentAttName', 'vertElem', 'TermAppender', 'setStructure', 'getDataPos', '"gzip"', 'doRead']
 Number of samples:  581365
 Stats: Labels with their frequencies in the final set
 IDENT 200579
@@ -91,7 +91,7 @@ length of source dictionary:  17130
 length of target dictionary:  53
 286205
 Total instances: 286205
-['declaredPackage', 'initializeControls', 'getCanonicalPath', 'unEscapeSpecialChars', 'initializable', 'endOffset', 'inputSource', 'getAuthorizationAuthority', 'writeFile', 'cublasSetMatrix', 'TO', 'reportAuthenticationFailure', 'getTarget', 'evaluatorName', 'getConstructor', 'ResourceChangeInfo', 'writeFeatureCollection', 'slaveAuth', 'reBuildUpperLevelFormula', 'SSLContext']
+['messageName', 'wonOwnership', 'memberMXBean', '"ROOT"', 'secs', 'parseAddress', 'getPartition', '"locator"', '"long"', 'getResourceURL', 'EQUIDISTANT', 'containedPlane', 'getTag', 'superClassName', 'RES_ID', 'sourceFile', 'events', 'Indent', 'TrustManagerFactory', 'getReasonAttributeName']
 Number of samples:  286205
 Stats: Labels with their frequencies in the final set
 IDENT 101919
@@ -158,7 +158,7 @@ length of source dictionary:  19270
 length of target dictionary:  51
 277357
 Total instances: 277357
-['nextBytes', '"metadata.contentType"', 'ReactiveEntityStore', 'EventBusCluster', 'sendBadRequest', 'adminService', 'getCanonicalPath', 'parseScore', 'binaryDir', 'getTarget', 'pojoClassesSection', 'getConstructor', 'geometryTypeCode', 'createWithBase', 'toObjectList', 'SSLContext', 'MILLISECONDS', 'userQueryIdParam', 'proxy', 'existingRestriction']
+['KEY_ELEMENT_ID', 'textFileName', '"ROOT"', 'forResource', 'newFileSystem', 'splice', 'certChain', 'authForm', '"long"', 'getCurrentRecord', '"FKTABLE_CAT"', 'getTag', 'parseLongOption', '"\\\\$"', 'sourceFile', 'postgresText', 'MD5Descriptor', 'events', 'TrustManagerFactory', 'Indent']
 Number of samples:  277357
 Stats: Labels with their frequencies in the final set
 IDENT 96372
@@ -260,11 +260,11 @@ Write tokens in the validation set to files:
 Write tokens in the testing set to files:
 
 The distribution of classes in training after removing repeated tokens between training and tesing:
-Counter({0: 2001, 1: 2001, 3: 2001, 2: 2001, 5: 2001, 4: 1135})
+Counter({0: 2001, 1: 2001, 3: 2001, 2: 2001, 5: 2001, 4: 866})
 {'MODIFIER': 0, 'IDENT': 1, 'KEYWORD': 2, 'TYPE': 3, 'NUMBER': 4, 'STRING': 5}
 The distribution of classes in valid:
 Counter({1: 340, 2: 340, 4: 340, 3: 340, 5: 340, 0: 340})
 {'MODIFIER': 0, 'IDENT': 1, 'KEYWORD': 2, 'TYPE': 3, 'NUMBER': 4, 'STRING': 5}
 The distribution of classes in testing:
-Counter({1: 340, 2: 340, 5: 340, 3: 340, 0: 340, 4: 340})
+Counter({1: 340, 2: 340, 5: 340, 4: 340, 3: 340, 0: 340})
 {'MODIFIER': 0, 'IDENT': 1, 'KEYWORD': 2, 'TYPE': 3, 'NUMBER': 4, 'STRING': 5}
