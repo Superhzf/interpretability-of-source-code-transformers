@@ -8,7 +8,7 @@ length of source dictionary:  27864
 length of target dictionary:  54
 581365
 Total instances: 581365
-['MASTER', 'te', 'startElement', 'blank', 'aPlafInfo', 'producerLookAheadStep', 'EQUAL', 'relevantId', 'breakExec', 'SIEMENS', 'getExpression', 'compounds', 'endpoint', 'immutableClass', 'assDD', '"2"', 'psize', 'NanoHTTPD', 'SingleDoOnTerminate', 'byteSize']
+['jsonReader', 'DROP', 'getTemplate', 'doSavePrefsAndUI', 'mtype', 'ObservableRepeatWhen', 'strategyInstance', 'fragment', 'incrByte', 'GraphSONTokens', 'createFromDataset', 'max', 'cleanups', 'TOGGLE', 'updateIdentityAfterRecordCommit', 'setStarty', 'MAX_VARSIZE', 'jsonStr', 'DataChunkIterator', 'ALLOW_ALL_BUT']
 Number of samples:  581365
 Stats: Labels with their frequencies in the final set
 IDENT 200579
@@ -91,7 +91,7 @@ length of source dictionary:  17130
 length of target dictionary:  53
 286205
 Total instances: 286205
-['decreaseMask', 'getStdOutAsString', 'getChartAnchorsMap', 'selection', 'pathA', 'requiredProfileAbstractClass', 'expression', 'encoder', 'timeoutMS', 'd1', 'getExpression', '"a."', 'CertificateException', 'getNextSibling', 'getFormCommand', 'initialize', '"INFO"', 'dub', 'rotateLeft', 'endpoint']
+['parseFeatureManagerNode', 'PARENT_INSERT_FUNCTION', 'WARNING_STRING', 'xlinkNS', '"lockinfo"', '"Repeat"', 'getTemplate', 'mtype', 'emitInsert', 'deployableUnitID', 'fragment', 'processJavaMethodCompletionProposal', '"PRIMEM"', 'CommonOps_DDRM', 'getPartForElement', 'Parent', 'max', 'existingCondition', 'sleeContainerService', 'lastName']
 Number of samples:  286205
 Stats: Labels with their frequencies in the final set
 IDENT 101919
@@ -158,7 +158,7 @@ length of source dictionary:  19270
 length of target dictionary:  51
 277357
 Total instances: 277357
-['HTTPS', 'froms', '"PMD.StdCyclomaticComplexity"', 'RoleToFormFieldToFormDefinition', 'startElement', 'incrementInvalidLoginForUser', 'USERNAME', 'abi', 'sendBadRequest', 'getDialog', 'NEED_WRAP', '1000d', 'EQUAL', 'expression', 'encoder', 'getAlgParameters', '6.586462', 'messageStartsWith', 'forUriComponent', 'updateUserNotification']
+['secondary', 'BsonWriter', '"$showDiskLoc"', '6.997671', 'ProcessDefinition', 'regionQuantityMaximum', 'registerError', 'setCookiePolicy', 'childThreadPlumbingTermination', 'constraintIdToWeightSeriesMapList', 'getTemplate', 'Unicode', 'REQUEST_TEMPLATE', 'dbEncoderFactory', '"rgp"', 'apiProject', 'setNeutralButton', 'lineBreak', 'saltParam', 'CustomCode']
 Number of samples:  277357
 Stats: Labels with their frequencies in the final set
 IDENT 96372
@@ -260,7 +260,7 @@ Write tokens in the validation set to files:
 Write tokens in the testing set to files:
 
 The distribution of classes in training after removing repeated tokens between training and tesing:
-Counter({0: 5001, 1: 5001, 3: 5001, 2: 5001, 5: 5001, 4: 695})
+Counter({0: 5001, 1: 5001, 3: 5001, 2: 5001, 5: 5001, 4: 866})
 {'MODIFIER': 0, 'IDENT': 1, 'KEYWORD': 2, 'TYPE': 3, 'NUMBER': 4, 'STRING': 5}
 The distribution of classes in valid:
 Counter({1: 540, 2: 540, 4: 540, 3: 540, 5: 540, 0: 540})
