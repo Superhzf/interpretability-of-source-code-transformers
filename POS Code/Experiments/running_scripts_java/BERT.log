@@ -8,7 +8,7 @@ length of source dictionary:  27864
 length of target dictionary:  54
 581365
 Total instances: 581365
-['timeoutLocking', 'stationIndex', 'collates', 'cce', 'dResult', 'maxPointsInYEdge', 'putBean', 'OUpdatedRecordsReturnHandler', 'includeReservedVertexType', 'getVersionInfo', '"code"', 'DatagramChannel', '246', 'domain', 'getDefaultPort', 'SecretKeySpec', 'FindByIndexNameSessionRepository', 'curLat', 'CompletableFromRunnable', 'year']
+['NC_FORMAT_CDF5', 'stopRecordCount', 'gribRewritePanel', 'driver', 'hardLimit', 'decrFontSize', 'mainPrefs', 'IsEncrypt', '"DODS/debugDataResult"', 'pwDebug', 'gridset', '"_attr"', 'ignoreNullValues', 'getNav', 'looseEnds', 'scanR', 'addFirst', '"pref"', 'RuleBookDefaultResultBuilder', 'setInt']
 Number of samples:  581365
 Stats: Labels with their frequencies in the final set
 IDENT 200579
@@ -91,7 +91,7 @@ length of source dictionary:  17130
 length of target dictionary:  53
 286205
 Total instances: 286205
-['HeaderCell', 'addMessage', 'getProfileCmpInterfaceClass', 'traceMBeanImpl', 'ALIGN_TOP', 'calcLength', 'anchorSize', '"CUBLAS_STATUS_ARCH_MISMATCH"', 'cce', 'localhash', 'FunctionError', 'MINOR', '"identifyDuplicateGroupNames"', '"SECURITY_PASSWORD"', 'getDeployableUnit', 'stripObjMetadata', 'RotationRequest', 'SleeTransactionImpl', 'computeNewDeclaration', 'getProfileSpecificationComponents']
+['getDeployableUnit', 'queryExpression', 'EXCEPTION', 'descendingPathIterator', '".tab"', 'getUrlPrefix', 'checkDependencies', 'cublasSetVector', '"update_"', 'ya', 'getBodyRows', 'statusListenerListLock', 'checkColumnName', 'contextSelectorBinder', 'PATTERN_VARIABLES_DEFINITION', 'rewriterContext', 'destinationFolder', 'originalDeclaration', 'getMergedRegion', 'FLOW_STEP_RULE']
 Number of samples:  286205
 Stats: Labels with their frequencies in the final set
 IDENT 101919
@@ -158,7 +158,7 @@ length of source dictionary:  19270
 length of target dictionary:  51
 277357
 Total instances: 277357
-['51.260170', 'COLOR_FORMAT', 'getMachineName', 'startingStopSequence', 'addMessage', 'ReactiveEntityStore', 'let', 'launchButtonActionPerformed', 'XmlToObjectExtensions', 'chs', 'azureADJwtTokenFilter', 'getDefinedThrowsFromMethodSignature', 'BOMInputStream', 'commitName', 'explainAggregate', 'toAscii', '"\\\\u"', 'pattern', '"<suppressionsLocation>"', 'ContainerSPI']
+['throwOnError', '"ou"', 'setNote', '0x206F', 'DotParser', 'sendUnauthorized', 'intVal', 'createCredential', 'ChangeStreamOperation', 'valueParam', 'getPipeline', 'TimeSeriesManager', 'getLeastSignificantBits', 'isConstantName', 'IS_FIELD_TYPE_SIGNATURE', 'getCompressorList', '4.222024', 'timesAtStop', 'jobMap', '6.226676']
 Number of samples:  277357
 Stats: Labels with their frequencies in the final set
 IDENT 96372
@@ -260,10 +260,10 @@ Write tokens in the validation set to files:
 Write tokens in the testing set to files:
 
 The distribution of classes in training after removing repeated tokens between training and tesing:
-Counter({0: 2001, 1: 2001, 3: 2001, 2: 2001, 5: 2001, 4: 1135})
+Counter({0: 2001, 1: 2001, 3: 2001, 4: 2001, 2: 2001, 5: 2001})
 {'MODIFIER': 0, 'IDENT': 1, 'KEYWORD': 2, 'TYPE': 3, 'NUMBER': 4, 'STRING': 5}
 The distribution of classes in valid:
-Counter({1: 340, 2: 340, 4: 340, 3: 340, 5: 340, 0: 340})
+Counter({1: 340, 2: 340, 3: 340, 5: 340, 0: 340, 4: 289})
 {'MODIFIER': 0, 'IDENT': 1, 'KEYWORD': 2, 'TYPE': 3, 'NUMBER': 4, 'STRING': 5}
 The distribution of classes in testing:
 Counter({1: 340, 2: 340, 5: 340, 3: 340, 0: 340, 4: 340})
