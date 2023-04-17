@@ -604,7 +604,7 @@ def selectTrain(flat_tokens_train,y_train,unique_token_label_train,unique_token_
         idx_selected_train_prior = []
         for this_prior_class in priority_list:
             idx = label2idx_train[this_prior_class]
-            priority_tokens1 = set(unique_token_label_train[idx]) - set(unique_token_label_valid[idx])
+            # priority_tokens1 = set(unique_token_label_train[idx]) - set(unique_token_label_valid[idx])
             priority_tokens2 = set(unique_token_label_train[idx]) - set(unique_token_label_test[idx])
             priority_tokens = priority_tokens1.intersection(priority_tokens2)
             priority_tokens = list(priority_tokens)
