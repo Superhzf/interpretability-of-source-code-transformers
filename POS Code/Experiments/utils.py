@@ -606,10 +606,7 @@ def selectTrain(flat_tokens_train,y_train,unique_token_label_train,unique_token_
         idx_selected_train_prior = []
         for this_prior_class in priority_list:
             idx = label2idx_train[this_prior_class]
-            # priority_tokens1 = set(unique_token_label_train[idx]) - set(unique_token_label_valid[idx])
-            priority_tokens2 = set(unique_token_label_train[idx]) - set(unique_token_label_test[idx])
-            # priority_tokens = priority_tokens1.intersection(priority_tokens2)
-            priority_tokens = priority_tokens2
+            priority_tokens = set(unique_token_label_train[idx]) - set(unique_token_label_test[idx])- set(unique_token_label_valid[idx])
             priority_tokens = list(priority_tokens)
             priority = {this_prior_class:priority_tokens}
 
@@ -638,28 +635,31 @@ def selectTrain(flat_tokens_train,y_train,unique_token_label_train,unique_token_
                 counter[this_y] += 1
             else:
                 idx_selected_train.append(False)
-        elif idx2label_train[this_y] not in priority_list and counter[this_y]<=num_train:
+        # elif idx2label_train[this_y] not in priority_list and counter[this_y]<=num_train:
+        elif counter[this_y]<=num_train:
             idx_selected_train.append(True)
             counter[this_y] += 1
         else:
             idx_selected_train.append(False)
     assert len(idx_selected_train) == len(flat_tokens_train)
 
-    if sum(idx_selected_train_prior)>0:
-        idx_selected_train_post = []
-        for idx, (this_token,this_y) in enumerate(zip(flat_tokens_train,y_train)):
-            if idx_selected_train[idx]:
-                idx_selected_train_post.append(True)
-            elif counter[this_y]<=num_train:
-                idx_selected_train_post.append(True)
-                counter[this_y] += 1
-            else:
-                idx_selected_train_post.append(False)
-        assert len(idx_selected_train_post) == len(flat_tokens_train)
+    return idx_selected_train
 
-        return idx_selected_train_post
-    else:
-        return idx_selected_train
+    # if sum(idx_selected_train_prior)>0:
+    #     idx_selected_train_post = []
+    #     for idx, (this_token,this_y) in enumerate(zip(flat_tokens_train,y_train)):
+    #         if idx_selected_train[idx]:
+    #             idx_selected_train_post.append(True)
+    #         elif counter[this_y]<=num_train:
+    #             idx_selected_train_post.append(True)
+    #             counter[this_y] += 1
+    #         else:
+    #             idx_selected_train_post.append(False)
+    #     assert len(idx_selected_train_post) == len(flat_tokens_train)
+
+    #     return idx_selected_train_post
+    # else:
+    #     return idx_selected_train
 
 
 
