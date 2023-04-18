@@ -73,6 +73,8 @@ def main():
         num_valid = 540
         num_test = 670
 
+        void_label = ["NAME","STRING"]
+
         keyword_list_train = keyword_list_python[:17]
         keyword_list_valid = keyword_list_python[17:25]
         keyword_list_test = keyword_list_python[25:]
@@ -90,6 +92,8 @@ def main():
         num_train = 1999
         num_valid = 289
         num_test = 340
+
+        void_label = ["IDENT","STRING"]
 
         keyword_list_train = keyword_list_python[:18]
         keyword_list_valid = keyword_list_python[18:]
@@ -137,11 +141,13 @@ def main():
     tokens_test,activations_test,flat_tokens_test,X_test, y_test, label2idx_test, idx2label_test, sample_idx_test,_=preprocess(os.path.join(AVTIVATIONS_FOLDER,ACTIVATION_NAMES[this_model][2]),
                                     f'./{src_folder}/codetest2_test_unique.in',f'./{src_folder}/codetest2_test_unique.label',
                                     False,this_model,class_wanted)
+    void_label_idx = []
+    for this_label in void_label:
+        void_label_idx.append(label2idx_train[this_label])
 
-
-    unique_token_label_train = EDA(flat_tokens_train,y_train,[label2idx_train["IDENT"],label2idx_train["STRING"]])    
-    unique_token_label_valid = EDA(flat_tokens_valid,y_valid,[label2idx_valid["IDENT"],label2idx_valid["STRING"]])
-    unique_token_label_test = EDA(flat_tokens_test,y_test,[label2idx_test["IDENT"],label2idx_test["STRING"]])
+    unique_token_label_train = EDA(flat_tokens_train,y_train,void_label_idx)    
+    unique_token_label_valid = EDA(flat_tokens_valid,y_valid,void_label_idx)
+    unique_token_label_test = EDA(flat_tokens_test,y_test,void_label_idx)
     
     idx_selected_train = selectTrain(flat_tokens_train,
                                     y_train,
