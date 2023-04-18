@@ -600,6 +600,8 @@ def selectTrain(flat_tokens_train,y_train,unique_token_label_train,unique_token_
                 label2idx_train,idx2label_train,priority_list=[]):
     idx_selected_train = []
     counter = {}
+    for label,index in label2idx_train.items():
+            counter[index] = 0
     if len(priority_list)>0:
         idx_selected_train_prior = []
         for this_prior_class in priority_list:
@@ -611,8 +613,6 @@ def selectTrain(flat_tokens_train,y_train,unique_token_label_train,unique_token_
             priority_tokens = list(priority_tokens)
             priority = {this_prior_class:priority_tokens}
 
-        for label,index in label2idx_train.items():
-            counter[index] = 0
         for this_token,this_y in zip(flat_tokens_train,y_train):
             this_class = idx2label_train[this_y]
             if this_class in priority:
