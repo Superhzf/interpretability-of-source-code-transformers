@@ -69,9 +69,9 @@ def main():
         AVTIVATIONS_FOLDER = "./activations/"
         class_wanted = ['NAME','STRING','NUMBER','KEYWORD']
         special_classes = ['KEYWORD']
-        num_train = 5000
+        num_train = 4999
         num_valid = 540
-        num_test = 670
+        num_test = 365
 
         void_label = ["NAME","STRING"]
 
