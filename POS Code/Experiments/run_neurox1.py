@@ -129,7 +129,6 @@ def main():
     else:
         print("Getting activations from json files. If you need to extract them, run with --extract=True \n" )
 
-    exit(0)
 
     torch.manual_seed(0)
     this_model = args.this_model
@@ -224,8 +223,6 @@ def main():
     print("The distribution of classes in testing:")
     print(collections.Counter(y_test))
     print(label2idx_test)
-
-    exit(0)
 
 
     neurons_per_layer = X_train.shape[1]//num_layers
