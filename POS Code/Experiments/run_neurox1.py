@@ -116,16 +116,19 @@ def main():
     
 
     if args.extract == 'True':
-        print(f"Generating the activation file for {this_model}")
-        activation_file_name=ACTIVATION_NAMES[this_model][0]
-        extract_activations(f'./{src_folder}/codetest2_train_unique.in',MODEL_DESC[this_model],os.path.join(AVTIVATIONS_FOLDER,activation_file_name))
-        activation_file_name=ACTIVATION_NAMES[this_model][1]
-        extract_activations(f'./{src_folder}/codetest2_valid_unique.in',MODEL_DESC[this_model],os.path.join(AVTIVATIONS_FOLDER,activation_file_name))
-        activation_file_name=ACTIVATION_NAMES[this_model][2]
-        extract_activations(f'./{src_folder}/codetest2_test_unique.in',MODEL_DESC[this_model],os.path.join(AVTIVATIONS_FOLDER,activation_file_name))
+        for this_model in MODEL_NAMES:
+            if this_model == 'pretrained_BERT':
+                continue
+            print(f"Generating the activation file for {this_model}")
+            activation_file_name=ACTIVATION_NAMES[this_model][0]
+            extract_activations(f'./{src_folder}/codetest2_train_unique.in',MODEL_DESC[this_model],os.path.join(AVTIVATIONS_FOLDER,activation_file_name))
+            activation_file_name=ACTIVATION_NAMES[this_model][1]
+            extract_activations(f'./{src_folder}/codetest2_valid_unique.in',MODEL_DESC[this_model],os.path.join(AVTIVATIONS_FOLDER,activation_file_name))
+            activation_file_name=ACTIVATION_NAMES[this_model][2]
+            extract_activations(f'./{src_folder}/codetest2_test_unique.in',MODEL_DESC[this_model],os.path.join(AVTIVATIONS_FOLDER,activation_file_name))
     else:
         print("Getting activations from json files. If you need to extract them, run with --extract=True \n" )
-        
+
     exit(0)
 
     torch.manual_seed(0)
