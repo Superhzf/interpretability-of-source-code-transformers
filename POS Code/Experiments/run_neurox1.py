@@ -90,7 +90,7 @@ def main():
         class_wanted = ["MODIFIER","IDENT","KEYWORD","TYPE","NUMBER","STRING"]
         special_classes = ['KEYWORD','MODIFIER','TYPE']
         num_train = 1999
-        num_valid = 289
+        num_valid = 270
         num_test = 340
 
         void_label = ["IDENT","STRING"]
