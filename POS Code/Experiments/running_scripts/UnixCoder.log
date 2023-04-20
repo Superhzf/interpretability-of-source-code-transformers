@@ -1,0 +1,767 @@
+Getting activations from json files. If you need to extract them, run with --extract=True 
+
+Anayzing pretrained_UniXCoder
+Loading json activations from ./activations/UniXCoder_activations_train.json...
+54291 13.0
+Number of tokens:  507521
+length of source dictionary:  28820
+length of target dictionary:  49
+507521
+Total instances: 507521
+['242854337', 'ucd1', 'src_jmx', 'client_secret_path', 'first_M', 'path_to_default_config', '_compat', "'\\\\\\\\d'", "'LOKY_MAX_CPU_COUNT'", "'max_characters_per_token'", 'count_relations', 'all_stratified_groups', '_ciphers', 'custom_criterions', "'Year'", "'nan'", 'ALLOWED_UPLOAD_ARGS', 'reply_to_id', "'{}{}'", 'byte_size']
+Number of samples:  507521
+Stats: Labels with their frequencies in the final set
+NAME 175779
+KEYWORD 38836
+LPAR 37541
+RPAR 36846
+DOT 35570
+COMMA 33435
+EQUAL 30541
+COLON 19841
+STRING 17117
+DEDENT 16600
+LSQB 14740
+RSQB 14613
+INDENT 11963
+NUMBER 10471
+PLUS 1939
+EQEQUAL 1830
+STAR 1500
+MINUS 1458
+LBRACE 1070
+RBRACE 845
+DOUBLESTAR 844
+SLASH 630
+PERCENT 577
+PLUSEQUAL 501
+GREATER 456
+NOTEQUAL 429
+LESS 332
+RARROW 330
+GREATEREQUAL 175
+LESSEQUAL 133
+AMPER 94
+DOUBLESLASH 94
+MINEQUAL 58
+ELLIPSIS 55
+COMMENT 37
+VBAR 35
+AT 29
+STAREQUAL 27
+RIGHTSHIFT 25
+LEFTSHIFT 25
+SLASHEQUAL 24
+VBAREQUAL 23
+TILDE 23
+CIRCUMFLEX 22
+AMPEREQUAL 2
+DOUBLESLASHEQUAL 2
+RIGHTSHIFTEQUAL 2
+ENCODING 1
+DOUBLESTAREQUAL 1
+pretrained_UniXCoder distribution after trauncating:
+{0: 0.7257507132446749, 3: 0.16034483470477245, 1: 0.07067212214547301, 2: 0.04323232990507962}
+{0: 175779, 3: 38836, 1: 17117, 2: 10471}
+{'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
+Loading json activations from ./activations/UniXCoder_activations_valid.json...
+33619 13.0
+Number of tokens:  308882
+length of source dictionary:  19446
+length of target dictionary:  46
+308882
+Total instances: 308882
+['#-----', 'm_a', 'CONSTRAINT_COMP', 'id_transcripts', '0.5', 'patched_session', 'selected_members', '_map_type_to_dict', 'allow_builtins', 'decimals', 'challengeRE', 'sig_group', '"/opt/apache-hadoop/logs"', 'creds', 'chunk_dim', '"{}({})"', 'get_minus_sign_symbol', 'cmdline', '"Holiday_19_Month"', "'minutes'"]
+Number of samples:  308882
+Stats: Labels with their frequencies in the final set
+NAME 106508
+DOT 23234
+KEYWORD 22857
+LPAR 22119
+RPAR 21487
+COMMA 21037
+EQUAL 18195
+STRING 12883
+COLON 12504
+DEDENT 10176
+LSQB 8421
+RSQB 8348
+INDENT 7080
+NUMBER 5227
+EQEQUAL 1207
+PLUS 1136
+LBRACE 1077
+STAR 963
+RBRACE 913
+MINUS 741
+DOUBLESTAR 555
+SLASH 393
+PLUSEQUAL 323
+GREATER 292
+NOTEQUAL 240
+PERCENT 222
+RARROW 214
+LESS 200
+GREATEREQUAL 82
+LESSEQUAL 47
+AT 33
+AMPER 29
+DOUBLESLASH 27
+MINEQUAL 27
+VBAR 23
+COMMENT 13
+ELLIPSIS 13
+STAREQUAL 10
+LEFTSHIFT 7
+TILDE 7
+RIGHTSHIFT 4
+SLASHEQUAL 3
+CIRCUMFLEX 2
+ENCODING 1
+DOUBLESLASHEQUAL 1
+AMPEREQUAL 1
+pretrained_UniXCoder distribution after trauncating:
+{0: 0.7222105441600272, 3: 0.1549889811832514, 1: 0.08735717918291236, 2: 0.035443295473809124}
+{0: 106508, 3: 22857, 1: 12883, 2: 5227}
+{'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
+Loading json activations from ./activations/UniXCoder_activations_test.json...
+32570 13.0
+Number of tokens:  302448
+length of source dictionary:  18380
+length of target dictionary:  49
+302448
+Total instances: 302448
+['target_seqs', 'removeIds', "'bucketIdx'", '0.5', '"metricValue"', "'segments'", 'tpLrnActiveStateT', 'all_perturbed_vars', 'sequenceIdIn', 'logical_or', "'basic_lstm_layer1'", "'styles'", 'getActiveJobCountForClientKey', 'binomial', 'globalDecay', 'pure', 'slb', 'permStr', 'authorization', "'minutes'"]
+Number of samples:  302448
+Stats: Labels with their frequencies in the final set
+NAME 106943
+DOT 23125
+LPAR 23019
+RPAR 22645
+KEYWORD 21773
+COMMA 19472
+EQUAL 18096
+COLON 11225
+DEDENT 9778
+STRING 8156
+LSQB 7717
+RSQB 7682
+NUMBER 7295
+INDENT 6823
+EQEQUAL 1344
+MINUS 1259
+PLUS 1013
+STAR 863
+LBRACE 527
+PLUSEQUAL 448
+RBRACE 436
+GREATER 417
+PERCENT 341
+NOTEQUAL 341
+SLASH 323
+DOUBLESTAR 284
+LESS 247
+GREATEREQUAL 216
+LESSEQUAL 107
+AMPER 100
+RIGHTSHIFT 61
+LEFTSHIFT 53
+MINEQUAL 48
+DOUBLESLASH 48
+RARROW 41
+VBAR 38
+ELLIPSIS 28
+COMMENT 19
+AT 17
+CIRCUMFLEX 17
+STAREQUAL 15
+SLASHEQUAL 15
+VBAREQUAL 12
+TILDE 7
+SEMI 6
+PERCENTEQUAL 5
+ENCODING 1
+DOUBLESTAREQUAL 1
+AMPEREQUAL 1
+pretrained_UniXCoder distribution after trauncating:
+{0: 0.7417994409261481, 3: 0.1510262404017563, 1: 0.05657327959935353, 2: 0.05060103907274203}
+{0: 106943, 3: 21773, 1: 8156, 2: 7295}
+{'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
+label:3, the number of unique tokens:33
+The unique labels are:['False', 'None', 'True', 'and', 'as', 'assert', 'await', 'break', 'class', 'continue', 'def', 'del', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+label:0, the number of unique tokens:21572
+label:1, the number of unique tokens:6805
+label:2, the number of unique tokens:331
+The unique labels are:['.00001', '.01', '.05', '.1', '.2', '.3', '.5', '.9', '.95', '0', '0.', '0.0', '0.00002', '0.0001', '0.001', '0.002', '0.005', '0.01', '0.01683697', '0.02', '0.025', '0.03', '0.05', '0.07', '0.1', '0.15', '0.2', '0.20', '0.22', '0.25', '0.3', '0.33', '0.4', '0.400', '0.5', '0.50922', '0.53', '0.7', '0.75', '0.8', '0.80', '0.85', '0.9', '0.95', '0.98', '0.99', '0j', '0o600', '0o644', '0o777', '0x00', '0x08', '0x0B', '0x1', '0x147A', '0x1F', '0x7F', '0x80', '0x8000', '0x84', '0x86', '0x88', '0x89', '0x9F', '0xAC00', '0xFF', '0xFFFF', '0xff', '1', '1.', '1.0', '1.05', '1.08', '1.0e-7', '1.1', '1.10', '1.2', '1.25', '1.3', '1.4', '1.406211e-6', '1.5', '1.J', '1.j', '10', '10.0', '100', '100.', '100.0', '1000', '1000.0', '10000', '1000000', '10000000', '1000000000.0', '100000000000', '101', '101677777', '1023', '1024', '1024.0', '107.7', '109', '10e10', '11', '11025', '11025.0', '111', '113', '12', '12.', '12.0', '120', '120.0', '120000', '12200', '127', '128', '13', '131', '14', '140', '144', '15', '150', '150.0', '152.0', '16', '160', '17', '175', '18', '180', '19', '19.4712', '192', '192.85', '192.85948', '1E-12', '1E-9', '1E3', '1e-09', '1e-10', '1e-12', '1e-2', '1e-3', '1e-4', '1e-5', '1e-6', '1e-9', '1e6', '1j', '2', '2.', '2.0', '2.13', '2.371512e-11', '2.5', '20', '20.0', '20.6', '200', '200.0', '2000', '20000', '200000', '20051', '20060', '20061', '201', '202', '204', '2048', '207', '21', '2147483647', '22', '22.5', '22050', '224', '225', '23', '24', '240', '242854337', '246', '25', '25.0', '250', '25000', '255', '255.', '255.0', '256', '257', '258', '259', '2595.0', '26', '260', '262', '264', '27', '27.12', '27.12825', '270', '27017', '28', '29', '3', '3.', '3.0', '30', '300', '301', '302', '306674912', '307', '31', '314', '32', '32.0', '32.93192', '320.0', '32768', '33', '34', '34736', '34737', '35', '35163', '36', '360', '3600', '365', '37', '38', '384', '39', '4', '4.', '4.0', '4.2', '4.74057', '40', '40.0', '40.11453', '400', '4000.0', '40000', '401', '403', '404', '4096', '41', '410', '42', '420', '4200000', '429', '43', '440.0', '4410', '443', '45', '48', '480', '493', '5', '5.0', '5.5', '50', '50.', '500', '5000', '50000', '502', '503', '504', '512', '52', '55', '550', '55296', '56', '57344', '59', '5e4', '6', '6.', '6.0', '6.5', '60', '60.0', '600', '6000000', '63', '6367', '6379', '64', '650', '65535.0', '65536', '67', '7', '7.', '70', '700.0', '720', '737.9', '75', '77', '8', '8.0', '80', '80.0', '800', '8080', '84', '85', '86400', '882', '8E3', '9', '90', '96', '98', '99', '99.73', '993', '999999.0']
+label:3, the number of unique tokens:32
+The unique labels are:['False', 'None', 'True', 'and', 'as', 'assert', 'await', 'break', 'class', 'continue', 'def', 'del', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+label:0, the number of unique tokens:13665
+label:2, the number of unique tokens:610
+The unique labels are:['.02', '.025', '.05', '.8', '.95', '0', '0.', '0.0', '0.000', '0.001', '0.009', '0.01', '0.012', '0.02', '0.025', '0.027', '0.03', '0.032', '0.0349', '0.04', '0.0471', '0.05', '0.075', '0.08', '0.082', '0.0975', '0.1', '0.1125', '0.115', '0.125', '0.15', '0.167', '0.2', '0.206', '0.22', '0.232', '0.25', '0.250', '0.298', '0.3', '0.33', '0.333', '0.35', '0.4', '0.404', '0.435', '0.45', '0.5', '0.500', '0.509', '0.598', '0.6', '0.627', '0.667', '0.685', '0.7', '0.700', '0.73', '0.75', '0.772', '0.794', '0.8', '0.855', '0.9', '0.912', '0.93', '0.948', '0.968', '0.983', '0.997', '0x0000', '0x0140', '0x0280', '0x03c0', '0x0440', '0x0500', '0x06c0', '0x0780', '0x0880', '0x09c0', '0x0F0F', '0x0a00', '0x0b40', '0x0cc0', '0x0d80', '0x0e40', '0x0f00', '0x1040', '0x1100', '0x12c0', '0x1380', '0x1400', '0x1540', '0x1680', '0x17c0', '0x18c0', '0x1980', '0x1a40', '0x1b00', '0x1c80', '0x1dc0', '0x1e00', '0x1f40', '0x2080', '0x21c0', '0x2200', '0x2340', '0x24c0', '0x2580', '0x2640', '0x2700', '0x2800', '0x2940', '0x2a80', '0x2bc0', '0x2c40', '0x2d00', '0x2ec0', '0x2f80', '0x3030303', '0x30c0', '0x3180', '0x3240', '0x3300', '0x3480', '0x35c0', '0x3600', '0x3740', '0x3840', '0x3900', '0x3ac0', '0x3b80', '0x3c00', '0x3d40', '0x3e80', '0x3fc0', '0x4040', '0x4100', '0x42c0', '0x4380', '0x4400', '0x4540', '0x4680', '0x47c0', '0x48c0', '0x4980', '0x4a40', '0x4b00', '0x4c80', '0x4dc0', '0x4e00', '0x4f40', '0x5000', '0x5140', '0x5280', '0x53c0', '0x5440', '0x5500', '0x56c0', '0x5780', '0x5880', '0x59c0', '0x5a00', '0x5b40', '0x5cc0', '0x5d80', '0x5e40', '0x5f00', '0x60c0', '0x6180', '0x6240', '0x6300', '0x6480', '0x65c0', '0x6600', '0x6740', '0x6840', '0x6900', '0x6ac0', '0x6b80', '0x6c00', '0x6d40', '0x6e80', '0x6fc0', '0x7080', '0x71c0', '0x7200', '0x7340', '0x74c0', '0x7580', '0x7640', '0x7700', '0x7800', '0x7940', '0x7F', '0x7F7F', '0x7a80', '0x7bc0', '0x7c40', '0x7d00', '0x7ec0', '0x7f80', '0x8081', '0x81c1', '0x8201', '0x8341', '0x84c1', '0x8581', '0x8641', '0x8701', '0x8801', '0x8941', '0x8a81', '0x8bc1', '0x8c41', '0x8d01', '0x8ec1', '0x8f81', '0x90c1', '0x9181', '0x9241', '0x9301', '0x9481', '0x95c1', '0x9601', '0x9741', '0x9841', '0x9901', '0x9ac1', '0x9b81', '0x9c01', '0x9d41', '0x9e81', '0x9fc1', '0xF000F', '0xFF', '0xFFFF', '0xa001', '0xa141', '0xa281', '0xa3c1', '0xa441', '0xa501', '0xa6c1', '0xa781', '0xa881', '0xa9c1', '0xaa01', '0xab41', '0xacc1', '0xad81', '0xae41', '0xaf01', '0xb041', '0xb101', '0xb2c1', '0xb381', '0xb401', '0xb541', '0xb681', '0xb7c1', '0xb8c1', '0xb981', '0xba41', '0xbb01', '0xbc81', '0xbdc1', '0xbe01', '0xbf41', '0xc0c1', '0xc181', '0xc241', '0xc301', '0xc481', '0xc5c1', '0xc601', '0xc741', '0xc841', '0xc901', '0xcac1', '0xcb81', '0xcc01', '0xcd41', '0xce81', '0xcfc1', '0xd081', '0xd1c1', '0xd201', '0xd341', '0xd4c1', '0xd581', '0xd641', '0xd701', '0xd801', '0xd941', '0xda81', '0xdbc1', '0xdc41', '0xdd01', '0xdec1', '0xdf81', '0xe041', '0xe101', '0xe2c1', '0xe381', '0xe401', '0xe541', '0xe681', '0xe7c1', '0xe8c1', '0xe981', '0xea41', '0xeb01', '0xec81', '0xedc1', '0xee01', '0xef41', '0xf001', '0xf141', '0xf281', '0xf3c1', '0xf441', '0xf501', '0xf6c1', '0xf781', '0xf881', '0xf9c1', '0xfa01', '0xfb41', '0xfcc1', '0xfd81', '0xfe41', '0xff', '0xff01', '0xffff', '1', '1.', '1.0', '1.01', '1.03', '1.033', '1.056', '1.064', '1.088', '1.107', '1.109', '1.121', '1.152', '1.154', '1.167', '1.17', '1.193', '1.208', '1.235', '1.241', '1.3', '1.302', '1.311', '1.32', '1.337', '1.342', '1.389', '1.4', '1.444', '1.446', '1.5', '1.55', '1.56', '1.584', '1.71', '1.86', '1.87', '1.e-9', '10', '10.0', '10.04', '100', '100.', '100.0', '1000', '1000.0', '10000', '1000000', '1024', '103.939', '10e10', '11', '11.11', '110', '116.779', '119.', '12', '12.30', '120', '123.68', '13', '13.86', '138', '14', '14.0', '14.29', '147', '149.597870e6', '15', '15.95', '150', '1500', '15000', '16', '163', '17', '177.', '178.', '18', '180', '184', '187.', '187.5', '188.', '19', '19.34', '194.', '1_000_000_000', '1e-2', '1e-3', '1e-5', '1e3', '1e6', '1e7', '2', '2.', '2.0', '2.10', '2.26', '2.33', '2.4', '2.49', '2.5', '2.64', '2.72', '2.87', '2.9296875', '20', '20.00', '20.08', '200', '2000', '2000.0', '201', '204', '2097151', '21', '21.17', '21000', '211', '212', '22', '22.42', '22.50', '22.51', '22000', '23', '24', '24.', '25.08', '25.10', '254.', '255', '255.', '256', '27', '27.47', '27.58', '27.69', '270', '27017', '28.0', '28.00', '280', '281', '3', '3.', '3.0', '3.11', '3.27', '3.34', '3.35', '3.74', '3.81', '30', '30.0', '30.00', '30.08', '30.11', '300', '304', '31', '32', '32.45', '32.50', '32.58', '34.92', '35.00', '35.04', '35000', '360', '3600', '3600.0', '365.', '37', '37.50', '37.67', '37.83', '37.88', '38', '4', '4.43', '4.44', '4.82', '40', '40.00', '40.14', '40.17', '400', '401', '403', '404', '406', '409', '412', '42', '42.0', '42.42', '42.65', '42.67', '422', '424.2', '45', '45.00', '45.07', '46', '465', '47.00', '47.17', '47.33', '47.50', '4729418', '49.75', '5', '5.0', '5.14', '5.20', '5.28', '5.37', '5.7', '50', '50.', '50.00', '50.08', '50.4', '500', '5000', '50000', '51', '512', '53', '5500', '55000', '58', '587', '59', '6', '6.07', '6.14', '6.29', '60', '60.', '60.0', '63', '64', '65', '7', '7.16', '7.38', '7.46', '7.5', '70', '70.6', '700', '7000', '75', '78', '79', '8', '8.0', '8.33', '80', '8000', '9', '9.01', '9.24', '9.8', '90', '900', '9600', '9800', '99.0', '9999', '999999', '99999999']
+label:1, the number of unique tokens:5085
+label:3, the number of unique tokens:32
+The unique labels are:['False', 'None', 'True', 'and', 'as', 'assert', 'await', 'break', 'class', 'continue', 'def', 'del', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+label:0, the number of unique tokens:14163
+label:1, the number of unique tokens:3813
+label:2, the number of unique tokens:310
+The unique labels are:['.2', '.4', '.5', '0', '0.', '0.0', '0.000001', '0.00001', '0.0001', '0.0003', '0.001', '0.005', '0.01', '0.02', '0.03', '0.032', '0.04', '0.05', '0.1', '0.10', '0.125', '0.2', '0.22', '0.25', '0.258', '0.3', '0.35', '0.352', '0.4', '0.486', '0.5', '0.50', '0.6', '0.65', '0.66', '0.7', '0.75', '0.8', '0.843', '0.9', '0.911', '0.94', '0.95', '0.99', '0.999', '0.99999', '0b001', '0b010', '0b100', '0o070', '0o7', '0o700', '0o755', '0x0', '0x00', '0x00000000', '0x00000001', '0x00000002', '0x00000003', '0x00000004', '0x00000005', '0x00000006', '0x0000000d', '0x00000010', '0x0000003f', '0x00000040', '0x00000080', '0x00000100', '0x000001ff', '0x00000201', '0x00000400', '0x00000800', '0x00000fff', '0x0000800000000000', '0x000306c3', '0x00c10000', '0x00f0b5ff', '0x01c0003f', '0x02', '0x03c0003f', '0x05100800', '0x0F', '0x0f', '0x1', '0x10', '0x1000', '0x1c004121', '0x1c004122', '0x1c004143', '0x1c03c163', '0x1f', '0x2', '0x3', '0x3f', '0x4', '0x49656e69', '0x60', '0x6c65746e', '0x7', '0x756e6547', '0x76035a01', '0x7ffafbff', '0x8', '0x80', '0x90', '0x99', '0xD5', '0xb', '0xbfebfbff', '0xd', '0xf0', '0xf8000000', '0xff', '0xffff', '0xffffffff', '0xffffffffffffffffffffffffffffffff00000000000000000000000000000000', '1', '1.', '1.0', '1.01', '1.1', '1.15', '1.2', '1.279', '1.4142', '1.42', '1.5', '1.5e-5', '1.8', '10', '10.0', '10.6', '100', '100.0', '1000', '10000', '10000.0', '100000', '100000.0', '1000000.0', '101', '1024', '109', '10e-7', '11', '111', '113', '12', '12.', '120', '127.5', '128', '12836', '13', '14', '144', '15', '15.', '150', '1500', '16', '17', '18', '180', '180.0', '19', '19.9', '195', '1e-10', '1e-2', '1e-3', '1e-5', '1e-6', '1e-7', '1e-8', '1e-9', '1e6', '1e9', '2', '2.', '2.0', '20', '20.0', '20.4', '200', '2000', '201', '2012', '2048', '21', '21.0', '21.3', '2147483647', '22', '22.2', '22.4', '22.7', '224', '23', '2396512', '24', '24.0', '24.4', '25', '250', '255', '255.', '255.0', '256', '27.2', '270', '273.15', '28', '282', '3', '3.92', '3.95', '30', '300', '30000', '31', '3119362', '31344016', '32', '32.', '35', '360.0', '3600', '368', '376', '39', '3e-4', '4', '4.0', '4.03', '4.29', '40', '40.0', '400', '4000', '403', '404', '4096', '41', '42', '42.0', '422', '430', '4326', '443', '48', '48.2', '5', '5.0', '5.25', '50', '500', '5000', '5000.0', '50000', '500000', '51', '512', '52', '52.5', '54', '55', '56', '58', '5e-4', '6', '6.0', '6.26', '60', '60.0', '600', '6006', '62', '63', '6379', '64', '650', '7', '7.0', '7.2', '7.8', '7.9', '784', '7e-4', '8', '8.0', '8.03', '8.2', '8.31', '8.4', '8.5', '80', '800', '8000', '80e6', '86400', '888', '9', '9.5', '9.8', '90', '92', '96', '9862', '999999']
+Write tokens in the training set to files:
+Write tokens in the validation set to files:
+Write tokens in the testing set to files:
+
+The distribution of classes in training after removing repeated tokens between training and tesing:
+Counter({0: 5000, 3: 5000, 1: 5000, 2: 5000})
+{'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
+The distribution of classes in valid:
+Counter({3: 540, 0: 540, 1: 540, 2: 540})
+{'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
+The distribution of classes in testing:
+Counter({3: 365, 0: 365, 1: 365, 2: 365})
+{'NAME': 0, 'STRING': 1, 'NUMBER': 2, 'KEYWORD': 3}
+All-layer probing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Independent-layerwise probing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Incremental-layerwise probing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+select minimum layers (LS+CC+LCA)
+Correlation matrix size (#neurons x #neurons): (1536, 1536)
+Number of clusters detected: 1048
+Correlation matrix size (#neurons x #neurons): (1536, 1536)
+Number of clusters detected: 1048
+Correlation matrix size (#neurons x #neurons): (1536, 1536)
+Number of clusters detected: 1048
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+probing independent neurons based on all layers (run_cc_all.py)
+Correlation matrix size (#neurons x #neurons): (9984, 9984)
+Number of clusters detected: 8325
+Correlation matrix size (#neurons x #neurons): (9984, 9984)
+Number of clusters detected: 6284
+Correlation matrix size (#neurons x #neurons): (9984, 9984)
+Number of clusters detected: 4552
+Correlation matrix size (#neurons x #neurons): (9984, 9984)
+Number of clusters detected: 3408
+Correlation matrix size (#neurons x #neurons): (9984, 9984)
+Number of clusters detected: 2529
+Correlation matrix size (#neurons x #neurons): (9984, 9984)
+Number of clusters detected: 1769
+Correlation matrix size (#neurons x #neurons): (9984, 9984)
+Number of clusters detected: 1157
+Correlation matrix size (#neurons x #neurons): (9984, 9984)
+Number of clusters detected: 605
+Correlation matrix size (#neurons x #neurons): (9984, 9984)
+Number of clusters detected: 93
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+probing independent neurons based on all layers with finer percentage (run_max_features.py)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+pretrained_UniXCoder top neurons
+array([   0,  515,    3,  516,  518,    6,    7,    9,   10,  524,   12,
+         14,   16,  528,  533,  534,   27, 1564,   29,  542, 9759,   32,
+         33,  544,   35,  548,   36, 9245,   34,  552,   41,   38,   42,
+         40,  549,  559,   53,  565,   55,  568,   56, 9786,   59,  572,
+        573,  571, 9283,  579,  581,   71,   72, 9803,  588,  591, 9297,
+        594,   82,  596,   83,  598,   87,  602,   91, 9818,  605,   97,
+        609,  610,   98, 9318,  614,  615,  107,  109,  621,  110, 9839,
+        111,  622,  116,  117, 4724,  631,  630,  633,  123,  124,  125,
+        126,  637,  642,  131, 9348,  132,  133,  647,  136, 9347,  138,
+        649,  140, 9357,  141,  652,  654,  660,  148,  661,  149,  665,
+        667,  155,  669,  158,  159,  672,  161,  670, 9886,  164,  675,
+        678,  172,  686,  176,  691,  180,  181,  182,  183,  185, 9402,
+        699,  700,  702,  191,  705,  194,  195,  196,  197,  710,  711,
+        709,  201,  202,  715, 9930,  712,  208,  722,  212,  213,  724,
+        216,  729,  730,  219,  733,  735,  738,  740,  229,  230,  231,
+        741,  746,  235,  748, 3818,  238, 8942,  240,  751,  239,  753,
+        757, 9462,  759,  762,  250,  764,  765,  253,  767,  257,  260,
+        263,  270,  271, 9487,  273,  281,  282,  284,  292,  293,  297,
+        298,  301,  302,  316,  319,  326,  327,  330,  331, 6475, 9550,
+       9552,  336,  340,  342,  347,  860, 9567,  353, 9571,  355,  880,
+       7028,  374,  380,  381,  384,  385,  389, 7057,  403,  405, 9623,
+        407,  409,  410,  412,  422,  427,  428,  430,  435,  437,  438,
+        439,  442,  443, 5563, 9661,  444,  446,  448, 9248, 9667,  456,
+       9677, 1488,  464,  466,  467, 9684, 7123,  468,  472,  474, 9691,
+       3035,  478,  479,  485,  489,  492,  493,  494,  498,  500,  508,
+        510])
+pretrained_UniXCoder top neurons per class
+{'NAME': array([ 542,  124,  498,   16,   29,  197,  161,  711,  548,  456,  138,
+        508,  342,  730,  647,  136,  131,  109,  319,  405,  293,  172,
+        518,  672,  263,  596,  493,  479,    9,  185,  257,  126,  594,
+        260,  510,  559,  271, 9318,  489,  159,   72,  621,  107,  213,
+        385,  158, 9487,  598,  700,   91,  353,  602, 9402, 9623,  316,
+        208,  235,  670,  196,  702,  191,  110,   97,  330,  631,  389,
+        125,   33,  331,  660,  282,  764, 9357,  568,  182,  347,  302,
+        528, 9348,  762, 9550,  443,  485,   59, 9886]), 'STRING': array([ 700,  342,  748,  180,  710,  500,  596,   53,  132,  548,  133,
+        735,  231,  380, 9347,   35,  757,  614,  474,   91,  605,  568,
+        765,  183,  148,   32,  181,  515,  117,    3,  384,  201,  510,
+        219,  661,   36,   41,  746,  116,   82,  253,  123,   55,  284,
+        412, 9677,  544,  552,  516,  740,  238,    6,  609,  715, 9552,
+        336, 9818,  202, 9684,  164,   56,  594,  467,  229,  709, 9786,
+       7028,  240,  140,  208,  705,   72, 4724,  439,  410,  649,  326,
+        282, 9567,  738,  270,  230, 9691,  665,  302,  374, 9759,  389,
+        327,  565,  591, 1564, 9930,  141,  691, 9571, 5563, 9348, 7057,
+        630, 9667, 3818, 3035,  573,  860,  880, 7123,  492, 9245,  733,
+       9283,  250, 8942, 1488,  273, 6475,  468]), 'NUMBER': array([ 466,  678,  301,  534,  442,  212, 9297,  292,  410,  572,  748,
+         87,  430,  669,  409, 9839,  524,  686,  194,  195,  615,  427,
+        588,  533,  667,  751,  412,  107,   34,   59,  407,  478,    7,
+        642,  355, 9248,  216,  403,  610,  219,  342,   10,   98,  741,
+        672, 9803,   83,  340,  733,  155,   27,  111,  472,  148,  438,
+        159,   38,  622, 9661,  240,  699,  381,  759,   71,  405,  633,
+        712,  660,   14,  435,  422, 9462,   42,   40,  637,  448,  428,
+         12,  239]), 'KEYWORD': array([518, 542, 109, 667, 319, 191,  82, 493,  16, 297, 591, 342, 498,
+        36, 197, 559, 442, 172, 479, 298,   3, 257, 510,   0,  59, 767,
+       316,  34, 647,  87, 409, 549, 581, 571, 302, 374, 753, 508, 730,
+       494, 724, 176, 444, 652, 185, 111,   9, 149, 654, 711, 293, 729,
+       405, 281, 466, 468, 573, 117, 161, 594, 437, 722, 675, 579, 446,
+       631, 464, 330, 710, 385, 180, 138])}
+pretrained_UniXCoder top words
+Top words for pretrained_UniXCoder neuron indx 0 [('colors', 3.912504494190216), ("'|'", 3.5502723455429077), ('50000', 3.4259815216064453), ('sqrt', 3.3311188220977783), ('31', 3.05151629447937)]
+Top words for pretrained_UniXCoder neuron indx 515 [('cat', 4.8373942375183105), ('redirect', 4.0259599685668945), ('127', 3.893536329269409), ('enumerate', 3.640579276614719), ('code', 3.5895040035247803)]
+Top words for pretrained_UniXCoder neuron indx 3 [('float', 4.408681767327445), ('xpath', 4.376258754730225), ('hit', 4.166923236846924), ('enumerate', 3.9383484522501626), ('exceptions', 3.921708583831787)]
+Top words for pretrained_UniXCoder neuron indx 516 [('1023', 3.218926986058553), ('getopt', 3.2034777800242105), ('Concatenate', 3.1964967250823975), ('force', 3.174429178237915), ('std', 3.0928760170936584)]
+Top words for pretrained_UniXCoder neuron indx 518 [('fh', 3.4828085899353027), ('barrier', 3.3140275478363037), ("'{'", 3.0954201221466064), ("'?'", 2.997616688410441), ('"*"', 2.845320701599121)]
+Top words for pretrained_UniXCoder neuron indx 6 [('429', 4.3168559074401855), ('flush', 3.8784011602401733), ('symbols', 3.83553683757782), ('202', 3.597754120826721), ('contrast', 3.3447949290275574)]
+Top words for pretrained_UniXCoder neuron indx 7 [('pow', 4.195064067840576), ('interpolation', 3.7270287786211287), ('p', 3.629859754017421), ('stdin', 3.618931531906128), ('140', 3.5471622943878174)]
+Top words for pretrained_UniXCoder neuron indx 9 [('NotImplementedError', 4.693952560424805), ('ndarray', 4.219232797622681), ('shuffle', 3.7740225791931152), ('download', 3.684819459915161), ('getattr', 3.668374458948771)]
+Top words for pretrained_UniXCoder neuron indx 10 [('40', 3.347682237625122), ('preferences', 3.1259202003479003), ('download', 3.0904769897460938), ('palette', 3.040853261947632), ('json', 3.014866828918457)]
+Top words for pretrained_UniXCoder neuron indx 524 [('decode', 3.553721857070923), ('decompress', 3.3960442543029785), ('unicode', 3.209336042404175), ('console', 3.0131027698516846), ("'{'", 2.915447950363159)]
+Top words for pretrained_UniXCoder neuron indx 12 [('div', 3.6906778812408447), ('timedelta', 3.667921543121338), ('keepdims', 3.5548810958862305), ('85', 3.1907544136047363), ('days', 3.1357781887054443)]
+Top words for pretrained_UniXCoder neuron indx 14 [('301', 3.8878486156463623), ('urlencode', 3.7686479091644287), ('termios', 3.707692861557007), ('ValidationException', 3.6626698970794678), ('flatten', 3.5206127166748047)]
+Top words for pretrained_UniXCoder neuron indx 16 [('84', 4.206320285797119), ('lang', 3.8907711029052736), ('sum', 3.7360136985778807), ('512', 3.6003913123433184), ("'?'", 3.533421277999878)]
+Top words for pretrained_UniXCoder neuron indx 528 [('eq', 5.015355110168457), ("'#'", 4.450976490974426), ('202', 3.8966662287712097), ('borders', 3.8841381072998047), ('debug', 3.8244221210479736)]
+Top words for pretrained_UniXCoder neuron indx 533 [('termios', 3.843965530395508), ('categories', 3.7599606037139894), ('127', 3.585787773132324), ('stride', 3.4732059637705484), ('answers', 3.438866297403971)]
+Top words for pretrained_UniXCoder neuron indx 534 [('contiguous', 3.1059281826019287), ('dtype', 2.8687582165002823), ('item', 2.865152359008789), ('subprocess', 2.8224782943725586), ('pop', 2.7868558168411255)]
+Top words for pretrained_UniXCoder neuron indx 27 [('Tensor', 3.777447064717611), ("':'", 3.5550565481185914), ('512', 3.4189830873070695), ('OSError', 3.167423963546753), ('EEXIST', 2.924044609069824)]
+Top words for pretrained_UniXCoder neuron indx 1564 [('encode', 3.369900703430176), ('join', 3.0183181166648865), ('"vx"', 2.8295650482177734), ('"vz"', 2.824364264806112), ('"vy"', 2.786404550075531)]
+Top words for pretrained_UniXCoder neuron indx 29 [('bias', 3.53216290473938), ('shuffle', 3.37956166267395), ('any', 3.30110764503479), ('Multiply', 3.2803499698638916), ('480', 3.145972967147827)]
+Top words for pretrained_UniXCoder neuron indx 542 [('transpose', 3.254531423250834), ('group', 2.9545172214508058), ('splits', 2.903838634490967), ('8', 2.8270236015319825), ('65536', 2.814741611480713)]
+Top words for pretrained_UniXCoder neuron indx 9759 [('float64', 3.875502586364746), ('"chosen_cases"', 3.416731119155884), ("'TRUE'", 3.368736505508423), ('key', 3.2870761156082153), ("'$s_z$'", 2.9181559085845947)]
+Top words for pretrained_UniXCoder neuron indx 32 [('decompress', 4.7051215171813965), ('144', 4.380723476409912), ('patterns', 3.871435308456421), ('numpy', 3.793720245361328), ('graph', 3.7668570280075073)]
+Top words for pretrained_UniXCoder neuron indx 33 [('scheme', 4.706954002380371), ('Lambda', 3.8983548641204835), ('10', 3.7477624151441784), ('log', 3.60799503326416), ("'#'", 3.6047750115394592)]
+Top words for pretrained_UniXCoder neuron indx 544 [('pop', 4.980314652125041), ('colors', 4.422270655632019), ('torch', 4.405342108494526), ('color', 4.132702827453613), ('unicode', 3.940666437149048)]
+Top words for pretrained_UniXCoder neuron indx 35 [('engines', 4.228635311126709), ('clone', 4.122796535491943), ('device', 3.726272201538086), ('20', 3.6116127014160155), ('contiguous', 3.5716280937194824)]
+Top words for pretrained_UniXCoder neuron indx 548 [('"("', 3.456254243850708), ("'('", 3.394381523132324), ('80', 3.3556610345840454), ('tile', 3.3348681926727295), ('decoded', 3.2429425716400146)]
+Top words for pretrained_UniXCoder neuron indx 36 [('version', 4.333254814147949), ('console', 3.393333911895752), ('67', 3.377476453781128), ('Timeout', 3.303102493286133), ('109', 2.9703996181488037)]
+Top words for pretrained_UniXCoder neuron indx 9245 [('"accuracy"', 3.671157121658325), ("'sun'", 3.457520008087158), ("'pools'", 3.440345048904419), ('"(.*)\\\\((.*)\\\\)"', 3.1990163326263428), ("'sat'", 3.0996510982513428)]
+Top words for pretrained_UniXCoder neuron indx 34 [('borders', 3.8058581352233887), ('20000', 3.788012742996216), ('answer', 3.4411020278930664), ('interpolation', 3.398940290723528), ('404', 3.3045096397399902)]
+Top words for pretrained_UniXCoder neuron indx 552 [('240', 4.087720155715942), ('streams', 3.630770206451416), ('saturation', 3.4151466488838196), ('translate', 3.4050870090723038), ('translations', 3.296149810155233)]
+Top words for pretrained_UniXCoder neuron indx 41 [('RESET', 3.656471014022827), ('color', 3.6346678733825684), ('byte', 3.5937116146087646), ('borders', 3.4793343544006348), ('70', 3.3693650722503663)]
+Top words for pretrained_UniXCoder neuron indx 38 [('pretrained', 4.393795520067215), ('view', 4.3321921825408936), ('140', 3.9588475227355957), ('hue', 3.837979316711426), ('70', 3.6425166606903074)]
+Top words for pretrained_UniXCoder neuron indx 42 [('dim', 5.115220069885254), ('channels', 4.54514741897583), ('mime', 4.410599946975708), ('tmp', 4.266408920288086), ('transpose', 4.2569804191589355)]
+Top words for pretrained_UniXCoder neuron indx 40 [('dirname', 3.646986484527588), ('replace', 3.2049630880355835), ('fh', 3.135444164276123), ('engines', 3.1265608072280884), ('label', 3.0719408988952637)]
+Top words for pretrained_UniXCoder neuron indx 549 [('109', 4.399087429046631), ("'}'", 4.116984605789185), ('label', 3.941679000854492), ("'{'", 3.865727663040161), ('43', 3.61283016204834)]
+Top words for pretrained_UniXCoder neuron indx 559 [('"*"', 4.96173095703125), ("'['", 4.557651519775391), ('dtype', 4.354873508214951), ('engines', 4.106873035430908), ('201', 4.105096817016602)]
+Top words for pretrained_UniXCoder neuron indx 53 [('84', 4.218290996551514), ('palette', 4.197379430135091), ('stack', 3.991830587387085), ('encode', 3.857798178990682), ('translate', 3.7202537059783936)]
+Top words for pretrained_UniXCoder neuron indx 565 [('StringIO', 4.0705766677856445), ("']'", 3.834191878636678), ('println', 3.741215229034424), ('transpose', 3.390367865562439), ('range', 3.3729780117670694)]
+Top words for pretrained_UniXCoder neuron indx 55 [('replace', 4.193077087402344), ('console', 4.133941650390625), ('";"', 3.9608190655708313), ('Iterable', 3.7620036602020264), ('inplace', 3.588476300239563)]
+Top words for pretrained_UniXCoder neuron indx 568 [('pow', 3.917140483856201), ('numbers', 3.344522555669149), ('20000', 3.3023595809936523), ('35163', 3.0677528381347656), ('224', 3.065889358520508)]
+Top words for pretrained_UniXCoder neuron indx 56 [('tw', 5.3930054903030396), ('borders', 4.439201354980469), ('pic', 3.6140394475724964), ('Dense', 3.3817734718322754), ('BytesIO', 3.3475364446640015)]
+Top words for pretrained_UniXCoder neuron indx 9786 [('"connection_test"', 3.7686078548431396), ("'strict'", 3.3131086826324463), ('"[^a-zA-Z_]"', 3.2371978759765625), ("u':{lang_name}'", 3.1470651626586914), ('7.', 3.0623815059661865)]
+Top words for pretrained_UniXCoder neuron indx 59 [('offset', 4.463070869445801), ('numbers', 4.056594053904216), ("'%'", 3.80349063873291), ('narrow', 3.7080360651016235), ('labels', 3.605092922846476)]
+Top words for pretrained_UniXCoder neuron indx 572 [('PIPE', 4.013418197631836), ('await', 3.3483267890082464), ('argv', 3.3431129455566406), ('splits', 3.2415428161621094), ("']'", 3.169182380040487)]
+Top words for pretrained_UniXCoder neuron indx 573 [('dtype', 4.31557334959507), ('splits', 4.0965142250061035), ('lower', 3.910696109135946), ('ratio', 3.826758623123169), ('dir', 3.780772626399994)]
+Top words for pretrained_UniXCoder neuron indx 571 [('skill', 4.736020088195801), ('total', 4.492969512939453), ('23', 4.372220039367676), ('LongTensor', 4.307284116744995), ('175', 4.267796039581299)]
+Top words for pretrained_UniXCoder neuron indx 9283 [('"sum"', 3.4742588996887207), ("'dialog_id'", 3.335782766342163), ("'std'", 3.3215038776397705), ('"mean"', 3.2926948070526123), ("'channel_id'", 3.1733510494232178)]
+Top words for pretrained_UniXCoder neuron indx 579 [('now', 3.710211396217346), ('bias', 3.647235631942749), ('1024', 3.450127919514974), ('enumerate', 3.323161628511217), ('14', 3.189507688794817)]
+Top words for pretrained_UniXCoder neuron indx 581 [('confidence', 3.3061976432800293), ('stdin', 2.964781880378723), ('tmp', 2.8403918743133545), ('mimetype', 2.7954973379770913), ('interpolation', 2.794032778058733)]
+Top words for pretrained_UniXCoder neuron indx 71 [('tuple', 4.862616062164307), ('channels', 4.6703200340271), ('ratio', 4.249502182006836), ('permute', 4.082120418548584), ('ValidationException', 3.8504936695098877)]
+Top words for pretrained_UniXCoder neuron indx 72 [('extend', 4.111440181732178), ('exp', 3.906562328338623), ('keys', 3.7517642974853516), ('32768', 3.7409310340881348), ('barrier', 3.6937167644500732)]
+Top words for pretrained_UniXCoder neuron indx 9803 [('"E"', 3.4593143463134766), ('"pm_dec"', 3.419945240020752), ('"lambda_"', 3.3697071075439453), ('"beta"', 3.2656705379486084), ('"@"', 3.099597930908203)]
+Top words for pretrained_UniXCoder neuron indx 588 [('Lambda', 4.189002466201782), ('activation', 3.7803273598353067), ('join', 3.7615604797999063), ('moves', 3.559680700302124), ('Multiply', 3.5297915935516357)]
+Top words for pretrained_UniXCoder neuron indx 591 [('splits', 4.099370956420898), ('close', 3.4630379676818848), ('vflip', 3.167522668838501), ("'!'", 2.936497211456299), ('enhance', 2.933688163757324)]
+Top words for pretrained_UniXCoder neuron indx 9297 [("r'charset=([\\\\w-]+)'", 3.5387004613876343), ("'flac'", 3.4122915267944336), ("'au'", 3.2377192974090576), ("'aac'", 3.117640495300293), ("'CANCELLED'", 3.064292311668396)]
+Top words for pretrained_UniXCoder neuron indx 594 [('sum', 4.917714595794678), ('math', 4.435139973958333), ('expand', 3.590855360031128), ('hue', 3.536111295223236), ('ioctl', 3.4484975337982178)]
+Top words for pretrained_UniXCoder neuron indx 82 [('contiguous', 4.714348793029785), ('">"', 4.009645462036133), ('close', 3.864192485809326), ('label', 3.7796125411987305), ('labels', 3.38761830329895)]
+Top words for pretrained_UniXCoder neuron indx 596 [('gain', 4.39136528968811), ('ceil', 3.944561719894409), ('98', 3.5313483079274497), ('ByteStorage', 3.4919002056121826), ('mul', 3.4715662002563477)]
+Top words for pretrained_UniXCoder neuron indx 83 [('fid', 4.719953775405884), ('escape', 4.234817028045654), ('getopt', 4.039282878239949), ('pic', 4.001498296525743), ('color', 3.6663031578063965)]
+Top words for pretrained_UniXCoder neuron indx 598 [("'>='", 5.152071475982666), ('argv', 4.9788970947265625), ('reshape', 4.797756671905518), ('stdin', 4.361138224601746), ('perspective', 4.2845635414123535)]
+Top words for pretrained_UniXCoder neuron indx 87 [('Sequence', 3.6476340293884277), ('charset', 3.3795225024223328), ('XML', 3.3511803150177), ('engine', 3.2869527339935303), ('group', 3.1246205806732177)]
+Top words for pretrained_UniXCoder neuron indx 602 [('uniform', 5.1820086999373), ('pid', 3.8133180141448975), ('")"', 3.520540952682495), ('fid', 3.329707443714142), ('x', 3.290637791156769)]
+Top words for pretrained_UniXCoder neuron indx 91 [('engines', 3.1643089056015015), ('Dense', 3.009045362472534), ("'{'", 2.977883815765381), ("'desc'", 2.8679721355438232), ('Request', 2.827349901199341)]
+Top words for pretrained_UniXCoder neuron indx 9818 [("'{}={}'", 3.5109288692474365), ('find', 3.278043508529663), ("'%Y-%m-%dT%H:%M:%S.%fZ'", 3.1325862407684326), ("'#ffb000'", 3.0726215839385986), ("'ortho'", 3.050832986831665)]
+Top words for pretrained_UniXCoder neuron indx 605 [('pad', 3.837589740753174), ('rotate', 3.6024140119552612), ('units', 3.4079691767692566), ('404', 3.397657632827759), ('240', 3.260270118713379)]
+Top words for pretrained_UniXCoder neuron indx 97 [('stdin', 3.3766679763793945), ('Color', 3.139415979385376), ('max', 3.074277848005295), ('14', 3.0627727395012263), ('datetime', 3.0164324045181274)]
+Top words for pretrained_UniXCoder neuron indx 609 [('decompress', 4.4220476150512695), ('RED', 3.67459774017334), ('trie', 3.2558820565541584), ('dom', 3.1836687564849853), ("'['", 3.174172282218933)]
+Top words for pretrained_UniXCoder neuron indx 610 [('arg', 3.426675319671631), ('letters', 3.0210537910461426), ('bias', 2.893744945526123), ('perspective', 2.780397415161133), ('scores', 2.76228404045105)]
+Top words for pretrained_UniXCoder neuron indx 98 [('keywords', 4.60662841796875), ('seconds', 4.417318344116211), ('accuracy', 4.132485866546631), ('77', 3.924639105796814), ('borders', 3.234962224960327)]
+Top words for pretrained_UniXCoder neuron indx 9318 [("'extensions'", 3.2410058975219727), ('sub', 3.1950440406799316), ("'[^0-9]'", 3.1108181476593018), ("'python.details'", 3.006048083305359), ("'document_names'", 2.971435308456421)]
+Top words for pretrained_UniXCoder neuron indx 614 [('tar', 4.593728542327881), ('Optional', 4.419599533081055), ('terminated', 4.381356716156006), ('225', 4.3418707847595215), ('splits', 4.181870460510254)]
+Top words for pretrained_UniXCoder neuron indx 615 [('opts', 3.7617905139923096), ('stride', 3.555825392405192), ('round', 3.5421666622161867), ('git', 3.4343948364257812), ('opt', 3.4339643915494285)]
+Top words for pretrained_UniXCoder neuron indx 107 [('34', 3.8929295539855957), ('patterns', 3.3301784992218018), ('36', 2.9754156112670898), ('StopIteration', 2.9320333003997803), ('gamma', 2.9320269425710044)]
+Top words for pretrained_UniXCoder neuron indx 109 [('Optional', 4.712015628814697), ('29', 3.928978681564331), ('engines', 3.9123003482818604), ('query', 3.7200194488872182), ('parse', 3.643946886062622)]
+Top words for pretrained_UniXCoder neuron indx 621 [('angle', 4.393003284931183), ('90', 3.9315617084503174), ('attr', 3.637149930000305), ('skill', 3.4985626935958862), ('"vlat"', 3.460627794265747)]
+Top words for pretrained_UniXCoder neuron indx 110 [('timedelta', 3.638709306716919), ('stdin', 3.3163328170776367), ('console', 3.2929654121398926), ("'+'", 3.0165603160858154), ('64', 2.9937003525820645)]
+Top words for pretrained_UniXCoder neuron indx 9839 [("'.{}'", 4.122809410095215), ("'!'", 3.411065697669983), ('"descriptions"', 3.3838870525360107), ('findall', 3.255408465862274), ("'US'", 3.181720018386841)]
+Top words for pretrained_UniXCoder neuron indx 111 [('"|"', 3.036311149597168), ('ValidationException', 2.7703473567962646), ('tmp', 2.765520215034485), ('"*"', 2.653172492980957), ('"#"', 2.645787477493286)]
+Top words for pretrained_UniXCoder neuron indx 622 [('True', 2.931312607480334), ('cfg', 2.80169415473938), ('90', 2.67069411277771), ('root', 2.5406503348514953), ('")"', 2.5286552906036377)]
+Top words for pretrained_UniXCoder neuron indx 116 [('"&"', 3.6233577728271484), ('seconds', 3.5299662351608276), ('"|"', 3.4179885387420654), ('terminated', 3.4147071838378906), ('argv', 3.3729043006896973)]
+Top words for pretrained_UniXCoder neuron indx 117 [('301', 4.548152446746826), ('timedelta', 4.513740062713623), ('224', 4.371414661407471), ('"("', 4.2495063940684), ('43', 3.7266478538513184)]
+Top words for pretrained_UniXCoder neuron indx 4724 [('scandir', 3.8336400985717773), ('scheme', 3.624274253845215), ('argv', 3.609816789627075), ('stdout', 3.5474445819854736), ('.00001', 3.4558944702148438)]
+Top words for pretrained_UniXCoder neuron indx 631 [('gui', 5.182967662811279), ('bias', 4.883224964141846), ('inplace', 4.641954660415649), ('sort', 4.4095964431762695), ('json', 4.345201849937439)]
+Top words for pretrained_UniXCoder neuron indx 630 [('41', 3.887679100036621), ('24', 3.589583396911621), ('480', 3.5865840911865234), ('seconds', 3.4424543380737305), ('days', 3.431992769241333)]
+Top words for pretrained_UniXCoder neuron indx 633 [('80', 3.766217827796936), ('exit', 3.6522812843322754), ('8080', 3.5285804271698), ('unpack', 3.4805474281311035), ('attr', 3.3968228101730347)]
+Top words for pretrained_UniXCoder neuron indx 123 [('PIPE', 3.6374924182891846), ("'+'", 3.20941162109375), ('"-"', 3.1977505683898926), ('"="', 3.132545232772827), ('mul', 3.0838429927825928)]
+Top words for pretrained_UniXCoder neuron indx 124 [('NotImplementedError', 4.810921669006348), ('communicate', 4.416195869445801), ('parse', 3.997199058532715), ('240', 3.939147154490153), ('println', 3.8687376976013184)]
+Top words for pretrained_UniXCoder neuron indx 125 [('">"', 4.2407145500183105), ('attrib', 4.124747037887573), ('resize', 3.9498995542526245), ('RED', 3.86795711517334), ('224', 3.7089879512786865)]
+Top words for pretrained_UniXCoder neuron indx 126 [('borders', 4.124393463134766), ('Compose', 3.901991367340088), ('zeros', 3.899144172668457), ('patterns', 3.7274402141571046), ('confidence', 3.651444375514984)]
+Top words for pretrained_UniXCoder neuron indx 637 [('ET', 3.168076276779175), ('patterns', 3.155615139007568), ('"%"', 3.13738214969635), ('headers', 2.7551224014975806), ('dtype', 2.446959540247917)]
+Top words for pretrained_UniXCoder neuron indx 642 [('OSError', 3.7734570503234863), ('KeyboardInterrupt', 3.3651275634765625), ('StopIteration', 3.221632719039917), ('")"', 3.2196346521377563), ('saturation', 3.1289023756980896)]
+Top words for pretrained_UniXCoder neuron indx 131 [('encoding', 4.5084911187489825), ('streams', 4.450926184654236), ('flatten', 4.372167110443115), ('ndimension', 3.8832004070281982), ('hue', 3.6080105304718018)]
+Top words for pretrained_UniXCoder neuron indx 9348 [('ATTRS', 3.590693950653076), ("'vgg13'", 3.3287644386291504), ('is_dir', 3.2136712074279785), ("'inception_v3_google'", 3.130819797515869), ("'Content-Encoding'", 3.0621070861816406)]
+Top words for pretrained_UniXCoder neuron indx 132 [('shuffle', 4.733625411987305), ('dtype', 3.771045356988907), ('patterns', 3.719334602355957), ('convert', 3.595175838470459), ('pretrained', 3.586669221520424)]
+Top words for pretrained_UniXCoder neuron indx 133 [("'}'", 4.5948591232299805), ('127', 4.302914619445801), ('RED', 4.237799644470215), ("'='", 3.9604640007019043), ('Timeout', 3.9486610889434814)]
+Top words for pretrained_UniXCoder neuron indx 647 [('termios', 3.8569865226745605), ('ioctl', 3.5194952487945557), ('symbols', 3.394767999649048), ('384', 3.3308746814727783), ('sort', 3.0482499599456787)]
+Top words for pretrained_UniXCoder neuron indx 136 [('200', 4.025269428888957), ('20051', 3.72528076171875), ('enumerate', 3.591474321153429), ('160', 3.53869891166687), ('filename', 3.4191047015943026)]
+Top words for pretrained_UniXCoder neuron indx 9347 [("'http:'", 4.365556240081787), ("'https:'", 3.9164977073669434), ('301', 3.9106078147888184), ("'https://'", 3.558774709701538), ("'http://'", 3.5194811820983887)]
+Top words for pretrained_UniXCoder neuron indx 138 [('scheme', 3.174684524536133), ('False', 2.643285850490012), ('vid', 2.6232830095291138), ('engines', 2.5866901874542236), ('items', 2.580143690109253)]
+Top words for pretrained_UniXCoder neuron indx 649 [('moves', 3.440809726715088), ('gui', 3.095647096633911), ('parse', 3.086633801460266), ('exceptions', 3.0845019817352295), ('225', 2.933833599090576)]
+Top words for pretrained_UniXCoder neuron indx 140 [('println', 3.8689310550689697), ('torch', 3.578921318054199), ('"_"', 3.428257793188095), ('shuffle', 3.280479907989502), ('skill', 3.225263237953186)]
+Top words for pretrained_UniXCoder neuron indx 9357 [('update', 3.8253984451293945), ("'august'", 3.304042100906372), ("'apr'", 3.143897533416748), ('"({x}*{vx}+{y}*{vy}+{z}*{vz})/{distance}"', 3.115271210670471), ("'feb'", 3.102954387664795)]
+Top words for pretrained_UniXCoder neuron indx 141 [('zeros', 3.9707205295562744), ('23', 3.7628767490386963), ('issubclass', 3.468522310256958), ('__class__', 3.1367099285125732), ('Tensor', 2.979985555013021)]
+Top words for pretrained_UniXCoder neuron indx 652 [('301', 3.3455660343170166), ('dir', 3.1828855872154236), ('permute', 3.1512436866760254), ('120', 3.126970052719116), ('160', 3.0533089637756348)]
+Top words for pretrained_UniXCoder neuron indx 654 [('reshape', 3.6700241565704346), ('days', 3.4620561599731445), ('PIPE', 3.2890758514404297), ('keepdims', 3.1374971866607666), ('\\', 2.7809294362862906)]
+Top words for pretrained_UniXCoder neuron indx 660 [('join', 3.296233985159132), ('tuple', 3.094647765159607), ('ceil', 3.094498872756958), ('os', 3.0825567646273253), ('loads', 3.076083242893219)]
+Top words for pretrained_UniXCoder neuron indx 148 [('conf', 4.029023975133896), ('std', 3.761471688747406), ("']'", 3.4721566836039224), ('shape', 3.386497974395752), ("'.'", 3.3732790823640495)]
+Top words for pretrained_UniXCoder neuron indx 661 [('v', 5.122613310813904), ('RED', 4.307302951812744), ('extend', 3.5691637992858887), ('affine', 3.5315263271331787), ('mul', 3.441541910171509)]
+Top words for pretrained_UniXCoder neuron indx 149 [('stdout', 4.058507442474365), ('keepdims', 3.8310039043426514), ('preferences', 3.6959142843882242), ('item', 3.5184313654899597), ('stdin', 3.5154008865356445)]
+Top words for pretrained_UniXCoder neuron indx 665 [('confidence', 5.250240325927734), ('div', 4.906356334686279), ('timedelta', 4.324728012084961), ('history', 3.785078287124634), ('attention', 3.7314664125442505)]
+Top words for pretrained_UniXCoder neuron indx 667 [('gain', 3.669592022895813), ('"#"', 3.3924315770467124), ('RED', 3.3570568561553955), ('over', 2.916613817214966), ('theme', 2.737377882003784)]
+Top words for pretrained_UniXCoder neuron indx 155 [('RED', 3.2318801879882812), ('name', 2.8288933549608504), ("';'", 2.696635437011719), ('splits', 2.5466971397399902), ("'.tex'", 2.4601703882217407)]
+Top words for pretrained_UniXCoder neuron indx 669 [('colors', 5.190508842468262), ("'{'", 4.89675760269165), ('files', 4.055210181644985), ('12', 3.777008189874537), ('K', 3.579881032307943)]
+Top words for pretrained_UniXCoder neuron indx 158 [('urlparse', 4.389323870340983), ('confidence', 3.9473742246627808), ('mul', 3.728102922439575), ('resize', 3.707104444503784), ('padding', 3.6986534277598064)]
+Top words for pretrained_UniXCoder neuron indx 159 [('div', 4.131577491760254), ('enumerate', 3.5668460263146295), ('pow', 3.318222999572754), ('StopIteration', 3.3058269023895264), ('preferred', 2.919903337955475)]
+Top words for pretrained_UniXCoder neuron indx 672 [('saturation', 3.8207539319992065), ('ET', 3.360443353652954), ('termios', 3.2464587688446045), ('175', 3.083824872970581), ('syst', 2.952518105506897)]
+Top words for pretrained_UniXCoder neuron indx 161 [('ET', 3.767190456390381), ('border', 3.475343942642212), ('attrib', 3.4486173391342163), ('tuple', 3.38199782371521), ('"|"', 3.340351104736328)]
+Top words for pretrained_UniXCoder neuron indx 670 [('fill', 3.4930155674616494), ('skill', 3.3100467920303345), ('Lambda', 3.2171223640441893), ("'filename'", 2.9997291564941406), ('sort', 2.980386734008789)]
+Top words for pretrained_UniXCoder neuron indx 9886 [('"client_key"', 3.703976631164551), ("'://'", 3.215700387954712), ("'Upgrade'", 3.098177909851074), ('"threads"', 3.04818058013916), ("'unit'", 3.023427963256836)]
+Top words for pretrained_UniXCoder neuron indx 164 [('stdin', 3.7728209495544434), ('upper', 3.308305501937866), ('ioctl', 3.2929821014404297), ('tw', 3.2283357977867126), ('Lambda', 3.1399317264556883)]
+Top words for pretrained_UniXCoder neuron indx 675 [('perspective', 5.711954116821289), ('channels', 5.125227451324463), ('endpoints', 4.389652907848358), ('categories', 3.7398734092712402), ('224', 3.6890714168548584)]
+Top words for pretrained_UniXCoder neuron indx 678 [('join', 4.446312659316593), ('view', 4.304356098175049), ('eq', 4.209000110626221), ('F', 3.940802574157715), ('fcntl', 3.8583602905273438)]
+Top words for pretrained_UniXCoder neuron indx 172 [('keepdims', 4.214715003967285), ('target', 4.207187652587891), ('device', 3.9756468772888183), ('Dense', 3.921558141708374), ('preferred', 3.7129236459732056)]
+Top words for pretrained_UniXCoder neuron indx 686 [('exceptions', 5.14229679107666), ('"/"', 4.4249955177307125), ("'/'", 4.406957010428111), ('PIPE', 4.038406848907471), ('affine', 3.8243980407714844)]
+Top words for pretrained_UniXCoder neuron indx 176 [('arg', 5.362273693084717), ('args', 4.550549149513245), ('opts', 3.7333799997965493), ('units', 3.671396235624949), ('timedelta', 3.6295926570892334)]
+Top words for pretrained_UniXCoder neuron indx 691 [('decompress', 2.8479583263397217), ('console', 2.6127922534942627), ('descend', 2.584395170211792), ('communicate', 2.555551290512085), ('OSError', 2.4699831008911133)]
+Top words for pretrained_UniXCoder neuron indx 180 [('"-"', 3.9772047996520996), ('system', 3.771401882171631), ('descend', 3.7520008087158203), ('";"', 3.616918385028839), ('"_"', 3.342278867959976)]
+Top words for pretrained_UniXCoder neuron indx 181 [('tw', 5.467703342437744), ('160', 4.93142557144165), ('perspective', 4.500827312469482), ('symbols', 4.38161039352417), ('seq', 4.340854167938232)]
+Top words for pretrained_UniXCoder neuron indx 182 [('Concatenate', 3.4581782817840576), ('labels', 3.450963258743286), ('crop', 3.4245517551898956), ('pretrained', 3.3212084472179413), ('words', 3.2178955078125)]
+Top words for pretrained_UniXCoder neuron indx 183 [('hue', 4.190775573253632), ('50', 3.620679497718811), ('zip', 3.6141351461410522), ('""', 3.605764945348104), ('gamma', 3.5110668341318765)]
+Top words for pretrained_UniXCoder neuron indx 185 [('ceil', 4.073150157928467), ('ValidationException', 3.77825927734375), ('units', 3.561269243558248), ('byte', 3.391615390777588), ('affine', 3.3814597129821777)]
+Top words for pretrained_UniXCoder neuron indx 9402 [('return_indexes', 3.54238224029541), ('"<tr><th>Property</th><th>Value</th></tr>"', 3.2269608974456787), ('Timeout', 3.1300466060638428), ("'RECTANGLE'", 2.6411945819854736), ("'class'", 2.5409960746765137)]
+Top words for pretrained_UniXCoder neuron indx 699 [('gui', 6.214217662811279), ('decoded', 4.29844069480896), ('zeros', 4.047743797302246), ('202', 3.750221371650696), ('100', 3.6981010296765495)]
+Top words for pretrained_UniXCoder neuron indx 700 [('terminated', 4.919829845428467), ('StringIO', 4.359714508056641), ('lower', 4.0167490641276045), ('finally', 3.8538448810577393), ('upper', 3.4696285724639893)]
+Top words for pretrained_UniXCoder neuron indx 702 [('barrier', 5.610393047332764), ('logger', 4.536936283111572), ('affine', 4.059010028839111), ('resize', 3.7612898349761963), ('dirname', 3.5841336250305176)]
+Top words for pretrained_UniXCoder neuron indx 191 [('narrow', 4.2451581954956055), ('stride', 3.8409465154012046), ('mean', 3.6346515417099), ('console', 3.32580304145813), ('saturation', 3.29716032743454)]
+Top words for pretrained_UniXCoder neuron indx 705 [('palette', 3.58331561088562), ('errno', 3.571587920188904), ('"@"', 3.56272554397583), ('192', 3.548356294631958), ('np', 3.3655006335331845)]
+Top words for pretrained_UniXCoder neuron indx 194 [("'['", 3.3092457056045532), ('"#"', 3.180812040964762), ("'#'", 2.9984253644943237), ('label', 2.9881298542022705), ('contrast', 2.834640145301819)]
+Top words for pretrained_UniXCoder neuron indx 195 [('Tensor', 4.535640716552734), ('dim', 3.564350128173828), ('stream', 3.3896769114903043), ('debug', 3.269465923309326), ('width', 3.2032128480764537)]
+Top words for pretrained_UniXCoder neuron indx 196 [('label', 4.095707416534424), ('timestamp', 3.9683616161346436), ('println', 3.9391696453094482), ('lower', 3.8914449214935303), ('translations', 3.884535630544027)]
+Top words for pretrained_UniXCoder neuron indx 197 [('140', 5.367238998413086), ('inplace', 3.9719268083572388), ('unlink', 3.9629619121551514), ('800', 3.8747851848602295), ('80', 3.8383302688598633)]
+Top words for pretrained_UniXCoder neuron indx 710 [('th', 4.082947373390198), ('KeyError', 3.517283082008362), ('443', 3.3340041637420654), ('engine', 3.3020966053009033), ('Request', 3.279144287109375)]
+Top words for pretrained_UniXCoder neuron indx 711 [('sort', 3.960726499557495), ('barrier', 3.4753079414367676), ('zip', 3.2800865968068442), ('unlink', 3.1979126930236816), ('Sequence', 3.195685625076294)]
+Top words for pretrained_UniXCoder neuron indx 709 [('cost', 4.0637863874435425), ('Reshape', 3.5750513076782227), ('301', 3.5635766983032227), ('descend', 3.4141013622283936), ("'='", 3.3962949911753335)]
+Top words for pretrained_UniXCoder neuron indx 201 [('hue', 3.6235321760177612), ('endpoints', 3.4495009581247964), ('border', 3.4376301765441895), ('480', 3.403135299682617), ('85', 3.232449531555176)]
+Top words for pretrained_UniXCoder neuron indx 202 [('exp', 3.9405524730682373), ('zlib', 3.8468501567840576), ('splits', 3.8192660808563232), ('pass', 3.8007861971855164), ('mean', 3.7794560194015503)]
+Top words for pretrained_UniXCoder neuron indx 715 [('seek', 4.8380022048950195), ('split', 3.6532836085871647), ('dist', 3.5706729888916016), ('tar', 3.5015727281570435), ('merge', 3.4272134338106426)]
+Top words for pretrained_UniXCoder neuron indx 9930 [('redirect', 3.378103494644165), ('"<h5>"', 3.2962024211883545), ("'server'", 3.163560628890991), ('"steps"', 3.1454715728759766), ("'linthreshx'", 3.1370224952697754)]
+Top words for pretrained_UniXCoder neuron indx 712 [('"%"', 3.8570998907089233), ("'%'", 3.709883451461792), ('"&"', 3.3964948654174805), ('404', 3.189291000366211), ('vflip', 3.0368367433547974)]
+Top words for pretrained_UniXCoder neuron indx 208 [('endpoints', 3.9319488803545632), ('timedelta', 3.474233388900757), ('dirname', 3.405552864074707), ('saturation', 3.3227410912513733), ('144', 3.259456157684326)]
+Top words for pretrained_UniXCoder neuron indx 722 [('seek', 4.289739608764648), ('color', 3.848705530166626), ('hue', 3.690703570842743), ('":"', 3.6470017433166504), ('sum', 3.3429783821105956)]
+Top words for pretrained_UniXCoder neuron indx 212 [('barrier', 3.789281129837036), ('padding', 3.0231224020322163), ('zeros', 2.927661180496216), ('ele', 2.84276807308197), ('sleep', 2.7889864444732666)]
+Top words for pretrained_UniXCoder neuron indx 213 [('timedelta', 5.1030449867248535), ('bias', 4.398182392120361), ('answer', 3.846945285797119), ('redirect', 3.7616636753082275), ('children', 3.4528889060020447)]
+Top words for pretrained_UniXCoder neuron indx 724 [('109', 4.665242671966553), ('RED', 4.477402210235596), ('saturation', 4.28053343296051), ('confidence', 3.6683197021484375), ('"%"', 3.579145908355713)]
+Top words for pretrained_UniXCoder neuron indx 216 [('cost', 3.7624218463897705), ('skill', 3.529869556427002), ('close', 3.320438861846924), ('dict', 3.3116538524627686), ('shuffle', 3.267888307571411)]
+Top words for pretrained_UniXCoder neuron indx 729 [('tensor', 4.532211518287658), ('contiguous', 4.4168243408203125), ('saturation', 4.393694519996643), ('torch', 4.050760262721294), ('Tensor', 3.9337120850880942)]
+Top words for pretrained_UniXCoder neuron indx 730 [('Color', 3.150038242340088), ('dstack', 3.0257089138031006), ('Lambda', 2.9116921186447144), ('classes', 2.897890647252401), ('isdir', 2.805808186531067)]
+Top words for pretrained_UniXCoder neuron indx 219 [('Tensor', 3.127910772959391), ('group', 2.713714599609375), ("'*'", 2.6407434940338135), ('self', 2.57705224117386), ('split', 2.4806873421919975)]
+Top words for pretrained_UniXCoder neuron indx 733 [('degrees', 5.188488165537517), ('XML', 4.257299423217773), ('softmax', 3.8563302755355835), ('gui', 3.8514792919158936), ('stack', 3.836106777191162)]
+Top words for pretrained_UniXCoder neuron indx 735 [('errno', 3.931496262550354), ('429', 3.905055284500122), ("'small'", 3.2705652713775635), ('prepare', 3.146540403366089), ('ele', 3.076993465423584)]
+Top words for pretrained_UniXCoder neuron indx 738 [('predicted', 3.6115335822105408), ('Timeout', 3.3681845664978027), ('33', 3.3079994916915894), ('skill', 2.9354697465896606), ('Request', 2.7380696535110474)]
+Top words for pretrained_UniXCoder neuron indx 740 [('84', 3.679454517364502), ('ndim', 3.6487859090169272), ('224', 3.2424607276916504), ('240', 3.068767865498861), ('98', 2.991095860799154)]
+Top words for pretrained_UniXCoder neuron indx 229 [('enumerate', 5.526565816667345), ('urlparse', 3.9844183127085366), ('zip', 3.9619319836298623), ('narrow', 3.5984033346176147), ('40', 3.5552337169647217)]
+Top words for pretrained_UniXCoder neuron indx 230 [('seek', 3.9872260093688965), ('min', 3.45965133772956), ('ceil', 3.370007038116455), ('365', 3.3256542682647705), ('escape', 3.1514241695404053)]
+Top words for pretrained_UniXCoder neuron indx 231 [('65536', 5.442970275878906), ('StopIteration', 5.192138671875), ('seek', 4.370227336883545), ('429', 4.328125476837158), ('tile', 4.231507778167725)]
+Top words for pretrained_UniXCoder neuron indx 741 [('round', 4.335995817184449), ('dict', 4.196061134338379), ('pow', 4.082125663757324), ('softmax', 4.0559128522872925), ('4200000', 4.031826019287109)]
+Top words for pretrained_UniXCoder neuron indx 746 [('quote', 4.906609058380127), ('Tensor', 4.106533686319987), ('days', 3.7839345932006836), ('attention', 3.768823504447937), ('ndim', 3.6628331343332925)]
+Top words for pretrained_UniXCoder neuron indx 235 [('div', 4.4804582595825195), ('units', 4.440037429332733), ('33', 4.331106424331665), ('tuple', 4.284698009490967), ('array', 3.883523613214493)]
+Top words for pretrained_UniXCoder neuron indx 748 [('round', 3.5491786003112793), ('"&"', 3.351334810256958), ('clone', 3.2512519359588623), ('stride', 2.9204262097676597), ('patterns', 2.689820671081543)]
+Top words for pretrained_UniXCoder neuron indx 3818 [('float', 3.5545274870736256), ('gamma', 3.5470314025878906), ('bias', 3.3803892135620117), ('float64', 3.0663909912109375), ('float32', 3.0115776856740317)]
+Top words for pretrained_UniXCoder neuron indx 238 [('"@"', 3.638698101043701), ('interpolation', 3.4448358672005788), ('correct', 3.3705555200576782), ('encoding', 3.3471696376800537), ('"_"', 3.2872417271137238)]
+Top words for pretrained_UniXCoder neuron indx 8942 [("'https://api.vimeo.com/channels/{channel_id}/videos?access_token={access_token}'", 3.3015122413635254), ('access_token', 2.8917990922927856), ("'kernel'", 2.7199535369873047), ('over', 2.5376667976379395), ('get_disabled', 2.514906406402588)]
+Top words for pretrained_UniXCoder neuron indx 240 [('filtered', 3.7173244953155518), ('decoded', 3.527535140514374), ('tmp', 3.4349610805511475), ('splits', 3.277269124984741), ('argv', 3.276219129562378)]
+Top words for pretrained_UniXCoder neuron indx 751 [('stdout', 3.9468042850494385), ('std', 3.401219666004181), ('fid', 3.2202650904655457), ('lang', 3.2177496910095216), ('locales', 3.0912117958068848)]
+Top words for pretrained_UniXCoder neuron indx 239 [('getopt', 3.4329830010732016), ('git', 3.38031005859375), ('dirname', 3.147209882736206), ('"."', 3.050797462463379), ('"-"', 2.9851577281951904)]
+Top words for pretrained_UniXCoder neuron indx 753 [('keywords', 4.709097385406494), ('outfile', 4.463786363601685), ('categories', 4.05511622428894), ('border', 3.935373306274414), ('activation', 3.8146634896596274)]
+Top words for pretrained_UniXCoder neuron indx 757 [('borders', 5.560189723968506), ('ValidationException', 4.062979698181152), ('decompress', 3.718426465988159), ('numbers', 3.6475610733032227), ('scores', 3.1900906562805176)]
+Top words for pretrained_UniXCoder neuron indx 9462 [('Optional', 3.6482300758361816), ('exceptions', 3.5992422103881836), ('upper', 3.4495277404785156), ('YELLOW', 3.3326854705810547), ("'x-suggestions'", 3.269129514694214)]
+Top words for pretrained_UniXCoder neuron indx 759 [('timedelta', 4.26047945022583), ('"("', 3.644819180170695), ('Timeout', 3.6108055114746094), ('read', 3.331892808278402), ('fh', 3.1298545598983765)]
+Top words for pretrained_UniXCoder neuron indx 762 [("'<'", 3.778378129005432), ('prepare', 3.732386827468872), ('t', 3.678082284927368), ('2048', 3.650140790939331), ("'%'", 3.478058099746704)]
+Top words for pretrained_UniXCoder neuron indx 250 [('stride', 4.348744869232178), ('gain', 4.086827516555786), ('Request', 3.787695527076721), ('descend', 3.3908026218414307), ('StopIteration', 3.3747477531433105)]
+Top words for pretrained_UniXCoder neuron indx 764 [('padding', 5.86056292851766), ('sort', 5.380743026733398), ('redirect', 4.717087745666504), ('K', 4.683326880137126), ('narrow', 4.223465919494629)]
+Top words for pretrained_UniXCoder neuron indx 765 [('urlparse', 5.324998219807942), ('torch', 4.453684136674211), ('"#"', 4.195723533630371), ('size', 3.900694491258308), ('urllib', 3.7632287740707397)]
+Top words for pretrained_UniXCoder neuron indx 253 [('2048', 3.1030049991607664), ('unicode', 2.850820302963257), ('write', 2.6266533931096396), ('settings', 2.61791924067906), ('192', 2.5883100032806396)]
+Top words for pretrained_UniXCoder neuron indx 767 [('ioctl', 4.438025951385498), ('gamma', 3.664609909057617), ('scheme', 3.446702003479004), ('param', 3.2901957035064697), ('unpack', 3.2281010150909424)]
+Top words for pretrained_UniXCoder neuron indx 257 [('borders', 4.331713676452637), ('suffix', 4.088231444358826), ('charset', 3.822010040283203), ('175', 3.794602870941162), ('part', 3.6587843894958496)]
+Top words for pretrained_UniXCoder neuron indx 260 [('fcntl', 5.368736267089844), ('4200000', 5.089633941650391), ('365', 4.843416213989258), ('stdout', 4.101624965667725), ('sort', 4.090339183807373)]
+Top words for pretrained_UniXCoder neuron indx 263 [('67', 5.058193206787109), ('scheme', 4.688330173492432), ("'<'", 4.1202497482299805), ('time', 3.9715522130330405), ('7', 3.942559887381161)]
+Top words for pretrained_UniXCoder neuron indx 270 [('replace', 4.250233054161072), ('gamma', 4.157950401306152), ('stdin', 4.128966808319092), ('RED', 3.773679256439209), ('size', 3.599248236684657)]
+Top words for pretrained_UniXCoder neuron indx 271 [('area', 3.415697693824768), ('channels', 3.3371400833129883), ('override', 3.1254184246063232), ('replace', 3.020037829875946), ("'%'", 2.9527976512908936)]
+Top words for pretrained_UniXCoder neuron indx 9487 [("'/orders/{}'", 2.9665353298187256), ('2.5', 2.932117462158203), ("'../..'", 2.923816442489624), ('ceil', 2.8087127208709717), ('tuple', 2.7471765279769897)]
+Top words for pretrained_UniXCoder neuron indx 273 [('engines', 5.84020471572876), ('strip', 5.5908888181050616), ('xpath', 5.2639235496521), ('150', 5.192678928375244), ('")"', 4.980811834335327)]
+Top words for pretrained_UniXCoder neuron indx 281 [('225', 5.834560394287109), ('"%"', 4.593109607696533), ('channels', 4.076773643493652), ('contiguous', 3.9456515312194824), ('85', 3.678727626800537)]
+Top words for pretrained_UniXCoder neuron indx 282 [('perspective', 4.9994330406188965), ('else', 4.348735455170418), ('bytes', 3.719472646713257), ('interpolation', 3.6906843526022777), ('ndim', 3.6065308252970376)]
+Top words for pretrained_UniXCoder neuron indx 284 [('gui', 4.668735980987549), ('info', 4.525454223155975), ('keywords', 4.413491249084473), ('random', 4.366106539964676), ('themes', 4.096373822953966)]
+Top words for pretrained_UniXCoder neuron indx 292 [('B', 3.6135077476501465), ('urlencode', 3.4618279933929443), ('save', 3.344173049926758), ('host', 3.2072387763432095), ('days', 3.158601999282837)]
+Top words for pretrained_UniXCoder neuron indx 293 [('">"', 4.309760570526123), ("'<'", 4.078667402267456), ("'>'", 3.897425055503845), ('streams', 3.8838208317756653), ('"&"', 3.8427038192749023)]
+Top words for pretrained_UniXCoder neuron indx 297 [('unlink', 4.369709014892578), ('opts', 4.139231443405151), ('dir', 4.091005802154541), ('503', 3.635756492614746), ('flatten', 3.5260119438171387)]
+Top words for pretrained_UniXCoder neuron indx 298 [('activation', 5.089094479878743), ('192', 4.883247375488281), ('settings', 4.188493558338711), ('Tensor', 4.0428266525268555), ('hue', 4.020453572273254)]
+Top words for pretrained_UniXCoder neuron indx 301 [('rotate', 4.833978891372681), ('ioctl', 3.9133987426757812), ('download', 3.727036237716675), ('communicate', 3.6875405311584473), ('tar', 3.170082449913025)]
+Top words for pretrained_UniXCoder neuron indx 302 [('29', 5.214881896972656), ('800', 4.055907249450684), ('882', 3.572566270828247), ('32', 3.448441505432129), ('contiguous', 3.3889107704162598)]
+Top words for pretrained_UniXCoder neuron indx 316 [('pretrained', 4.888111591339111), ('engines', 4.879823684692383), ('termios', 4.6768717765808105), ('borders', 4.5352606773376465), ('numpy', 4.516035079956055)]
+Top words for pretrained_UniXCoder neuron indx 319 [('xpath', 4.073210525512695), ('force', 3.8880151510238647), ('degrees', 3.713409344355265), ('encoding', 3.246940771738688), ('128', 3.2239432599809437)]
+Top words for pretrained_UniXCoder neuron indx 326 [('items', 4.111196041107178), ('443', 3.911614418029785), ("'?'", 3.584669828414917), ('140', 3.362184762954712), ('sub', 3.3145313262939453)]
+Top words for pretrained_UniXCoder neuron indx 327 [('extend', 3.3809494972229004), ('"median"', 3.3691651821136475), ('90', 3.2258732318878174), ("'::1'", 3.040189266204834), ('"int32"', 3.020922899246216)]
+Top words for pretrained_UniXCoder neuron indx 330 [('600', 4.186309576034546), ('tensor', 3.380380629748106), ('degrees', 3.375908295313517), ('140', 3.3690667152404785), ('now', 3.258286952972412)]
+Top words for pretrained_UniXCoder neuron indx 331 [('192', 3.956768035888672), ('exp', 3.861069679260254), ('pic', 3.5782331254747177), ('301', 3.5665929317474365), ('zip', 3.4826273123423257)]
+Top words for pretrained_UniXCoder neuron indx 6475 [('"="', 3.6154387337820872), ('20000', 3.3364555835723877), ('Optional', 3.2147130966186523), ("'ConversationParameters'", 2.93945574760437), ('"|"', 2.939127206802368)]
+Top words for pretrained_UniXCoder neuron indx 9550 [('"(.*)\\\\((.*)\\\\)"', 2.9924187660217285), ("'ensure_ascii'", 2.9438891410827637), ('"$"', 2.9334850311279297), ("'*.ini'", 2.9076125621795654), ('"*180./pi"', 2.9020066261291504)]
+Top words for pretrained_UniXCoder neuron indx 9552 [("'/bars/{}'", 3.5353574752807617), ('"_C2"', 3.4902782440185547), ('"outfile"', 3.107431650161743), ("'$y$'", 3.1035380363464355), ('264', 2.9518325328826904)]
+Top words for pretrained_UniXCoder neuron indx 336 [('preferences', 4.904980500539144), ('basename', 3.2451443672180176), ('name', 3.067774568285261), ('gui', 3.0256049633026123), ("'*'", 3.0112758576869965)]
+Top words for pretrained_UniXCoder neuron indx 340 [('code', 3.432769536972046), ('sys', 3.2553738594055175), ('Color', 3.1984338760375977), ('tar', 3.0729875564575195), ('Lambda', 3.003181266784668)]
+Top words for pretrained_UniXCoder neuron indx 342 [('colors', 4.025217890739441), ('"-"', 3.818615198135376), ('crop', 3.711856037378311), ('"_"', 3.6466163992881775), ('84', 3.5731082916259767)]
+Top words for pretrained_UniXCoder neuron indx 347 [('cat', 3.8532702922821045), ('border', 3.802184581756592), ('override', 3.4911062240600588), ('OSError', 3.3514835834503174), ('8', 3.3252905082702635)]
+Top words for pretrained_UniXCoder neuron indx 860 [('quote', 4.196368217468262), ('24', 4.171206831932068), ('enumerate', 4.033131970299615), ('StringIO', 4.008492946624756), ('copy', 3.9253194332122803)]
+Top words for pretrained_UniXCoder neuron indx 9567 [('trie', 3.4348018964131675), ('Tensor', 3.317100445429484), ('block_config', 3.261869430541992), ('scheme', 3.1650750637054443), ('"H"', 3.126220226287842)]
+Top words for pretrained_UniXCoder neuron indx 353 [('over', 4.029797554016113), ('PIPE', 3.24725604057312), ('timedelta', 3.233975887298584), ('getopt', 3.2307023207346597), ('split', 3.010081460601405)]
+Top words for pretrained_UniXCoder neuron indx 9571 [("r'fid=[0-9A-Z\\\\-]*.flv'", 3.3399746417999268), ('float64', 3.186656951904297), ("'from_property'", 3.0700631141662598), ("'http://video.weibo.com/show?fid='", 3.053034543991089), ("f'{log_str}\\\\n'", 2.985335350036621)]
+Top words for pretrained_UniXCoder neuron indx 355 [('Optional', 4.015496253967285), ('lang', 4.004025506973266), ('language', 3.994649750845773), ('descend', 3.635345458984375), ('country', 3.3931660652160645)]
+Top words for pretrained_UniXCoder neuron indx 880 [('transpose', 3.6297462383906045), ('Image', 3.57319974899292), ('add', 3.5149906873703003), ('moves', 3.500361442565918), ('highlight_content', 3.3664366006851196)]
+Top words for pretrained_UniXCoder neuron indx 7028 [('scandir', 4.329051971435547), ('borders', 3.631192207336426), ('interpolation', 3.4153861658913747), ('round', 3.3681824684143065), ('314', 3.2378857135772705)]
+Top words for pretrained_UniXCoder neuron indx 374 [('shears', 5.092976927757263), ('unlink', 4.0633225440979), ('import', 3.862717184755537), ('shortcuts', 3.535449981689453), ('quote', 3.441305160522461)]
+Top words for pretrained_UniXCoder neuron indx 380 [('")"', 4.153031349182129), ("')'", 3.8684805631637573), ('headers', 3.2587191408330742), ('endpoints', 3.226956307888031), ("'<'", 3.0969576835632324)]
+Top words for pretrained_UniXCoder neuron indx 381 [('RED', 4.883141040802002), ('sqrt', 3.7821309566497803), ('expand', 3.639040470123291), ('debug', 3.6027538776397705), ('exceptions', 3.5302228927612305)]
+Top words for pretrained_UniXCoder neuron indx 384 [('escape', 4.044047832489014), ('Dense', 3.4571173191070557), ('mul', 3.351351737976074), ("'>'", 3.1648727655410767), ("'{'", 3.1316094398498535)]
+Top words for pretrained_UniXCoder neuron indx 385 [('ioctl', 3.742922067642212), ('"@"', 3.0111939907073975), ('32', 2.944692850112915), ('404', 2.918607711791992), ('id', 2.9160717725753784)]
+Top words for pretrained_UniXCoder neuron indx 389 [('mime', 4.165226697921753), ('PIPE', 4.099800109863281), ('ioctl', 3.793412685394287), ('cost', 3.716599225997925), ('"#"', 3.5330810546875)]
+Top words for pretrained_UniXCoder neuron indx 7057 [('narrow', 3.5201404094696045), ('s', 3.1034513882228305), ('upper', 2.8664941787719727), ('":"', 2.865379969278971), ('prepare', 2.7726664543151855)]
+Top words for pretrained_UniXCoder neuron indx 403 [('dim', 4.807897090911865), ('narrow', 4.230928301811218), ('ndim', 3.8464104334513345), ('decoded', 3.7750250101089478), ('tensor', 3.748294322192669)]
+Top words for pretrained_UniXCoder neuron indx 405 [('dtype', 5.153402000665665), ('attrib', 4.906413555145264), ('lang', 4.755621767044067), ('eq', 4.71274995803833), ('dim', 4.665924549102783)]
+Top words for pretrained_UniXCoder neuron indx 9623 [('from_buffer', 3.650318145751953), ('".log"', 3.2135621309280396), ('exp', 3.1888580322265625), ('KeyError', 3.029347538948059), ('".conf"', 2.9825408458709717)]
+Top words for pretrained_UniXCoder neuron indx 407 [('over', 2.6893086433410645), ('seek', 2.6085493564605713), ('update', 2.5604960918426514), ('exceptions', 2.5410640239715576), ('Sequence', 2.507441520690918)]
+Top words for pretrained_UniXCoder neuron indx 409 [('20000', 4.242159366607666), ('gamma', 3.815474589665731), ('seq', 3.7921018600463867), ('pow', 3.6873037815093994), ('unicode', 3.463446855545044)]
+Top words for pretrained_UniXCoder neuron indx 410 [('suggestions', 4.006358941396077), ('argv', 3.8191661834716797), ('enumerate', 3.6757103072272406), ('arg', 3.6098434925079346), ('429', 3.5681233406066895)]
+Top words for pretrained_UniXCoder neuron indx 412 [("'.'", 3.869875509163429), ('math', 3.3875834147135415), ('settings', 3.0738188198634555), ('fid', 3.0651760697364807), ('tensor', 2.9833361744880675)]
+Top words for pretrained_UniXCoder neuron indx 422 [('uniform', 3.6639415567571465), ('random', 3.4363076190153756), ('history', 3.3280975818634033), ('brightness', 3.3204386234283447), ('loads', 3.304152548313141)]
+Top words for pretrained_UniXCoder neuron indx 427 [('unicode', 4.24982213973999), ('Multiply', 3.949373960494995), ('"-"', 3.664064884185791), ('form', 3.404662079281277), ('tag', 3.2139261960983276)]
+Top words for pretrained_UniXCoder neuron indx 428 [('sort', 3.974620819091797), ('upper', 3.913252353668213), ('json', 3.793971210718155), ('Exception', 3.735424280166626), ('";"', 3.6303723454475403)]
+Top words for pretrained_UniXCoder neuron indx 430 [('tag', 3.5301519632339478), ('inplace', 3.3488868474960327), ('429', 3.2917191982269287), ('group', 3.213838577270508), ('ord', 3.209174156188965)]
+Top words for pretrained_UniXCoder neuron indx 435 [('"("', 2.9940425554911294), ('RED', 2.745225667953491), ('NotImplementedError', 2.7407350540161133), ('256', 2.720491783959525), ('split', 2.7019302468550834)]
+Top words for pretrained_UniXCoder neuron indx 437 [("']'", 3.7760818004608154), ('34', 3.4674019813537598), ("';'", 3.081554889678955), ('224', 3.0804035663604736), ('preferences', 2.973325022061666)]
+Top words for pretrained_UniXCoder neuron indx 438 [('resize', 3.474096953868866), ('padding', 3.3574788490931193), ('symbols', 2.9811431169509888), ('ceil', 2.9562902450561523), ('__class__', 2.8663954734802246)]
+Top words for pretrained_UniXCoder neuron indx 439 [('uniform', 4.0654590996828945), ('ceil', 3.5995571613311768), ('Tensor', 3.4865287939707437), ('stdin', 3.4136937856674194), ('"|"', 3.332685708999634)]
+Top words for pretrained_UniXCoder neuron indx 442 [('ndarray', 6.162329316139221), ('fid', 4.515233039855957), ('pred', 3.8655744791030884), ('center', 3.3767641385396323), ('Timeout', 3.2573301792144775)]
+Top words for pretrained_UniXCoder neuron indx 443 [('content', 4.889696677525838), ('dim', 4.889329433441162), ('communicate', 4.774673938751221), ('suffix', 4.453184127807617), ('border', 4.439852237701416)]
+Top words for pretrained_UniXCoder neuron indx 5563 [('365', 4.109040260314941), ('tzinfo', 4.098837852478027), ('days', 3.6461148262023926), ('exit', 3.636913776397705), ('float64', 3.2995500564575195)]
+Top words for pretrained_UniXCoder neuron indx 9661 [("'[{}]'", 3.6049628257751465), ("'sha1'", 3.477811813354492), ('flatten', 3.416813611984253), ('expanduser', 3.353605031967163), ("'application/json;pk=BCpkADawqM1cc6wmJQC2tvoXZt4mrB7bFfi6zGt9QnOzprPZcGLE9OMGJwspQwKfuFYuCjAAJ53JdjI8zGFx1ll4rxhYJ255AXH1BQ10rnm34weknpfG-sippyQ'", 3.2323899269104004)]
+Top words for pretrained_UniXCoder neuron indx 444 [('41', 4.456468105316162), ('fh', 3.928438901901245), ('31', 3.9178823232650757), ('mul', 3.693012237548828), ('11', 3.6327502131462097)]
+Top words for pretrained_UniXCoder neuron indx 446 [('flush', 4.749900579452515), ('cost', 4.727824926376343), ('img', 4.1887846579918495), ('29', 4.118236064910889), ('update', 4.092601299285889)]
+Top words for pretrained_UniXCoder neuron indx 448 [('scale', 3.0014642647334506), ("'mac'", 2.70404589176178), ("'opaque'", 2.676809072494507), ('"$"', 2.6653318405151367), ("'Memory'", 2.6530683040618896)]
+Top words for pretrained_UniXCoder neuron indx 9248 [('AFFINE', 4.290862083435059), ("'\\\\\\\\d'", 3.522198438644409), ('"<HTTP>"', 3.325160503387451), ("'/rnn/'", 3.284766912460327), ("'/MultiRNNCell/'", 3.1977646350860596)]
+Top words for pretrained_UniXCoder neuron indx 9667 [("'selections'", 3.9520206451416016), ('Timeout', 3.753875970840454), ("'ConversationParameters'", 3.5004470348358154), ("'%'", 3.458880662918091), ('FLIP_TOP_BOTTOM', 3.37583327293396)]
+Top words for pretrained_UniXCoder neuron indx 456 [('part', 3.352033495903015), ('inplace', 3.243595242500305), ("'%'", 3.0623955726623535), ("'}'", 3.0441313982009888), ('gels', 2.9905905723571777)]
+Top words for pretrained_UniXCoder neuron indx 9677 [("'https://api.vimeo.com/channels/{channel_id}/videos?access_token={access_token}'", 3.0838189125061035), ("r'youtube\\\\.com/watch/([^/?]+)'", 3.070575475692749), ("'Processing...'", 3.0517218112945557), ("r'youtube\\\\.com/v/([^/?]+)'", 3.0293102264404297), ("r'youtube\\\\.com/embed/([^/?]+)'", 2.9051289558410645)]
+Top words for pretrained_UniXCoder neuron indx 1488 [('streams', 6.0229045152664185), ('borders', 4.281418323516846), ('stride', 4.19845978418986), ('contiguous', 4.013766765594482), ('ndim', 3.746249516805013)]
+Top words for pretrained_UniXCoder neuron indx 464 [('terminated', 3.355722188949585), ('gui', 3.197101354598999), ('shape', 3.1926506996154784), ('tile', 3.189859390258789), ('Iterable', 3.080536127090454)]
+Top words for pretrained_UniXCoder neuron indx 466 [('RED', 4.169792175292969), ('saturation', 3.8879274129867554), ('activation', 3.7880001068115234), ('borders', 3.7245733737945557), ('fill', 3.645437558492025)]
+Top words for pretrained_UniXCoder neuron indx 467 [('stdin', 3.9325486421585083), ('getattr', 3.8165547053019204), ('tmp', 3.7277692556381226), ('dom', 3.6879265308380127), ('d', 3.5820287749880837)]
+Top words for pretrained_UniXCoder neuron indx 9684 [("'--playlists'", 3.583845376968384), ("'0{}b'", 3.529698133468628), ('365', 3.15519380569458), ("'{}{}'", 3.1171414852142334), ("'--playlist'", 3.071104049682617)]
+Top words for pretrained_UniXCoder neuron indx 7123 [('exit', 3.9265248775482178), ('over', 3.532046318054199), ('Iterable', 3.3674697875976562), ('write', 3.2800526221593223), ('padding', 3.0995756864547728)]
+Top words for pretrained_UniXCoder neuron indx 468 [('fill', 3.1852725744247437), ('127', 3.161970376968384), ('192', 2.977018117904663), ('attr', 2.9680051803588867), ('tar', 2.855587124824524)]
+Top words for pretrained_UniXCoder neuron indx 472 [('PIPE', 3.1038787364959717), ('reshape', 3.0630362033843994), ('xmaps', 3.0077911615371704), ('mimetype', 2.9655017058054605), ('copy', 2.8462689876556397)]
+Top words for pretrained_UniXCoder neuron indx 474 [('terminated', 4.261670112609863), ('enumerate', 3.9384802447424994), ('children', 3.9035462737083435), ('flatten', 3.8763368129730225), ('NotImplementedError', 3.6953160762786865)]
+Top words for pretrained_UniXCoder neuron indx 9691 [("'kwargs'", 3.309898614883423), ('"%s"', 3.013791799545288), ("'('", 3.005988597869873), ('timedelta', 2.758927822113037), ('0xAC00', 2.754495859146118)]
+Top words for pretrained_UniXCoder neuron indx 3035 [('xpath', 4.308838415145874), ('getattr', 3.0357380708058677), ('outfile', 2.8800243139266968), ('stdin', 2.813499331474304), ('md5', 2.797706584135691)]
+Top words for pretrained_UniXCoder neuron indx 478 [('colors', 3.5483715534210205), ('pow', 3.025294065475464), ('90', 3.0015640258789062), ('preferences', 2.7885019540786744), ('saturation', 2.7790130972862244)]
+Top words for pretrained_UniXCoder neuron indx 479 [('tensor', 5.169668036699295), ('34', 4.46561861038208), ('seq', 4.160400748252869), ('FloatTensor', 3.857481002807617), ('120', 3.750267744064331)]
+Top words for pretrained_UniXCoder neuron indx 485 [('Request', 4.167548418045044), ('resize', 3.93624085187912), ('encode', 3.897897640864054), ('crop', 3.742160201072693), ('urlencode', 3.6250340938568115)]
+Top words for pretrained_UniXCoder neuron indx 489 [('StringIO', 3.997464179992676), ('outfile', 3.7606961727142334), ('moves', 3.711693048477173), ('550', 3.253286361694336), ('55296', 3.1525490283966064)]
+Top words for pretrained_UniXCoder neuron indx 492 [('engines', 3.677746295928955), ('pad', 3.5306652784347534), ('mime', 3.4887598752975464), ('60', 3.3829263959612166), ('29', 3.128281593322754)]
+Top words for pretrained_UniXCoder neuron indx 493 [('seek', 4.679187774658203), ('children', 4.266414105892181), ('override', 4.169693040847778), ('inplace', 4.034791946411133), ('isinstance', 3.946179469426473)]
+Top words for pretrained_UniXCoder neuron indx 494 [('127', 4.846124172210693), ('round', 4.36845383644104), ('requests', 3.9952317476272583), ('RED', 3.8042399883270264), ('307', 3.79267954826355)]
+Top words for pretrained_UniXCoder neuron indx 498 [('lc', 4.113260269165039), ('32768', 3.9419667720794678), ('borders', 3.5216524600982666), ('moves', 3.4048070907592773), ("'>='", 3.286632537841797)]
+Top words for pretrained_UniXCoder neuron indx 500 [('parse', 3.1579036712646484), ('extract', 3.100872278213501), ('202', 3.0632168650627136), ('Color', 2.947042465209961), ('getattr', 2.849240700403849)]
+Top words for pretrained_UniXCoder neuron indx 508 [('800', 4.782932281494141), ('Color', 4.46118688583374), ('narrow', 4.292840957641602), ('contiguous', 4.231294631958008), ('224', 3.9515318870544434)]
+Top words for pretrained_UniXCoder neuron indx 510 [('mimetype', 4.604710022608439), ('mime', 4.175060033798218), ('"_"', 3.938850522041321), ('":"', 3.935119072596232), ('"/"', 3.905104970932007)]
+Creating control dataset for pretrained_UniXCoder POS tagging task
+
+pretrained_UniXCoder_control_task Selectivity (Diff. between true task and probing task performance):  0.7068493150684931
+~~~~~~~~~~~~~~~~~~~~~~~Summary~~~~~~~~~~~~~~~~~~~~~~~
+Experimental results for pretrained_UniXCoder:
+Baseline score (probing using all neurons, 768 each, of all layers 13) :{'__OVERALL__': 0.9616438356164384, 'NAME': 0.9342465753424658, 'STRING': 1.0, 'NUMBER': 0.9863013698630136, 'KEYWORD': 0.9260273972602739}
+
+The accuracy when only using the intercept:{'__OVERALL__': 0.25, 'NAME': 1.0, 'STRING': 0.0, 'NUMBER': 0.0, 'KEYWORD': 0.0}
+
+Independent layerwise probing:
+Layer 0:{'__OVERALL__': 0.9178082191780822, 'NAME': 1.0, 'STRING': 1.0, 'NUMBER': 0.9972602739726028, 'KEYWORD': 0.673972602739726}
+Layer 1:{'__OVERALL__': 0.9294520547945205, 'NAME': 0.8493150684931506, 'STRING': 1.0, 'NUMBER': 0.9863013698630136, 'KEYWORD': 0.8821917808219178}
+Layer 2:{'__OVERALL__': 0.9356164383561644, 'NAME': 0.8273972602739726, 'STRING': 1.0, 'NUMBER': 0.9753424657534246, 'KEYWORD': 0.9397260273972603}
+Layer 3:{'__OVERALL__': 0.95, 'NAME': 0.8301369863013699, 'STRING': 1.0, 'NUMBER': 0.9780821917808219, 'KEYWORD': 0.9917808219178083}
+Layer 4:{'__OVERALL__': 0.952054794520548, 'NAME': 0.8547945205479452, 'STRING': 1.0, 'NUMBER': 0.9726027397260274, 'KEYWORD': 0.9808219178082191}
+Layer 5:{'__OVERALL__': 0.9534246575342465, 'NAME': 0.8547945205479452, 'STRING': 1.0, 'NUMBER': 0.9863013698630136, 'KEYWORD': 0.9726027397260274}
+Layer 6:{'__OVERALL__': 0.9547945205479452, 'NAME': 0.8465753424657534, 'STRING': 1.0, 'NUMBER': 0.9835616438356164, 'KEYWORD': 0.989041095890411}
+Layer 7:{'__OVERALL__': 0.9506849315068493, 'NAME': 0.8575342465753425, 'STRING': 1.0, 'NUMBER': 0.9863013698630136, 'KEYWORD': 0.958904109589041}
+Layer 8:{'__OVERALL__': 0.773972602739726, 'NAME': 0.8136986301369863, 'STRING': 1.0, 'NUMBER': 0.9643835616438357, 'KEYWORD': 0.3178082191780822}
+Layer 9:{'__OVERALL__': 0.7698630136986301, 'NAME': 0.8027397260273973, 'STRING': 1.0, 'NUMBER': 0.9616438356164384, 'KEYWORD': 0.3150684931506849}
+Layer 10:{'__OVERALL__': 0.773972602739726, 'NAME': 0.7917808219178082, 'STRING': 1.0, 'NUMBER': 0.989041095890411, 'KEYWORD': 0.3150684931506849}
+Layer 11:{'__OVERALL__': 0.7753424657534247, 'NAME': 0.8054794520547945, 'STRING': 1.0, 'NUMBER': 0.9808219178082191, 'KEYWORD': 0.3150684931506849}
+Layer 12:{'__OVERALL__': 0.9034246575342466, 'NAME': 0.8136986301369863, 'STRING': 0.9972602739726028, 'NUMBER': 0.958904109589041, 'KEYWORD': 0.8438356164383561}
+
+'Incremental-layerwise probing:
+Layer [0]:{'__OVERALL__': 0.9164383561643835, 'NAME': 1.0, 'STRING': 1.0, 'NUMBER': 0.9972602739726028, 'KEYWORD': 0.6684931506849315}
+Layer [0, 1]:{'__OVERALL__': 0.9678082191780822, 'NAME': 0.9780821917808219, 'STRING': 1.0, 'NUMBER': 0.9945205479452055, 'KEYWORD': 0.8986301369863013}
+Layer [0, 1, 2]:{'__OVERALL__': 0.9438356164383561, 'NAME': 0.8821917808219178, 'STRING': 1.0, 'NUMBER': 0.9945205479452055, 'KEYWORD': 0.8986301369863013}
+Layer [0, 1, 2, 3]:{'__OVERALL__': 0.9719178082191781, 'NAME': 1.0, 'STRING': 1.0, 'NUMBER': 0.9945205479452055, 'KEYWORD': 0.8931506849315068}
+Layer [0, 1, 2, 3, 4]:{'__OVERALL__': 0.9664383561643836, 'NAME': 0.9945205479452055, 'STRING': 1.0, 'NUMBER': 0.9945205479452055, 'KEYWORD': 0.8767123287671232}
+Layer [0, 1, 2, 3, 4, 5]:{'__OVERALL__': 0.9705479452054795, 'NAME': 0.9917808219178083, 'STRING': 1.0, 'NUMBER': 0.9945205479452055, 'KEYWORD': 0.8958904109589041}
+Layer [0, 1, 2, 3, 4, 5, 6]:{'__OVERALL__': 0.9684931506849315, 'NAME': 0.9780821917808219, 'STRING': 1.0, 'NUMBER': 0.9945205479452055, 'KEYWORD': 0.9013698630136986}
+Layer [0, 1, 2, 3, 4, 5, 6, 7]:{'__OVERALL__': 0.9712328767123287, 'NAME': 0.9753424657534246, 'STRING': 1.0, 'NUMBER': 0.9972602739726028, 'KEYWORD': 0.9123287671232877}
+Layer [0, 1, 2, 3, 4, 5, 6, 7, 8]:{'__OVERALL__': 0.958904109589041, 'NAME': 0.9260273972602739, 'STRING': 1.0, 'NUMBER': 0.9972602739726028, 'KEYWORD': 0.9123287671232877}
+Layer [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]:{'__OVERALL__': 0.9698630136986301, 'NAME': 0.9315068493150684, 'STRING': 1.0, 'NUMBER': 0.9917808219178083, 'KEYWORD': 0.9561643835616438}
+Layer [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:{'__OVERALL__': 0.9684931506849315, 'NAME': 0.9287671232876712, 'STRING': 1.0, 'NUMBER': 0.989041095890411, 'KEYWORD': 0.9561643835616438}
+Layer [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]:{'__OVERALL__': 0.9623287671232876, 'NAME': 0.9123287671232877, 'STRING': 1.0, 'NUMBER': 0.9945205479452055, 'KEYWORD': 0.9424657534246575}
+Layer [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]:{'__OVERALL__': 0.9698630136986301, 'NAME': 0.9397260273972603, 'STRING': 1.0, 'NUMBER': 0.9917808219178083, 'KEYWORD': 0.947945205479452}
+
+select minimum layers:(LS+CC+LCA)
+Layerwise (LS):To lose 0.03*100% accuracy based on all layers, keep the layers from 0 to 1
+The number of neurons to keep is 1536
+The accuracy is:{'__OVERALL__': 0.9678082191780822, 'NAME': 0.9780821917808219, 'STRING': 1.0, 'NUMBER': 0.9945205479452055, 'KEYWORD': 0.8986301369863013}
+Percentage reduction (neurons):0.8461538461538461
+
+Clustering based on the layers above: 0 to 1:
+When no clustering:
+the probing result is {'__OVERALL__': 0.9582191780821918, 'NAME': 0.9424657534246575, 'STRING': 1.0, 'NUMBER': 0.9917808219178083, 'KEYWORD': 0.8986301369863013}
+To lose 0.01*100% of accuracy based on the model above:no-clustering
+The minimum number of neurons needed is 1497
+The accuracy of the minimum neuron set is {'__OVERALL__': 0.9623287671232876, 'NAME': 0.958904109589041, 'STRING': 1.0, 'NUMBER': 0.9917808219178083, 'KEYWORD': 0.8986301369863013}
+
+Clustering threshold:0.3
+The number of independent neurons:1048
+The number of clusters:1536
+The probing result (CC score) is :{'__OVERALL__': 0.9657534246575342, 'NAME': 0.9835616438356164, 'STRING': 1.0, 'NUMBER': 0.9945205479452055, 'KEYWORD': 0.8849315068493151}
+To lose 0.01*100% of accuracy based on the model above:clustering-0.3
+The minimum number of neurons needed is 998
+The accuracy of the minimum neuron set is {'__OVERALL__': 0.9623287671232876, 'NAME': 0.9726027397260274, 'STRING': 1.0, 'NUMBER': 0.9945205479452055, 'KEYWORD': 0.8821917808219178}
+
+Layerwise (LS):To lose 0.02*100% accuracy based on all layers, keep the layers from 0 to 1
+The number of neurons to keep is 1536
+The accuracy is:{'__OVERALL__': 0.9678082191780822, 'NAME': 0.9780821917808219, 'STRING': 1.0, 'NUMBER': 0.9945205479452055, 'KEYWORD': 0.8986301369863013}
+Percentage reduction (neurons):0.8461538461538461
+
+Clustering based on the layers above: 0 to 1:
+When no clustering:
+the probing result is {'__OVERALL__': 0.9582191780821918, 'NAME': 0.9424657534246575, 'STRING': 1.0, 'NUMBER': 0.9917808219178083, 'KEYWORD': 0.8986301369863013}
+To lose 0.01*100% of accuracy based on the model above:no-clustering
+The minimum number of neurons needed is 1497
+The accuracy of the minimum neuron set is {'__OVERALL__': 0.9623287671232876, 'NAME': 0.958904109589041, 'STRING': 1.0, 'NUMBER': 0.9917808219178083, 'KEYWORD': 0.8986301369863013}
+
+Clustering threshold:0.3
+The number of independent neurons:1048
+The number of clusters:1536
+The probing result (CC score) is :{'__OVERALL__': 0.9657534246575342, 'NAME': 0.9835616438356164, 'STRING': 1.0, 'NUMBER': 0.9945205479452055, 'KEYWORD': 0.8849315068493151}
+To lose 0.01*100% of accuracy based on the model above:clustering-0.3
+The minimum number of neurons needed is 998
+The accuracy of the minimum neuron set is {'__OVERALL__': 0.9623287671232876, 'NAME': 0.9726027397260274, 'STRING': 1.0, 'NUMBER': 0.9945205479452055, 'KEYWORD': 0.8821917808219178}
+
+Layerwise (LS):To lose 0.01*100% accuracy based on all layers, keep the layers from 0 to 1
+The number of neurons to keep is 1536
+The accuracy is:{'__OVERALL__': 0.9678082191780822, 'NAME': 0.9780821917808219, 'STRING': 1.0, 'NUMBER': 0.9945205479452055, 'KEYWORD': 0.8986301369863013}
+Percentage reduction (neurons):0.8461538461538461
+
+Clustering based on the layers above: 0 to 1:
+When no clustering:
+the probing result is {'__OVERALL__': 0.9582191780821918, 'NAME': 0.9424657534246575, 'STRING': 1.0, 'NUMBER': 0.9917808219178083, 'KEYWORD': 0.8986301369863013}
+To lose 0.01*100% of accuracy based on the model above:no-clustering
+The minimum number of neurons needed is 1497
+The accuracy of the minimum neuron set is {'__OVERALL__': 0.9623287671232876, 'NAME': 0.958904109589041, 'STRING': 1.0, 'NUMBER': 0.9917808219178083, 'KEYWORD': 0.8986301369863013}
+
+Clustering threshold:0.3
+The number of independent neurons:1048
+The number of clusters:1536
+The probing result (CC score) is :{'__OVERALL__': 0.9657534246575342, 'NAME': 0.9835616438356164, 'STRING': 1.0, 'NUMBER': 0.9945205479452055, 'KEYWORD': 0.8849315068493151}
+To lose 0.01*100% of accuracy based on the model above:clustering-0.3
+The minimum number of neurons needed is 998
+The accuracy of the minimum neuron set is {'__OVERALL__': 0.9623287671232876, 'NAME': 0.9726027397260274, 'STRING': 1.0, 'NUMBER': 0.9945205479452055, 'KEYWORD': 0.8821917808219178}
+
+The result of Layerwise (LS):
+Keep the layer from 0 to 1
+The best layer delta:0.03
+The best number of neurons:1536
+The best accuracy:0.9678082191780822
+The best percentage reduction: 0.8461538461538461
+
+The result of LS+CC+LCA
+Keep the layer from 0 to 1
+The best performance delta: 0.03,0.01
+The best clustering threshold:-1
+The best number of neurons:1497
+The best accuracy: 0.9623287671232876
+The best neuron percentage reduction: 0.8500600961538461
+
+probe independent neurons based on all layers with clustering (run_cc_all.py)
+When no clustering:
+The probing result (CC score) is :{'__OVERALL__': 0.963013698630137, 'NAME': 0.9095890410958904, 'STRING': 1.0, 'NUMBER': 0.9835616438356164, 'KEYWORD': 0.958904109589041}
+Clustering threshold:0.1
+The number of independent neurons:8325
+The number of clusters:9984
+The probing result (CC score) is :{'__OVERALL__': 0.9815068493150685, 'NAME': 0.9835616438356164, 'STRING': 1.0, 'NUMBER': 0.989041095890411, 'KEYWORD': 0.9534246575342465}
+Clustering threshold:0.2
+The number of independent neurons:6284
+The number of clusters:9984
+The probing result (CC score) is :{'__OVERALL__': 0.9643835616438357, 'NAME': 0.9808219178082191, 'STRING': 1.0, 'NUMBER': 0.9917808219178083, 'KEYWORD': 0.8849315068493151}
+Clustering threshold:0.3
+The number of independent neurons:4552
+The number of clusters:9984
+The probing result (CC score) is :{'__OVERALL__': 0.976027397260274, 'NAME': 0.9753424657534246, 'STRING': 1.0, 'NUMBER': 0.9917808219178083, 'KEYWORD': 0.936986301369863}
+Clustering threshold:0.4
+The number of independent neurons:3408
+The number of clusters:9984
+The probing result (CC score) is :{'__OVERALL__': 0.9767123287671233, 'NAME': 0.9753424657534246, 'STRING': 1.0, 'NUMBER': 0.9945205479452055, 'KEYWORD': 0.936986301369863}
+Clustering threshold:0.5
+The number of independent neurons:2529
+The number of clusters:9984
+The probing result (CC score) is :{'__OVERALL__': 0.9287671232876712, 'NAME': 0.9726027397260274, 'STRING': 1.0, 'NUMBER': 0.9945205479452055, 'KEYWORD': 0.7479452054794521}
+Clustering threshold:0.6
+The number of independent neurons:1769
+The number of clusters:9984
+The probing result (CC score) is :{'__OVERALL__': 0.913013698630137, 'NAME': 0.9452054794520548, 'STRING': 1.0, 'NUMBER': 0.9972602739726028, 'KEYWORD': 0.7095890410958904}
+Clustering threshold:0.7
+The number of independent neurons:1157
+The number of clusters:9984
+The probing result (CC score) is :{'__OVERALL__': 0.936986301369863, 'NAME': 0.8684931506849315, 'STRING': 1.0, 'NUMBER': 0.9671232876712329, 'KEYWORD': 0.9123287671232877}
+Clustering threshold:0.8
+The number of independent neurons:605
+The number of clusters:9984
+The probing result (CC score) is :{'__OVERALL__': 0.9431506849315069, 'NAME': 0.8410958904109589, 'STRING': 1.0, 'NUMBER': 0.9863013698630136, 'KEYWORD': 0.9452054794520548}
+Clustering threshold:0.9
+The number of independent neurons:93
+The number of clusters:9984
+The probing result (CC score) is :{'__OVERALL__': 0.8212328767123288, 'NAME': 0.6684931506849315, 'STRING': 0.9506849315068493, 'NUMBER': 0.9123287671232877, 'KEYWORD': 0.7534246575342466}
+The result of CC:
+The best clustering threshold is :0.1
+The best number of neurons:8325
+The best accuracy is: 0.9815068493150685
+Percentage reduction (neurons):0.16616586538461542
+
+probe independent neurons based on all layers without clustering (run_max_features.py)
+The result of LCA:
+Based on all layers: from 0 to 12, no clustering, to lose only 0.01*100% of accuracy:
+The minimum number of neurons needed is 1497
+The performance is {'model_name': 'pretrained_UniXCoder', 'best_l1': 0, 'best_l2': 0.01, 'scores': {'__OVERALL__': 0.9602739726027397, 'NAME': 0.9808219178082191, 'STRING': 1.0, 'NUMBER': 0.9945205479452055, 'KEYWORD': 0.8657534246575342}, 'intercept': {'__OVERALL__': 0.25, 'NAME': 1.0, 'STRING': 0.0, 'NUMBER': 0.0, 'KEYWORD': 0.0}}
+Percentage reduction (neurons):0.8500600961538461
+
+Probeless:
+The result of probeless:
+Based on all layers, from 0 to 12, no clustering, to lose only 0.01*100% of accuracy:
+The minimum number of neurons needed is :279
+The performance is :{'model_name': 'pretrained_UniXCoder', 'best_l1': 0, 'best_l2': 0.01, 'scores': {'__OVERALL__': 0.9719178082191781, 'NAME': 0.9205479452054794, 'STRING': 1.0, 'NUMBER': 0.9863013698630136, 'KEYWORD': 0.9808219178082191}, 'intercept': {'__OVERALL__': 0.25, 'NAME': 1.0, 'STRING': 0.0, 'NUMBER': 0.0, 'KEYWORD': 0.0}}
+Percentage reduction (neurons):0.9720552884615384
+----------------------------------------------------------------
