@@ -255,7 +255,8 @@ def select_minimum_layers(incremental_layerwise_result,target,all_layer_result):
     for idx, this_accuracy in enumerate(list(incremental_layerwise_result.values())):
         if this_accuracy['scores']["__OVERALL__"] > all_layer_result*(1-target):
             return idx
-    assert 1==0, "something is wrong"
+    # If none of the incremental score is larger than the target score, then just use the result of all layers
+    return idx
 
 
 def select_independent_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
