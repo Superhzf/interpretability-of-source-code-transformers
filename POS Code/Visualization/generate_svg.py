@@ -27,4 +27,4 @@ for this_model in MODEL_NAMES:
         this_top_neuron = TOP_NEURONS[this_model]
         this_idx = IDX[this_model]
         this_class_name = CLASSES[this_model]
-        merge_svg(this_top_neuron,this_idx,this_class_name,this_model,'result_all/CodeBERT/NAME')
+        merge_svg(this_top_neuron,this_idx,this_class_name,this_model,'result_all/NewCodeBERT/NUMBER')
