@@ -82,8 +82,8 @@ def visualization(tokens, activations,top_neurons,idx,model_name):
 def main():
     mkdir_if_needed(f"./{FOLDER_NAME}/")
     parser = argparse.ArgumentParser()
-    args = parser.parse_args()
     parser.add_argument("--language", default='python')
+    args = parser.parse_args()
     language = args.language
     if language == 'python':
         activation_folder = "activations"
