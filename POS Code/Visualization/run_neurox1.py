@@ -19,38 +19,18 @@ ACTIVATION_NAMES = {'pretrained_BERT':'bert_activations_train.json',
                     'finetuned_clonedet_CodeBERT':'codebert_clonedet_activations1_train.json',
                     'finetuned_clonedet_GraphCodeBERT':'graphcodebert_clonedet_activations1_train.json'}
 # This set of idx is for pretrained, finetuned defdet, and finetuned clonedet models
-# bert_idx = [9926, 13847, 51879,577]
-# bert_top_neurons = [8870]
-# bert_class = "NUMBER"
 
-# bert_idx = [947,971,17075, 606,696]
-# bert_top_neurons = [456]
-# bert_class = "NAME"
-
-# bert_idx = [20827,4045,4040,46592,4147]
-# bert_top_neurons = [7735]
-# bert_class = "STRING"
-
-# bert_idx = [987,25973,25984,27262,39]
-# bert_top_neurons = [2470]
-# bert_class = "MIXTURE_KEYWORD_NAME"
-# raise True class finally
-
-bert_idx = []
-bert_top_neurons = []
-bert_class =''
-
-# codebert_idx=[35372,7095,10836,11027,12701]
-# codebert_top_neurons = [1069]
-# codebert_class = "MIXTURE_NUMBER_NAME"
+codebert_idx=[5409,27486,30012,8454,6620]
+codebert_top_neurons = [8418]
+codebert_class = "MIXTURE_NUMBER_NAME"
 
 # codebert_idx=[3678,8679,11604,25972,25813]
 # codebert_top_neurons = [1652]
 # codebert_class = "NUMBER_KEYWORD"
 
-codebert_idx=[9825,26035,15920,19489, 6142]
-codebert_top_neurons = [4205]
-codebert_class = "NAME"
+# codebert_idx=[9825,26035,15920,19489, 6142]
+# codebert_top_neurons = [4205]
+# codebert_class = "NAME"
 
 
 # 1069
@@ -60,12 +40,9 @@ graphcodebert_top_neurons=[]
 graphcodebert_class=[]
 
 
-IDX = {"pretrained_BERT":bert_idx,
-       "pretrained_CodeBERT":codebert_idx,"pretrained_GraphCodeBERT":graphcodebert_idx,}
-TOP_NEURONS = {"pretrained_BERT":bert_top_neurons,
-               "pretrained_CodeBERT":codebert_top_neurons,"pretrained_GraphCodeBERT":graphcodebert_top_neurons,}
-CLASSES = {"pretrained_BERT":bert_class,
-           "pretrained_CodeBERT":codebert_class,"pretrained_GraphCodeBERT":graphcodebert_class,}
+IDX = {"pretrained_CodeBERT":codebert_idx,"pretrained_GraphCodeBERT":graphcodebert_idx,}
+TOP_NEURONS = {"pretrained_CodeBERT":codebert_top_neurons,"pretrained_GraphCodeBERT":graphcodebert_top_neurons,}
+CLASSES = {"pretrained_CodeBERT":codebert_class,"pretrained_GraphCodeBERT":graphcodebert_class,}
 
 FOLDER_NAME ="result_all"
 
@@ -74,16 +51,16 @@ def mkdir_if_needed(dir_name):
         os.makedirs(dir_name)
 
 
-def load_extracted_activations(activation_file_name):
+def load_extracted_activations(activation_file_name,activation_folder):
     #Load activations from json files
-    activations, num_layers = data_loader.load_activations(f"../Experiments/activations/{activation_file_name}")
+    activations, num_layers = data_loader.load_activations(f"../Experiments/{activation_folder}/{activation_file_name}")
     return activations
 
 
-def load_tokens(activations):
+def load_tokens(activations,src_folder):
     #Load tokens and sanity checks for parallelism between tokens, labels and activations
-    tokens = data_loader.load_data('../Experiments/src_files/codetest2_train_unique.in',
-                                   '../Experiments/src_files/codetest2_train_unique.label',
+    tokens = data_loader.load_data(f'../Experiments/{src_folder}/codetest2_train_unique.in',
+                                   f'../Experiments/{src_folder}/codetest2_train_unique.label',
                                    activations,
                                    512 # max_sent_length
                                   )
@@ -104,13 +81,22 @@ def visualization(tokens, activations,top_neurons,idx,model_name):
 
 def main():
     mkdir_if_needed(f"./{FOLDER_NAME}/")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--language", default='python')
+    language = args.language
+    if language == 'python':
+        activation_folder = "activations"
+        src_folder = "src_files"
+    elif language == 'java':
+        activation_folder = "activations_java"
+        src_folder = "src_java"
 
     for this_model in MODEL_NAMES:
         if this_model in ['pretrained_CodeBERT']:
             print(f"Generate svg files for {this_model}")
             this_activation_name = ACTIVATION_NAMES[this_model]
-            activations = load_extracted_activations(this_activation_name)
-            tokens, _ =  load_tokens(activations)
+            activations = load_extracted_activations(this_activation_name,activation_folder)
+            tokens, _ =  load_tokens(activations,src_folder)
             print(f"Length of {this_model} activations:",len(activations))
             print(f"Length of {this_model} tokens source:",len(tokens["source"]))
             _, num_neurons = activations[0].shape
