@@ -128,7 +128,8 @@ def main():
     else:
         print("Getting activations from json files. If you need to extract them, run with --extract=True \n" )
 
-    torch.manual_seed(0)
+    # torch.manual_seed(0)
+    torch.manual_seed(1)
     this_model = args.this_model
     
 
