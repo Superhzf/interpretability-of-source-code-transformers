@@ -113,7 +113,7 @@ def param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2):
             this_probe = linear_probe.train_logistic_regression_probe(X_train, y_train,
                                                                     lambda_l1=this_l1,
                                                                     lambda_l2=this_l2,
-                                                                    num_epochs=10,
+                                                                    num_epochs=20,
                                                                     batch_size=12288)
             this_score = linear_probe.evaluate_probe(this_probe, X_valid, y_valid, idx_to_class=idx2label)
             if this_score['__OVERALL__'] > best_score:
