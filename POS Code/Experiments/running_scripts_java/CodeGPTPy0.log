@@ -8,7 +8,7 @@ length of source dictionary:  27864
 length of target dictionary:  54
 581365
 Total instances: 581365
-['TIME_VAR', 'gradientLon', 'got', 'addField', '"jpg"', 'crcSwitch', 'stagV', 'AD_BANDMAP', 'MaybeDelaySubscriptionOtherPublisher', 'convertCoverageType', 'ProtocolCode', 'TVPMeasurementMetadataType', 'involvedWorkerQueues', 'encryptedLength', 'plural', 'Completable', 'construct', 'moreToRead', 'getKeySerializedId', 'aJa']
+['enumTypedefs', 'scale_x', 'pkcode19Doff', 'getLevel2', 'FORECAST', 'factNameList', '"showGridAction"', 'getSideData', 'ParallelFlowable', 'endResponse', 'lon2max', 'MaybeDelay', '6356.7523142', 'drawG', 'isNotEmpty', 'e2', '"gitlab"', 'meter', 'getContentEncoding', 'glts20']
 Number of samples:  581365
 Stats: Labels with their frequencies in the final set
 IDENT 200579
@@ -91,7 +91,7 @@ length of source dictionary:  17130
 length of target dictionary:  53
 286205
 Total instances: 286205
-['getMethodInfo', 'QueryService', 'getResourceAdaptorDescriptorFactory', 'getKey', 'getThrowableProxy', 'addField', 'PART_NODE_COUNT', 'MemberAddress', 'JsonValue', 'concreteSbbLocalObjectClass', 'ratdf', 'setSheetConfigMap', 'cublasZgemv', 'subsets', 'userQuery', 'isStructType', 'EventProcessingCallbacks', 'cellAddr', 'compressor', 'getColumnStyle']
+['cublasSgemmNative', 'polar', 'FLOAT', 'isRegistered', 'entry', '"handlebars.js"', 'cublasDsbmvNative', '"NEWS"', 'wQuery', 'RuntimeDefinition', '"{regionName}/{key}"', 'E164_STRING', 'maxRowNum', 'profileManagementAbstractClass', 'ADDRESS_PRESENTATION_UNDEFINED', 'profileClass', 'findChildRowsMappingFromShiftMap', 'm_fXPos', 'FLOAT_EXPONENT_BIAS', 'privateKey']
 Number of samples:  286205
 Stats: Labels with their frequencies in the final set
 IDENT 101919
@@ -158,7 +158,7 @@ length of source dictionary:  19270
 length of target dictionary:  51
 277357
 Total instances: 277357
-['got', 'isSolutionInitialized', 'dic', 'dropLatch3', 'trimResults', 'theSuccessor', 'getKey', 'getLocals', 'refLonLat', 'chunksCollection', 'getPropertyNonNull', 'isBefore', 'JsonValue', 'v0_dot_v1', '"Updating"', 'FileItemStream', 'valueSelectorConfig_', '"^^"', 'WebServlet', '"%s/webwxuploadmedia?f=json"']
+['issueAppRequestToken', 'CompositeConfiguration', 'SearchType', 'FLOAT', 'getProjectType', 'entry', 'convertedField', 'PART_THREAD', 'timeZone', 'hMacFromResponse', '6.209305', 'srcDir', 'scopeFactories', 'LENGTH_SHORT', 'getAccountByType', 'writeEnd', '5.878007', 'addUndoableMove', 'bytesProduced', 'TraceeContextProviderMethod']
 Number of samples:  277357
 Stats: Labels with their frequencies in the final set
 IDENT 96372
