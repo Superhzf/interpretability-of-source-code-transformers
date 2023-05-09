@@ -117,11 +117,10 @@ def param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2):
                                                                     batch_size=128)
             this_score = linear_probe.evaluate_probe(this_probe, X_valid, y_valid, idx_to_class=idx2label)
             if this_score['__OVERALL__'] > best_score:
-                best_score_valid = this_score['__OVERALL__']
+                best_score = this_score['__OVERALL__']
                 best_l1 = this_l1
                 best_l2 = this_l2
                 best_probe = this_probe
-                # best_score_train = linear_probe.evaluate_probe(this_probe, X_train, y_train, idx_to_class=idx2label)
         return best_l1,best_l2,best_probe
 
 
