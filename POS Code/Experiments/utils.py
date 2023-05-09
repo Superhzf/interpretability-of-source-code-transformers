@@ -106,7 +106,7 @@ def load_tokens(activations,FILES_IN,FILES_LABEL):
 def param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2):
     best_l1 = None
     best_l2 = None
-    best_score = -float('inf')
+    best_score_valid = -float('inf')
     best_probe = None
     for this_l1 in l1:
         for this_l2 in l2:
@@ -116,7 +116,7 @@ def param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2):
                                                                     num_epochs=10,
                                                                     batch_size=128)
             this_score = linear_probe.evaluate_probe(this_probe, X_valid, y_valid, idx_to_class=idx2label)
-            if this_score['__OVERALL__'] > best_score:
+            if this_score['__OVERALL__'] > best_score_valid:
                 best_score_valid = this_score['__OVERALL__']
                 best_l1 = this_l1
                 best_l2 = this_l2
