@@ -111,19 +111,18 @@ def param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2):
     for this_l1 in l1:
         for this_l2 in l2:
             this_probe = linear_probe.train_logistic_regression_probe(X_train, y_train,
-                                                                    X_valid, y_valid,
                                                                     lambda_l1=this_l1,
                                                                     lambda_l2=this_l2,
                                                                     num_epochs=10,
-                                                                    batch_size=128,patience=2)
+                                                                    batch_size=128)
             this_score = linear_probe.evaluate_probe(this_probe, X_valid, y_valid, idx_to_class=idx2label)
             if this_score['__OVERALL__'] > best_score:
                 best_score_valid = this_score['__OVERALL__']
                 best_l1 = this_l1
                 best_l2 = this_l2
                 best_probe = this_probe
-                best_score_train = linear_probe.evaluate_probe(this_probe, X_train, y_train, idx_to_class=idx2label)
-        return best_l1,best_l2,best_probe, best_score_valid, best_score_train
+                # best_score_train = linear_probe.evaluate_probe(this_probe, X_train, y_train, idx_to_class=idx2label)
+        return best_l1,best_l2,best_probe
 
 
 def get_mappings(tokens,activations):
@@ -141,9 +140,7 @@ def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2labe
     results = {}
     scores,predictions = linear_probe.evaluate_probe(best_probe, X_test, y_test,idx_to_class=idx2label,
                                                     return_predictions=True,source_tokens=src_tokens_test)
-    print("Best training score:",best_score_train)
-    print("Best valid score:",best_score_valid)
-    print("Best testing score:",scores)
+
     results['model_name'] = model_name
     results['best_l1'] = best_l1
     results['best_l2'] = best_l2
