@@ -117,11 +117,12 @@ def param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2):
                                                                     batch_size=128)
             this_score = linear_probe.evaluate_probe(this_probe, X_valid, y_valid, idx_to_class=idx2label)
             if this_score['__OVERALL__'] > best_score:
-                best_score = this_score['__OVERALL__']
+                best_score_valid = this_score['__OVERALL__']
                 best_l1 = this_l1
                 best_l2 = this_l2
                 best_probe = this_probe
-        return best_l1,best_l2,best_probe
+                best_score_train = linear_probe.evaluate_probe(this_probe, X_train, y_train, idx_to_class=idx2label)
+        return best_l1,best_l2,best_probe,best_score_valid,best_score_train
 
 
 def get_mappings(tokens,activations):
@@ -134,11 +135,14 @@ def get_mappings(tokens,activations):
 
 def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,src_tokens_test,model_name,sample_idx_test=None,need_cm=False):
     #Train the linear probes (logistic regression) - POS(code) tagging
-    best_l1,best_l2,best_probe=param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2)
+    best_l1,best_l2,best_probe,best_score_valid,best_score_train=param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2)
     #Get scores of probes
     results = {}
     scores,predictions = linear_probe.evaluate_probe(best_probe, X_test, y_test,idx_to_class=idx2label,
                                                     return_predictions=True,source_tokens=src_tokens_test)
+    print("Best score train:",best_score_train)
+    print("Best score valid:",best_score_valid)
+    print("Best score test:",scores)
     results['model_name'] = model_name
     results['best_l1'] = best_l1
     results['best_l2'] = best_l2
