@@ -17,11 +17,11 @@ import torch
 from transformers import AutoTokenizer, AutoModel
 import json
 
-# l1 = [0,1e-5,1e-4,1e-3,1e-2,0.1]
-# l2 = [0,1e-5,1e-4,1e-3,1e-2,0.1]
+l1 = [0,1e-5,1e-4,1e-3,1e-2,0.1]
+l2 = [0,1e-5,1e-4,1e-3,1e-2,0.1]
 
-l1 = [1e-4,1e-3,1e-2,0.1]
-l2 = [1e-4,1e-3,1e-2,0.1]
+# l1 = [1e-4,1e-3,1e-2,0.1]
+# l2 = [1e-4,1e-3,1e-2,0.1]
 
 
 def getOverlap(s1, s2):
