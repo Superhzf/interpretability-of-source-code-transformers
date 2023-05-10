@@ -2,7 +2,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=8
 #SBATCH --mem=72G
-#SBATCH --time=10:00:00
+#SBATCH --time=6:00:00
 #SBATCH --partition=speedy
 
 module load ml-gpu
