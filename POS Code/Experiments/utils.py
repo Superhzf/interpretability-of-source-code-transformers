@@ -17,11 +17,11 @@ import torch
 from transformers import AutoTokenizer, AutoModel
 import json
 
-l1 = [0,1e-5,1e-4,1e-3,1e-2,0.1]
-l2 = [0,1e-5,1e-4,1e-3,1e-2,0.1]
+# l1 = [0,1e-5,1e-4,1e-3,1e-2,0.1]
+# l2 = [0,1e-5,1e-4,1e-3,1e-2,0.1]
 
-# l1 = [1e-4,1e-3,1e-2,0.1]
-# l2 = [1e-4,1e-3,1e-2,0.1]
+l1 = [1e-4,1e-3,1e-2,0.1]
+l2 = [1e-4,1e-3,1e-2,0.1]
 
 
 def getOverlap(s1, s2):
@@ -120,7 +120,7 @@ def param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2):
                                                                         lambda_l1=this_l1,
                                                                         lambda_l2=this_l2,
                                                                         num_epochs=100,
-                                                                        batch_size=128,patience=2)
+                                                                        batch_size=1024,patience=2)
                 this_score = linear_probe.evaluate_probe(this_probe, X_valid, y_valid, idx_to_class=idx2label)
                 if this_score['__OVERALL__'] > best_score_valid:
                     best_score_valid = this_score['__OVERALL__']
