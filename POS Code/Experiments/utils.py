@@ -112,22 +112,24 @@ def param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2):
     best_l2 = None
     best_score_valid = -float('inf')
     best_probe = None
+    best_epoch = None
     for i in range(5):
         for this_l1 in l1:
             for this_l2 in l2:
-                this_probe = linear_probe.train_logistic_regression_probe(X_train, y_train,
+                this_probe, this_epoch = linear_probe.train_logistic_regression_probe(X_train, y_train,
                                                                         X_valid, y_valid,
                                                                         lambda_l1=this_l1,
                                                                         lambda_l2=this_l2,
                                                                         num_epochs=100,
-                                                                        batch_size=16384,patience=2)
+                                                                        batch_size=128,patience=2)
                 this_score = linear_probe.evaluate_probe(this_probe, X_valid, y_valid, idx_to_class=idx2label)
                 if this_score['__OVERALL__'] > best_score_valid:
                     best_score_valid = this_score['__OVERALL__']
                     best_l1 = this_l1
                     best_l2 = this_l2
                     best_probe = this_probe
-    return best_l1,best_l2,best_probe, best_score_valid
+                    best_epoch = this_epoch
+    return best_l1,best_l2,best_probe, best_score_valid, best_epoch
 
 
 def get_mappings(tokens,activations):
@@ -140,15 +142,16 @@ def get_mappings(tokens,activations):
 
 def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,src_tokens_test,model_name,sample_idx_test=None,need_cm=False):
     #Train the linear probes (logistic regression) - POS(code) tagging
-    best_l1,best_l2,best_probe,best_score_valid=param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2)
+    best_l1,best_l2,best_probe,best_score_valid, best_epoch=param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2)
     best_score_train = linear_probe.evaluate_probe(best_probe, X_train, y_train, idx_to_class=idx2label)
     #Get scores of probes
     results = {}
     scores,predictions = linear_probe.evaluate_probe(best_probe, X_test, y_test,idx_to_class=idx2label,
                                                     return_predictions=True,source_tokens=src_tokens_test)
-    print("Best training score:",best_score_train)
-    print("Best validation score:",best_score_valid)
-    print("Best test score:",scores)
+    print(f"Stops at epoch {best_epoch}, \
+            Best training score:{best_score_train["__OVERALL__"]},\
+            validation score:{best_score_valid},\
+            test score:{scores["__OVERALL__"]}")
     results['model_name'] = model_name
     results['best_l1'] = best_l1
     results['best_l2'] = best_l2
