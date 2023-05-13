@@ -148,7 +148,7 @@ def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2labe
     results = {}
     scores,predictions = linear_probe.evaluate_probe(best_probe, X_test, y_test,idx_to_class=idx2label,
                                                     return_predictions=True,source_tokens=src_tokens_test)
-    print(f"Stops at epoch {best_epoch},Best training score:{best_score_train["__OVERALL__"]},validation score:{best_score_valid},test score:{scores["__OVERALL__"]}")
+    print(f'Stops at epoch {best_epoch},Best training score:{best_score_train["__OVERALL__"]},validation score:{best_score_valid},test score:{scores["__OVERALL__"]}')
     results['model_name'] = model_name
     results['best_l1'] = best_l1
     results['best_l2'] = best_l2
