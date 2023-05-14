@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH --nodes=1
 #SBATCH --ntasks=8
-#SBATCH --mem=80G
-#SBATCH --time=3:00:00
+#SBATCH --mem=72G
+#SBATCH --time=24:00:00
 #SBATCH --partition=speedy
 
 
