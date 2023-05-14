@@ -1,0 +1,1118 @@
+Getting activations from json files. If you need to extract them, run with --extract=True 
+
+Anayzing pretrained_CodeBERTa
+Loading json activations from ./activations_java/codeberta_activations_train.json...
+54804 7.0
+Number of tokens:  581365
+length of source dictionary:  27864
+length of target dictionary:  54
+581365
+Total instances: 581365
+['createWithTime', 'axes', 'addActionsToMenu', 'setModel', 'awaitStopReplay', '"netty4"', 'picturePaneListeners', 'filepos', 'tmpTable', 'xyw', 'replayChannelUri', '"Float32"', 'radialData', 'YYREDUCE', 'Configurable_getPropertyMetaData__SWIG_1', 'gp', 'ndx0', 'myParentDC', 'getValues', 'syncCreateNumWhenNotWarmup']
+Number of samples:  581365
+Stats: Labels with their frequencies in the final set
+IDENT 200579
+LPAR 65171
+RPAR 65117
+DOT 41662
+SEMI 35609
+KEYWORD 30970
+COMMA 22960
+EQUAL 19409
+LBRACE 12572
+MODIFIER 11352
+TYPE 10021
+NUMBER 9258
+LESS 6532
+GREATER 6282
+RBRACE 5689
+STRING 5161
+LSQB 4654
+RSQB 4654
+EQEQUAL 3521
+COLON 2449
+NOTEQUAL 2396
+PLUS 2335
+CONDITIONOP 1725
+MINUS 1605
+BOOL 1475
+AND 1286
+NOT 1180
+STAR 1065
+DOUBLEPLUS 925
+OR 887
+SLASH 509
+PLUSEUQAL 361
+GREATEREQUAL 332
+AMPER 276
+UNKNOWN 255
+AT 222
+LESSEQUAL 162
+LEFTSHIFT 142
+VBAR 133
+ELLIPSIS 90
+RARROW 86
+PERCENT 59
+DOUBLEMINUS 54
+MINEQUAL 49
+STAREQUAL 34
+AMPEREQUAL 29
+VBAREQUAL 27
+DOUBLECOLON 17
+CIRCUMFLEX 9
+SLASHEQUAL 8
+TILDE 5
+CIRCUMFLEXEQUAL 3
+RIGHTSHIFTEQUAL 1
+LEFTSHIFTEQUAL 1
+pretrained_CodeBERTa distribution after trauncating:
+{1: 0.750273994636064, 2: 0.11584455807377095, 0: 0.042462622642991533, 3: 0.037483962430005124, 4: 0.034629929565610965, 5: 0.019304932651557374}
+{1: 200579, 2: 30970, 0: 11352, 3: 10021, 4: 9258, 5: 5161}
+{'MODIFIER': 0, 'IDENT': 1, 'KEYWORD': 2, 'TYPE': 3, 'NUMBER': 4, 'STRING': 5}
+Loading json activations from ./activations_java/codeberta_activations_valid.json...
+27402 7.0
+Skipping line:  13171
+A: 2, S: 3, T: 2
+Skipping line:  13172
+A: 22, S: 23, T: 22
+Skipping line:  13173
+A: 2, S: 3, T: 2
+Skipping line:  13174
+A: 2, S: 3, T: 2
+Skipping line:  13175
+A: 2, S: 3, T: 2
+Deleting line 13171: 2 activations, 3 source, 2 target
+Deleting line 13171: 22 activations, 23 source, 22 target
+Deleting line 13171: 2 activations, 3 source, 2 target
+Deleting line 13171: 2 activations, 3 source, 2 target
+Deleting line 13171: 2 activations, 3 source, 2 target
+Number of tokens:  286205
+length of source dictionary:  17130
+length of target dictionary:  53
+286205
+Total instances: 286205
+['determinant', 'profileAttribute', 'isErrorAndSendException', 'tabIndex', '"GemFire:service=Region,name=\\"/%s\\",type=Distributed"', 'SldCloseEvent', 'TAB_STYLE_INVISIBLE', 'sID', 'setModel', 'BOTTOM_OR_LEFT', '"this();"', 'ENTITY_STOPPING', 'NaN', 'Grib1Gds', 'doPrivileged', 'SimpleUnit', 'getRuntimeManager', 'rowIndex', 'Dimension', 'profileTableName']
+Number of samples:  286205
+Stats: Labels with their frequencies in the final set
+IDENT 101919
+LPAR 31461
+RPAR 31305
+DOT 22877
+SEMI 16401
+KEYWORD 14080
+COMMA 12568
+EQUAL 8810
+MODIFIER 7252
+LBRACE 6886
+TYPE 4248
+RBRACE 3791
+NUMBER 3054
+STRING 2427
+LESS 2420
+GREATER 2288
+LSQB 1563
+RSQB 1563
+PLUS 1518
+EQEQUAL 1420
+STAR 1215
+NOTEQUAL 1054
+MINUS 910
+COLON 847
+NOT 669
+BOOL 594
+AND 583
+OR 396
+CONDITIONOP 385
+SLASH 335
+DOUBLEPLUS 310
+PLUSEUQAL 232
+AT 124
+GREATEREQUAL 116
+LESSEQUAL 97
+RARROW 85
+DOUBLECOLON 66
+SLASHEQUAL 59
+AMPER 49
+UNKNOWN 44
+VBAR 41
+PERCENT 32
+ELLIPSIS 28
+STAREQUAL 23
+LEFTSHIFT 21
+DOUBLEMINUS 17
+MINEQUAL 9
+PERCENTEQUAL 4
+CIRCUMFLEX 3
+LEFTSHIFTEQUAL 2
+RIGHTSHIFTEQUAL 2
+VBAREQUAL 1
+AMPEREQUAL 1
+pretrained_CodeBERTa distribution after trauncating:
+{1: 0.7664235223341855, 2: 0.10588058354639795, 0: 0.0545345164686419, 3: 0.03194465333132802, 4: 0.022965859527748534, 5: 0.018250864791698}
+{1: 101919, 2: 14080, 0: 7252, 3: 4248, 4: 3054, 5: 2427}
+{'MODIFIER': 0, 'IDENT': 1, 'KEYWORD': 2, 'TYPE': 3, 'NUMBER': 4, 'STRING': 5}
+Loading json activations from ./activations_java/codeberta_activations_test.json...
+27402 7.0
+Number of tokens:  277357
+length of source dictionary:  19270
+length of target dictionary:  51
+277357
+Total instances: 277357
+['propertyAccessor', 'BEGIN_ARRAY', 'msgType', 'platform', 'XMLStreamException', '"=\\""', '51.460930', 'getHandlerPC', 'firstEncodedOffset', 'OPEN', 'insertInfo', 'rightPillarSelectorConfig', 'isOk', '6.043521', 'BIG_ENDIAN', 'route_text_color', '5.263199', 'STANDALONE', 'REFERER', 'CodecRegistry']
+Number of samples:  277357
+Stats: Labels with their frequencies in the final set
+IDENT 96372
+LPAR 32419
+RPAR 32205
+DOT 22316
+SEMI 14928
+KEYWORD 14440
+COMMA 11622
+LBRACE 7469
+MODIFIER 7232
+EQUAL 7193
+GREATER 3472
+LESS 3454
+RBRACE 3325
+NUMBER 3260
+STRING 2768
+TYPE 2626
+EQEQUAL 1378
+LSQB 1342
+RSQB 1342
+NOTEQUAL 1173
+COLON 1107
+PLUS 702
+AND 641
+CONDITIONOP 602
+NOT 598
+OR 536
+BOOL 447
+DOUBLEPLUS 389
+MINUS 318
+RARROW 286
+AT 204
+STAR 170
+UNKNOWN 151
+LESSEQUAL 115
+ELLIPSIS 99
+PLUSEUQAL 98
+GREATEREQUAL 97
+AMPER 94
+LEFTSHIFT 68
+VBAR 63
+DOUBLECOLON 56
+SLASH 46
+VBAREQUAL 44
+PERCENT 25
+MINEQUAL 24
+DOUBLEMINUS 22
+TILDE 6
+CIRCUMFLEX 4
+LEFTSHIFTEQUAL 4
+AMPEREQUAL 3
+STAREQUAL 2
+pretrained_CodeBERTa distribution after trauncating:
+{1: 0.760643419785632, 2: 0.11397180697406431, 0: 0.057080616900029996, 4: 0.02573047719774582, 5: 0.021847227264834488, 3: 0.020726451877693414}
+{1: 96372, 2: 14440, 0: 7232, 4: 3260, 5: 2768, 3: 2626}
+{'MODIFIER': 0, 'IDENT': 1, 'KEYWORD': 2, 'TYPE': 3, 'NUMBER': 4, 'STRING': 5}
+label:0, the number of unique tokens:8
+The unique labels are:['default', 'final', 'private', 'protected', 'public', 'static', 'synchronized', 'volatile']
+label:2, the number of unique tokens:24
+The unique labels are:['assert', 'break', 'case', 'catch', 'class', 'continue', 'do', 'else', 'extends', 'finally', 'for', 'if', 'implements', 'instanceof', 'new', 'return', 'super', 'switch', 'this', 'throw', 'throws', 'try', 'void', 'while']
+label:1, the number of unique tokens:24652
+label:3, the number of unique tokens:8
+The unique labels are:['boolean', 'byte', 'char', 'double', 'float', 'int', 'long', 'short']
+label:4, the number of unique tokens:449
+The unique labels are:['.001', '.00138888888888888', '.00833333333333333', '.01', '.0416666666666667', '.093104', '.166666666666667', '.25', '.5', '.50', '.75', '.75f', '.933', '.99', '0', '0.', '0.0', '0.0001', '0.001', '0.01', '0.0174532925', '0.01f', '0.081819191', '0.093104', '0.0F', '0.0f', '0.1', '0.25', '0.3048', '0.375', '0.495', '0.5', '0.99E30', '0L', '0l', '1', '1.', '1.0', '1.00', '1.0027379093', '1.0e-1', '1.0e-12', '1.0e-15', '1.0e-3', '1.0e-6', '1.0e-8', '1.0e-9', '1.0e12', '1.0e15', '1.0e3', '1.0e6', '1.0e9', '1.0f', '1.5', '1.853', '1.e-11', '1.e-5', '1.f', '10', '10.0', '100', '1000', '1000.', '1000.0', '1000.d', '10000', '10000.', '10000.0', '10000.00', '100000', '1000000', '10000000', '100000000', '1000000000', '1000L', '1001', '101', '1013', '102', '1024', '103', '104', '105', '1050', '106', '107', '108', '109', '10957.5', '1097.0', '10e6', '11', '110', '111', '111.0', '111.26', '1111111111.0', '113', '114', '115', '116', '117', '118', '118.4', '119', '12', '12.0', '120', '1200', '1203', '1207', '123', '12312', '124', '124.0', '125', '126', '127', '127.0', '128', '128.0', '129', '13', '130', '131', '131072.0', '132', '133', '134', '135', '136', '137', '138', '139', '14', '140', '141', '1440', '15', '15.0', '150.0', '15000', '151.0', '159', '16', '16.', '16.0', '160', '161', '163', '16384', '16384.0', '165', '166', '17', '170', '172', '1720994.50', '173', '174', '175', '175.0', '176', '177', '18', '180', '180.0', '180.0F', '181', '182', '183', '185', '1852', '1852.', '1852f', '186', '187', '189', '19', '1900000', '192', '192.0', '193', '194', '195', '199', '1L', '1_000', '1_000_000_000', '1e-10', '1e-6', '2', '2.', '2.0', '2.0F', '2.5F', '20', '20.', '200', '2000', '20000', '200000', '2000000', '2009', '203', '204', '2048', '205', '206', '209', '21', '21.0', '210', '2100', '218', '219', '22', '22.8756F', '224', '23', '230', '235', '237', '238', '239.5089F', '24', '24.0', '240', '241', '24110.54841', '24110.548410', '2432.0', '24500', '2451545.0', '246', '248.0', '25', '25.', '250', '25000000', '254', '254.0', '255', '255.0F', '256', '256.0', '26', '26.685132668190793', '27', '27.0', '270', '270.0', '279', '28', '29', '29.5', '2951.8', '298.257223563', '299', '3', '3.', '3.0', '3.14159', '3.1415926', '30', '30.0', '30.6001', '300', '300.0', '3000', '302', '3072.0', '31', '315.0', '32', '32.0', '320', '32769', '33', '330.0f', '34', '35', '35.0', '355.0F', '36', '360', '360.', '360.0', '360.0f', '3600', '361.0f', '3610', '3622', '365.0', '365.25', '36525.', '36525.0', '366', '37', '37.4', '38', '39', '4', '4.', '4.0', '40', '400', '4000', '40000', '400000', '404', '4096', '4096.0', '41', '41.0', '42', '424', '43', '44', '45', '45.5', '450', '452', '455.0', '46', '460', '47', '48', '480', '49', '5', '5.0', '5.098097e-6', '5.09e-10', '5.0F', '5.0e-3', '5.0f', '50', '50.0f', '5000', '5000.0', '50000', '5000000', '50002', '51', '512', '512.0', '52', '53', '54', '55', '55.0', '550', '56', '57', '577.8000000000001', '58', '59', '6', '6.', '6.0', '6.2E-6', '6.2e-6', '60', '60.', '60.0', '600', '60000', '6000000', '61', '6144', '62', '6288', '63', '6306', '6324', '6356.7523142', '6367470.0', '6370', '6371200.0', '6371229.0', '6372.640112', '6378.1370', '64', '64.0', '640', '65', '65504', '65535', '65536', '65536.0', '66', '6648', '6652', '6772', '68', '68153.0F', '6912', '7', '70', '700', '70000', '71', '72', '7408', '75', '7574', '77.0', '78', '79', '8', '8.0', '80', '80.0', '80.21802662821469', '800', '8000', '8080', '81', '8192', '82', '86400', '86400.', '86400.0', '86400.00', '8640184.812866', '8640184.8128660', '86636.55536790872', '87', '89', '9', '9.81', '90', '90.0', '90.0F', '91', '94', '95.', '96', '96.0', '98', '9866', '99', '999', '999.0', '999.99', '999.99f', '9999', '9999.0f']
+label:5, the number of unique tokens:2608
+label:1, the number of unique tokens:15621
+label:2, the number of unique tokens:20
+The unique labels are:['assert', 'case', 'catch', 'class', 'continue', 'else', 'extends', 'for', 'if', 'instanceof', 'new', 'return', 'super', 'switch', 'this', 'throw', 'throws', 'try', 'void', 'while']
+label:4, the number of unique tokens:111
+The unique labels are:['.5', '.5f', '0', '0.0', '0.01f', '0.0f', '0.1', '0.25', '0.3', '0.5', '0.5f', '0L', '1', '1.', '1.0', '1.0f', '1.4f', '1.5', '10', '10.', '10.0', '100', '100.', '100.0', '100.0f', '1000', '1000.', '10000', '1000L', '1000f', '1024', '1024L', '1099', '11', '12', '120.0f', '12201', '127', '128', '13', '14', '15', '16', '180.0', '180.0f', '1900', '192', '198', '199', '1L', '1f', '2', '2.', '2.0', '2.0f', '20', '200', '201', '202', '203', '21', '24', '254', '255', '28', '2f', '3', '3.', '3.0', '30', '300', '300000', '31', '32', '32768.0f', '350', '360', '360.0f', '3600', '37', '38', '39', '399', '4', '4.0', '40', '400', '4096', '499', '5', '5.', '50', '500', '512', '512.0f', '55', '599', '5f', '6', '60', '64', '65536.0f', '7', '7.', '8', '80', '8270', '8f', '9', '90', '9999']
+label:3, the number of unique tokens:8
+The unique labels are:['boolean', 'byte', 'char', 'double', 'float', 'int', 'long', 'short']
+label:0, the number of unique tokens:7
+The unique labels are:['default', 'final', 'private', 'protected', 'public', 'static', 'synchronized']
+label:5, the number of unique tokens:1295
+label:1, the number of unique tokens:16442
+label:5, the number of unique tokens:1596
+label:2, the number of unique tokens:21
+The unique labels are:['assert', 'break', 'case', 'catch', 'class', 'continue', 'else', 'extends', 'for', 'if', 'instanceof', 'new', 'return', 'super', 'switch', 'this', 'throw', 'throws', 'try', 'void', 'while']
+label:0, the number of unique tokens:7
+The unique labels are:['default', 'final', 'private', 'protected', 'public', 'static', 'synchronized']
+label:3, the number of unique tokens:8
+The unique labels are:['boolean', 'byte', 'char', 'double', 'float', 'int', 'long', 'short']
+label:4, the number of unique tokens:1064
+The unique labels are:['.001', '.01', '0', '0.0', '0.001', '0.0d', '0.0f', '0.1', '0.40', '0.5', '0D', '0L', '0f', '1', '1.0', '1.0f', '10', '100', '1000', '10000', '100000', '10000000.0', '1000L', '1000d', '102', '1024', '11', '110', '11000', '116', '12', '1200', '125', '128', '13', '14', '149', '15', '1579', '16', '1600', '162', '17', '18', '180', '19', '1L', '1_000_000d', '1f', '2', '2.0', '2.0f', '2.992192', '20', '200', '2000', '202', '203', '204', '21', '215', '22', '222', '23', '24', '2400', '25', '251', '255', '255.0', '256', '259', '26', '27', '28', '29', '299', '3', '3.078404', '3.306017', '3.350258', '3.355429', '3.363010', '3.370756', '3.371422', '3.371675', '3.373119', '3.377565', '3.380865', '3.381920', '3.406010', '3.420358', '3.426458', '3.448568', '3.519408', '3.528826', '3.538944', '3.545540', '3.556428', '3.562355', '3.582435', '3.586048', '3.589920', '3.590697', '3.640011', '3.657541', '3.693150', '3.753589', '3.768807', '3.775507', '3.785459', '3.789446', '3.790882', '3.824674', '3.837323', '3.859817', '3.874627', '3.886517', '3.887993', '3.919711', '3.921538', '3.928753', '3.935476', '3.959444', '3.966785', '3.980126', '3.987056', '30', '300', '302', '31', '32', '32600', '33', '333', '34', '35', '36', '4', '4.014192', '4.040278', '4.062695', '4.167273', '4.222024', '4.244665', '4.332372', '4.340371', '4.362889', '4.384498', '4.387858', '4.393420', '4.393899', '4.397519', '4.401744', '4.422241', '4.432594', '4.434043', '4.443222', '4.465859', '4.476857', '4.526970', '4.534364', '4.537175', '4.544128', '4.574917', '4.641470', '4.670006', '4.671392', '4.694952', '4.706865', '4.718609', '4.731148', '4.748593', '4.754141', '4.763576', '4.766441', '4.769536', '4.778101', '4.782196', '4.787077', '4.789316', '4.814349', '4.819916', '4.820426', '4.824689', '4.833136', '4.837352', '4.839025', '4.867381', '4.876084', '4.888757', '4.905760', '4.911727', '4.913135', '4.921044', '40', '400', '401', '403', '404', '42L', '443', '48', '4800', '493', '5', '5.006537', '5.012929', '5.013917', '5.035358', '5.036552', '5.044581', '5.068350', '5.077345', '5.100715', '5.128835', '5.131953', '5.162749', '5.200519', '5.222979', '5.236915', '5.238275', '5.263199', '5.295677', '5.337141', '5.349209', '5.417866', '5.444162', '5.465753', '5.485651', '5.513870', '5.527008', '5.530069', '5.551906', '5.553776', '5.559201', '5.635965', '5.642047', '5.647189', '5.648135', '5.652121', '5.657367', '5.676125', '5.680362', '5.681583', '5.688232', '5.688692', '5.693287', '5.696357', '5.698111', '5.698492', '5.699182', '5.709280', '5.716823', '5.720635', '5.721419', '5.725882', '5.725894', '5.735358', '5.738869', '5.740229', '5.740733', '5.744784', '5.745984', '5.746100', '5.748154', '5.749096', '5.755501', '5.756042', '5.757832', '5.764155', '5.764667', '5.766246', '5.767215', '5.767694', '5.771871', '5.772074', '5.772426', '5.773253', '5.773869', '5.774877', '5.777226', '5.782796', '5.792512', '5.793118', '5.793639', '5.793751', '5.797835', '5.801836', '5.804669', '5.805567', '5.806251', '5.806889', '5.811779', '5.816153', '5.819013', '5.823016', '5.824630', '5.828523', '5.829746', '5.829870', '5.831393', '5.834189', '5.839765', '5.842990', '5.847521', '5.849655', '5.864401', '5.869790', '5.878007', '5.880831', '5.881900', '5.885185', '5.888615', '5.893022', '5.897435', '5.898569', '5.899490', '5.900865', '5.906599', '5.908300', '5.911786', '5.913405', '5.914113', '5.920645', '5.936460', '5.950530', '5.955096', '5.956064', '5.956302', '5.957302', '5.958617', '5.958986', '5.960760', '5.963244', '5.967899', '5.971765', '5.973847', '5.978057', '5.978653', '5.981246', '5.981279', '5.982748', '5.985312', '5.987021', '5.991943', '5.992548', '5.994722', '5.994732', '5.995037', '5.999214', '50', '50.747530', '50.748480', '50.749850', '50.750500', '50.752280', '50.752290', '50.752340', '50.753150', '50.753490', '50.754260', '50.754740', '50.755630', '50.759260', '50.760300', '50.760600', '50.761710', '50.762600', '50.763910', '50.764700', '50.766310', '50.766680', '50.768200', '50.776130', '50.780210', '50.782620', '50.795590', '50.798500', '50.801100', '50.805360', '50.807300', '50.811900', '50.817740', '50.828600', '50.833840', '50.843360', '50.844520', '50.846910', '50.848330', '50.853070', '50.858810', '50.872330', '50.873480', '50.881000', '50.883900', '50.890810', '50.898360', '50.899480', '50.911900', '50.913440', '50.921280', '50.924710', '50.927620', '50.932770', '50.937290', '50.937550', '50.949700', '50.952350', '50.953140', '50.953960', '50.957300', '50.958630', '50.961980', '50.977780', '50.979820', '50.980980', '50.982380', '50.984990', '50.986120', '50.986220', '50.986330', '50.991420', '5000', '50_000', '51.000650', '51.003290', '51.006870', '51.013410', '51.013490', '51.019230', '51.022760', '51.028300', '51.028400', '51.031850', '51.032630', '51.035840', '51.038650', '51.045220', '51.048620', '51.049870', '51.050310', '51.059610', '51.062840', '51.063380', '51.064960', '51.072700', '51.079130', '51.081580', '51.086550', '51.093300', '51.094000', '51.095330', '51.098960', '51.099130', '51.103860', '51.105140', '51.113010', '51.113350', '51.122140', '51.129230', '51.131760', '51.134040', '51.141710', '51.144960', '51.145950', '51.148330', '51.151610', '51.153870', '51.156060', '51.156390', '51.159410', '51.160270', '51.160620', '51.160980', '51.163820', '51.164330', '51.172980', '51.174430', '51.175170', '51.177410', '51.177420', '51.180770', '51.181820', '51.181920', '51.182170', '51.184150', '51.184450', '51.186290', '51.188700', '51.192040', '51.196140', '51.197170', '51.197330', '51.204970', '51.205960', '51.207840', '51.207940', '51.208930', '51.210640', '51.211540', '51.212940', '51.214080', '51.215900', '51.218870', '51.219510', '51.219600', '51.220720', '51.221280', '51.222620', '51.226510', '51.230400', '51.238330', '51.238510', '51.241140', '51.241690', '51.241800', '51.241840', '51.243300', '51.244010', '51.253670', '51.254070', '51.254300', '51.256900', '51.258520', '51.259320', '51.260140', '51.260170', '51.263750', '51.264200', '51.266830', '51.268460', '51.272180', '51.272700', '51.273140', '51.275680', '51.279270', '51.279340', '51.280780', '51.281710', '51.283730', '51.283980', '51.284680', '51.285180', '51.285800', '51.286890', '51.287200', '51.288170', '51.290120', '51.291810', '51.292470', '51.292800', '51.296920', '51.298030', '51.298150', '51.301560', '51.302930', '51.303600', '51.305400', '51.307320', '51.313700', '51.315530', '51.319290', '51.330150', '51.332350', '51.335370', '51.338740', '51.339460', '51.345240', '51.347100', '51.351350', '51.352500', '51.354730', '51.358150', '51.360290', '51.361120', '51.362140', '51.371040', '51.374530', '51.376730', '51.376910', '51.386690', '51.390690', '51.392500', '51.392960', '51.398490', '51.401730', '51.403570', '51.405610', '51.405990', '51.406110', '51.410180', '51.411590', '51.412170', '51.412180', '51.412410', '51.419020', '51.419980', '51.420220', '51.423890', '51.425000', '51.426100', '51.429810', '51.430300', '51.431030', '51.431820', '51.433650', '51.434580', '51.435690', '51.441650', '51.442420', '51.449040', '51.449230', '51.449370', '51.450180', '51.454840', '51.460930', '51.464440', '51.465730', '51.466400', '51.468230', '51.468360', '51.468740', '51.469860', '51.472940', '51.475260', '51.477740', '51.478910', '51.479270', '51.480330', '51.481530', '51.484140', '51.487300', '51.491900', '51.492330', '51.496690', '51.497100', '51.501420', '51.514740', '51.529990', '51.540980', '51.551970', '51.569100', '51.583300', '51.595190', '51.607500', '51.633610', '51.640020', '51.649660', '51.658390', '51.675530', '51.679120', '51.692680', '51.708290', '51.710750', '51.719400', '51.741260', '51.742220', '51.748090', '51.763650', '51.770670', '51.775330', '51.785320', '51.788780', '51.799710', '51.812950', '51.818410', '51.824140', '51.825030', '51.827930', '51.830600', '51.831870', '51.833400', '51.833680', '51.835980', '51.837860', '51.839840', '51.841750', '51.843710', '51.843820', '51.846090', '51.846210', '51.847750', '51.850110', '51.850840', '51.854130', '51.856420', '51.859470', '51.861680', '51.862380', '51.862940', '51.863420', '51.864800', '51.865150', '51.865260', '51.865820', '51.866150', '51.869980', '51.871180', '51.871940', '51.879320', '51.880520', '51.881310', '51.887170', '51.888300', '51.889760', '51.891150', '51.893160', '51.895290', '51.898070', '51.902040', '51.911890', '51.913460', '51.914160', '51.927210', '51.941300', '51.956260', '51.962000', '51.973060', '51.996170', '51.997460', '52.031280', '52.042880', '52.042950', '52.053740', '52.067700', '52.071730', '52.080660', '52.085770', '52.091730', '52.095340', '52.115770', '52.117620', '52.128170', '52.155000', '52.167660', '52.173560', '52.178760', '52.222750', '52.223250', '52.232510', '52.242930', '52.258330', '52.275610', '52.290960', '52.313690', '52.322630', '52.336640', '52.350400', '52.373840', '52.401460', '52.405650', '52.425000', '52.431210', '52.438530', '52.446690', '52.453520', '52.462600', '52.462670', '52.466990', '52.467220', '52.467790', '52.472590', '52.488160', '52.521860', '52.545530', '52.549380', '52.556040', '52.559800', '52.559890', '52.566190', '52.590200', '52.615370', '52.627770', '52.629710', '52.636000', '52.636860', '52.641040', '52.642560', '52.643210', '52.644010', '52.644690', '52.649540', '52.650240', '52.809300', '52.836830', '52.849050', '52.939860', '52.998620', '53.006720', '53.012480', '53.081510', '53.114170', '53.122690', '53.135820', '53.146470', '53.160900', '53.173520', '53.180790', '53.189670', '53.197160', '53.214900', '53.305060', '53.327040', '53.329430', '53.334020', '53.334480', '53.334810', '53.350730', '53.395700', '53.439730', '53.459810', '53.468070', '53.471530', '53.496490', '53.595190', '53.697610', '53.728270', '54.017860', '56', '58', '5_000_000', '6', '6.004115', '6.012523', '6.019548', '6.019818', '6.020674', '6.021010', '6.021710', '6.023293', '6.027036', '6.027451', '6.028167', '6.028512', '6.029409', '6.029834', '6.029923', '6.033234', '6.034777', '6.036744', '6.037929', '6.038192', '6.043521', '6.046624', '6.051754', '6.053880', '6.055450', '6.057291', '6.058370', '6.061897', '6.064946', '6.071111', '6.076000', '6.076394', '6.077269', '6.079201', '6.079903', '6.080364', '6.083935', '6.088301', '6.088709', '6.089250', '6.091101', '6.093797', '6.095011', '6.097096', '6.0f', '6.100394', '6.105466', '6.110479', '6.116557', '6.119859', '6.120054', '6.123231', '6.126709', '6.126782', '6.131365', '6.132643', '6.138796', '6.147601', '6.147734', '6.156020', '6.156526', '6.158656', '6.164554', '6.165647', '6.167472', '6.169398', '6.172269', '6.177047', '6.177587', '6.178861', '6.179351', '6.181319', '6.182602', '6.183035', '6.185248', '6.194644', '6.195852', '6.201415', '6.209305', '6.209491', '6.214704', '6.215800', '6.218449', '6.226676', '6.229287', '6.229390', '6.262056', '6.279113', '6.295315', '6.305316', '6.346470', '6.346609', '6.358099', '6.360515', '6.366882', '6.380975', '6.390379', '6.392888', '6.405673', '6.407495', '6.411140', '6.411849', '6.414744', '6.425879', '6.431991', '6.449746', '6.472824', '6.501361', '6.505764', '6.544918', '6.561388', '6.586462', '6.594984', '6.634806', '6.681975', '6.687630', '6.690838', '6.690935', '6.693687', '6.699834', '6.700986', '6.708209', '6.714943', '6.716428', '6.717383', '6.722265', '6.722739', '6.727875', '6.730256', '6.736213', '6.743337', '6.748639', '6.750768', '6.752295', '6.753652', '6.753837', '6.754072', '6.758851', '6.763181', '6.768056', '6.769131', '6.771269', '6.774899', '6.784084', '6.790685', '6.799999', '6.801478', '6.814332', '6.821311', '6.821407', '6.828034', '6.830667', '6.835752', '6.854735', '6.856230', '6.856423', '6.858844', '6.872838', '6.875589', '6.884791', '6.891564', '6.907694', '6.910407', '6.912264', '6.917659', '6.918933', '6.934755', '6.941407', '6.953173', '6.953745', '6.954578', '6.959788', '6.975400', '6.975989', '6.988624', '6.989159', '6.995954', '6.996353', '6.997671', '60', '600', '63', '64', '65248', '65296', '65305', '65313', '65338', '65345', '65370', '7', '7.006850', '7.013247', '7.024209', '7.026832', '7.029410', '7.031167', '7.037172', '7.039568', '7.044544', '7.050009', '7.050042', '7.057560', '7.059279', '7.060917', '7.061512', '7.063317', '7.068264', '7.074470', '7.074867', '7.075066', '7.090966', '7.095411', '7.111054', '7.182299', '7.183969', '7.188436', '7.189534', '7.192205', '7.194018', '7.202251', '7.205009', '7.205696', '7.211986', '7.212982', '7.215711', '7.220022', '7.220429', '7.220549', '7.230455', '71', '774', '8', '80', '800', '8001', '8003', '8080', '86399', '9', '900']
+Write tokens in the training set to files:
+Write tokens in the validation set to files:
+Write tokens in the testing set to files:
+
+The distribution of classes in training after removing repeated tokens between training and tesing:
+Counter({0: 2000, 1: 2000, 3: 2000, 4: 2000, 2: 2000, 5: 2000})
+{'MODIFIER': 0, 'IDENT': 1, 'KEYWORD': 2, 'TYPE': 3, 'NUMBER': 4, 'STRING': 5}
+The distribution of classes in valid:
+Counter({1: 270, 2: 270, 4: 270, 3: 270, 5: 270, 0: 270})
+{'MODIFIER': 0, 'IDENT': 1, 'KEYWORD': 2, 'TYPE': 3, 'NUMBER': 4, 'STRING': 5}
+The distribution of classes in testing:
+Counter({1: 340, 2: 340, 5: 340, 3: 340, 0: 340, 4: 340})
+{'MODIFIER': 0, 'IDENT': 1, 'KEYWORD': 2, 'TYPE': 3, 'NUMBER': 4, 'STRING': 5}
+All-layer probing
+Stops at epoch 5,Best training score:0.9986666666666667,validation score:0.9141975308641975,test score:0.8691176470588236
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Independent-layerwise probing
+Stops at epoch 26,Best training score:0.9975833333333334,validation score:0.8783950617283951,test score:0.8681372549019608
+Stops at epoch 25,Best training score:0.998,validation score:0.8858024691358025,test score:0.8627450980392157
+Stops at epoch 17,Best training score:0.9975833333333334,validation score:0.9024691358024691,test score:0.8735294117647059
+Stops at epoch 24,Best training score:0.9975833333333334,validation score:0.904320987654321,test score:0.8622549019607844
+Stops at epoch 26,Best training score:0.9976666666666667,validation score:0.9098765432098765,test score:0.859313725490196
+Stops at epoch 27,Best training score:0.998,validation score:0.9098765432098765,test score:0.884313725490196
+Stops at epoch 30,Best training score:0.9975,validation score:0.8660493827160494,test score:0.8848039215686274
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Incremental-layerwise probing
+Stops at epoch 16,Best training score:0.995,validation score:0.8851851851851852,test score:0.8598039215686275
+Stops at epoch 16,Best training score:0.99725,validation score:0.895679012345679,test score:0.8725490196078431
+Stops at epoch 7,Best training score:0.9978333333333333,validation score:0.9104938271604939,test score:0.8818627450980392
+Stops at epoch 30,Best training score:0.9998333333333334,validation score:0.9061728395061729,test score:0.8759803921568627
+Stops at epoch 8,Best training score:0.9985,validation score:0.9179012345679012,test score:0.8784313725490196
+Stops at epoch 13,Best training score:0.9996666666666667,validation score:0.9135802469135802,test score:0.8700980392156863
+Stops at epoch 16,Best training score:0.99975,validation score:0.921604938271605,test score:0.8921568627450981
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+select minimum layers (LS+CC+LCA)
+Stops at epoch 19,Best training score:0.9965833333333334,validation score:0.8771604938271605,test score:0.8632352941176471
+Stops at epoch 31,Best training score:0.7245833333333334,validation score:0.582716049382716,test score:0.5700980392156862
+Stops at epoch 17,Best training score:0.7911666666666667,validation score:0.6611111111111111,test score:0.5495098039215687
+Stops at epoch 19,Best training score:0.8476666666666667,validation score:0.7135802469135802,test score:0.6220588235294118
+Stops at epoch 22,Best training score:0.8903333333333333,validation score:0.7407407407407407,test score:0.6617647058823529
+Stops at epoch 13,Best training score:0.897,validation score:0.7969135802469136,test score:0.6553921568627451
+Stops at epoch 24,Best training score:0.9559166666666666,validation score:0.817283950617284,test score:0.7191176470588235
+Stops at epoch 25,Best training score:0.9685833333333334,validation score:0.828395061728395,test score:0.7475490196078431
+Stops at epoch 20,Best training score:0.97975,validation score:0.8623456790123457,test score:0.8450980392156863
+Stops at epoch 28,Best training score:0.9863333333333333,validation score:0.8623456790123457,test score:0.8284313725490197
+Stops at epoch 19,Best training score:0.9859166666666667,validation score:0.8611111111111112,test score:0.8259803921568627
+Stops at epoch 21,Best training score:0.9879166666666667,validation score:0.8783950617283951,test score:0.8553921568627451
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 742
+Stops at epoch 20,Best training score:0.9974166666666666,validation score:0.8790123456790123,test score:0.8411764705882353
+Stops at epoch 14,Best training score:0.4628333333333333,validation score:0.5320987654320988,test score:0.4303921568627451
+Stops at epoch 34,Best training score:0.8593333333333333,validation score:0.6641975308641975,test score:0.6240196078431373
+Stops at epoch 35,Best training score:0.88975,validation score:0.8191358024691358,test score:0.6995098039215686
+Stops at epoch 24,Best training score:0.911,validation score:0.7962962962962963,test score:0.6897058823529412
+Stops at epoch 29,Best training score:0.94125,validation score:0.7944444444444444,test score:0.6906862745098039
+Stops at epoch 20,Best training score:0.9629166666666666,validation score:0.774074074074074,test score:0.6833333333333333
+Stops at epoch 19,Best training score:0.97425,validation score:0.8580246913580247,test score:0.7857843137254902
+Stops at epoch 21,Best training score:0.9814166666666667,validation score:0.8827160493827161,test score:0.8196078431372549
+Stops at epoch 21,Best training score:0.9845,validation score:0.8734567901234568,test score:0.8475490196078431
+Stops at epoch 18,Best training score:0.9961666666666666,validation score:0.895679012345679,test score:0.8642156862745098
+Stops at epoch 20,Best training score:0.6433333333333333,validation score:0.5160493827160494,test score:0.45637254901960783
+Stops at epoch 36,Best training score:0.8114166666666667,validation score:0.6722222222222223,test score:0.5622549019607843
+Stops at epoch 24,Best training score:0.8659166666666667,validation score:0.7203703703703703,test score:0.667156862745098
+Stops at epoch 36,Best training score:0.9118333333333334,validation score:0.7358024691358025,test score:0.6833333333333333
+Stops at epoch 39,Best training score:0.9224166666666667,validation score:0.7481481481481481,test score:0.6691176470588235
+Stops at epoch 31,Best training score:0.9566666666666667,validation score:0.8104938271604938,test score:0.75
+Stops at epoch 21,Best training score:0.974,validation score:0.8537037037037037,test score:0.8191176470588235
+Stops at epoch 15,Best training score:0.976,validation score:0.8716049382716049,test score:0.8465686274509804
+Stops at epoch 22,Best training score:0.9891666666666666,validation score:0.8685185185185185,test score:0.8362745098039216
+Stops at epoch 16,Best training score:0.9885,validation score:0.8641975308641975,test score:0.8446078431372549
+Stops at epoch 20,Best training score:0.9900833333333333,validation score:0.8709876543209877,test score:0.8607843137254902
+Correlation matrix size (#neurons x #neurons): (768, 768)
+Number of clusters detected: 742
+Stops at epoch 22,Best training score:0.998,validation score:0.8709876543209877,test score:0.8470588235294118
+Stops at epoch 31,Best training score:0.5240833333333333,validation score:0.5259259259259259,test score:0.41127450980392155
+Stops at epoch 29,Best training score:0.81775,validation score:0.6135802469135803,test score:0.45
+Stops at epoch 26,Best training score:0.8795833333333334,validation score:0.7203703703703703,test score:0.5558823529411765
+Stops at epoch 24,Best training score:0.8930833333333333,validation score:0.8012345679012346,test score:0.7377450980392157
+Stops at epoch 24,Best training score:0.93325,validation score:0.8191358024691358,test score:0.6946078431372549
+Stops at epoch 28,Best training score:0.9663333333333334,validation score:0.8209876543209876,test score:0.7799019607843137
+Stops at epoch 13,Best training score:0.96775,validation score:0.8567901234567902,test score:0.7970588235294118
+Stops at epoch 10,Best training score:0.9740833333333333,validation score:0.8530864197530864,test score:0.8049019607843138
+Stops at epoch 21,Best training score:0.984,validation score:0.8592592592592593,test score:0.8573529411764705
+Stops at epoch 13,Best training score:0.99775,validation score:0.8993827160493827,test score:0.8705882352941177
+Stops at epoch 31,Best training score:0.62925,validation score:0.6037037037037037,test score:0.5034313725490196
+Stops at epoch 44,Best training score:0.85925,validation score:0.6950617283950618,test score:0.6612745098039216
+Stops at epoch 16,Best training score:0.8781666666666667,validation score:0.762962962962963,test score:0.7181372549019608
+Stops at epoch 24,Best training score:0.9311666666666667,validation score:0.7358024691358025,test score:0.7107843137254902
+Stops at epoch 24,Best training score:0.9423333333333334,validation score:0.7746913580246914,test score:0.7348039215686275
+Stops at epoch 24,Best training score:0.973,validation score:0.769753086419753,test score:0.6995098039215686
+Stops at epoch 14,Best training score:0.97725,validation score:0.7790123456790123,test score:0.7215686274509804
+Stops at epoch 8,Best training score:0.9865833333333334,validation score:0.7962962962962963,test score:0.7647058823529411
+Stops at epoch 10,Best training score:0.98775,validation score:0.8253086419753086,test score:0.7950980392156862
+Stops at epoch 11,Best training score:0.9915,validation score:0.8648148148148148,test score:0.8245098039215686
+Stops at epoch 18,Best training score:0.9925,validation score:0.8654320987654321,test score:0.8485294117647059
+Stops at epoch 16,Best training score:0.9945833333333334,validation score:0.8777777777777778,test score:0.8529411764705882
+Stops at epoch 16,Best training score:0.9966666666666667,validation score:0.8771604938271605,test score:0.8446078431372549
+Stops at epoch 14,Best training score:0.9934166666666666,validation score:0.8753086419753087,test score:0.8573529411764705
+Stops at epoch 16,Best training score:0.9951666666666666,validation score:0.8876543209876543,test score:0.8509803921568627
+Stops at epoch 23,Best training score:0.9978333333333333,validation score:0.8858024691358025,test score:0.8558823529411764
+Stops at epoch 16,Best training score:0.9970833333333333,validation score:0.8993827160493827,test score:0.8774509803921569
+Correlation matrix size (#neurons x #neurons): (1536, 1536)
+Number of clusters detected: 771
+Stops at epoch 13,Best training score:0.9963333333333333,validation score:0.9012345679012346,test score:0.8666666666666667
+Stops at epoch 16,Best training score:0.43833333333333335,validation score:0.5419753086419753,test score:0.40147058823529413
+Stops at epoch 30,Best training score:0.8308333333333333,validation score:0.7074074074074074,test score:0.6024509803921568
+Stops at epoch 22,Best training score:0.9036666666666666,validation score:0.7592592592592593,test score:0.611764705882353
+Stops at epoch 25,Best training score:0.923,validation score:0.730246913580247,test score:0.6446078431372549
+Stops at epoch 30,Best training score:0.9473333333333334,validation score:0.7987654320987654,test score:0.7151960784313726
+Stops at epoch 30,Best training score:0.98375,validation score:0.845679012345679,test score:0.8161764705882353
+Stops at epoch 27,Best training score:0.986,validation score:0.8845679012345679,test score:0.846078431372549
+Stops at epoch 17,Best training score:0.991,validation score:0.8870370370370371,test score:0.8558823529411764
+Stops at epoch 21,Best training score:0.9949166666666667,validation score:0.891358024691358,test score:0.8431372549019608
+Stops at epoch 12,Best training score:0.9925,validation score:0.8987654320987655,test score:0.8720588235294118
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+probing independent neurons based on all layers (run_cc_all.py)
+Stops at epoch 19,Best training score:0.9998333333333334,validation score:0.9141975308641975,test score:0.8857843137254902
+Correlation matrix size (#neurons x #neurons): (5376, 5376)
+Number of clusters detected: 4785
+Stops at epoch 22,Best training score:0.9998333333333334,validation score:0.9141975308641975,test score:0.8813725490196078
+Correlation matrix size (#neurons x #neurons): (5376, 5376)
+Number of clusters detected: 3245
+Stops at epoch 16,Best training score:0.9990833333333333,validation score:0.9154320987654321,test score:0.8696078431372549
+Correlation matrix size (#neurons x #neurons): (5376, 5376)
+Number of clusters detected: 2299
+Stops at epoch 10,Best training score:0.9988333333333334,validation score:0.9191358024691358,test score:0.8735294117647059
+Correlation matrix size (#neurons x #neurons): (5376, 5376)
+Number of clusters detected: 1692
+Stops at epoch 24,Best training score:0.9989166666666667,validation score:0.9055555555555556,test score:0.8799019607843137
+Correlation matrix size (#neurons x #neurons): (5376, 5376)
+Number of clusters detected: 1187
+Stops at epoch 18,Best training score:0.99875,validation score:0.9111111111111111,test score:0.8838235294117647
+Correlation matrix size (#neurons x #neurons): (5376, 5376)
+Number of clusters detected: 747
+Stops at epoch 37,Best training score:0.9985,validation score:0.9030864197530865,test score:0.8705882352941177
+Correlation matrix size (#neurons x #neurons): (5376, 5376)
+Number of clusters detected: 370
+Stops at epoch 22,Best training score:0.9933333333333333,validation score:0.9012345679012346,test score:0.8823529411764706
+Correlation matrix size (#neurons x #neurons): (5376, 5376)
+Number of clusters detected: 110
+Stops at epoch 25,Best training score:0.98175,validation score:0.8092592592592592,test score:0.7754901960784314
+Correlation matrix size (#neurons x #neurons): (5376, 5376)
+Number of clusters detected: 1
+Stops at epoch 31,Best training score:0.2559166666666667,validation score:0.39382716049382716,test score:0.33725490196078434
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+probing independent neurons based on all layers with finer percentage (run_max_features.py)
+Stops at epoch 9,Best training score:0.9990833333333333,validation score:0.9265432098765433,test score:0.8911764705882353
+Stops at epoch 37,Best training score:0.701,validation score:0.5123456790123457,test score:0.5598039215686275
+Stops at epoch 24,Best training score:0.9116666666666666,validation score:0.7,test score:0.6308823529411764
+Stops at epoch 26,Best training score:0.9734166666666667,validation score:0.6932098765432099,test score:0.703921568627451
+Stops at epoch 10,Best training score:0.9510833333333333,validation score:0.7592592592592593,test score:0.8
+Stops at epoch 21,Best training score:0.9831666666666666,validation score:0.7759259259259259,test score:0.7387254901960785
+Stops at epoch 21,Best training score:0.9814166666666667,validation score:0.812962962962963,test score:0.7833333333333333
+Stops at epoch 18,Best training score:0.9880833333333333,validation score:0.8333333333333334,test score:0.7872549019607843
+Stops at epoch 25,Best training score:0.98975,validation score:0.8407407407407408,test score:0.7867647058823529
+Stops at epoch 26,Best training score:0.9918333333333333,validation score:0.8358024691358025,test score:0.8058823529411765
+Stops at epoch 32,Best training score:0.9908333333333333,validation score:0.845679012345679,test score:0.7686274509803922
+Stops at epoch 13,Best training score:0.9911666666666666,validation score:0.8617283950617284,test score:0.7818627450980392
+Stops at epoch 19,Best training score:0.9924166666666666,validation score:0.8506172839506173,test score:0.8049019607843138
+Stops at epoch 25,Best training score:0.9934166666666666,validation score:0.8493827160493828,test score:0.8044117647058824
+Stops at epoch 22,Best training score:0.9921666666666666,validation score:0.8617283950617284,test score:0.8205882352941176
+Stops at epoch 23,Best training score:0.9936666666666667,validation score:0.8629629629629629,test score:0.8279411764705882
+Stops at epoch 23,Best training score:0.995,validation score:0.8555555555555555,test score:0.8181372549019608
+Stops at epoch 13,Best training score:0.9926666666666667,validation score:0.8561728395061728,test score:0.8122549019607843
+Stops at epoch 23,Best training score:0.99525,validation score:0.8641975308641975,test score:0.8014705882352942
+Stops at epoch 19,Best training score:0.9938333333333333,validation score:0.8734567901234568,test score:0.8509803921568627
+Stops at epoch 23,Best training score:0.9964166666666666,validation score:0.8691358024691358,test score:0.8299019607843138
+Stops at epoch 16,Best training score:0.9935,validation score:0.8648148148148148,test score:0.8401960784313726
+Stops at epoch 15,Best training score:0.9925833333333334,validation score:0.8814814814814815,test score:0.8470588235294118
+Stops at epoch 16,Best training score:0.9965,validation score:0.8814814814814815,test score:0.8436274509803922
+Stops at epoch 14,Best training score:0.9960833333333333,validation score:0.8709876543209877,test score:0.8534313725490196
+Stops at epoch 13,Best training score:0.9958333333333333,validation score:0.8753086419753087,test score:0.8495098039215686
+Stops at epoch 13,Best training score:0.9955833333333334,validation score:0.8833333333333333,test score:0.8303921568627451
+Stops at epoch 20,Best training score:0.9975833333333334,validation score:0.8864197530864197,test score:0.8553921568627451
+Stops at epoch 27,Best training score:0.9974166666666666,validation score:0.8716049382716049,test score:0.8495098039215686
+Stops at epoch 8,Best training score:0.9964166666666666,validation score:0.8950617283950617,test score:0.8490196078431372
+Stops at epoch 14,Best training score:0.9956666666666667,validation score:0.8901234567901235,test score:0.8784313725490196
+Stops at epoch 17,Best training score:0.99675,validation score:0.8833333333333333,test score:0.846078431372549
+Stops at epoch 11,Best training score:0.9954166666666666,validation score:0.8882716049382716,test score:0.8759803921568627
+Stops at epoch 12,Best training score:0.9959166666666667,validation score:0.8993827160493827,test score:0.8784313725490196
+Stops at epoch 11,Best training score:0.9964166666666666,validation score:0.8901234567901235,test score:0.8490196078431372
+Stops at epoch 26,Best training score:0.9978333333333333,validation score:0.8808641975308642,test score:0.8941176470588236
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Stops at epoch 14,Best training score:0.9995,validation score:0.9123456790123456,test score:0.878921568627451
+Stops at epoch 39,Best training score:0.7081666666666667,validation score:0.6358024691358025,test score:0.6299019607843137
+Stops at epoch 42,Best training score:0.936,validation score:0.8123456790123457,test score:0.7578431372549019
+Stops at epoch 40,Best training score:0.9501666666666667,validation score:0.8074074074074075,test score:0.7504901960784314
+Stops at epoch 32,Best training score:0.9584166666666667,validation score:0.8055555555555556,test score:0.7647058823529411
+Stops at epoch 19,Best training score:0.9391666666666667,validation score:0.8006172839506173,test score:0.7514705882352941
+Stops at epoch 17,Best training score:0.9625833333333333,validation score:0.8104938271604938,test score:0.7529411764705882
+Stops at epoch 10,Best training score:0.9590833333333333,validation score:0.8104938271604938,test score:0.763235294117647
+Stops at epoch 25,Best training score:0.98125,validation score:0.8438271604938271,test score:0.8269607843137254
+Stops at epoch 13,Best training score:0.97625,validation score:0.8395061728395061,test score:0.7906862745098039
+Stops at epoch 17,Best training score:0.9791666666666666,validation score:0.8432098765432099,test score:0.8044117647058824
+Stops at epoch 18,Best training score:0.98225,validation score:0.8518518518518519,test score:0.8343137254901961
+Stops at epoch 19,Best training score:0.9809166666666667,validation score:0.8555555555555555,test score:0.8225490196078431
+Stops at epoch 13,Best training score:0.9784166666666667,validation score:0.8648148148148148,test score:0.8004901960784314
+Stops at epoch 12,Best training score:0.9799166666666667,validation score:0.8697530864197531,test score:0.8519607843137255
+Stops at epoch 19,Best training score:0.9825833333333334,validation score:0.8648148148148148,test score:0.8465686274509804
+Stops at epoch 17,Best training score:0.984,validation score:0.8716049382716049,test score:0.836764705882353
+Stops at epoch 16,Best training score:0.9851666666666666,validation score:0.8722222222222222,test score:0.8524509803921568
+Stops at epoch 22,Best training score:0.986,validation score:0.8746913580246913,test score:0.8446078431372549
+Stops at epoch 7,Best training score:0.9763333333333334,validation score:0.8728395061728395,test score:0.8254901960784313
+Stops at epoch 16,Best training score:0.9856666666666667,validation score:0.8666666666666667,test score:0.8392156862745098
+Stops at epoch 18,Best training score:0.9868333333333333,validation score:0.8746913580246913,test score:0.8431372549019608
+Stops at epoch 20,Best training score:0.9875833333333334,validation score:0.8716049382716049,test score:0.8446078431372549
+Stops at epoch 16,Best training score:0.9884166666666667,validation score:0.8716049382716049,test score:0.8416666666666667
+Stops at epoch 20,Best training score:0.98975,validation score:0.8691358024691358,test score:0.8529411764705882
+Stops at epoch 13,Best training score:0.9894166666666667,validation score:0.8796296296296297,test score:0.8539215686274509
+Stops at epoch 12,Best training score:0.98775,validation score:0.8802469135802469,test score:0.8539215686274509
+Stops at epoch 18,Best training score:0.991,validation score:0.8864197530864197,test score:0.8485294117647059
+Stops at epoch 10,Best training score:0.9855,validation score:0.8858024691358025,test score:0.8598039215686275
+Stops at epoch 24,Best training score:0.9916666666666667,validation score:0.8771604938271605,test score:0.8549019607843137
+Stops at epoch 18,Best training score:0.9906666666666667,validation score:0.8851851851851852,test score:0.8534313725490196
+Stops at epoch 19,Best training score:0.9916666666666667,validation score:0.891358024691358,test score:0.8661764705882353
+Stops at epoch 18,Best training score:0.99075,validation score:0.8771604938271605,test score:0.8568627450980392
+Stops at epoch 15,Best training score:0.9903333333333333,validation score:0.8796296296296297,test score:0.8514705882352941
+Stops at epoch 14,Best training score:0.99125,validation score:0.8716049382716049,test score:0.8485294117647059
+Stops at epoch 17,Best training score:0.9923333333333333,validation score:0.8808641975308642,test score:0.8553921568627451
+Stops at epoch 13,Best training score:0.9925,validation score:0.8771604938271605,test score:0.859313725490196
+Stops at epoch 8,Best training score:0.9880833333333333,validation score:0.8895061728395062,test score:0.8573529411764705
+Stops at epoch 13,Best training score:0.9906666666666667,validation score:0.8932098765432098,test score:0.8534313725490196
+Stops at epoch 10,Best training score:0.98925,validation score:0.8901234567901235,test score:0.8524509803921568
+Stops at epoch 13,Best training score:0.9906666666666667,validation score:0.8820987654320988,test score:0.8539215686274509
+Stops at epoch 10,Best training score:0.9901666666666666,validation score:0.8858024691358025,test score:0.8598039215686275
+Stops at epoch 12,Best training score:0.9909166666666667,validation score:0.8870370370370371,test score:0.8303921568627451
+Stops at epoch 18,Best training score:0.993,validation score:0.8753086419753087,test score:0.8524509803921568
+Stops at epoch 13,Best training score:0.9926666666666667,validation score:0.8833333333333333,test score:0.8588235294117647
+Stops at epoch 7,Best training score:0.98825,validation score:0.891358024691358,test score:0.859313725490196
+Stops at epoch 13,Best training score:0.9919166666666667,validation score:0.8932098765432098,test score:0.8504901960784313
+Stops at epoch 16,Best training score:0.993,validation score:0.8845679012345679,test score:0.861764705882353
+Stops at epoch 18,Best training score:0.9925833333333334,validation score:0.8938271604938272,test score:0.8661764705882353
+Stops at epoch 19,Best training score:0.9935833333333334,validation score:0.8833333333333333,test score:0.859313725490196
+Stops at epoch 9,Best training score:0.9919166666666667,validation score:0.9012345679012346,test score:0.8573529411764705
+Stops at epoch 14,Best training score:0.9926666666666667,validation score:0.8932098765432098,test score:0.8509803921568627
+Stops at epoch 10,Best training score:0.9938333333333333,validation score:0.8938271604938272,test score:0.865686274509804
+Stops at epoch 11,Best training score:0.9948333333333333,validation score:0.891358024691358,test score:0.8416666666666667
+Stops at epoch 18,Best training score:0.99825,validation score:0.904320987654321,test score:0.8700980392156863
+Stops at epoch 12,Best training score:0.9976666666666667,validation score:0.9018518518518519,test score:0.8705882352941177
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+pretrained_CodeBERTa top neurons
+array([2051, 2056, 4116, 2076,   29, 4132, 4139,   45, 2093, 4143, 2096,
+         61, 2111, 2115, 4166, 4173, 4177,   86,   87, 2138,   92, 4189,
+       4190, 2142, 4196,  108,  113,  114,  124,  127, 2176,  135, 2188,
+       4236, 4239, 4241, 2208, 4261, 2220, 4275,  185,  190, 2244, 2245,
+        203, 2251, 2257, 2261, 2267, 2270,  225,  226, 4330, 4343,  247,
+       2301, 2306, 2307, 2321, 4371,  275, 2323,  288, 4387, 4388, 2341,
+       4396, 4400, 2355, 2357,  315, 2365, 2367,  325, 2386,  340, 4437,
+        346, 2395, 2407, 4464, 4474,  381, 2430, 2429,  385, 2440, 4490,
+       4494, 2449, 4498, 2457, 2459, 4511, 2478,  436, 2490, 4541, 4542,
+        452,  457, 2506, 2505, 4556, 4561, 4567, 4578, 2544, 2549, 4609,
+        517, 4616,  524,  532, 2594, 2601,  557, 4655, 2614, 2628, 4685,
+       4691,  596,  603,  612, 4712, 2670, 4721,  628,  634,  646,  647,
+       4743, 2701, 4749,  661, 2710,  663, 4760, 2717,  672, 4772, 4782,
+       2738, 4787, 2740,  694,  700, 2753,  707, 2759,  715, 4814, 2767,
+       4815, 2766, 2774,  743, 2792, 4844,  752, 4850,  765,  773,  780,
+        781, 2832, 2835, 2852,  807, 4904,  810,  819,  822, 4919, 2870,
+       4925, 2883, 4932, 2892, 2896,  850,  856, 2906, 2908, 4957, 2909,
+       2911, 4965, 4989, 4999, 5002,  906, 2960, 2965,  923,  927, 5024,
+       2977, 2978, 5028,  939, 2989, 2990, 5039, 5048, 5052, 3005, 3006,
+        957, 5065,  971, 5077, 5078,  984, 5101, 3060, 5112, 1017, 3068,
+       5118, 3078, 3080, 5130, 1038, 1039, 5136, 3089, 5140, 5141, 1051,
+       1058, 3109, 1066, 1070, 5169, 1084, 5181, 1094, 5193, 1099, 3152,
+       1118, 5218, 1124, 3176, 3180, 1142, 1147, 1149, 5257, 1163, 3216,
+       3217, 5266, 3219, 1180, 3241, 5298, 1203, 1202, 3261, 3263, 5311,
+       1218, 3275, 3276, 3278, 1242, 3293, 3298, 3301, 3311, 3319, 3322,
+       3327, 1283, 3331, 3347, 3358, 1316, 3369, 3371, 3373, 1326, 3400,
+       3426, 3427, 1380, 3430, 3432, 3444, 1397, 1414, 3462, 1417, 1419,
+       3468, 1428, 3477, 1429, 3487, 1449, 1461, 3512, 1469, 3526, 3528,
+       1489, 3539, 3544, 1499, 1511, 1512, 3573, 3575, 3576, 1536, 3587,
+       1542, 3592, 1553, 3608, 1563, 3612, 3621, 3626, 1581, 3647, 3660,
+       3661, 1616, 1617, 1624, 1626, 1644, 3696, 3697, 3704, 1661, 1664,
+       1666, 3720, 1674, 1681, 3730, 1684, 3733, 3734, 1687, 3742, 1722,
+       3772, 3781, 1736, 1737, 3787, 1748, 1753, 1798, 3848, 3860, 3861,
+       3868, 1827, 1834, 3898, 1852, 1857, 1875, 1876, 3943, 3955, 1910,
+       3964, 3972, 1933, 1934, 3985, 1949, 1956, 4006, 4013, 4016, 1969,
+       1973, 4032, 1984, 4037, 2001, 4072, 2026, 4094])
+pretrained_CodeBERTa top neurons per class
+{'MODIFIER': array([2459, 4850, 4388, 3661, 5077, 3608, 2490, 2506,  108, 4139, 1666,
+       2710, 3696, 2355, 3180, 4464, 3371, 1737, 3720,  971, 1070, 2430,
+       2767, 5298,  984, 4685,  517,  647, 1664, 3263, 5218, 3587, 3176,
+       1084,  203,  185, 1118, 4919,  663, 3860,   92, 1684,  715,   87,
+       5002, 3241, 1449, 4261, 4173,  288, 3298,  325,  822, 3275, 4396,
+       3621, 4437, 3261, 4691, 2176, 1147, 1876, 2407, 4556, 3539, 3626,
+       3109, 5257, 4609, 1163, 1857]), 'IDENT': array([3005, 1414, 4782, 4957, 2753, 4932,  810, 4371, 2220, 4241, 4239,
+       3068, 1428, 2115, 2301, 1969, 1956, 2601, 3573, 4143, 2835,  127,
+        700,  226,  346, 4904, 3152, 2670, 2056, 3972, 2321, 3369, 4343,
+       5048, 5052, 2544, 2965, 5311, 3400, 4721, 4190, 2909, 5136, 1469,
+        927, 1058, 3848, 2759,  457, 4578,  634, 3772, 3278, 1626, 4013,
+       2701, 5078,  646, 4400, 3217,  381, 1624, 2628, 4567, 2978]), 'KEYWORD': array([ 340, 3575, 2244, 3781, 1798, 1316, 1687, 1380, 3430, 2386, 4844,
+       3427, 2365,  203, 4196, 1051, 2549,  707, 1203, 4814, 2717, 1617,
+       2051,  315, 3898,   45, 2001, 1417, 1910, 3444, 2245, 3787, 3704,
+        452, 4989, 4474,  275, 2883, 4032, 4094, 3955, 5028, 1124, 1722,
+       3373,  436,  114,  765, 1038, 2261, 1512, 1283, 3311, 3544, 3964,
+        647, 1142,   86, 4925, 4013, 1180, 4815, 3217, 1536, 2977, 3861,
+       4387, 2093, 4177, 2852]), 'TYPE': array([3358, 4189, 4542,  807, 2505,  532, 2076, 3426, 1511, 3943, 2188,
+       4541, 4712, 3347,  113, 1661, 1218, 1736,  906, 1542,  694, 1737,
+       3006, 3742, 4743, 4999,  923, 1070,  939, 4490, 2774, 3080, 3526,
+       3528, 1242,  557, 3293,  135, 2594, 3612, 1674,   29, 1852,  524,
+       4655, 5140, 3734,  773, 1149,  628, 4511,  781, 3219,  247, 2270,
+       1017, 3078, 4275, 3462, 4116, 3468, 4166, 3322, 3647,  385, 2306,
+        743, 5266, 3060]), 'NUMBER': array([2832, 2960, 1827,  124, 2111, 1949, 3301, 1984, 1202, 2138, 4132,
+       4498, 5181, 3660,  856, 3487, 2892, 2096, 2908, 5101, 5112, 4616,
+        957, 3576, 1066, 1099, 4561, 3276, 2870, 3327, 2896, 1644, 1834,
+       5130, 3730, 2026, 1736, 1417, 4006, 3180, 5118, 1326, 2323, 4760,
+       3697, 3733, 4037,  819, 2142, 2766, 2478, 4494, 1499,  780, 2989,
+       1933, 2267, 1039, 3319,  190,  603, 3477, 2457, 2906, 1973, 1461]), 'STRING': array([3331, 1681, 1748, 1581, 3216, 5141, 1857, 1489, 3089, 2429, 4330,
+       1616, 2208,  612, 5193, 5024, 3868, 4016, 1419, 1429, 2395, 2738,
+       2449, 2740, 2251, 2257,  672, 2990, 1753, 2367,  661, 5065, 3512,
+       3592, 4787, 1553, 1875, 1674, 4772, 2440, 2911, 4965,  225, 1094,
+       4072, 5039, 1563, 1397, 3432, 2341,   61, 5169,  596, 2792, 1934,
+       1626,  752, 1380, 2357,  850, 2614, 1624, 2307, 4749, 3985, 4236])}
+pretrained_CodeBERTa top words
+Top words for pretrained_CodeBERTa neuron indx 2051 [('interval', 3.0157470226287844), ('len', 2.832816998163859), ('31', 2.6863977909088135), ('amb', 2.6856908798217773), ('CUSTOM', 2.68521785736084)]
+Top words for pretrained_CodeBERTa neuron indx 2056 [('queue', 3.4436371326446533), ('"&"', 3.0665011405944824), ('delay', 2.8171478234804592), ('"orion"', 2.778179168701172), ('"cast"', 2.3019986152648926)]
+Top words for pretrained_CodeBERTa neuron indx 4116 [('END', 3.6904697895050047), ('270.0', 2.744621753692627), ('5000.0', 2.5831063985824585), ('12.0', 2.5803139209747314), ('"\\n├"', 2.505181074142456)]
+Top words for pretrained_CodeBERTa neuron indx 2076 [("'{'", 4.05765175819397), ('TimeUnit', 3.1902588685353597), ('timeout', 3.1242311596870422), ('\'\\"\'', 2.97489070892334), ('Function', 2.874016379201135)]
+Top words for pretrained_CodeBERTa neuron indx 29 [('31', 3.1941869258880615), ('50', 3.1596312522888184), ('buffer', 3.093140888214111), ('createArrayList', 2.894469738006592), ('Consumer', 2.7482840798117896)]
+Top words for pretrained_CodeBERTa neuron indx 4132 [('111', 2.6727559566497803), ('13', 2.5774118900299072), ('Observer', 2.302050471305847), ('Throwable', 2.2615614235401154), ('start', 2.2503446539243064)]
+Top words for pretrained_CodeBERTa neuron indx 4139 [('Scheduler', 2.8920288756489754), ('.50', 2.727267265319824), ('2451545.0', 2.473090648651123), ('scheduler', 2.3710120008105324), ('0.99E30', 2.3212274312973022)]
+Top words for pretrained_CodeBERTa neuron indx 45 [('"$"', 3.140216827392578), ("'.'", 2.9055203354876973), ('86400', 2.71724796295166), ('"cfg"', 2.69525408744812), ('"ctx"', 2.622440814971924)]
+Top words for pretrained_CodeBERTa neuron indx 2093 [('72', 2.722717603047689), ('sources', 2.4131158638000487), ('";"', 2.3581225872039795), ('Emitter', 2.318355083465576), ('"*"', 2.2496956321928234)]
+Top words for pretrained_CodeBERTa neuron indx 4143 [('2009', 3.3299238681793213), ('computation', 3.0515716552734373), ('Completable', 2.4515206813812256), ('subscriptionDelay', 2.423879623413086), ('"%s/%s/%s"', 2.295474886894226)]
+Top words for pretrained_CodeBERTa neuron indx 2096 [('Boolean', 2.746054768562317), ('1.0e3', 2.702693462371826), ('1.0e6', 2.644845485687256), ('Throwable', 2.6194803714752197), ('1852', 2.6150619983673096)]
+Top words for pretrained_CodeBERTa neuron indx 61 [("'?'", 3.3912964463233948), ("'|'", 3.129526898974464), ('\'"\'', 2.9680877923965454), ('224', 2.900179147720337), ('\'\\"\'', 2.86202073097229)]
+Top words for pretrained_CodeBERTa neuron indx 2111 [('17', 3.56840443611145), ('1440', 3.330035368601481), ('131072.0', 2.8990793228149414), ('45', 2.7963464558124542), ('40', 2.7632476886113486)]
+Top words for pretrained_CodeBERTa neuron indx 2115 [('192', 3.5115442276000977), ('timer', 3.481290340423584), ('all', 3.141735315322876), ('123', 2.9777214527130127), ('composer', 2.93589186668396)]
+Top words for pretrained_CodeBERTa neuron indx 4166 [('zip', 2.1816715002059937), ('Math', 2.1040901243686676), ('eager', 2.063620686531067), ('41', 2.0439933061599733), ('composer', 2.005983591079712)]
+Top words for pretrained_CodeBERTa neuron indx 4173 [('isEqual', 2.74120032787323), ('"\\\\\\\\"', 2.5354115962982178), ('NoSuchElementException', 2.478708028793335), ('"\\\\\\""', 2.3109185695648193), ("'='", 2.2962982792120714)]
+Top words for pretrained_CodeBERTa neuron indx 4177 [('END', 2.8159882068634032), ('"time_coverage_end"', 2.536750555038452), ('"chaos-monkey"', 2.485189199447632), ('"fabric8.generator.registry"', 2.4819984436035156), ('"/transactions/info/"', 2.4571969509124756)]
+Top words for pretrained_CodeBERTa neuron indx 86 [('"?"', 3.768284797668457), ('"("', 3.3010189533233643), ('"#"', 3.0888357162475586), ('"://"', 2.9232649008433023), ('"&"', 2.805483818054199)]
+Top words for pretrained_CodeBERTa neuron indx 87 [('"://"', 2.6173026959101358), ('element', 2.466278910636902), ("'*'", 2.460486729939779), ('Integer', 2.4505685329437257), ('class', 2.406773441178458)]
+Top words for pretrained_CodeBERTa neuron indx 2138 [('25000000', 3.0186164379119873), ('127', 3.01044499874115), ('31', 2.662618716557821), ("'+'", 2.5867813428243003), ('collect', 2.5367389917373657)]
+Top words for pretrained_CodeBERTa neuron indx 92 [('270', 3.2762980461120605), ('prefetch', 3.1726377479957812), ('24', 3.039232063293457), ('static', 2.7296346933438675), ('124', 2.702484607696533)]
+Top words for pretrained_CodeBERTa neuron indx 4189 [('offer', 2.9840078353881836), ('dispose', 2.8110954761505127), ('4000', 2.8064165115356445), ('Math', 2.7563427090644836), ('next', 2.6992945671081543)]
+Top words for pretrained_CodeBERTa neuron indx 4190 [('2000000', 3.2196390628814697), ('5000000', 2.7408416271209717), ('initialDelay', 2.50837550844465), ('"\'"', 2.5041491644723073), ('Experimental', 2.415865898132324)]
+Top words for pretrained_CodeBERTa neuron indx 2142 [('wrap', 2.0602143704891205), ('1', 2.041785020919197), ('wrapOrThrow', 2.0339877605438232), ('hasNext', 1.99403977394104), ('16.0', 1.8732053836186726)]
+Top words for pretrained_CodeBERTa neuron indx 4196 [('contains', 3.3476054668426514), ('Completable', 2.862505793571472), ('CompletableSource', 2.3027036666870115), ('Emitter', 2.258271098136902), ('SingleSource', 2.1150877475738525)]
+Top words for pretrained_CodeBERTa neuron indx 108 [('items', 4.341120672225952), ('RxJavaPlugins', 3.504822254180908), ('89', 3.367550849914551), ('43', 3.2183595180511473), ('999', 3.2127304673194885)]
+Top words for pretrained_CodeBERTa neuron indx 113 [('246', 2.972667694091797), ('Publisher', 2.9114463329315186), ('TimeUnit', 2.805393449465434), ('Deprecated', 2.6688425540924072), ('short', 2.4616336822509766)]
+Top words for pretrained_CodeBERTa neuron indx 114 [('downstream', 3.235893964767456), ('e', 2.7108155886332193), ("':'", 2.6755625984885474), ('89', 2.478142261505127), ('"{"', 2.373138904571533)]
+Top words for pretrained_CodeBERTa neuron indx 124 [('";"', 4.752538204193115), ('512', 4.151497840881348), ('131', 3.9776322841644287), ('"\\\\\\\\`"', 3.5370229482650757), ('118', 3.414321184158325)]
+Top words for pretrained_CodeBERTa neuron indx 127 [('END', 4.323728799819946), ('generator', 3.349889874458313), ('U', 3.2066827708599615), ('3000', 2.8778873682022095), ('50', 2.779298782348633)]
+Top words for pretrained_CodeBERTa neuron indx 2176 [('empty', 3.849547783533732), ('eager', 3.3246039152145386), ('ObservableNever', 2.598104238510132), ('using', 2.524209181467692), ('boundary', 2.5241724848747253)]
+Top words for pretrained_CodeBERTa neuron indx 135 [('downstream', 3.8592042922973633), ('123', 3.585724115371704), ('timespan', 3.5677071051164106), ('ObservableNever', 3.4447977542877197), ('136', 3.3517677783966064)]
+Top words for pretrained_CodeBERTa neuron indx 2188 [('it', 3.1512781381607056), ('Experimental', 2.8538472652435303), ('computation', 2.636320161819458), ('e', 2.5813971360524497), ('6772', 2.5728530883789062)]
+Top words for pretrained_CodeBERTa neuron indx 4236 [('isEmpty', 3.204263210296631), ('65', 2.8021481037139893), ('"new"', 2.7912638187408447), ('"text/"', 2.664438486099243), ('"yes"', 2.616605281829834)]
+Top words for pretrained_CodeBERTa neuron indx 4239 [('using', 3.3210389614105225), ('all', 3.054898262023926), ('distinct', 3.039958381652832), ('82', 2.693483829498291), ('range', 2.5803825855255127)]
+Top words for pretrained_CodeBERTa neuron indx 4241 [('computation', 3.053814697265625), ('86636.55536790872', 2.8538801670074463), ('leave', 2.6568098068237305), ('len', 2.5986674229303994), ('Functions', 2.5165944486050993)]
+Top words for pretrained_CodeBERTa neuron indx 2208 [('50', 4.558598518371582), ('concatMap', 3.5935750007629395), ('42', 3.3699530363082886), ('concatMapIterable', 3.307164192199707), ('ObservableSwitchMap', 3.200742244720459)]
+Top words for pretrained_CodeBERTa neuron indx 4261 [('just', 3.059117913246155), ('TimeUnit', 2.7980162302652993), ('it', 2.4619997441768646), ('Action', 2.2963679313659666), ('fromArray', 2.1983488500118256)]
+Top words for pretrained_CodeBERTa neuron indx 2220 [('Observable', 3.7624873327357427), ('call', 2.91089129447937), ('ObservableBuffer', 2.910187005996704), ('40', 2.855936050415039), ('10', 2.8528692722320557)]
+Top words for pretrained_CodeBERTa neuron indx 4275 [('"?"', 2.9073891639709473), ('range', 2.814047336578369), ('"/blocks/signature/"', 2.779999256134033), ('89', 2.6384572982788086), ('Functions', 2.5115242680987797)]
+Top words for pretrained_CodeBERTa neuron indx 185 [('publisher', 3.535682797431946), ('call', 3.5342350006103516), ('ErrorMode', 3.4494295400731705), ('Throwable', 3.200606942176819), ("'W'", 3.068763256072998)]
+Top words for pretrained_CodeBERTa neuron indx 190 [('amb', 3.5830318927764893), ('Math', 3.5726072788238525), ('bufferSize', 3.271327600479126), ('error', 3.2194600105285645), ('INSTANCE', 3.1899073123931885)]
+Top words for pretrained_CodeBERTa neuron indx 2244 [('NoSuchElementException', 3.7891039848327637), ('.25', 2.9655792713165283), ('mapper', 2.823336982145542), ('SuppressWarnings', 2.665011207262675), ('interval', 2.630860757827759)]
+Top words for pretrained_CodeBERTa neuron indx 2245 [('Single', 3.343313137690226), ('call', 3.1631367206573486), ('Action', 2.9146857261657715), ('List', 2.8873530758751764), ('Callable', 2.7307181541736307)]
+Top words for pretrained_CodeBERTa neuron indx 203 [('60000', 3.2568860054016113), ('predicate', 3.161904454231262), ('2000', 3.037874460220337), ("'\\\\'", 2.6408432006835936), ('call', 2.6245107650756836)]
+Top words for pretrained_CodeBERTa neuron indx 2251 [('"weld.svg"', 2.7944159507751465), ('"unused"', 2.759986996650696), ('"unchecked"', 2.658271312713623), ('"readQuorum"', 2.5702433586120605), ('downstream', 2.5662121772766113)]
+Top words for pretrained_CodeBERTa neuron indx 2257 [('".zip"', 3.671253204345703), ('"\'"', 3.4926844324384416), ('"^"', 3.1822304725646973), ('8', 3.166835291045053), ('BiFunction', 3.1141133308410645)]
+Top words for pretrained_CodeBERTa neuron indx 2261 [('call', 3.5973448753356934), ('v', 3.33179725919451), ('never', 3.078310251235962), ("'y'", 2.9835872650146484), ('it', 2.968839108943939)]
+Top words for pretrained_CodeBERTa neuron indx 2267 [('12', 2.9976783990859985), ('2048', 2.533980131149292), ('1050', 2.4547054767608643), ('"*"', 2.337993780771891), ('250', 2.301482544495509)]
+Top words for pretrained_CodeBERTa neuron indx 2270 [('timer', 3.397913932800293), ('start', 3.0773626565933228), ('iterator', 2.790818691253662), ('89', 2.624945640563965), ('range', 2.616464853286743)]
+Top words for pretrained_CodeBERTa neuron indx 225 [('class', 4.415526696613857), ('CUSTOM', 4.394845962524414), ('value', 3.8303184509277344), ('END', 3.7340203762054442), ('Notification', 3.5969176292419434)]
+Top words for pretrained_CodeBERTa neuron indx 226 [('offer', 4.244803428649902), ('Collection', 3.6584729807717458), ('element', 3.587579369544983), ('items', 3.5478373527526856), ('NoSuchElementException', 3.5371181964874268)]
+Top words for pretrained_CodeBERTa neuron indx 4330 [("'#'", 3.6757466793060303), ('"/"', 3.184236113514219), ('"$"', 3.1329755783081055), ('"\\n└"', 3.095721483230591), ('82', 2.8347554206848145)]
+Top words for pretrained_CodeBERTa neuron indx 4343 [('timer', 3.6381211280822754), ('offer', 3.5678343772888184), ('hasNext', 3.3723104000091553), ('delaySubscription', 3.268654465675354), ('187', 3.256103754043579)]
+Top words for pretrained_CodeBERTa neuron indx 247 [('V', 2.582228104273478), ('172', 2.0954370498657227), ('65535', 2.083843231201172), ('17', 2.082750082015991), ('70', 2.0769119262695312)]
+Top words for pretrained_CodeBERTa neuron indx 2301 [('collector', 3.765820324420929), ('111', 3.5233285427093506), ('sources', 3.3144629764556885), ('collect', 3.281153917312622), ('bufferSupplier', 3.270582298437754)]
+Top words for pretrained_CodeBERTa neuron indx 2306 [('offer', 3.3836638927459717), ('ObservableEmpty', 2.8220646381378174), ('NonNull', 2.750501811504364), ('111', 2.658904790878296), ('48', 2.626738820757185)]
+Top words for pretrained_CodeBERTa neuron indx 2307 [('70', 3.1190969944000244), ('60.', 2.9929059743881226), ('64', 2.8469245433807373), ('16.', 2.8216934204101562), ('48', 2.8081861904689243)]
+Top words for pretrained_CodeBERTa neuron indx 2321 [("'_'", 3.0893727938334146), ("'.'", 2.990971389024154), ('\'"\'', 2.949497186220609), ('"."', 2.9215298777534846), ('Math', 2.837084650993347)]
+Top words for pretrained_CodeBERTa neuron indx 4371 [('Observer', 3.806107759475708), ('ObservableInterval', 3.3306045532226562), ('dispose', 3.2896907329559326), ('111', 3.003000259399414), ('127', 2.9860520362854004)]
+Top words for pretrained_CodeBERTa neuron indx 275 [('sources', 2.917039179801941), ('compareAndSet', 2.3949358463287354), ('Exceptions', 2.341165781021118), ('for', 2.155839204788208), ('any', 1.9968716502189636)]
+Top words for pretrained_CodeBERTa neuron indx 2323 [('Notification', 3.8903841972351074), ('disposer', 3.535453677177429), ('37.4', 3.2964046001434326), ('6772', 3.282985210418701), ('fromArray', 3.1322762072086334)]
+Top words for pretrained_CodeBERTa neuron indx 288 [('700', 3.6521419882774353), ('Publisher', 3.0278100967407227), ('BiConsumer', 2.979184865951538), ('concat', 2.9374333222707114), ('break', 2.931987762451172)]
+Top words for pretrained_CodeBERTa neuron indx 4387 [('",;"', 3.3865039348602295), ('BlockingObservableIterable', 2.9252736568450928), ('equalsPredicate', 2.842533230781555), ('timespan', 2.773575100031766), ('selector', 2.7562822103500366)]
+Top words for pretrained_CodeBERTa neuron indx 4388 [('v', 3.058271680559431), ('len', 2.2752436796824136), ('S', 2.1647970378398895), ('2009', 2.081770658493042), ('disposer', 1.9757868349552155)]
+Top words for pretrained_CodeBERTa neuron indx 2341 [('Math', 3.1843395233154297), ("';'", 2.9397237300872803), ('Consumer', 2.7642006874084473), ('max', 2.754905581474304), ('iterator', 2.7497048377990723)]
+Top words for pretrained_CodeBERTa neuron indx 4396 [('IMMEDIATE', 3.175543189048767), ('END', 3.093295431137085), ('1852', 3.012380599975586), ('BiFunction', 2.957846164703369), ('270.0', 2.843097448348999)]
+Top words for pretrained_CodeBERTa neuron indx 4400 [('switchIfEmpty', 3.1274001598358154), ('45', 3.0901879370212555), ('":("', 2.865755558013916), ('CUSTOM', 2.852933645248413), ('nullSupplier', 2.7947750091552734)]
+Top words for pretrained_CodeBERTa neuron indx 2355 [('256', 2.7292702198028564), ('16', 2.691242632113005), ('128', 2.5329755942026773), ("'|'", 2.4901274669738043), ('1024', 2.477170914411545)]
+Top words for pretrained_CodeBERTa neuron indx 2357 [('ObservableTransformer', 3.689831256866455), ('Action', 3.5082751274108888), ('contains', 3.0584614276885986), ('MaybeSource', 2.9165287017822266), ('96', 2.739505648612976)]
+Top words for pretrained_CodeBERTa neuron indx 315 [('length', 3.782815138498942), ('selector', 3.372224807739258), ('45', 3.239110291004181), ('","', 3.1721546008036685), ('16384', 3.1337664127349854)]
+Top words for pretrained_CodeBERTa neuron indx 2365 [('leave', 2.525367021560669), ('1024', 2.1895109117031097), ('64', 2.1693081855773926), ('"{"', 2.102913022041321), ('error', 2.036935329437256)]
+Top words for pretrained_CodeBERTa neuron indx 2367 [('Long', 3.4534224442073276), ('collector', 3.1851372122764587), ("'.'", 3.108629029730092), ('start', 3.0097722013791404), ('""', 2.9180547782819564)]
+Top words for pretrained_CodeBERTa neuron indx 325 [('64', 2.9007833003997803), ('Observable', 2.8555450716188977), ('never', 2.777064800262451), ('zip', 2.7082395553588867), ('8080', 2.5636444091796875)]
+Top words for pretrained_CodeBERTa neuron indx 2386 [('BiFunction', 3.6628074645996094), ("'#'", 3.346191167831421), ('len', 3.119878133138021), ('Consumer', 3.0372732986103403), ('Function', 2.9789349786763966)]
+Top words for pretrained_CodeBERTa neuron indx 340 [('160', 3.4943042596181235), ("'('", 3.413429021835327), ('256', 3.3515191078186035), ('133', 3.274012804031372), ('"/"', 3.2379468083381653)]
+Top words for pretrained_CodeBERTa neuron indx 4437 [('merge', 2.598239302635193), ('predicate', 2.3848575353622437), ('get', 2.3196535110473633), ('compareAndSet', 2.31782603263855), ('45', 2.169585704803467)]
+Top words for pretrained_CodeBERTa neuron indx 346 [('Notification', 3.8690268993377686), ('60000', 3.2854961156845093), ('boundary', 3.006438136100769), ('47', 2.9791609048843384), ('1000000', 2.8269287745157876)]
+Top words for pretrained_CodeBERTa neuron indx 2395 [('get', 4.02919340133667), ('"/split"', 3.221727132797241), ('compareAndSet', 3.135282516479492), ('10000.', 2.7807758938182485), ('"/sessions/{sessionIdToDelete}"', 2.7340452671051025)]
+Top words for pretrained_CodeBERTa neuron indx 2407 [('61', 2.783651113510132), ('17', 2.7227680683135986), ('46', 2.555043935775757), ('68', 2.5070536136627197), ('2009', 2.470970630645752)]
+Top words for pretrained_CodeBERTa neuron indx 4464 [('identity', 3.358988749353509), ('Boolean', 2.8425795435905457), ('compose', 2.732786178588867), ('ObservableJust', 2.6293463706970215), ('ObservableError', 2.6272661685943604)]
+Top words for pretrained_CodeBERTa neuron indx 4474 [('87', 4.004604339599609), ('136', 3.3233299255371094), ('106', 3.3046963214874268), ('114', 3.2080442905426025), ('108', 3.086559772491455)]
+Top words for pretrained_CodeBERTa neuron indx 381 [('start', 3.176149050394694), ('82', 2.580648183822632), ('dispose', 2.410031795501709), ('just', 2.3587277233600616), ('89', 2.3410942554473877)]
+Top words for pretrained_CodeBERTa neuron indx 2430 [('singleElement', 2.586390733718872), ('onError', 2.561456024646759), ("'}'", 2.558401346206665), ('ObservableFlatMap', 2.544642925262451), ('".xml"', 2.537193536758423)]
+Top words for pretrained_CodeBERTa neuron indx 2429 [('iterator', 4.005127906799316), ('item', 3.2238152027130127), ('"{"', 3.0354888439178467), ('Math', 2.9677321910858154), ('concatDelayError', 2.9542925357818604)]
+Top words for pretrained_CodeBERTa neuron indx 385 [('just', 3.107871413230896), ('270', 2.9970479011535645), ('50', 2.8731439113616943), ('8', 2.8433477708271573), ('40', 2.8034214973449707)]
+Top words for pretrained_CodeBERTa neuron indx 2440 [('2048', 3.122974157333374), ('"."', 2.82603351417042), ("'='", 2.808112607552455), ("';'", 2.7136616706848145), ('10', 2.5769202709198)]
+Top words for pretrained_CodeBERTa neuron indx 4490 [('68', 3.412205219268799), ('17', 2.9980616569519043), ("'Z'", 2.418780565261841), ('error', 2.3267621994018555), ('blockingFirst', 2.294982671737671)]
+Top words for pretrained_CodeBERTa neuron indx 4494 [('Publisher', 3.744391441345215), ('80.21802662821469', 3.494234323501587), ('COMPUTATION', 3.3974173069000244), ('239.5089F', 3.3757667541503906), ('ON_ERROR_MISSING', 3.262653350830078)]
+Top words for pretrained_CodeBERTa neuron indx 2449 [('composer', 3.588376522064209), ('219', 3.3501319885253906), ('B', 3.243854363759359), ('max', 2.925851881504059), ('1000000', 2.6821778615315757)]
+Top words for pretrained_CodeBERTa neuron indx 4498 [('999.99f', 3.2023041248321533), ('0.495', 3.019089937210083), ('.75f', 2.9890735149383545), ('5.0e-3', 2.9286744594573975), ('24110.54841', 2.754267930984497)]
+Top words for pretrained_CodeBERTa neuron indx 2457 [('59', 2.9314463138580322), ('50', 2.7876486778259277), ('111', 2.6612720489501953), ('52', 2.521623373031616), ('400000', 2.3669183254241943)]
+Top words for pretrained_CodeBERTa neuron indx 2459 [("'('", 2.9037861824035645), ('element', 2.59447979927063), ('get', 2.4856762886047363), ('"("', 2.44734263420105), ('iterator', 2.4277055263519287)]
+Top words for pretrained_CodeBERTa neuron indx 4511 [('270', 3.7824952602386475), ('70', 3.1652443408966064), ('"capacityHint"', 3.036351203918457), ('"subscriberCount"', 2.867506980895996), ('"bufferSize"', 2.810338258743286)]
+Top words for pretrained_CodeBERTa neuron indx 2478 [("'.'", 2.4539912057959516), ('4000', 2.2562732696533203), ('68', 2.1575212478637695), ('270', 2.153376579284668), ('32', 2.1425793766975403)]
+Top words for pretrained_CodeBERTa neuron indx 436 [('"-"', 2.943903824862312), ('107', 2.7207366228103638), ("'#'", 2.68992018699646), ('87', 2.6656246185302734), ('e', 2.6127638816833496)]
+Top words for pretrained_CodeBERTa neuron indx 2490 [('for', 2.867646433058239), ('publisher', 2.6487233638763428), ('concatMap', 2.530601888895035), ('Single', 2.4196211298306785), ('onError', 2.3935447335243225)]
+Top words for pretrained_CodeBERTa neuron indx 4541 [('RxJavaPlugins', 2.8483102838198344), ('Publisher', 2.8439347743988037), ('31', 2.840486208597819), ('List', 2.6140966945224338), ('Consumer', 2.5775634267113428)]
+Top words for pretrained_CodeBERTa neuron indx 4542 [('collectionSupplier', 2.2958040833473206), ('450', 2.2835522890090942), ('onComplete', 2.2765986621379852), ('downstream', 2.2712764739990234), ('111', 2.269514560699463)]
+Top words for pretrained_CodeBERTa neuron indx 452 [('contains', 3.77038836479187), ('any', 3.568387508392334), ('disposable', 3.2761242389678955), ('135', 3.1365926265716553), ('D', 3.061109807756212)]
+Top words for pretrained_CodeBERTa neuron indx 457 [('never', 2.986177444458008), ('Function', 2.937567012947659), ('computation', 2.8636309146881103), ('ObservableEmpty', 2.862046241760254), ('75', 2.7637033462524414)]
+Top words for pretrained_CodeBERTa neuron indx 2506 [('6306', 3.1815412044525146), ('D', 2.86757583088345), ('V', 2.7511649131774902), ('mapper', 2.5816024076647874), ('64', 2.5643036365509033)]
+Top words for pretrained_CodeBERTa neuron indx 2505 [('error', 2.3622710704803467), ('25', 2.337651014328003), ('50', 2.060739517211914), ('static', 2.0389868970315472), ('private', 2.012699847734427)]
+Top words for pretrained_CodeBERTa neuron indx 4556 [('interval', 3.493724060058594), ('concatWith', 3.29998117685318), ("'*'", 3.0933961868286133), ('simpleGenerator', 2.994973659515381), ('intervalRange', 2.956238269805908)]
+Top words for pretrained_CodeBERTa neuron indx 4561 [('5', 2.9678938653733997), ('6', 2.666395510946001), ('2000', 2.6303606033325195), ('44', 2.6192668676376343), ('111', 2.6116487979888916)]
+Top words for pretrained_CodeBERTa neuron indx 4567 [('Predicate', 3.129349946975708), ("'+'", 3.0240820248921714), ('Object', 2.8888820012410483), ('ObservableEmpty', 2.8140320777893066), ("'\\''", 2.5830912788709006)]
+Top words for pretrained_CodeBERTa neuron indx 4578 [('3000', 4.141357719898224), ('2048', 3.060234546661377), ('700', 3.0354413986206055), ('next', 2.796802282333374), ('10', 2.784717321395874)]
+Top words for pretrained_CodeBERTa neuron indx 2544 [('initialCapacity', 2.8473377227783203), ('distinctUntilChanged', 2.753881573677063), ('openingIndicator', 2.722703138987223), ('computation', 2.6721871376037596), ('ObservableDistinct', 2.5690066814422607)]
+Top words for pretrained_CodeBERTa neuron indx 2549 [('length', 3.0320835510889688), ('items', 2.791798639297485), ('queue', 2.685373067855835), ('1440', 2.4923718770345054), ('sources', 2.4219616866111755)]
+Top words for pretrained_CodeBERTa neuron indx 4609 [('72', 3.349357763926188), ('protected', 2.6842944391312136), ('other', 2.555008073647817), ('550', 2.551684339841207), ('3', 2.42200360695521)]
+Top words for pretrained_CodeBERTa neuron indx 517 [('compose', 3.5459396839141846), ('dispose', 3.4350011348724365), ('70', 3.047258138656616), ('Publisher', 2.848723888397217), ("';'", 2.6777729988098145)]
+Top words for pretrained_CodeBERTa neuron indx 4616 [('",;"', 2.881850004196167), ('1440', 2.802797238032023), ('255', 2.760632276535034), ('.75f', 2.756955146789551), ('.0416666666666667', 2.6932919025421143)]
+Top words for pretrained_CodeBERTa neuron indx 524 [('123', 3.955233097076416), ('52', 3.832815647125244), ('48', 3.7082435744149342), ('compose', 3.6590538024902344), ('16384', 3.650277614593506)]
+Top words for pretrained_CodeBERTa neuron indx 532 [('mergeArray', 3.4868204593658447), ('empty', 3.3332866032918296), ('merge', 3.1637654304504395), ('"/"', 3.124109515122005), ('queue', 2.7700188159942627)]
+Top words for pretrained_CodeBERTa neuron indx 2594 [('"$"', 3.9375252723693848), ('period', 3.438887973626455), ('79', 3.324229598045349), ('72', 3.2623329162597656), ('element', 3.189971089363098)]
+Top words for pretrained_CodeBERTa neuron indx 2601 [('buffer', 3.751591672897339), ('BiFunction', 3.3342018127441406), ('List', 3.0377611849043102), ('CompletableSource', 2.817945861816406), ('contains', 2.6458163261413574)]
+Top words for pretrained_CodeBERTa neuron indx 557 [('";"', 3.30774188041687), ('255', 3.1090710163116455), ('Scheduler', 3.041038590669632), ('1024', 3.004813700914383), ('75', 2.932804584503174)]
+Top words for pretrained_CodeBERTa neuron indx 4655 [('"Grid/projection"', 2.75626277923584), ('queue', 2.7047572135925293), ('"application/octet-stream"', 2.66005539894104), ('"projectionBox"', 2.5008575916290283), ('"gridForm"', 2.4998905658721924)]
+Top words for pretrained_CodeBERTa neuron indx 2614 [('fromArray', 3.610332429409027), ("'('", 2.846590518951416), ('"\'"', 2.7215884072440013), ('"\\\\\\""', 2.5987727642059326), ("','", 2.593949019908905)]
+Top words for pretrained_CodeBERTa neuron indx 2628 [('Scheduler', 3.6338953971862793), ('INSTANCE', 3.365637421607971), ('IMMEDIATE', 3.225504914919535), ('doFinally', 3.205843210220337), ('scheduler', 3.1909117641903104)]
+Top words for pretrained_CodeBERTa neuron indx 4685 [('Functions', 3.671830125757166), ("']'", 3.425480842590332), ('43', 3.121126174926758), ("'_'", 3.0856035947799683), ('isEmpty', 2.9175641536712646)]
+Top words for pretrained_CodeBERTa neuron indx 4691 [('54', 2.695786714553833), ('123', 2.688718795776367), ('133', 2.490617036819458), ('140', 2.389003276824951), ('89', 2.279475688934326)]
+Top words for pretrained_CodeBERTa neuron indx 596 [('1900000', 2.7123327255249023), ('"\')"', 2.5684258937835693), ('"\\\\."', 2.500555992126465), ('"}"', 2.4872966210047402), ('"conventions"', 2.422891855239868)]
+Top words for pretrained_CodeBERTa neuron indx 603 [('.25', 2.7355971336364746), ('72', 2.419654130935669), ("'='", 2.259554459498479), ("'`'", 2.243206024169922), ('List', 2.2049509949154324)]
+Top words for pretrained_CodeBERTa neuron indx 612 [("'('", 3.231024980545044), ('Iterable', 3.186651515960693), ('using', 3.0850794315338135), ("'*'", 2.972871700922648), ('wrap', 2.9399492740631104)]
+Top words for pretrained_CodeBERTa neuron indx 4712 [('single', 3.518056869506836), ('interval', 3.175954246520996), ('ObservableTransformer', 3.0754799842834473), ('contains', 3.0528438091278076), ('125', 2.820357322692871)]
+Top words for pretrained_CodeBERTa neuron indx 2670 [('offer', 4.165419101715088), ('contains', 3.378587245941162), ('subscribe', 3.247062015533447), ('NoSuchElementException', 2.819697141647339), ('end', 2.648129463195801)]
+Top words for pretrained_CodeBERTa neuron indx 4721 [('"="', 3.5645689964294434), ('"]"', 3.4030988216400146), ("'*'", 3.3436264991760254), ('65', 3.1898021697998047), ('172', 2.9449219703674316)]
+Top words for pretrained_CodeBERTa neuron indx 628 [('selector', 3.4161616563796997), ('256', 3.3530848026275635), ('64', 3.3490052223205566), ('null', 3.337717572848002), ('192', 3.3059654235839844)]
+Top words for pretrained_CodeBERTa neuron indx 634 [('delay', 3.860143404740554), ('merge', 3.500251531600952), ('queue', 3.4777798652648926), ('10', 3.2448172569274902), ('"*"', 3.0462377866109214)]
+Top words for pretrained_CodeBERTa neuron indx 646 [('computation', 3.174542474746704), ('126', 2.9911299546559653), ('composer', 2.955737590789795), ('127', 2.923894762992859), ('125', 2.8451099395751953)]
+Top words for pretrained_CodeBERTa neuron indx 647 [('79', 2.7280023097991943), ('82', 2.361795425415039), ('114', 2.1484789848327637), ('e', 2.0897010962168374), ('"$"', 1.9870870113372803)]
+Top words for pretrained_CodeBERTa neuron indx 4743 [('66', 3.0869460105895996), ('"]."', 3.0864486694335938), ('108', 2.8932225704193115), ('140', 2.7767586708068848), ('"[.]"', 2.6678695678710938)]
+Top words for pretrained_CodeBERTa neuron indx 2701 [('range', 3.7512176036834717), ('ObservableTransformer', 2.83416485786438), ('Future', 2.740877151489258), ('Callable', 2.7275015751902876), ('")"', 2.718356657028198)]
+Top words for pretrained_CodeBERTa neuron indx 4749 [('ArrayListSupplier', 2.819276491800944), ('Integer', 2.5857566356658936), ('Action', 2.512750005722046), ('7', 2.5008185863494874), ('"\\\\."', 2.483341693878174)]
+Top words for pretrained_CodeBERTa neuron indx 661 [('TimeUnit', 2.5142321825027465), ("'|'", 2.422439552488781), ('any', 2.2531694173812866), ('Single', 2.2522664070129395), ('1000', 2.246113578478495)]
+Top words for pretrained_CodeBERTa neuron indx 2710 [('255', 2.6576459407806396), ('219', 2.547924280166626), ('private', 2.537127906763101), ('"\\\\"', 2.383471965789795), ('item', 2.3522872924804688)]
+Top words for pretrained_CodeBERTa neuron indx 663 [('iterator', 3.558479070663452), ('136', 3.1721017360687256), ('"#"', 3.0049774646759033), ('call', 2.7816667556762695), ('timer', 2.728550672531128)]
+Top words for pretrained_CodeBERTa neuron indx 4760 [('2009', 4.011281490325928), ('424', 3.045522451400757), ('ScalarCallable', 3.0254303216934204), ('null', 2.89370330174764), ('initialDelay', 2.8334509474890575)]
+Top words for pretrained_CodeBERTa neuron indx 2717 [('isEqual', 2.5586220026016235), ('86636.55536790872', 2.1736981868743896), ('180.0F', 1.9829388856887817), ('90.0F', 1.9791204399532742), ('Scheduler', 1.9739355742931366)]
+Top words for pretrained_CodeBERTa neuron indx 672 [('"("', 3.7147178649902344), ('42', 3.4425272941589355), ('doFinally', 3.4292802810668945), ('17', 3.228383779525757), ('ObservableDoFinally', 3.16920804977417)]
+Top words for pretrained_CodeBERTa neuron indx 4772 [('"java"', 3.1549880504608154), ('"timespan"', 3.134752035140991), ('52', 3.107999086380005), ("'|'", 3.0530265328429995), ('"(null)"', 2.9758172035217285)]
+Top words for pretrained_CodeBERTa neuron indx 4782 [("'`'", 3.3328053951263428), ('publisher', 3.041740894317627), ('130', 2.964850425720215), ('"admin"', 2.888216972351074), ('source', 2.8154871463775635)]
+Top words for pretrained_CodeBERTa neuron indx 2738 [('Function', 2.724203251128973), ('BiFunction', 2.6976430416107178), ('Predicate', 2.453282117843628), ('"\\n└"', 2.3920717239379883), ('"\\n├"', 2.3354666233062744)]
+Top words for pretrained_CodeBERTa neuron indx 4787 [('"DeploymentConfig"', 2.9798855781555176), ('"**"', 2.6738569736480713), ('"}"', 2.6661850214004517), ('"<Context>"', 2.6342663764953613), ('"--cors"', 2.62898588180542)]
+Top words for pretrained_CodeBERTa neuron indx 2740 [("'!'", 3.6999406814575195), ("'_'", 3.3164058526357016), ("'#'", 3.250629425048828), ("'*'", 3.1969911257425943), ("'{'", 3.1833654244740806)]
+Top words for pretrained_CodeBERTa neuron indx 694 [('Predicate', 3.3583858013153076), ('2009', 2.9090819358825684), ('""', 2.643703445996324), ('contains', 2.5793426036834717), ('46', 2.4349048137664795)]
+Top words for pretrained_CodeBERTa neuron indx 700 [('eager', 3.363044500350952), ('enter', 3.188960313796997), ('224', 3.0007147789001465), ('identity', 2.9593541120228015), ('B', 2.7775359286202326)]
+Top words for pretrained_CodeBERTa neuron indx 2753 [('Action', 3.228196620941162), ('boundarySupplier', 2.8125834465026855), ('concatMap', 2.6457250714302063), ('enter', 2.6447203159332275), ('concatMapIterable', 2.6372872591018677)]
+Top words for pretrained_CodeBERTa neuron indx 707 [('S', 2.4096371233463287), ('continue', 2.3080317974090576), ('206', 2.2803616523742676), ('"install_"', 2.2342638969421387), ('Long', 2.2300119400024414)]
+Top words for pretrained_CodeBERTa neuron indx 2759 [('element', 3.392008900642395), ('end', 3.336486498514811), ('"</address></body></html>"', 3.1174261569976807), ('ObservableTransformer', 3.0240323543548584), ('ObservableFromArray', 2.9091084003448486)]
+Top words for pretrained_CodeBERTa neuron indx 715 [("'('", 3.157224178314209), ("'^'", 2.8573792775472007), ('downstream', 2.8418166637420654), ('isEqual', 2.786325514316559), ('eager', 2.6232153177261353)]
+Top words for pretrained_CodeBERTa neuron indx 4814 [('140', 2.6072914600372314), ('singleElement', 2.5189874172210693), ('114', 2.5075511932373047), ('element', 2.4443269968032837), ('NoSuchElementException', 2.3422908782958984)]
+Top words for pretrained_CodeBERTa neuron indx 2767 [('END', 3.4544390201568604), ('it', 3.404267191886902), ('just', 3.310171067714691), ('R', 3.221350239284003), ('computation', 2.9931400299072264)]
+Top words for pretrained_CodeBERTa neuron indx 4815 [('2000', 3.2431437969207764), ('IMMEDIATE', 2.8998427788416543), ('END', 2.8292991638183596), ('Observer', 2.6590981483459473), ('NONE', 2.6532492637634277)]
+Top words for pretrained_CodeBERTa neuron indx 2766 [('17', 2.0437893867492676), ('0l', 2.02607798576355), ('4.', 1.9556526243686676), ('32', 1.9462660948435466), ('1097.0', 1.9305620193481445)]
+Top words for pretrained_CodeBERTa neuron indx 2774 [('openingIndicator', 2.9349826176961265), ('items', 2.8614330291748047), ('List', 2.709774971008301), ('"<unknown>"', 2.6138200759887695), ('closingIndicator', 2.5945338904857635)]
+Top words for pretrained_CodeBERTa neuron indx 743 [('observer', 3.662822034623888), ('"?"', 3.4951841831207275), ('distinct', 3.167714071273804), ('zipIterable', 3.055183172225952), ('BlockingObservableIterable', 2.8205575942993164)]
+Top words for pretrained_CodeBERTa neuron indx 2792 [('"."', 3.0998089781829288), ('"}"', 2.9510727723439536), ('"\\\\"', 2.8569252490997314), ('"\\""', 2.7125649452209473), ('item', 2.6320722103118896)]
+Top words for pretrained_CodeBERTa neuron indx 4844 [('SuppressWarnings', 3.1140549580256143), ('createHashSet', 2.8547037839889526), ('break', 2.8303470611572266), ('generate', 2.814404308795929), ('just', 2.6901970505714417)]
+Top words for pretrained_CodeBERTa neuron indx 752 [('123', 4.290812969207764), ('timespan', 3.6105135787617075), ("','", 3.521114408969879), ('Publisher', 3.27620792388916), ('concat', 3.2741141319274902)]
+Top words for pretrained_CodeBERTa neuron indx 4850 [('3', 2.148522582319048), ('2048', 2.11696720123291), ('320', 2.082463502883911), ('49', 2.0718507766723633), ('rangeLong', 1.9869118928909302)]
+Top words for pretrained_CodeBERTa neuron indx 765 [('111', 3.7155447006225586), ('50', 2.959376573562622), ('buffer', 2.8850559520721437), ('4000', 2.848012924194336), ('270', 2.8335647583007812)]
+Top words for pretrained_CodeBERTa neuron indx 773 [('empty', 2.418829838434855), ('merge', 2.366901397705078), ('"*"', 2.3471617566214666), ("'*'", 2.3406642278035483), ('timespan', 2.30467211116444)]
+Top words for pretrained_CodeBERTa neuron indx 780 [('82', 3.315566062927246), ("']'", 3.276423454284668), ('126', 3.126244862874349), ('124', 2.8928093910217285), ('class', 2.770223242895944)]
+Top words for pretrained_CodeBERTa neuron indx 781 [('timer', 3.5876212120056152), ('sources', 3.566290845870972), ('99', 3.4880918820699054), ('selector', 3.339741349220276), ('timespan', 3.107346621426669)]
+Top words for pretrained_CodeBERTa neuron indx 2832 [("'*'", 3.5392157236735025), ("','", 3.315039336681366), ("';'", 2.7976150512695312), ('65', 2.572089195251465), ('single', 2.537494659423828)]
+Top words for pretrained_CodeBERTa neuron indx 2835 [('range', 3.031374216079712), ('Observer', 3.0070544481277466), ('mapper', 2.9006100340587335), ('short', 2.53282182617113), ('ObservableDelay', 2.52805233001709)]
+Top words for pretrained_CodeBERTa neuron indx 2852 [('S', 2.467454433441162), ('53', 2.397188663482666), ('43', 2.382529067993164), ('disposer', 2.3402362167835236), ('initialState', 2.337387204170227)]
+Top words for pretrained_CodeBERTa neuron indx 807 [('collector', 3.6191495656967163), ("','", 2.7064912915229797), ('disposable', 2.6509639024734497), ("'}'", 2.483735720316569), ('class', 2.388979571206229)]
+Top words for pretrained_CodeBERTa neuron indx 4904 [('"\\\\|"', 2.7997257709503174), ('"\\\\r"', 2.726548433303833), ('justCallable', 2.662957191467285), ('2000', 2.554128885269165), ('Iterator', 2.508617401123047)]
+Top words for pretrained_CodeBERTa neuron indx 810 [('52', 4.140958786010742), ('66', 4.108182430267334), ('53', 3.7995235919952393), ('items', 3.757672834396362), ('91', 3.4725445747375487)]
+Top words for pretrained_CodeBERTa neuron indx 819 [('T', 2.384102881168379), ('1000', 2.250800927480062), ('short', 2.074352892115712), ('protected', 1.852838600174554), ('value', 1.757668375968933)]
+Top words for pretrained_CodeBERTa neuron indx 822 [('source', 3.375492970148722), ('generate', 3.3022961616516113), ('Iterator', 2.9161245822906494), ('publisher', 2.740070343017578), ('short', 2.675902508199215)]
+Top words for pretrained_CodeBERTa neuron indx 4919 [('87', 2.401926040649414), ('65', 2.347465753555298), ('133', 2.275944948196411), ('zipArray', 2.269867181777954), ('SuppressWarnings', 2.1512279311815896)]
+Top words for pretrained_CodeBERTa neuron indx 2870 [('230', 2.5895509719848633), ('64.0', 2.5765810012817383), ("'\\''", 2.5399999419848123), ('90.0F', 2.465818617078993), ('byte', 2.3349152212067854)]
+Top words for pretrained_CodeBERTa neuron indx 4925 [('SuppressWarnings', 3.3278552691141763), ('"AES/CBC/PKCS5Padding"', 3.26521897315979), ('blockingSubscribe', 2.8289276361465454), ('onComplete', 2.6858736276626587), ('break', 2.5901687145233154)]
+Top words for pretrained_CodeBERTa neuron indx 2883 [('192', 3.764625310897827), ('BackpressureSupport', 3.0786256790161133), ('BlockingObservableMostRecent', 2.839820623397827), ('timer', 2.7678418159484863), ('":["', 2.6709518432617188)]
+Top words for pretrained_CodeBERTa neuron indx 4932 [('dispose', 4.134397983551025), ('timer', 3.236196517944336), ('observer', 3.022227896584405), ('null', 2.8815077940622964), ('Deprecated', 2.87392520904541)]
+Top words for pretrained_CodeBERTa neuron indx 2892 [('.99', 2.6062917709350586), ('100000000', 2.45786714553833), ('65535', 2.323521852493286), ('2000000', 2.258881688117981), ('177', 2.2426400184631348)]
+Top words for pretrained_CodeBERTa neuron indx 2896 [("'.'", 3.9848186140475064), ('null', 3.885417381922404), ('delay', 3.8258948509509745), ('40', 3.680780609448751), ('56', 3.671653469403585)]
+Top words for pretrained_CodeBERTa neuron indx 850 [('len', 3.619351625442505), ('never', 3.464632749557495), ('BiFunction', 3.401865005493164), ('Predicate', 3.38091778755188), ('eager', 3.3518781661987305)]
+Top words for pretrained_CodeBERTa neuron indx 856 [('Publisher', 3.2100558280944824), ('75', 3.1570839881896973), ('BiFunction', 2.911632776260376), ('1024', 2.719971537590027), ('68', 2.61114501953125)]
+Top words for pretrained_CodeBERTa neuron indx 2906 [('127', 3.26228404045105), ("'_'", 3.1011995474497476), ('255', 3.0983874797821045), ('25000000', 3.0304925441741943), ('31', 2.939943552017212)]
+Top words for pretrained_CodeBERTa neuron indx 2908 [('45', 4.937103509902954), ('68', 3.7973430156707764), ('42', 3.653341770172119), ('89', 3.403546094894409), ('140', 3.257662534713745)]
+Top words for pretrained_CodeBERTa neuron indx 4957 [('12', 3.195163130760193), ('onError', 3.0684967041015625), ('5', 3.0310031440522938), ('6', 2.8993297474724904), ('drainLoop', 2.7233452796936035)]
+Top words for pretrained_CodeBERTa neuron indx 2909 [('240', 2.5525450706481934), ('initialValueSupplier', 2.519119620323181), ('bufferSupplier', 2.4247100750605264), ('ObservableCache', 2.4071950912475586), ('Notification', 2.357527494430542)]
+Top words for pretrained_CodeBERTa neuron indx 2911 [('"max"', 2.608578681945801), ("'#'", 2.485948324203491), ('"Projection"', 2.4729020595550537), ('"FileManager"', 2.3841500282287598), ('"%"', 2.3731184005737305)]
+Top words for pretrained_CodeBERTa neuron indx 4965 [('96', 3.5704294443130493), ('400000', 3.109421968460083), ('10000000', 2.7651292085647583), ('1000', 2.6297789414723716), ('1000000000', 2.6058071851730347)]
+Top words for pretrained_CodeBERTa neuron indx 4989 [('270', 2.806405544281006), ('"|"', 2.7033205032348633), ('single', 2.578505516052246), ('get', 2.4938509464263916), ('"**"', 2.4925644397735596)]
+Top words for pretrained_CodeBERTa neuron indx 4999 [('publisher', 4.122658014297485), ('selector', 3.4338048696517944), ('prefetch', 3.184905326727665), ('skip', 3.1635863304138185), ('composer', 3.091157913208008)]
+Top words for pretrained_CodeBERTa neuron indx 5002 [('82', 2.6026418209075928), ('blockingForEach', 2.484152317047119), ('6.2e-6', 2.4716742038726807), ('"\\n├"', 2.4539432525634766), ('"\\n└"', 2.424832344055176)]
+Top words for pretrained_CodeBERTa neuron indx 906 [('items', 4.18221001625061), ('List', 4.113593710793389), ('item', 3.5404627323150635), ('"\'"', 3.0978541714804515), ('"("', 3.091538429260254)]
+Top words for pretrained_CodeBERTa neuron indx 2960 [('75', 5.1968770027160645), ('2009', 4.143974304199219), ('72', 3.4916656414667764), ('99', 3.3698808828989666), ("'*'", 3.3039538065592446)]
+Top words for pretrained_CodeBERTa neuron indx 2965 [('other', 4.158484220504761), ('Notification', 3.758681535720825), ('"."', 3.2742186983426413), ('Iterable', 3.127872681617737), ('BiFunction', 3.071780204772949)]
+Top words for pretrained_CodeBERTa neuron indx 923 [('65', 3.014564275741577), ('237', 2.990280866622925), ('137', 2.9458699226379395), ('compose', 2.936990261077881), ('238', 2.808347463607788)]
+Top words for pretrained_CodeBERTa neuron indx 927 [('60000', 2.991160035133362), ('it', 2.599197268486023), ('collect', 2.5907167196273804), ('hasNext', 2.5451548099517822), ('Boolean', 2.3261138200759888)]
+Top words for pretrained_CodeBERTa neuron indx 5024 [('"\\\\\\\\"', 3.534562349319458), ('52', 3.134953498840332), ('"\\\\."', 2.848355770111084), ('"}"', 2.8355936209360757), ('"testfiles"', 2.8014864921569824)]
+Top words for pretrained_CodeBERTa neuron indx 2977 [('isEmpty', 2.8363447189331055), ('Schedulers', 2.8025187969207765), ('offer', 2.781219720840454), ('empty', 2.712730805079142), ('emptyConsumer', 2.6798390490668162)]
+Top words for pretrained_CodeBERTa neuron indx 2978 [('end', 2.7653271357218423), ('Collection', 2.5349877902439664), ('"]"', 2.5065486431121826), ('createArrayList', 2.497469425201416), ('101', 2.4166159629821777)]
+Top words for pretrained_CodeBERTa neuron indx 5028 [('sources', 2.708261444568634), ('Observer', 2.680281639099121), ('isEqual', 2.5305570363998413), ('break', 2.4970622062683105), ('68', 2.4816815853118896)]
+Top words for pretrained_CodeBERTa neuron indx 939 [('Emitter', 3.3084386587142944), ('"--quiet"', 3.2671821117401123), ('"^"', 2.8828420639038086), ('"--port"', 2.855741262435913), ('"--dir"', 2.8537704944610596)]
+Top words for pretrained_CodeBERTa neuron indx 2989 [('merge', 3.0184978246688843), ('16384', 2.9931840896606445), ('Experimental', 2.9721438884735107), ('createHashSet', 2.9087270498275757), ('leave', 2.8972392082214355)]
+Top words for pretrained_CodeBERTa neuron indx 2990 [('"FULLTEXT"', 3.4245924949645996), ('"RECORD"', 3.174213727315267), ('timer', 3.1175973415374756), ('1000000000', 2.672908902168274), ('onError', 2.6531394124031067)]
+Top words for pretrained_CodeBERTa neuron indx 5039 [('"^"', 3.1466970443725586), ('"]."', 3.067589282989502), ('50002', 2.9683074951171875), ('"java"', 2.9472873210906982), ('",;"', 2.9436535835266113)]
+Top words for pretrained_CodeBERTa neuron indx 5048 [('210', 3.867408275604248), ('10', 3.7220091819763184), ('218', 3.3939225673675537), ('131', 3.2690694332122803), ('104', 3.144871711730957)]
+Top words for pretrained_CodeBERTa neuron indx 5052 [('contains', 3.4809694290161133), ('IMMEDIATE', 3.434467395146688), ('all', 3.4074625968933105), ('onDispose', 3.3903030157089233), ('any', 3.0804353952407837)]
+Top words for pretrained_CodeBERTa neuron indx 3005 [('Consumer', 3.36018950288946), ('Publisher', 3.1110873222351074), ('offer', 2.7663841247558594), ('List', 2.6702005598280163), ('next', 2.6348607540130615)]
+Top words for pretrained_CodeBERTa neuron indx 3006 [('downstream', 3.102140188217163), ('Experimental', 2.5302350521087646), ('49', 2.3884189128875732), ('54', 2.388406753540039), ('openingIndicator', 2.3108155727386475)]
+Top words for pretrained_CodeBERTa neuron indx 957 [('private', 3.528599755673469), ('single', 3.3296144008636475), ('isEqual', 2.440611869096756), ('other', 2.346363047758738), ('protected', 2.289784885221912)]
+Top words for pretrained_CodeBERTa neuron indx 5065 [('2009', 4.151193141937256), ('70', 3.060245990753174), ('"\\\\\\\\"', 2.941511869430542), ('offer', 2.9040980339050293), ('700', 2.8296738266944885)]
+Top words for pretrained_CodeBERTa neuron indx 971 [('IMMEDIATE', 3.0289427836736045), ('2000', 2.9834399223327637), ('60000', 2.4592373371124268), ('ObservableNever', 2.4468741416931152), ("']'", 2.394273042678833)]
+Top words for pretrained_CodeBERTa neuron indx 5077 [('compose', 2.315014362335205), ('3', 2.2117302616437278), ("';'", 2.1953790187835693), ("'{'", 2.1437575817108154), ("'#'", 2.1238954067230225)]
+Top words for pretrained_CodeBERTa neuron indx 5078 [('256', 2.884662628173828), ('1.0e-9', 2.7861450910568237), ("'`'", 2.7615660429000854), ('999.99f', 2.707114100456238), ('9999.0f', 2.658519983291626)]
+Top words for pretrained_CodeBERTa neuron indx 984 [('END', 3.668484115600586), ('12', 2.496108293533325), ("']'", 2.437993288040161), ('mapper', 2.349489549311196), ('element', 2.31473708152771)]
+Top words for pretrained_CodeBERTa neuron indx 5101 [('550', 3.1434924602508545), ('170', 2.9301669597625732), ('172', 2.88571298122406), ('1050', 2.8618860244750977), ('1440', 2.7176647981007895)]
+Top words for pretrained_CodeBERTa neuron indx 3060 [('"info"', 2.99190092086792), ('240', 2.6895084381103516), ('Math', 2.5420982837677), ("'r'", 2.5359244346618652), ("'\\''", 2.5347535610198975)]
+Top words for pretrained_CodeBERTa neuron indx 5112 [('240', 4.785390853881836), ('12', 4.106345176696777), ('96', 4.022397518157959), ('160', 3.588470538457235), ('66', 3.5690908432006836)]
+Top words for pretrained_CodeBERTa neuron indx 1017 [('"?"', 3.9665842056274414), ('240', 3.579336166381836), ('onError', 3.536147952079773), ('selector', 3.4627186059951782), ('just', 3.3046513199806213)]
+Top words for pretrained_CodeBERTa neuron indx 3068 [('57', 3.5321683088938394), ('"\\""', 3.407742202281952), ('Scheduler', 3.3302883833646773), ('50', 3.2013301849365234), ('NoSuchElementException', 3.1858229637145996)]
+Top words for pretrained_CodeBERTa neuron indx 5118 [('21.0', 2.8122200965881348), ('151.0', 2.7561869621276855), ('150.0', 2.6824347972869873), ('"</a></p>"', 2.6708178520202637), ('50002', 2.6687703132629395)]
+Top words for pretrained_CodeBERTa neuron indx 3078 [('onComplete', 3.4418139457702637), ('240', 3.3040051460266113), ('4000', 3.1594600677490234), ('270', 3.035191059112549), ('700', 3.023545503616333)]
+Top words for pretrained_CodeBERTa neuron indx 3080 [("';'", 2.537862777709961), ('"]."', 2.242770195007324), ("':'", 2.186868125742132), ("']'", 2.180820941925049), ('get', 2.1350159645080566)]
+Top words for pretrained_CodeBERTa neuron indx 5130 [('disposable', 3.5637171268463135), ('Disposable', 3.510625720024109), ('87', 3.3609962463378906), ('255', 3.1568071842193604), ('120', 2.808089256286621)]
+Top words for pretrained_CodeBERTa neuron indx 1038 [('65', 3.810941457748413), ('interval', 3.7789126873016357), ('54', 3.6310596466064453), ('")"', 3.4774848937988283), ('"://"', 3.3871960242589316)]
+Top words for pretrained_CodeBERTa neuron indx 1039 [('ExceptionHelper', 3.100778579711914), ('QueueDrainHelper', 2.980588436126709), ('65535', 2.767484188079834), ('leave', 2.715843677520752), ('using', 2.6879055500030518)]
+Top words for pretrained_CodeBERTa neuron indx 5136 [("';'", 3.292433023452759), ('CUSTOM', 2.8289992809295654), ("'`'", 2.8282288312911987), ('117', 2.808867931365967), ('118', 2.7902843952178955)]
+Top words for pretrained_CodeBERTa neuron indx 3089 [("'+'", 3.419893503189087), ("'.'", 3.215177121369735), ("'_'", 3.0971885522206626), ("'-'", 3.079498704741983), ('"."', 2.9429027409780595)]
+Top words for pretrained_CodeBERTa neuron indx 5140 [('fromArray', 4.0768157839775085), ('empty', 3.5707737604777017), ('.093104', 3.1914310455322266), ('createArrayList', 2.8559224605560303), ("'r'", 2.6872057914733887)]
+Top words for pretrained_CodeBERTa neuron indx 5141 [('"`"', 3.166992485523224), ('"attribute"', 3.08408784866333), ('"algorithm"', 3.0831642746925354), ('"_class"', 2.980280876159668), ('114', 2.9531290531158447)]
+Top words for pretrained_CodeBERTa neuron indx 1051 [('111', 4.2941107749938965), ('82', 3.489530563354492), ('compareAndSet', 3.24067759513855), ('4000', 3.0455238819122314), ('2009', 3.045313835144043)]
+Top words for pretrained_CodeBERTa neuron indx 1058 [('END', 3.6659646034240723), ('computation', 3.4629249572753906), ('iterator', 3.222559928894043), ('doAfterNext', 3.205287218093872), ('error', 3.1965677738189697)]
+Top words for pretrained_CodeBERTa neuron indx 3109 [('Math', 3.3736257553100586), ('Consumer', 3.0521907806396484), ('List', 2.623745812310113), ('max', 2.6160745918750763), ('iterator', 2.5639278888702393)]
+Top words for pretrained_CodeBERTa neuron indx 1066 [('6370', 3.6502650578816733), ('6000000', 3.387213945388794), ('239.5089F', 3.2943437099456787), ("'/'", 3.235179591178894), ('6772', 3.1229701042175293)]
+Top words for pretrained_CodeBERTa neuron indx 1070 [("'('", 2.748737096786499), ('compose', 2.619530439376831), ('ObservableInterval', 2.2474677562713623), ('capacityHint', 2.1553102334340415), ('short', 2.1542221754789352)]
+Top words for pretrained_CodeBERTa neuron indx 5169 [('250', 3.2123539310235243), ('1000', 3.12284262975057), ('Completable', 3.061706066131592), ('"_sweep_"', 2.769361066818237), ('Integer', 2.7169016361236573)]
+Top words for pretrained_CodeBERTa neuron indx 1084 [('using', 3.9878989855448403), ('composer', 3.732201337814331), ('65536', 3.2780025005340576), ('Observer', 3.2181711196899414), ("'!'", 3.1080081462860107)]
+Top words for pretrained_CodeBERTa neuron indx 5181 [('75', 4.83906888961792), ("'_'", 3.709538141886393), ('17', 3.367347002029419), ('999', 3.2531710267066956), ('101', 3.2487752437591553)]
+Top words for pretrained_CodeBERTa neuron indx 1094 [('leave', 3.735877513885498), ("','", 3.374850630760193), ('2009', 3.1598989963531494), ('"?"', 2.940109968185425), ('single', 2.7773585319519043)]
+Top words for pretrained_CodeBERTa neuron indx 5193 [('bufferSize', 3.679700231552124), ('single', 3.6171655654907227), ('singleElement', 3.201683282852173), ('"OK"', 2.9905753135681152), ('contains', 2.9336397647857666)]
+Top words for pretrained_CodeBERTa neuron indx 1099 [('"&"', 3.0066916942596436), ('.75', 2.823404550552368), ('contains', 2.7946581840515137), ('computation', 2.733831596374512), ('4', 2.6811349329195524)]
+Top words for pretrained_CodeBERTa neuron indx 3152 [('maxConcurrency', 3.185838727390065), ('BiFunction', 2.696162462234497), ('Functions', 2.670701845272167), ('onError', 2.5589107275009155), ('initialCapacity', 2.5079434156417846)]
+Top words for pretrained_CodeBERTa neuron indx 1118 [("'+'", 3.1467856566111245), ("','", 3.047508478164673), ('"|"', 2.9514036178588867), ("'}'", 2.747039318084717), ('\'"\'', 2.74122062096229)]
+Top words for pretrained_CodeBERTa neuron indx 5218 [('192', 3.5873916149139404), ('isEmpty', 3.4271576404571533), ('next', 3.355379819869995), ('240', 3.224414825439453), ('68', 3.2109806537628174)]
+Top words for pretrained_CodeBERTa neuron indx 1124 [('Completable', 2.5525001287460327), ('enter', 2.4468483924865723), ('downstream', 2.3169610500335693), ('closingIndicator', 2.257513165473938), ('iterator', 2.2457470893859863)]
+Top words for pretrained_CodeBERTa neuron indx 3176 [('ObservableTransformer', 3.1109306812286377), ('dispose', 2.7868669033050537), ('82', 2.5324652194976807), ('single', 2.525491714477539), ('contains', 2.378436803817749)]
+Top words for pretrained_CodeBERTa neuron indx 3180 [('99', 3.6011401812235513), ('publisher', 3.4688206911087036), ('S', 3.3321852684020996), ('43', 2.9587246417999267), ('wrap', 2.82016658782959)]
+Top words for pretrained_CodeBERTa neuron indx 1142 [('break', 2.542555093765259), ('12', 2.4735050201416016), ('100', 2.4484821557998657), ('24', 2.4050228118896486), ('1000000', 2.306347131729126)]
+Top words for pretrained_CodeBERTa neuron indx 1147 [('selector', 3.2676297426223755), ('Predicate', 3.0389052629470825), ('predicate', 2.588317632675171), ('item', 2.5293948650360107), ("'.'", 2.499501611875451)]
+Top words for pretrained_CodeBERTa neuron indx 1149 [('start', 3.016054352124532), ('75', 2.615128755569458), ('RxJavaPlugins', 2.455678661664327), ('ScalarCallable', 2.317262291908264), ('element', 2.1416990160942078)]
+Top words for pretrained_CodeBERTa neuron indx 5257 [('224', 2.927218437194824), ('all', 2.3990743160247803), ('999', 2.332712471485138), ('"@"', 2.3119696974754333), ('"$"', 2.2870986461639404)]
+Top words for pretrained_CodeBERTa neuron indx 1163 [("'('", 4.416051864624023), ('timespan', 2.7977106354453345), ('700', 2.485871732234955), ("'+'", 2.418484846750895), ('ObservableCollectSingle', 2.328585147857666)]
+Top words for pretrained_CodeBERTa neuron indx 3216 [('contains', 3.307384729385376), ('90.0F', 3.068998787138197), ('255.0F', 2.967561960220337), ("'}'", 2.953303575515747), ('239.5089F', 2.9400100708007812)]
+Top words for pretrained_CodeBERTa neuron indx 3217 [('219', 3.975693941116333), ('composer', 3.1295900344848633), ('255', 2.8581039905548096), ('8192', 2.7674793004989624), ('B', 2.7192729314168296)]
+Top words for pretrained_CodeBERTa neuron indx 5266 [('68', 4.901705741882324), ('24', 3.90931293964386), ('IMMEDIATE', 3.1548155148824057), ('publisher', 3.0186712741851807), ('56', 2.9756262501080832)]
+Top words for pretrained_CodeBERTa neuron indx 3219 [('V', 3.0529402097066245), ('downstream', 2.664795160293579), ('Single', 2.647144834200541), ('Throwable', 2.612008810043335), ('hasNext', 2.546551465988159)]
+Top words for pretrained_CodeBERTa neuron indx 1180 [('"://"', 3.2258870601654053), ('"<hr>"', 3.2139739990234375), ('192', 2.870720624923706), ('contains', 2.7761685848236084), ('\'"\'', 2.6479446979669423)]
+Top words for pretrained_CodeBERTa neuron indx 3241 [('period', 2.5308251778284707), ('just', 2.4676446318626404), ('max', 2.334052950143814), ('"[0]"', 2.2301106452941895), ('dispose', 2.202338695526123)]
+Top words for pretrained_CodeBERTa neuron indx 5298 [('250', 3.3069702020058265), ('64', 3.1393747329711914), ('2048', 2.9732398986816406), ('270', 2.9114136695861816), ('224', 2.8621928691864014)]
+Top words for pretrained_CodeBERTa neuron indx 1203 [('49', 2.912182569503784), ('65536', 2.8412654399871826), ('"UTF8"', 2.6252649426460266), ('"alien"', 2.471081495285034), ('2048', 2.4010555744171143)]
+Top words for pretrained_CodeBERTa neuron indx 1202 [('Predicate', 3.3836660385131836), ('mapper', 2.768398238391411), ('offer', 2.658231735229492), ('sequenceEqual', 2.5513158639272056), ('40', 2.3903823296229043)]
+Top words for pretrained_CodeBERTa neuron indx 3261 [('CUSTOM', 2.980839967727661), ('e', 2.688683191935221), ('2009', 2.6455905437469482), ('50', 2.5441908836364746), ('68', 2.503753185272217)]
+Top words for pretrained_CodeBERTa neuron indx 3263 [('13', 2.6129472255706787), ('isEmpty', 2.5529143810272217), ('protected', 2.397868687106717), ("'!'", 2.395081043243408), ('"getUser()"', 2.3383655548095703)]
+Top words for pretrained_CodeBERTa neuron indx 5311 [('disposable', 3.606385588645935), ('Disposable', 3.099924325942993), ('66', 2.969496488571167), ('13', 2.7937841415405273), ('ObservableCache', 2.778411388397217)]
+Top words for pretrained_CodeBERTa neuron indx 1218 [('toFuture', 3.1142213344573975), ('boundary', 2.8006625175476074), ('eager', 2.6229801177978516), ('COMPUTATION', 2.435023307800293), ('Integer', 2.216662788391113)]
+Top words for pretrained_CodeBERTa neuron indx 3275 [('enter', 3.2460641860961914), ('91', 3.0305243492126466), ('96', 2.702543258666992), ('2000', 2.6958608627319336), ('82', 2.606253147125244)]
+Top words for pretrained_CodeBERTa neuron indx 3276 [('128', 2.875267585118612), ('onError', 2.633623480796814), ('composer', 2.442833423614502), ('count', 2.2464625239372253), ('0', 2.174087745647691)]
+Top words for pretrained_CodeBERTa neuron indx 3278 [('"_"', 4.408957640329997), ('element', 3.2709521055221558), ('error', 2.906430721282959), ('1000', 2.889030377070109), ('"%d"', 2.7745793782747707)]
+Top words for pretrained_CodeBERTa neuron indx 1242 [('NoSuchElementException', 3.180274248123169), ('65536', 2.878328800201416), ('BlockingObservableMostRecent', 2.7035229206085205), ('64', 2.647181749343872), ('"/"', 2.640854226691382)]
+Top words for pretrained_CodeBERTa neuron indx 3293 [('ObservableFlattenIterable', 3.117342948913574), ('Iterable', 3.0758655071258545), ('ObservableToList', 3.0034098625183105), ('ObservableFlatMap', 2.9623215198516846), ('ObservableFromIterable', 2.9586000442504883)]
+Top words for pretrained_CodeBERTa neuron indx 3298 [('Single', 2.514027933279673), ("'#'", 2.307847499847412), ('List', 2.252736449241638), ('Boolean', 2.178731769323349), ('timespan', 2.0906792174686086)]
+Top words for pretrained_CodeBERTa neuron indx 3301 [('"]"', 3.1292896270751953), ('"\\\\\\\\"', 2.9823687076568604), ('"\\\\\\""', 2.7103352546691895), ('0', 2.616358466502929), ('6.0', 2.5671292543411255)]
+Top words for pretrained_CodeBERTa neuron indx 3311 [('wrapOrThrow', 3.9991683959960938), ('wrap', 3.86688631772995), ('compose', 3.3310298919677734), ('concatMapCompletable', 2.968241532643636), ('2048', 2.958081007003784)]
+Top words for pretrained_CodeBERTa neuron indx 3319 [('V', 2.6477193037668862), ('100000000', 2.4645862579345703), ('1L', 2.430060625076294), ('1111111111.0', 2.401158571243286), ('65535', 2.391470193862915)]
+Top words for pretrained_CodeBERTa neuron indx 3322 [("';'", 3.6835079193115234), ('0.0F', 3.4761646456188626), ('255.0F', 3.4069480895996094), ('180.0F', 3.343186412538801), ('6.0', 3.159741520881653)]
+Top words for pretrained_CodeBERTa neuron indx 3327 [('1000', 3.2055596510569253), ('single', 3.1468539237976074), ('10000', 2.972440242767334), ('B', 2.8361552953720093), ('99', 2.686996833483378)]
+Top words for pretrained_CodeBERTa neuron indx 1283 [('len', 3.596333901087443), ('selector', 3.4134351015090942), ('skip', 3.317732334136963), ('53', 2.98287034034729), ('delayError', 2.8476168314615884)]
+Top words for pretrained_CodeBERTa neuron indx 3331 [('".xml"', 3.1459734439849854), ('"collate"', 3.0700302124023438), ('"zipkin"', 3.0385427474975586), ('"z"', 3.00616192817688), ('"[.]"', 2.98685359954834)]
+Top words for pretrained_CodeBERTa neuron indx 3347 [('101', 3.3593544960021973), ('null', 3.0494089921315513), ('Action', 2.972410774230957), ('class', 2.871785375050136), ('60000', 2.8339786529541016)]
+Top words for pretrained_CodeBERTa neuron indx 3358 [('Integer', 2.508660578727722), ('Boolean', 2.305184245109558), ('"]"', 2.2629404067993164), ('timer', 2.24737548828125), ('"="', 2.134136438369751)]
+Top words for pretrained_CodeBERTa neuron indx 1316 [("'_'", 2.5097761154174805), ('136', 2.4454257488250732), ('start', 2.422925521930059), ('",class:"', 2.1720364093780518), ('43', 2.149379920959473)]
+Top words for pretrained_CodeBERTa neuron indx 3369 [('buffer', 3.01680778503418), ('BiFunction', 2.692678689956665), ('89', 2.5790083408355713), ('List', 2.5644197199079724), ('100', 2.455789268016815)]
+Top words for pretrained_CodeBERTa neuron indx 3371 [('.99', 3.4028701782226562), ('period', 2.5417532126108804), ('.25', 2.507542610168457), ('45', 2.413997769355774), ("'+'", 2.390969753265381)]
+Top words for pretrained_CodeBERTa neuron indx 3373 [('else', 2.590228107381374), ('"base_date"', 2.518211603164673), ('wrap', 2.430368959903717), ('"FULL"', 2.355776786804199), ('identity', 2.2807385984220003)]
+Top words for pretrained_CodeBERTa neuron indx 1326 [('"."', 3.730715425241561), ('NONE', 3.4852490425109863), ("'/'", 3.3339505910873415), ('125', 2.785966634750366), ('127', 2.6862881183624268)]
+Top words for pretrained_CodeBERTa neuron indx 3400 [('eager', 3.6031662225723267), ('Deprecated', 3.1940746307373047), ('composer', 2.977186918258667), ('"_rid"', 2.827721118927002), ('concat', 2.6918582121531167)]
+Top words for pretrained_CodeBERTa neuron indx 3426 [('unsafeCreate', 2.754584312438965), ('composer', 2.741873025894165), ('"[%d]"', 2.5727057456970215), ('"[%d:%d]"', 2.445882558822632), ('"%s/%s/%s"', 2.4080265760421753)]
+Top words for pretrained_CodeBERTa neuron indx 3427 [('256', 2.744032859802246), ('"="', 2.7140121459960938), ('class', 2.604732813153948), ('64', 2.470510959625244), ('END', 2.2118871212005615)]
+Top words for pretrained_CodeBERTa neuron indx 1380 [("'*'", 4.34454886118571), ('wrap', 3.690873861312866), ('270', 3.5299971103668213), ('all', 3.391362428665161), ('scheduler', 3.2805635815575007)]
+Top words for pretrained_CodeBERTa neuron indx 3430 [('"&"', 2.6366941928863525), ('108', 2.226092576980591), ('"://"', 2.1970656911532083), ('TimeUnit', 2.0445810397466024), ('1440', 2.0265029271443686)]
+Top words for pretrained_CodeBERTa neuron indx 3432 [('4', 3.3301251562018144), ('31', 3.132509231567383), ('64', 3.077047824859619), ('5', 2.8897796471913657), ('3', 2.8779323034816318)]
+Top words for pretrained_CodeBERTa neuron indx 3444 [('CUSTOM', 3.4962620735168457), ('256', 3.1148409843444824), ('107', 3.086382269859314), ('onAfterNext', 2.9788291454315186), ('blockingSingle', 2.908289909362793)]
+Top words for pretrained_CodeBERTa neuron indx 1397 [("'('", 3.753115177154541), ('amb', 3.560901641845703), ('Publisher', 3.110640287399292), ('47', 3.0850459337234497), ('","', 3.057387269460238)]
+Top words for pretrained_CodeBERTa neuron indx 1414 [('2009', 3.2111525535583496), ('computation', 3.018697500228882), ('":("', 2.7439842224121094), ('Action', 2.6984397888183596), ('zip', 2.689878225326538)]
+Top words for pretrained_CodeBERTa neuron indx 3462 [('value', 3.1683979829152427), ('dispose', 2.7832846641540527), ('"%d"', 2.6404145772640524), ('ObservableTransformer', 2.599331855773926), ('"result"', 2.4896417458852134)]
+Top words for pretrained_CodeBERTa neuron indx 1417 [('130', 3.5896542072296143), ('generate', 3.4445950984954834), ('max', 3.344093918800354), ('400000', 3.3412585258483887), ('\'"\'', 3.017367931512686)]
+Top words for pretrained_CodeBERTa neuron indx 1419 [('distinct', 2.999898099899292), ('"modified"', 2.7878482341766357), ('"nexus"', 2.7748446464538574), ('"filter"', 2.7055373191833496), ('"urlPath"', 2.671424388885498)]
+Top words for pretrained_CodeBERTa neuron indx 3468 [('isEmpty', 3.159710645675659), ('iterator', 2.6511073112487793), ('"**"', 2.432715654373169), ("'i'", 2.4212119579315186), ('"-p"', 2.2347612380981445)]
+Top words for pretrained_CodeBERTa neuron indx 1428 [('collector', 3.4360767006874084), ('unit', 3.4070613614974485), ('prefetch', 3.2780853546026982), ('sources', 3.0323316192626955), ('selector', 2.8959765434265137)]
+Top words for pretrained_CodeBERTa neuron indx 3477 [('Integer', 4.095180511474609), ('Boolean', 3.603932023048401), ('merge', 3.3489668369293213), ('53', 2.944779872894287), ('doOnComplete', 2.8596556186676025)]
+Top words for pretrained_CodeBERTa neuron indx 1429 [('other', 3.6700176000595093), ('any', 2.8960882425308228), ('timer', 2.826211929321289), ('240', 2.7956507205963135), ('17', 2.641169548034668)]
+Top words for pretrained_CodeBERTa neuron indx 3487 [('selector', 3.7440115213394165), ('source', 3.6784866650899253), ('5000000', 3.4824986457824707), ('collectionSupplier', 3.479440927505493), ("'|'", 3.393243676140195)]
+Top words for pretrained_CodeBERTa neuron indx 1449 [('D', 3.8604762289259167), ('value', 3.3533220291137695), ('125', 3.2750319242477417), ('13', 3.256682872772217), ('bufferSize', 3.099437961578369)]
+Top words for pretrained_CodeBERTa neuron indx 1461 [('2009', 3.7462613582611084), ('Single', 2.7641984621683755), ('270', 2.6844537258148193), ('1', 2.5838827700316096), ('bufferSize', 2.4823109912872314)]
+Top words for pretrained_CodeBERTa neuron indx 3512 [('Completable', 3.1578943133354187), ('Future', 3.0591976642608643), ('iterator', 2.9557759761810303), ('zipIterable', 2.7857604026794434), ('CompletableSource', 2.756018352508545)]
+Top words for pretrained_CodeBERTa neuron indx 1469 [('Notification', 3.700577974319458), ('Consumer', 3.060621640898965), ('next', 2.9629740715026855), ('enter', 2.9585933685302734), ('get', 2.8814845085144043)]
+Top words for pretrained_CodeBERTa neuron indx 3526 [('next', 2.6140902042388916), ('error', 2.565291166305542), ('"${"', 2.563246011734009), ('"_"', 2.5027639071146646), ('"|"', 2.435736894607544)]
+Top words for pretrained_CodeBERTa neuron indx 3528 [("'#'", 2.72365403175354), ('91', 2.707726526260376), ('private', 2.514171517725232), ('"#"', 2.4886957009633384), ('ArrayListSupplier', 2.238833030064901)]
+Top words for pretrained_CodeBERTa neuron indx 1489 [('"$"', 3.8259663581848145), ('".zip"', 3.3684489727020264), ('BiFunction', 3.3425052165985107), ('"^"', 3.276560068130493), ('mapper', 3.210174112785153)]
+Top words for pretrained_CodeBERTa neuron indx 3539 [('3622', 2.6744143962860107), ('255', 2.4843316078186035), ('127', 2.4842995405197144), ('100', 2.483069896697998), ("']'", 2.2811484336853027)]
+Top words for pretrained_CodeBERTa neuron indx 3544 [('scheduler', 3.87865458215986), ('timespan', 3.84755860675465), ('MAX_VALUE', 3.3978759050369263), ('timeout', 3.3617182970046997), ('timer', 3.2450366020202637)]
+Top words for pretrained_CodeBERTa neuron indx 1499 [('12', 3.23166561126709), ("':'", 2.666930610483343), ("'+'", 2.62045685450236), ('129', 2.583510160446167), ('"*"', 2.511217329237196)]
+Top words for pretrained_CodeBERTa neuron indx 1511 [('distinct', 3.939362096786499), ('distinctUntilChanged', 3.218025326728821), ('Emitter', 3.1750720739364624), ('ObservableDistinct', 3.153184175491333), ('ObservableDistinctUntilChanged', 3.0498920679092407)]
+Top words for pretrained_CodeBERTa neuron indx 1512 [('CompletableSource', 2.774255466461182), ('"@"', 2.6552497148513794), ('"\\\\\\\\`"', 2.4749536514282227), ('zipIterable', 2.2756576538085938), ('dispose', 2.2590396404266357)]
+Top words for pretrained_CodeBERTa neuron indx 3573 [('111', 3.548466444015503), ('element', 3.371219754219055), ('buffer', 3.3549380111694336), ('start', 3.261619766553243), ('leave', 2.993616819381714)]
+Top words for pretrained_CodeBERTa neuron indx 3575 [('offer', 3.3869009017944336), ('timer', 3.1534409523010254), ('drainLoop', 3.0677273273468018), ('\'\\"\'', 2.8722574710845947), ('Predicate', 2.8327629566192627)]
+Top words for pretrained_CodeBERTa neuron indx 3576 [('7574', 3.783762216567993), ('computation', 3.596360206604004), ('6306', 3.564549446105957), ('240', 3.5338404178619385), ('timer', 3.528013229370117)]
+Top words for pretrained_CodeBERTa neuron indx 1536 [('END', 3.236314868927002), ('range', 3.117103099822998), ('256', 3.0950613021850586), ('subscribeWith', 2.857192039489746), ('wrap', 2.8341866731643677)]
+Top words for pretrained_CodeBERTa neuron indx 3587 [('U', 2.843486056608312), ('generator', 2.762365937232971), ('K', 2.7527124087015786), ('31', 2.702227473258972), ('CUSTOM', 2.691782236099243)]
+Top words for pretrained_CodeBERTa neuron indx 1542 [('onComplete', 2.966913104057312), ('onError', 2.8259609937667847), ('105', 2.6487640142440796), ('4000', 2.5579135417938232), ('max', 2.534250259399414)]
+Top words for pretrained_CodeBERTa neuron indx 3592 [('queue', 3.9877912998199463), ('get', 3.8704867362976074), ('"0."', 3.068815231323242), ('generator', 2.96681547164917), ('delay', 2.8483345967072706)]
+Top words for pretrained_CodeBERTa neuron indx 1553 [("'.'", 3.6860823216645615), ("'+'", 3.564563274383545), ("'_'", 3.3517266114552817), ('Math', 3.2764174342155457), ("'-'", 3.2291124007281136)]
+Top words for pretrained_CodeBERTa neuron indx 3608 [('timer', 2.89730167388916), ('Collection', 2.8914667197636197), ('List', 2.7980207602183023), ('"NULL"', 2.5333385467529297), ('null', 2.4617435137430825)]
+Top words for pretrained_CodeBERTa neuron indx 1563 [('eager', 3.4029879570007324), ('25000000', 3.365145444869995), ('"\\\\|"', 3.3618688583374023), ('createArrayList', 2.9961354732513428), ('"Job"', 2.8482730388641357)]
+Top words for pretrained_CodeBERTa neuron indx 3612 [('computation', 4.1346848487854), ("'{'", 3.813668171564738), ('7', 3.242647409439087), ('TimeUnit', 3.0294562180836997), ('123', 2.947465181350708)]
+Top words for pretrained_CodeBERTa neuron indx 3621 [('RxJavaPlugins', 2.684638023376465), ('Single', 2.3452401161193848), ('D', 2.3402394188774958), ('10', 2.1473958492279053), ('1024', 2.1261095702648163)]
+Top words for pretrained_CodeBERTa neuron indx 3626 [("'='", 2.3045440637148342), ('downstream', 2.1437110900878906), ('7', 1.889631175994873), ('"://"', 1.8871821363766987), ('0', 1.8159668048524351)]
+Top words for pretrained_CodeBERTa neuron indx 1581 [('"$"', 3.4320225715637207), ('"`"', 3.0664073824882507), ('"|"', 2.851729154586792), ('"active"', 2.7180235385894775), ('"yr"', 2.6771080493927)]
+Top words for pretrained_CodeBERTa neuron indx 3647 [('Math', 3.3232362866401672), ('offer', 3.0426831245422363), ('40', 3.0365163485209146), ('70', 2.9336044788360596), ('24', 2.787582039833069)]
+Top words for pretrained_CodeBERTa neuron indx 3660 [('.99', 2.879342794418335), ('8080', 2.7141828536987305), ('209', 2.701110601425171), ('1203', 2.681946277618408), ('65535', 2.66989803314209)]
+Top words for pretrained_CodeBERTa neuron indx 3661 [("'C'", 3.1472408771514893), ("'U'", 2.8422021865844727), ("'P'", 2.772749185562134), ("'H'", 2.6883442401885986), ("'R'", 2.6613359451293945)]
+Top words for pretrained_CodeBERTa neuron indx 1616 [('identity', 3.1790921688079834), ('iterator', 2.8774001598358154), ('onError', 2.750789523124695), ('single', 2.62949800491333), ('errorSupplier', 2.6267731189727783)]
+Top words for pretrained_CodeBERTa neuron indx 1617 [('255', 4.772331714630127), ('items', 3.854750061035156), ('50', 3.3447821140289307), ('count', 3.257526775201162), ('createArrayList', 2.8832547664642334)]
+Top words for pretrained_CodeBERTa neuron indx 1624 [('BiFunction', 3.643439292907715), ('Publisher', 3.6290605068206787), ("'!'", 3.4819586277008057), ('generator', 3.3309594988822937), ('Collection', 3.3174218790871755)]
+Top words for pretrained_CodeBERTa neuron indx 1626 [('timeout', 3.5965093970298767), ('leave', 3.2047622203826904), ('error', 3.033163547515869), ('empty', 2.862750291824341), ('any', 2.8348134756088257)]
+Top words for pretrained_CodeBERTa neuron indx 1644 [('using', 3.3218229611714682), ('99', 2.9374605814615884), ('56', 2.913360893726349), ('43', 2.827951192855835), ('S', 2.7614099979400635)]
+Top words for pretrained_CodeBERTa neuron indx 3696 [('identity', 3.5782277082142078), ('observer', 2.751857625113593), ('doOnComplete', 2.739365339279175), ('enter', 2.7326793670654297), ('224', 2.731945514678955)]
+Top words for pretrained_CodeBERTa neuron indx 3697 [('BlockingObservableIterable', 2.995198965072632), ('concatMapIterable', 2.8804415464401245), ('justCallable', 2.6604034900665283), ('BiFunction', 2.583592176437378), ('blockingIterable', 2.5733710527420044)]
+Top words for pretrained_CodeBERTa neuron indx 3704 [("'`'", 2.308152198791504), ("'i'", 2.1170237064361572), ('"<unspecified>"', 2.1145846843719482), ('return', 2.030703128070875), ('"\\\\|"', 2.022645950317383)]
+Top words for pretrained_CodeBERTa neuron indx 1661 [('Math', 2.7683611512184143), ('iterator', 2.746523857116699), ('"kiwiirc"', 2.706765651702881), ('43', 2.6797277212142943), ('"]"', 2.515378713607788)]
+Top words for pretrained_CodeBERTa neuron indx 1664 [('distinct', 3.612775468826294), ('end', 3.489694833755493), ('bufferSize', 2.89536340713501), ('8080', 2.6951494216918945), ('Notification', 2.6137948036193848)]
+Top words for pretrained_CodeBERTa neuron indx 1666 [('";"', 3.229288339614868), ('"*"', 3.0905583699544272), ('""', 3.0786804202688884), ('"%f"', 2.7098846435546875), ('1000000', 2.6012250582377114)]
+Top words for pretrained_CodeBERTa neuron indx 3720 [('blockingSingle', 3.0294134616851807), ('onComplete', 3.0050888657569885), ('offer', 2.968400001525879), ('it', 2.932924747467041), ('single', 2.889094352722168)]
+Top words for pretrained_CodeBERTa neuron indx 1674 [('List', 2.837808052698771), ('item', 2.8036611080169678), ('hasNext', 2.6632120609283447), ('"("', 2.661417245864868), ('items', 2.5484800815582274)]
+Top words for pretrained_CodeBERTa neuron indx 1681 [('89', 3.514376401901245), ('bufferSize', 3.2228552961349486), ('105', 3.0104713439941406), ('6370', 2.921119054158529), ('BiFunction', 2.9204680919647217)]
+Top words for pretrained_CodeBERTa neuron indx 3730 [('ObservableConcatMapCompletable', 2.7659565210342407), ('1000000000', 2.6666393280029297), ('ObservableConcatMapEager', 2.6113191843032837), ("'='", 2.573930162649888), ('unit', 2.570430228787084)]
+Top words for pretrained_CodeBERTa neuron indx 1684 [('INSTANCE', 3.2396031618118286), ('disposable', 2.741010069847107), ('224', 2.694023847579956), ('192', 2.3864336013793945), ('"="', 2.3854713439941406)]
+Top words for pretrained_CodeBERTa neuron indx 3733 [('zip', 4.338744401931763), ('other', 3.894725282986959), ('Notification', 3.5294103622436523), ('item', 3.3254703283309937), ('Iterable', 3.186421012878418)]
+Top words for pretrained_CodeBERTa neuron indx 3734 [('40', 3.131049394607544), ('111', 2.5273547172546387), ('450', 2.4460127353668213), ('56', 2.423465927441915), ('8', 2.4172618133681163)]
+Top words for pretrained_CodeBERTa neuron indx 1687 [('count', 2.5856539448102316), ('65535', 2.3599257469177246), ('1000000', 2.347468932469686), ('bufferSize', 2.251991419792175), ('using', 2.2277552684148154)]
+Top words for pretrained_CodeBERTa neuron indx 3742 [('Notification', 3.997663736343384), ('Publisher', 3.4887518882751465), ('K', 3.318440834681193), ('2000', 3.1639058589935303), ('209', 3.140336751937866)]
+Top words for pretrained_CodeBERTa neuron indx 1722 [('Single', 2.602641463279724), ('65536', 2.4233922958374023), ('publisher', 2.2838826179504395), ('for', 2.174332386917538), ('timespan', 2.1416374986821953)]
+Top words for pretrained_CodeBERTa neuron indx 3772 [('get', 3.606151819229126), ('Action', 3.0775275230407715), ('collect', 3.045356273651123), ('timer', 2.870706558227539), ('wrap', 2.706883490085602)]
+Top words for pretrained_CodeBERTa neuron indx 3781 [('for', 2.912472758974348), ('65504', 2.384665012359619), ('365.25', 2.357438087463379), ('550', 2.0680729746818542), ('239.5089F', 1.9653085470199585)]
+Top words for pretrained_CodeBERTa neuron indx 1736 [('compose', 2.3963186740875244), ('class', 2.3144247463771275), ('")"', 2.287941884994507), ('equalsWith', 2.2868261337280273), ('call', 2.2270989418029785)]
+Top words for pretrained_CodeBERTa neuron indx 1737 [('error', 3.6121163368225098), ("'#'", 2.5567092895507812), ('40', 2.49118701616923), ('publisher', 2.2659698724746704), ('Experimental', 2.1787326335906982)]
+Top words for pretrained_CodeBERTa neuron indx 3787 [('"weld.svg"', 2.947721004486084), ('"unused"', 2.859655737876892), ('"deprecation"', 2.831012010574341), ('"ImplementsFeatureVersioning"', 2.8001558780670166), ('1000', 2.7620784441630044)]
+Top words for pretrained_CodeBERTa neuron indx 1748 [('"metadata."', 3.0385433435440063), ('"\\\\\\\\"', 2.835970878601074), ('"\\\\\\""', 2.680208444595337), ('"?"', 2.668245315551758), ('"\\\\."', 2.5593771934509277)]
+Top words for pretrained_CodeBERTa neuron indx 1753 [('Functions', 3.2148048877716064), ('89', 2.9419257640838623), ('".zip"', 2.940868616104126), ('"PMSL"', 2.858139753341675), ('"Z"', 2.839049736658732)]
+Top words for pretrained_CodeBERTa neuron indx 1798 [('NoSuchElementException', 3.43099308013916), ('Future', 3.0987586975097656), ('distinct', 2.908404588699341), ('82', 2.8377227783203125), ('for', 2.7198206522162)]
+Top words for pretrained_CodeBERTa neuron indx 3848 [('"blueprints.orientdb.requireTransaction"', 2.330461263656616), ('"blueprints.orientdb.maxRetries"', 2.290398359298706), ('get', 2.229487895965576), ('K', 2.164123429192437), ('8192', 2.1574413776397705)]
+Top words for pretrained_CodeBERTa neuron indx 3860 [('70', 2.851069211959839), ('100', 2.7617684602737427), ('4000', 2.672903299331665), ('"nauticalMile.fromDerivedUnit(1852.)="', 2.545077323913574), ('700', 2.4734288156032562)]
+Top words for pretrained_CodeBERTa neuron indx 3861 [('65536', 2.612851858139038), ('75', 2.5503313541412354), ('"&"', 2.545198917388916), ('250', 2.4489669799804688), ('0.0F', 2.436556418736776)]
+Top words for pretrained_CodeBERTa neuron indx 3868 [('3000', 3.2535488605499268), ('"field"', 3.1547935009002686), ('16384', 3.1534364223480225), ('Completable', 3.115664482116699), ('100', 3.113844931125641)]
+Top words for pretrained_CodeBERTa neuron indx 1827 [("']'", 2.740206003189087), ('1', 2.410059148349294), ('4', 2.3815917341332686), ('.99', 2.3794562816619873), ('"}"', 2.255595644315084)]
+Top words for pretrained_CodeBERTa neuron indx 1834 [('6000000', 3.9420950412750244), ('6772', 3.5663609504699707), ('7574', 3.542508363723755), ("'/'", 3.4321739196777346), ('composer', 3.3830652236938477)]
+Top words for pretrained_CodeBERTa neuron indx 3898 [("'W'", 2.2229483127593994), ('NoSuchElementException', 2.178337574005127), ('1', 2.0987174356665856), ('Long', 1.8800347702843803), ("'U'", 1.8363897800445557)]
+Top words for pretrained_CodeBERTa neuron indx 1852 [('using', 2.9873488744099936), ('generate', 2.8526216745376587), ('S', 2.519927144050598), ('else', 2.478338137903112), ('identity', 2.4412050749126233)]
+Top words for pretrained_CodeBERTa neuron indx 1857 [('V', 3.8326169649759927), ('"-"', 3.5230458168422474), ('K', 3.460667530695597), ('"*"', 3.0383519066704645), ('contains', 2.842956781387329)]
+Top words for pretrained_CodeBERTa neuron indx 1875 [('isEmpty', 3.6152701377868652), ('126', 3.58038592338562), ('q', 3.5045436024665833), ('all', 3.3782315254211426), ('collector', 3.261555314064026)]
+Top words for pretrained_CodeBERTa neuron indx 1876 [('e', 2.6463184356689453), ('protected', 2.508773165364419), ('private', 2.2679057936125164), ('other', 2.238251735766729), ('210', 2.1995184421539307)]
+Top words for pretrained_CodeBERTa neuron indx 3943 [('61', 2.9402143955230713), ('"+"', 2.6736278533935547), ('106', 2.3201704025268555), ('46', 2.264362335205078), ('120', 2.2365710735321045)]
+Top words for pretrained_CodeBERTa neuron indx 3955 [('"?"', 3.6932544708251953), ('leave', 2.8999364376068115), ('SuppressWarnings', 2.7464242776234946), ('END', 2.7377233028411867), ('len', 2.6702542304992676)]
+Top words for pretrained_CodeBERTa neuron indx 1910 [('break', 2.90059494972229), ('1000000', 2.4364593823750815), ('96', 2.356065273284912), ('1000', 2.354238669077555), ('2009', 2.327343702316284)]
+Top words for pretrained_CodeBERTa neuron indx 3964 [('prefetch', 3.4984206069599497), ('doOnLifecycle', 3.425530195236206), ('eager', 3.176057457923889), ('capacityHint', 3.130347728729248), ('onComplete', 3.0426799058914185)]
+Top words for pretrained_CodeBERTa neuron indx 3972 [('wrap', 3.379952132701874), ('ObservableInterval', 3.2904787063598633), ('timer', 3.241776704788208), ('subscribe', 3.1922287225723265), ('interval', 3.1017343997955322)]
+Top words for pretrained_CodeBERTa neuron indx 1933 [('Callable', 3.543871211317869), ('range', 3.513136625289917), ('2048', 3.0418360233306885), ('element', 3.0374646186828613), ('6652', 2.9815962314605713)]
+Top words for pretrained_CodeBERTa neuron indx 1934 [('never', 3.8218677043914795), ('66', 3.293259859085083), ("'\\''", 2.677766184012095), ('"remote:"', 2.5768685340881348), ('else', 2.5585342230314905)]
+Top words for pretrained_CodeBERTa neuron indx 3985 [('B', 3.8649230533175998), ('219', 3.8528385162353516), ('2009', 3.2940568923950195), ('"\')"', 3.1800737380981445), ('255', 3.0230941772460938)]
+Top words for pretrained_CodeBERTa neuron indx 1949 [('source', 2.7340455452601113), ('isEqual', 2.7132293581962585), ('86636.55536790872', 2.6080892086029053), ('sources', 2.562401614189148), ('78', 2.474745810031891)]
+Top words for pretrained_CodeBERTa neuron indx 1956 [('NoSuchElementException', 3.102234125137329), ('V', 3.0299059549967446), ('Observer', 2.9902260303497314), ('Object', 2.8730565706888833), ('K', 2.6924301783243814)]
+Top words for pretrained_CodeBERTa neuron indx 4006 [('2048', 2.7422099113464355), ('256', 2.6950392723083496), ('365.25', 2.651367425918579), ('250', 2.5001466686909017), ('270', 2.483107089996338)]
+Top words for pretrained_CodeBERTa neuron indx 4013 [('timer', 3.434351682662964), ('2000', 3.2448923587799072), ('range', 3.092308759689331), ('"%f"', 3.0490684509277344), ('interval', 2.9876590251922606)]
+Top words for pretrained_CodeBERTa neuron indx 4016 [('"|"', 3.500328779220581), ('"]"', 3.4237635135650635), ('"="', 3.193251848220825), ('";"', 3.0046331882476807), ('"$"', 2.844701051712036)]
+Top words for pretrained_CodeBERTa neuron indx 1969 [('scheduler', 3.6200838543119884), ('Scheduler', 3.3156312227249147), ('prefetch', 3.0967529253526167), ('collector', 3.0170599818229675), ('Collection', 2.942599500928606)]
+Top words for pretrained_CodeBERTa neuron indx 1973 [('unit', 2.9921350017670663), ('62', 2.9597466786702475), ('element', 2.9349472522735596), ('1024', 2.88165944814682), ('512', 2.729799429575602)]
+Top words for pretrained_CodeBERTa neuron indx 4032 [('all', 2.9042327404022217), ('any', 2.643028736114502), ('null', 2.6204307874043784), ('68', 2.52358341217041), ('200000', 2.4705593585968018)]
+Top words for pretrained_CodeBERTa neuron indx 1984 [('240', 2.4469153881073), ('20000', 2.2111618518829346), ('250', 2.2013822335463304), ('40000', 2.198351263999939), ('512', 2.1202678283055625)]
+Top words for pretrained_CodeBERTa neuron indx 4037 [('delay', 2.847743960527273), ('1013', 2.7816779613494873), ('25', 2.626854737599691), ('111', 2.563210964202881), ('68', 2.3717904090881348)]
+Top words for pretrained_CodeBERTa neuron indx 2001 [('U', 3.0130487423317107), ('125', 2.8227869272232056), ('break', 2.565065622329712), ('equalsPredicate', 2.564172625541687), ('"?"', 2.540900707244873)]
+Top words for pretrained_CodeBERTa neuron indx 4072 [('"${"', 4.032473087310791), ('"\\\\\\\\"', 2.9171247482299805), ('125', 2.8504122495651245), ('2048', 2.7443394660949707), ('"%08X"', 2.6854446729024253)]
+Top words for pretrained_CodeBERTa neuron indx 2026 [("'#'", 5.108298301696777), ('"/"', 4.1673190338271), ('"{"', 3.3405277729034424), ('"\\\\\\\\"', 3.339339017868042), ("';'", 3.3095242977142334)]
+Top words for pretrained_CodeBERTa neuron indx 4094 [('"&"', 4.54490327835083), ("';'", 3.5756962299346924), ('ObservableNever', 3.190778970718384), ('40000', 3.0565683841705322), ('192', 2.9374921321868896)]
+Creating control dataset for pretrained_CodeBERTa POS tagging task
+Stops at epoch 5,Best training score:0.7965833333333333,validation score:0.42592592592592593,test score:0.13088235294117648
+
+pretrained_CodeBERTa_control_task Selectivity (Diff. between true task and probing task performance):  0.7382352941176471
+~~~~~~~~~~~~~~~~~~~~~~~Summary~~~~~~~~~~~~~~~~~~~~~~~
+Experimental results for pretrained_CodeBERTa:
+Baseline score (probing using all neurons, 768 each, of all layers 7) :{'__OVERALL__': 0.8691176470588236, 'MODIFIER': 0.9647058823529412, 'IDENT': 0.7558823529411764, 'KEYWORD': 0.4970588235294118, 'TYPE': 1.0, 'NUMBER': 1.0, 'STRING': 0.9970588235294118}
+
+The accuracy when only using the intercept:{'__OVERALL__': 0.16666666666666666, 'MODIFIER': 0.0, 'IDENT': 0.0, 'KEYWORD': 0.0, 'TYPE': 1.0, 'NUMBER': 0.0, 'STRING': 0.0}
+
+Independent layerwise probing:
+Layer 0:{'__OVERALL__': 0.8681372549019608, 'MODIFIER': 1.0, 'IDENT': 0.7735294117647059, 'KEYWORD': 0.4441176470588235, 'TYPE': 1.0, 'NUMBER': 0.9911764705882353, 'STRING': 1.0}
+Layer 1:{'__OVERALL__': 0.8627450980392157, 'MODIFIER': 0.9764705882352941, 'IDENT': 0.7558823529411764, 'KEYWORD': 0.46176470588235297, 'TYPE': 0.9911764705882353, 'NUMBER': 0.9911764705882353, 'STRING': 1.0}
+Layer 2:{'__OVERALL__': 0.8735294117647059, 'MODIFIER': 0.9647058823529412, 'IDENT': 0.7823529411764706, 'KEYWORD': 0.5058823529411764, 'TYPE': 0.9970588235294118, 'NUMBER': 0.9941176470588236, 'STRING': 0.9970588235294118}
+Layer 3:{'__OVERALL__': 0.8622549019607844, 'MODIFIER': 0.9705882352941176, 'IDENT': 0.7029411764705882, 'KEYWORD': 0.5029411764705882, 'TYPE': 1.0, 'NUMBER': 0.9970588235294118, 'STRING': 1.0}
+Layer 4:{'__OVERALL__': 0.859313725490196, 'MODIFIER': 0.8852941176470588, 'IDENT': 0.7470588235294118, 'KEYWORD': 0.5294117647058824, 'TYPE': 1.0, 'NUMBER': 0.9970588235294118, 'STRING': 0.9970588235294118}
+Layer 5:{'__OVERALL__': 0.884313725490196, 'MODIFIER': 0.9352941176470588, 'IDENT': 0.7764705882352941, 'KEYWORD': 0.6, 'TYPE': 1.0, 'NUMBER': 0.9970588235294118, 'STRING': 0.9970588235294118}
+Layer 6:{'__OVERALL__': 0.8848039215686274, 'MODIFIER': 0.961764705882353, 'IDENT': 0.5647058823529412, 'KEYWORD': 0.7852941176470588, 'TYPE': 1.0, 'NUMBER': 0.9970588235294118, 'STRING': 1.0}
+
+'Incremental-layerwise probing:
+Layer [0]:{'__OVERALL__': 0.8598039215686275, 'MODIFIER': 0.9705882352941176, 'IDENT': 0.7411764705882353, 'KEYWORD': 0.4647058823529412, 'TYPE': 1.0, 'NUMBER': 0.9852941176470589, 'STRING': 0.9970588235294118}
+Layer [0, 1]:{'__OVERALL__': 0.8725490196078431, 'MODIFIER': 0.9441176470588235, 'IDENT': 0.8029411764705883, 'KEYWORD': 0.49117647058823527, 'TYPE': 1.0, 'NUMBER': 0.9970588235294118, 'STRING': 1.0}
+Layer [0, 1, 2]:{'__OVERALL__': 0.8818627450980392, 'MODIFIER': 0.9705882352941176, 'IDENT': 0.7970588235294118, 'KEYWORD': 0.5294117647058824, 'TYPE': 1.0, 'NUMBER': 0.9970588235294118, 'STRING': 0.9970588235294118}
+Layer [0, 1, 2, 3]:{'__OVERALL__': 0.8759803921568627, 'MODIFIER': 0.8852941176470588, 'IDENT': 0.8647058823529412, 'KEYWORD': 0.5088235294117647, 'TYPE': 1.0, 'NUMBER': 0.9970588235294118, 'STRING': 1.0}
+Layer [0, 1, 2, 3, 4]:{'__OVERALL__': 0.8784313725490196, 'MODIFIER': 0.9705882352941176, 'IDENT': 0.7794117647058824, 'KEYWORD': 0.5235294117647059, 'TYPE': 1.0, 'NUMBER': 1.0, 'STRING': 0.9970588235294118}
+Layer [0, 1, 2, 3, 4, 5]:{'__OVERALL__': 0.8700980392156863, 'MODIFIER': 0.9852941176470589, 'IDENT': 0.7705882352941177, 'KEYWORD': 0.4647058823529412, 'TYPE': 1.0, 'NUMBER': 1.0, 'STRING': 1.0}
+Layer [0, 1, 2, 3, 4, 5, 6]:{'__OVERALL__': 0.8921568627450981, 'MODIFIER': 0.9294117647058824, 'IDENT': 0.8970588235294118, 'KEYWORD': 0.5294117647058824, 'TYPE': 1.0, 'NUMBER': 0.9970588235294118, 'STRING': 1.0}
+
+select minimum layers:(LS+CC+LCA)
+Layerwise (LS):To lose 0.03*100% accuracy based on all layers, keep the layers from 0 to 0
+The number of neurons to keep is 768
+The accuracy is:{'__OVERALL__': 0.8598039215686275, 'MODIFIER': 0.9705882352941176, 'IDENT': 0.7411764705882353, 'KEYWORD': 0.4647058823529412, 'TYPE': 1.0, 'NUMBER': 0.9852941176470589, 'STRING': 0.9970588235294118}
+Percentage reduction (neurons):0.8571428571428572
+
+Clustering based on the layers above: 0 to 0:
+When no clustering:
+the probing result is {'__OVERALL__': 0.8642156862745098, 'MODIFIER': 0.9970588235294118, 'IDENT': 0.7764705882352941, 'KEYWORD': 0.4676470588235294, 'TYPE': 0.9705882352941176, 'NUMBER': 0.9794117647058823, 'STRING': 0.9941176470588236}
+To lose 0.01*100% of accuracy based on the model above:no-clustering
+The minimum number of neurons needed is 322
+The accuracy of the minimum neuron set is {'__OVERALL__': 0.8607843137254902, 'MODIFIER': 0.9705882352941176, 'IDENT': 0.7911764705882353, 'KEYWORD': 0.43823529411764706, 'TYPE': 1.0, 'NUMBER': 0.9764705882352941, 'STRING': 0.9882352941176471}
+
+Clustering threshold:0.3
+The number of independent neurons:742
+The number of clusters:768
+The probing result (CC score) is :{'__OVERALL__': 0.8470588235294118, 'MODIFIER': 0.8735294117647059, 'IDENT': 0.8, 'KEYWORD': 0.43823529411764706, 'TYPE': 0.9794117647058823, 'NUMBER': 0.9911764705882353, 'STRING': 1.0}
+To lose 0.01*100% of accuracy based on the model above:clustering-0.3
+The minimum number of neurons needed is 215
+The accuracy of the minimum neuron set is {'__OVERALL__': 0.8573529411764705, 'MODIFIER': 0.9911764705882353, 'IDENT': 0.788235294117647, 'KEYWORD': 0.43823529411764706, 'TYPE': 1.0, 'NUMBER': 0.9441176470588235, 'STRING': 0.9823529411764705}
+
+Layerwise (LS):To lose 0.02*100% accuracy based on all layers, keep the layers from 0 to 0
+The number of neurons to keep is 768
+The accuracy is:{'__OVERALL__': 0.8598039215686275, 'MODIFIER': 0.9705882352941176, 'IDENT': 0.7411764705882353, 'KEYWORD': 0.4647058823529412, 'TYPE': 1.0, 'NUMBER': 0.9852941176470589, 'STRING': 0.9970588235294118}
+Percentage reduction (neurons):0.8571428571428572
+
+Clustering based on the layers above: 0 to 0:
+When no clustering:
+the probing result is {'__OVERALL__': 0.8642156862745098, 'MODIFIER': 0.9970588235294118, 'IDENT': 0.7764705882352941, 'KEYWORD': 0.4676470588235294, 'TYPE': 0.9705882352941176, 'NUMBER': 0.9794117647058823, 'STRING': 0.9941176470588236}
+To lose 0.01*100% of accuracy based on the model above:no-clustering
+The minimum number of neurons needed is 322
+The accuracy of the minimum neuron set is {'__OVERALL__': 0.8607843137254902, 'MODIFIER': 0.9705882352941176, 'IDENT': 0.7911764705882353, 'KEYWORD': 0.43823529411764706, 'TYPE': 1.0, 'NUMBER': 0.9764705882352941, 'STRING': 0.9882352941176471}
+
+Clustering threshold:0.3
+The number of independent neurons:742
+The number of clusters:768
+The probing result (CC score) is :{'__OVERALL__': 0.8470588235294118, 'MODIFIER': 0.8735294117647059, 'IDENT': 0.8, 'KEYWORD': 0.43823529411764706, 'TYPE': 0.9794117647058823, 'NUMBER': 0.9911764705882353, 'STRING': 1.0}
+To lose 0.01*100% of accuracy based on the model above:clustering-0.3
+The minimum number of neurons needed is 215
+The accuracy of the minimum neuron set is {'__OVERALL__': 0.8573529411764705, 'MODIFIER': 0.9911764705882353, 'IDENT': 0.788235294117647, 'KEYWORD': 0.43823529411764706, 'TYPE': 1.0, 'NUMBER': 0.9441176470588235, 'STRING': 0.9823529411764705}
+
+Layerwise (LS):To lose 0.01*100% accuracy based on all layers, keep the layers from 0 to 1
+The number of neurons to keep is 1536
+The accuracy is:{'__OVERALL__': 0.8725490196078431, 'MODIFIER': 0.9441176470588235, 'IDENT': 0.8029411764705883, 'KEYWORD': 0.49117647058823527, 'TYPE': 1.0, 'NUMBER': 0.9970588235294118, 'STRING': 1.0}
+Percentage reduction (neurons):0.7142857142857143
+
+Clustering based on the layers above: 0 to 1:
+When no clustering:
+the probing result is {'__OVERALL__': 0.8705882352941177, 'MODIFIER': 1.0, 'IDENT': 0.7441176470588236, 'KEYWORD': 0.47941176470588237, 'TYPE': 1.0, 'NUMBER': 1.0, 'STRING': 1.0}
+To lose 0.01*100% of accuracy based on the model above:no-clustering
+The minimum number of neurons needed is 1075
+The accuracy of the minimum neuron set is {'__OVERALL__': 0.8774509803921569, 'MODIFIER': 0.9705882352941176, 'IDENT': 0.7823529411764706, 'KEYWORD': 0.5235294117647059, 'TYPE': 0.9941176470588236, 'NUMBER': 0.9941176470588236, 'STRING': 1.0}
+
+Clustering threshold:0.3
+The number of independent neurons:771
+The number of clusters:1536
+The probing result (CC score) is :{'__OVERALL__': 0.8666666666666667, 'MODIFIER': 0.9352941176470588, 'IDENT': 0.7470588235294118, 'KEYWORD': 0.5235294117647059, 'TYPE': 1.0, 'NUMBER': 0.9941176470588236, 'STRING': 1.0}
+To lose 0.01*100% of accuracy based on the model above:clustering-0.3
+The minimum number of neurons needed is 268
+The accuracy of the minimum neuron set is {'__OVERALL__': 0.8720588235294118, 'MODIFIER': 0.9735294117647059, 'IDENT': 0.7529411764705882, 'KEYWORD': 0.5147058823529411, 'TYPE': 1.0, 'NUMBER': 0.9911764705882353, 'STRING': 1.0}
+
+The result of Layerwise (LS):
+Keep the layer from 0 to 1
+The best layer delta:0.01
+The best number of neurons:1536
+The best accuracy:0.8725490196078431
+The best percentage reduction: 0.7142857142857143
+
+The result of LS+CC+LCA
+Keep the layer from 0 to 1
+The best performance delta: 0.01,0.01
+The best clustering threshold:-1
+The best number of neurons:1075
+The best accuracy: 0.8774509803921569
+The best neuron percentage reduction: 0.8000372023809523
+
+probe independent neurons based on all layers with clustering (run_cc_all.py)
+When no clustering:
+The probing result (CC score) is :{'__OVERALL__': 0.8857843137254902, 'MODIFIER': 0.9558823529411765, 'IDENT': 0.8323529411764706, 'KEYWORD': 0.5294117647058824, 'TYPE': 1.0, 'NUMBER': 0.9970588235294118, 'STRING': 1.0}
+Clustering threshold:0.1
+The number of independent neurons:4785
+The number of clusters:5376
+The probing result (CC score) is :{'__OVERALL__': 0.8813725490196078, 'MODIFIER': 0.9558823529411765, 'IDENT': 0.85, 'KEYWORD': 0.4852941176470588, 'TYPE': 1.0, 'NUMBER': 0.9970588235294118, 'STRING': 1.0}
+Clustering threshold:0.2
+The number of independent neurons:3245
+The number of clusters:5376
+The probing result (CC score) is :{'__OVERALL__': 0.8696078431372549, 'MODIFIER': 0.9088235294117647, 'IDENT': 0.7823529411764706, 'KEYWORD': 0.5294117647058824, 'TYPE': 1.0, 'NUMBER': 0.9970588235294118, 'STRING': 1.0}
+Clustering threshold:0.3
+The number of independent neurons:2299
+The number of clusters:5376
+The probing result (CC score) is :{'__OVERALL__': 0.8735294117647059, 'MODIFIER': 0.961764705882353, 'IDENT': 0.7529411764705882, 'KEYWORD': 0.5294117647058824, 'TYPE': 1.0, 'NUMBER': 0.9970588235294118, 'STRING': 1.0}
+Clustering threshold:0.4
+The number of independent neurons:1692
+The number of clusters:5376
+The probing result (CC score) is :{'__OVERALL__': 0.8799019607843137, 'MODIFIER': 0.9147058823529411, 'IDENT': 0.7794117647058824, 'KEYWORD': 0.5941176470588235, 'TYPE': 1.0, 'NUMBER': 0.9941176470588236, 'STRING': 0.9970588235294118}
+Clustering threshold:0.5
+The number of independent neurons:1187
+The number of clusters:5376
+The probing result (CC score) is :{'__OVERALL__': 0.8838235294117647, 'MODIFIER': 0.9647058823529412, 'IDENT': 0.788235294117647, 'KEYWORD': 0.5617647058823529, 'TYPE': 0.9911764705882353, 'NUMBER': 1.0, 'STRING': 0.9970588235294118}
+Clustering threshold:0.6
+The number of independent neurons:747
+The number of clusters:5376
+The probing result (CC score) is :{'__OVERALL__': 0.8705882352941177, 'MODIFIER': 0.8705882352941177, 'IDENT': 0.7617647058823529, 'KEYWORD': 0.6352941176470588, 'TYPE': 0.9588235294117647, 'NUMBER': 0.9970588235294118, 'STRING': 1.0}
+Clustering threshold:0.7
+The number of independent neurons:370
+The number of clusters:5376
+The probing result (CC score) is :{'__OVERALL__': 0.8823529411764706, 'MODIFIER': 0.9676470588235294, 'IDENT': 0.6088235294117647, 'KEYWORD': 0.7352941176470589, 'TYPE': 0.9941176470588236, 'NUMBER': 0.9911764705882353, 'STRING': 0.9970588235294118}
+Clustering threshold:0.8
+The number of independent neurons:110
+The number of clusters:5376
+The probing result (CC score) is :{'__OVERALL__': 0.7754901960784314, 'MODIFIER': 0.8117647058823529, 'IDENT': 0.5617647058823529, 'KEYWORD': 0.7176470588235294, 'TYPE': 0.7294117647058823, 'NUMBER': 0.8441176470588235, 'STRING': 0.9882352941176471}
+Clustering threshold:0.9
+The number of independent neurons:1
+The number of clusters:5376
+The probing result (CC score) is :{'__OVERALL__': 0.33725490196078434, 'MODIFIER': 0.8176470588235294, 'IDENT': 0.27647058823529413, 'KEYWORD': 0.0, 'TYPE': 0.6205882352941177, 'NUMBER': 0.3088235294117647, 'STRING': 0.0}
+The result of CC:
+The best clustering threshold is :-1
+The best number of neurons:5376
+The best accuracy is: 0.8857843137254902
+Percentage reduction (neurons):0.0
+
+probe independent neurons based on all layers without clustering (run_max_features.py)
+The result of LCA:
+Based on all layers: from 0 to 6, no clustering, to lose only 0.01*100% of accuracy:
+The minimum number of neurons needed is 370
+The performance is {'model_name': 'pretrained_CodeBERTa', 'best_l1': 1e-05, 'best_l2': 0.0001, 'scores': {'__OVERALL__': 0.8941176470588236, 'MODIFIER': 0.9441176470588235, 'IDENT': 0.7470588235294118, 'KEYWORD': 0.6764705882352942, 'TYPE': 1.0, 'NUMBER': 0.9970588235294118, 'STRING': 1.0}, 'intercept': {'__OVERALL__': 0.16666666666666666, 'MODIFIER': 0.0, 'IDENT': 0.0, 'KEYWORD': 0.0, 'TYPE': 0.0, 'NUMBER': 0.0, 'STRING': 1.0}}
+Percentage reduction (neurons):0.9311755952380952
+
+Probeless:
+The result of probeless:
+Based on all layers, from 0 to 6, no clustering, to lose only 0.01*100% of accuracy:
+The minimum number of neurons needed is :1612
+The performance is :{'model_name': 'pretrained_CodeBERTa', 'best_l1': 1e-05, 'best_l2': 0, 'scores': {'__OVERALL__': 0.8705882352941177, 'MODIFIER': 0.961764705882353, 'IDENT': 0.75, 'KEYWORD': 0.5147058823529411, 'TYPE': 1.0, 'NUMBER': 1.0, 'STRING': 0.9970588235294118}, 'intercept': {'__OVERALL__': 0.16666666666666666, 'MODIFIER': 0.0, 'IDENT': 0.0, 'KEYWORD': 0.0, 'TYPE': 0.0, 'NUMBER': 0.0, 'STRING': 1.0}}
+Percentage reduction (neurons):0.7001488095238095
+----------------------------------------------------------------
