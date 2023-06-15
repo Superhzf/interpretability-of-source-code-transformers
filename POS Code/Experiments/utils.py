@@ -113,19 +113,21 @@ def param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2):
     best_probe = None
     best_epoch = None
     torch.manual_seed(0)
-    this_probe, this_epoch = linear_probe.train_logistic_regression_probe(X_train, y_train,
-                                                            X_valid, y_valid,
-                                                            lambda_l1=this_l1,
-                                                            lambda_l2=this_l2,
-                                                            num_epochs=100,
-                                                            batch_size=128,patience=2)
-    this_score = linear_probe.evaluate_probe(this_probe, X_valid, y_valid, idx_to_class=idx2label)
-    if this_score['__OVERALL__'] > best_score_valid:
-        best_score_valid = this_score['__OVERALL__']
-        best_l1 = this_l1
-        best_l2 = this_l2
-        best_probe = this_probe
-        best_epoch = this_epoch
+    for this_l1 in l1:
+        for this_l2 in l2:
+            this_probe, this_epoch = linear_probe.train_logistic_regression_probe(X_train, y_train,
+                                                                    X_valid, y_valid,
+                                                                    lambda_l1=this_l1,
+                                                                    lambda_l2=this_l2,
+                                                                    num_epochs=100,
+                                                                    batch_size=128,patience=2)
+            this_score = linear_probe.evaluate_probe(this_probe, X_valid, y_valid, idx_to_class=idx2label)
+            if this_score['__OVERALL__'] > best_score_valid:
+                best_score_valid = this_score['__OVERALL__']
+                best_l1 = this_l1
+                best_l2 = this_l2
+                best_probe = this_probe
+                best_epoch = this_epoch
     return best_l1,best_l2,best_probe, best_score_valid, best_epoch
 
 
