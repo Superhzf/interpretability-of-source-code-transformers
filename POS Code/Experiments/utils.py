@@ -1,4 +1,3 @@
-import neurox
 import neurox.data.extraction.transformers_extractor as transformers_extractor
 import neurox.data.loader as data_loader
 # /work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/NeuroX/neurox/data/loader.py
