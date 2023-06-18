@@ -112,7 +112,6 @@ def param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2):
     best_score_valid = -float('inf')
     best_probe = None
     best_epoch = None
-    torch.manual_seed(0)
     for this_l1 in l1:
         for this_l2 in l2:
             this_probe, this_epoch = linear_probe.train_logistic_regression_probe(X_train, y_train,
@@ -141,13 +140,33 @@ def get_mappings(tokens,activations):
 
 def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2label,src_tokens_test,model_name,sample_idx_test=None,need_cm=False):
     #Train the linear probes (logistic regression) - POS(code) tagging
-    best_l1,best_l2,best_probe,best_score_valid, best_epoch=param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2)
-    best_score_train = linear_probe.evaluate_probe(best_probe, X_train, y_train, idx_to_class=idx2label)
-    #Get scores of probes
+    probe_list = []
+    l1_list = []
+    l2_list = []
+    prediction_list = []
+    score_list = []
+    overall_score_list = []
+    for i in range(5):
+        best_l1,best_l2,best_probe,best_score_valid, best_epoch=param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2)
+        best_score_train = linear_probe.evaluate_probe(best_probe, X_train, y_train, idx_to_class=idx2label)
+        #Get scores of probes
+        scores,predictions = linear_probe.evaluate_probe(best_probe, X_test, y_test,idx_to_class=idx2label,
+                                                        return_predictions=True,source_tokens=src_tokens_test)
+        probe_list.append(best_probe)
+        l1_list.append(l1_list)
+        l2_list.append(l2_list)
+        prediction_list.append(predictions)
+        score_list.append(scores)
+        overall_score_list.append(scores['__OVERALL__'])
+
+    median_idx = np.argsort(overall_score_list)[len(overall_score_list)//2]
+    best_probe = probe_list[median_idx]
+    best_l1 = l1_list[median_idx]
+    best_l2 = l2_list[median_idx]
+    predictions = prediction_list[median_idx]
+    scores = score_list[median_idx]
+
     results = {}
-    scores,predictions = linear_probe.evaluate_probe(best_probe, X_test, y_test,idx_to_class=idx2label,
-                                                    return_predictions=True,source_tokens=src_tokens_test)
-    print(f'Stops at epoch {best_epoch},Best training score:{best_score_train["__OVERALL__"]},validation score:{best_score_valid},test score:{scores["__OVERALL__"]}')
     results['model_name'] = model_name
     results['best_l1'] = best_l1
     results['best_l2'] = best_l2
