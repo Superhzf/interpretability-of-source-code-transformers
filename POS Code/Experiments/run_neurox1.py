@@ -265,7 +265,7 @@ def main():
                                             idx2label_train,tokens_test['source'],this_model,sample_idx_test,num_layers)
     all_results["incremental_layerwise"] = results
     print("~"*50)
-    select minimum layers
+    # select minimum layers
     print('select minimum layers (LS+CC+LCA)')
     target_layer = [0.03,0.02,0.01]
     target_neuron = [0.01]
