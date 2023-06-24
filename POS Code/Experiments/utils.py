@@ -160,7 +160,7 @@ def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2labe
         overall_score_list.append(scores['__OVERALL__'])
 
     # median_idx = np.argsort(overall_score_list)[len(overall_score_list)//2]
-    print(f"The over scores of all runs are {overall_score_list}")
+    # print(f"The over scores of all runs are {overall_score_list}")
     median_idx = np.argsort(overall_score_list)[-1]
     best_probe = probe_list[median_idx]
     best_l1 = l1_list[median_idx]
