@@ -146,7 +146,7 @@ def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2labe
     prediction_list = []
     score_list = []
     overall_score_list = []
-    for i in range(11):
+    for i in range(10):
         best_l1,best_l2,best_probe,best_score_valid, best_epoch=param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2)
         best_score_train = linear_probe.evaluate_probe(best_probe, X_train, y_train, idx_to_class=idx2label)
         #Get scores of probes
@@ -159,9 +159,9 @@ def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2labe
         score_list.append(scores)
         overall_score_list.append(scores['__OVERALL__'])
 
-    median_idx = np.argsort(overall_score_list)[len(overall_score_list)//2]
+    # median_idx = np.argsort(overall_score_list)[len(overall_score_list)//2]
     # print(f"The over scores of all runs are {overall_score_list}")
-    # median_idx = np.argsort(overall_score_list)[-1]
+    median_idx = np.argsort(overall_score_list)[-1]
     best_probe = probe_list[median_idx]
     best_l1 = l1_list[median_idx]
     best_l2 = l2_list[median_idx]
