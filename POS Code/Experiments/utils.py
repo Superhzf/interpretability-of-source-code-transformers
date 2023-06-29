@@ -153,8 +153,8 @@ def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2labe
         scores,predictions = linear_probe.evaluate_probe(best_probe, X_test, y_test,idx_to_class=idx2label,
                                                         return_predictions=True,source_tokens=src_tokens_test)
         probe_list.append(best_probe)
-        l1_list.append(l1_list)
-        l2_list.append(l2_list)
+        l1_list.append(best_l1)
+        l2_list.append(best_l2)
         prediction_list.append(predictions)
         score_list.append(scores)
         overall_score_list.append(scores['__OVERALL__'])
