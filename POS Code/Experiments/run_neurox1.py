@@ -348,10 +348,10 @@ def main():
                                     flat_tokens_valid, X_valid_copy, y_valid_copy,
                                     flat_tokens_test,X_test_copy,y_test_copy,idx2label_train,scores,this_model,'SAME')
     print("~~~~~~~~~~~~~~~~~~~~~~~Summary~~~~~~~~~~~~~~~~~~~~~~~")
-    # json_dump = json.dumps(all_results, cls=NumpyEncoder)
-    # with open(f"{this_model}DetailedOutput.json","w") as f:
-    #     json.dump(json_dump, f)
-    # f.close()
+    json_dump = json.dumps(all_results, cls=NumpyEncoder)
+    with open(f"{this_model}DetailedOutput.json","w") as f:
+        json.dump(json_dump, f)
+    f.close()
     
     print(f"Experimental results for {this_model}:")
     print(f"Baseline score (probing using all neurons, {neurons_per_layer} each, of all layers {num_layers}) :{all_results['baseline']['scores']}")
