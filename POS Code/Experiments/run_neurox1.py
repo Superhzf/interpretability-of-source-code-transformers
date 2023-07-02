@@ -264,90 +264,90 @@ def main():
     results = incremental_layerwise_probeing(X_train,y_train,X_valid,y_valid,X_test,y_test,
                                             idx2label_train,tokens_test['source'],this_model,sample_idx_test,num_layers)
     all_results["incremental_layerwise"] = results
-    print("~"*50)
-    # select minimum layers
-    print('select minimum layers (LS+CC+LCA)')
-    target_layer = [0.03,0.02,0.01]
-    target_neuron = [0.01]
-    clustering_thresholds = [-1,0.3]
-    neuron_percentage = [0.001,0.002,0.003,0.004,0.005,0.01,
-        0.02,0.03,0.04,0.05,0.06,0.07,0.08,0.09,0.10,
-        0.15,0.20,0.25,0.30,0.35,0.40,0.45,0.50,0.60,
-        0.70,0.80,0.90,]
-    all_results['select_minimum_layer'] = {}
-    all_results["select_minimum_neuron"] = {}
-    for this_target_layer in target_layer:
-        layer_idx = select_minimum_layers(all_results['incremental_layerwise'],this_target_layer,all_results["baseline"]['scores']["__OVERALL__"])
-        all_results["select_minimum_layer"][this_target_layer] = layer_idx
-        all_results["select_minimum_neuron"][layer_idx] = {}
-        # probing using independent neurons based on minimum layers
-        for this_target_neuron in target_neuron:
-            this_result = select_independent_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
-                    idx2label_train,label2idx_train,tokens_test['source'],this_model,sample_idx_test,layer_idx,
-                    clustering_thresholds,num_layers,neurons_per_layer,this_target_neuron,neuron_percentage,True)
-            all_results["select_minimum_neuron"][layer_idx][this_target_neuron] = this_result
-    print("~"*50)
+    # print("~"*50)
+    # # select minimum layers
+    # print('select minimum layers (LS+CC+LCA)')
+    # target_layer = [0.03,0.02,0.01]
+    # target_neuron = [0.01]
+    # clustering_thresholds = [-1,0.3]
+    # neuron_percentage = [0.001,0.002,0.003,0.004,0.005,0.01,
+    #     0.02,0.03,0.04,0.05,0.06,0.07,0.08,0.09,0.10,
+    #     0.15,0.20,0.25,0.30,0.35,0.40,0.45,0.50,0.60,
+    #     0.70,0.80,0.90,]
+    # all_results['select_minimum_layer'] = {}
+    # all_results["select_minimum_neuron"] = {}
+    # for this_target_layer in target_layer:
+    #     layer_idx = select_minimum_layers(all_results['incremental_layerwise'],this_target_layer,all_results["baseline"]['scores']["__OVERALL__"])
+    #     all_results["select_minimum_layer"][this_target_layer] = layer_idx
+    #     all_results["select_minimum_neuron"][layer_idx] = {}
+    #     # probing using independent neurons based on minimum layers
+    #     for this_target_neuron in target_neuron:
+    #         this_result = select_independent_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
+    #                 idx2label_train,label2idx_train,tokens_test['source'],this_model,sample_idx_test,layer_idx,
+    #                 clustering_thresholds,num_layers,neurons_per_layer,this_target_neuron,neuron_percentage,True)
+    #         all_results["select_minimum_neuron"][layer_idx][this_target_neuron] = this_result
+    # print("~"*50)
     
-    # probe independent neurons based on all layers (run_cc_all.py)
-    print('probing independent neurons based on all layers (run_cc_all.py)')
-    clustering_thresholds = [-1, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
-    layer_idx = num_layers - 1
-    this_result = select_independent_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
-                        idx2label_train,label2idx_train,tokens_test['source'],this_model,sample_idx_test,layer_idx,
-                        clustering_thresholds,num_layers,neurons_per_layer,None,None,False)
-    all_results["select_from_all_neurons"] = this_result
-    print("~"*50)
+    # # probe independent neurons based on all layers (run_cc_all.py)
+    # print('probing independent neurons based on all layers (run_cc_all.py)')
+    # clustering_thresholds = [-1, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+    # layer_idx = num_layers - 1
+    # this_result = select_independent_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
+    #                     idx2label_train,label2idx_train,tokens_test['source'],this_model,sample_idx_test,layer_idx,
+    #                     clustering_thresholds,num_layers,neurons_per_layer,None,None,False)
+    # all_results["select_from_all_neurons"] = this_result
+    # print("~"*50)
 
-    # probing independent neurons based on all layers with finer percentage (run_max_features.py)
-    print('probing independent neurons based on all layers with finer percentage (run_max_features.py)')
-    clustering_thresholds = [-1]
-    layer_idx = num_layers - 1
-    this_target_neuron = [0.01]
-    neuron_percentage = [0.001,0.003,0.005,
-                        0.007,0.009,0.011,
-                        0.013,0.015,0.017,
-                        0.019,0.021,0.023,
-                        0.025,0.027,0.029,
-                        0.031,0.033,0.035,
-                        0.037,0.039,0.041,
-                        0.043,0.045,0.047,
-                        0.049,0.051,0.053,
-                        0.055,0.057,0.059,
-                        0.061,0.063,0.065,
-                        0.067,0.069,0.071,
-                        0.073,0.075,0.077,
-                        0.079,0.081,0.083,
-                        0.085,0.087,0.089,
-                        0.091,0.093,0.095,
-                        0.097,0.099,0.10,0.15,0.20,0.25,
-                        0.30,0.35,0.40,0.45,0.50,0.60,0.70,0.80,
-                        0.90,]
-    this_result = select_independent_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
-                        idx2label_train,label2idx_train,tokens_test['source'],this_model,sample_idx_test,layer_idx,
-                        clustering_thresholds,num_layers,neurons_per_layer,this_target_neuron[0],neuron_percentage,True)
-    all_results['select_minimum_neurons_finer_percentage'] = this_result
-    print("~"*50)
+    # # probing independent neurons based on all layers with finer percentage (run_max_features.py)
+    # print('probing independent neurons based on all layers with finer percentage (run_max_features.py)')
+    # clustering_thresholds = [-1]
+    # layer_idx = num_layers - 1
+    # this_target_neuron = [0.01]
+    # neuron_percentage = [0.001,0.003,0.005,
+    #                     0.007,0.009,0.011,
+    #                     0.013,0.015,0.017,
+    #                     0.019,0.021,0.023,
+    #                     0.025,0.027,0.029,
+    #                     0.031,0.033,0.035,
+    #                     0.037,0.039,0.041,
+    #                     0.043,0.045,0.047,
+    #                     0.049,0.051,0.053,
+    #                     0.055,0.057,0.059,
+    #                     0.061,0.063,0.065,
+    #                     0.067,0.069,0.071,
+    #                     0.073,0.075,0.077,
+    #                     0.079,0.081,0.083,
+    #                     0.085,0.087,0.089,
+    #                     0.091,0.093,0.095,
+    #                     0.097,0.099,0.10,0.15,0.20,0.25,
+    #                     0.30,0.35,0.40,0.45,0.50,0.60,0.70,0.80,
+    #                     0.90,]
+    # this_result = select_independent_neurons(X_train,y_train,X_valid,y_valid,X_test,y_test,
+    #                     idx2label_train,label2idx_train,tokens_test['source'],this_model,sample_idx_test,layer_idx,
+    #                     clustering_thresholds,num_layers,neurons_per_layer,this_target_neuron[0],neuron_percentage,True)
+    # all_results['select_minimum_neurons_finer_percentage'] = this_result
+    # print("~"*50)
 
-    # Probeless
-    probeless_layer_idx = layer_idx
-    probeless_neuron_percentage = neuron_percentage
-    probeless_target_neuron = this_target_neuron
-    this_result = probeless(X_train,y_train,X_valid,y_valid,X_test,y_test,
-                            idx2label_train,tokens_test['source'],this_model,
-                            sample_idx_test,probeless_layer_idx,num_layers,neurons_per_layer,
-                            probeless_target_neuron[0],probeless_neuron_percentage)
-    all_results['probeless'] = this_result
-    print("~"*50)
+    # # Probeless
+    # probeless_layer_idx = layer_idx
+    # probeless_neuron_percentage = neuron_percentage
+    # probeless_target_neuron = this_target_neuron
+    # this_result = probeless(X_train,y_train,X_valid,y_valid,X_test,y_test,
+    #                         idx2label_train,tokens_test['source'],this_model,
+    #                         sample_idx_test,probeless_layer_idx,num_layers,neurons_per_layer,
+    #                         probeless_target_neuron[0],probeless_neuron_percentage)
+    # all_results['probeless'] = this_result
+    # print("~"*50)
 
-    # Important neuron probeing
-    top_neurons = get_imp_neurons(probe,label2idx_train,this_model)
-    get_top_words(top_neurons,tokens_train,activations_train,this_model)
-    del X_train, X_test, X_valid,y_train, y_test,y_valid
-    #Control task probes
-    selectivity = control_task_probes(flat_tokens_train,X_train_copy,y_train_copy,
-                                    flat_tokens_valid, X_valid_copy, y_valid_copy,
-                                    flat_tokens_test,X_test_copy,y_test_copy,idx2label_train,scores,this_model,'SAME')
-    print("~~~~~~~~~~~~~~~~~~~~~~~Summary~~~~~~~~~~~~~~~~~~~~~~~")
+    # # Important neuron probeing
+    # top_neurons = get_imp_neurons(probe,label2idx_train,this_model)
+    # get_top_words(top_neurons,tokens_train,activations_train,this_model)
+    # del X_train, X_test, X_valid,y_train, y_test,y_valid
+    # #Control task probes
+    # selectivity = control_task_probes(flat_tokens_train,X_train_copy,y_train_copy,
+    #                                 flat_tokens_valid, X_valid_copy, y_valid_copy,
+    #                                 flat_tokens_test,X_test_copy,y_test_copy,idx2label_train,scores,this_model,'SAME')
+    # print("~~~~~~~~~~~~~~~~~~~~~~~Summary~~~~~~~~~~~~~~~~~~~~~~~")
     json_dump = json.dumps(all_results, cls=NumpyEncoder)
     with open(f"{this_model}DetailedOutput.json","w") as f:
         json.dump(json_dump, f)
@@ -366,7 +366,7 @@ def main():
     for i in range(1,num_layers+1):
         layers = list(range(i))
         print(f"Layer {layers}:{all_results['incremental_layerwise'][f'{layers}']['scores']}")
-
+    exit(0)
     print()
     best_accuracy = 0
     best_num_neuron = 0

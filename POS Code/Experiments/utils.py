@@ -146,7 +146,7 @@ def all_activations_probe(X_train,y_train,X_valid,y_valid,X_test,y_test,idx2labe
     prediction_list = []
     score_list = []
     overall_score_list = []
-    for i in range(10):
+    for i in range(15):
         best_l1,best_l2,best_probe,best_score_valid, best_epoch=param_tuning(X_train,y_train,X_valid,y_valid,idx2label,l1,l2)
         best_score_train = linear_probe.evaluate_probe(best_probe, X_train, y_train, idx_to_class=idx2label)
         #Get scores of probes
