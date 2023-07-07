@@ -3,7 +3,8 @@
 #SBATCH --ntasks=8
 #SBATCH --mem=72G
 #SBATCH --time=36:00:00
-#SBATCH --partition=speedy
+#SBATCH --partition=gpu
+#SBATCH --gres=gpu:a100-sxm4-80gb:1
 
 module load ml-gpu
 cd /work/LAS/cjquinn-lab/zefuh/selectivity/interpretability-of-source-code-transformers/POS\ Code/Experiments
