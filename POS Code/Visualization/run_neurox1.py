@@ -24,9 +24,9 @@ ACTIVATION_NAMES = {'pretrained_BERT':'bert_activations_train.json',
 # codebert_top_neurons = [8418]
 # codebert_class = "NUMBER"
 
-codebert_idx=[1538,183,41073,44793,149]
-codebert_top_neurons = [47]
-codebert_class = "NUMBER_IDENTIFIER"
+codebert_idx=[20611,5027,20607,20603,24336]
+codebert_top_neurons = [9527]
+codebert_class = "STRING"
 
 # codebert_idx=[9825,26035,15920,19489, 6142]
 # codebert_top_neurons = [4205]
