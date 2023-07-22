@@ -132,3 +132,4 @@ for x1,x2 in zip(dataloader,dataloader):
     print(f"x1.shape:{x1.shape}")
     x1_output = model1(x1)
     print(f"x1_output.shape:{x1_output.shape}")
+    exit(0)
