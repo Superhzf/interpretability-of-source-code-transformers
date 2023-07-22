@@ -128,8 +128,9 @@ model1.eval()
 model2 = wide_resnet50_2(pretrained=True)
 model2.eval()
 
-for x1,x2 in zip(dataloader,dataloader):
-    print(f"len(x1):{len(x1)}")
+for (x1,*_),(x2,*_) in zip(dataloader,dataloader):
+    print(f"type(x1):{type(x1)}")
+    print(f"x1.size():{x1.size()}")
     x1_output = model1(x1)
     print(f"x1_output.shape:{x1_output.size()}")
     exit(0)
