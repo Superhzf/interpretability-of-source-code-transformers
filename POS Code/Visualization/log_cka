@@ -1,0 +1,5 @@
+Files already downloaded and verified
+type(x1):<class 'torch.Tensor'>
+x1.size():torch.Size([256, 3, 32, 32])
+x1_output.shape:torch.Size([256, 1000])
+x1_output.flatten(1):torch.Size([256, 1000])
