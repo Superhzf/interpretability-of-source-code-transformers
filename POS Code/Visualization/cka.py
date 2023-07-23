@@ -51,14 +51,14 @@ def cka(activation1,activation2,model_name1,model_name2):
         index = i*N_NEUROSN_PER_LAYER
         this_X = X[:,index:index+N_NEUROSN_PER_LAYER]
         # The dimension is seq_len X 9984
-        K = this_X @ this_X.t()
+        K = this_X @ this_X.transpose()
         K.fill_diagonal_(0.0)
         hsic_matrix[i, :, 0] += HSIC(K, K) / num_batches
 
         for j in range(12):
             index = j*N_NEUROSN_PER_LAYER
             this_Y = Y[:,index:index+N_NEUROSN_PER_LAYER]
-            L = this_Y @ this_Y.t()
+            L = this_Y @ this_Y.transpose()
             L.fill_diagonal_(0)
 
             hsic_matrix[i, j, 1] += HSIC(K, L) / num_batches
@@ -97,6 +97,7 @@ def main():
                 assert activations[idx].shape[1] == num_neurons
             print(f"The number of neurons for each token in {this_model}:",num_neurons)
             hsic_matrix = cka(activations,activations,model_name1=this_model,model_name2=this_model)
+            del activations
             print("-----------------------------------------------------------------")
             break
 
