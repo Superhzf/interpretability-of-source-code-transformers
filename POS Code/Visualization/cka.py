@@ -34,35 +34,33 @@ def HSIC(K, L):
         N = K.shape[0]
         ones = np.ones(N, 1)
         result = np.trace(K @ L)
-        result += ((ones.t() @ K @ ones @ ones.t() @ L @ ones) / ((N - 1) * (N - 2))).item()
-        result -= ((ones.t() @ K @ L @ ones) * 2 / (N - 2)).item()
-        return (1 / (N * (N - 3)) * result).item()
+        result += (ones.t() @ K @ ones @ ones.t() @ L @ ones) / ((N - 1) * (N - 2))
+        result -= (ones.t() @ K @ L @ ones) * 2 / (N - 2)
+        return 1 / (N * (N - 3)) * result
 
 
 def cka(activation1,activation2,model_name1,model_name2):
     hsic_matrix = np.zeros((N_LAYERs, N_LAYERs, N_LAYERs))
-    flat_acts1 = np.array([this_token for this_sample in activation1 for this_token in this_sample])
-    flat_acts2 = np.array([this_token for this_sample in activation2 for this_token in this_sample])
-    num_batches = min(len(flat_acts1),min(flat_acts2))
+    X = np.array([this_token for this_sample in activation1 for this_token in this_sample])
+    Y = np.array([this_token for this_sample in activation2 for this_token in this_sample])
+    num_batches = 1
     
-    for X in flat_acts1:
-        for i in range(N_LAYERs):
-            index = i*N_NEUROSN_PER_LAYER
-            this_X = X[index:index+N_NEUROSN_PER_LAYER]
-            # The dimension is seq_len X 9984
-            K = this_X @ this_X.t()
-            K.fill_diagonal_(0.0)
-            hsic_matrix[i, :, 0] += HSIC(K, K) / num_batches
+    for i in range(N_LAYERs):
+        index = i*N_NEUROSN_PER_LAYER
+        this_X = X[:,index:index+N_NEUROSN_PER_LAYER]
+        # The dimension is seq_len X 9984
+        K = this_X @ this_X.t()
+        K.fill_diagonal_(0.0)
+        hsic_matrix[i, :, 0] += HSIC(K, K) / num_batches
 
-            for Y in flat_acts1:
-                for j in range(12):
-                    index = j*N_NEUROSN_PER_LAYER
-                    this_Y = Y[index:index+N_NEUROSN_PER_LAYER]
-                    L = this_Y @ this_Y.t()
-                    L.fill_diagonal_(0)
+            for j in range(12):
+                index = j*N_NEUROSN_PER_LAYER
+                this_Y = Y[:,index:index+N_NEUROSN_PER_LAYER]
+                L = this_Y @ this_Y.t()
+                L.fill_diagonal_(0)
 
-                    hsic_matrix[i, j, 1] += HSIC(K, L) / num_batches
-                    hsic_matrix[i, j, 2] += HSIC(L, L) / num_batches
+                hsic_matrix[i, j, 1] += HSIC(K, L) / num_batches
+                hsic_matrix[i, j, 2] += HSIC(L, L) / num_batches
     assert not np.isnan(hsic_matrix).any(), "HSIC computation resulted in NANs"
     return hsic_matrix
 
