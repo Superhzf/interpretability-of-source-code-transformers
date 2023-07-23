@@ -63,6 +63,9 @@ def cka(activation1,activation2,model_name1,model_name2):
 
             hsic_matrix[i, j, 1] += HSIC(K, L) / num_batches
             hsic_matrix[i, j, 2] += HSIC(L, L) / num_batches
+
+    hsic_matrix = hsic_matrix[:, :, 1] / (hsic_matrix[:, :, 0].sqrt() *
+                                                    hsic_matrix[:, :, 2].sqrt())
     assert not np.isnan(hsic_matrix).any(), "HSIC computation resulted in NANs"
     return hsic_matrix
 
