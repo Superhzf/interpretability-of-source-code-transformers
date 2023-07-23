@@ -53,14 +53,14 @@ def cka(activation1,activation2,model_name1,model_name2):
         K.fill_diagonal_(0.0)
         hsic_matrix[i, :, 0] += HSIC(K, K) / num_batches
 
-            for j in range(12):
-                index = j*N_NEUROSN_PER_LAYER
-                this_Y = Y[:,index:index+N_NEUROSN_PER_LAYER]
-                L = this_Y @ this_Y.t()
-                L.fill_diagonal_(0)
+        for j in range(12):
+            index = j*N_NEUROSN_PER_LAYER
+            this_Y = Y[:,index:index+N_NEUROSN_PER_LAYER]
+            L = this_Y @ this_Y.t()
+            L.fill_diagonal_(0)
 
-                hsic_matrix[i, j, 1] += HSIC(K, L) / num_batches
-                hsic_matrix[i, j, 2] += HSIC(L, L) / num_batches
+            hsic_matrix[i, j, 1] += HSIC(K, L) / num_batches
+            hsic_matrix[i, j, 2] += HSIC(L, L) / num_batches
     assert not np.isnan(hsic_matrix).any(), "HSIC computation resulted in NANs"
     return hsic_matrix
 
