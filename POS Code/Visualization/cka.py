@@ -44,7 +44,7 @@ def cka(activation1,n_samples):
     hsic_matrix = np.zeros((N_LAYERs, N_LAYERs, N_LAYERs))
     X = np.array([this_token for this_sample in activation1 for this_token in this_sample])
     del activation1
-    random_choice = np.random.choice(len(X),size=n_samples,repalce=False)
+    random_choice = np.random.choice(len(X),size=n_samples,replace=False)
     random_choice = sorted(random_choice)
     X = X[random_choice]
     num_batches = 1
