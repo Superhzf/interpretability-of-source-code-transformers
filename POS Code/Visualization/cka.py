@@ -40,7 +40,7 @@ def HSIC(K, L):
 
 
 def cka(activation1,activation2,model_name1,model_name2):
-    hsic_matrix = np.zeros(12, 12, 3)
+    hsic_matrix = np.zeros((N_LAYERs, N_LAYERs, N_LAYERs))
     flat_acts1 = np.array([this_token for this_sample in activation1 for this_token in this_sample])
     flat_acts2 = np.array([this_token for this_sample in activation2 for this_token in this_sample])
     num_batches = min(len(flat_acts1),min(flat_acts2))
