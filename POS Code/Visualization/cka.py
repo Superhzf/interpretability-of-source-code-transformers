@@ -117,6 +117,7 @@ def main():
         if this_model in ['pretrained_CodeBERT']:
             print(f"Generate svg files for {this_model}")
             this_activation_name = ACTIVATION_NAMES[this_model]
+            exit(0)
             activations = load_extracted_activations(this_activation_name,activation_folder)
             print(f"Length of {this_model} activations:",len(activations))
             _, num_neurons = activations[0].shape
