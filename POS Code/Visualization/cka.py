@@ -37,7 +37,7 @@ def HSIC(K, L):
         result = np.trace(K @ L)
         result += (ones.transpose() @ K @ ones @ ones.transpose() @ L @ ones) / ((N - 1) * (N - 2))
         result -= (ones.transpose() @ K @ L @ ones) * 2 / (N - 2)
-        return 1 / (N * (N - 3)) * result
+        return 1 / (N * (N - 3)) * result[0,0]
 
 
 def cka(activation1,n_samples):
