@@ -67,6 +67,7 @@ def cka(activation1,n_samples):
     X = X[random_choice]
     num_batches = 1
     
+    
     for i in range(N_LAYERs):
         index = i*N_NEUROSN_PER_LAYER
         this_X = X[:,index:index+N_NEUROSN_PER_LAYER]
@@ -85,8 +86,12 @@ def cka(activation1,n_samples):
             hsic_matrix[i, j, 2] += HSIC(L, L) / num_batches
 
     dim = np.sqrt(hsic_matrix[:, :, 0]) * np.sqrt(hsic_matrix[:, :, 2])
-    hsic_matrix = hsic_matrix[:, :, 1] / dim
     print(f"Number of zeros:{np.count_nonzero(dim==0)}")
+    print(f"Number of negative1: {np.sum(hsic_matrix[:, :, 0] < 0)}")
+    print(f"Number of negative2: {np.sum(hsic_matrix[:, :, 2] < 0)}")
+    exit(0)
+    hsic_matrix = hsic_matrix[:, :, 1] / dim
+    
     
     assert not np.isnan(hsic_matrix).any(), "HSIC computation resulted in NANs"
     return hsic_matrix
