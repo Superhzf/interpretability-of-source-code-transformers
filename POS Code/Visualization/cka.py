@@ -33,7 +33,7 @@ def HSIC(K, L):
         Reference: https://arxiv.org/pdf/2010.15327.pdf Eq (3)
         """
         N = K.shape[0]
-        ones = np.ones(N, 1)
+        ones = np.ones((N, 1))
         result = np.trace(K @ L)
         result += (ones.t() @ K @ ones @ ones.t() @ L @ ones) / ((N - 1) * (N - 2))
         result -= (ones.t() @ K @ L @ ones) * 2 / (N - 2)
