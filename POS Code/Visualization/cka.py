@@ -73,8 +73,6 @@ def cka(activation1,n_samples):
         # The dimension is seq_len X 9984
         K = this_X @ this_X.transpose()
         np.fill_diagonal(K,0.0)
-        print(f"The shape of HSIC(K, K):")
-        print(HSIC(K, K).shape)
         hsic_matrix[i, :, 0] += HSIC(K, K) / num_batches
 
         for j in range(12):
