@@ -1,12 +1,7 @@
-import torch
 import argparse
-import pickle
-import neurox
-import neurox.data.extraction.transformers_extractor as transformers_extractor
 import neurox.data.loader as data_loader
-import neurox.analysis.corpus as corpus
 import os
-
+import numpy as np
 
 MODEL_NAMES = ['pretrained_BERT',
                'pretrained_CodeBERT','pretrained_GraphCodeBERT',]
@@ -45,7 +40,7 @@ def HSIC(K, L):
 
 
 def cka(activation1,activation2,model_name1,model_name2):
-    hsic_matrix = torch.zeros(12, 12, 3)
+    hsic_matrix = np.zeros(12, 12, 3)
     flat_acts1 = np.array([this_token for this_sample in activation1 for this_token in this_sample])
     flat_acts2 = np.array([this_token for this_sample in activation2 for this_token in this_sample])
     num_batches = min(len(flat_acts1),min(flat_acts2))
