@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --nodes=1
-#SBATCH --ntasks=8
-#SBATCH --mem=64G
+#SBATCH --ntasks=1
+#SBATCH --mem=76G
 #SBATCH --time=1:00:00
 #SBATCH --partition=speedy
 
