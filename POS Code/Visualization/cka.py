@@ -5,14 +5,15 @@ import numpy as np
 
 MODEL_NAMES = ['pretrained_BERT',
                'pretrained_CodeBERT','pretrained_GraphCodeBERT',]
-ACTIVATION_NAMES = {'pretrained_BERT':'bert_activations_test.json',
-                    'pretrained_CodeBERT':'codebert_activations_test.json',
-                    'pretrained_GraphCodeBERT':'graphcodebert_activations_test.json',}
+ACTIVATION_NAMES = {'pretrained_BERT':'bert_activations_train.json',
+                    'pretrained_CodeBERT':'codebert_activations_train.json',
+                    'pretrained_GraphCodeBERT':'graphcodebert_activations_train.json',}
 
 FOLDER_NAME ="result_all"
 
 N_LAYERs = 13
 N_NEUROSN_PER_LAYER = 768
+N_SAMPLES = 5000
 
 def mkdir_if_needed(dir_name):
     if not os.path.isdir(dir_name):
@@ -39,10 +40,13 @@ def HSIC(K, L):
         return 1 / (N * (N - 3)) * result
 
 
-def cka(activation1):
+def cka(activation1,n_samples):
     hsic_matrix = np.zeros((N_LAYERs, N_LAYERs, N_LAYERs))
     X = np.array([this_token for this_sample in activation1 for this_token in this_sample])
     del activation1
+    random_choice = np.random.choice(len(X),size=n_samples,repalce=False)
+    random_choice = sorted(random_choice)
+    X = X[random_choice]
     num_batches = 1
     
     for i in range(N_LAYERs):
@@ -94,7 +98,7 @@ def main():
             for idx in range(len(activations)):
                 assert activations[idx].shape[1] == num_neurons
             print(f"The number of neurons for each token in {this_model}:",num_neurons)
-            hsic_matrix = cka(activations)
+            hsic_matrix = cka(activations,N_SAMPLES)
             del activations
             print("-----------------------------------------------------------------")
             break
