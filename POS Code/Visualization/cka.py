@@ -76,7 +76,7 @@ def cka(activation1,n_samples):
         np.fill_diagonal(K,0.0)
         hsic_matrix[i, :, 0] += HSIC(K, K) / num_batches
 
-        for j in range(12):
+        for j in range(N_LAYERs):
             index = j*N_NEUROSN_PER_LAYER
             this_Y = X[:,index:index+N_NEUROSN_PER_LAYER]
             L = this_Y @ this_Y.transpose()
