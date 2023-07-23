@@ -88,6 +88,7 @@ def cka(activation1,n_samples):
     dim = np.sqrt(hsic_matrix[:, :, 0]) * np.sqrt(hsic_matrix[:, :, 2])
     print(f"Number of zeros:{np.count_nonzero(dim==0)}")
     print(f"Index of zeros:{np.where(dim==0)}")
+    print(dim)
     print(f"Number of negative1: {np.sum(hsic_matrix[:, :, 0] < 0)}")
     print(f"Number of negative2: {np.sum(hsic_matrix[:, :, 2] < 0)}")
     exit(0)
