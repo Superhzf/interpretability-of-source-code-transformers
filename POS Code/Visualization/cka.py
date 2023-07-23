@@ -2,6 +2,7 @@ import argparse
 import neurox.data.loader as data_loader
 import os
 import numpy as np
+import matplotlib.pyplot as plt
 
 MODEL_NAMES = ['pretrained_BERT',
                'pretrained_CodeBERT','pretrained_GraphCodeBERT',]
@@ -40,10 +41,27 @@ def HSIC(K, L):
         return 1 / (N * (N - 3)) * result[0,0]
 
 
+def plot_results(hsic_matrix,save_path,title):
+        fig, ax = plt.subplots()
+        im = ax.imshow(hsic_matrix, origin='lower', cmap='magma')
+        ax.set_xlabel(f"Layers {self.model2_info['Name']}", fontsize=15)
+        ax.set_ylabel(f"Layers {self.model1_info['Name']}", fontsize=15)
+
+        ax.set_title(f"{title}", fontsize=18)
+
+        add_colorbar(im)
+        plt.tight_layout()
+
+        plt.savefig(save_path, dpi=300)
+
+        plt.show()
+
+
 def cka(activation1,n_samples):
     hsic_matrix = np.zeros((N_LAYERs, N_LAYERs, 3))
     X = np.array([this_token for this_sample in activation1 for this_token in this_sample])
     del activation1
+    np.random.seed(0)
     random_choice = np.random.choice(len(X),size=n_samples,replace=False)
     random_choice = sorted(random_choice)
     X = X[random_choice]
@@ -68,8 +86,10 @@ def cka(activation1,n_samples):
             hsic_matrix[i, j, 1] += HSIC(K, L) / num_batches
             hsic_matrix[i, j, 2] += HSIC(L, L) / num_batches
 
-    hsic_matrix = hsic_matrix[:, :, 1] / (np.sqrt(hsic_matrix[:, :, 0]) *
-                                                    np.sqrt(hsic_matrix[:, :, 2]))
+    dim = np.sqrt(hsic_matrix[:, :, 0]) * np.sqrt(hsic_matrix[:, :, 2])
+    hsic_matrix = hsic_matrix[:, :, 1] / dim
+    print(f"Number of zeros:{np.count_nonzero(dim==0)}")
+    
     assert not np.isnan(hsic_matrix).any(), "HSIC computation resulted in NANs"
     return hsic_matrix
 
@@ -102,6 +122,7 @@ def main():
             print(f"The number of neurons for each token in {this_model}:",num_neurons)
             hsic_matrix = cka(activations,N_SAMPLES)
             del activations
+
             print("-----------------------------------------------------------------")
             break
 
