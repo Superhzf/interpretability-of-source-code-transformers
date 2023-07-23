@@ -41,7 +41,7 @@ def HSIC(K, L):
 
 
 def cka(activation1,n_samples):
-    hsic_matrix = np.zeros((N_LAYERs, N_LAYERs, N_LAYERs))
+    hsic_matrix = np.zeros((N_LAYERs, N_LAYERs, 3))
     X = np.array([this_token for this_sample in activation1 for this_token in this_sample])
     del activation1
     random_choice = np.random.choice(len(X),size=n_samples,replace=False)
@@ -55,6 +55,8 @@ def cka(activation1,n_samples):
         # The dimension is seq_len X 9984
         K = this_X @ this_X.transpose()
         np.fill_diagonal(K,0.0)
+        print(f"The shape of HSIC(K, K):")
+        print(HSIC(K, K).shape)
         hsic_matrix[i, :, 0] += HSIC(K, K) / num_batches
 
         for j in range(12):
