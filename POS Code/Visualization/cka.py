@@ -5,9 +5,9 @@ import numpy as np
 
 MODEL_NAMES = ['pretrained_BERT',
                'pretrained_CodeBERT','pretrained_GraphCodeBERT',]
-ACTIVATION_NAMES = {'pretrained_BERT':'bert_activations_train.json',
-                    'pretrained_CodeBERT':'codebert_activations_train.json',
-                    'pretrained_GraphCodeBERT':'graphcodebert_activations_train.json',}
+ACTIVATION_NAMES = {'pretrained_BERT':'bert_activations_test.json',
+                    'pretrained_CodeBERT':'codebert_activations_test.json',
+                    'pretrained_GraphCodeBERT':'graphcodebert_activations_test.json',}
 
 FOLDER_NAME ="result_all"
 
@@ -39,12 +39,10 @@ def HSIC(K, L):
         return 1 / (N * (N - 3)) * result
 
 
-def cka(activation1,activation2,model_name1,model_name2):
+def cka(activation1):
     hsic_matrix = np.zeros((N_LAYERs, N_LAYERs, N_LAYERs))
     X = np.array([this_token for this_sample in activation1 for this_token in this_sample])
     del activation1
-    Y = np.array([this_token for this_sample in activation2 for this_token in this_sample])
-    del activation2
     num_batches = 1
     
     for i in range(N_LAYERs):
@@ -57,7 +55,7 @@ def cka(activation1,activation2,model_name1,model_name2):
 
         for j in range(12):
             index = j*N_NEUROSN_PER_LAYER
-            this_Y = Y[:,index:index+N_NEUROSN_PER_LAYER]
+            this_Y = X[:,index:index+N_NEUROSN_PER_LAYER]
             L = this_Y @ this_Y.transpose()
             L.fill_diagonal_(0)
 
@@ -96,7 +94,7 @@ def main():
             for idx in range(len(activations)):
                 assert activations[idx].shape[1] == num_neurons
             print(f"The number of neurons for each token in {this_model}:",num_neurons)
-            hsic_matrix = cka(activations,activations,model_name1=this_model,model_name2=this_model)
+            hsic_matrix = cka(activations)
             del activations
             print("-----------------------------------------------------------------")
             break
