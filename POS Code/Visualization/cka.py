@@ -35,8 +35,8 @@ def HSIC(K, L):
         N = K.shape[0]
         ones = np.ones((N, 1))
         result = np.trace(K @ L)
-        result += (ones.t() @ K @ ones @ ones.t() @ L @ ones) / ((N - 1) * (N - 2))
-        result -= (ones.t() @ K @ L @ ones) * 2 / (N - 2)
+        result += (ones.transpose() @ K @ ones @ ones.transpose() @ L @ ones) / ((N - 1) * (N - 2))
+        result -= (ones.transpose() @ K @ L @ ones) * 2 / (N - 2)
         return 1 / (N * (N - 3)) * result
 
 
