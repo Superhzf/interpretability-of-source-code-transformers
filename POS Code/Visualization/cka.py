@@ -19,6 +19,7 @@ FOLDER_NAME ="result_all"
 N_LAYERs = 13
 N_NEUROSN_PER_LAYER = 768
 N_SAMPLES = 5000
+N_BATCHES = 5
 
 def mkdir_if_needed(dir_name):
     if not os.path.isdir(dir_name):
@@ -73,30 +74,32 @@ def plot_results(hsic_matrix,save_path,title):
 def cka(activation1,n_samples):
     hsic_matrix = np.zeros((N_LAYERs, N_LAYERs, 3))
     X = np.array([this_token for this_sample in activation1 for this_token in this_sample])
+    print(f"Total number of tokens:{X.shape[0]}")
     del activation1
+    
     np.random.seed(2)
-    random_choice = np.random.choice(len(X),size=n_samples,replace=False)
-    random_choice = sorted(random_choice)
-    X = X[random_choice]
-    num_batches = 1
-    
-    
-    for i in range(N_LAYERs):
-        index = i*N_NEUROSN_PER_LAYER
-        this_X = X[:,index:index+N_NEUROSN_PER_LAYER]
-        # The dimension is seq_len X 9984
-        K = this_X @ this_X.transpose()
-        np.fill_diagonal(K,0.0)
-        hsic_matrix[i, :, 0] += HSIC(K, K) / num_batches
+    num_batches = N_BATCHES
+    for this_batch in range(num_batches):
+        random_choice = np.random.choice(len(X),size=n_samples,replace=False)
+        random_choice = sorted(random_choice)
+        this_sample = X[random_choice]
+        
+        for i in range(N_LAYERs):
+            index = i*N_NEUROSN_PER_LAYER
+            this_X = this_sample[:,index:index+N_NEUROSN_PER_LAYER]
+            # The dimension is seq_len X 9984
+            K = this_X @ this_X.transpose()
+            np.fill_diagonal(K,0.0)
+            hsic_matrix[i, :, 0] += HSIC(K, K) / num_batches
 
-        for j in range(N_LAYERs):
-            index = j*N_NEUROSN_PER_LAYER
-            this_Y = X[:,index:index+N_NEUROSN_PER_LAYER]
-            L = this_Y @ this_Y.transpose()
-            np.fill_diagonal(L,0)
+            for j in range(N_LAYERs):
+                index = j*N_NEUROSN_PER_LAYER
+                this_Y = this_sample[:,index:index+N_NEUROSN_PER_LAYER]
+                L = this_Y @ this_Y.transpose()
+                np.fill_diagonal(L,0)
 
-            hsic_matrix[i, j, 1] += HSIC(K, L) / num_batches
-            hsic_matrix[i, j, 2] += HSIC(L, L) / num_batches
+                hsic_matrix[i, j, 1] += HSIC(K, L) / num_batches
+                hsic_matrix[i, j, 2] += HSIC(L, L) / num_batches
 
     dim = np.sqrt(hsic_matrix[:, :, 0]) * np.sqrt(hsic_matrix[:, :, 2])
     hsic_matrix = hsic_matrix[:, :, 1] / dim
@@ -135,7 +138,7 @@ def main():
         del activations
         plot_results(hsic_matrix,save_path=f"{this_model}_cka.png",title=this_model)
         print("-----------------------------------------------------------------")
-
+        break
 
 if __name__ == "__main__":
     main()
