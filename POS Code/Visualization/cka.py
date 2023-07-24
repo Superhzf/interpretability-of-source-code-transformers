@@ -5,12 +5,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits import axes_grid1
 
-MODEL_NAMES = ['BERT','CodeBERT','GraphCodeBERT','CodeGPTJava','CodeGPTPy',"RoBERTa","UniXCoder"]
+MODEL_NAMES = ['CodeGPTPy',"RoBERTa","UniXCoder"]
 ACTIVATION_NAMES = {'BERT':'bert_activations_train.json',
                     'CodeBERT':'codebert_activations_train.json',
                     'GraphCodeBERT':'graphcodebert_activations_train.json',
                     'CodeGPTJava':'codeGPTJava_activations_train.json',
-                    'CodeGPTPy':'codeGPTPy_activations_train',
+                    'CodeGPTPy':'codeGPTPy_activations_train.json',
                     'RoBERTa':'RoBERTa_activations_train.json',
                     'UniXCoder':'UniXCoder_activations_train.json'}
 
