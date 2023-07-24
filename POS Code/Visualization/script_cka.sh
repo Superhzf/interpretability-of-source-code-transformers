@@ -3,7 +3,7 @@
 #SBATCH --ntasks=1
 #SBATCH --mem=76G
 #SBATCH --time=10:00:00
-#SBATCH --partition=speedy
+#SBATCH --partition=swift
 
 module load ml-gpu
 cd /work/LAS/cjquinn-lab/zefuh/selectivity/interpretability-of-source-code-transformers/POS\ Code/Visualization
