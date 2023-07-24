@@ -5,11 +5,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits import axes_grid1
 
-MODEL_NAMES = ['pretrained_BERT',
-               'pretrained_CodeBERT','pretrained_GraphCodeBERT',]
-ACTIVATION_NAMES = {'pretrained_BERT':'bert_activations_train.json',
-                    'pretrained_CodeBERT':'codebert_activations_train.json',
-                    'pretrained_GraphCodeBERT':'graphcodebert_activations_train.json',}
+MODEL_NAMES = ['BERT','CodeBERT','GraphCodeBERT','CodeGPTJava','CodeGPTPy',"RoBERTa","UniXCoder"]
+ACTIVATION_NAMES = {'BERT':'bert_activations_train.json',
+                    'CodeBERT':'codebert_activations_train.json',
+                    'GraphCodeBERT':'graphcodebert_activations_train.json',
+                    'CodeGPTJava':'codeGPTJava_activations_train.json',
+                    'CodeGPTPy':'codeGPTPy_activations_train',
+                    'RoBERTa':'RoBERTa_activations_train.json',
+                    'UniXCoder':'UniXCoder_activations_train.json'}
 
 FOLDER_NAME ="result_all"
 
@@ -120,20 +123,19 @@ def main():
         src_folder = "src_java"
 
     for this_model in MODEL_NAMES:
-        if this_model in ['pretrained_CodeBERT']:
-            print(f"Generate svg files for {this_model}")
-            this_activation_name = ACTIVATION_NAMES[this_model]
-            activations = load_extracted_activations(this_activation_name,activation_folder)
-            print(f"Length of {this_model} activations:",len(activations))
-            _, num_neurons = activations[0].shape
-            for idx in range(len(activations)):
-                assert activations[idx].shape[1] == num_neurons
-            print(f"The number of neurons for each token in {this_model}:",num_neurons)
-            hsic_matrix = cka(activations,N_SAMPLES)
-            del activations
-            plot_results(hsic_matrix,save_path=f"{this_model}_cka.png",title=this_model)
-            print("-----------------------------------------------------------------")
-            break
+        print(f"Generate svg files for {this_model}")
+        this_activation_name = ACTIVATION_NAMES[this_model]
+        activations = load_extracted_activations(this_activation_name,activation_folder)
+        print(f"Length of {this_model} activations:",len(activations))
+        _, num_neurons = activations[0].shape
+        for idx in range(len(activations)):
+            assert activations[idx].shape[1] == num_neurons
+        print(f"The number of neurons for each token in {this_model}:",num_neurons)
+        hsic_matrix = cka(activations,N_SAMPLES)
+        del activations
+        plot_results(hsic_matrix,save_path=f"{this_model}_cka.png",title=this_model)
+        print("-----------------------------------------------------------------")
+
 
 if __name__ == "__main__":
     main()
