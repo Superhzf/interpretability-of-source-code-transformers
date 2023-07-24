@@ -44,8 +44,6 @@ def HSIC(K, L):
 def plot_results(hsic_matrix,save_path,title):
         fig, ax = plt.subplots()
         im = ax.imshow(hsic_matrix, origin='lower', cmap='magma')
-        ax.set_xlabel(f"Layers {self.model2_info['Name']}", fontsize=15)
-        ax.set_ylabel(f"Layers {self.model1_info['Name']}", fontsize=15)
 
         ax.set_title(f"{title}", fontsize=18)
 
@@ -86,12 +84,6 @@ def cka(activation1,n_samples):
             hsic_matrix[i, j, 2] += HSIC(L, L) / num_batches
 
     dim = np.sqrt(hsic_matrix[:, :, 0]) * np.sqrt(hsic_matrix[:, :, 2])
-    print(f"Number of zeros:{np.count_nonzero(dim==0)}")
-    print(f"Index of zeros:{np.where(dim==0)}")
-    print(dim)
-    print(f"Number of negative1: {np.sum(hsic_matrix[:, :, 0] < 0)}")
-    print(f"Number of negative2: {np.sum(hsic_matrix[:, :, 2] < 0)}")
-    exit(0)
     hsic_matrix = hsic_matrix[:, :, 1] / dim
     
     
@@ -127,7 +119,7 @@ def main():
             print(f"The number of neurons for each token in {this_model}:",num_neurons)
             hsic_matrix = cka(activations,N_SAMPLES)
             del activations
-
+            plot_results(hsic_matrix,save_path=f"{this_model}_cka.png",title=this_model)
             print("-----------------------------------------------------------------")
             break
 
