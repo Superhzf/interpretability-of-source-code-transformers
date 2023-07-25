@@ -126,6 +126,7 @@ def main():
 
     for this_model in MODEL_NAMES:
         print(f"Generate svg files for {this_model}")
+        exit(0)
         this_activation_name = ACTIVATION_NAMES[this_model]
         activations = load_extracted_activations(this_activation_name,activation_folder)
         print(f"Length of {this_model} activations:",len(activations))
