@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits import axes_grid1
 
-MODEL_NAMES = ['CodeGPTPy',"RoBERTa","UniXCoder"]
+MODEL_NAMES = ['CodeGPTJava','CodeGPTPy']
 ACTIVATION_NAMES = {'BERT':'bert_activations_train.json',
                     'CodeBERT':'codebert_activations_train.json',
                     'GraphCodeBERT':'graphcodebert_activations_train.json',
@@ -103,7 +103,8 @@ def cka(activation1,n_samples):
 
     dim = np.sqrt(hsic_matrix[:, :, 0]) * np.sqrt(hsic_matrix[:, :, 2])
     hsic_matrix = hsic_matrix[:, :, 1] / dim
-    
+    print(f"hsic_matrix:")
+    print(hsic_matrix)
     
     assert not np.isnan(hsic_matrix).any(), "HSIC computation resulted in NANs"
     return hsic_matrix
@@ -136,7 +137,7 @@ def main():
         print(f"The number of neurons for each token in {this_model}:",num_neurons)
         hsic_matrix = cka(activations,N_SAMPLES)
         del activations
-        plot_results(hsic_matrix,save_path=f"{this_model}_cka.png",title=this_model)
+        # plot_results(hsic_matrix,save_path=f"{this_model}_cka.png",title=this_model)
         print("-----------------------------------------------------------------")
 
 if __name__ == "__main__":
