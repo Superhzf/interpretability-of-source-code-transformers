@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits import axes_grid1
 
-MODEL_NAMES = ['CodeGPTJava','CodeGPTPy']
+MODEL_NAMES = ['CodeGPTPy']
 ACTIVATION_NAMES = {'BERT':'bert_activations_train.json',
                     'CodeBERT':'codebert_activations_train.json',
                     'GraphCodeBERT':'graphcodebert_activations_train.json',
