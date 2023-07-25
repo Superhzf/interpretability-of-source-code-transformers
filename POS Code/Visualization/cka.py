@@ -103,8 +103,6 @@ def cka(activation1,n_samples):
 
     dim = np.sqrt(hsic_matrix[:, :, 0]) * np.sqrt(hsic_matrix[:, :, 2])
     hsic_matrix = hsic_matrix[:, :, 1] / dim
-    print(f"hsic_matrix:")
-    print(hsic_matrix)
     
     assert not np.isnan(hsic_matrix).any(), "HSIC computation resulted in NANs"
     return hsic_matrix
@@ -136,6 +134,8 @@ def main():
             assert activations[idx].shape[1] == num_neurons
         print(f"The number of neurons for each token in {this_model}:",num_neurons)
         hsic_matrix = cka(activations,N_SAMPLES)
+        print(f"hsic_matrix:")
+        print(hsic_matrix)
         del activations
         # plot_results(hsic_matrix,save_path=f"{this_model}_cka.png",title=this_model)
         print("-----------------------------------------------------------------")
