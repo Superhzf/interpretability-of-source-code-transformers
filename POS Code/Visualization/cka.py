@@ -131,7 +131,7 @@ def main():
     elif task == 'DefectDetection':
         activation_folder = "/work/LAS/jannesar-lab/arushi/Redundancy/Defect-detection/dataset/activations"
     elif task == 'CodeSearch':
-        activation_folder = "/work/LAS/jannesar-lab/arushi/Interpretability/interpretability-of-source-code-transformers/NL-Code-Search/NL-code-search-WebQuery/data"
+        activation_folder = "/work/LAS/jannesar-lab/arushi/Interpretability/interpretability-of-source-code-transformers/NL-Code-Search/NL-code-search-WebQuery/data/activations"
 
     for this_model in MODEL_NAMES:
         print(f"Generate svg files for {this_model}")
