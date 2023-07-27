@@ -126,7 +126,7 @@ def main():
         activation_folder = "/work/LAS/cjquinn-lab/zefuh/selectivity/interpretability-of-source-code-transformers/POS Code/Experiments/activations"
     elif task == 'java':
         activation_folder = "/work/LAS/cjquinn-lab/zefuh/selectivity/interpretability-of-source-code-transformers/POS Code/Experiments/activations_java"
-    elif task == 'CloneDetection'
+    elif task == 'CloneDetection':
         activation_folder = "/work/LAS/jannesar-lab/arushi/Interpretability/interpretability-of-source-code-transformers/Clone-Detection/dataset/stratified/activations"
     elif task == 'DefectDetection':
         activation_folder = "/work/LAS/jannesar-lab/arushi/Redundancy/Defect-detection/dataset/activations"
