@@ -137,8 +137,10 @@ def main():
         print(f"Generate svg files for {this_model}")
         if task in ["python",'java']:
             this_activation_name = ACTIVATION_NAMES[this_model]
-        else:
+        elif task in ['CloneDetection','DefectDetection','CodeSearch']:
             this_activation_name = ACTIVATION_NAMES_sentence_level[this_model]
+        else:
+            assert 1==0,"Task is not understood"
         activations = load_extracted_activations(this_activation_name,activation_folder)
         print(f"Length of {this_model} activations:",len(activations))
         _, num_neurons = activations[0].shape
