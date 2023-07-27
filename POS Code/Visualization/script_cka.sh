@@ -7,4 +7,5 @@
 
 module load ml-gpu
 cd /work/LAS/cjquinn-lab/zefuh/selectivity/interpretability-of-source-code-transformers/POS\ Code/Visualization
-ml-gpu /work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python cka.py --language java > log_cka
+# ml-gpu /work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python cka.py --task java > log_cka
+ml-gpu /work/LAS/cjquinn-lab/zefuh/selectivity/NeuroX_env/bin/python cka.py --task CloneDetection > log_cka_clonedet

@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits import axes_grid1
 
-MODEL_NAMES = ['CodeGPTPy']
+MODEL_NAMES = ['BERT','CodeBERT','GraphCodeBERT','CodeGPTJava','CodeGPTPy','RoBERTa','UniXCoder']
 ACTIVATION_NAMES = {'BERT':'bert_activations_train.json',
                     'CodeBERT':'codebert_activations_train.json',
                     'GraphCodeBERT':'graphcodebert_activations_train.json',
@@ -13,8 +13,14 @@ ACTIVATION_NAMES = {'BERT':'bert_activations_train.json',
                     'CodeGPTPy':'codeGPTPy_activations_train.json',
                     'RoBERTa':'RoBERTa_activations_train.json',
                     'UniXCoder':'UniXCoder_activations_train.json'}
+ACTIVATION_NAMES_sentence_level = {'BERT':'bert/train_activations.json',
+                                  'CodeBERT':'codebert/train_activations.json',
+                                  'GraphCodeBERT':'graphcodebert/train_activations.json',
+                                  'CodeGPTJava':'codegpt/java-original/train_activations.json',
+                                  'CodeGPTPy':'codegpt/python-original/train_activations.json',
+                                  'RoBERTa':'roberta/train_activations.json',
+                                  'UniXCoder':'unixcoder/train_activations.json'}
 
-FOLDER_NAME ="result_all"
 
 N_LAYERs = 13
 N_NEUROSN_PER_LAYER = 768
@@ -28,7 +34,7 @@ def mkdir_if_needed(dir_name):
 
 def load_extracted_activations(activation_file_name,activation_folder):
     #Load activations from json files
-    activations, num_layers = data_loader.load_activations(f"../Experiments/{activation_folder}/{activation_file_name}")
+    activations, num_layers = data_loader.load_activations(f"{activation_folder}/{activation_file_name}")
     return activations
 
 
@@ -112,21 +118,27 @@ def cka(activation1,n_samples):
 
 
 def main():
-    mkdir_if_needed(f"./{FOLDER_NAME}/")
     parser = argparse.ArgumentParser()
-    parser.add_argument("--language", default='python')
+    parser.add_argument("--task", default='python')
     args = parser.parse_args()
-    language = args.language
-    if language == 'python':
-        activation_folder = "activations"
-        src_folder = "src_files"
-    elif language == 'java':
-        activation_folder = "activations_java"
-        src_folder = "src_java"
+    task = args.task
+    if task == 'python':
+        activation_folder = "/work/LAS/cjquinn-lab/zefuh/selectivity/interpretability-of-source-code-transformers/POS Code/Experiments/activations"
+    elif task == 'java':
+        activation_folder = "/work/LAS/cjquinn-lab/zefuh/selectivity/interpretability-of-source-code-transformers/POS Code/Experiments/activations_java"
+    elif task == 'CloneDetection'
+        activation_folder = "/work/LAS/jannesar-lab/arushi/Interpretability/interpretability-of-source-code-transformers/Clone-Detection/dataset/stratified/activations"
+    elif task == 'DefectDetection':
+        activation_folder = "/work/LAS/jannesar-lab/arushi/Redundancy/Defect-detection/dataset/activations"
+    elif task == 'CodeSearch':
+        activation_folder = "/work/LAS/jannesar-lab/arushi/Interpretability/interpretability-of-source-code-transformers/NL-Code-Search/NL-code-search-WebQuery/data"
 
     for this_model in MODEL_NAMES:
         print(f"Generate svg files for {this_model}")
-        this_activation_name = ACTIVATION_NAMES[this_model]
+        if task in ["python",'java']:
+            this_activation_name = ACTIVATION_NAMES[this_model]
+        else:
+            this_activation_name = ACTIVATION_NAMES_sentence_level[this_model]
         activations = load_extracted_activations(this_activation_name,activation_folder)
         print(f"Length of {this_model} activations:",len(activations))
         _, num_neurons = activations[0].shape
