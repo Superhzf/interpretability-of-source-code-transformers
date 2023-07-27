@@ -110,7 +110,7 @@ def cka(activation1,n_samples):
                 hsic_matrix[i, j, 2] += HSIC(L, L) / num_batches
 
     dim = np.sqrt(hsic_matrix[:, :, 0]) * np.sqrt(hsic_matrix[:, :, 2])
-    print("dim":dim)
+    print("dim",dim)
     exit(0)
     hsic_matrix = hsic_matrix[:, :, 1] / dim
     
