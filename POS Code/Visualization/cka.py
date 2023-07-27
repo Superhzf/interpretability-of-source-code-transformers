@@ -151,7 +151,7 @@ def main():
         print(f"hsic_matrix:")
         print(hsic_matrix)
         del activations
-        # plot_results(hsic_matrix,save_path=f"{this_model}_cka.png",title=this_model)
+        plot_results(hsic_matrix,save_path=f"{this_model}_cka.png",title=this_model)
         print("-----------------------------------------------------------------")
 
 if __name__ == "__main__":
