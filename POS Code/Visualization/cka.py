@@ -78,6 +78,11 @@ def plot_results(hsic_matrix,save_path,title):
 
         plt.show()
 
+def normalize(matrix):
+    mean = np.mean(matrix,axis=0)
+    std = np.std(matrix,axis=0)
+    return (df-mean)/std
+
 
 def cka(activation1,n_samples):
     hsic_matrix = np.zeros((N_LAYERs, N_LAYERs, 3))
@@ -91,11 +96,7 @@ def cka(activation1,n_samples):
         random_choice = np.random.choice(len(X),size=n_samples,replace=False)
         random_choice = sorted(random_choice)
         this_sample = X[random_choice]
-        if np.isnan(this_sample).any():
-            print("There are NANs in the activations")
-            exit(0)
-        else:
-            print("No nans are found")
+        this_sample=normalize(this_sample)
         
         for i in range(N_LAYERs):
             index = i*N_NEUROSN_PER_LAYER
