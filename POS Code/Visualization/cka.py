@@ -97,6 +97,7 @@ def cka(activation1,n_samples):
             exit(0)
         else:
             print("No nans are found")
+            print("this_sample:",this_sample)
         
         for i in range(N_LAYERs):
             index = i*N_NEUROSN_PER_LAYER
