@@ -106,8 +106,11 @@ def cka(activation1,n_samples):
         for i in range(N_LAYERs):
             index = i*N_NEUROSN_PER_LAYER
             this_X = this_sample[:,index:index+N_NEUROSN_PER_LAYER]
+            print("this_X",this_X)
             # The dimension is seq_len X 9984
             K = this_X @ this_X.transpose()
+            print("K:",K)
+            exit(0)
             np.fill_diagonal(K,0.0)
             hsic_matrix[i, :, 0] += HSIC(K, K) / num_batches
 
