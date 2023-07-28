@@ -91,6 +91,13 @@ def cka(activation1,n_samples):
         random_choice = np.random.choice(len(X),size=n_samples,replace=False)
         random_choice = sorted(random_choice)
         this_sample = X[random_choice]
+        if np.isnan(this_sample).any():
+            print("There are NANs in the activations")
+            exit(0)
+        else:
+            print("No nans are found")
+        continue
+        
         
         for i in range(N_LAYERs):
             index = i*N_NEUROSN_PER_LAYER
