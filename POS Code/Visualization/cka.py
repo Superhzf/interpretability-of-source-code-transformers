@@ -5,7 +5,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits import axes_grid1
 
-MODEL_NAMES = ['BERT','CodeBERT','GraphCodeBERT','CodeGPTJava','CodeGPTPy','RoBERTa','UniXCoder']
+# MODEL_NAMES = ['BERT','CodeBERT','GraphCodeBERT','CodeGPTJava','CodeGPTPy','RoBERTa','UniXCoder']
+MODEL_NAMES = ['RoBERTa','UniXCoder']
 
 ACTIVATION_NAMES = {'BERT':'bert_activations_train.json',
                     'CodeBERT':'codebert_activations_train.json',
@@ -26,7 +27,9 @@ ACTIVATION_NAMES_sentence_level = {'BERT':'bert/train_activations.json',
 N_LAYERs = 13
 N_NEUROSN_PER_LAYER = 768
 N_SAMPLES = 5000
-N_BATCHES = 5
+N_BATCHES = 1
+# N_BATCHES = 5
+
 
 def mkdir_if_needed(dir_name):
     if not os.path.isdir(dir_name):
@@ -116,6 +119,9 @@ def cka(activation1,n_samples):
 
     dim = np.sqrt(hsic_matrix[:, :, 0]) * np.sqrt(hsic_matrix[:, :, 2])
     hsic_matrix = hsic_matrix[:, :, 1] / dim
+    print(f"hsic_matrix[:, :, 0]:",hsic_matrix[:, :, 0])
+    print(f"hsic_matrix[:, :, 2]:",hsic_matrix[:, :, 2])
+    exit(0)
     
     assert not np.isnan(hsic_matrix).any(), "HSIC computation resulted in NANs"
     return hsic_matrix
