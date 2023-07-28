@@ -81,7 +81,7 @@ def plot_results(hsic_matrix,save_path,title):
 def normalize(matrix):
     mean = np.mean(matrix,axis=0)
     std = np.std(matrix,axis=0)
-    print(std)
+    print(np.min(np.abs(std)))
     print(matrix[:,0:768])
     exit(0)
     return (matrix-mean)/std
