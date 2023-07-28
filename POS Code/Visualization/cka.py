@@ -79,12 +79,9 @@ def plot_results(hsic_matrix,save_path,title):
         plt.show()
 
 def normalize(matrix):
-    mean = np.mean(matrix,axis=0)
-    std = np.std(matrix,axis=0)
-    print(np.min(np.abs(std)))
-    print(matrix[:,0:768])
-    exit(0)
-    return (matrix-mean)/std
+    var_max = np.max(matrix,axis=0)
+    var_min = np.min(matrix,axis=0)
+    return (matrix-var_min)/(var_max-var_min)
 
 
 def cka(activation1,n_samples):
