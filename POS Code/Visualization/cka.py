@@ -81,7 +81,7 @@ def plot_results(hsic_matrix,save_path,title):
 def normalize(matrix):
     mean = np.mean(matrix,axis=0)
     std = np.std(matrix,axis=0)
-    return (df-mean)/std
+    return (matrix-mean)/std
 
 
 def cka(activation1,n_samples):
