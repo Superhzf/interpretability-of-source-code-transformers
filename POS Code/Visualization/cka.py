@@ -27,7 +27,8 @@ ACTIVATION_NAMES_sentence_level = {'BERT':'bert/train_activations.json',
 N_LAYERs = 13
 N_NEUROSN_PER_LAYER = 768
 N_SAMPLES = 5000
-N_BATCHES = 5
+# N_BATCHES = 5
+N_BATCHES = 1
 
 def mkdir_if_needed(dir_name):
     if not os.path.isdir(dir_name):
@@ -96,8 +97,6 @@ def cka(activation1,n_samples):
             exit(0)
         else:
             print("No nans are found")
-        continue
-        
         
         for i in range(N_LAYERs):
             index = i*N_NEUROSN_PER_LAYER
@@ -117,7 +116,8 @@ def cka(activation1,n_samples):
                 hsic_matrix[i, j, 2] += HSIC(L, L) / num_batches
 
     dim = np.sqrt(hsic_matrix[:, :, 0]) * np.sqrt(hsic_matrix[:, :, 2])
-    print("dim",dim)
+    print("hsic_matrix[:, :, 0]:",hsic_matrix[:, :, 0])
+    print("hsic_matrix[:, :, 2]:",hsic_matrix[:, :, 2])
     exit(0)
     hsic_matrix = hsic_matrix[:, :, 1] / dim
     
