@@ -82,7 +82,9 @@ def plot_results(hsic_matrix,save_path,title):
 
 def normalize(matrix):
     var_mean = np.mean(matrix,axis=0)
+    print("var_mean[:768]",var_mean[768])
     var_std = np.std(matrix,axis=0)
+    print("var_std[:768]",var_std[768])
     return (matrix-var_mean)/(var_std+1e-16)
 
 
