@@ -103,6 +103,8 @@ def cka(activation1,n_samples):
         for i in range(N_LAYERs):
             index = i*N_NEUROSN_PER_LAYER
             this_X = this_sample[:,index:index+N_NEUROSN_PER_LAYER]
+            print("this_X",this_X)
+            exit(0)
             # The dimension is seq_len X 9984
             K = this_X @ this_X.transpose()
             np.fill_diagonal(K,0.0)
