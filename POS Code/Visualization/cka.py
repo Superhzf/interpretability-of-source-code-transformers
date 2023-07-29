@@ -82,9 +82,7 @@ def plot_results(hsic_matrix,save_path,title):
 
 def normalize(matrix):
     var_mean = np.mean(matrix,axis=0)
-    # print("var_mean[:768]",var_mean[0:768])
     var_std = np.std(matrix,axis=0)
-    # print("var_std[:768]",var_std[0:768])
     return (matrix-var_mean)/(var_std+1e-16)
 
 
@@ -105,10 +103,13 @@ def cka(activation1,n_samples):
         for i in range(1,N_LAYERs):
             index = i*N_NEUROSN_PER_LAYER
             this_X = this_sample[:,index:index+N_NEUROSN_PER_LAYER]
+            print("this_X:",this_X)
             # The dimension is seq_len X 9984
             K = this_X @ this_X.transpose()
             np.fill_diagonal(K,0.0)
             hsic_matrix[i, :, 0] += HSIC(K, K) / num_batches
+            print("HSIC(K, K):",HSIC(K, K))
+            continue
 
             for j in range(1,N_LAYERs):
                 index = j*N_NEUROSN_PER_LAYER
@@ -118,7 +119,7 @@ def cka(activation1,n_samples):
 
                 hsic_matrix[i, j, 1] += HSIC(K, L) / num_batches
                 hsic_matrix[i, j, 2] += HSIC(L, L) / num_batches
-
+    exit(0)
     dim = np.sqrt(hsic_matrix[1:, :, 0]) * np.sqrt(hsic_matrix[1:, :, 2])
     hsic_matrix = hsic_matrix[1:, :, 1] / dim
     
@@ -166,7 +167,7 @@ def main():
         plot_results(hsic_matrix,save_path=f"{this_model}_cka.png",title=this_model)
         print("-----------------------------------------------------------------")
         break
-        
+
 if __name__ == "__main__":
     main()
 
