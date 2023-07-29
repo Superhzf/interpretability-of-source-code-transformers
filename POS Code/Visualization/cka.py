@@ -70,7 +70,8 @@ def add_colorbar(im, aspect=10, pad_fraction=0.5, **kwargs):
 def plot_results(hsic_matrix,save_path,title):
         fig, ax = plt.subplots()
         im = ax.imshow(hsic_matrix, origin='lower', cmap='magma')
-        ax.set_xticks(ticks=[0,2,4,6,8,10],labels=[1,3,5,7,9,11])
+        ax.set_xticks(ticks=[0,2,4,6,8,10])
+        ax.set_xticklabels([1,3,5,7,9,11])
 
         ax.set_title(f"{title}", fontsize=18)
 
