@@ -8,7 +8,7 @@ from mpl_toolkits import axes_grid1
 # MODEL_NAMES = ['BERT','CodeBERT','GraphCodeBERT','CodeGPTJava','CodeGPTPy','RoBERTa','UniXCoder']
 # for defect detection, among the 768 dimensions for RoBERTa and UniXCoder models by the embedding layer, a lot of samples have the
 # same values which lead to negative values in the sqrt function.
-MODEL_NAMES = ['RoBERTa']
+MODEL_NAMES = ['RoBERTa','UniXCoder']
 
 ACTIVATION_NAMES = {'BERT':'bert_activations_train.json',
                     'CodeBERT':'codebert_activations_train.json',
@@ -29,7 +29,6 @@ ACTIVATION_NAMES_sentence_level = {'BERT':'bert/train_activations.json',
 N_LAYERs = 13
 N_NEUROSN_PER_LAYER = 768
 N_SAMPLES = 5000
-# N_BATCHES = 5
 N_BATCHES = 1
 
 def mkdir_if_needed(dir_name):
@@ -101,21 +100,17 @@ def cka(activation1,n_samples):
         random_choice = np.random.choice(len(X),size=n_samples,replace=False)
         random_choice = sorted(random_choice)
         this_sample = X[random_choice]
-        print("this_sample[0:768]:",this_sample[:768])
         this_sample=normalize(this_sample)
         
-        for i in range(N_LAYERs):
+        for i in range(1,N_LAYERs):
             index = i*N_NEUROSN_PER_LAYER
             this_X = this_sample[:,index:index+N_NEUROSN_PER_LAYER]
-            print("this_X:",this_X)
             # The dimension is seq_len X 9984
             K = this_X @ this_X.transpose()
-            print("K:",K)
-            exit(0)
             np.fill_diagonal(K,0.0)
             hsic_matrix[i, :, 0] += HSIC(K, K) / num_batches
 
-            for j in range(N_LAYERs):
+            for j in range(1,N_LAYERs):
                 index = j*N_NEUROSN_PER_LAYER
                 this_Y = this_sample[:,index:index+N_NEUROSN_PER_LAYER]
                 L = this_Y @ this_Y.transpose()
@@ -124,11 +119,8 @@ def cka(activation1,n_samples):
                 hsic_matrix[i, j, 1] += HSIC(K, L) / num_batches
                 hsic_matrix[i, j, 2] += HSIC(L, L) / num_batches
 
-    dim = np.sqrt(hsic_matrix[:, :, 0]) * np.sqrt(hsic_matrix[:, :, 2])
-    # print(f"hsic_matrix[:, :, 0]:",hsic_matrix[:, :, 0])
-    # print(f"hsic_matrix[:, :, 2]:",hsic_matrix[:, :, 2])
-    # exit(0)
-    hsic_matrix = hsic_matrix[:, :, 1] / dim
+    dim = np.sqrt(hsic_matrix[1:, :, 0]) * np.sqrt(hsic_matrix[1:, :, 2])
+    hsic_matrix = hsic_matrix[1:, :, 1] / dim
     
     assert not np.isnan(hsic_matrix).any(), "HSIC computation resulted in NANs"
     return hsic_matrix
@@ -173,7 +165,8 @@ def main():
         del activations
         plot_results(hsic_matrix,save_path=f"{this_model}_cka.png",title=this_model)
         print("-----------------------------------------------------------------")
-
+        break
+        
 if __name__ == "__main__":
     main()
 
