@@ -106,10 +106,9 @@ def cka(activation1,n_samples):
             # The dimension is seq_len X 9984
             K = this_X @ this_X.transpose()
             np.fill_diagonal(K,0.0)
-            hsic_matrix[i, :, 0] += HSIC(K, K) / num_batches
-            if HSIC(K, K) <= 0:
-                print(f"i={i}",HSIC(K, K))
-                break
+            # hsic_matrix[i, :, 0] += HSIC(K, K) / num_batches
+            hsic_matrix[i, 1:, 0] += HSIC(K, K) / num_batches
+
 
             for j in range(1,N_LAYERs):
                 index = j*N_NEUROSN_PER_LAYER
@@ -119,13 +118,12 @@ def cka(activation1,n_samples):
 
                 hsic_matrix[i, j, 1] += HSIC(K, L) / num_batches
                 hsic_matrix[i, j, 2] += HSIC(L, L) / num_batches
-                if HSIC(L, L)<=0:
-                    print(f"j={j}",HSIC(L, L))
-                    break
-    print("hsic_matrix[1:, :, 0]):",hsic_matrix[1:, :, 0])
-    print("hsic_matrix[1:, :, 2]):",hsic_matrix[1:, :, 2])
-    dim = np.sqrt(hsic_matrix[1:, :, 0]) * np.sqrt(hsic_matrix[1:, :, 2])
-    hsic_matrix = hsic_matrix[1:, :, 1] / dim
+            
+    # dim = np.sqrt(hsic_matrix[:, :, 0]) * np.sqrt(hsic_matrix[:, :, 2])
+    dim = np.sqrt(hsic_matrix[1:, 1:, 0]) * np.sqrt(hsic_matrix[1:, 1:, 2])
+    # hsic_matrix = hsic_matrix[:, :, 1] / dim
+    hsic_matrix = hsic_matrix[1:, 1:, 1] / dim
+    exit(0)
     
     assert not np.isnan(hsic_matrix).any(), "HSIC computation resulted in NANs"
     return hsic_matrix
