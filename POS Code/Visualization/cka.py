@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from mpl_toolkits import axes_grid1
 
 # MODEL_NAMES = ['BERT','CodeBERT','GraphCodeBERT','CodeGPTJava','CodeGPTPy','RoBERTa','UniXCoder']
-MODEL_NAMES = ['RoBERTa','UniXCoder']
+MODEL_NAMES = ['UniXCoder']
 
 ACTIVATION_NAMES = {'BERT':'bert_activations_train.json',
                     'CodeBERT':'codebert_activations_train.json',
@@ -27,8 +27,7 @@ ACTIVATION_NAMES_sentence_level = {'BERT':'bert/train_activations.json',
 N_LAYERs = 13
 N_NEUROSN_PER_LAYER = 768
 N_SAMPLES = 5000
-N_BATCHES = 1
-# N_BATCHES = 5
+N_BATCHES = 5
 
 
 def mkdir_if_needed(dir_name):
@@ -81,12 +80,9 @@ def plot_results(hsic_matrix,save_path,title):
         plt.show()
 
 def normalize(matrix):
-    # var_mean = np.mean(matrix,axis=0)
-    # var_std = np.std(matrix,axis=0)
-    # return (matrix-var_mean)/(var_std+1e-16)
-    var_min = np.min(matrix,axis=0)
-    var_max = np.max(matrix,axis=0)
-    return (matrix-var_min)/(var_max-var_min+1e-16)
+    var_mean = np.mean(matrix,axis=0)
+    var_std = np.std(matrix,axis=0)
+    return (matrix-var_mean)/(var_std+1e-16)
 
 
 def cka(activation1,n_samples):
@@ -106,11 +102,8 @@ def cka(activation1,n_samples):
         for i in range(N_LAYERs):
             index = i*N_NEUROSN_PER_LAYER
             this_X = this_sample[:,index:index+N_NEUROSN_PER_LAYER]
-            print("this_X",this_X)
             # The dimension is seq_len X 9984
             K = this_X @ this_X.transpose()
-            print("K:",K)
-            exit(0)
             np.fill_diagonal(K,0.0)
             hsic_matrix[i, :, 0] += HSIC(K, K) / num_batches
 
