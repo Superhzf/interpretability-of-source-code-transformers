@@ -5,9 +5,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits import axes_grid1
 
-MODEL_NAMES = ['BERT','CodeBERT','GraphCodeBERT','CodeGPTJava','CodeGPTPy','RoBERTa','UniXCoder']
-# for defect detection, activations for RoBERTa for the first layer is zero.
-# MODEL_NAMES = ['UniXCoder']
+# MODEL_NAMES = ['BERT','CodeBERT','GraphCodeBERT','CodeGPTJava','CodeGPTPy','RoBERTa','UniXCoder']
+# for defect detection, activations for RoBERTa and UniXCoder for the first layer is zero.
+MODEL_NAMES = ['RoBERTa']
 
 ACTIVATION_NAMES = {'BERT':'bert_activations_train.json',
                     'CodeBERT':'codebert_activations_train.json',
@@ -28,8 +28,8 @@ ACTIVATION_NAMES_sentence_level = {'BERT':'bert/train_activations.json',
 N_LAYERs = 13
 N_NEUROSN_PER_LAYER = 768
 N_SAMPLES = 5000
-N_BATCHES = 5
-# N_BATCHES = 1
+# N_BATCHES = 5
+N_BATCHES = 1
 
 def mkdir_if_needed(dir_name):
     if not os.path.isdir(dir_name):
@@ -100,17 +100,17 @@ def cka(activation1,n_samples):
         random_choice = np.random.choice(len(X),size=n_samples,replace=False)
         random_choice = sorted(random_choice)
         this_sample = X[random_choice]
-        # print("this_sample[0:768]:",this_sample[:768])
+        print("this_sample[0:768]:",this_sample[:768])
         this_sample=normalize(this_sample)
         
         for i in range(N_LAYERs):
             index = i*N_NEUROSN_PER_LAYER
             this_X = this_sample[:,index:index+N_NEUROSN_PER_LAYER]
-            # print("this_X:",this_X)
+            print("this_X:",this_X)
             # The dimension is seq_len X 9984
             K = this_X @ this_X.transpose()
-            # print("K:",K)
-            # exit(0)
+            print("K:",K)
+            exit(0)
             np.fill_diagonal(K,0.0)
             hsic_matrix[i, :, 0] += HSIC(K, K) / num_batches
 
