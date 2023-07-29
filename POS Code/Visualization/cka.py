@@ -29,7 +29,7 @@ ACTIVATION_NAMES_sentence_level = {'BERT':'bert/train_activations.json',
 N_LAYERs = 13
 N_NEUROSN_PER_LAYER = 768
 N_SAMPLES = 5000
-N_BATCHES = 5
+N_BATCHES = 1
 
 def mkdir_if_needed(dir_name):
     if not os.path.isdir(dir_name):
@@ -70,6 +70,7 @@ def add_colorbar(im, aspect=10, pad_fraction=0.5, **kwargs):
 def plot_results(hsic_matrix,save_path,title):
         fig, ax = plt.subplots()
         im = ax.imshow(hsic_matrix, origin='lower', cmap='magma')
+        ax.set_xticks(ticks=[0,2,4,6,8,10],labels=[1,3,5,7,9,11])
 
         ax.set_title(f"{title}", fontsize=18)
 
