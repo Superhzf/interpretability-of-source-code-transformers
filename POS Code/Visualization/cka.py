@@ -29,7 +29,7 @@ ACTIVATION_NAMES_sentence_level = {'BERT':'bert/train_activations.json',
 N_LAYERs = 13
 N_NEUROSN_PER_LAYER = 768
 N_SAMPLES = 5000
-N_BATCHES = 1
+N_BATCHES = 5
 
 def mkdir_if_needed(dir_name):
     if not os.path.isdir(dir_name):
@@ -169,7 +169,6 @@ def main():
         del activations
         plot_results(hsic_matrix,save_path=f"{this_model}_cka.png",title=this_model)
         print("-----------------------------------------------------------------")
-        break
 
 
 if __name__ == "__main__":
