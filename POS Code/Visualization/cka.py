@@ -168,6 +168,7 @@ def main():
         del activations
         plot_results(hsic_matrix,save_path=f"{this_model}_cka.png",title=this_model)
         print("-----------------------------------------------------------------")
+        break
 
 
 if __name__ == "__main__":
