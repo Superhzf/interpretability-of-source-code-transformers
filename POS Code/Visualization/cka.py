@@ -123,7 +123,6 @@ def cka(activation1,n_samples):
     dim = np.sqrt(hsic_matrix[1:, 1:, 0]) * np.sqrt(hsic_matrix[1:, 1:, 2])
     # hsic_matrix = hsic_matrix[:, :, 1] / dim
     hsic_matrix = hsic_matrix[1:, 1:, 1] / dim
-    exit(0)
     
     assert not np.isnan(hsic_matrix).any(), "HSIC computation resulted in NANs"
     return hsic_matrix
