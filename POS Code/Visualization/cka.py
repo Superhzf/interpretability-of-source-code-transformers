@@ -6,7 +6,8 @@ import matplotlib.pyplot as plt
 from mpl_toolkits import axes_grid1
 
 # MODEL_NAMES = ['BERT','CodeBERT','GraphCodeBERT','CodeGPTJava','CodeGPTPy','RoBERTa','UniXCoder']
-# for defect detection, activations for RoBERTa and UniXCoder for the first layer is zero.
+# for defect detection, among the 768 dimensions for RoBERTa and UniXCoder models by the embedding layer, a lot of samples have the
+# same values which lead to negative values in the sqrt function.
 MODEL_NAMES = ['RoBERTa']
 
 ACTIVATION_NAMES = {'BERT':'bert_activations_train.json',
