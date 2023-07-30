@@ -73,6 +73,9 @@ def plot_results(hsic_matrix,save_path,title):
         ax.set_xticks(ticks=[0,2,4,6,8,10])
         ax.set_xticklabels([1,3,5,7,9,11])
 
+        ax.set_yticks(ticks=[0,2,4,6,8,10])
+        ax.set_yticklabels([1,3,5,7,9,11])
+
         ax.set_title(f"{title}", fontsize=18)
 
         add_colorbar(im)
