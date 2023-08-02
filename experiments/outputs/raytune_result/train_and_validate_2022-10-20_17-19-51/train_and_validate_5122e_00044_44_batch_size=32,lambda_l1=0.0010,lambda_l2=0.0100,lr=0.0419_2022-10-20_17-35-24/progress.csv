@@ -1,2 +1,0 @@
-loss,accuracy,time_this_iter_s,should_checkpoint,done,timesteps_total,episodes_total,training_iteration,trial_id,experiment_id,date,timestamp,time_total_s,pid,hostname,node_ip,time_since_restore,timesteps_since_restore,iterations_since_restore,warmup_time
-0.1941470895807312,54.11836485661989,82.89262652397156,True,True,,,1,5122e_00044,b71b17c8bb5e4784a2c644cf6c3ab522,2022-10-20_17-36-49,1666305409,82.89262652397156,13497,frost-1.las.iastate.edu,10.90.4.78,82.89262652397156,0,1,0.0025572776794433594

@@ -1,2 +1,0 @@
-validation_loss,accuracy,time_this_iter_s,should_checkpoint,done,timesteps_total,episodes_total,training_iteration,trial_id,experiment_id,date,timestamp,time_total_s,pid,hostname,node_ip,time_since_restore,timesteps_since_restore,iterations_since_restore,warmup_time
-0.800754009171161,50.84781295088234,569.9490070343018,True,True,,,1,e8187_00065,725a1735837d402ba112313a756e2d54,2022-10-19_00-18-41,1666156721,569.9490070343018,384252,bigram2.las.iastate.edu,10.90.4.53,569.9490070343018,0,1,0.002942800521850586
